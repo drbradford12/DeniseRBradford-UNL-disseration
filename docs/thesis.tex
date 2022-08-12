@@ -190,9 +190,9 @@
 \frontmatter
 %% from thesisdown
 % To pass between YAML and LaTeX the dollar signs are added by CII
-\title{DISSERTATION TITLE IN ALL CAPS}
-\author{Author Full Name}
-\adviser{Advisor name}
+\title{DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS}
+\author{Denise Renee Bradford}
+\adviser{Susan R. VanderPlas, Ph.D}
 % \adviserAbstract{}
 \major{Statistics}
 \degreemonth{Month}
@@ -266,405 +266,219 @@ Thank you to all my people!
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-Editing text colors: \authorcol{Author's editing color. Use \string\authorcol{}} Author may also use mostly black text as well. \chaircol{Chair's editing color. Use \string\chaircol{}} \cochaircol{Co-chair's editing color. Use \string\cochaircol{}} Redefine commands in unlthesis.cls with initials.
-
-Welcome to the \emph{R Markdown} thesis template. This template is based on (and in many places copied directly from) the UW LaTeX template, and has been modified to use the UNL LaTeX thesis class maintained by the math department. Hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before.
-
-Using \emph{R Markdown} will also allow you to easily keep track of your analyses in \textbf{R} chunks of code, with the resulting plots and output included as well. The hope is this \emph{R Markdown} template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
-
-Hopefully, you won't have much of a learning period to go through and you will reap the benefits of a nicely formatted thesis. The use of LaTeX in combination with \emph{Markdown} is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file. While you may have never had problems using Word in the past, your thesis is likely going to be at least twice as large and complex as anything you've written before, taxing Word's capabilities. After working with \emph{Markdown} and \textbf{R} together for a few weeks, we are confident this will be your reporting style of choice going forward.
-
-\textbf{Why use it?}
-
-\emph{R Markdown} creates a simple and straightforward way to interface with the beauty of LaTeX. Packages have been written in \textbf{R} to work directly with LaTeX to produce nicely formatting tables and paragraphs. In addition to creating a user friendly interface to LaTeX, \emph{R Markdown} also allows you to read in your data, to analyze it and to visualize it using \textbf{R} functions, and also to provide the documentation and commentary on the results of your project. Further, it allows for \textbf{R} results to be passed inline to the commentary of your results. You'll see more on this later.
-
-\textbf{Who should use it?}
-
-Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use \emph{R Markdown}. Of particular use should be anyone in the sciences, but the user-friendly nature of \emph{Markdown} and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a thesis project.
-
 \hypertarget{rmd-basics}{%
-\chapter{R Markdown Basics}\label{rmd-basics}}
+\chapter{Literature Review}\label{rmd-basics}}
 
-Here is a brief introduction into using \emph{R Markdown}. \emph{Markdown} is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. \emph{R Markdown} provides the flexibility of \emph{Markdown} with the implementation of \textbf{R} input and output. For more details on using \emph{R Markdown} see \url{http://rmarkdown.rstudio.com}.
+\section{ History of Visual Inference }
 
-Be careful with your spacing in \emph{Markdown} documents. While whitespace largely is ignored, it does at times give \emph{Markdown} signals as to how to proceed. As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph. In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference -- with one exception: The test statistic is now a graphical display which is compared to a ``reference distribution'' of plots showing the null.{[}REFERENCE WEBSITE{]}
 
-\hypertarget{lists}{%
-\section{Lists}\label{lists}}
+Plots of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correkation heatmap or a scatterplot. This will be important to know before starting a linear model analysis.
 
-It's easy to create a list. It can be unordered like
+\subsection{ Formal Definition }
 
-\begin{itemize}
-\tightlist
-\item
-  Item 1
-\item
-  Item 2
-\end{itemize}
+\subsection{ Applications }
 
-or it can be ordered like
+\section{ History of Dashboard Design }
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Item 1
-\item
-  Item 2
-\end{enumerate}
+\subsection{ Formal Definitions }
 
-Notice that I intentionally mislabeled Item 2 as number 4. \emph{Markdown} automatically figures this out! You can put any numbers in the list and it will create the list. Check it out below.
+\subsection{ Stephen Few Influences }
 
-To create a sublist, just indent the values a bit (at least four spaces or a tab). (Here's one case where indentation is key!)
+\subsection{ Applications }
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Item 1
-\item
-  Item 2
-\item
-  Item 3
+\section{ Parallel Coordinate Plot Visualizations }
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Item 3a
-  \item
-    Item 3b
-  \end{itemize}
-\end{enumerate}
+\subsection{R Packages}
 
-\hypertarget{line-breaks}{%
-\section{Line breaks}\label{line-breaks}}
+\subsection{\textbf{ggpcp} package importance}
 
-Make sure to add white space between lines if you'd like to start a new paragraph. Look at what happens below in the outputted document if you don't:
-
-Here is the first sentence. Here is another sentence. Here is the last sentence to end the paragraph.
-This should be a new paragraph.
-
-\emph{Now for the correct way:}
-
-Here is the first sentence. Here is another sentence. Here is the last sentence to end the paragraph.
-
-This should be a new paragraph.
-
-\hypertarget{r-chunks}{%
-\section{R chunks}\label{r-chunks}}
-
-When you click the \textbf{Knit} button above a document will be generated that includes both content as well as the output of any embedded \textbf{R} code chunks within the document. You can embed an \textbf{R} code chunk like this (\texttt{cars} is a built-in \textbf{R} dataset):
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(cars)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-\end{verbatim}
-
-\hypertarget{inline-code}{%
-\section{Inline code}\label{inline-code}}
-
-If you'd like to put the results of your analysis directly into your discussion, add inline code like this:
-
-\begin{quote}
-The \texttt{cos} of \(2 \pi\) is 1.
-\end{quote}
-
-Another example would be the direct calculation of the standard deviation:
-
-\begin{quote}
-The standard deviation of \texttt{speed} in \texttt{cars} is 5.2876444.
-\end{quote}
-
-One last neat feature is the use of the \texttt{ifelse} conditional statement which can be used to output text depending on the result of an \textbf{R} calculation:
-
-\begin{quote}
-The standard deviation is less than 6.
-\end{quote}
-
-Note the use of \texttt{\textgreater{}} here, which signifies a quotation environment that will be indented.
-
-As you see with \texttt{\$2\ \textbackslash{}pi\$} above, mathematics can be added by surrounding the mathematical text with dollar signs. More examples of this are in \protect\hyperlink{math-sci}{Mathematics and Science} if you uncomment the code in \protect\hyperlink{math}{Math}.
-
-\hypertarget{including-plots}{%
-\section{Including plots}\label{including-plots}}
-
-You can also embed plots. For example, here is a way to use the base \textbf{R} graphics package to produce a plot using the built-in \texttt{pressure} dataset:
-
-\includegraphics[width=\linewidth]{thesis_files/figure-latex/pressure-1}
-
-Note that the \texttt{echo=FALSE} parameter was added to the code chunk to prevent printing of the \textbf{R} code that generated the plot. There are plenty of other ways to add chunk options. More information is available at \url{http://yihui.name/knitr/options/}.
-
-Another useful chunk option is the setting of \texttt{cache=TRUE} as you see here. If document rendering becomes time consuming due to long computations or plots that are expensive to generate you can use knitr caching to improve performance. Later in this file, you'll see a way to reference plots created in \textbf{R} or external figures.
-
-\hypertarget{loading-and-exploring-data}{%
-\section{Loading and exploring data}\label{loading-and-exploring-data}}
-
-Included in this template is a file called \texttt{flights.csv}. This file includes a subset of the larger dataset of information about all flights that departed from Seattle and Portland in 2014. More information about this dataset and its \textbf{R} package is available at \url{http://github.com/ismayc/pnwflights14}. This subset includes only Portland flights and only rows that were complete with no missing values. Merges were also done with the \texttt{airports} and \texttt{airlines} data sets in the \texttt{pnwflights14} package to get more descriptive airport and airline names.
-
-We can load in this data set using the following command:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{flights }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-The data is now stored in the data frame called \texttt{flights} in \textbf{R}. To get a better feel for the variables included in this dataset we can use a variety of functions. Here we can see the dimensions (rows by columns) and also the names of the columns.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{dim}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 52808    16
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{names}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] "month"        "day"          "dep_time"    
-##  [4] "dep_delay"    "arr_time"     "arr_delay"   
-##  [7] "carrier"      "tailnum"      "flight"      
-## [10] "dest"         "air_time"     "distance"    
-## [13] "hour"         "minute"       "carrier_name"
-## [16] "dest_name"
-\end{verbatim}
-
-Another good idea is to take a look at the dataset in table form. With this dataset having more than 50,000 rows, we won't explicitly show the results of the command here. I recommend you enter the command into the Console \textbf{\emph{after}} you have run the \textbf{R} chunks above to load the data into \textbf{R}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{View}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-
-While not required, it is highly recommended you use the \texttt{dplyr} package to manipulate and summarize your data set as needed. It uses a syntax that is easy to understand using chaining operations. Below I've created a few examples of using \texttt{dplyr} to get information about the Portland flights in 2014. You will also see the use of the \texttt{ggplot2} package, which produces beautiful, high-quality academic visuals.
-
-We begin by checking to ensure that needed packages are installed and then we load them into our current working environment:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# List of packages required for this}
-\CommentTok{\# analysis}
-\NormalTok{pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{,}
-    \StringTok{"devtools"}\NormalTok{)}
-\CommentTok{\# Check if packages are not installed and}
-\CommentTok{\# assign the names of the packages not}
-\CommentTok{\# installed to the variable new.pkg}
-\NormalTok{new.pkg }\OtherTok{\textless{}{-}}\NormalTok{ pkg[}\SpecialCharTok{!}\NormalTok{(pkg }\SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{())]}
-\CommentTok{\# If there are any packages in the list that}
-\CommentTok{\# aren\textquotesingle{}t installed, install them}
-\ControlFlowTok{if}\NormalTok{ (}\FunctionTok{length}\NormalTok{(new.pkg)) }\FunctionTok{install.packages}\NormalTok{(new.pkg,}
-    \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\CommentTok{\# Load packages (huskydown will load all of}
-\CommentTok{\# the packages as well)}
-\FunctionTok{library}\NormalTok{(huskydown)}
-\end{Highlighting}
-\end{Shaded}
-
-\clearpage
-
-The example we show here does the following:
-
-\begin{itemize}
-\item
-  Selects only the \texttt{carrier\_name} and \texttt{arr\_delay} from the \texttt{flights} dataset and then assigns this subset to a new variable called \texttt{flights2}.
-\item
-  Using \texttt{flights2}, we determine the largest arrival delay for each of the carriers.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(dplyr)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-## Attaching package: 'dplyr'
-\end{verbatim}
-
-\begin{verbatim}
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-\end{verbatim}
-
-\begin{verbatim}
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{flights2 }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{select}\NormalTok{(carrier\_name, arr\_delay)}
-\NormalTok{max\_delays }\OtherTok{\textless{}{-}}\NormalTok{ flights2 }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{group\_by}\NormalTok{(carrier\_name) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{summarize}\NormalTok{(}\AttributeTok{max\_arr\_delay =} \FunctionTok{max}\NormalTok{(arr\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-A useful function in the \texttt{knitr} package for making nice tables in \emph{R Markdown} is called \texttt{kable}. It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX. This again goes to show how nice reproducible documents can be! (Note the use of \texttt{results="asis"}, which will produce the table instead of the code to create the table.) The \texttt{caption.short} argument is used to include a shorter title to appear in the List of Tables.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(knitr)}
-\FunctionTok{kable}\NormalTok{(max\_delays, }\AttributeTok{col.names =} \FunctionTok{c}\NormalTok{(}\StringTok{"Airline"}\NormalTok{, }\StringTok{"Max Arrival Delay"}\NormalTok{),}
-    \AttributeTok{caption =} \StringTok{"Maximum Delays by Airline"}\NormalTok{, }\AttributeTok{caption.short =} \StringTok{"Max Delays by Airline"}\NormalTok{,}
-    \AttributeTok{longtable =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{booktabs =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{longtable}[t]{lr}
-\caption[Max Delays by Airline]{\label{tab:maxdelays}Maximum Delays by Airline}\\
-\toprule
-Airline & Max Arrival Delay\\
-\midrule
-Alaska Airlines Inc. & 338\\
-American Airlines Inc. & 1539\\
-Delta Air Lines Inc. & 651\\
-Frontier Airlines Inc. & 575\\
-Hawaiian Airlines Inc. & 407\\
-\addlinespace
-JetBlue Airways & 273\\
-SkyWest Airlines Inc. & 421\\
-Southwest Airlines Co. & 694\\
-United Air Lines Inc. & 472\\
-US Airways Inc. & 347\\
-\addlinespace
-Virgin America & 366\\
-\bottomrule
-\end{longtable}
-
-The last two options make the table a little easier-to-read.
-
-We can further look into the properties of the largest value here for American Airlines Inc.~To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original \texttt{flights} dataset.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(arr\_delay }\SpecialCharTok{==} \DecValTok{1539}\NormalTok{, carrier\_name }\SpecialCharTok{==}
-        \StringTok{"American Airlines Inc."}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(month, day, carrier, dest\_name,}
-\NormalTok{        hour, minute, carrier\_name, arr\_delay))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   dep_time dep_delay arr_time tailnum flight dest air_time
-## 1     1403      1553     1934  N595AA   1568  DFW      182
-##   distance
-## 1     1616
-\end{verbatim}
-
-We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth. Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(ggplot2)}
-\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(month }\SpecialCharTok{==} \DecValTok{3}\NormalTok{, day }\SpecialCharTok{==} \DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dep\_time, }\AttributeTok{y =}\NormalTok{ arr\_delay)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_point}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=\linewidth]{thesis_files/figure-latex/march3plot-1}
-
-\hypertarget{additional-resources}{%
-\section{Additional resources}\label{additional-resources}}
-
-\begin{itemize}
-\item
-  \emph{Markdown} Cheatsheet - \url{https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet}
-\item
-  \emph{R Markdown} Reference Guide - \url{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}
-\item
-  Introduction to \texttt{dplyr} - \url{https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html}
-\item
-  \texttt{ggplot2} Documentation - \url{http://docs.ggplot2.org/current/}
-\end{itemize}
+\section{ Summary }
 
 \hypertarget{math-sci}{%
-\chapter{Mathematics and Science}\label{math-sci}}
+\chapter{Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue}\label{math-sci}}
 
-\hypertarget{math}{%
-\section{Math}\label{math}}
+\section{ Abstract }
 
-\TeX~is the best way to typeset mathematics. Donald Knuth designed \TeX~when he got frustrated at how long it was taking the typesetters to finish his book, which contained a lot of mathematics. One nice feature of \emph{R Markdown} is its ability to read LaTeX code directly.
+Many small and rural places are shrinking. Interactive dashboards are the most common use cases for data visualization and context for exploratory data tools. In our paper, we will explore the specific scope of how dashboards are used in small and rural area to empower novice analysts to make data-driven decisions. Our framework will suggest a number of research directions to better support small and rural places from shrinking using an interactive dashboard design, implementation and use for the every day analyst.
 
-If you are doing a thesis that will involve lots of math, you will want to read the following section which has been commented out. If you're not going to use math, skip over or delete this next commented section.
+\section{ Introduction }
 
-\hypertarget{chemistry-101-symbols}{%
-\section{Chemistry 101: Symbols}\label{chemistry-101-symbols}}
+As the amount of data has increased in nearly every facet of life, the need to make sense of that data in an approachable, accessible form has become ever more important.
+As a result, many companies and organizations use interactive dashboards to present these data in a more useful and visually appealing form (Sarikaya, Correll, Bartram, Tory, \& Fisher, 2019).
 
-Chemical formulas will look best if they are not italicized. Get around math mode's automatic italicizing in LaTeX by using the argument \texttt{\$\textbackslash{}mathrm\{formula\ here\}\$}, with your formula inside the curly brackets. (Notice the use of the backticks here which enclose text that acts as code.)
+In many cases, dashboards support viewers' information processing, helping to make sense of complex data, navigate through a dataset, and supporting decision making based on the data.
 
-So, \(\mathrm{Fe_2^{2+}Cr_2O_4}\) is written \texttt{\$\textbackslash{}mathrm\{Fe\_2\^{}\{2+\}Cr\_2O\_4\}\$}.
+Dashboards are often used, as with the car display of the same name, to provide summary information about many separate attributes of a common entity. One glance at a car's dashboard will tell you the speed, RPM, engine temperature, amount of gas in the tank; more importantly, however, the goal is not for the user to remember all of these characteristics, but to assess whether any of these quantities is outside of the expected range.
+Similarly, interactive dashboards for data are often used to display many different attributes and performance metrics which are of importance for stakeholders.
 
-\noindent Exponent or Superscript: \(\mathrm{O^-}\)
+In this paper, we discuss the process of designing a dashboard to present publicly available government data to stakeholders in small Iowa towns to facilitate decision making and objective comparison with other similarly-situated towns.
 
-\noindent Subscript: \(\mathrm{CH_4}\)
+Some communities continue to thrive as they lose population because they adapt, maintaining quality of life and community services for residents while investing in the future. This process, \emph{smart shrinkage}, is important for rural areas who have experienced shrinking populations for decades. As small rural towns do not have access to data scientists or even the ability to easily leverage data collected locally to support decisions, our research team will provide communities with data about services in small town Iowa in order to assist with developing strategies to improve quality of life for their residents amid shrinking populations (Rural Shrink Smart Team, 2022). We hope to allow towns to explore their own data and compare to other similar towns, centering decision-making on data in the context of small-town Iowa life.
 
-To stack numbers or letters as in \(\mathrm{Fe_2^{2+}}\), the subscript is defined first, and then the superscript is defined.
+\section{Data Description}
 
-\noindent Bullet: CuCl \(\bullet\) \(\mathrm{7H_{2}O}\)
+The Smart and Connected Community (SCC) dashboard data are primarily assembled from \url{data.iowa.gov} (State of Iowa, 2020), with some additional datasets assembled from federal and private sources. Most of these data sets are collected at a town/city or county spatial resolution, requiring us to carefully join data to ensure that these differences are respected while collating relevant information at the city level. In addition to the more commonly available statistics derived from e.g.~the census and American Community Survey, \url{data.iowa.gov} contains several unique data sets, including local liquor sales, school building locations, town budgets and expenditures, hospital beds, Medicaid reimbursements, and other details that may provide information about local quality of life.
 
-\noindent Delta: \(\Delta\)
+Data available on Iowa's data portal were augmented in some cases with higher-quality data sets in cases where the Iowa data were out of date or insufficiently accurate.
+Data collected from ELSI (National Center for Education Statistics, 2020) from \url{https://nces.ed.gov} were used to show the distance to any private or public school. The National Center for Education Statistics (NCES) is the primary federal entity for collecting and analyzing data related to education (Zarecor, Peters, \& Hamideh, 2021).
 
-\noindent Reaction Arrows: \(\longrightarrow\) or \(\xrightarrow{solution}\)
+Data collected from the Index of Relative Rurality (IRR) (USDA - ERS, 2020a) were used in the SCC dashboard to help classify the towns. The Index of Relative Rurality (IRR) is a continuous, threshold-free, and unit-free measure of rurality. It is an alternative to the traditional discrete threshold-based classifications.The IRR ranges between 0 (low level of rurality, i.e., urban) and 1 (most rural). Four steps are involved in its design:
 
-\noindent Resonance Arrows: \(\leftrightarrow\)
+\begin{enumerate}
+\item Identifying the dimensions of rurality: population size, density, remoteness, and built-up area.
+\item Selecting measurable variables to adequately represent each dimension:
+    \begin{itemize}
+        \item Size: logarithm of population size
+        \item Density: logarithm of population density.
+        \item Remoteness: network distance.
+        \item Built-up area: urban area (as defined by the US Census Bureau) as a percentage of total land area.
+    \end{itemize}
+\item Re-scaling the variables onto bounded scales that range from 0 to 1.
+\item Selecting a link function: unweighted average of the four re-scaled variable.
+\end{enumerate}
 
-\noindent Reversible Reaction Arrows: \(\rightleftharpoons\)
+Data collected from Rural Urban Commuting Area Codes (USDA - ERS, 2020b) were used to help identify towns with commuting behaviors in our rural areas. The rural-urban commuting area (RUCA) codes classify U.S. census tracts using measures of population density, urbanization, and daily commuting. This data is on a zip code-level that will help identify those communities that commute to more urban areas. The most recent RUCA codes are based on data from the 2010 decennial census and the 2006-10 American Community Survey. The classification contains two levels. Whole numbers (1-10) delineate metropolitan, micropolitan, small town, and rural commuting areas based on the size and direction of the primary (largest) commuting flows.
 
-\hypertarget{typesetting-reactions}{%
-\subsection{Typesetting reactions}\label{typesetting-reactions}}
+One of the interesting features of this assembled data set is that missing data can be missing for multiple reasons: not all state data is complete, but data about certain services may also be missing because towns do not offer that service.
+Thus, in addition to the usual challenges of working with real-world data that is ``messy'' in a variety of ways, we also have to contend with missing data that is missing due to the size of the community or the lack of services. This makes both visualization and statistical analysis more complicated (and more interesting).
 
-You may wish to put your reaction in an equation environment, which means that LaTeX will place the reaction where it fits and will number the equations for you.
+\section{ Dashboard Design Considerations}
 
-\begin{equation}
-  \mathrm{C_6H_{12}O_6  + 6O_2} \longrightarrow \mathrm{6CO_2 + 6H_2O}
-  \label{eq:reaction}
-\end{equation}
+\begin{figure}
+\includegraphics[width=.8\textwidth]{figure/Key_Metrics}
+\caption{Diagram of considerations for our dashboard design process.}\label{fig:metrics}
+\end{figure}
 
-We can reference this combustion of glucose reaction via Equation \eqref{eq:reaction}.
+One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.
 
-\hypertarget{other-examples-of-reactions}{%
-\subsection{Other examples of reactions}\label{other-examples-of-reactions}}
+As part of a wider project investigating the strategies towns use to maintain quality of life amid shrinking population, our research team provides communities with data about their own town, but also comparable towns across the state which may have a different approach to city services. In combination with other engagement strategies that are more qualitative, we hope to use this interactive dashboard approach to assist small Iowa cities with generalizing and developing strategies to improve or maintain quality of life amid shrinking populations.
 
-\(\mathrm{NH_4Cl_{(s)}}\) \(\rightleftharpoons\) \(\mathrm{NH_{3(g)}+HCl_{(g)}}\)
+One factor at the forefront of our visualization design is the importance of reducing the cognitive demands on viewers: we have assembled an incredible amount of data, and it is easy for even statisticians who deal with much larger datasets to get lost in the details of this data. At the same time, we want to invite viewers to engage with the data - to imagine, to draw comparisons, to generalize across towns, and to integrate outside information into the conclusions drawn based on the data we present.
+This invitation to engage with the data is similar to the approach advocated in Guided Discovery Learning, a framework leverages hints, feedback, and other helpful information to guide users in interactive exploration (DeDonno, 2016).
 
-\noindent \(\mathrm{MeCH_2Br + Mg}\) \(\xrightarrow[below]{above}\) \(\mathrm{MeCH_2\bullet Mg \bullet Br}\)
+We expect that users will be interested in ``sets'' of variables from the wider dataset, which we assembled based on quality of life factors in the Iowa Small Town Poll (Peters, 2019). For instance, users might be interested in medical and social services available to residents, such as a local primary care clinic, nursing homes which are within driving distance, and the distance to the nearest emergency room; these factors might be explored separately from variables describing the services provided directly by city government, such as parks and recreation expenditures, snow removal services, and the distance to the closest fire station.
 
-\hypertarget{physics}{%
-\section{Physics}\label{physics}}
+As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours (Wickham, Cook, Hofmann, \& Buja, 2011), require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s (d'Ocagne, 1885), parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show ``blocks'' of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables (Bendix, Kosara, \& Hauser, 2005); modifications of this design, such as common-angle plots (Hofmann \& Vendettuoli, 2013), address the issues which arise due to line-width illusions VanderPlas \& Hofmann (2015). Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities (Heinrich \& Weiskopf, 2009). In this paper, we use the \texttt{ggpcp} package, which leverages the grammar-of-graphics framework introduced in Wickham (2016), allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.
 
-Many of the symbols you will need can be found on the math page \url{http://web.reed.edu/cis/help/latex/math.html} and the Comprehensive LaTeX Symbol Guide (\url{http://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf}).
+We also anticipate that users will be interested in comparing their town to other, similar towns. We will discuss the different ways that this comparison strategy was implemented in each dashboard in the next section, which describes the evolution of the dashboard over time and accounting for feedback from users and other researchers on the wider project.
 
-\hypertarget{biology}{%
-\section{Biology}\label{biology}}
+One final component of this project is that our dashboard is part of a wider effort to work with towns to understand the different strategies used to maintain resident quality of life amid shrinking populations. Thus, while the town leaders are our primary audience, we also are creating this applet for use in parallel with a team of other researchers: sociologists, economists, city planning specialists, and artists. These researchers opinions and feedback about the dashboard are also useful and important, as they regularly work with town leaders in different capacities and have an understanding of what factors are most important to them and what types of questions these leaders may have when faced with data and unfamiliar statistical visualizations.
 
-You will probably find the resources at \url{http://www.lecb.ncifcrf.gov/~toms/latex.html} helpful, particularly the links to bsts for various journals. You may also be interested in TeXShade for nucleotide typesetting (\url{http://homepages.uni-tuebingen.de/beitz/txe.html}). Be sure to read the proceeding chapter on graphics and tables.
+Throughout the design process, we will assess our visualizations to determine which strategies for user interface and interactive graphics design are most useful to empower town leaders to make discoveries in publicly available data assembled with a focus on items that impact rural quality of life.
+
+\hypertarget{guiding-design-principles}{%
+\section{Guiding Design Principles}\label{guiding-design-principles}}
+
+Research on dashboard creation and interactive visualization tends to be very task-specific and hard to apply to more generalized settings. That is, it is relatively easy to create a dashboard that works for a particular task, but it is hard to generalize from that process what will work for the next dashboard. With this in mind, we set out to clearly document our intentions at each stage of the design and evaluation process, with the goal of gathering some useful information about general dashboard design from the process of creating this specific dashboard.
+
+Thus, our initial set of dashboard design principles is as follows:
+
+\begin{itemize}
+\item The town leaders are the focus audience; thus, the town itself should be the central focus of the app.
+\item We should facilitate comparisons with other towns in order to allow the user to explore other potential solutions to offering services that enhance resident quality of life.
+\item We will present the user with peer comparisons in order to widen the scope of exploration beyond the initial set of obvious peers in the local region.
+\item We will implement feedback mechanisms that allow us to provide more detailed data and respond to feature requests to improve the dashboard design over time.
+\end{itemize}
+
+As with many dashboards, this project is under continuous development; while it makes for an unsatisfactory conclusion, we do not have a ``final'' dashboard design because the application will continue to evolve. However, we have some useful insights into the process of creating an application designed to invite users to explore a large and complex dataset that we believe to be a useful contribution to work in this area.
+
+\section{ Dashboard Design Process}
+
+\subsection{Dashboard Components }
+
+In this section, we discuss the philosophy behind the basic ``building blocks'' of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy's effectiveness in the conclusion.
+
+The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006).
+
+Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
+
+When faced with the next component, a parallel coordinate plot (PCP), a novice user will be able to determine two basic components: Visual Object (textual objects and non-textual objects) and Frame (frame of content and frame of visual encoding).
+
+Taken together, the app is a single page; the initial ``solid ground'' which the user explores from consists of maps showing the route from the center of town to necessary services, including the fire department, schools, post offices, and hospitals. In version 2, as shown in \autoref{fig:v2}, the map portion is condensed, and more space is given to value boxes that show vital statistics about the town's QoL and financial metrics. This relatively straightforward display is followed by a parallel coordinate plot that allows the user to see similar towns along dimensions such as economic indicators or population size.
+
+\subsection{Initial Draft}
+
+The initial design sketch and implementation are shown in \autoref{fig:v1}.
+
+Users' towns are at the center of our application, and comparisons to other, similar towns are secondary. As it can be extremely difficult to predict which towns are optimal for comparison purposes (similar may involve population, region, economic indicators, sports rivalries, and any number of other variables), we allow users to modify a set of suggested comparison towns to indicate other towns of interest.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figure/Version1}
+
+\includegraphics[width=.7\textwidth]{figure/Version2}
+\caption{Initial dashboard design sketch (top) and implementation (bottom).}\label{fig:v1}
+\end{figure}
+
+We implemented some suggested town comparisons using unsupervised clustering methods to help our towns make decisions that are informed in comparison to similar towns, for budget size, population size and location. We initially focused on determining the next five to ten similar towns, based on distances to services. This feature became an important diagnostic for our data quality, as it became clear that towns which were grouped with big cities but which did not have a large population were so grouped because of missing data. Unfortunately, this clustering feature was not as useful to the application users, as they came to the dashboard with a pre-existing set of towns to compare to; our suggested comparisons were in the way.
+
+The initial dashboard design featured several responsive maps showing the distance to the nearest hospital, fire department, post office, and school. These maps were ineffective for several reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Town residents already know this information (though it was useful for us as the dashboard designers, because we aren't nearly as familiar with the 900+ small towns in Iowa)
+\item
+  We computed distance from services relative to the center of town - coordinates provided in the data from \url{data.iowa.gov}. Generally speaking, the post office is at the center of town and the fire department is usually very close to the center of town; these two maps were useless. The school and hospital maps were less useless, but still did not provide particularly useful information to people already familiar with the town.
+\item
+  It became clear that it might be more useful to show the comparison towns on a map (relative to the town of interest) so that users could compare geographical ratings for unfamiliar data to familiar data.
+\end{itemize}
+
+In addition, we received feedback on the parallel coordinate plot at the bottom of the app which was surprising: the viewers (in this case, other researchers on the team) were not as intimidated by the parallel coordinate plot as we had expected. They did need some explanation of how to read the plot, and these hints need to be included in the dashboard, but they grasped the fundamental idea of the plot very quickly.
+
+Our conclusion, based on this initial dashboard draft, was that we needed to restructure the application. Our attempt to show familiar information first to ``build up'' to the more unfamiliar structure of a parallel coordinate plot was not effective; there was too much clutter and not enough new information to draw users in.
+
+\subsection{ Redesign }
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{figure/Version3}
+
+\includegraphics[width=\textwidth]{figure/Version4}
+\caption{A second iteration of the sketched design (top) and the implementation (bottom).}\label{fig:v2}
+\end{figure}
+
+In the initial design, we included a map for each vital service, this initially created a lag for the users' experience. As a result, we cached map directions from OSRM for each service in our database, which drastically reduced the response time for the user. Our initial design did not naturally focus the user's eye on the most important parts of the dashboard; the redesign allowed for a cleaner flow from the top to the bottom.
+
+In addition to the timing due to the map loading slowly, we added the vital statistics at the county level to allow for a more robust understanding of the town and it's surroundings. The rurality index provided a better classification and the USDA sources allowed for the town to understand the impact of the closest major city due to commuting for work and shopping at larger stores not available within the town.
+
+We also modified the parallel coordinate plots in several ways:
+
+\begin{itemize}
+\tightlist
+\item
+  Our x-axis had a large number of variables that we as researchers believed to be the most strongly associated with quality of life. However, there were still too many variables for users to successfully parse. We reduced the number of variables, focusing on variables that had the highest data quality, and we grouped these variables by quality of life factor (Peters, 2019).
+\item
+  Originally, parallel coordinate bands were scaled based on the selected comparison towns. This had the effect of truncating the range of variables and over-emphasizing differences between selected towns relative to the overall range of each variable over all towns in our data set. We chose to show all towns in the data set in a very light \(\alpha\) grey color to provide some information about the overall range of each variable. Unfortunately, even with the low-\(\alpha\) value, this increased the visual complexity of the plot and confused users. Future iterations will likely make use of another aesthetic, such as boxplots or violin plots, to show the range of values for all towns, and then use lines only for towns that are selected by the user. This should strike a balance between visual complexity and representing the data accurately.
+\item
+  We noticed that users did not make use of our suggested comparison towns, and so we removed that option in favor of allowing users to enter their own comparison towns directly. Users already had pre-determined towns they wanted to compare to, and our suggestions were just in the way.
+\end{itemize}
+
+While not all of these modifications were well received in our second round of user testing, the changes did incrementally move the dashboard display towards our goal of allowing users to explore the data and engage with it. We continued to be surprised with how well users reacted to the parallel coordinate plots, which we initially thought might be too abstract for users unfamiliar with multivariate data displays, but the ability to compare towns across multiple dimensions and examine the similarities and differences between their approaches to different services seemed to be intuitive for users once they understood that each vertical axis was a different variable.
+
+\section{ Discussion}
+
+Our dashboard design philosophy worked primarily to promote a town-centric approach application with comparisons to other similar towns being secondary. This approach created a way for the user to see their town information at the top of the page and to explore the PCP after reviewing their own town's essential statistics. The PCP in the lower part of the dashboard allowed for the user to see the plot and adjust to the fact that they could add more towns to the plot, providing an opportunity to explore the wider dataset from a base of familiar knowledge.
+
+While we initially framed the design around guided discovery learning, the approach did not seem to suffice for our user base; instead, we found that users were more drawn to the unfamiliar from the start. We will likely leverage this in future iterations by using visual forms such as flower plots to draw the users in; even though these plots are not ideal for numerical display of data, the visual novelty and aesthetic appeal will provide some motivation to continue exploring and thinking about the data.
+
+One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as ``Town 1,'' ``Town 2,'' and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.
+
+We also recognize that we need to leverage the expertise of others in our research team: we are working with artists, researchers in architecture, economists, and sociologists; these researchers provide outside knowledge that we do not have and may be able to help us create insightful use-cases to showcase the app and teach towns how to use it. We can also leverage the app to connect users with our research team, providing additional value to those who use the applet and facilitating development of strategies for maintaining quality of life amid shrinking populations.
+
+\section{ Future Work }
+
+One avenue we will explore in future iterations of the dashboard is to incorporate other dashboards generated by different groups within this project. This will create a wider field of information to explore: for instance, some of the additional work will focus on the 99 towns featured in the Iowa Small Town Poll; this will allow us to showcase survey-based measures of quality of life alongside the more objective measurements assembled in the dataset discussed in this paper. While at least one tab of this omni-dashboard will still focus on wider EDA and discovery, we hope to incorporate other information as well to provide a more well-rounded data display encompassing most of the facets of this complex project.
+
+We are also mindful of a distinction between ``eye candy'' and purpose-driven data visualization. While we have typically focused on the latter, there is certainly a place in our dashboard for the former as well. ``Eye candy'' visualization is intended to draw the viewer in and motivate them to explore; while these visualizations may not be particularly effective at communicating quantitative information, if they motivate the user to engage with the rest of the dashboard, they still serve a purpose. It is with this mindset that we intend to explore the use of flower plots - the artistic opportunities combined with the display of quantitative information (even in a form that isn't optimal for quantitative comparisons) may be useful to engage viewers before transitioning to more useful data visualizations intended to provide accurate quantitative comparisons.
+
+EDA can be a difficult for a variety of groups of people, novice users and experienced researchers. One of the more difficult components of this project has been clearly articulating the purposes of EDA to a diverse group of researchers unfamiliar with the concept. One of the most useful parts of this dashboard iteration process has been as an aid to data discovery: that is, the dashboard motivated us to find additional data sources and incorporate them into the project. Having conversations with other researchers about the EDA process helped to facilitate these conversations, as each discussion seemed to uncover additional data sources that someone remembered after looking at the dashboard. While this facet of the dashboard process may be difficult to study formally, it would be an interesting avenue for investigation.
+
+\section{Conclusions}
+
+In this paper, we have documented the process of designing a dashboard for exploration and visualization of a large and complex data set assembled from many different sources. Our primary audience was leaders of small towns in Iowa, with a secondary audience of researchers in fields other than statistics collaborating on this project with us. Through the process of revising our dashboard, we found that the idea of guided discovery learning as implemented in our first version did not work as well as we had anticipated. It was more important to focus on allowing users to explore their questions about the dataset by facilitating user-driven comparisons and exploration, rather than attempting to anticipate user desires by providing comparison towns. In addition, we found that it would be more effective to draw users in with novel visual displays, as these seemed to attract more interest than providing known facts and an opportunity to explore outwards from an initial area of familiarity.
+
+While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.
 
 \hypertarget{ref-labels}{%
 \chapter{Tables, Graphics, References, and Labels}\label{ref-labels}}
@@ -674,31 +488,19 @@ You will probably find the resources at \url{http://www.lecb.ncifcrf.gov/~toms/l
 
 By far the easiest way to present tables in your thesis is to store the contents of the table in a CSV or Excel file, then read that file in to your R Markdown document as a data frame. Then you can style the table with the \texttt{kable} function, or functions in the \href{https://cran.r-project.org/web/packages/kableExtra/index.html}{kableExtra} pacakge.
 
-In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in \protect\hyperlink{rmd-basics}{R Markdown Basics} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document.
+In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in {[}R Markdown Basics{]} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3133}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5060}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1807}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.31}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.51}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.18}}@{}}
 \caption{\label{tab:inher} Correlation of Inheritance Factors for Parents and Child}\tabularnewline
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-Factors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Correlation between Parents \& Child
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Inherited
-\end{minipage} \\
+Factors & Correlation between Parents \& Child & Inherited \\
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{\linewidth}\centering
-Factors
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Correlation between Parents \& Child
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Inherited
-\end{minipage} \\
+Factors & Correlation between Parents \& Child & Inherited \\
 \midrule
 \endhead
 Education & -0.49 & Yes \\
@@ -709,7 +511,7 @@ Occupational Prestige & 0.21 & Slight \\
 \bottomrule
 \end{longtable}
 
-We can also create a link to the table by doing the following: Table \ref{tab:inher}. If you go back to \protect\hyperlink{loading-and-exploring-data}{Loading and exploring data} and look at the \texttt{kable} table, we can create a reference to this max delays table too: Table \ref{tab:maxdelays}. The addition of the \texttt{(\textbackslash{}\#tab:inher)} option to the end of the table caption allows us to then make a reference to Table \texttt{\textbackslash{}@ref(tab:label)}. Note that this reference could appear anywhere throughout the document after the table has appeared.
+We can also create a link to the table by doing the following: Table \ref{tab:inher}. If you go back to {[}Loading and exploring data{]} and look at the \texttt{kable} table, we can create a reference to this max delays table too: Table \ref{tab:maxdelays}. The addition of the \texttt{(\textbackslash{}\#tab:inher)} option to the end of the table caption allows us to then make a reference to Table \texttt{\textbackslash{}@ref(tab:label)}. Note that this reference could appear anywhere throughout the document after the table has appeared.
 
 \clearpage
 
@@ -718,7 +520,7 @@ We can also create a link to the table by doing the following: Table \ref{tab:in
 
 If your thesis has a lot of figures, \emph{R Markdown} might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier. If you label your figures, you can move the figures around and \emph{R Markdown} will automatically adjust the numbering for you. No need for you to remember! So that you don't have to get too far into LaTeX to do this, a couple \textbf{R} functions have been created for you to assist. You'll see their use below.
 
-In the \textbf{R} chunk below, we will load in a picture stored as \texttt{uw.png} in our main directory. We then give it the caption of ``UW logo'', the label of ``uwlogo'', and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
+In the \textbf{R} chunk below, we will load in a picture stored as \texttt{uw.png} in our main directory. We then give it the caption of ``UW logo,'' the label of ``uwlogo,'' and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -778,26 +580,26 @@ As another example, here is a reference: Figure \ref{fig:subd2}.
 \hypertarget{footnotes-and-endnotes}{%
 \section{Footnotes and Endnotes}\label{footnotes-and-endnotes}}
 
-You might want to footnote something. \footnote{footnote text} The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way.
+You might want to footnote something.\footnote{footnote text} The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way.
 
 \hypertarget{cross-referencing-chapters-and-sections}{%
 \section{Cross-referencing chapters and sections}\label{cross-referencing-chapters-and-sections}}
 
 The \href{https://bookdown.org/yihui/bookdown/cross-references.html}{bookdown documentation} is an excellent source for learning how to cross-reference in a bookdown project such as a huskydown document. Here we only cover the most common uses for a typical thesis. If you want something more complex or fancy, please refer to the bookdown documentation and seek help from the developers of that package.
 
-By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., \texttt{\#\ Chapter\ 1} will have an auto-generated ID \texttt{chapter-1}. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(chapter-1)}', which will print as `as discussed in Chapter 1'
+By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., \texttt{\#\ Chapter\ 1} will have an auto-generated ID \texttt{chapter-1}. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(chapter-1)},' which will print as `as discussed in Chapter 1'
 
 We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference. For example, at the top of the Rmd file for this chapter, you can see:
 
 \texttt{\#\ Tables,\ Graphics,\ References,\ and\ Labels\ \{\#ref-labels\}}
 
-The \texttt{\{\#ref-labels\}} part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(ref-labels)}', which will print as `as discussed in Chapter \ref{ref-labels}'. If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: \texttt{see\ {[}my\ chapter\ about\ labels{]}(\#ref-labels)\ for\ more\ details} which will appear as `see \protect\hyperlink{ref-labels}{my chapter about labels} for more details'
+The \texttt{\{\#ref-labels\}} part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(ref-labels)},' which will print as `as discussed in Chapter \ref{ref-labels}.' If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: \texttt{see\ {[}my\ chapter\ about\ labels{]}(\#ref-labels)\ for\ more\ details} which will appear as `see \protect\hyperlink{ref-labels}{my chapter about labels} for more details'
 
 To cross-reference a specific section in the same chapter, we recommend adding a custom ID label to the section header, and using that to cross-reference. For example, earlier in this chapter we have a section on tables and in the Rmd file we see \texttt{\#\#\ Tables\ \{\#tables\}}. We can cross-reference that in the text like this `as discussed in the section on \texttt{{[}tables{]}(\#tables)}' which will appear as `as discussed in the above section on \protect\hyperlink{tables}{tables}'
 
-To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document \texttt{as\ discussed\ in\ the\ section\ on\ {[}R\ code\ chunks{]}(\#r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)} which will appear as `as discussed in the section on \protect\hyperlink{r-chunks}{R code chunks} in Chapter \ref{rmd-basics}'.
+To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document \texttt{as\ discussed\ in\ the\ section\ on\ {[}R\ code\ chunks{]}(\#r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)} which will appear as `as discussed in the section on \protect\hyperlink{r-chunks}{R code chunks} in Chapter \ref{rmd-basics}.'
 
-If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: \texttt{as\ discussed\ in\ section\ \textbackslash{}@ref(r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)}. This will appear with section and chapter numbers like so: as `as discussed in section \ref{r-chunks} in Chapter \ref{rmd-basics}'.
+If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: \texttt{as\ discussed\ in\ section\ \textbackslash{}@ref(r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)}. This will appear with section and chapter numbers like so: as `as discussed in section \ref{r-chunks} in Chapter \ref{rmd-basics}.'
 
 \hypertarget{bibliographies}{%
 \section{Bibliographies}\label{bibliographies}}
@@ -905,88 +707,92 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-06-04 14:57:50. The repository is currently at this commit:
+This version of the thesis was generated on 2022-08-11 17:51:13. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
 \begin{verbatim}
 ## - Session info -------------------------------------------
 ##  setting  value
-##  version  R version 4.1.2 (2021-11-01)
-##  os       Windows 10 x64 (build 22000)
-##  system   x86_64, mingw32
-##  ui       RTerm
+##  version  R version 4.1.0 (2021-05-18)
+##  os       macOS 12.3.1
+##  system   x86_64, darwin17.0
+##  ui       RStudio
 ##  language (EN)
-##  collate  English_United States.1252
-##  ctype    English_United States.1252
-##  tz       America/Chicago
-##  date     2022-06-04
-##  pandoc   2.17.0.1 @ C:/Users/ERobi/AppData/Local/Programs/Quarto/bin/ (via rmarkdown)
+##  collate  en_US.UTF-8
+##  ctype    en_US.UTF-8
+##  tz       America/New_York
+##  date     2022-08-11
+##  rstudio  1.4.1717 Juliet Rose (desktop)
+##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
 ##  package     * version date (UTC) lib source
-##  assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.1.2)
-##  bookdown      0.24.10 2022-03-09 [1] Github (rstudio/bookdown@2821273)
-##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.2)
-##  callr         3.7.0   2021-04-20 [1] CRAN (R 4.1.2)
-##  cli           3.1.0   2021-10-27 [1] CRAN (R 4.1.2)
+##  assertthat    0.2.1   2019-03-21 [2] CRAN (R 4.1.0)
+##  bookdown      0.26    2022-04-15 [1] CRAN (R 4.1.2)
+##  brio          1.1.3   2021-11-30 [1] CRAN (R 4.1.0)
+##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.0)
+##  callr         3.7.0   2021-04-20 [2] CRAN (R 4.1.0)
+##  cli           3.3.0   2022-04-25 [1] CRAN (R 4.1.2)
+##  codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.0)
 ##  colorspace    2.0-3   2022-02-21 [1] CRAN (R 4.1.2)
-##  crayon        1.5.0   2022-02-14 [1] CRAN (R 4.1.2)
-##  DBI           1.1.2   2021-12-20 [1] CRAN (R 4.1.2)
+##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.1.0)
+##  DBI           1.1.2   2021-12-20 [1] CRAN (R 4.1.0)
 ##  desc          1.4.1   2022-03-06 [1] CRAN (R 4.1.2)
-##  devtools    * 2.4.3   2021-11-30 [1] CRAN (R 4.1.2)
-##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.2)
-##  dplyr       * 1.0.8   2022-02-08 [1] CRAN (R 4.1.2)
-##  ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.1.2)
+##  devtools    * 2.4.3   2021-11-30 [1] CRAN (R 4.1.0)
+##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.0)
+##  dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.1.2)
+##  ellipsis      0.3.2   2021-04-29 [2] CRAN (R 4.1.0)
 ##  evaluate      0.15    2022-02-18 [1] CRAN (R 4.1.2)
-##  fansi         1.0.2   2022-01-14 [1] CRAN (R 4.1.2)
-##  farver        2.1.0   2021-02-28 [1] CRAN (R 4.1.2)
-##  fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.1.2)
-##  formatR       1.12    2022-03-31 [1] CRAN (R 4.1.3)
-##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.2)
-##  generics      0.1.2   2022-01-31 [1] CRAN (R 4.1.2)
-##  ggplot2     * 3.3.5   2021-06-25 [1] CRAN (R 4.1.2)
-##  git2r         0.29.0  2021-11-22 [1] CRAN (R 4.1.2)
-##  glue          1.6.0   2021-12-17 [1] CRAN (R 4.1.2)
-##  gtable        0.3.0   2019-03-25 [1] CRAN (R 4.1.2)
-##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.2)
-##  huskydown   * 0.0.5   2022-03-09 [1] Github (benmarwick/huskydown@addb48e)
-##  knitr       * 1.37    2021-12-16 [1] CRAN (R 4.1.2)
-##  labeling      0.4.2   2020-10-20 [1] CRAN (R 4.1.1)
-##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.2)
-##  magrittr      2.0.1   2020-11-17 [1] CRAN (R 4.1.2)
-##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.2)
-##  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.1.2)
+##  fansi         1.0.3   2022-03-24 [1] CRAN (R 4.1.2)
+##  farver        2.1.1   2022-07-06 [1] CRAN (R 4.1.2)
+##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.1.0)
+##  formatR       1.12    2022-03-31 [1] CRAN (R 4.1.2)
+##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.0)
+##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.1.2)
+##  ggplot2     * 3.3.6   2022-05-03 [2] CRAN (R 4.1.2)
+##  git2r         0.30.1  2022-03-16 [1] CRAN (R 4.1.2)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
+##  gtable        0.3.0   2019-03-25 [2] CRAN (R 4.1.0)
+##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.0)
+##  huskydown   * 0.0.5   2022-01-16 [1] Github (benmarwick/huskydown@addb48e)
+##  knitr       * 1.39    2022-04-26 [1] CRAN (R 4.1.2)
+##  labeling      0.4.2   2020-10-20 [2] CRAN (R 4.1.0)
+##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.0)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.1.2)
+##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.0)
+##  munsell       0.5.0   2018-06-12 [2] CRAN (R 4.1.0)
 ##  pillar        1.7.0   2022-02-01 [1] CRAN (R 4.1.2)
-##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.2)
-##  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.1.2)
-##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.2)
-##  prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.1.2)
-##  processx      3.5.2   2021-04-30 [1] CRAN (R 4.1.2)
-##  ps            1.6.0   2021-02-28 [1] CRAN (R 4.1.2)
-##  purrr         0.3.4   2020-04-17 [1] CRAN (R 4.1.2)
-##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.2)
-##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.2)
-##  rlang         1.0.2   2022-03-04 [1] CRAN (R 4.1.2)
-##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.3)
-##  rprojroot     2.0.2   2020-11-15 [1] CRAN (R 4.1.2)
-##  rstudioapi    0.13    2020-11-12 [1] CRAN (R 4.1.2)
-##  scales        1.1.1   2020-05-11 [1] CRAN (R 4.1.2)
-##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.2)
-##  stringi       1.7.6   2021-11-29 [1] CRAN (R 4.1.2)
-##  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.1.2)
-##  testthat      3.1.1   2021-12-03 [1] CRAN (R 4.1.2)
-##  tibble        3.1.6   2021-11-07 [1] CRAN (R 4.1.2)
-##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.1.2)
-##  usethis     * 2.1.5   2021-12-09 [1] CRAN (R 4.1.2)
-##  utf8          1.2.2   2021-07-24 [1] CRAN (R 4.1.2)
-##  vctrs         0.3.8   2021-04-29 [1] CRAN (R 4.1.2)
+##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.0)
+##  pkgconfig     2.0.3   2019-09-22 [2] CRAN (R 4.1.0)
+##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.0)
+##  prettyunits   1.1.1   2020-01-24 [2] CRAN (R 4.1.0)
+##  processx      3.5.3   2022-03-25 [2] CRAN (R 4.1.2)
+##  ps            1.7.0   2022-04-23 [2] CRAN (R 4.1.2)
+##  purrr         0.3.4   2020-04-17 [2] CRAN (R 4.1.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.0)
+##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.0)
+##  rlang         1.0.4   2022-07-12 [1] CRAN (R 4.1.0)
+##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.2)
+##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.1.2)
+##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.1.0)
+##  scales        1.2.0   2022-04-13 [2] CRAN (R 4.1.2)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.0)
+##  stringi       1.7.8   2022-07-11 [1] CRAN (R 4.1.0)
+##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.1.0)
+##  testthat      3.1.4   2022-04-26 [1] CRAN (R 4.1.2)
+##  tibble        3.1.7   2022-05-03 [1] CRAN (R 4.1.2)
+##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.1.0)
+##  tinytex       0.39    2022-05-16 [1] CRAN (R 4.1.2)
+##  usethis     * 2.1.6   2022-05-25 [1] CRAN (R 4.1.2)
+##  utf8          1.2.2   2021-07-24 [2] CRAN (R 4.1.0)
+##  vctrs         0.4.1   2022-04-13 [1] CRAN (R 4.1.2)
 ##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
-##  xfun          0.29    2021-12-14 [1] CRAN (R 4.1.2)
-##  yaml          2.2.1   2020-02-01 [1] CRAN (R 4.1.1)
+##  xfun          0.31    2022-05-10 [1] CRAN (R 4.1.2)
+##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.1.2)
 ## 
-##  [1] C:/Users/ERobi/Documents/R/win-library/4.1
-##  [2] C:/Program Files/R/R-4.1.2/library
+##  [1] /Users/dbradford4/Library/R/x86_64/4.1/library
+##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
 ## 
 ## ----------------------------------------------------------
 \end{verbatim}
@@ -1005,20 +811,83 @@ The computational environment that was used to generate this version is as follo
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-angel2000}{}}%
+\leavevmode\hypertarget{ref-angel2000}{}%
 Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
 
-\leavevmode\vadjust pre{\hypertarget{ref-angel2001}{}}%
+\leavevmode\hypertarget{ref-angel2001}{}%
 Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach with QuickTime}. Boston, MA: Wesley Addison Longman.
 
-\leavevmode\vadjust pre{\hypertarget{ref-angel2002a}{}}%
+\leavevmode\hypertarget{ref-angel2002a}{}%
 Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Molina1994}{}}%
+\leavevmode\hypertarget{ref-Bendix:2005}{}%
+Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
+
+\leavevmode\hypertarget{ref-dOcagne:1885}{}%
+d'Ocagne, M. (1885). {Coordonnées parallèles et axiales : Méthode de transformation géométrique et procédé nouveau de calcul graphique déduits de la considération des coordonnées parallèles}. \emph{Gauthier-Villars}, 112. Retrieved from \url{https://archive.org/details/coordonnesparal00ocaggoog/page/n10}
+
+\leavevmode\hypertarget{ref-sine}{}%
+Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \emph{20}, 49--55.
+
+\leavevmode\hypertarget{ref-dedonno}{}%
+DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discovery learning of a complex real-world task. \emph{Learning and Individual Differences}, \emph{49}, 11--16.
+
+\leavevmode\hypertarget{ref-few}{}%
+Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
+
+\leavevmode\hypertarget{ref-density-pcp}{}%
+Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{15}(6), 1531--1538. http://doi.org/\href{https://doi.org/10.1109/TVCG.2009.131}{10.1109/TVCG.2009.131}
+
+\leavevmode\hypertarget{ref-Hofmann:2013}{}%
+Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
+
+\leavevmode\hypertarget{ref-lee}{}%
+Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
+
+\leavevmode\hypertarget{ref-luxen-vetter-2011}{}%
+Luxen, D., \& Vetter, C. (2011). Real-time routing with OpenStreetMap data. In \emph{Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems} (pp. 513--516). New York, NY, USA: ACM. http://doi.org/\href{https://doi.org/10.1145/2093973.2094062}{10.1145/2093973.2094062}
+
+\leavevmode\hypertarget{ref-Molina1994}{}%
 Molina, S. T., \& Borkovec, T. D. (1994). The {P}enn {S}tate worry questionnaire: Psychometric properties and associated characteristics. In G. C. L. Davey \& F. Tallis (Eds.), \emph{Worrying: Perspectives on theory, assessment and treatment} (pp. 265--283). New York: Wiley.
 
-\leavevmode\vadjust pre{\hypertarget{ref-reedweb2007}{}}%
+\leavevmode\hypertarget{ref-elsi}{}%
+National Center for Education Statistics. (2020). National center for education statistics. \url{https://nces.ed.gov/}.
+
+\leavevmode\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}%
+Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
+
+\leavevmode\hypertarget{ref-r}{}%
+R Core Team. (2022). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\hypertarget{ref-reedweb2007}{}%
 Reed~College. (2007). LaTeX your document. Retrieved from \url{http://web.reed.edu/cis/help/LaTeX/index.html}
+
+\leavevmode\hypertarget{ref-scc}{}%
+Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksmart.org/}.
+
+\leavevmode\hypertarget{ref-fisher}{}%
+Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
+
+\leavevmode\hypertarget{ref-iowa_gov}{}%
+State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
+
+\leavevmode\hypertarget{ref-Rural_classification}{}%
+USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics/rural-economy-population/rural-classifications/}.
+
+\leavevmode\hypertarget{ref-usda}{}%
+USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
+
+\leavevmode\hypertarget{ref-sineillusion}{}%
+VanderPlas, S., \& Hofmann, H. (2015). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
+
+\leavevmode\hypertarget{ref-ggplot2}{}%
+Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed.). Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\hypertarget{ref-tourr}{}%
+Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for Exploring Multivariate Data with Projections}. \emph{Journal of Statistical Software, Articles}, \emph{40}(2), 1--18. http://doi.org/\href{https://doi.org/10.18637/jss.v040.i02}{10.18637/jss.v040.i02}
+
+\leavevmode\hypertarget{ref-zarecor2021rural}{}%
+Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
 
 \end{CSLReferences}
 

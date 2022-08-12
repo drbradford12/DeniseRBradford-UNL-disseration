@@ -1,3 +1,104 @@
+---
+# UNL thesis fields
+title: "DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS"
+author: "Denise Renee Bradford"
+month: "Month"
+year: "Year"
+location: "Lincoln, Nebraska"
+major: "Statistics"
+adviser: "Susan R. VanderPlas, Ph.D"
+abstract: |
+  Here is my abstract. *(350 word limit)*
+acknowledgments: |
+  Thank you to all my people!
+dedication: |
+  Dedicated to...
+# End of UNL thesis fields
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  bookdown::pdf_book:
+    pandoc_args: --top-level-division=chapter
+    keep_tex: yes
+    latex_engine: xelatex
+    template: template.tex
+  huskydown::thesis_gitbook: 
+    style: style.css
+#  huskydown::thesis_word: default
+#  huskydown::thesis_epub: default
+bibliography: bib/thesis.bib
+# Download your specific bibliography database file and refer to it in the line above.
+csl: bib/apa.csl
+# Download your specific csl file and refer to it in the line above.
+lot: true
+lof: true
+#header-includes:
+#- \usepackage{tikz}
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+-->
+
+<!--
+If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
+-->
+
+
+
+
+
+<!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers on chapters. -->
+
+<!-- # Introduction {.unnumbered} -->
+
+# Introduction
+
+
+
+<!--chapter:end:index.Rmd-->
+
+<!--
+The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.
+-->
+
+# Literature Review {#rmd-basics}
+\section{ History of Visual Inference }
+
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
+
+
+Plots of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correkation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. 
+
+
+\subsection{ Formal Definition }
+
+\subsection{ Applications }
+
+
+\section{ History of Dashboard Design }
+
+\subsection{ Formal Definitions }
+
+\subsection{ Stephen Few Influences }
+
+\subsection{ Applications }
+
+
+\section{ Parallel Coordinate Plot Visualizations }
+
+\subsection{R Packages}
+
+\subsection{\textbf{ggpcp} package importance}
+
+
+\section{ Summary }
+
+
+<!--chapter:end:01-chap1.Rmd-->
+
 # Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue {#math-sci}
 
 <!-- Required to number equations in HTML files -->
@@ -178,4 +279,375 @@ EDA can be a difficult for a variety of groups of people, novice users and exper
 In this paper, we have documented the process of designing a dashboard for exploration and visualization of a large and complex data set assembled from many different sources. Our primary audience was leaders of small towns in Iowa, with a secondary audience of researchers in fields other than statistics collaborating on this project with us. Through the process of revising our dashboard, we found that the idea of guided discovery learning as implemented in our first version did not work as well as we had anticipated. It was more important to focus on allowing users to explore their questions about the dataset by facilitating user-driven comparisons and exploration, rather than attempting to anticipate user desires by providing comparison towns. In addition, we found that it would be more effective to draw users in with novel visual displays, as these seemed to attract more interest than providing known facts and an opportunity to explore outwards from an initial area of familiarity.
 
 While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.
+
+
+<!--chapter:end:02-chap2.Rmd-->
+
+
+
+
+# Tables, Graphics, References, and Labels {#ref-labels}
+
+## Tables {#tables}
+
+By far the easiest way to present tables in your thesis is to store the contents of the table in a CSV or Excel file, then read that file in to your R Markdown document as a data frame. Then you can style the table with the `kable` function, or functions in the [kableExtra](https://cran.r-project.org/web/packages/kableExtra/index.html) pacakge. 
+
+In addition to the tables that can be automatically generated from a data frame in **R** that you saw in [R Markdown Basics] using the `kable` function, you can also create tables using _pandoc_. (More information is available at <http://pandoc.org/README.html#tables>.)  This might be useful if you don't have values specifically stored in **R**, but you'd like to display them in table form.  Below is an example.  Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document. 
+
+----------------------------------------------------------------------------------
+  Factors                    Correlation between Parents & Child      Inherited
+------------------------- ----------------------------------------- --------------
+  Education                                -0.49                         Yes
+  
+  Socio-Economic Status                     0.28                        Slight   
+  
+  Income                                    0.08                          No
+  
+  Family Size                               0.18                        Slight
+  
+  Occupational Prestige                     0.21                        Slight
+------------------------- ----------------------------------------- --------------
+Table: (\#tab:inher) Correlation of Inheritance Factors for Parents and Child 
+
+We can also create a link to the table by doing the following: Table \@ref(tab:inher).  If you go back to [Loading and exploring data] and look at the `kable` table, we can create a reference to this max delays table too: Table \@ref(tab:maxdelays). The addition of the `(\#tab:inher)` option to the end of the table caption allows us to then make a reference to Table `\@ref(tab:label)`. Note that this reference could appear anywhere throughout the document after the table has appeared.  
+
+<!-- We will next explore ways to create this label-ref link using figures. -->
+
+\clearpage
+
+<!-- clearpage ends the page, and also dumps out all floats.
+  Floats are things like tables and figures. -->
+
+
+## Figures
+
+If your thesis has a lot of figures, _R Markdown_ might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier.  If you label your figures, you can move the figures around and _R Markdown_ will automatically adjust the numbering for you.  No need for you to remember!  So that you don't have to get too far into LaTeX to do this, a couple **R** functions have been created for you to assist.  You'll see their use below.
+
+<!--
+One thing that may be annoying is the way _R Markdown_ handles "floats" like tables and figures (it's really \LaTeX's fault). \LaTeX\ will try to find the best place to put your object based on the text around it and until you're really, truly done writing you should just leave it where it lies. There are some optional arguments specified in the options parameter of the `label` function.  If you need to shift your figure around, it might be good to look here on tweaking the options argument:  <https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions>
+
+If you need a graphic or tabular material to be part of the text, you can just put it inline. If you need it to appear in the list of figures or tables, it should be placed in a code chunk.
+-->
+
+
+In the **R** chunk below, we will load in a picture stored as `uw.png` in our main directory.  We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
+
+
+```r
+include_graphics(path = "figure/unl.png")
+```
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figure/unl} \caption{logo}(\#fig:uwlogo)
+\end{figure}
+
+Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
+
+\clearpage 
+
+<!-- starts a new page and stops trying to place floats such as tables and figures -->
+
+Below we will investigate how to save the output of an **R** plot and label it in a way similar to that done above.  Recall the `flights` dataset from Chapter \@ref(rmd-basics).  (Note that we've shown a different way to reference a section or chapter here.)  We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014.  Note also the use of the `scale` parameter which is discussed on the next page.
+
+
+```r
+flights %>%
+    group_by(carrier) %>%
+    summarize(mean_dep_delay = mean(dep_delay)) %>%
+    ggplot(aes(x = carrier, y = mean_dep_delay)) +
+    geom_bar(position = "identity", stat = "identity",
+        fill = "red")
+```
+
+\begin{figure}
+\includegraphics[width=\linewidth]{thesis_files/figure-latex/delaysboxplot-1} \caption{Mean Delays by Airline}(\#fig:delaysboxplot)
+\end{figure}
+
+Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
+
+A table linking these carrier codes to airline names is available at <https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv>.
+
+\clearpage
+
+Next, we will explore the use of the `out.extra` chunk option, which can be used to shrink or expand an image loaded from a file by specifying `"scale= "`. Here we use the mathematical graph stored in the "subdivision.pdf" file.
+
+\begin{figure}
+\includegraphics[width=\linewidth,scale=0.75]{figure/subdivision} \caption{Subdiv. graph}(\#fig:subd)
+\end{figure}
+
+Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
+
+**More Figure Stuff**
+
+Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
+
+\begin{figure}
+\includegraphics[width=\linewidth,angle=180, scale=1.1]{figure/subdivision} \caption{A Larger Figure, Flipped Upside Down}(\#fig:subd2)
+\end{figure}
+
+As another example, here is a reference: Figure \@ref(fig:subd2).  
+
+## Footnotes and Endnotes
+
+You might want to footnote something. ^[footnote text] The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way. 
+
+## Cross-referencing chapters and sections 
+
+The [bookdown documentation](https://bookdown.org/yihui/bookdown/cross-references.html) is an excellent source for learning how to cross-reference in a bookdown project such as a huskydown document. Here we only cover the most common uses for a typical thesis. If you want something more complex or fancy, please refer to the bookdown documentation and seek help from the developers of that package. 
+
+By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., `# Chapter 1` will have an auto-generated ID `chapter-1`. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: 'as discussed in Chapter `\@ref(chapter-1)`', which will print as 'as discussed in Chapter 1'
+
+We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference. For example, at the top of the Rmd file for this chapter, you can see:
+
+`# Tables, Graphics, References, and Labels {#ref-labels}`
+
+The `{#ref-labels}` part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: 'as discussed in Chapter `\@ref(ref-labels)`', which will print as 'as discussed in Chapter \@ref(ref-labels)'. If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: `see [my chapter about labels](#ref-labels) for more details` which will appear as 'see [my chapter about labels](#ref-labels) for more details'
+
+To cross-reference a specific section in the same chapter, we recommend adding a custom ID label to the section header, and using that to cross-reference. For example, earlier in this chapter we have a section on tables and in the Rmd file we see `## Tables {#tables}`. We can cross-reference that in the text like this 'as discussed in the section on `[tables](#tables)`' which will appear as 'as discussed in the above section on [tables](#tables)'
+
+To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document `as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(rmd-basics)` which will appear as 'as discussed in the section on [R code chunks](#r-chunks) in Chapter \@ref(rmd-basics)'. 
+
+If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: `as discussed in section \@ref(r-chunks) in Chapter \@ref(rmd-basics)`. This will appear with section and chapter numbers like so: as 'as discussed in section \@ref(r-chunks) in Chapter \@ref(rmd-basics)'. 
+
+## Bibliographies
+
+Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension).  In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero. Some Zotero documentation is at <http://libguides.reed.edu/citation/zotero>.  In addition, a tutorial is available from Middlebury College at <http://sites.middlebury.edu/zoteromiddlebury/>.
+
+_R Markdown_ uses _pandoc_ (<http://pandoc.org/>) to build its bibliographies.  One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the "at" symbol.  For example, here's a reference to a book about worrying:  [@Molina1994].  This `Molina1994` entry appears in a file called `thesis.bib` in the `bib` folder.  This bibliography database file was created by a program called BibTeX.  You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the `bib` folder.  
+
+For more information about BibTeX and bibliographies, see (<http://web.reed.edu/cis/help/latex/index.html>)^[@reedweb2007]. There are three pages on this topic:  _bibtex_ (which talks about using BibTeX, at <http://web.reed.edu/cis/help/latex/bibtex.html>), _bibtexstyles_ (about how to find and use the bibliography style that best suits your needs, at <http://web.reed.edu/cis/help/latex/bibtexstyles.html>) and _bibman_ (which covers how to make and maintain a bibliography by hand, without BibTeX, at <http://web.reed.edu/cis/help/latex/bibman.html>). The last page will not be useful unless you have only a few sources.
+
+If you look at the YAML header at the top of the main .Rmd file you can see that we can specify the style of the bibliography by referencing the appropriate csl file.  You can download a variety of different style files at <https://www.zotero.org/styles>.  Make sure to download the file into the csl folder.
+
+**Tips for Bibliographies**
+
+- Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. 
+- The cite key (a citation's label) needs to be unique from the other entries.
+- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
+- Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
+- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
+
+## Anything else?
+
+If you'd like to see examples of other things in this template, please [contact us](https://github.com/benmarwick/huskydown/issues/new) (email <bmarwick@uw.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
+
+
+<!--chapter:end:03-chap3.Rmd-->
+
+# Conclusion {-}
+
+If we don't want Conclusion to have a chapter number next to it, we can add the `{-}` attribute.
+
+**More info**
+
+And here's some other random info: the first paragraph after a chapter title or section head _shouldn't be_ indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+
+
+<!--chapter:end:04-conclusion.Rmd-->
+
+\appendix
+
+ 
+
+<!--
+If you feel it necessary to include an appendix, it goes here.
+-->
+
+
+# The First Appendix
+
+This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+
+**In the main Rmd file**
+
+
+```r
+# This chunk ensures that the huskydown
+# package is installed and loaded. This
+# huskydown package includes the template
+# files for the thesis.
+if (!require(devtools)) install.packages("devtools",
+    repos = "http://cran.rstudio.com")
+if (!require(huskydown)) devtools::install_github("benmarwick/huskydown")
+library(huskydown)
+```
+
+**In Chapter \@ref(ref-labels):**
+
+
+```r
+# This chunk ensures that the huskydown
+# package is installed and loaded. This
+# huskydown package includes the template
+# files for the thesis and also two
+# functions used for labeling and
+# referencing
+if (!require(devtools)) install.packages("devtools",
+    repos = "http://cran.rstudio.com")
+if (!require(dplyr)) install.packages("dplyr",
+    repos = "http://cran.rstudio.com")
+if (!require(ggplot2)) install.packages("ggplot2",
+    repos = "http://cran.rstudio.com")
+if (!require(ggplot2)) install.packages("bookdown",
+    repos = "http://cran.rstudio.com")
+if (!require(huskydown)) {
+    library(devtools)
+    devtools::install_github("benmarwick/huskydown")
+}
+library(huskydown)
+flights <- read.csv("data/flights.csv")
+```
+
+# The Second Appendix, for Fun
+
+<!--chapter:end:05-appendix.Rmd-->
+
+# Colophon {-}
+
+This document is set in [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/). The body text is set at 11pt with $\familydefault$. 
+
+It was written in R Markdown and $\LaTeX$, and rendered into PDF using [huskydown](https://github.com/benmarwick/huskydown) and [bookdown](https://github.com/rstudio/bookdown). 
+
+This document was typeset using the XeTeX typesetting system, and the [University of Washington Thesis class](http://staff.washington.edu/fox/tex/) class created by Jim Fox. Under the hood, the [University of Washington Thesis LaTeX template](https://github.com/UWIT-IAM/UWThesis) is used to ensure that documents conform precisely to submission standards. Other elements of the document formatting source code have been taken from the [Latex, Knitr, and RMarkdown templates for UC Berkeley's graduate thesis](https://github.com/stevenpollack/ucbthesis), and [Dissertate: a LaTeX dissertation template to support the production and typesetting of a PhD dissertation at Harvard, Princeton, and NYU](https://github.com/suchow/Dissertate)
+
+The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx. A hard copy of the thesis can be found in the University of Washington library.
+
+This version of the thesis was generated on 2022-08-11 17:51:13. The repository is currently at this commit:
+
+
+
+The computational environment that was used to generate this version is as follows:
+
+
+```
+## - Session info -------------------------------------------
+##  setting  value
+##  version  R version 4.1.0 (2021-05-18)
+##  os       macOS 12.3.1
+##  system   x86_64, darwin17.0
+##  ui       RStudio
+##  language (EN)
+##  collate  en_US.UTF-8
+##  ctype    en_US.UTF-8
+##  tz       America/New_York
+##  date     2022-08-11
+##  rstudio  1.4.1717 Juliet Rose (desktop)
+##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
+## 
+## - Packages -----------------------------------------------
+##  package     * version date (UTC) lib source
+##  assertthat    0.2.1   2019-03-21 [2] CRAN (R 4.1.0)
+##  bookdown      0.26    2022-04-15 [1] CRAN (R 4.1.2)
+##  brio          1.1.3   2021-11-30 [1] CRAN (R 4.1.0)
+##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.0)
+##  callr         3.7.0   2021-04-20 [2] CRAN (R 4.1.0)
+##  cli           3.3.0   2022-04-25 [1] CRAN (R 4.1.2)
+##  codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.0)
+##  colorspace    2.0-3   2022-02-21 [1] CRAN (R 4.1.2)
+##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.1.0)
+##  DBI           1.1.2   2021-12-20 [1] CRAN (R 4.1.0)
+##  desc          1.4.1   2022-03-06 [1] CRAN (R 4.1.2)
+##  devtools    * 2.4.3   2021-11-30 [1] CRAN (R 4.1.0)
+##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.0)
+##  dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.1.2)
+##  ellipsis      0.3.2   2021-04-29 [2] CRAN (R 4.1.0)
+##  evaluate      0.15    2022-02-18 [1] CRAN (R 4.1.2)
+##  fansi         1.0.3   2022-03-24 [1] CRAN (R 4.1.2)
+##  farver        2.1.1   2022-07-06 [1] CRAN (R 4.1.2)
+##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.1.0)
+##  formatR       1.12    2022-03-31 [1] CRAN (R 4.1.2)
+##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.0)
+##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.1.2)
+##  ggplot2     * 3.3.6   2022-05-03 [2] CRAN (R 4.1.2)
+##  git2r         0.30.1  2022-03-16 [1] CRAN (R 4.1.2)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
+##  gtable        0.3.0   2019-03-25 [2] CRAN (R 4.1.0)
+##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.0)
+##  huskydown   * 0.0.5   2022-01-16 [1] Github (benmarwick/huskydown@addb48e)
+##  knitr       * 1.39    2022-04-26 [1] CRAN (R 4.1.2)
+##  labeling      0.4.2   2020-10-20 [2] CRAN (R 4.1.0)
+##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.0)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.1.2)
+##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.0)
+##  munsell       0.5.0   2018-06-12 [2] CRAN (R 4.1.0)
+##  pillar        1.7.0   2022-02-01 [1] CRAN (R 4.1.2)
+##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.0)
+##  pkgconfig     2.0.3   2019-09-22 [2] CRAN (R 4.1.0)
+##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.0)
+##  prettyunits   1.1.1   2020-01-24 [2] CRAN (R 4.1.0)
+##  processx      3.5.3   2022-03-25 [2] CRAN (R 4.1.2)
+##  ps            1.7.0   2022-04-23 [2] CRAN (R 4.1.2)
+##  purrr         0.3.4   2020-04-17 [2] CRAN (R 4.1.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.0)
+##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.0)
+##  rlang         1.0.4   2022-07-12 [1] CRAN (R 4.1.0)
+##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.2)
+##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.1.2)
+##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.1.0)
+##  scales        1.2.0   2022-04-13 [2] CRAN (R 4.1.2)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.0)
+##  stringi       1.7.8   2022-07-11 [1] CRAN (R 4.1.0)
+##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.1.0)
+##  testthat      3.1.4   2022-04-26 [1] CRAN (R 4.1.2)
+##  tibble        3.1.7   2022-05-03 [1] CRAN (R 4.1.2)
+##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.1.0)
+##  tinytex       0.39    2022-05-16 [1] CRAN (R 4.1.2)
+##  usethis     * 2.1.6   2022-05-25 [1] CRAN (R 4.1.2)
+##  utf8          1.2.2   2021-07-24 [2] CRAN (R 4.1.0)
+##  vctrs         0.4.1   2022-04-13 [1] CRAN (R 4.1.2)
+##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
+##  xfun          0.31    2022-05-10 [1] CRAN (R 4.1.2)
+##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.1.2)
+## 
+##  [1] /Users/dbradford4/Library/R/x86_64/4.1/library
+##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
+## 
+## ----------------------------------------------------------
+```
+
+
+<!--chapter:end:98-colophon.Rmd-->
+
+<!--
+The bib chunk below must go last in this document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+-->
+
+\backmatter
+
+<!-- 
+If you'd like to change the name of the bibliography to something else,
+delete "References" and replace it.
+-->
+
+# References {-}
+<!--
+This manually sets the header for this unnumbered chapter.
+-->
+<!-- \markboth{References}{References} -->
+<!--
+To remove the indentation of the first entry.
+-->
+\noindent
+
+<!--
+To create a hanging indent and spacing between entries.  These three lines may need to be removed for styles that don't require the hanging indent.
+-->
+
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+
+<!--
+This is just for testing with more citations for the bibliography at the end.  Add other entries into the list here if you'd like them to appear in the bibliography even if they weren't explicitly cited in the document.
+-->
+
+---
+nocite: | 
+  @angel2000, @angel2001, @angel2002a
+...
+
+
+
+<!--chapter:end:99-references.Rmd-->
 
