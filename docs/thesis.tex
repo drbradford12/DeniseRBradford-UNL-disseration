@@ -479,7 +479,7 @@ Our dashboard design philosophy worked primarily to promote a town-centric appro
 
 While we initially framed the design around guided discovery learning, the approach did not seem to suffice for our user base; instead, we found that users were more drawn to the unfamiliar from the start. We will likely leverage this in future iterations by using visual forms such as flower plots to draw the users in; even though these plots are not ideal for numerical display of data, the visual novelty and aesthetic appeal will provide some motivation to continue exploring and thinking about the data.
 
-One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as ``Town 1,'' ``Town 2,'' and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.
+One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as ``Town 1'', ``Town 2'', and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.
 
 We also recognize that we need to leverage the expertise of others in our research team: we are working with artists, researchers in architecture, economists, and sociologists; these researchers provide outside knowledge that we do not have and may be able to help us create insightful use-cases to showcase the app and teach towns how to use it. We can also leverage the app to connect users with our research team, providing additional value to those who use the applet and facilitating development of strategies for maintaining quality of life amid shrinking populations.
 
@@ -508,24 +508,36 @@ By far the easiest way to present tables in your thesis is to store the contents
 In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in {[}R Markdown Basics{]} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document.
 
 \begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.31}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.51}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.18}}@{}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3133}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5060}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1807}}@{}}
 \caption{\label{tab:inher} Correlation of Inheritance Factors for Parents and Child}\tabularnewline
-\toprule
-Factors & Correlation between Parents \& Child & Inherited \\
-\midrule
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Factors
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Correlation between Parents \& Child
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Inherited
+\end{minipage} \\
+\midrule()
 \endfirsthead
-\toprule
-Factors & Correlation between Parents \& Child & Inherited \\
-\midrule
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Factors
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Correlation between Parents \& Child
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Inherited
+\end{minipage} \\
+\midrule()
 \endhead
 Education & -0.49 & Yes \\
 Socio-Economic Status & 0.28 & Slight \\
 Income & 0.08 & No \\
 Family Size & 0.18 & Slight \\
 Occupational Prestige & 0.21 & Slight \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 We can also create a link to the table by doing the following: Table \ref{tab:inher}. If you go back to {[}Loading and exploring data{]} and look at the \texttt{kable} table, we can create a reference to this max delays table too: Table \ref{tab:maxdelays}. The addition of the \texttt{(\textbackslash{}\#tab:inher)} option to the end of the table caption allows us to then make a reference to Table \texttt{\textbackslash{}@ref(tab:label)}. Note that this reference could appear anywhere throughout the document after the table has appeared.
@@ -537,7 +549,7 @@ We can also create a link to the table by doing the following: Table \ref{tab:in
 
 If your thesis has a lot of figures, \emph{R Markdown} might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier. If you label your figures, you can move the figures around and \emph{R Markdown} will automatically adjust the numbering for you. No need for you to remember! So that you don't have to get too far into LaTeX to do this, a couple \textbf{R} functions have been created for you to assist. You'll see their use below.
 
-In the \textbf{R} chunk below, we will load in a picture stored as \texttt{uw.png} in our main directory. We then give it the caption of ``UW logo,'' the label of ``uwlogo,'' and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
+In the \textbf{R} chunk below, we will load in a picture stored as \texttt{uw.png} in our main directory. We then give it the caption of ``UW logo'', the label of ``uwlogo'', and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -560,8 +572,8 @@ Below we will investigate how to save the output of an \textbf{R} plot and label
 \NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{group\_by}\NormalTok{(carrier) }\SpecialCharTok{\%\textgreater{}\%}
     \FunctionTok{summarize}\NormalTok{(}\AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay)) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ carrier, }\AttributeTok{y =}\NormalTok{ mean\_dep\_delay)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{,}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ carrier, }\AttributeTok{y =}\NormalTok{ mean\_dep\_delay)) }\SpecialCharTok{+} 
+    \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }
         \AttributeTok{fill =} \StringTok{"red"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -597,26 +609,26 @@ As another example, here is a reference: Figure \ref{fig:subd2}.
 \hypertarget{footnotes-and-endnotes}{%
 \section{Footnotes and Endnotes}\label{footnotes-and-endnotes}}
 
-You might want to footnote something.\footnote{footnote text} The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way.
+You might want to footnote something. \footnote{footnote text} The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way.
 
 \hypertarget{cross-referencing-chapters-and-sections}{%
 \section{Cross-referencing chapters and sections}\label{cross-referencing-chapters-and-sections}}
 
 The \href{https://bookdown.org/yihui/bookdown/cross-references.html}{bookdown documentation} is an excellent source for learning how to cross-reference in a bookdown project such as a huskydown document. Here we only cover the most common uses for a typical thesis. If you want something more complex or fancy, please refer to the bookdown documentation and seek help from the developers of that package.
 
-By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., \texttt{\#\ Chapter\ 1} will have an auto-generated ID \texttt{chapter-1}. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(chapter-1)},' which will print as `as discussed in Chapter 1'
+By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., \texttt{\#\ Chapter\ 1} will have an auto-generated ID \texttt{chapter-1}. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(chapter-1)}', which will print as `as discussed in Chapter 1'
 
 We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference. For example, at the top of the Rmd file for this chapter, you can see:
 
 \texttt{\#\ Tables,\ Graphics,\ References,\ and\ Labels\ \{\#ref-labels\}}
 
-The \texttt{\{\#ref-labels\}} part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(ref-labels)},' which will print as `as discussed in Chapter \ref{ref-labels}.' If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: \texttt{see\ {[}my\ chapter\ about\ labels{]}(\#ref-labels)\ for\ more\ details} which will appear as `see \protect\hyperlink{ref-labels}{my chapter about labels} for more details'
+The \texttt{\{\#ref-labels\}} part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(ref-labels)}', which will print as `as discussed in Chapter \ref{ref-labels}'. If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: \texttt{see\ {[}my\ chapter\ about\ labels{]}(\#ref-labels)\ for\ more\ details} which will appear as `see \protect\hyperlink{ref-labels}{my chapter about labels} for more details'
 
 To cross-reference a specific section in the same chapter, we recommend adding a custom ID label to the section header, and using that to cross-reference. For example, earlier in this chapter we have a section on tables and in the Rmd file we see \texttt{\#\#\ Tables\ \{\#tables\}}. We can cross-reference that in the text like this `as discussed in the section on \texttt{{[}tables{]}(\#tables)}' which will appear as `as discussed in the above section on \protect\hyperlink{tables}{tables}'
 
-To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document \texttt{as\ discussed\ in\ the\ section\ on\ {[}R\ code\ chunks{]}(\#r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)} which will appear as `as discussed in the section on \protect\hyperlink{r-chunks}{R code chunks} in Chapter \ref{rmd-basics}.'
+To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document \texttt{as\ discussed\ in\ the\ section\ on\ {[}R\ code\ chunks{]}(\#r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)} which will appear as `as discussed in the section on \protect\hyperlink{r-chunks}{R code chunks} in Chapter \ref{rmd-basics}'.
 
-If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: \texttt{as\ discussed\ in\ section\ \textbackslash{}@ref(r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)}. This will appear with section and chapter numbers like so: as `as discussed in section \ref{r-chunks} in Chapter \ref{rmd-basics}.'
+If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: \texttt{as\ discussed\ in\ section\ \textbackslash{}@ref(r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)}. This will appear with section and chapter numbers like so: as `as discussed in section \ref{r-chunks} in Chapter \ref{rmd-basics}'.
 
 \hypertarget{bibliographies}{%
 \section{Bibliographies}\label{bibliographies}}
@@ -675,10 +687,12 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \CommentTok{\# package is installed and loaded. This}
 \CommentTok{\# huskydown package includes the template}
 \CommentTok{\# files for the thesis.}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{,}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }
     \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(huskydown)) devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"benmarwick/huskydown"}\NormalTok{)}
-\FunctionTok{library}\NormalTok{(huskydown)}
+\CommentTok{\# if(!require(huskydown))}
+\CommentTok{\# devtools::install\_github(}
+\CommentTok{\# \textquotesingle{}benmarwick/huskydown\textquotesingle{} ) library(huskydown)}
+\FunctionTok{library}\NormalTok{(knitr)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -689,16 +703,15 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \CommentTok{\# This chunk ensures that the huskydown}
 \CommentTok{\# package is installed and loaded. This}
 \CommentTok{\# huskydown package includes the template}
-\CommentTok{\# files for the thesis and also two}
-\CommentTok{\# functions used for labeling and}
-\CommentTok{\# referencing}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{,}
+\CommentTok{\# files for the thesis and also two functions}
+\CommentTok{\# used for labeling and referencing}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }
     \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{,}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }
     \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{,}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }
     \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{,}
+\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{, }
     \AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(huskydown)) \{}
     \FunctionTok{library}\NormalTok{(devtools)}
@@ -724,92 +737,98 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-08-17 22:15:40. The repository is currently at this commit:
+This version of the thesis was generated on 2022-09-13 09:06:24. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
 \begin{verbatim}
 ## - Session info -------------------------------------------
 ##  setting  value
-##  version  R version 4.1.0 (2021-05-18)
-##  os       macOS 12.3.1
-##  system   x86_64, darwin17.0
-##  ui       RStudio
+##  version  R version 4.2.1 (2022-06-23)
+##  os       Ubuntu 22.04.1 LTS
+##  system   x86_64, linux-gnu
+##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-17
-##  rstudio  1.4.1717 Juliet Rose (desktop)
-##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
+##  tz       America/Chicago
+##  date     2022-09-13
+##  pandoc   2.18 @ /usr/lib/rstudio/bin/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
 ##  package     * version date (UTC) lib source
-##  assertthat    0.2.1   2019-03-21 [2] CRAN (R 4.1.0)
-##  bookdown      0.26    2022-04-15 [1] CRAN (R 4.1.2)
-##  brio          1.1.3   2021-11-30 [1] CRAN (R 4.1.0)
-##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.0)
-##  callr         3.7.0   2021-04-20 [2] CRAN (R 4.1.0)
-##  cli           3.3.0   2022-04-25 [1] CRAN (R 4.1.2)
-##  codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.0)
-##  colorspace    2.0-3   2022-02-21 [1] CRAN (R 4.1.2)
-##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.1.0)
-##  DBI           1.1.2   2021-12-20 [1] CRAN (R 4.1.0)
-##  desc          1.4.1   2022-03-06 [1] CRAN (R 4.1.2)
-##  devtools    * 2.4.3   2021-11-30 [1] CRAN (R 4.1.0)
-##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.0)
-##  dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.1.2)
-##  ellipsis      0.3.2   2021-04-29 [2] CRAN (R 4.1.0)
-##  evaluate      0.15    2022-02-18 [1] CRAN (R 4.1.2)
-##  fansi         1.0.3   2022-03-24 [1] CRAN (R 4.1.2)
-##  farver        2.1.1   2022-07-06 [1] CRAN (R 4.1.2)
-##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.1.0)
-##  formatR       1.12    2022-03-31 [1] CRAN (R 4.1.2)
-##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.0)
-##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.1.2)
-##  ggplot2     * 3.3.6   2022-05-03 [2] CRAN (R 4.1.2)
-##  git2r         0.30.1  2022-03-16 [1] CRAN (R 4.1.2)
-##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
-##  gtable        0.3.0   2019-03-25 [2] CRAN (R 4.1.0)
-##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.0)
-##  huskydown   * 0.0.5   2022-01-16 [1] Github (benmarwick/huskydown@addb48e)
-##  knitr       * 1.39    2022-04-26 [1] CRAN (R 4.1.2)
-##  labeling      0.4.2   2020-10-20 [2] CRAN (R 4.1.0)
-##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.0)
-##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.1.2)
-##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.0)
-##  munsell       0.5.0   2018-06-12 [2] CRAN (R 4.1.0)
-##  pillar        1.7.0   2022-02-01 [1] CRAN (R 4.1.2)
-##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.0)
-##  pkgconfig     2.0.3   2019-09-22 [2] CRAN (R 4.1.0)
-##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.0)
-##  prettyunits   1.1.1   2020-01-24 [2] CRAN (R 4.1.0)
-##  processx      3.5.3   2022-03-25 [2] CRAN (R 4.1.2)
-##  ps            1.7.0   2022-04-23 [2] CRAN (R 4.1.2)
-##  purrr         0.3.4   2020-04-17 [2] CRAN (R 4.1.0)
-##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.0)
-##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.0)
-##  rlang         1.0.4   2022-07-12 [1] CRAN (R 4.1.0)
-##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.2)
-##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.1.2)
-##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.1.0)
-##  scales        1.2.0   2022-04-13 [2] CRAN (R 4.1.2)
-##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.0)
-##  stringi       1.7.8   2022-07-11 [1] CRAN (R 4.1.0)
-##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.1.0)
-##  testthat      3.1.4   2022-04-26 [1] CRAN (R 4.1.2)
-##  tibble        3.1.7   2022-05-03 [1] CRAN (R 4.1.2)
-##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.1.0)
-##  tinytex       0.39    2022-05-16 [1] CRAN (R 4.1.2)
-##  usethis     * 2.1.6   2022-05-25 [1] CRAN (R 4.1.2)
-##  utf8          1.2.2   2021-07-24 [2] CRAN (R 4.1.0)
-##  vctrs         0.4.1   2022-04-13 [1] CRAN (R 4.1.2)
-##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
-##  xfun          0.31    2022-05-10 [1] CRAN (R 4.1.2)
-##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.1.2)
+##  assertthat    0.2.1   2019-03-21 [2] CRAN (R 4.0.5)
+##  bookdown      0.29    2022-09-12 [1] CRAN (R 4.2.1)
+##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.2.1)
+##  callr         3.7.2   2022-08-22 [1] CRAN (R 4.2.1)
+##  cli           3.4.0   2022-09-08 [1] CRAN (R 4.2.1)
+##  colorspace    2.0-3   2022-02-21 [1] CRAN (R 4.2.1)
+##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.2.1)
+##  DBI           1.1.1   2021-01-15 [2] CRAN (R 4.0.5)
+##  devtools    * 2.4.4   2022-07-20 [1] CRAN (R 4.2.1)
+##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.2.1)
+##  dplyr       * 1.0.10  2022-09-01 [1] CRAN (R 4.2.1)
+##  ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.2.1)
+##  evaluate      0.16    2022-08-09 [1] CRAN (R 4.2.1)
+##  fansi         1.0.3   2022-03-24 [1] CRAN (R 4.2.1)
+##  farver        2.1.1   2022-07-06 [1] CRAN (R 4.2.1)
+##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.0.5)
+##  formatR       1.9     2021-04-14 [2] CRAN (R 4.0.5)
+##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.2.1)
+##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.2.1)
+##  ggplot2     * 3.3.6   2022-05-03 [1] CRAN (R 4.2.0)
+##  git2r         0.30.1  2022-03-16 [1] CRAN (R 4.2.1)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
+##  gtable        0.3.1   2022-09-01 [1] CRAN (R 4.2.1)
+##  htmltools     0.5.3   2022-07-18 [1] CRAN (R 4.2.1)
+##  htmlwidgets   1.5.4   2021-09-08 [1] CRAN (R 4.2.1)
+##  httpuv        1.6.6   2022-09-08 [1] CRAN (R 4.2.1)
+##  huskydown   * 0.0.5   2022-09-13 [1] Github (benmarwick/huskydown@addb48e)
+##  knitr       * 1.40    2022-08-24 [1] CRAN (R 4.2.1)
+##  labeling      0.4.2   2020-10-20 [2] CRAN (R 4.0.5)
+##  later         1.3.0   2021-08-18 [1] CRAN (R 4.2.1)
+##  lifecycle     1.0.2   2022-09-09 [1] CRAN (R 4.2.1)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.2.1)
+##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.2.1)
+##  mime          0.12    2021-09-28 [1] CRAN (R 4.2.1)
+##  miniUI        0.1.1.1 2018-05-18 [2] CRAN (R 4.0.5)
+##  munsell       0.5.0   2018-06-12 [2] CRAN (R 4.0.5)
+##  pillar        1.8.1   2022-08-19 [1] CRAN (R 4.2.1)
+##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.2.1)
+##  pkgconfig     2.0.3   2019-09-22 [2] CRAN (R 4.0.5)
+##  pkgload       1.3.0   2022-06-27 [1] CRAN (R 4.2.1)
+##  prettyunits   1.1.1   2020-01-24 [2] CRAN (R 4.0.5)
+##  processx      3.7.0   2022-07-07 [1] CRAN (R 4.2.1)
+##  profvis       0.3.7   2020-11-02 [2] CRAN (R 4.0.5)
+##  promises      1.2.0.1 2021-02-11 [2] CRAN (R 4.0.5)
+##  ps            1.7.1   2022-06-18 [1] CRAN (R 4.2.1)
+##  purrr         0.3.4   2020-04-17 [2] CRAN (R 4.0.5)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.2.1)
+##  Rcpp          1.0.9   2022-07-08 [1] CRAN (R 4.2.1)
+##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.2.1)
+##  rlang         1.0.5   2022-08-31 [1] CRAN (R 4.2.1)
+##  rmarkdown     2.16    2022-08-24 [1] CRAN (R 4.2.1)
+##  rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.2.1)
+##  scales        1.2.1   2022-08-20 [1] CRAN (R 4.2.1)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.2.1)
+##  shiny         1.7.2   2022-07-19 [1] CRAN (R 4.2.1)
+##  stringi       1.7.8   2022-07-11 [1] CRAN (R 4.2.1)
+##  stringr       1.4.1   2022-08-20 [1] CRAN (R 4.2.1)
+##  tibble        3.1.8   2022-07-22 [1] CRAN (R 4.2.1)
+##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.2.1)
+##  urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.2.1)
+##  usethis     * 2.1.6   2022-05-25 [1] CRAN (R 4.2.1)
+##  utf8          1.2.2   2021-07-24 [1] CRAN (R 4.2.1)
+##  vctrs         0.4.1   2022-04-13 [1] CRAN (R 4.2.1)
+##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.2.1)
+##  xfun          0.33    2022-09-12 [1] CRAN (R 4.2.1)
+##  xtable        1.8-4   2019-04-21 [2] CRAN (R 4.0.5)
+##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.2.1)
 ## 
-##  [1] /Users/dbradford4/Library/R/x86_64/4.1/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
+##  [1] /home/susan/R/x86_64-pc-linux-gnu-library/4.2
+##  [2] /usr/local/lib/R/site-library
+##  [3] /usr/lib/R/site-library
+##  [4] /usr/lib/R/library
 ## 
 ## ----------------------------------------------------------
 \end{verbatim}
@@ -828,82 +847,82 @@ The computational environment that was used to generate this version is as follo
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-angel2000}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-angel2000}{}}%
 Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
 
-\leavevmode\hypertarget{ref-angel2001}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-angel2001}{}}%
 Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach with QuickTime}. Boston, MA: Wesley Addison Longman.
 
-\leavevmode\hypertarget{ref-angel2002a}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-angel2002a}{}}%
 Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
 
-\leavevmode\hypertarget{ref-Bendix:2005}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Bendix:2005}{}}%
 Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
 
-\leavevmode\hypertarget{ref-dOcagne:1885}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-dOcagne:1885}{}}%
 d'Ocagne, M. (1885). {Coordonnées parallèles et axiales : Méthode de transformation géométrique et procédé nouveau de calcul graphique déduits de la considération des coordonnées parallèles}. \emph{Gauthier-Villars}, 112. Retrieved from \url{https://archive.org/details/coordonnesparal00ocaggoog/page/n10}
 
-\leavevmode\hypertarget{ref-sine}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-sine}{}}%
 Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \emph{20}, 49--55.
 
-\leavevmode\hypertarget{ref-dedonno}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-dedonno}{}}%
 DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discovery learning of a complex real-world task. \emph{Learning and Individual Differences}, \emph{49}, 11--16.
 
-\leavevmode\hypertarget{ref-few}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-few}{}}%
 Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
 
-\leavevmode\hypertarget{ref-density-pcp}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-density-pcp}{}}%
 Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{15}(6), 1531--1538. http://doi.org/\href{https://doi.org/10.1109/TVCG.2009.131}{10.1109/TVCG.2009.131}
 
-\leavevmode\hypertarget{ref-Hofmann:2013}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hofmann:2013}{}}%
 Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
 
-\leavevmode\hypertarget{ref-lee}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-lee}{}}%
 Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
 
-\leavevmode\hypertarget{ref-luxen-vetter-2011}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-luxen-vetter-2011}{}}%
 Luxen, D., \& Vetter, C. (2011). Real-time routing with OpenStreetMap data. In \emph{Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems} (pp. 513--516). New York, NY, USA: ACM. http://doi.org/\href{https://doi.org/10.1145/2093973.2094062}{10.1145/2093973.2094062}
 
-\leavevmode\hypertarget{ref-Molina1994}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Molina1994}{}}%
 Molina, S. T., \& Borkovec, T. D. (1994). The {P}enn {S}tate worry questionnaire: Psychometric properties and associated characteristics. In G. C. L. Davey \& F. Tallis (Eds.), \emph{Worrying: Perspectives on theory, assessment and treatment} (pp. 265--283). New York: Wiley.
 
-\leavevmode\hypertarget{ref-elsi}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-elsi}{}}%
 National Center for Education Statistics. (2020). National center for education statistics. \url{https://nces.ed.gov/}.
 
-\leavevmode\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}}%
 Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
 
-\leavevmode\hypertarget{ref-r}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
 R Core Team. (2022). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
-\leavevmode\hypertarget{ref-reedweb2007}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-reedweb2007}{}}%
 Reed~College. (2007). LaTeX your document. Retrieved from \url{http://web.reed.edu/cis/help/LaTeX/index.html}
 
-\leavevmode\hypertarget{ref-scc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-scc}{}}%
 Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksmart.org/}.
 
-\leavevmode\hypertarget{ref-fisher}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-fisher}{}}%
 Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
 
-\leavevmode\hypertarget{ref-iowa_gov}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
 
-\leavevmode\hypertarget{ref-Rural_classification}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Rural_classification}{}}%
 USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics/rural-economy-population/rural-classifications/}.
 
-\leavevmode\hypertarget{ref-usda}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-usda}{}}%
 USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
 
-\leavevmode\hypertarget{ref-sineillusion}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-sineillusion}{}}%
 VanderPlas, S., \& Hofmann, H. (2015). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
 
-\leavevmode\hypertarget{ref-ggplot2}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-ggplot2}{}}%
 Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed.). Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
 
-\leavevmode\hypertarget{ref-tourr}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-tourr}{}}%
 Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for Exploring Multivariate Data with Projections}. \emph{Journal of Statistical Software, Articles}, \emph{40}(2), 1--18. http://doi.org/\href{https://doi.org/10.18637/jss.v040.i02}{10.18637/jss.v040.i02}
 
-\leavevmode\hypertarget{ref-zarecor2021rural}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-zarecor2021rural}{}}%
 Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
 
 \end{CSLReferences}
