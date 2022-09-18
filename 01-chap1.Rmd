@@ -3,29 +3,74 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 -->
 
 # Literature Review {#rmd-basics}
+\section{Overview}
+
+Visualization can be used in a vastly different ways, with this in mind, we will start with the vocabulary of visualization. There are two general umbrellas of visualizations - Data Visualization (Scientific, Information and Infographic) and Visual Analytics (Used to analyze data). In which Scientific, the visualization of scientific data that have close ties to real-world objects with spatial properties. Information visualization represent data sets that don't have inherent spatial components. Infographic are combining various statistics and visualizations with a narrative. Visual Analytics are using visualizations to analyze data, which include more formal statistical tests. The data are visuals, such as fMRI brain images and other pieces in medical fields. 
+
+A list of Data Visualizations can be broken down into the following:
+\begin{itemize}
+\item One-Dimensional (i.e. Linear)
+\item Two-Dimensional (i.e. Geospatial)
+\item Three-Dimensional (i.e. Response Surfaces)
+\item Temporal
+\item Multi-Dimensional
+\item Trees/Hierarchical
+\item Network
+\end{itemize}
+
+Each type in the above list have a
+
+
+Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process. 
+
+Visualizations have become more effective in more recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [Insert the Dashboard](), for most of the world, we were glued to our computers, TVs and phones. As a result, we watched as the dashboard changed in real time to adapt to the needs of the users. In part to data growing and changing, the dashboard as well as the visualizations were needed in a condense platform. The need to be concise along with vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain is capable of only taking in a set amount of data at a time from a table or a paragraph. The space of infographics have been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a nice way, infographics miss the interactive piece about data that many people would like to explore. 
+
 \section{ Visual Inference }
 
 Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
 
 
-Plots of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. 
-
-
-\subsection{ Formal Definition }
-
-The formal definition of visual inference was introduced in Buja 
-
 \subsection{ Applications }
+Two general applications in areas of visual inference have developed since the work of [@Buja (2009)]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. 
 
 
-\section{ History of Dashboard Design }
+\section{ Parallel Coordinate Plot Visualization }
+
+Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+
 
 Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types. 
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities. 
 
 
+\subsection{R Packages}
 
+There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package \texttt{parcoord} developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. The 2D layout contains a number of features that are [LIST FEATURES FROM PACKAGE HERE!!]. Another package \texttt{gclus} was developed by [@Hurley, 20219] implements \textt{cparcoord} to include panel color of the strength of a correlation between neighboring axes.
+
+While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and \texttt{ggpcp} are built with the fundamental guidelines for graphic literacy for numeric variables. \texttt{GGally} was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS], so it also contains much more capabilities for PCPs with addition to visualizations. \texttt{ggpcp} we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
+
+\texttt{ggparallel} implements and combines different types of parallel coordinate plots for categorical data: hammock plots (Schonlau 2003), parallel sets plots, common angle plots, and common angle plots with a hammock-like adjustment for line widths [@ggparallel].
+
+
+\subsection{Why \texttt{gg} and \texttt{ggplot} are important?}
+
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from [@Wilkinson (1999)] and [@Wickham (2009)]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
+\begin{itemize}
+\item the data
+\item aesthetic mapping - \textit{takes data and maps the variable in the data frame to a particular visual features}
+\item statistical transformation - \textit{determines how to transform the data to values to create the visual feature}
+\item geometric object and a position adjustment - \textit{geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.}
+\end{itemize}
+
+
+\subsection{\textbf{ggpcp} package importance}
+
+
+\section{ Summary }
+
+
+# Dashboards
 \subsection{ Formal Definitions }
 
 Formally, a dashboard is a visual display of the most important information needed to achieve one or more objectives; consolidated and arranged on a single screen so the information can be monitored at a glance.[@few]. As dashboard has particular characteristics:
@@ -40,17 +85,12 @@ Formally, a dashboard is a visual display of the most important information need
 While a dashboard can be extremely useful, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination of with a customized list of requirements of users.
 
 
-\subsection{ Stephen Few Influences }
 
 \subsection{ Applications }
 
+Timeline of Dashboards and the growth of dashboards
 
-\section{ Parallel Coordinate Plot Visualizations }
-
-\subsection{R Packages}
-
-\subsection{\textbf{ggpcp} package importance}
+\section{ The Pyschology behind Group Dynamics on Dashboard Design }
 
 
-\section{ Summary }
 

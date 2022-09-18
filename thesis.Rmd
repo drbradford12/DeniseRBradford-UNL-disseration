@@ -46,9 +46,28 @@ If you'd like to include a comment that won't be produced in your resulting file
 If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
 -->
 
+```{r setup, include = F}
+options(width = 60)
+knitr::opts_chunk$set(
+  fig.width = 6, fig.height = 4, 
+  out.width = "\\linewidth", dpi = 300, 
+  tidy = T, tidy.opts=list(width.cutoff=45)
+)
+```
 
-
-
+```{r include_packages, include = FALSE}
+# This chunk ensures that the huskydown package is
+# installed and loaded. This huskydown package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", 
+                   repos = "http://cran.rstudio.com")
+if(!require(huskydown))
+  devtools::install_github(
+    "benmarwick/huskydown"
+  )
+library(huskydown)
+```
 
 <!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers on chapters. -->
 
@@ -56,6 +75,7 @@ If you receive a duplicate label error after knitting, make sure to delete the i
 
 # Introduction
 
+This is my dissertation that drives me into my imposter syndrome so deeply that it's insane!! 
 
 
 <!--chapter:end:index.Rmd-->
@@ -65,29 +85,74 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 -->
 
 # Literature Review {#rmd-basics}
+\section{Overview}
+
+Visualization can be used in a vastly different ways, with this in mind, we will start with the vocabulary of visualization. There are two general umbrellas of visualizations - Data Visualization (Scientific, Information and Infographic) and Visual Analytics (Used to analyze data). In which Scientific, the visualization of scientific data that have close ties to real-world objects with spatial properties. Information visualization represent data sets that don't have inherent spatial components. Infographic are combining various statistics and visualizations with a narrative. Visual Analytics are using visualizations to analyze data, which include more formal statistical tests. The data are visuals, such as fMRI brain images and other pieces in medical fields. 
+
+A list of Data Visualizations can be broken down into the following:
+\begin{itemize}
+\item One-Dimensional (i.e. Linear)
+\item Two-Dimensional (i.e. Geospatial)
+\item Three-Dimensional (i.e. Response Surfaces)
+\item Temporal
+\item Multi-Dimensional
+\item Trees/Hierarchical
+\item Network
+\end{itemize}
+
+Each type in the above list have a
+
+
+Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process. 
+
+Visualizations have become more effective in more recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [Insert the Dashboard](), for most of the world, we were glued to our computers, TVs and phones. As a result, we watched as the dashboard changed in real time to adapt to the needs of the users. In part to data growing and changing, the dashboard as well as the visualizations were needed in a condense platform. The need to be concise along with vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain is capable of only taking in a set amount of data at a time from a table or a paragraph. The space of infographics have been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a nice way, infographics miss the interactive piece about data that many people would like to explore. 
+
 \section{ Visual Inference }
 
 Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
 
 
-Plots of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. 
-
-
-\subsection{ Formal Definition }
-
-The formal definition of visual inference was introduced in Buja 
-
 \subsection{ Applications }
+Two general applications in areas of visual inference have developed since the work of [@Buja (2009)]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. 
 
 
-\section{ History of Dashboard Design }
+\section{ Parallel Coordinate Plot Visualization }
+
+Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+
 
 Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types. 
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities. 
 
 
+\subsection{R Packages}
 
+There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package \texttt{parcoord} developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. The 2D layout contains a number of features that are [LIST FEATURES FROM PACKAGE HERE!!]. Another package \texttt{gclus} was developed by [@Hurley, 20219] implements \textt{cparcoord} to include panel color of the strength of a correlation between neighboring axes.
+
+While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and \texttt{ggpcp} are built with the fundamental guidelines for graphic literacy for numeric variables. \texttt{GGally} was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS], so it also contains much more capabilities for PCPs with addition to visualizations. \texttt{ggpcp} we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
+
+\texttt{ggparallel} implements and combines different types of parallel coordinate plots for categorical data: hammock plots (Schonlau 2003), parallel sets plots, common angle plots, and common angle plots with a hammock-like adjustment for line widths [@ggparallel].
+
+
+\subsection{Why \texttt{gg} and \texttt{ggplot} are important?}
+
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from [@Wilkinson (1999)] and [@Wickham (2009)]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
+\begin{itemize}
+\item the data
+\item aesthetic mapping - \textit{takes data and maps the variable in the data frame to a particular visual features}
+\item statistical transformation - \textit{determines how to transform the data to values to create the visual feature}
+\item geometric object and a position adjustment - \textit{geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.}
+\end{itemize}
+
+
+\subsection{\textbf{ggpcp} package importance}
+
+
+\section{ Summary }
+
+
+# Dashboards
 \subsection{ Formal Definitions }
 
 Formally, a dashboard is a visual display of the most important information needed to achieve one or more objectives; consolidated and arranged on a single screen so the information can be monitored at a glance.[@few]. As dashboard has particular characteristics:
@@ -102,19 +167,14 @@ Formally, a dashboard is a visual display of the most important information need
 While a dashboard can be extremely useful, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination of with a customized list of requirements of users.
 
 
-\subsection{ Stephen Few Influences }
 
 \subsection{ Applications }
 
+Timeline of Dashboards and the growth of dashboards
 
-\section{ Parallel Coordinate Plot Visualizations }
-
-\subsection{R Packages}
-
-\subsection{\textbf{ggpcp} package importance}
+\section{ The Pyschology behind Group Dynamics on Dashboard Design }
 
 
-\section{ Summary }
 
 
 <!--chapter:end:01-chap1.Rmd-->
@@ -303,7 +363,26 @@ While it is hard to apply the findings from one fairly specific visualization pr
 
 <!--chapter:end:02-chap2.Rmd-->
 
-
+```{r include_packages_2, include = FALSE}
+# This chunk ensures that the huskydown package is
+# installed and loaded. This huskydown package includes
+# the template files for the thesis and also two functions
+# used for labeling and referencing
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(dplyr))
+    install.packages("dplyr", repos = "http://cran.rstudio.com")
+if(!require(ggplot2))
+    install.packages("ggplot2", repos = "http://cran.rstudio.com")
+if(!require(ggplot2))
+    install.packages("bookdown", repos = "http://cran.rstudio.com")
+if(!require(huskydown)){
+  library(devtools)
+  devtools::install_github("benmarwick/huskydown")
+  }
+library(huskydown)
+flights <- read.csv("data/flights.csv")
+```
 
 
 # Tables, Graphics, References, and Labels {#ref-labels}
@@ -352,14 +431,9 @@ If you need a graphic or tabular material to be part of the text, you can just p
 
 In the **R** chunk below, we will load in a picture stored as `uw.png` in our main directory.  We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
 
-
-```r
+```{r uwlogo, fig.cap="logo"}
 include_graphics(path = "figure/unl.png")
 ```
-
-\begin{figure}
-\includegraphics[width=\linewidth]{figure/unl} \caption{logo}(\#fig:uwlogo)
-\end{figure}
 
 Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
 
@@ -369,19 +443,12 @@ Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of t
 
 Below we will investigate how to save the output of an **R** plot and label it in a way similar to that done above.  Recall the `flights` dataset from Chapter \@ref(rmd-basics).  (Note that we've shown a different way to reference a section or chapter here.)  We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014.  Note also the use of the `scale` parameter which is discussed on the next page.
 
-
-```r
-flights %>%
-    group_by(carrier) %>%
-    summarize(mean_dep_delay = mean(dep_delay)) %>%
-    ggplot(aes(x = carrier, y = mean_dep_delay)) +
-    geom_bar(position = "identity", stat = "identity",
-        fill = "red")
+```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6}
+flights %>% group_by(carrier) %>%
+  summarize(mean_dep_delay = mean(dep_delay)) %>%
+  ggplot(aes(x = carrier, y = mean_dep_delay)) +
+  geom_bar(position = "identity", stat = "identity", fill = "red")
 ```
-
-\begin{figure}
-\includegraphics[width=\linewidth]{thesis_files/figure-latex/delaysboxplot-1} \caption{Mean Delays by Airline}(\#fig:delaysboxplot)
-\end{figure}
 
 Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
 
@@ -391,9 +458,9 @@ A table linking these carrier codes to airline names is available at <https://gi
 
 Next, we will explore the use of the `out.extra` chunk option, which can be used to shrink or expand an image loaded from a file by specifying `"scale= "`. Here we use the mathematical graph stored in the "subdivision.pdf" file.
 
-\begin{figure}
-\includegraphics[width=\linewidth,scale=0.75]{figure/subdivision} \caption{Subdiv. graph}(\#fig:subd)
-\end{figure}
+```{r subd, results="asis", echo=FALSE, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
+include_graphics("figure/subdivision.pdf")
+```
 
 Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
 
@@ -401,9 +468,9 @@ Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALS
 
 Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
 
-\begin{figure}
-\includegraphics[width=\linewidth,angle=180, scale=1.1]{figure/subdivision} \caption{A Larger Figure, Flipped Upside Down}(\#fig:subd2)
-\end{figure}
+```{r subd2, results="asis", echo=FALSE, out.extra="angle=180, scale=1.1", fig.cap="A Larger Figure, Flipped Upside Down"}
+include_graphics("figure/subdivision.pdf")
+```
 
 As another example, here is a reference: Figure \@ref(fig:subd2).  
 
@@ -465,9 +532,9 @@ And here's some other random info: the first paragraph after a chapter title or 
 
 <!--chapter:end:04-conclusion.Rmd-->
 
-\appendix
+`r if(knitr:::is_latex_output()) '\\appendix'`
 
- 
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
 
 <!--
 If you feel it necessary to include an appendix, it goes here.
@@ -480,42 +547,12 @@ This first appendix includes all of the R chunks of code that were hidden throug
 
 **In the main Rmd file**
 
-
-```r
-# This chunk ensures that the huskydown
-# package is installed and loaded. This
-# huskydown package includes the template
-# files for the thesis.
-if (!require(devtools)) install.packages("devtools",
-    repos = "http://cran.rstudio.com")
-if (!require(huskydown)) devtools::install_github("benmarwick/huskydown")
-library(huskydown)
+```{r ref.label='include_packages', results='hide', echo = TRUE}
 ```
 
 **In Chapter \@ref(ref-labels):**
 
-
-```r
-# This chunk ensures that the huskydown
-# package is installed and loaded. This
-# huskydown package includes the template
-# files for the thesis and also two
-# functions used for labeling and
-# referencing
-if (!require(devtools)) install.packages("devtools",
-    repos = "http://cran.rstudio.com")
-if (!require(dplyr)) install.packages("dplyr",
-    repos = "http://cran.rstudio.com")
-if (!require(ggplot2)) install.packages("ggplot2",
-    repos = "http://cran.rstudio.com")
-if (!require(ggplot2)) install.packages("bookdown",
-    repos = "http://cran.rstudio.com")
-if (!require(huskydown)) {
-    library(devtools)
-    devtools::install_github("benmarwick/huskydown")
-}
-library(huskydown)
-flights <- read.csv("data/flights.csv")
+```{r ref.label='include_packages_2', results='hide', echo = TRUE}
 ```
 
 # The Second Appendix, for Fun
@@ -532,97 +569,23 @@ This document was typeset using the XeTeX typesetting system, and the [Universit
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-08-17 22:15:40. The repository is currently at this commit:
+This version of the thesis was generated on `r Sys.time()`. The repository is currently at this commit:
 
-
+```{r echo = FALSE, eval = FALSE}
+# I've set eval=FALSE to ensure Travis-CI can run
+# if you're not using Travis-CI, then eval=TRUE will be fine
+library(git2r)
+if ( in_repository() ) {
+       summary(commits()[[1]]) 
+} else { 
+       message("We are not in a git repository") 
+}
+```
 
 The computational environment that was used to generate this version is as follows:
 
-
-```
-## - Session info -------------------------------------------
-##  setting  value
-##  version  R version 4.1.0 (2021-05-18)
-##  os       macOS 12.3.1
-##  system   x86_64, darwin17.0
-##  ui       RStudio
-##  language (EN)
-##  collate  en_US.UTF-8
-##  ctype    en_US.UTF-8
-##  tz       America/New_York
-##  date     2022-08-17
-##  rstudio  1.4.1717 Juliet Rose (desktop)
-##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
-## 
-## - Packages -----------------------------------------------
-##  package     * version date (UTC) lib source
-##  assertthat    0.2.1   2019-03-21 [2] CRAN (R 4.1.0)
-##  bookdown      0.26    2022-04-15 [1] CRAN (R 4.1.2)
-##  brio          1.1.3   2021-11-30 [1] CRAN (R 4.1.0)
-##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.0)
-##  callr         3.7.0   2021-04-20 [2] CRAN (R 4.1.0)
-##  cli           3.3.0   2022-04-25 [1] CRAN (R 4.1.2)
-##  codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.0)
-##  colorspace    2.0-3   2022-02-21 [1] CRAN (R 4.1.2)
-##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.1.0)
-##  DBI           1.1.2   2021-12-20 [1] CRAN (R 4.1.0)
-##  desc          1.4.1   2022-03-06 [1] CRAN (R 4.1.2)
-##  devtools    * 2.4.3   2021-11-30 [1] CRAN (R 4.1.0)
-##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.0)
-##  dplyr       * 1.0.9   2022-04-28 [1] CRAN (R 4.1.2)
-##  ellipsis      0.3.2   2021-04-29 [2] CRAN (R 4.1.0)
-##  evaluate      0.15    2022-02-18 [1] CRAN (R 4.1.2)
-##  fansi         1.0.3   2022-03-24 [1] CRAN (R 4.1.2)
-##  farver        2.1.1   2022-07-06 [1] CRAN (R 4.1.2)
-##  fastmap       1.1.0   2021-01-25 [2] CRAN (R 4.1.0)
-##  formatR       1.12    2022-03-31 [1] CRAN (R 4.1.2)
-##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.0)
-##  generics      0.1.3   2022-07-05 [1] CRAN (R 4.1.2)
-##  ggplot2     * 3.3.6   2022-05-03 [2] CRAN (R 4.1.2)
-##  git2r         0.30.1  2022-03-16 [1] CRAN (R 4.1.2)
-##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
-##  gtable        0.3.0   2019-03-25 [2] CRAN (R 4.1.0)
-##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.0)
-##  huskydown   * 0.0.5   2022-01-16 [1] Github (benmarwick/huskydown@addb48e)
-##  knitr       * 1.39    2022-04-26 [1] CRAN (R 4.1.2)
-##  labeling      0.4.2   2020-10-20 [2] CRAN (R 4.1.0)
-##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.0)
-##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.1.2)
-##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.0)
-##  munsell       0.5.0   2018-06-12 [2] CRAN (R 4.1.0)
-##  pillar        1.7.0   2022-02-01 [1] CRAN (R 4.1.2)
-##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.0)
-##  pkgconfig     2.0.3   2019-09-22 [2] CRAN (R 4.1.0)
-##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.0)
-##  prettyunits   1.1.1   2020-01-24 [2] CRAN (R 4.1.0)
-##  processx      3.5.3   2022-03-25 [2] CRAN (R 4.1.2)
-##  ps            1.7.0   2022-04-23 [2] CRAN (R 4.1.2)
-##  purrr         0.3.4   2020-04-17 [2] CRAN (R 4.1.0)
-##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.0)
-##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.0)
-##  rlang         1.0.4   2022-07-12 [1] CRAN (R 4.1.0)
-##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.2)
-##  rprojroot     2.0.3   2022-04-02 [2] CRAN (R 4.1.2)
-##  rstudioapi    0.13    2020-11-12 [2] CRAN (R 4.1.0)
-##  scales        1.2.0   2022-04-13 [2] CRAN (R 4.1.2)
-##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.0)
-##  stringi       1.7.8   2022-07-11 [1] CRAN (R 4.1.0)
-##  stringr       1.4.0   2019-02-10 [2] CRAN (R 4.1.0)
-##  testthat      3.1.4   2022-04-26 [1] CRAN (R 4.1.2)
-##  tibble        3.1.7   2022-05-03 [1] CRAN (R 4.1.2)
-##  tidyselect    1.1.2   2022-02-21 [1] CRAN (R 4.1.0)
-##  tinytex       0.39    2022-05-16 [1] CRAN (R 4.1.2)
-##  usethis     * 2.1.6   2022-05-25 [1] CRAN (R 4.1.2)
-##  utf8          1.2.2   2021-07-24 [2] CRAN (R 4.1.0)
-##  vctrs         0.4.1   2022-04-13 [1] CRAN (R 4.1.2)
-##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
-##  xfun          0.31    2022-05-10 [1] CRAN (R 4.1.2)
-##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.1.2)
-## 
-##  [1] /Users/dbradford4/Library/R/x86_64/4.1/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
-## 
-## ----------------------------------------------------------
+```{r echo = FALSE}
+devtools::session_info()
 ```
 
 
