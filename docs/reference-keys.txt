@@ -3,8 +3,7 @@ fig:uwlogo
 fig:delaysboxplot
 fig:subd
 fig:subd2
-introduction
-rmd-basics
+literature-review
 overview
 visual-inference
 applications
@@ -15,8 +14,10 @@ ggpcp-package-importance
 summary
 dashboards
 formal-definition
-math-sci
+rmd-basics
 guiding-design-principles
+math-sci
+guiding-design-principles-1
 ref-labels
 tables
 figures
