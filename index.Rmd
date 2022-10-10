@@ -164,7 +164,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
 
 Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process. 
 
-Visualizations have become more effective in more recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [Dashboard](https://coronavirus.jhu.edu/map.html), for most of the world, we were glued to our computers, TVs and phones. As a result, we watched as the dashboard changed in real time to adapt to the needs of the users. In part to data growing and changing, the dashboard as well as the visualizations were needed in a condense platform. The need to be concise along with vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain is capable of only taking in a set amount of data at a time from a table or a paragraph. The space of infographics have been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a nice way, infographics miss the interactive piece about data that many people would like to explore. 
+Visualizations have become more effective in more recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html), for most of the world, we were glued to our computers, TVs and phones. As a result, we watched as the dashboard changed in real time to adapt to the needs of the users. In part to data growing and changing, the dashboard as well as the visualizations were needed in a condense platform. The need to be concise along with vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain is capable of only taking in a set amount of data at a time from a table or a paragraph. The space of infographics have been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a nice way, infographics miss the interactive piece about data that many people would like to explore. 
 
 ## Visual Inference
 
@@ -173,12 +173,12 @@ Visual inference uses our ability to detect graphical anomalies. The idea of for
 
 ### Applications
 
-Two general applications in areas of visual inference have developed since the work of [@Buja (2009)]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. 
+Two general applications in areas of visual inference have developed since the work of [@Buja (2009)](). These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. 
 
 
 ## Parallel Coordinate Plot Visualization 
 
-Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg:1985], [@Wegman:1990]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
 
 Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types. 
 
@@ -187,16 +187,16 @@ Dashboards are cognitive tools that should be used to improve understanding of d
 
 ### R Packages
 
-There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. The 2D layout contains a number of features that are [LIST FEATURES FROM PACKAGE HERE!!](). Another package `gclus` was developed by [@Hurley, 20219]() implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
+There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. The 2D layout contains a number of features that are [LIST FEATURES FROM PACKAGE HERE!!](). Another package `gclus` was developed by [@Hurley] implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
 
-While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs with addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp]().
+While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs with addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
 
-`ggparallel` implements and combines different types of parallel coordinate plots for categorical data: hammock plots [@Schonlau 2003](), parallel sets plots, common angle plots, and common angle plots with a hammock-like adjustment for line widths [@ggparallel]().
+`ggparallel` implements and combines different types of parallel coordinate plots for categorical data: hammock plots, parallel sets plots, common angle plots, and common angle plots with a hammock-like adjustment for line widths [@Heike2013].
 
 
 ### Why `gg` and `ggplot` are important?
 
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from [@Wilkinson (1999)] and [@Wickham (2009)]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999]() and Hadley Wickham [@ggplot]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
 
 - the data
 - aesthetic mapping - *takes data and maps the variable in the data frame to a particular visual features*
@@ -225,8 +225,29 @@ Much of the work done within statistical research and dashboard design has to do
 
 A collaboration is defined when 2 or more entities work together to produce a desired and shared outcome.[@collab]() Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
 
-The National Academies defines research collaboration as follows [@National Academics Ref]():
+The National Academies defines research collaboration as follows [@NATIONALACADEMYOFSCIENCES]:
 
 > Interdisciplinary research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice.
 
+### Perception of Dashboards 
 
+Data Scientists and Statisticians have produced more graphics since the start of the pandemic. The reasons why someone will create a graphic or dashboard may include,  but not limited to: understanding raw data structures, in order to analyze model assumptions and present predictions along with display of key performance metrics of business logic. These goals help work to navigate are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is useful and important to correctly convey data meaning that we need to understand how graphics are perceived on a dashboard on a general level. As previous research done by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@Tukey] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detail types of different graphics and at which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the framework of psychology of the perceptual experience. 
+
+
+
+The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process. 
+
+\includegraphics[width=\textwidth]{figure/VizModelDiagram}
+
+While the External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware are attempting to develop the necessary guidelines that are useful for the work done by the perceptual experience.
+ 
+
+Colin Ware "Information Visualization: Perception for Design" [@Ware2004] there are four stages of visualization
+- The collection and storage of data itself
+- The preprocessing design to transform the data into something we can understand
+- The display hardware and the graphics algorithms that produce the image to screen.
+- The human perceptual and cognitive system
+
+The overlapping understanding in the field, while Ware takes the process one step further to not just allow the end user to understand the outcomes but to curate the outcomes with a visual perception of the data that makes the cognitive load easier for the end-user. 
+
+As visual perception is an added benefit that we can use in the 
