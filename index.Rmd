@@ -90,32 +90,31 @@ A list of Data Visualizations Types can be broken down into the following:
 - Line Chart or Line Graph
 - Bar Chart
 - Scatter Plot
-- Pie Chart or Doughnut Chart
-- Trees/Hierarchical Maps
-- Network
-- Heat Maps
+
 
 ## Applications of Data Visualization Types
 
 ### Tables
 A table is defined as set of objects or individuals divided by intersecting components, which produces a data table or tabular data.  A table will allow for a reader to perceive information at a high level in its totality.
 
-```{r include=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center"}
 data("penguins")
 table(penguins$species, penguins$sex)
 ```
 
 
 ### Line Chart (Line Graphs)
+A line chart is defined as a graph that uses lines to connect individual data points. A line graph displays quantitative and qualitative variables of tabular data (tidy data). 
 
-```{r include=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center"}
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
 ```
 
 
 ### Bar Chart
+A bar chart is defined as a chart that compares different categories of data using rectangular bars that represent the value of tabular (tidy) data.
 
-```{r include=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center"}
 ggplot(penguins, aes(x=species, y=body_mass_g)) + 
   geom_bar(stat = "identity")
 ```
@@ -123,41 +122,11 @@ ggplot(penguins, aes(x=species, y=body_mass_g)) +
 
 
 ### Scatter Plot
+A scatter plot is defined as a graph in which the values of two variables are plotted along two axes, the pattern of the resulting points revealing any correlation present.
 
-```{r include=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center"}
 ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm, color=species)) + 
     geom_point(size=4) 
-```
-
-
-### Pie Chart or Doughnut Chart
-
-```{r include=FALSE, fig.align="center"}
-ggplot(penguins, aes(x="", y=body_mass_g, fill=species)) +
-  geom_bar(stat="identity", width=1) +
-  coord_polar("y", start=0)
-```
-
-
-### Trees/Hierarchical Maps
-
-```{r include=FALSE, fig.align="center"}
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
-```
-
-
-### Network
-
-```{r include=FALSE, fig.align="center"}
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
-```
-
-
-
-### Heat Maps
-
-```{r include=FALSE, fig.align="center"}
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
 ```
 
 
@@ -168,7 +137,7 @@ Visualizations have become more effective in more recent years due to the pandem
 
 ## Visual Inference
 
-Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]()
 
 
 ### Applications
@@ -184,10 +153,9 @@ Dashboards can be used to help understand and support many types of data in any 
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities. 
 
-
 ### R Packages
 
-There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. The 2D layout contains a number of features that are [LIST FEATURES FROM PACKAGE HERE!!](). Another package `gclus` was developed by [@Hurley] implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
+There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. Another package `gclus` was developed by [@Hurley] implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
 
 While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs with addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
 
@@ -196,7 +164,7 @@ While base R packages are useful, there are a few packages within the ggplot2 en
 
 ### Why `gg` and `ggplot` are important?
 
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999]() and Hadley Wickham [@ggplot]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
 
 - the data
 - aesthetic mapping - *takes data and maps the variable in the data frame to a particular visual features*
@@ -205,8 +173,9 @@ The grammar of graphics (gg of ggplot2) is a theory that is well-defined for cre
 
 ### `ggpcp` package importance
 
+As mentioned in previous sections, that parallel coordinate plots has a long line of history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manor of categorical variables. This package separates the data managing part from the plots by giving full access to the users while keeping the number of parameters manageably law. [@ggpcp]
 
-## Summary
+While the `ggpcp` package is the first iterations of the package can be changed in the way that will allow for the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics, through the eyes of someone that is not use to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhuasted in my work. We will explore the ways at which one level of interaction from the user can create a better plot for understanding.
 
 
 ## Dashboards
@@ -221,9 +190,9 @@ Formally, a dashboard is a visual display of the most important information need
 
 While a dashboard can be extremely useful, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination of with a customized list of requirements of users.
 
-Much of the work done within statistical research and dashboard design has to do with collaboration with other academic researchers. While this may be the best for the growth of the discipline, one will find that working with the 
+Much of the work done within statistical research and dashboard design has to do with collaboration with other academic researchers. While this may be the best for the growth of the discipline, one will find that working with collaborators with the  
 
-A collaboration is defined when 2 or more entities work together to produce a desired and shared outcome.[@collab]() Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
+A collaboration is defined when 2 or more entities work together to produce a desired and shared outcome. Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
 
 The National Academies defines research collaboration as follows [@NATIONALACADEMYOFSCIENCES]:
 
@@ -232,7 +201,6 @@ The National Academies defines research collaboration as follows [@NATIONALACADE
 ### Perception of Dashboards 
 
 Data Scientists and Statisticians have produced more graphics since the start of the pandemic. The reasons why someone will create a graphic or dashboard may include,  but not limited to: understanding raw data structures, in order to analyze model assumptions and present predictions along with display of key performance metrics of business logic. These goals help work to navigate are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is useful and important to correctly convey data meaning that we need to understand how graphics are perceived on a dashboard on a general level. As previous research done by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@Tukey] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detail types of different graphics and at which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the framework of psychology of the perceptual experience. 
-
 
 
 The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process. 
@@ -250,4 +218,4 @@ Colin Ware "Information Visualization: Perception for Design" [@Ware2004] there 
 
 The overlapping understanding in the field, while Ware takes the process one step further to not just allow the end user to understand the outcomes but to curate the outcomes with a visual perception of the data that makes the cognitive load easier for the end-user. 
 
-As visual perception is an added benefit that we can use in the 
+As visual perception is an added benefit that we can use in the event
