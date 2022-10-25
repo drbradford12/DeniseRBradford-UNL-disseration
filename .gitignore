@@ -12,3 +12,4 @@
 *.log
 *.rdx
 *.rdb
+_bookdown_files
