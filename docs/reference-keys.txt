@@ -10,17 +10,12 @@ tables
 line-chart-line-graphs
 bar-chart
 scatter-plot
-pie-chart-or-doughnut-chart
-treeshierarchical-maps
-network
-heat-maps
 visual-inference
 applications
 parallel-coordinate-plot-visualization
 r-packages
 why-gg-and-ggplot-are-important
 ggpcp-package-importance
-summary
 dashboards
 formal-definition
 perception-of-dashboards
