@@ -3,3 +3,6 @@ chapter_name: "CHAPTER "
 download: [["thesis.pdf", "PDF"], ["thesis.epub", "EPUB"], ["thesis.docx", "Word"]]
 delete_merged_file: true
 output_dir: docs
+view: https://github.com/drbradford12/DeniseRBradford-UNL-disseration/blob/master/%s
+edit: https://github.com/drbradford12/DeniseRBradford-UNL-disseration/edit/master/%s
+clean: ["_bookdown_files"]
