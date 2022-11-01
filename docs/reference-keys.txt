@@ -14,14 +14,10 @@ tables
 line-chart-line-graphs
 bar-chart
 scatter-plot
-<<<<<<< Updated upstream
-visual-inference
-=======
 historyreview-of-graphical-representation
 study-4-historyorigin-of-statistical-visualization
 study-5-overview-of-tables-and-graphics-in-papers
 study-6-advancement-of-graphical-visualizations-in-dashboards
->>>>>>> Stashed changes
 applications
 dashbaord-design-human-perception-visual-information
 study-7-historyorigin-of-dashbaord-design
@@ -31,13 +27,7 @@ ggpcp-package---generalize-parallel-coordinate-plots
 parallel-coordinate-plot-visualization-review
 r-packages
 ggpcp-package-importance
-<<<<<<< Updated upstream
-dashboards
-formal-definition
-perception-of-dashboards
-=======
 conclusion
->>>>>>> Stashed changes
 rmd-basics
 abstract
 introduction-1

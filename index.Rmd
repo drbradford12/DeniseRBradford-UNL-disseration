@@ -89,18 +89,30 @@ Data Visualizations can be described as a graphical representation of tabular da
 The literature review will explore the facets of Exploratory Data Analysis (EDA) through the history of graphical representation followed by the review of Dashboard Design and Visual Information.
 
 <!-- Present a thesis or argument statement - why is it important to explore this topic?-->
-When effectively adding advance graphical representations to a naive user, what have we done to create a true understanding to an egagnig idea of what's going on.
+As tabular data grows in our society that has pushed our needs to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphical research would suggest that the work that is done in this work has grown increasing in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in a statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical graphics. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+
+One graphic can be misleading alone, but can a two graphics together be considered misleading when placing two "correctly" design graphics together on a dashboard. This is something that visual information researchers explore but don't test.
+
+Since, we don't completely understand the way that basic statistical graphics are 
+
+When effectively adding advance graphical representations to a naive user, what have we done to create a true understanding to an engaging idea of what's going on.
 
 <!--Theme: Exploratory Data Analysis (EDA) and the History of Graphical Representations -->
-
 ## History of Exploratory Data Analysis (EDA)
 <!-- Overview of characteristics of the theme -->
-
 Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process. 
 
 ### Study 1: EDA through the eyes of Tukey
 
+- TODO: Summarize the reason that Tukey wanted EDA to be a field of study and describe the ways at which it is a foundation in statistical research.
+- TODO: Summarize his earlier methods 
+- TODO: Describe the findings from Tukey to Wickham, etc.
+
 ### Study 2: EDA through the eyes of the modern grammar of graphics (Wickham, etc.)
+
+- TODO: Summarize the reason that the grammar of graphics has been a driving force in the growth of EDA and statistical graphics.
+- TODO: Summarize the earlier developments of ggplot in R
+- TODO: Describe the growth of ggplot in R society
 
 The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot]. The theory of graphics are based on plot layers, which is built with four distinct pieces: 
 
@@ -110,6 +122,10 @@ The grammar of graphics (gg of ggplot2) is a theory that is well-defined for cre
 -  geometric object and a position adjustment - *geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.*
 
 ### Study 3: EDA through the eyes of Big Data (Di Cook, etc.)
+
+- TODO: Summarize the reason that EDA is important in Big Data scenarios from the work of Di Cook.
+- TODO: Summarize the earlier developments of the work in Big Data and the processing of data, along with including the earlier struggles that occurred in high dimensional data.
+- TODO: Describe the growth of EDA being used in society today
 
 A list of Data Visualizations Types can be broken down into the following:
 
@@ -124,7 +140,7 @@ A list of Data Visualizations Types can be broken down into the following:
 ### Tables
 A table is defined as set of objects or individuals divided by intersecting components, which produces a data table or tabular data. A table will allow for a reader to perceive information at a high level in its totality.
 
-```{r echo=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center", include=FALSE}
 data("penguins")
 table(penguins$species, penguins$sex)
 ```
@@ -133,7 +149,7 @@ table(penguins$species, penguins$sex)
 ### Line Chart (Line Graphs)
 A line chart is defined as a graph that uses lines to connect individual data points. A line graph displays quantitative and qualitative variables of tabular data (tidy data). 
 
-```{r echo=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center", include=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
 ```
 
@@ -141,7 +157,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
 ### Bar Chart
 A bar chart is defined as a chart that compares different categories of data using rectangular bars that represent the value of tabular (tidy) data.
 
-```{r echo=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center", include=FALSE}
 ggplot(penguins, aes(x=species, y=body_mass_g)) + 
   geom_bar(stat = "identity")
 ```
@@ -151,7 +167,7 @@ ggplot(penguins, aes(x=species, y=body_mass_g)) +
 ### Scatter Plot
 A scatter plot is defined as a graph in which the values of two variables are plotted along two axes, the pattern of the resulting points revealing any correlation present.
 
-```{r echo=FALSE, fig.align="center"}
+```{r echo=FALSE, fig.align="center", include=FALSE}
 ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm, color=species)) + 
     geom_point(size=4) 
 ```
@@ -202,6 +218,9 @@ The National Academies defines research collaboration as follows [@NATIONALACADE
 
 
 ### Study 8: History/Origin of Human Perception
+The human perception plays a direct role in the area of visualizations. The human perception importance was cited by the NSF panel on graphics and image processing that proposed the "scientific visualization" [@NSF]. 
+
+
 
 ### Study 9: Dashbaord Design in regards to Human Perception
 
@@ -262,10 +281,7 @@ Guidelines for new generation dashboards refer to:
 3. Sound Navigation 
 [@ZiffDavisEnterprise2008]
 
-If the guidelines on our visual information load can be related back to statistical terminology, we can consider this the fisher information of visual information laod. This load can be used as a metric of balancing the amount of information and not over load the consumer. 
-
-
-
+If the guidelines on our visual information load can be related back to statistical terminology, we can consider this the fisher information of visual information load. This load can be used as a metric of balancing the amount of information and not over load the consumer. 
 
 <!--Theme: ggpcp/ ggflower -->
 <!-- Overview of characteristics of the theme -->
@@ -293,7 +309,7 @@ While base R packages are useful, there are a few packages within the ggplot2 en
 
 As mentioned in previous sections, that parallel coordinate plots has a long line of history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manor of categorical variables. This package separates the data managing part from the plots by giving full access to the users while keeping the number of parameters manageably law. [@ggpcp]
 
-While the `ggpcp` package is the first iterations of the package can be changed in the way that will allow for the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics, through the eyes of someone that is not use to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhuasted in my work. We will explore the ways at which one level of interaction from the user can create a better plot for understanding.
+While the `ggpcp` package is the first iterations of the package can be changed in the way that will allow for the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics, through the eyes of someone that is not use to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore the ways at which one level of interaction from the user can create a better plot for understanding.
 
 
 <!--Conclusion -->
