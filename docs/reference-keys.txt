@@ -4,24 +4,43 @@ fig:delaysboxplot
 fig:subd
 fig:subd2
 literature-review
-overview
+introduction
+history-of-exploratory-data-analysis-eda
+study-1-eda-through-the-eyes-of-tukey
+study-2-eda-through-the-eyes-of-the-modern-grammar-of-graphics-wickham-etc.
+study-3-eda-through-the-eyes-of-big-data-di-cook-etc.
 applications-of-data-visualization-types
 tables
 line-chart-line-graphs
 bar-chart
 scatter-plot
+<<<<<<< Updated upstream
 visual-inference
+=======
+historyreview-of-graphical-representation
+study-4-historyorigin-of-statistical-visualization
+study-5-overview-of-tables-and-graphics-in-papers
+study-6-advancement-of-graphical-visualizations-in-dashboards
+>>>>>>> Stashed changes
 applications
-parallel-coordinate-plot-visualization
+dashbaord-design-human-perception-visual-information
+study-7-historyorigin-of-dashbaord-design
+study-8-historyorigin-of-human-perception
+study-9-dashbaord-design-in-regards-to-human-perception
+ggpcp-package---generalize-parallel-coordinate-plots
+parallel-coordinate-plot-visualization-review
 r-packages
-why-gg-and-ggplot-are-important
 ggpcp-package-importance
+<<<<<<< Updated upstream
 dashboards
 formal-definition
 perception-of-dashboards
+=======
+conclusion
+>>>>>>> Stashed changes
 rmd-basics
 abstract
-introduction
+introduction-1
 data-description
 dashboard-design-considerations
 guiding-design-principles
