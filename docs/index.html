@@ -284,26 +284,41 @@ div.csl-indent {
 <p>Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process.</p>
 <div id="study-1-eda-through-the-eyes-of-tukey" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Study 1: EDA through the eyes of Tukey<a href="index.html#study-1-eda-through-the-eyes-of-tukey" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>John Tukey was the first to organize the collection and methods associated philosophy into the Exploratory Data Analysis (EDA). Tukey was a person who helped utilize the likes of stem-and-leaf plot, boxplot resistant smooth and rootgram.</p>
+<p>Tukey’s Principles in EDA:</p>
+<ol style="list-style-type: decimal">
+<li><em>Revelation</em>: Graphical exploration looking for patterns or displaying fit.</li>
+</ol>
 <ul>
-<li>TODO: Summarize the reason that Tukey wanted EDA to be a field of study and describe the ways at which it is a foundation in statistical research.</li>
-<li>TODO: Summarize his earlier methods</li>
-<li>TODO: Describe the findings from Tukey to Wickham, etc.</li>
+<li>The method is used to demonstrate things about data that are not understood by a single numeric metric. This has been useful in the ideology of graphing the data before you develop summary statistics.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><em>Resistance</em>: describing the general patterns of the data.</li>
+</ol>
+<ul>
+<li>This step should be insensitive to outliers. In general thinking about the types of resistant measures (i.e. median or mean).</li>
+<li>This step is making sure to determine data patterns.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><p><em>Reexpression</em>: the natural scale/state that the data are at their best. This will be the step at which the scale of data can be useful for analysis. The reexpressing data to a new scale by taking the square root or logarithmic scale.</p></li>
+<li><p><em>Residual</em>: the mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the tool box to access best prediction models.</p></li>
+</ol>
+<ul>
+<li>The idea generally is to determine the deviations in the data from a general pattern looking at the data from the fit of the data.</li>
 </ul>
 </div>
 <div id="study-2-eda-through-the-eyes-of-the-modern-grammar-of-graphics-wickham-etc." class="section level3 hasAnchor" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> Study 2: EDA through the eyes of the modern grammar of graphics (Wickham, etc.)<a href="index.html#study-2-eda-through-the-eyes-of-the-modern-grammar-of-graphics-wickham-etc." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>TODO: Summarize the reason that the grammar of graphics has been a driving force in the growth of EDA and statistical graphics.</li>
-<li>TODO: Summarize the earlier developments of ggplot in R</li>
-<li>TODO: Describe the growth of ggplot in R society</li>
-</ul>
-<p>The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson <span class="citation">(<strong>Wilkinson1999?</strong>)</span> and Hadley Wickham <span class="citation">(<strong>ggplot?</strong>)</span>. The theory of graphics are based on plot layers, which is built with four distinct pieces:</p>
+<p>The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson <span class="citation">(<strong>Wilkinson1999?</strong>)</span> and Hadley Wickham <span class="citation">(<strong>ggplot?</strong>)</span>. Leland Wilkinson originally created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.</p>
+<p></p>
+<p>The theory of graphics are based on plot layers, which is built with four distinct pieces:</p>
 <ul>
 <li>the data</li>
 <li>aesthetic mapping - <em>takes data and maps the variable in the data frame to a particular visual features</em></li>
 <li>statistical transformation - <em>determines how to transform the data to values to create the visual feature</em></li>
 <li>geometric object and a position adjustment - <em>geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.</em></li>
 </ul>
+<p>There are seven major components that help build effective visualizations that build on one another: The following will show the building blocks of the type of layering.</p>
 </div>
 <div id="study-3-eda-through-the-eyes-of-big-data-di-cook-etc." class="section level3 hasAnchor" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Study 3: EDA through the eyes of Big Data (Di Cook, etc.)<a href="index.html#study-3-eda-through-the-eyes-of-big-data-di-cook-etc." class="anchor-section" aria-label="Anchor link to header"></a></h3>

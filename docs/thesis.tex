@@ -291,30 +291,62 @@ Visualizations of data are important for exploratory data analysis (EDA) along w
 \hypertarget{study-1-eda-through-the-eyes-of-tukey}{%
 \subsection{Study 1: EDA through the eyes of Tukey}\label{study-1-eda-through-the-eyes-of-tukey}}
 
+John Tukey was the first to organize the collection and methods associated philosophy into the Exploratory Data Analysis (EDA). Tukey was a person who helped utilize the likes of stem-and-leaf plot, boxplot resistant smooth and rootgram.
+
+Tukey's Principles in EDA:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{Revelation}: Graphical exploration looking for patterns or displaying fit.
+\end{enumerate}
+
 \begin{itemize}
 \tightlist
 \item
-  TODO: Summarize the reason that Tukey wanted EDA to be a field of study and describe the ways at which it is a foundation in statistical research.
+  The method is used to demonstrate things about data that are not understood by a single numeric metric. This has been useful in the ideology of graphing the data before you develop summary statistics.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
 \item
-  TODO: Summarize his earlier methods
+  \emph{Resistance}: describing the general patterns of the data.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
 \item
-  TODO: Describe the findings from Tukey to Wickham, etc.
+  This step should be insensitive to outliers. In general thinking about the types of resistant measures (i.e.~median or mean).
+\item
+  This step is making sure to determine data patterns.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  \emph{Reexpression}: the natural scale/state that the data are at their best. This will be the step at which the scale of data can be useful for analysis. The reexpressing data to a new scale by taking the square root or logarithmic scale.
+\item
+  \emph{Residual}: the mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the tool box to access best prediction models.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The idea generally is to determine the deviations in the data from a general pattern looking at the data from the fit of the data.
 \end{itemize}
 
 \hypertarget{study-2-eda-through-the-eyes-of-the-modern-grammar-of-graphics-wickham-etc.}{%
 \subsection{Study 2: EDA through the eyes of the modern grammar of graphics (Wickham, etc.)}\label{study-2-eda-through-the-eyes-of-the-modern-grammar-of-graphics-wickham-etc.}}
 
-\begin{itemize}
-\tightlist
-\item
-  TODO: Summarize the reason that the grammar of graphics has been a driving force in the growth of EDA and statistical graphics.
-\item
-  TODO: Summarize the earlier developments of ggplot in R
-\item
-  TODO: Describe the growth of ggplot in R society
-\end{itemize}
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson (\textbf{Wilkinson1999?}) and Hadley Wickham (\textbf{ggplot?}). Leland Wilkinson originally created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
 
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson (\textbf{Wilkinson1999?}) and Hadley Wickham (\textbf{ggplot?}). The theory of graphics are based on plot layers, which is built with four distinct pieces:
+\includegraphics[width=\textwidth]{figure/ggDiagram}
+
+The theory of graphics are based on plot layers, which is built with four distinct pieces:
 
 \begin{itemize}
 \tightlist
@@ -327,6 +359,8 @@ The grammar of graphics (gg of ggplot2) is a theory that is well-defined for cre
 \item
   geometric object and a position adjustment - \emph{geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.}
 \end{itemize}
+
+There are seven major components that help build effective visualizations that build on one another: The following will show the building blocks of the type of layering.
 
 \hypertarget{study-3-eda-through-the-eyes-of-big-data-di-cook-etc.}{%
 \subsection{Study 3: EDA through the eyes of Big Data (Di Cook, etc.)}\label{study-3-eda-through-the-eyes-of-big-data-di-cook-etc.}}
@@ -987,7 +1021,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-11-01 09:52:17. The repository is currently at this commit:
+This version of the thesis was generated on 2022-11-02 17:52:32. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1002,7 +1036,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2022-11-01
+##  date     2022-11-02
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
