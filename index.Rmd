@@ -88,6 +88,18 @@ Data Visualizations can be described as a graphical representation of tabular da
 <!--  Give a "big picture" of the literature-->
 The literature review will explore the facets of Exploratory Data Analysis (EDA) through the history of graphical representation followed by the review of Dashboard Design and Visual Information.
 
+Roles of graphics in Data Analysis:
+Graphics and Tables are forms of communication that we are looking to determine:
+- What is the audience?
+- What is the message?
+
+Analysis: design to see patterns, trends, and the process of data description, interpretation
+Presentation: design to attract attention, make a point, illustrate a conclusion
+
+Based on the following diagram
+
+\includegraphics[width=\textwidth]{figure/RolesofGraphics}
+
 <!-- Present a thesis or argument statement - why is it important to explore this topic?-->
 As tabular data grows in our society that has pushed our needs to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphical research would suggest that the work that is done in this work has grown increasing in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in a statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical graphics. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
 
@@ -131,9 +143,18 @@ The theory of graphics are based on plot layers, which is built with four distin
 - the data
 - aesthetic mapping - *takes data and maps the variable in the data frame to a particular visual features*
 - statistical transformation - *determines how to transform the data to values to create the visual feature*
--  geometric object and a position adjustment - *geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.*
+- geometric object and a position adjustment - *geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.*
 
-There are seven major components that help build effective visualizations that build on one another: The following will show the building blocks of the type of layering.
+There are seven major components that help build effective visualizations that build on one another. There are seven major components that help build effective visualizations. The following diagram will display the 
+\includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
+
+- Data
+- Aesthetics
+- Scale
+- Geometric Objects
+- Statistics
+- Facets
+- Coordinate system
 
 
 ### Study 3: EDA through the eyes of Big Data (Di Cook, etc.)
