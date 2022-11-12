@@ -286,6 +286,7 @@ Presentation: design to attract attention, make a point, illustrate a conclusion
 Based on the following diagram
 
 \includegraphics[width=\textwidth]{figure/RolesofGraphics}
+\captionof{figure}{Roles of Graphcs}
 
 As tabular data grows in our society that has pushed our needs to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphical research would suggest that the work that is done in this work has grown increasing in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in a statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical graphics. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
 
@@ -357,6 +358,7 @@ Tukey's Principles in EDA:
 The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson (\textbf{Wilkinson1999?}) and Hadley Wickham (\textbf{ggplot?}). Leland Wilkinson originally created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 \includegraphics[width=\textwidth]{figure/ggDiagram}
+\captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
 
 The theory of graphics are based on plot layers, which is built with four distinct pieces:
 
@@ -374,6 +376,7 @@ The theory of graphics are based on plot layers, which is built with four distin
 
 There are seven major components that help build effective visualizations that build on one another. There are seven major components that help build effective visualizations. The following diagram will display the
 \includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
+\captionof{figure}{Effective Data Graphics}
 
 \begin{itemize}
 \tightlist
@@ -396,14 +399,34 @@ There are seven major components that help build effective visualizations that b
 \hypertarget{study-3-eda-through-the-eyes-of-big-data-di-cook-etc.}{%
 \subsection{Study 3: EDA through the eyes of Big Data (Di Cook, etc.)}\label{study-3-eda-through-the-eyes-of-big-data-di-cook-etc.}}
 
+Big Data Analytics is where advanced analytic techniques are applied on big data sets.
+- Analytics based on large data samples reveals and leverages business change.
+The larger the set of data, the more difficult it becomes to manage.
+
+\hypertarget{characteristcs-of-big-data}{%
+\subsubsection{Characteristcs of Big Data}\label{characteristcs-of-big-data}}
+
+\includegraphics[width=\textwidth]{figure/BigDataDiagram}
+\captionof{figure}{Big Data Diagram}
+
+There are three main features characteristics of big data:
+- Volume: is its size and how enormous it is
+- Variety: includes the different formats and types of data, as well as the different kinds of uses and ways if analyzing the data
+- Velocity: refers to the rate with which data is changing, or how often it is created
+
+\hypertarget{big-data-storage-and-management}{%
+\subsubsection{Big Data Storage and Management}\label{big-data-storage-and-management}}
+
+Where and how this data will be stored once it is acquired:
+- Traditional methods of structured data storage and retrieval include relational databases, data marts, and data warehouses.
+- Uploaded to the storage from operational data stores using: Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) tools which extract data from outside sources, transform the data to fit operational needs, and transformed and cataloged before made available for data mining and online analytical functions.
+
+Given the growing numbers of data sources as well as the sophistication of data analyses, big data storage should allow analysts to easily produce and adapt data rapidly.
+
 \begin{itemize}
 \tightlist
 \item
-  TODO: Summarize the reason that EDA is important in Big Data scenarios from the work of Di Cook.
-\item
-  TODO: Summarize the earlier developments of the work in Big Data and the processing of data, along with including the earlier struggles that occurred in high dimensional data.
-\item
-  TODO: Describe the growth of EDA being used in society today
+  This requires an agile database, whose since current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine.
 \end{itemize}
 
 A list of Data Visualizations Types can be broken down into the following:
@@ -496,10 +519,33 @@ The National Academies defines research collaboration as follows (NATIONAL ACADE
 Interdisciplinary research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice.
 \end{quote}
 
-\hypertarget{study-8-historyorigin-of-human-perception}{%
-\subsection{Study 8: History/Origin of Human Perception}\label{study-8-historyorigin-of-human-perception}}
+\hypertarget{study-8-historyorigin-of-human-perception-of-statistical-graphics}{%
+\subsection{Study 8: History/Origin of Human Perception of Statistical Graphics}\label{study-8-historyorigin-of-human-perception-of-statistical-graphics}}
 
 The human perception plays a direct role in the area of visualizations. The human perception importance was cited by the NSF panel on graphics and image processing that proposed the ``scientific visualization'' (\textbf{NSF?}).
+
+Data Analysis tasks closely resemble the cognitive process known as sensemaking. Tukey and Wilk (\textbf{Tukey:1966?}) highlight the role of cognitive processes in their initial descriptions of EDA.
+
+\begin{quote}
+The basic general intent of data analysis is simply stated: to seek through a body of data for interesting relationships and information and to exhibit the results in such a way as ro make them recognizable to the data analyzer.
+\end{quote}
+
+Mallows and Walley (\textbf{Mallows:1980?}) list psychology as on of four areas likely to support a theory of analysis. Data analyses rely on the mind's ability to learn, analyze, and understand. Assigning meaning is not a statistical or computational step, but a cognitive one. Each data analysis is part of a larger, cognitive process.
+
+Untrained analysts can and do ``analyze'' data with only their natural mental abilities
+- The mind performs its own data analysis - like process to create detailed understandings of reality from bits of sensory input.
+
+\hypertarget{schemas-and-sensemaking}{%
+\subsubsection{Schemas and Sensemaking}\label{schemas-and-sensemaking}}
+
+Cowan (\textbf{Cowan:2000?}) suggested that the average person can only hold two to six pieces of information in their attention. People are able to develop detailed understandings of reality, which is infinitely complex.
+
+Cognitive structures consists of mental models and their relationships ((\textbf{RumelhartandOrtony:1976?}), (\textbf{CarleyandPalmquist:1992?}), (\textbf{JonassenandHenning:1996?})). mental models have been studied under a number of different names.
+
+\includegraphics[width=\textwidth]{figure/CognitiveStructuresCitationTimeline}
+\captionof{figure}{Cognitive Structures Citation Timeline}
+
+A schema is a mental model that contains a breadth of information about a specific type of object or concept. Schemas are organized into semantic networks based on their relationships to other schemas (\textbf{Wertheimer:1938?}), (\textbf{Rumelhart:1976?}). This arrangement helps the brain process its experiences instead of storing every sensory observation, the brain only needs to maintain its schemas, which are sufficient summarizes of all previous observations. Some ``memories'' may even be complete recreations built with a schema (\textbf{Bartlett:1932?}), (\textbf{Klein:2003?})
 
 \hypertarget{study-9-dashbaord-design-in-regards-to-human-perception}{%
 \subsection{Study 9: Dashbaord Design in regards to Human Perception}\label{study-9-dashbaord-design-in-regards-to-human-perception}}
@@ -509,6 +555,7 @@ Data Scientists and Statisticians have produced more graphics since the start of
 The visual reference model developed by Card et al. (S. K. Card \& Shneiderman, 1999) describes and identifies the three phases of the visualization process.
 
 \includegraphics[width=\textwidth]{figure/VizModelDiagram}
+\captionof{figure}{Visual Reference model by Card}
 
 While the External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware are attempting to develop the necessary guidelines that are useful for the work done by the perceptual experience.
 
@@ -590,8 +637,33 @@ Guidelines for new generation dashboards refer to:
 
 If the guidelines on our visual information load can be related back to statistical terminology, we can consider this the fisher information of visual information load. This load can be used as a metric of balancing the amount of information and not over load the consumer.
 
-\hypertarget{ggpcp-package---generalize-parallel-coordinate-plots}{%
-\section{\texorpdfstring{\texttt{ggpcp} package - Generalize Parallel Coordinate Plots}{ggpcp package - Generalize Parallel Coordinate Plots}}\label{ggpcp-package---generalize-parallel-coordinate-plots}}
+Visual Data Mining
+
+For data mining to be effective, it is important to include the human in the data exploration process and combine the flexibility creativity and general knowledge of the computational power of today's computers. Visual data exploration aims at integrating the human in the data exploration process, applying its perceptual abilities, to the large data sets available in today's computer systems.
+
+The visual data exploration process can be seen as a hypothesis generation process:
+- The visualizations of the data allow the user to gain insight into the data and come up with new hypotheses
+- Along with verification of the hypotheses
+
+The main advantages of visual data exploration over automatic data mining techniques from statistics or machine learning are:
+- visual data exploration can easily deal with highly inhomogeneous and noisy data.
+- visual data exploration is intuitive and requires no understanding of complex mathematical or statistical algorithms or parameters.
+
+Visual Exploration Paradigm also known as MGV (Massive Graph Visualizer), an integrated visualization and exploration system for massive multidigraph navigation.(Abello \& Korn, 2002). MGV usually follows a three step process:
+- overview first
+- zoom and filter
+- details-on-demand
+
+The user identifies interesting patterns and focuses on one or more of them. Note that visualization technology does not only provide the base visualization techniques for all three steps but also bridges the gap between the steps.
+
+Visualization Technique Classification:
+- Standard 2D/3D displays such as bar charts and x-y plots
+- Geometrically transformed displays, such as landscapes and parallel coordinates as used in a scalable framework
+- Icon-based displays such as needle icons and star icons as used in MGV
+- Dense pixel displays such as the recursive pattern and circle segments techniques and the graph sketches as used in MGV
+
+\hypertarget{ggpcp-package---generalized-parallel-coordinate-plots}{%
+\section{\texorpdfstring{\texttt{ggpcp} package - Generalized Parallel Coordinate Plots}{ggpcp package - Generalized Parallel Coordinate Plots}}\label{ggpcp-package---generalized-parallel-coordinate-plots}}
 
 \hypertarget{parallel-coordinate-plot-visualization-review}{%
 \section{Parallel Coordinate Plot Visualization Review}\label{parallel-coordinate-plot-visualization-review}}
@@ -601,6 +673,27 @@ Parallel coordinate plots have been implemented in analysis software since the m
 Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types.
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+\hypertarget{parallel-coordinates-in-eda}{%
+\subsection{Parallel Coordinates in EDA}\label{parallel-coordinates-in-eda}}
+
+EDA refers to methods and procedures for exploring the data space to learn about a data set and so, by analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models, which may be fit, to a data set.
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) can be obtained by directly querying the graphic.
+
+\begin{itemize}
+\tightlist
+\item
+  PCPs enable the display of multi-dimensional data in two-dimensional space.
+\item
+  There must be some loss of information but this can be partly counteracted by varying the order of the axes.
+\item
+  Interactivity is valuable for reordering the axes flexible and fast.
+\item
+  Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+\end{itemize}
+
+Being able to select subgroups of cases, highlight the selected lines, switch between different subgroups, all assist in interpreting the other wise intricate displays which arise.
 
 \hypertarget{r-packages}{%
 \subsection{R Packages}\label{r-packages}}
@@ -1052,7 +1145,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-11-06 12:10:40. The repository is currently at this commit:
+This version of the thesis was generated on 2022-11-12 16:25:56. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1067,7 +1160,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2022-11-06
+##  date     2022-11-12
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -1180,6 +1273,9 @@ The computational environment that was used to generate this version is as follo
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-abello2002}{}%
+Abello, J., \& Korn, J. (2002). MGV: A system for visualizing massive multidigraphs. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{8}(1), 21--38. http://doi.org/\href{https://doi.org/10.1109/2945.981849}{10.1109/2945.981849}
+
 \leavevmode\hypertarget{ref-angel2000}{}%
 Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
 

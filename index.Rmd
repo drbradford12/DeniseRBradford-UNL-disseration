@@ -99,6 +99,7 @@ Presentation: design to attract attention, make a point, illustrate a conclusion
 Based on the following diagram
 
 \includegraphics[width=\textwidth]{figure/RolesofGraphics}
+\captionof{figure}{Roles of Graphics}
 
 <!-- Present a thesis or argument statement - why is it important to explore this topic?-->
 As tabular data grows in our society that has pushed our needs to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphical research would suggest that the work that is done in this work has grown increasing in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in a statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical graphics. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
@@ -137,6 +138,8 @@ Tukey's Principles in EDA:
 The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot]. Leland Wilkinson originally created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 \includegraphics[width=\textwidth]{figure/ggDiagram}
+\captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
+
 
 The theory of graphics are based on plot layers, which is built with four distinct pieces: 
 
@@ -147,6 +150,7 @@ The theory of graphics are based on plot layers, which is built with four distin
 
 There are seven major components that help build effective visualizations that build on one another. There are seven major components that help build effective visualizations. The following diagram will display the 
 \includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
+\captionof{figure}{Effective Data Graphics}
 
 - Data
 - Aesthetics
@@ -159,9 +163,30 @@ There are seven major components that help build effective visualizations that b
 
 ### Study 3: EDA through the eyes of Big Data (Di Cook, etc.)
 
-- TODO: Summarize the reason that EDA is important in Big Data scenarios from the work of Di Cook.
-- TODO: Summarize the earlier developments of the work in Big Data and the processing of data, along with including the earlier struggles that occurred in high dimensional data.
-- TODO: Describe the growth of EDA being used in society today
+Big Data Analytics is where advanced analytic techniques are applied on big data sets. 
+- Analytics based on large data samples reveals and leverages business change.
+The larger the set of data, the more difficult it becomes to manage.
+
+#### Characteristcs of Big Data 
+\includegraphics[width=\textwidth]{figure/BigDataDiagram}
+\captionof{figure}{Big Data Diagram}
+
+There are three main features characteristics of big data:
+- Volume: is its size and how enormous it is 
+- Variety: includes the different formats and types of data, as well as the different kinds of uses and ways if analyzing the data
+- Velocity: refers to the rate with which data is changing, or how often it is created
+
+#### Big Data Storage and Management
+
+Where and how this data will be stored once it is acquired:
+- Traditional methods of structured data storage and retrieval include relational databases, data marts, and data warehouses.
+- Uploaded to the storage from operational data stores using: Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) tools which extract data from outside sources, transform the data to fit operational needs, and transformed and cataloged before made available for data mining and online analytical functions. 
+
+Given the growing numbers of data sources as well as the sophistication of data analyses, big data storage should allow analysts to easily produce and adapt data rapidly.
+
+- This requires an agile database, whose since current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine.
+
+
 
 A list of Data Visualizations Types can be broken down into the following:
 
@@ -253,10 +278,27 @@ The National Academies defines research collaboration as follows [@NATIONALACADE
 > Interdisciplinary research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice.
 
 
-### Study 8: History/Origin of Human Perception
+### Study 8: History/Origin of Human Perception of Statistical Graphics
 The human perception plays a direct role in the area of visualizations. The human perception importance was cited by the NSF panel on graphics and image processing that proposed the "scientific visualization" [@NSF]. 
 
+Data Analysis tasks closely resemble the cognitive process known as sensemaking. Tukey and Wilk [@Tukey:1966] highlight the role of cognitive processes in their initial descriptions of EDA.
 
+> The basic general intent of data analysis is simply stated: to seek through a body of data for interesting relationships and information and to exhibit the results in such a way as ro make them recognizable to the data analyzer.
+
+Mallows and Walley [@Mallows:1980] list psychology as on of four areas likely to support a theory of analysis. Data analyses rely on the mind's ability to learn, analyze, and understand. Assigning meaning is not a statistical or computational step, but a cognitive one. Each data analysis is part of a larger, cognitive process. 
+
+Untrained analysts can and do "analyze" data with only their natural mental abilities 
+- The mind performs its own data analysis - like process to create detailed understandings of reality from bits of sensory input.
+
+#### Schemas and Sensemaking
+Cowan [@Cowan:2000] suggested that the average person can only hold two to six pieces of information in their attention. People are able to develop detailed understandings of reality, which is infinitely complex.
+
+Cognitive structures consists of mental models and their relationships ([@RumelhartandOrtony:1976], [@CarleyandPalmquist:1992], [@JonassenandHenning:1996]). mental models have been studied under a number of different names.
+
+\includegraphics[width=\textwidth]{figure/CognitiveStructuresCitationTimeline}
+\captionof{figure}{Cognitive Structures Citation Timeline}
+
+A schema is a mental model that contains a breadth of information about a specific type of object or concept. Schemas are organized into semantic networks based on their relationships to other schemas [@Wertheimer:1938], [@Rumelhart:1976]. This arrangement helps the brain process its experiences instead of storing every sensory observation, the brain only needs to maintain its schemas, which are sufficient summarizes of all previous observations. Some "memories" may even be complete recreations built with a schema [@Bartlett:1932], [@Klein:2003]
 
 ### Study 9: Dashbaord Design in regards to Human Perception
 
@@ -265,6 +307,8 @@ Data Scientists and Statisticians have produced more graphics since the start of
 The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process. 
 
 \includegraphics[width=\textwidth]{figure/VizModelDiagram}
+\captionof{figure}{Visual Reference model by Card}
+
 
 While the External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware are attempting to develop the necessary guidelines that are useful for the work done by the perceptual experience.
  
@@ -293,7 +337,7 @@ Visual complexity and information utility is required. Visual complexity refers 
 
 - Graphs are more suitable for spatial tasks (ex. for comparing a set of values) [@Vessey1991, Umanath and Vessey 1994; Vessey1994]
 - Graphs reduced the negative influence of information overload
-- Graphs produced better correlation estimates and decreased time on task[@Schulzand Booth1995]
+- Graphs produced better correlation estimates and decreased time on task [@Schulzand ; Booth1995]
 - Self organizing maps and multidimensional scaling did not significantly outperform tabular representations [@Huang2006]
 
 The purposes of a dashboard:
@@ -303,13 +347,13 @@ The purposes of a dashboard:
 3. Planning
 4. Communication
 
-"Use of interactive visual representations of abstract, non physically based data to amplify cognition." [@Card1999]
+"Use of interactive visual representations of abstract, non physically based data to amplify cognition." [@card1999]
 
-Visual perception involves two elements - the perceptual and conceptual gist. The perceptual gist refers to the process of the brain when it determines the image properties that provide the structural representation of a scene, like color and texture. The conceptual gist refers to the meaning of the scene, which is improved after the perceptual information is received. [@Friedman1979; @Olivia2005]
+Visual perception involves two elements - the perceptual and conceptual gist. The perceptual gist refers to the process of the brain when it determines the image properties that provide the structural representation of a scene, like color and texture. The conceptual gist refers to the meaning of the scene, which is improved after the perceptual information is received. [@friedman1979; @olivia2004]
 
-Visual complexity might increase with the quality and range of objects as well as with varying material and surface styles [@Heylighen1997].
+Visual complexity might increase with the quality and range of objects as well as with varying material and surface styles [@heylighen1997].
 
-Repetitive and uniform patterns and existing knowledge of the objects in the scene reduce visual complexity [@Olivia2004]
+Repetitive and uniform patterns and existing knowledge of the objects in the scene reduce visual complexity [@olivia2004]
 
 Guidelines for new generation dashboards refer to:
 1. Aligning business processes with latest information to provide business intelligence at all levels in the company.
@@ -319,18 +363,64 @@ Guidelines for new generation dashboards refer to:
 
 If the guidelines on our visual information load can be related back to statistical terminology, we can consider this the fisher information of visual information load. This load can be used as a metric of balancing the amount of information and not over load the consumer. 
 
+Visual Data Mining
+
+For data mining to be effective, it is important to include the human in the data exploration process and combine the flexibility creativity and general knowledge of the computational power of today's computers. Visual data exploration aims at integrating the human in the data exploration process, applying its perceptual abilities, to the large data sets available in today's computer systems.[@kiem2002]
+
+The visual data exploration process can be seen as a hypothesis generation process:
+- The visualizations of the data allow the user to gain insight into the data and come up with new hypotheses
+- Along with verification of the hypotheses
+
+The main advantages of visual data exploration over automatic data mining techniques from statistics or machine learning are:
+- visual data exploration can easily deal with highly inhomogeneous and noisy data.
+- visual data exploration is intuitive and requires no understanding of complex mathematical or statistical algorithms or parameters.
+
+Visual Exploration Paradigm also known as MGV (Massive Graph Visualizer), an integrated visualization and exploration system for massive multidigraph navigation.[@abello2002]. MGV usually follows a three step process:
+- overview first
+- zoom and filter
+- details-on-demand
+
+The user identifies interesting patterns and focuses on one or more of them. Note that visualization technology does not only provide the base visualization techniques for all three steps but also bridges the gap between the steps. 
+
+Visualization Technique Classification:
+- Standard 2D/3D displays such as bar charts and x-y plots
+- Geometrically transformed displays, such as landscapes and parallel coordinates as used in a scalable framework
+- Icon-based displays such as needle icons and star icons as used in MGV
+- Dense pixel displays such as the recursive pattern and circle segments techniques and the graph sketches as used in MGV
+- Stacked displays, such as treemaps or dimensional stacking
+
+Interaction and distoration techniques allow users to directly interact with the visualizations.
+- Interactive Projection as used in the Grand Tour System
+- Interactive Filtering as used in Polaris
+- Interactive Zooming as used in MGV and scalable framework
+- Interactive Linking and Brushing as used in Polaris and the scalable framework
+
+
 <!--Theme: ggpcp/ ggflower -->
 <!-- Overview of characteristics of the theme -->
 
-## `ggpcp` package - Generalize Parallel Coordinate Plots  
+## `ggpcp` package - Generalized Parallel Coordinate Plots  
 
 ## Parallel Coordinate Plot Visualization Review
 
-Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg:1985], [@Wegman:1990]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
 
 Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types. 
 
-Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities. 
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+### Parallel Coordinates in EDA
+EDA refers to methods and procedures for exploring the data space to learn about a data set and so, by analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models, which may be fit, to a data set. 
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) can be obtained by directly querying the graphic [@unwin2003].
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexible and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+Being able to select subgroups of cases, highlight the selected lines, switch between different subgroups, all assist in interpreting the other wise intricate displays which arise.
+
 
 ### R Packages
 
