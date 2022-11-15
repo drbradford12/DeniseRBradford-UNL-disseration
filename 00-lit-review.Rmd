@@ -34,6 +34,7 @@ The literature review will explore the facets of Exploratory Data Analysis (EDA)
 
 Roles of graphics in Data Analysis:
 Graphics and Tables are forms of communication that we are looking to determine:
+
 - What is the audience?
 - What is the message?
 
