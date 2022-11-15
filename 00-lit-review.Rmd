@@ -1,0 +1,402 @@
+
+```{r include_packages, include = FALSE}
+# This chunk ensures that the huskydown package is
+# installed and loaded. This huskydown package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", 
+                   repos = "http://cran.rstudio.com")
+# if(!require(huskydown))
+#   devtools::install_github(
+#     "benmarwick/huskydown"
+#   )
+#library(huskydown)
+library(knitr)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+<!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers on chapters. -->
+
+<!-- # Introduction {.unnumbered} -->
+
+# Literature Review
+
+## Introduction
+<!--  Describe the topic that you have been investigating. Why it is important to the field?-->
+
+Dashboard Design in combination of naive users with adding new graphical visualization testing the effectiveness of new graphic.
+
+Data Visualizations can be described as a graphical representation of tabular data and information. Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.
+
+<!--  Give a "big picture" of the literature-->
+The literature review will explore the facets of Exploratory Data Analysis (EDA) through the history of graphical representation followed by the review of Dashboard Design and Visual Information.
+
+Roles of graphics in Data Analysis:
+Graphics and Tables are forms of communication that we are looking to determine:
+- What is the audience?
+- What is the message?
+
+Analysis: design to see patterns, trends, and the process of data description, interpretation
+Presentation: design to attract attention, make a point, illustrate a conclusion
+
+Based on the following diagram
+
+\includegraphics[width=\textwidth]{figure/RolesofGraphics}
+\captionof{figure}{Roles of Graphics}
+
+<!-- Present a thesis or argument statement - why is it important to explore this topic?-->
+As tabular data grows in our society that has pushed our needs to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphical research would suggest that the work that is done in this work has grown increasing in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in a statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical graphics. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+
+One graphic can be misleading alone, but can a two graphics together be considered misleading when placing two "correctly" design graphics together on a dashboard. This is something that visual information researchers explore but don't test.
+
+Since, we don't completely understand the way that basic statistical graphics are
+
+When effectively adding advance graphical representations to a naive user, what have we done to create a true understanding to an engaging idea of what's going on.
+
+<!--Theme: Exploratory Data Analysis (EDA) and the History of Graphical Representations -->
+## History of Exploratory Data Analysis (EDA)
+<!-- Overview of characteristics of the theme -->
+Visualizations of data are important for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a useful tool for guiding an analyst in discovering the relationships between variables in their data. In the case when using plots in model diagnostics, plots help analysts determine whether or not the model is appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized in a way that will visual discovery process.
+
+### Study 1: EDA through the eyes of Tukey
+
+John Tukey was the first to organize the collection and methods associated philosophy into the Exploratory Data Analysis (EDA). Tukey was a person who helped utilize the likes of stem-and-leaf plot, boxplot resistant smooth and rootgram.
+
+Tukey's Principles in EDA:
+
+1. *Revelation*: Graphical exploration looking for patterns or displaying fit.
+- The method is used to demonstrate things about data that are not understood by a single numeric metric. This has been useful in the ideology of graphing the data before you develop summary statistics.
+
+2. *Resistance*: describing the general patterns of the data.
+- This step should be insensitive to outliers. In general thinking about the types of resistant measures (i.e. median or mean).
+- This step is making sure to determine data patterns.
+
+3. *Reexpression*: the natural scale/state that the data are at their best. This will be the step at which the scale of data can be useful for analysis. The reexpressing data to a new scale by taking the square root or logarithmic scale.
+
+4. *Residual*: the mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the tool box to access best prediction models.
+- The idea generally is to determine the deviations in the data from a general pattern looking at the data from the fit of the data.
+
+
+### Study 2: EDA through the eyes of the modern grammar of graphics (Wickham, etc.)
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot]. Leland Wilkinson originally created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
+
+\includegraphics[width=\textwidth]{figure/ggDiagram}
+\captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
+
+
+The theory of graphics are based on plot layers, which is built with four distinct pieces:
+
+- the data
+- aesthetic mapping - *takes data and maps the variable in the data frame to a particular visual features*
+- statistical transformation - *determines how to transform the data to values to create the visual feature*
+- geometric object and a position adjustment - *geom object is used to draw a plot layer and position adjustment is to help with adjusting the visual feature in the space.*
+
+There are seven major components that help build effective visualizations that build on one another. There are seven major components that help build effective visualizations. The following diagram will display the
+\includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
+\captionof{figure}{Effective Data Graphics}
+
+- Data
+- Aesthetics
+- Scale
+- Geometric Objects
+- Statistics
+- Facets
+- Coordinate system
+
+
+### Study 3: EDA through the eyes of Big Data (Di Cook, etc.)
+
+Big Data Analytics is where advanced analytic techniques are applied on big data sets.
+- Analytics based on large data samples reveals and leverages business change.
+The larger the set of data, the more difficult it becomes to manage.
+
+#### Characteristcs of Big Data
+\includegraphics[width=\textwidth]{figure/BigDataDiagram}
+\captionof{figure}{Big Data Diagram}
+
+There are three main features characteristics of big data:
+- Volume: is its size and how enormous it is
+- Variety: includes the different formats and types of data, as well as the different kinds of uses and ways if analyzing the data
+- Velocity: refers to the rate with which data is changing, or how often it is created
+
+#### Big Data Storage and Management
+
+Where and how this data will be stored once it is acquired:
+- Traditional methods of structured data storage and retrieval include relational databases, data marts, and data warehouses.
+- Uploaded to the storage from operational data stores using: Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) tools which extract data from outside sources, transform the data to fit operational needs, and transformed and cataloged before made available for data mining and online analytical functions.
+
+Given the growing numbers of data sources as well as the sophistication of data analyses, big data storage should allow analysts to easily produce and adapt data rapidly.
+
+- This requires an agile database, whose since current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine.
+
+
+
+A list of Data Visualizations Types can be broken down into the following:
+
+- Tables (Pivot Tables)
+- Line Chart or Line Graph
+- Bar Chart
+- Scatter Plot
+
+
+## Applications of Data Visualization Types
+
+### Tables
+A table is defined as set of objects or individuals divided by intersecting components, which produces a data table or tabular data. A table will allow for a reader to perceive information at a high level in its totality.
+
+```{r echo=FALSE, fig.align="center", include=FALSE}
+data("penguins")
+table(penguins$species, penguins$sex)
+```
+
+
+### Line Chart (Line Graphs)
+A line chart is defined as a graph that uses lines to connect individual data points. A line graph displays quantitative and qualitative variables of tabular data (tidy data).
+
+```{r echo=FALSE, fig.align="center", include=FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
+```
+
+
+### Bar Chart
+A bar chart is defined as a chart that compares different categories of data using rectangular bars that represent the value of tabular (tidy) data.
+
+```{r echo=FALSE, fig.align="center", include=FALSE}
+ggplot(penguins, aes(x=species, y=body_mass_g)) +
+  geom_bar(stat = "identity")
+```
+
+
+
+### Scatter Plot
+A scatter plot is defined as a graph in which the values of two variables are plotted along two axes, the pattern of the resulting points revealing any correlation present.
+
+```{r echo=FALSE, fig.align="center", include=FALSE}
+ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm, color=species)) +
+    geom_point(size=4)
+```
+
+
+
+<!-- Overview of characteristics of the theme -->
+
+## History/Review of Graphical Representation
+
+### Study 4: History/Origin of statistical visualization
+
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]()
+
+### Study 5: Overview of tables and graphics in papers
+
+### Study 6: Advancement of graphical visualizations in dashboards
+
+Visualizations have become more effective in more recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html), for most of the world, we were glued to our computers, TVs and phones. As a result, we watched as the dashboard changed in real time to adapt to the needs of the users. In part to data growing and changing, the dashboard as well as the visualizations were needed in a condense platform. The need to be concise along with vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain is capable of only taking in a set amount of data at a time from a table or a paragraph. The space of infographics have been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a nice way, infographics miss the interactive piece about data that many people would like to explore.
+
+### Applications
+
+Two general applications in areas of visual inference have developed since the work of [@Buja (2009)](). These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups.
+
+<!--Theme: Dashboard Design/ Human Perception -->
+<!-- Overview of characteristics of the theme -->
+
+## Dashbaord Design/ Human Perception (Visual Information)
+
+### Study 7: History/Origin of Dashbaord Design
+
+Formally, a dashboard is a visual display of the most important information needed to achieve one or more objectives; consolidated and arranged on a single screen so the information can be monitored at a glance.[@few]. As dashboard has particular characteristics:
+
+- Achieve specific objectives
+- Fits on a single computer screen
+- Information can be displayed in multiple mediums (web browser or mobile device)
+- Can be used to monitor information at a high level
+
+While a dashboard can be extremely useful, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination of with a customized list of requirements of users.
+
+Much of the work done within statistical research and dashboard design has to do with collaboration with other academic researchers. While this may be the best for the growth of the discipline, one will find that working with collaborators with the
+
+A collaboration is defined when 2 or more entities work together to produce a desired and shared outcome. Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
+
+The National Academies defines research collaboration as follows [@NATIONALACADEMYOFSCIENCES]:
+
+> Interdisciplinary research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice.
+
+
+### Study 8: History/Origin of Human Perception of Statistical Graphics
+The human perception plays a direct role in the area of visualizations. The human perception importance was cited by the NSF panel on graphics and image processing that proposed the "scientific visualization" [@NSF].
+
+Data Analysis tasks closely resemble the cognitive process known as sensemaking. Tukey and Wilk [@Tukey:1966] highlight the role of cognitive processes in their initial descriptions of EDA.
+
+> The basic general intent of data analysis is simply stated: to seek through a body of data for interesting relationships and information and to exhibit the results in such a way as ro make them recognizable to the data analyzer.
+
+Mallows and Walley [@Mallows:1980] list psychology as on of four areas likely to support a theory of analysis. Data analyses rely on the mind's ability to learn, analyze, and understand. Assigning meaning is not a statistical or computational step, but a cognitive one. Each data analysis is part of a larger, cognitive process.
+
+Untrained analysts can and do "analyze" data with only their natural mental abilities
+- The mind performs its own data analysis - like process to create detailed understandings of reality from bits of sensory input.
+
+#### Schemas and Sensemaking
+Cowan [@Cowan:2000] suggested that the average person can only hold two to six pieces of information in their attention. People are able to develop detailed understandings of reality, which is infinitely complex.
+
+Cognitive structures consists of mental models and their relationships ([@RumelhartandOrtony:1976], [@CarleyandPalmquist:1992], [@JonassenandHenning:1996]). mental models have been studied under a number of different names.
+
+\includegraphics[width=\textwidth]{figure/CognitiveStructuresCitationTimeline}
+\captionof{figure}{Cognitive Structures Citation Timeline}
+
+A schema is a mental model that contains a breadth of information about a specific type of object or concept. Schemas are organized into semantic networks based on their relationships to other schemas [@Wertheimer:1938], [@Rumelhart:1976]. This arrangement helps the brain process its experiences instead of storing every sensory observation, the brain only needs to maintain its schemas, which are sufficient summarizes of all previous observations. Some "memories" may even be complete recreations built with a schema [@Bartlett:1932], [@Klein:2003]
+
+### Study 9: Dashbaord Design in regards to Human Perception
+
+Data Scientists and Statisticians have produced more graphics since the start of the pandemic. The reasons why someone will create a graphic or dashboard may include,  but not limited to: understanding raw data structures, in order to analyze model assumptions and present predictions along with display of key performance metrics of business logic. These goals help work to navigate are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is useful and important to correctly convey data meaning that we need to understand how graphics are perceived on a dashboard on a general level. As previous research done by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@Tukey] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detail types of different graphics and at which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the framework of psychology of the perceptual experience.
+
+The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process.
+
+\includegraphics[width=\textwidth]{figure/VizModelDiagram}
+\captionof{figure}{Visual Reference model by Card}
+
+
+While the External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware are attempting to develop the necessary guidelines that are useful for the work done by the perceptual experience.
+
+Colin Ware "Information Visualization: Perception for Design" [@Ware2004] there are four stages of visualization
+- The collection and storage of data itself
+- The preprocessing design to transform the data into something we can understand
+- The display hardware and the graphics algorithms that produce the image to screen.
+- The human perceptual and cognitive system
+
+The overlapping understanding in the field, while Ware takes the process one step further to not just allow the end user to understand the outcomes but to curate the outcomes with a visual perception of the data that makes the cognitive load easier for the end-user.
+
+A dashboard has a multitude of information related to tabular data from multiple sources. Design should be recorded a produced with content that will allow for reproducibility. A dashboard should have some content related to interaction from the user. This interaction can be in multiple forms: toggling through the selection of variables to display uniformly to the use of interaction on the graph. Allowing a user to best understand what is being displayed in the graph.
+
+The entire dashboard/Interface should have a human perception piece that is useful for the user to comprehend and use. If the user is visually overwhelmed, then the dashboard/interface is not useful.
+
+- Identified the highly relevant from dashboard design perspective [@odonnell2000]
+1. Interaction and feedback given by information systems
+2. Type of presentation format to be used
+3. Differences in the amount of information load.
+
+Information load is an important issue, as dashboards need to provide the right amount of decision cues, without overwhelming the user with excess information.
+
+"A decision cue is a feature of something perceived that is used in the interpretation of perception [@choo2009]," where perception is an inferential process as objects in the environment can only be perceived indirectly through available information that has been sensed by the individual [@brunswik1952].
+
+Visual complexity and information utility is required. Visual complexity refers to "degree of difficulty in providing a verbal description of an image.[@Heaps and Handel 1999, Olivia 2004]
+
+- Graphs are more suitable for spatial tasks (ex. for comparing a set of values) [@Vessey1991, Umanath and Vessey 1994; Vessey1994]
+- Graphs reduced the negative influence of information overload
+- Graphs produced better correlation estimates and decreased time on task [@Schulzand ; Booth1995]
+- Self organizing maps and multidimensional scaling did not significantly outperform tabular representations [@Huang2006]
+
+The purposes of a dashboard:
+
+1. Consistency
+2. Monitoring
+3. Planning
+4. Communication
+
+"Use of interactive visual representations of abstract, non physically based data to amplify cognition." [@card1999]
+
+Visual perception involves two elements - the perceptual and conceptual gist. The perceptual gist refers to the process of the brain when it determines the image properties that provide the structural representation of a scene, like color and texture. The conceptual gist refers to the meaning of the scene, which is improved after the perceptual information is received. [@friedman1979; @olivia2004]
+
+Visual complexity might increase with the quality and range of objects as well as with varying material and surface styles [@heylighen1997].
+
+Repetitive and uniform patterns and existing knowledge of the objects in the scene reduce visual complexity [@olivia2004]
+
+Guidelines for new generation dashboards refer to:
+1. Aligning business processes with latest information to provide business intelligence at all levels in the company.
+2.Using intuitive and easy to digest visuals for delivering information to busy executives.
+3. Sound Navigation
+[@ZiffDavisEnterprise2008]
+
+If the guidelines on our visual information load can be related back to statistical terminology, we can consider this the fisher information of visual information load. This load can be used as a metric of balancing the amount of information and not over load the consumer.
+
+Visual Data Mining
+
+For data mining to be effective, it is important to include the human in the data exploration process and combine the flexibility creativity and general knowledge of the computational power of today's computers. Visual data exploration aims at integrating the human in the data exploration process, applying its perceptual abilities, to the large data sets available in today's computer systems.[@kiem2002]
+
+The visual data exploration process can be seen as a hypothesis generation process:
+- The visualizations of the data allow the user to gain insight into the data and come up with new hypotheses
+- Along with verification of the hypotheses
+
+The main advantages of visual data exploration over automatic data mining techniques from statistics or machine learning are:
+- visual data exploration can easily deal with highly inhomogeneous and noisy data.
+- visual data exploration is intuitive and requires no understanding of complex mathematical or statistical algorithms or parameters.
+
+Visual Exploration Paradigm also known as MGV (Massive Graph Visualizer), an integrated visualization and exploration system for massive multidigraph navigation.[@abello2002]. MGV usually follows a three step process:
+- overview first
+- zoom and filter
+- details-on-demand
+
+The user identifies interesting patterns and focuses on one or more of them. Note that visualization technology does not only provide the base visualization techniques for all three steps but also bridges the gap between the steps.
+
+Visualization Technique Classification:
+- Standard 2D/3D displays such as bar charts and x-y plots
+- Geometrically transformed displays, such as landscapes and parallel coordinates as used in a scalable framework
+- Icon-based displays such as needle icons and star icons as used in MGV
+- Dense pixel displays such as the recursive pattern and circle segments techniques and the graph sketches as used in MGV
+- Stacked displays, such as treemaps or dimensional stacking
+
+Interaction and distoration techniques allow users to directly interact with the visualizations.
+- Interactive Projection as used in the Grand Tour System
+- Interactive Filtering as used in Polaris
+- Interactive Zooming as used in MGV and scalable framework
+- Interactive Linking and Brushing as used in Polaris and the scalable framework
+
+
+<!--Theme: ggpcp/ ggflower -->
+<!-- Overview of characteristics of the theme -->
+
+## `ggpcp` package - Generalized Parallel Coordinate Plots
+
+## Parallel Coordinate Plot Visualization Review
+
+Parallel coordinate plots have been implemented in analysis software since the mid 1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of xy coordinate analysis. Parallel coordinate plots have such a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, the use of data visualizations will be more important and useful to understanding the underlying structures of useful data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+
+Dashboards can be used to help understand and support many types of data in any set of business objectives that are important. There are many different ways to label and utilize dashboards into different types.
+
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+### Parallel Coordinates in EDA
+EDA refers to methods and procedures for exploring the data space to learn about a data set and so, by analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models, which may be fit, to a data set.
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) can be obtained by directly querying the graphic [@unwin2003].
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexible and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+Being able to select subgroups of cases, highlight the selected lines, switch between different subgroups, all assist in interpreting the other wise intricate displays which arise.
+
+
+### R Packages
+
+There are R packages that exist for Parallel coordinate plots, with some built-in functionality, but not many exist for advance exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, in which it contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. Another package `gclus` was developed by [@Hurley] implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
+
+While base R packages are useful, there are a few packages within the ggplot2 environment implementing parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics are at the focal point of plots. The following packages [@GGally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was originally designed for the following pieces of the graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs with addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e. rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
+
+`ggparallel` implements and combines different types of parallel coordinate plots for categorical data: hammock plots, parallel sets plots, common angle plots, and common angle plots with a hammock-like adjustment for line widths [@Heike2013].
+
+
+### `ggpcp` package importance
+
+As mentioned in previous sections, that parallel coordinate plots has a long line of history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manor of categorical variables. This package separates the data managing part from the plots by giving full access to the users while keeping the number of parameters manageably law. [@ggpcp]
+
+While the `ggpcp` package is the first iterations of the package can be changed in the way that will allow for the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics, through the eyes of someone that is not use to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore the ways at which one level of interaction from the user can create a better plot for understanding.
+
+
+<!--Conclusion -->
+<!-- Overview of characteristics of the theme -->
+
+## Conclusion
+<!-- An evaluation/critique of the existing literature -->
+
+<!-- What are the contributions of this literature to the field?-->
+
+<!-- Return to your thesis statement -->
+
+
+<!-- What are the overall strengths? -->
+
+<!-- What are the overall weaknesses? -->
+
+<!-- What might be missing? -->
+
+<!-- What are some next steps for research? The next steps should explicitly address how to "correct" for strengths, weeknesses and gaps. -->
