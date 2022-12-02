@@ -13,7 +13,7 @@ characteristics-of-big-data
 big-data-storage-and-management
 historyreview-of-graphical-representation
 historyorigin-of-statistical-visualization
-overview-of-tables-and-graphics-in-papers
+statistical-visualization-timeline
 advancement-of-graphical-visualizations-in-dashboards
 applications
 dashboard-design-human-perception-visual-information
@@ -21,11 +21,6 @@ historyorigin-of-dashboard-design
 section-8-historyorigin-of-human-perception-of-statistical-graphics
 schemas-and-sensemaking
 section-9-dashboard-design-in-regards-to-human-perception
-ggpcp-package---generalized-parallel-coordinate-plots
-parallel-coordinate-plot-visualization-review
-parallel-coordinates-in-eda
-r-packages
-ggpcp-package-importance
 conclusion
 rmd-basics
 abstract

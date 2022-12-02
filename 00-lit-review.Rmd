@@ -33,7 +33,6 @@ Dashboard Design with naive users at the center of the design with adding new gr
 
 Data Visualizations are described as a graphical representation of tabular data and information. Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.
 
-
 <!--  Give a "big picture" of the literature-->
 The literature review will explore the facets of Exploratory Data Analysis (EDA) through the history of graphical representation, followed by the study of Dashboard Design, Visual Information, and Big Data Analytics.
 
@@ -89,7 +88,6 @@ Tukey's Principles in EDA:
 
 4. The mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the toolbox to access the best prediction models.
 - The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
-
 
 
 ### EDA through the eyes of the modern grammar of graphics
@@ -152,64 +150,88 @@ Given the growing numbers of data sources and the sophistication of data analyse
 - This requires an agile database whose current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine.
 
 
-
-<!-- A list of Data Visualizations Types can be broken down into the following:
-
-- Tables (Pivot Tables)
-- Line Chart or Line Graph
-- Bar Chart
-- Scatter Plot
-
-
-## Applications of Data Visualization Types
-
-### Tables
-A table is defined as set of objects or individuals divided by intersecting components, which produces a data table or tabular data. A table will allow for a reader to perceive information at a high level in its totality.
-
-```{r echo=FALSE, fig.align="center", include=FALSE}
-data("penguins")
-table(penguins$species, penguins$sex)
-```
-
-
-### Line Chart (Line Graphs)
-A line chart is defined as a graph that uses lines to connect individual data points. A line graph displays quantitative and qualitative variables of tabular data (tidy data).
-
-```{r echo=FALSE, fig.align="center", include=FALSE}
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_line()
-```
-
-
-### Bar Chart
-A bar chart is defined as a chart that compares different categories of data using rectangular bars that represent the value of tabular (tidy) data.
-
-```{r echo=FALSE, fig.align="center", include=FALSE}
-ggplot(penguins, aes(x=species, y=body_mass_g)) +
-  geom_bar(stat = "identity")
-```
-
-
-
-### Scatter Plot
-A scatter plot is defined as a graph in which the values of two variables are plotted along two axes, the pattern of the resulting points revealing any correlation present. -->
-
-
-```{r echo=FALSE, fig.align="center", include=FALSE}
-ggplot(penguins, aes(x=bill_length_mm, y=bill_depth_mm, color=species)) +
-    geom_point(size=4)
-```
-
-
-
-<!-- Overview of characteristics of the theme -->
-
 ## History/Review of Graphical Representation
 
-### History/Origin of statistical visualization
+### History/Origin of Statistical Visualization
+
+Visualization is NOT prediction. Much of the field is focus on prediction models but big data analytics visualization is an important part of working to develop methodology for helping analysts to explore and understand what patterns are presented. 
+
+> The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important.
+
 
 Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
 
-### Overview of tables and graphics in papers
+### Statistical Visualization Timeline
+*Categorical Data Visualization*
+
+Friendly[@friendly] detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, ti visualize categorical data. Beygelzimer,Perng,Ma [@beygelzimer]; Ma and Hellerstien [@ma] created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data [@schonlau]. His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
+
+CatTree gives a hierarchical categorical data visualization with interaction [@wolatch and weinstein, 2001]. Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by [@Alsallakh et al. 2012] support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.  
+
+*High-Dimensional Data Visualization*
+A popular research area in visualization research since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
+- scatterplots: simply use dot in coordinate to present data point.
+- parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
+- RadViz/ PolyViz
+- GridViz
+
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua, ward rundenstein]; [@johansson2005]. Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. [@ankerst, berchtold and kiem, 1998]. [@guo,2003] used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
+
+*Visualizing Complex Data*
+
+William Cleveland's subcycle plots:
+- glyphmaps and binned graphics that are emerging from big data visualization efforts.
+
+- glyphs and other plots have been embedded in maps 
+
+Bertin's semiologic of Graphics, a seminal work  in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data [@wickham et al]; [@hobbs et al 2010]
+
+*Interactive Graphics*
+
+The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as `d3` [@bostock et al. 2011].
+
+Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. van Wiij's [@vanwiij2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
+\captionof{figure}{van Wiij Simple Visualization Model}
+\end{center}
+
+Interaction allows the user to define what data they see and how they see the data creating a dialogue between the user and the system. Theories behind visual representation include:
+- graphical comprehension ([@cleveland1984])
+- preattentive processing ([@ware2012])
+- gestalt theory ([@few2009])
+- graphical excellence ([@tufte2001])
+
+Theories behind the manipulation of visualizations include but are not limited to 
+- cognitive fit ([@vessey1991])
+- visual perceptual approaches ([@baker2009])
+- human information processing
+
+As interactive visualizations take a larger role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work in concert to facilitate analytical reasoning. They must decided on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization [@boy2014]. Tasks can be viewed either by the goal the user is trying to obtain or by the intent the user has 
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/tentypetasks}
+\captionof{figure}{10 Type Tasks with Sources}
+\end{center}
+
+Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ([@endert2015], [@sedig2012]). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques [@saket2018].
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/interactiontasks}
+\captionof{figure}{Interaction Types with Sources}
+\end{center}
+
+[@schulz2013] define two abstractions for the design of visualizations:
+
+\begin{center}
+\begin{align*}
+  Data + Task = Visualization \\
+  Data + Visualization = Task
+\end{align*}
+\end{center}
+
+These abstractions demonstrate dependence between the data, visual representation, and the task. The more the user interacts with the visualization, they gain knowledge. The interactions allow user to be in control of their understanding by providing the flexibility to create new views that help him/her go beyond just the visual representation [@kiem2008]. The field of information visualization is continually adapting to changes with the big data revolution.
 
 ### Advancement of graphical visualizations in dashboards
 
@@ -219,8 +241,6 @@ Visualizations have become more effective in recent years due to the pandemic an
 
 Two general applications in areas of visual inference have developed since the work of [@buja2009]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups.
 
-<!--Theme: Dashboard Design/ Human Perception -->
-<!-- Overview of characteristics of the theme -->
 
 ## Dashboard Design/ Human Perception (Visual Information)
 
@@ -374,7 +394,7 @@ The knowledge is distinguished as the fifth of five types of theory:
 2. Understanding
 3. Predicting
 4. Explaining and predicting 
-4. Design and action
+5. Design and action
 
 A definition of information systems that are suitable for our purposes concerns: "the effective design delivery use and impact of information technology in organizations and society [@avison1995]. 
 
@@ -429,8 +449,25 @@ Contextual Design
 - Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 
 
+Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards into different types.
+
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+EDA refers to methods and procedures for exploring the data space to learn about a data set. By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexibly and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+Being able to select subgroups of cases, highlight the selected lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
+
+
+
 <!--Theme: ggpcp/ ggflower -->
-<!-- Overview of characteristics of the theme -->
+<!-- Overview of characteristics of the theme 
 
 ## `ggpcp` package - Generalized Parallel Coordinate Plots
 
@@ -468,13 +505,15 @@ While base R packages are helpful, a few packages within the ggplot2 environment
 
 As mentioned in previous sections, that parallel coordinate plots have a long line history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manner of categorical variables. This package separates the data managing part from the plots by giving full user access while keeping the number of parameters manageable. [@ggpcp]
 
-While the `ggpcp` package is the first iteration of the package that can be changed in a way that will allow the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics through the eyes of someone that is not used to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore how one level of interaction from the user can create a better plot for understanding.
+While the `ggpcp` package is the first iteration of the package that can be changed in a way that will allow the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics through the eyes of someone that is not used to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore how one level of interaction from the user can create a better plot for understanding.-->
 
 
 <!--Conclusion -->
 <!-- Overview of characteristics of the theme -->
 
 ## Conclusion
+
+
 <!-- An evaluation/critique of the existing literature -->
 
 <!-- What are the contributions of this literature to the field?-->

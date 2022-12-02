@@ -439,12 +439,93 @@ Given the growing numbers of data sources and the sophistication of data analyse
 \section{History/Review of Graphical Representation}\label{historyreview-of-graphical-representation}}
 
 \hypertarget{historyorigin-of-statistical-visualization}{%
-\subsection{History/Origin of statistical visualization}\label{historyorigin-of-statistical-visualization}}
+\subsection{History/Origin of Statistical Visualization}\label{historyorigin-of-statistical-visualization}}
+
+Visualization is NOT prediction. Much of the field is focus on prediction models but big data analytics visualization is an important part of working to develop methodology for helping analysts to explore and understand what patterns are presented.
+
+\begin{quote}
+The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important.
+\end{quote}
 
 Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference -- with one exception: The test statistic is now a graphical display which is compared to a ``reference distribution'' of plots showing the null.{[}REFERENCE WEBSITE{]}
 
-\hypertarget{overview-of-tables-and-graphics-in-papers}{%
-\subsection{Overview of tables and graphics in papers}\label{overview-of-tables-and-graphics-in-papers}}
+\hypertarget{statistical-visualization-timeline}{%
+\subsection{Statistical Visualization Timeline}\label{statistical-visualization-timeline}}
+
+\emph{Categorical Data Visualization}
+
+Friendly(\textbf{friendly?}) detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, ti visualize categorical data. Beygelzimer,Perng,Ma (\textbf{beygelzimer?}); Ma and Hellerstien (\textbf{ma?}) created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data (\textbf{schonlau?}). His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
+
+CatTree gives a hierarchical categorical data visualization with interaction (\textbf{wolatch?} and weinstein, 2001). Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by (\textbf{Alsallakh?} et al.~2012) support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.
+
+\emph{High-Dimensional Data Visualization}
+A popular research area in visualization research since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
+- scatterplots: simply use dot in coordinate to present data point.
+- parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
+- RadViz/ PolyViz
+- GridViz
+
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information (\textbf{fua?}, ward rundenstein); (\textbf{johansson2005?}). Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. (\textbf{ankerst?}, berchtold and kiem, 1998). (\textbf{guo?}) used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
+
+\emph{Visualizing Complex Data}
+
+William Cleveland's subcycle plots:
+- glyphmaps and binned graphics that are emerging from big data visualization efforts.
+
+\begin{itemize}
+\tightlist
+\item
+  glyphs and other plots have been embedded in maps
+\end{itemize}
+
+Bertin's semiologic of Graphics, a seminal work in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data (\textbf{wickham?} et al); (\textbf{hobbs?} et al 2010)
+
+\emph{Interactive Graphics}
+
+The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as \texttt{d3} (\textbf{bostock?} et al.~2011).
+
+Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. (\textbf{yi2007?}). The term visualization is context-free, as it can mean different things to different people depending on the situation (\textbf{parsons2014?}). van Wiij's (\textbf{vanwiij2005?}) simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
+\captionof{figure}{van Wiij Simple Visualization Model}
+\end{center}
+
+Interaction allows the user to define what data they see and how they see the data creating a dialogue between the user and the system. Theories behind visual representation include:
+- graphical comprehension ((\textbf{cleveland1984?}))
+- preattentive processing ((\textbf{ware2012?}))
+- gestalt theory ((\textbf{few2009?}))
+- graphical excellence ((\textbf{tufte2001?}))
+
+Theories behind the manipulation of visualizations include but are not limited to
+- cognitive fit ((Vessey \& Galletta, 1991))
+- visual perceptual approaches ((\textbf{baker2009?}))
+- human information processing
+
+As interactive visualizations take a larger role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work in concert to facilitate analytical reasoning. They must decided on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization (\textbf{boy2014?}). Tasks can be viewed either by the goal the user is trying to obtain or by the intent the user has
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/tentypetasks}
+\captionof{figure}{10 Type Tasks with Sources}
+\end{center}
+
+Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ((\textbf{endert2015?}), (\textbf{sedig2012?})). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques (\textbf{saket2018?}).
+
+\begin{center}
+\includegraphics[width=\textwidth]{figure/interactiontasks}
+\captionof{figure}{Interaction Types with Sources}
+\end{center}
+
+(\textbf{schulz2013?}) define two abstractions for the design of visualizations:
+
+\begin{center}
+\begin{align*}
+  Data + Task = Visualization \\
+  Data + Visualization = Task
+\end{align*}
+\end{center}
+
+These abstractions demonstrate dependence between the data, visual representation, and the task. The more the user interacts with the visualization, they gain knowledge. The interactions allow user to be in control of their understanding by providing the flexibility to create new views that help him/her go beyond just the visual representation (\textbf{kiem2008?}). The field of information visualization is continually adapting to changes with the big data revolution.
 
 \hypertarget{advancement-of-graphical-visualizations-in-dashboards}{%
 \subsection{Advancement of graphical visualizations in dashboards}\label{advancement-of-graphical-visualizations-in-dashboards}}
@@ -649,9 +730,9 @@ The knowledge is distinguished as the fifth of five types of theory:
 2. Understanding
 3. Predicting
 4. Explaining and predicting
-4. Design and action
+5. Design and action
 
-A definition of information systems that are suitable for our purposes concerns: "the effective design delivery use and impact of information technology in organizations and society (\textbf{Avison?}).
+A definition of information systems that are suitable for our purposes concerns: "the effective design delivery use and impact of information technology in organizations and society (Avison, Fitzgerald, \& DAWSON, n.d.).
 
 The two paradigms characterize much of the research in the Information systems discipline:
 - \emph{Behavioral Science Paradigm} - seeks to develop and verify theories that explain or predict human or organizational behavior (roots in natural science research methods).
@@ -663,7 +744,7 @@ Technology and behavior are not dichotomous in an information system. They are i
 - methods (algorithms \& practices)
 - instantiations (implemented \& prototype systems)
 
-These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ((\textbf{march1995?}); (\textbf{Nunamaker1991?})).
+These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ((\textbf{march1995?}); (Nunamaker, Dennis, Valacich, Vogel, \& George, 1991)).
 
 \#\#\# Interactive Visualization in Exploratory Data Analysis (EDA)
 
@@ -684,11 +765,11 @@ A common process typically consists of the following general stages:
 4. \emph{Modeling}: Building fitting and validating a model that can explain the data set and the observed phenomena
 5. \emph{Communication}: Disseminating the results to stakeholders in reports, presentations, and charts.
 
-Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. John Tukey's EDA methods are known and well-vetted in the field currently. However, (\textbf{Satyanarayan?}) began to address this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar. Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. John Tukey's EDA methods are known and well-vetted in the field currently. However, (Satyanarayan, Moritz, Wongsuphasawat, \& Heer, 2016) began to address this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar. Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
 
 Contextual Design
 
-(\textbf{wixon?}) introduce ``contextual design'' as a systems development method in which the researcher partners with the user at the user's place of work to ``develop a shared understanding'' of the user's activities, and they define contextual inquiry as the first part of the broader process. Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
+(Wixon, Holtzblatt, \& Knox, 1990) introduce ``contextual design'' as a systems development method in which the researcher partners with the user at the user's place of work to ``develop a shared understanding'' of the user's activities, and they define contextual inquiry as the first part of the broader process. Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -703,7 +784,7 @@ Contextual Design
   The focus of the study is central to the approach taken by the interviewer
 \end{enumerate}
 
-(\textbf{Kandel?}) conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes. Kandal proposes three main archetypes that data scientists may be classed into the following:
+(Kandel, Paepcke, Hellerstein, \& Heer, 2012) conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes. Kandal proposes three main archetypes that data scientists may be classed into the following:
 
 \begin{itemize}
 \tightlist
@@ -715,20 +796,9 @@ Contextual Design
   Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 \end{itemize}
 
-\hypertarget{ggpcp-package---generalized-parallel-coordinate-plots}{%
-\section{\texorpdfstring{\texttt{ggpcp} package - Generalized Parallel Coordinate Plots}{ggpcp package - Generalized Parallel Coordinate Plots}}\label{ggpcp-package---generalized-parallel-coordinate-plots}}
-
-\hypertarget{parallel-coordinate-plot-visualization-review}{%
-\section{Parallel Coordinate Plot Visualization Review}\label{parallel-coordinate-plot-visualization-review}}
-
-Parallel coordinate plots have been implemented in analysis software since the mid-1980s ((Inselberg, 1985), (Wegman, 1990)). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of XY coordinate analysis. Parallel coordinate plots have a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, data visualizations will be more critical and valuable to understanding the underlying structures of valid data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
-
 Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards into different types.
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
-
-\hypertarget{parallel-coordinates-in-eda}{%
-\subsection{Parallel Coordinates in EDA}\label{parallel-coordinates-in-eda}}
 
 EDA refers to methods and procedures for exploring the data space to learn about a data set. By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.
 
@@ -747,22 +817,6 @@ Interactive graphics are excellent for EDA, they are designed for exploring rath
 \end{itemize}
 
 Being able to select subgroups of cases, highlight the selected lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
-
-\hypertarget{r-packages}{%
-\subsection{R Packages}\label{r-packages}}
-
-R packages exist for Parallel coordinate plots, with some built-in functionality, but only a few exist for advanced exploratory data analysis visualizations. Beginning with base plot package \texttt{parcoord} developed in MASS by (\textbf{Venables?} and Ripley 2004). The package is limited by extensive, which contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. Another package, \texttt{gclus} was developed by (Hurley, 2019) and implements \texttt{cparcoord} to include panel color of the strength of a correlation between neighboring axes.
-
-While base R packages are helpful, a few packages within the ggplot2 environment implement parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics is at the focal point of plots. The following packages (Schloerke et al., 2021) and \texttt{ggpcp} are built with the fundamental guidelines for graphic literacy for numeric variables. \texttt{GGally} was initially designed for the following pieces of graphic design: \href{}{LIST THE PACKAGE'S STARTING PLANS}, so it also contains much more capabilities for PCPs in addition to visualizations. \texttt{ggpcp} we separate the data transformations from the visualization, i.e., rather than working with a single function to draw a plot, we are providing a set of functions that work together (Hofmann, VanderPlas, \& Ge, 2022).
-
-\texttt{ggparallel} implements and combines different types of parallel coordinate plots for categorical data: hammock plots, parallel sets plots, typical angle plots, and typical angle plots with a hammock-like adjustment for line widths (Hofmann \& Vendettuoli, 2013b).
-
-\hypertarget{ggpcp-package-importance}{%
-\subsection{\texorpdfstring{\texttt{ggpcp} package importance}{ggpcp package importance}}\label{ggpcp-package-importance}}
-
-As mentioned in previous sections, that parallel coordinate plots have a long line history. However, we are now looking to incorporate the use of categorical data. The \texttt{ggpcp} implements the Grammar of graphics and the principled manner of categorical variables. This package separates the data managing part from the plots by giving full user access while keeping the number of parameters manageable. (Hofmann, VanderPlas, \& Ge, 2022)
-
-While the \texttt{ggpcp} package is the first iteration of the package that can be changed in a way that will allow the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics through the eyes of someone that is not used to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore how one level of interaction from the user can create a better plot for understanding.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -835,7 +889,7 @@ This invitation to engage with the data is similar to the approach advocated in 
 
 We expect that users will be interested in ``sets'' of variables from the wider dataset, which we assembled based on quality of life factors in the Iowa Small Town Poll (Peters, 2019). For instance, users might be interested in medical and social services available to residents, such as a local primary care clinic, nursing homes which are within driving distance, and the distance to the nearest emergency room; these factors might be explored separately from variables describing the services provided directly by city government, such as parks and recreation expenditures, snow removal services, and the distance to the closest fire station.
 
-As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours (Wickham, Cook, Hofmann, \& Buja, 2011), require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s (d'Ocagne, 1885), parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show ``blocks'' of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables (Bendix, Kosara, \& Hauser, 2005); modifications of this design, such as common-angle plots (Hofmann \& Vendettuoli, 2013a), address the issues which arise due to line-width illusions VanderPlas \& Hofmann (2015). Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities (Heinrich \& Weiskopf, 2009). In this paper, we use the \texttt{ggpcp} package, which leverages the grammar-of-graphics framework introduced in Wickham (2016), allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.
+As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours (Wickham, Cook, Hofmann, \& Buja, 2011), require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s (d'Ocagne, 1885), parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show ``blocks'' of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables (Bendix, Kosara, \& Hauser, 2005); modifications of this design, such as common-angle plots (Hofmann \& Vendettuoli, 2013), address the issues which arise due to line-width illusions VanderPlas \& Hofmann (2015). Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities (Heinrich \& Weiskopf, 2009). In this paper, we use the \texttt{ggpcp} package, which leverages the grammar-of-graphics framework introduced in Wickham (2016), allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.
 
 We also anticipate that users will be interested in comparing their town to other, similar towns. We will discuss the different ways that this comparison strategy was implemented in each dashboard in the next section, which describes the evolution of the dashboard over time and accounting for feedback from users and other researchers on the wider project.
 
@@ -1198,7 +1252,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-11-28 14:06:27. The repository is currently at this commit:
+This version of the thesis was generated on 2022-12-02 14:28:43. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1213,7 +1267,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2022-11-28
+##  date     2022-12-02
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -1338,6 +1392,9 @@ Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach wit
 \leavevmode\hypertarget{ref-angel2002a}{}%
 Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
 
+\leavevmode\hypertarget{ref-avison1995}{}%
+Avison, D., Fitzgerald, G., \& DAWSON, C. (n.d.). Information systems development: Methodologies, techniques and tools, McGraw-hill.
+
 \leavevmode\hypertarget{ref-bartlett1932}{}%
 Bartlett, F. A., \& Remembering, A. (1932). A study in experimental and social psychology. New York: Cambridge University Press.
 
@@ -1392,23 +1449,14 @@ Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{I
 \leavevmode\hypertarget{ref-heylighen1997}{}%
 Heylighen, F. (1997). Publications on complex, evolving systems: A citation-based survey. \emph{Complexity}, \emph{2}(5), 31--36.
 
-\leavevmode\hypertarget{ref-ggpcp}{}%
-Hofmann, H., VanderPlas, S., \& Ge, Y. (2022). \emph{Ggpcp: Parallel coordinate plots in the ggplot2 framework}. Retrieved from \url{https://github.com/heike/ggpcp}
-
-\leavevmode\hypertarget{ref-Heike2013}{}%
-Hofmann, H., \& Vendettuoli, M. (2013b). Common angle plots as perception-true visualizations of categorical associations. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
-
 \leavevmode\hypertarget{ref-Hofmann:2013}{}%
-Hofmann, H., \& Vendettuoli, M. (2013a). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
+Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
 
 \leavevmode\hypertarget{ref-huang2006}{}%
 Huang, Z., Chen, H., Guo, F., Xu, J. J., Wu, S., \& Chen, W.-H. (2006). Expertise visualization: An implementation and study based on cognitive fit theory. \emph{Decision Support Systems}, \emph{42}(3), 1539--1557.
 
-\leavevmode\hypertarget{ref-Hurley}{}%
-Hurley, C. (2019). \emph{Gclus: Clustering graphics}. Retrieved from \url{https://CRAN.R-project.org/package=gclus}
-
-\leavevmode\hypertarget{ref-Inselberg}{}%
-Inselberg, A. (1985). {The plane with parallel coordinates}. \emph{The Visual Computer}, \emph{1}(2), 69--91. http://doi.org/\href{https://doi.org/10.1007/BF01898350}{10.1007/BF01898350}
+\leavevmode\hypertarget{ref-kandel2012}{}%
+Kandel, S., Paepcke, A., Hellerstein, J. M., \& Heer, J. (2012). Enterprise data analysis and visualization: An interview study. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{18}(12), 2917--2926.
 
 \leavevmode\hypertarget{ref-kiem2002}{}%
 Keim, D. A. (2002). Information visualization and visual data mining. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{8}(1), 1--8. http://doi.org/\href{https://doi.org/10.1109/2945.981847}{10.1109/2945.981847}
@@ -1433,6 +1481,9 @@ NATIONAL ACADEMY OF SCIENCES, NATIONAL ACADEMY OF ENGINEERING,AND INSTITUTE OF M
 
 \leavevmode\hypertarget{ref-elsi}{}%
 National Center for Education Statistics. (2020). National center for education statistics. \url{https://nces.ed.gov/}.
+
+\leavevmode\hypertarget{ref-nunamaker1991}{}%
+Nunamaker, J. F., Dennis, A. R., Valacich, J. S., Vogel, D., \& George, J. F. (1991). Electronic meeting systems. \emph{Communications of the ACM}, \emph{34}(7), 40--61.
 
 \leavevmode\hypertarget{ref-odonnell2000}{}%
 O'Donnell, E., \& David, J. S. (2000). How information systems influence user decisions: A research framework and literature review. \emph{International Journal of Accounting Information Systems}, \emph{1}(3), 178--203.
@@ -1461,8 +1512,8 @@ S. K. Card, J. D. Mackinlay, \& Shneiderman, B. (1999). Readings in information 
 \leavevmode\hypertarget{ref-fisher}{}%
 Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
 
-\leavevmode\hypertarget{ref-ggally}{}%
-Schloerke, B., Cook, D., Larmarange, J., Briatte, F., Marbach, M., Thoen, E., \ldots{} Crowley, J. (2021). \emph{GGally: Extension to 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=GGally}
+\leavevmode\hypertarget{ref-satyanarayan2016}{}%
+Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite: A grammar of interactive graphics. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{23}(1), 341--350.
 
 \leavevmode\hypertarget{ref-iowa_gov}{}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
@@ -1494,9 +1545,6 @@ Vessey, I., \& Galletta, D. (1991). Cognitive fit: An empirical study of informa
 \leavevmode\hypertarget{ref-Ware2004}{}%
 Ware, C. (2004). \emph{Information visualization: Perception for design}. San Francisco, CA: Morgan Kaufmann Publisher.
 
-\leavevmode\hypertarget{ref-Wegman}{}%
-Wegman, E. J. (1990). {Hyperdimensional data analysis using parallel coordinates}. \emph{Journal of the American Statistical Assoiation}, \emph{85}, 664--675.
-
 \leavevmode\hypertarget{ref-wertheimer1938}{}%
 Wertheimer, M. (1938). Laws of organization in perceptual forms.
 
@@ -1505,6 +1553,9 @@ Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed
 
 \leavevmode\hypertarget{ref-tourr}{}%
 Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for Exploring Multivariate Data with Projections}. \emph{Journal of Statistical Software, Articles}, \emph{40}(2), 1--18. http://doi.org/\href{https://doi.org/10.18637/jss.v040.i02}{10.18637/jss.v040.i02}
+
+\leavevmode\hypertarget{ref-wixon1990}{}%
+Wixon, D., Holtzblatt, K., \& Knox, S. (1990). Contextual design: An emergent view of system design. In \emph{Proceedings of the SIGCHI conference on human factors in computing systems} (pp. 329--336).
 
 \leavevmode\hypertarget{ref-zarecor2021rural}{}%
 Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
