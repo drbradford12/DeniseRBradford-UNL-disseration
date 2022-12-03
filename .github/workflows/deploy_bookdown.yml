@@ -16,11 +16,12 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown","bookdown", "devtools"))'
+        run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
       - name: Install dependencies
         run: |
-          Rscript -e 'devtools::install_github("benmarwick/huskydown")'
+          Rscript -e 'install.packages("devtools")
           Rscript -e 'install.packages("palmerpenguins", "tidyverse", "git2r")'
+          Rscript -e 'devtools::install_github("benmarwick/huskydown")'
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
       - uses: actions/upload-artifact@v1
