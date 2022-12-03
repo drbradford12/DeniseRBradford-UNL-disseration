@@ -302,7 +302,7 @@ Based on the following diagram
 
 As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical pictures. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
 
-One graphic can be misleading alone, but can two graphics be considered misleading when placing two ``correctly'' designed graphics together on a dashboard? This is something that visual information researchers explore but don't test. We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallell Coordinate Plot, for example.
+One graphic can be misleading alone, but can two graphics be considered misleading when placing two ``correctly'' designed graphics together on a dashboard? This is something that visual information researchers explore but don't test. We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallel Coordinate Plot, for example.
 
 Since we don't completely understand the way that basic statistical graphics are
 
@@ -387,13 +387,6 @@ The theory of graphics is based on plot layers, which are built with four distin
 \end{itemize}
 
 Seven major components help build effective visualizations that build on one another. Seven major components help build effective visualizations. The following diagram will display the effectiveness of data graphics:
-- Data
-- Aesthetics
-- Scale
-- Geometric Objects
-- Statistics
-- Facets
-- Coordinate system
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
@@ -447,25 +440,32 @@ Visualization is NOT prediction. Much of the field is focus on prediction models
 The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important.
 \end{quote}
 
-Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference -- with one exception: The test statistic is now a graphical display which is compared to a ``reference distribution'' of plots showing the null.{[}REFERENCE WEBSITE{]}
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference -- with one exception: The test statistic is now a graphical display which is compared to a ``reference distribution'' of plots showing the null.
 
 \hypertarget{statistical-visualization-timeline}{%
 \subsection{Statistical Visualization Timeline}\label{statistical-visualization-timeline}}
 
 \emph{Categorical Data Visualization}
+Friendly(Friendly, 2014) detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, to visualize categorical data. Beygelzimer, Perng, Ma (Beygelzimer, Perng, \& Ma, 2001); Ma and Hellerstien (Ma \& Hellerstein, 2001) created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data (Schonlau, 2003). His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
 
-Friendly(\textbf{friendly?}) detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, ti visualize categorical data. Beygelzimer,Perng,Ma (\textbf{beygelzimer?}); Ma and Hellerstien (\textbf{ma?}) created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data (\textbf{schonlau?}). His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
-
-CatTree gives a hierarchical categorical data visualization with interaction (\textbf{wolatch?} and weinstein, 2001). Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by (\textbf{Alsallakh?} et al.~2012) support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.
+CatTree gives a hierarchical categorical data visualization with interaction (Kolatch \& Weinstein, 2001). Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by (Alsallakh, Gröller, Miksch, \& Suntinger, 2011) support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.
 
 \emph{High-Dimensional Data Visualization}
 A popular research area in visualization research since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
-- scatterplots: simply use dot in coordinate to present data point.
-- parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
-- RadViz/ PolyViz
-- GridViz
 
-Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information (\textbf{fua?}, ward rundenstein); (\textbf{johansson2005?}). Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. (\textbf{ankerst?}, berchtold and kiem, 1998). (\textbf{guo?}) used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
+\begin{itemize}
+\tightlist
+\item
+  scatterplots: simply use dot in coordinate to present data point.
+\item
+  parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
+\item
+  RadViz/ PolyViz
+\item
+  GridViz
+\end{itemize}
+
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information (Fua, Ward, \& Rundensteiner, 1999); (Johansson, Ljung, Jern, \& Cooper, 2005). Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. (Ankerst, Berchtold, \& Keim, 1998). (Guo, 2003) used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
 
 \emph{Visualizing Complex Data}
 
@@ -478,13 +478,13 @@ William Cleveland's subcycle plots:
   glyphs and other plots have been embedded in maps
 \end{itemize}
 
-Bertin's semiologic of Graphics, a seminal work in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data (\textbf{wickham?} et al); (\textbf{hobbs?} et al 2010)
+Bertin's semiologic of Graphics, a seminal work in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data (Wickham, Hofmann, Wickham, \& Cook, 2012); (\textbf{hobbs2010?})
 
 \emph{Interactive Graphics}
 
-The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as \texttt{d3} (\textbf{bostock?} et al.~2011).
+The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as \texttt{d3} (Bostock, Ogievetsky, \& Heer, 2011).
 
-Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. (\textbf{yi2007?}). The term visualization is context-free, as it can mean different things to different people depending on the situation (\textbf{parsons2014?}). van Wiij's (\textbf{vanwiij2005?}) simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. (Yi, Kang, Stasko, \& Jacko, 2007). The term visualization is context-free, as it can mean different things to different people depending on the situation (Parsons \& Sedig, 2014). van Wiij's (Van Wijk, 2005) simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
@@ -492,9 +492,9 @@ Visualizations are more than just a picture. They are now a tool that facilities
 \end{center}
 
 Interaction allows the user to define what data they see and how they see the data creating a dialogue between the user and the system. Theories behind visual representation include:
-- graphical comprehension ((\textbf{cleveland1984?}))
-- preattentive processing ((\textbf{ware2012?}))
-- gestalt theory ((\textbf{few2009?}))
+- graphical comprehension ((Cleveland \& McGill, 1984))
+- preattentive processing ((Ware, 2012))
+- gestalt theory ((Few, 2009))
 - graphical excellence ((\textbf{tufte2001?}))
 
 Theories behind the manipulation of visualizations include but are not limited to
@@ -509,14 +509,14 @@ As interactive visualizations take a larger role in information systems, designe
 \captionof{figure}{10 Type Tasks with Sources}
 \end{center}
 
-Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ((\textbf{endert2015?}), (\textbf{sedig2012?})). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques (\textbf{saket2018?}).
+Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ((Endert, Chang, North, \& Zhou, 2015), (Sedig, Parsons, \& Babanski, 2012)). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques (Saket, Srinivasan, Ragan, \& Endert, 2017).
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/interactiontasks}
 \captionof{figure}{Interaction Types with Sources}
 \end{center}
 
-(\textbf{schulz2013?}) define two abstractions for the design of visualizations:
+(Schulz, Nocke, Heitzler, \& Schumann, 2013) define two abstractions for the design of visualizations:
 
 \begin{center}
 \begin{align*}
@@ -602,7 +602,7 @@ A schema is a mental model containing a breadth of information about a specific 
 \hypertarget{section-9-dashboard-design-in-regards-to-human-perception}{%
 \subsection{Section 9: Dashboard Design in regards to Human Perception}\label{section-9-dashboard-design-in-regards-to-human-perception}}
 
-Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis (Tukey \& Wilk, 1966) that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - ``External cognition: how do graphical representations work?'' by Scaife and Rogers (\textbf{scaife?}) critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
+Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis (Tukey \& Wilk, 1966) that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - ``External cognition: how do graphical representations work?'' by Scaife and Rogers (Scaife \& Rogers, 1996) critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
 
 The visual reference model developed by Card et al. (S. K. Card \& Shneiderman, 1999) describes and identifies the three phases of the visualization process.
 
@@ -736,15 +736,15 @@ A definition of information systems that are suitable for our purposes concerns:
 
 The two paradigms characterize much of the research in the Information systems discipline:
 - \emph{Behavioral Science Paradigm} - seeks to develop and verify theories that explain or predict human or organizational behavior (roots in natural science research methods).
-- \emph{Data Science Paradigm} - seeks to extend the boundaries of human and organizational capabilities by creating new and innovative artifacts (roots in engineering and the sciences of the artificial).(\textbf{simon1996?})
+- \emph{Data Science Paradigm} - seeks to extend the boundaries of human and organizational capabilities by creating new and innovative artifacts (roots in engineering and the sciences of the artificial).(Simon, 1996)
 
-Technology and behavior are not dichotomous in an information system. They are inseparable (\textbf{lee2000?}). Information technology (IT) artifacts are broadly defined as:
+Technology and behavior are not dichotomous in an information system. They are inseparable (A. Lee, 2000). Information technology (IT) artifacts are broadly defined as:
 - constructs (vocabulary \& symbols)
 - models (abstractions \& representations)
 - methods (algorithms \& practices)
 - instantiations (implemented \& prototype systems)
 
-These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ((\textbf{march1995?}); (Nunamaker, Dennis, Valacich, Vogel, \& George, 1991)).
+These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ((March \& Smith, 1995); (Nunamaker, Dennis, Valacich, Vogel, \& George, 1991)).
 
 \#\#\# Interactive Visualization in Exploratory Data Analysis (EDA)
 
@@ -923,7 +923,7 @@ In this section, we discuss the philosophy behind the basic ``building blocks'' 
 
 The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006).
 
-Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
+Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (S. Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
 
 When faced with the next component, a parallel coordinate plot (PCP), a novice user will be able to determine two basic components: Visual Object (textual objects and non-textual objects) and Frame (frame of content and frame of visual encoding).
 
@@ -1252,7 +1252,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2022-12-02 14:28:43. The repository is currently at this commit:
+This version of the thesis was generated on 2022-12-03 09:13:03. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1267,7 +1267,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2022-12-02
+##  date     2022-12-03
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -1383,6 +1383,9 @@ The computational environment that was used to generate this version is as follo
 \leavevmode\hypertarget{ref-abello2002}{}%
 Abello, J., \& Korn, J. (2002). MGV: A system for visualizing massive multidigraphs. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{8}(1), 21--38. http://doi.org/\href{https://doi.org/10.1109/2945.981849}{10.1109/2945.981849}
 
+\leavevmode\hypertarget{ref-alsallakh2011}{}%
+Alsallakh, B., Gröller, M. E., Miksch, S., \& Suntinger, M. (2011). Contingency wheel: Visual analysis of large contingency tables. In \emph{EuroVA@ EuroVis}.
+
 \leavevmode\hypertarget{ref-angel2000}{}%
 Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
 
@@ -1391,6 +1394,9 @@ Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach wit
 
 \leavevmode\hypertarget{ref-angel2002a}{}%
 Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
+
+\leavevmode\hypertarget{ref-ankerst1998}{}%
+Ankerst, M., Berchtold, S., \& Keim, D. A. (1998). Similarity clustering of dimensions for an enhanced visualization of multidimensional data. In \emph{Proceedings IEEE symposium on information visualization (cat. no.98TB100258)} (pp. 52--60). http://doi.org/\href{https://doi.org/10.1109/INFVIS.1998.729559}{10.1109/INFVIS.1998.729559}
 
 \leavevmode\hypertarget{ref-avison1995}{}%
 Avison, D., Fitzgerald, G., \& DAWSON, C. (n.d.). Information systems development: Methodologies, techniques and tools, McGraw-hill.
@@ -1401,8 +1407,14 @@ Bartlett, F. A., \& Remembering, A. (1932). A study in experimental and social p
 \leavevmode\hypertarget{ref-Bendix:2005}{}%
 Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
 
+\leavevmode\hypertarget{ref-beygelzimer2001}{}%
+Beygelzimer, A., Perng, C.-S., \& Ma, S. (2001). Fast ordering of large categorical datasets for better visualization. In \emph{Proceedings of the seventh ACM SIGKDD international conference on knowledge discovery and data mining} (pp. 239--244).
+
 \leavevmode\hypertarget{ref-booth2006}{}%
 Booth, J. L., \& Siegler, R. S. (2006). Developmental and individual differences in pure numerical estimation. \emph{Developmental Psychology}, \emph{42}(1), 189.
+
+\leavevmode\hypertarget{ref-bostock2011}{}%
+Bostock, M., Ogievetsky, V., \& Heer, J. (2011). D\(^3\) data-driven documents. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2301--2309.
 
 \leavevmode\hypertarget{ref-brunswik1952}{}%
 Brunswik, E. (1952). \emph{The conceptual framework of psychology} (Vol. 1). University of Chicago Press.
@@ -1419,6 +1431,9 @@ Carley, K., \& Palmquist, M. (1992). Extracting, representing, and analyzing men
 \leavevmode\hypertarget{ref-choo2009}{}%
 Choo, C. W. (2009). Information use and early warning effectiveness: Perspectives and prospects. \emph{Journal of the American Society for Information Science and Technology}, \emph{60}(5), 1071--1082.
 
+\leavevmode\hypertarget{ref-cleveland1984}{}%
+Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
+
 \leavevmode\hypertarget{ref-cowan2001}{}%
 Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. \emph{Behavioral and Brain Sciences}, \emph{24}(1), 87--114.
 
@@ -1434,11 +1449,26 @@ DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discover
 \leavevmode\hypertarget{ref-JHPHDashboard}{}%
 Dong E, G. L., Du H. (2022). An interactive web-based dashboard to track COVID-19 in real time. http://doi.org/\href{https://doi.org/10.1016/S1473-3099(20)30120-1}{10.1016/S1473-3099(20)30120-1}
 
+\leavevmode\hypertarget{ref-endert2015}{}%
+Endert, A., Chang, R., North, C., \& Zhou, M. (2015). Semantic interaction: Coupling cognition and computation through usable interactive analytics. \emph{IEEE Computer Graphics and Applications}, \emph{35}(4), 94--99.
+
 \leavevmode\hypertarget{ref-few}{}%
 Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
 
+\leavevmode\hypertarget{ref-few2009}{}%
+Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quantitative analysis}. Analytics Press.
+
 \leavevmode\hypertarget{ref-friedman1979}{}%
 Friedman, A. (1979). Framing pictures: The role of knowledge in automatized encoding and memory for gist. \emph{Journal of Experimental Psychology: General}, \emph{108}(3), 316.
+
+\leavevmode\hypertarget{ref-friendly2014}{}%
+Friendly, M. (2014). Comment on {``the generalized pairs plot.''} \emph{Journal of Computational and Graphical Statistics}, \emph{23}(1), 290--291.
+
+\leavevmode\hypertarget{ref-fua1999}{}%
+Fua, Y.-H., Ward, M. O., \& Rundensteiner, E. A. (1999). Hierarchical parallel coordinates for exploration of large datasets. In \emph{Proceedings visualization '99 (cat. no.99CB37067)} (pp. 43--508). http://doi.org/\href{https://doi.org/10.1109/VISUAL.1999.809866}{10.1109/VISUAL.1999.809866}
+
+\leavevmode\hypertarget{ref-guo2003}{}%
+Guo, D. (2003). Coordinating computational and visual approaches for interactive feature selection and multivariate clustering. \emph{Information Visualization}, \emph{2}(4), 232--246.
 
 \leavevmode\hypertarget{ref-heaps1999}{}%
 Heaps, C., \& Handel, S. (1999). Similarity and features of natural textures. \emph{Journal of Experimental Psychology: Human Perception and Performance}, \emph{25}(2), 299.
@@ -1455,6 +1485,9 @@ Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True V
 \leavevmode\hypertarget{ref-huang2006}{}%
 Huang, Z., Chen, H., Guo, F., Xu, J. J., Wu, S., \& Chen, W.-H. (2006). Expertise visualization: An implementation and study based on cognitive fit theory. \emph{Decision Support Systems}, \emph{42}(3), 1539--1557.
 
+\leavevmode\hypertarget{ref-johansson2005}{}%
+Johansson, J., Ljung, P., Jern, M., \& Cooper, M. (2005). Revealing structure within clustered parallel coordinates displays. In \emph{IEEE symposium on information visualization, 2005. INFOVIS 2005.} (pp. 125--132). IEEE.
+
 \leavevmode\hypertarget{ref-kandel2012}{}%
 Kandel, S., Paepcke, A., Hellerstein, J. M., \& Heer, J. (2012). Enterprise data analysis and visualization: An interview study. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{18}(12), 2917--2926.
 
@@ -1464,14 +1497,26 @@ Keim, D. A. (2002). Information visualization and visual data mining. \emph{IEEE
 \leavevmode\hypertarget{ref-klein2007}{}%
 Klein, G., Phillips, J. K., Rall, E. L., \& Peluso, D. A. (2007). A data--frame theory of sensemaking. In \emph{Expertise out of context} (pp. 118--160). Psychology Press.
 
+\leavevmode\hypertarget{ref-kolatch2001}{}%
+Kolatch, E., \& Weinstein, B. (2001). CatTrees: Dynamic visualization of categorical data using treemaps. Url: Http://www. Cs. Umd. Edu/class/spring2001/cmsc838b/proje ct. Kolatch\_Weinstein.
+
+\leavevmode\hypertarget{ref-lee2000}{}%
+Lee, A. (2000). Systems thinking, design science, and paradigms: Heeding three lessons from the past to resolve three dilemmas in the present to direct a trajectory for future research in the information systems field,``keynote address. In \emph{Eleventh international conference on information management, taiwan}.
+
 \leavevmode\hypertarget{ref-lee}{}%
 Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
 
 \leavevmode\hypertarget{ref-luxen-vetter-2011}{}%
 Luxen, D., \& Vetter, C. (2011). Real-time routing with OpenStreetMap data. In \emph{Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems} (pp. 513--516). New York, NY, USA: ACM. http://doi.org/\href{https://doi.org/10.1145/2093973.2094062}{10.1145/2093973.2094062}
 
+\leavevmode\hypertarget{ref-ma2001}{}%
+Ma, S., \& Hellerstein, J. L. (2001). Mining partially periodic event patterns with unknown periods. In \emph{Proceedings 17th international conference on data engineering} (pp. 205--214). IEEE.
+
 \leavevmode\hypertarget{ref-mallows1980}{}%
 Mallows, C., \& Walley, P. (1980). A theory of data analysis. \emph{Proc. Amer. Statist. Assoc. Bus. Econ. Statist. Sec}, 8--14.
+
+\leavevmode\hypertarget{ref-march1995}{}%
+March, S. T., \& Smith, G. F. (1995). Design and natural science research on information technology. \emph{Decision Support Systems}, \emph{15}(4), 251--266.
 
 \leavevmode\hypertarget{ref-Molina1994}{}%
 Molina, S. T., \& Borkovec, T. D. (1994). The {P}enn {S}tate worry questionnaire: Psychometric properties and associated characteristics. In G. C. L. Davey \& F. Tallis (Eds.), \emph{Worrying: Perspectives on theory, assessment and treatment} (pp. 265--283). New York: Wiley.
@@ -1491,6 +1536,9 @@ O'Donnell, E., \& David, J. S. (2000). How information systems influence user de
 \leavevmode\hypertarget{ref-olivia2004}{}%
 Olivia, A., Mack, M. L., Shrestha, M., \& Peeper, A. (2004). Identifying the perceptual dimensions of visual complexity of scenes. In \emph{Proceedings of the annual meeting of the cognitive science society} (Vol. 26).
 
+\leavevmode\hypertarget{ref-parsons2014}{}%
+Parsons, P., \& Sedig, K. (2014). Adjustable properties of visual representations: Improving the quality of human-information interaction. \emph{Journal of the Association for Information Science and Technology}, \emph{65}(3), 455--482.
+
 \leavevmode\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}%
 Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
 
@@ -1509,11 +1557,29 @@ Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksma
 \leavevmode\hypertarget{ref-Card}{}%
 S. K. Card, J. D. Mackinlay, \& Shneiderman, B. (1999). Readings in information visualization: Using vision to think.
 
+\leavevmode\hypertarget{ref-saket2018}{}%
+Saket, B., Srinivasan, A., Ragan, E. D., \& Endert, A. (2017). Evaluating interactive graphical encodings for data visualization. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{24}(3), 1316--1330.
+
 \leavevmode\hypertarget{ref-fisher}{}%
 Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
 
 \leavevmode\hypertarget{ref-satyanarayan2016}{}%
 Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite: A grammar of interactive graphics. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{23}(1), 341--350.
+
+\leavevmode\hypertarget{ref-scaife1996}{}%
+Scaife, M., \& Rogers, Y. (1996). External cognition: How do graphical representations work? \emph{International Journal of Human-Computer Studies}, \emph{45}(2), 185--213.
+
+\leavevmode\hypertarget{ref-schonlau2003}{}%
+Schonlau, M. (2003). Visualizing categorical data arising in the health sciences using hammock plots. In \emph{Proceedings of the section on statistical graphics, american statistical association}.
+
+\leavevmode\hypertarget{ref-schulz2013}{}%
+Schulz, H.-J., Nocke, T., Heitzler, M., \& Schumann, H. (2013). A design space of visualization tasks. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2366--2375.
+
+\leavevmode\hypertarget{ref-sedig2012}{}%
+Sedig, K., Parsons, P., \& Babanski, A. (2012). Towards a characterization of interactivity in visual analytics. \emph{J. Multim. Process. Technol.}, \emph{3}(1), 12--28.
+
+\leavevmode\hypertarget{ref-simon1996}{}%
+Simon, H. A. (1996). The sciences of the artificial 3rd ed. \emph{MIT Press Cambridge}.
 
 \leavevmode\hypertarget{ref-iowa_gov}{}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
@@ -1533,6 +1599,9 @@ USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics
 \leavevmode\hypertarget{ref-usda}{}%
 USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
 
+\leavevmode\hypertarget{ref-van2005}{}%
+Van Wijk, J. J. (2005). The value of visualization. In \emph{VIS 05. IEEE visualization, 2005.} (pp. 79--86). IEEE.
+
 \leavevmode\hypertarget{ref-sineillusion}{}%
 VanderPlas, S., \& Hofmann, H. (2015). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
 
@@ -1545,6 +1614,9 @@ Vessey, I., \& Galletta, D. (1991). Cognitive fit: An empirical study of informa
 \leavevmode\hypertarget{ref-Ware2004}{}%
 Ware, C. (2004). \emph{Information visualization: Perception for design}. San Francisco, CA: Morgan Kaufmann Publisher.
 
+\leavevmode\hypertarget{ref-ware2012}{}%
+Ware, C. (2012). \emph{Information visualization: Perception for design}. Morgan Kaufmann.
+
 \leavevmode\hypertarget{ref-wertheimer1938}{}%
 Wertheimer, M. (1938). Laws of organization in perceptual forms.
 
@@ -1554,8 +1626,14 @@ Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed
 \leavevmode\hypertarget{ref-tourr}{}%
 Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for Exploring Multivariate Data with Projections}. \emph{Journal of Statistical Software, Articles}, \emph{40}(2), 1--18. http://doi.org/\href{https://doi.org/10.18637/jss.v040.i02}{10.18637/jss.v040.i02}
 
+\leavevmode\hypertarget{ref-wickham2012}{}%
+Wickham, H., Hofmann, H., Wickham, C., \& Cook, D. (2012). Glyph-maps for visually exploring temporal patterns in climate data and models. \emph{Environmetrics}, \emph{23}(5), 382--393.
+
 \leavevmode\hypertarget{ref-wixon1990}{}%
 Wixon, D., Holtzblatt, K., \& Knox, S. (1990). Contextual design: An emergent view of system design. In \emph{Proceedings of the SIGCHI conference on human factors in computing systems} (pp. 329--336).
+
+\leavevmode\hypertarget{ref-yi2007}{}%
+Yi, J. S., Kang, Y. ah, Stasko, J., \& Jacko, J. A. (2007). Toward a deeper understanding of the role of interaction in information visualization. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{13}(6), 1224--1231.
 
 \leavevmode\hypertarget{ref-zarecor2021rural}{}%
 Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
