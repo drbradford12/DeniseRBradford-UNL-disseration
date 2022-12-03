@@ -3,27 +3,31 @@ on:
      branches:
        - master
 
-  
+
 
 name: renderbook
 
 jobs:
   bookdown:
     name: Render-Book
-    runs-on: macOS-latest
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v1
-      - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-pandoc@v2
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+        run: Rscript -e 'install.packages(c("rmarkdown","bookdown", "devtools"))'
+      - name: Install dependencies
+        run: |
+          Rscript -e 'devtools::install_github("benmarwick/huskydown")'
+          Rscript -e 'install.packages("palmerpenguins", "tidyverse", "git2r")'
       - name: Render Book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
       - uses: actions/upload-artifact@v1
         with:
           name: _book
           path: _book/
-  
+
 # Need to first create an empty gh-pages branch
 # see https://pkgdown.r-lib.org/reference/deploy_site_github.html
 # and also add secrets for a GH_PAT and EMAIL to the repository
@@ -47,5 +51,5 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
           GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
           BUILD_DIR: _book/                     # "_site/" by default
-    
- 
+
+
