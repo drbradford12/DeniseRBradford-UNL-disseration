@@ -16,10 +16,6 @@ library(palmerpenguins)
 library(tidyverse)
 ```
 
-<!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers on chapters. -->
-
-<!-- # Introduction {.unnumbered} -->
-
 # Literature Review
 
 ## Introduction
@@ -60,7 +56,7 @@ Based on the following diagram
 As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical pictures. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
 
 
-One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? This is something that visual information researchers explore but don't test. We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallell Coordinate Plot, for example.
+One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? This is something that visual information researchers explore but don't test. We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallel Coordinate Plot, for example.
 
 
 Since we don't completely understand the way that basic statistical graphics are
@@ -106,13 +102,6 @@ The theory of graphics is based on plot layers, which are built with four distin
 - geometric object and a position adjustment - *geom object is used to draw a plot layer, and position adjustment is to help with adjusting the visual feature in the space*
 
 Seven major components help build effective visualizations that build on one another. Seven major components help build effective visualizations. The following diagram will display the effectiveness of data graphics:
-- Data
-- Aesthetics
-- Scale
-- Geometric Objects
-- Statistics
-- Facets
-- Coordinate system
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
@@ -159,23 +148,23 @@ Visualization is NOT prediction. Much of the field is focus on prediction models
 > The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important.
 
 
-Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.[REFERENCE WEBSITE]
+Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.
 
 ### Statistical Visualization Timeline
 *Categorical Data Visualization*
+Friendly[@friendly2014] detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, to visualize categorical data. Beygelzimer, Perng, Ma [@beygelzimer2001]; Ma and Hellerstien [@ma2001] created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data [@schonlau2003]. His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
 
-Friendly[@friendly] detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, ti visualize categorical data. Beygelzimer,Perng,Ma [@beygelzimer]; Ma and Hellerstien [@ma] created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data [@schonlau]. His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
-
-CatTree gives a hierarchical categorical data visualization with interaction [@wolatch and weinstein, 2001]. Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by [@Alsallakh et al. 2012] support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.  
+CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by [@alsallakh2011] support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.  
 
 *High-Dimensional Data Visualization*
 A popular research area in visualization research since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
+
 - scatterplots: simply use dot in coordinate to present data point.
 - parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
 - RadViz/ PolyViz
 - GridViz
 
-Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua, ward rundenstein]; [@johansson2005]. Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. [@ankerst, berchtold and kiem, 1998]. [@guo,2003] used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. [@ankerst1998]. [@guo2003] used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
 
 *Visualizing Complex Data*
 
@@ -184,13 +173,13 @@ William Cleveland's subcycle plots:
 
 - glyphs and other plots have been embedded in maps 
 
-Bertin's semiologic of Graphics, a seminal work  in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data [@wickham et al]; [@hobbs et al 2010]
+Bertin's semiologic of Graphics, a seminal work  in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data [@wickham2012]; [@hobbs2010]
 
 *Interactive Graphics*
 
-The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as `d3` [@bostock et al. 2011].
+The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as `d3` [@bostock2011].
 
-Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. van Wiij's [@vanwiij2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. van Wiij's [@van2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
@@ -223,14 +212,12 @@ Interaction of Type Tasks facilitate data exploration leading to the generation 
 \end{center}
 
 [@schulz2013] define two abstractions for the design of visualizations:
-
 \begin{center}
 \begin{align*}
   Data + Task = Visualization \\
   Data + Visualization = Task
 \end{align*}
 \end{center}
-
 These abstractions demonstrate dependence between the data, visual representation, and the task. The more the user interacts with the visualization, they gain knowledge. The interactions allow user to be in control of their understanding by providing the flexibility to create new views that help him/her go beyond just the visual representation [@kiem2008]. The field of information visualization is continually adapting to changes with the big data revolution.
 
 ### Advancement of graphical visualizations in dashboards
@@ -290,7 +277,7 @@ A schema is a mental model containing a breadth of information about a specific 
 
 ### Section 9: Dashboard Design in regards to Human Perception
 
-Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@tukey1966] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers [@scaife] critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
+Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@tukey1966] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers [@scaife1996] critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
 
 
 The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process.
