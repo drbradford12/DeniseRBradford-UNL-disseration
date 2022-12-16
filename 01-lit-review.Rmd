@@ -9,18 +9,45 @@ library(tidyverse)
 
 ## Introduction
 <!--  Describe the topic that you have been investigating. Why it is important to the field?-->
-\begin{center}
+\svp{Start with a definition of what dashboards are. Maybe reference/quote Few? Key components - visualization, interactivity, update frequency, simplicity? (the last one is arguable). Transition to Exploratory Data Analysis by saying that one of the key ways dashboards are used is to allow people to explore the data, and that dashboards are particularly useful for non-experts, as they do not require writing code or understanding how to work with the underlying data. Reference Figure \ref{fig-design-map} in this paragraph.}
+
+\begin{figure}
 \includegraphics[width=\textwidth]{figure/DashboardDesignMap}
-\captionof{figure}{Dashboard Design Mind Map}
-\end{center}
+\caption{Dashboard Design Mind Map\label{fig-design-map}. \svp{Dashboard design includes components of exploratory data analysis, interactive graphics, big data analytics, human-computer interaction, and human cognition. XXX For the record, I think UI/UX design and HCI are the same, but that's me.}}
+\end{figure}
+
+----
+
+\svp{I think it might be most effective to have several sub-sections of the lit review that are somewhat connected.}
+
+First: Outline the general topic - creation of interactive graphics and dashboards to enable end-users to understand their own data. Explain that this is a highly interdisciplinary topic. Conclude this paragraph by explaining that you will explore the major sub-topics sequentially and then outline the interface between them at the end of the literature review.
+
+- Graphics
+    - Perceptual principles - cognitive load, working memory, etc.
+    - Exploratory Data Analysis
+    - Grammar of Graphics - with examples of code!
+    - Big Data and graphical solutions - overplotting, binning, interactivity
+    - Interactive Graphics
+
+- Human Computer Interaction/UI-UX
+    - User analysis - general process, not focused on your projects at all - you'll talk about that later on
+    - Protocols for testing design - think aloud, eye tracking, feedback/surveys.
+    - General Dashboard stuff
+
+Conclusion: Connections between EDA and dashboards - not all dashboards are designed for EDA, but most dashboards are designed with end-users, not statisticians, in mind. This requires a different set of optimizations than if we designed for experts. 
+
+---
+
 
 Dashboard Design with naive users at the center of the design with adding new graphical visualization and testing the effectiveness of new graphics.
 
-Data Visualizations are described as a graphical representation of tabular data and information. Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.
+Data Visualizations are described as \svp{by whom?} a graphical representation of tabular data and information. \svp{You're an expert - you can make definitive statements, like "Data visualizations are graphical summaries of numerical information that can be otherwise presented in tabular or raw form." But you can also back it up with citations if you have them.}
+Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.\svp{This is a victim of over-editing - again, read aloud or run through grammarly to find these and fix them :)}
 
 <!--  Give a "big picture" of the literature-->
-The literature review will explore the facets of Exploratory Data Analysis (EDA) through the history of graphical representation, followed by the study of Dashboard Design, Visual Information, and Big Data Analytics.
+This review will explore Exploratory Data Analysis (EDA) through the history of graphical representation, \svp{and will also include an assessment of principles of} Dashboard Design, Visual Information, and Big Data Analytics. \svp{not sure what you mean with the last two - may want to clarify.}
 
+\svp{Not sure what these bits are in here for - comment them out if they're parts of an outline that you forgot to remove?}
 Roles of graphics in Data Analysis:
 Graphics and Tables are forms of communication that we are looking to determine:
 
@@ -36,16 +63,22 @@ We can break down statistical graphics into two categories:
 
 
 Based on the following diagram
-\begin{center}
+\begin{figure}
 \includegraphics[width=\textwidth]{figure/RolesofGraphics}
-\captionof{figure}{Roles of Graphics}
-\end{center}
+\caption{Roles of Graphics \svp{Use the equal spacing button in excalidraw to make boxes equally distributed horizontally and vertically. Group boxes to treat them as a single object. This will make your sketches neater.}}
+\end{figure}
 
 <!-- Present a thesis or argument statement - why is it important to explore this topic?-->
-As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly in formal adding sound guidelines with statistically sound metrics that are needed. This work has been explored in various disciplines but not in statistical graphics. We know that dashboards are visual information tools that include and have multiple statistical pictures. Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. 
+The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly in formal adding sound guidelines with statistically sound metrics that are needed. 
+This work has been explored in various disciplines but not in statistical graphics. 
+We know that dashboards are visual information tools that include and have multiple statistical pictures. 
+Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
 
 
-One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? This is something that visual information researchers explore but don't test. We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallel Coordinate Plot, for example.
+One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? 
+This is something that visual information researchers explore but don't test. 
+We would like to test the combination with interactive features, such as map selection and highlighted lines in Parallel Coordinate Plot, for example.\svp{You don't have to motivate your other papers here - that will come later. Focus on the essentials - describe the main pieces of work in the area you're trying to expound upon.}
 
 
 Since we don't completely understand the way that basic statistical graphics are
@@ -55,11 +88,20 @@ When effectively adding advanced graphical representations to a naive user, what
 <!--Theme: Exploratory Data Analysis (EDA) and the History of Graphical Representations -->
 ## History of Exploratory Data Analysis (EDA)
 <!-- Overview of characteristics of the theme -->
-Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. This will be important to know before starting a linear model analysis. Much of our general understanding is from introductory statistics courses. The basic understanding can be formalized to visualize the discovery process.
+Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
+Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
+When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
+During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
+This will be important to know before starting a linear model analysis. 
+Much of our general understanding is from introductory statistics courses. 
+The basic understanding can be formalized to visualize the discovery process.
+
 
 ### Study 1: EDA through the eyes of Tukey
 
-John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). Tukey was a person who helped utilize the likes of stem-and-leaf plot, boxplot-resistant smooth, and rootgram.
+John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA).
+Tukey was a person who helped utilize the likes of stem-and-leaf plot, boxplot-resistant smooth, and rootgram.
+\svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.}
 
 Tukey's Principles in EDA:
 
@@ -74,14 +116,18 @@ Tukey's Principles in EDA:
 4. The mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the toolbox to access the best prediction models.
 - The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
 
+\svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.}
 
 ### EDA through the eyes of the modern grammar of graphics
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. Leland Wilkinson created the structure and defined the phrase. Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. 
+Leland Wilkinson created the structure and defined the phrase.
+Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/ggDiagram}
 \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
 \end{center}
+\svp{Try to grab a diagram from the grammar of graphics book showing the layers instead of your flowchart.}
 
 The theory of graphics is based on plot layers, which are built with four distinct pieces:
 
@@ -90,17 +136,24 @@ The theory of graphics is based on plot layers, which are built with four distin
 - statistical transformation - *determines how to transform the data to values to create the visual feature*
 - geometric object and a position adjustment - *geom object is used to draw a plot layer, and position adjustment is to help with adjusting the visual feature in the space*
 
-Seven major components help build effective visualizations that build on one another. Seven major components help build effective visualizations. The following diagram will display the effectiveness of data graphics:
+\svp{Demonstrate these bits using code with line numbers (the ggpcp paper has the right environment in there w/ demos of how to use it). Show the figure output as you add each layer.}
+
+Seven major components help build effective visualizations that build on one another. 
+Seven major components help build effective visualizations. 
+The following diagram will display the effectiveness of data graphics:
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/EffectiveDataGraphics}
 \captionof{figure}{Effective Data Graphics}
 \end{center}
 
+\svp{You don't need this, you need to actually demonstrate the grammar of graphics with actual data and code :). See my dissertation for an example, but find your own dataset to use. My focus was on grammar of graphics and how it makes testing graphics easy, but yours will be a bit different. You may want to compare to a non-grammar approach in terms of the amount of code required and scale defaults and such - we can talk about that.}
+
 
 ### EDA through the eyes of Big Data and Big Data Analytics
 
-Big Data Analytics is where advanced analytic techniques are applied to big data sets.
+Big Data Analytics is where advanced analytic techniques are applied to big data sets. \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...}
+
 - Analytics based on extensive data samples reveals and leverages business change.
 The larger the data set, the more difficult it becomes to manage. This paradigm has only become more and more of the pieces of data exploration since tabular data is growing.
 
@@ -118,6 +171,7 @@ The Big Data Diagram will display the three main features and characteristics of
 
 
 #### Big Data Storage and Management
+\svp{I really hope we don't have to get into data lakes/warehouses/etc. for this work...}
 
 We can't discuss big data analytics without discussing data storage and management. Our tasks with big data storage is to determine where and how this data will be stored once it is acquired:
 - Traditional structured data storage and retrieval methods include relational databases, data marts, and data warehouses.
@@ -129,6 +183,7 @@ Given the growing numbers of data sources and the sophistication of data analyse
 
 
 ## History/Review of Graphical Representation
+\svp{I think you're going to want to reformat this and not focus so much on history, instead focus on how we choose a specific graphical representation, the advantages/disadvantages of those representations, and the user factors which weigh in.}
 
 ### History/Origin of Statistical Visualization
 
@@ -168,7 +223,11 @@ Bertin's semiologic of Graphics, a seminal work  in the academic study of visual
 
 The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as `d3` [@bostock2011].
 
-Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. van Wiij's [@van2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. 
+The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. 
+van Wiij's [@van2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. 
+This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
+\svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. }
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
@@ -200,6 +259,9 @@ Interaction of Type Tasks facilitate data exploration leading to the generation 
 \captionof{figure}{Interaction Types with Sources}
 \end{center}
 
+\svp{Not for this particular write-up, but have you analyzed this to see if it's an effective visualization in its own right? I think this might be better as a table with boxes filled in or something?}
+
+
 [@schulz2013] define two abstractions for the design of visualizations:
 \begin{center}
 \begin{align*}
@@ -211,7 +273,14 @@ These abstractions demonstrate dependence between the data, visual representatio
 
 ### Advancement of graphical visualizations in dashboards
 
-Visualizations have become more effective in recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html). We were glued to our computers, TVs, and phones for most of the world. As a result, we watched the dashboard change in real-time to adapt to the users' needs. In part to data growth and changing, the dashboard, as well as the visualizations, were needed in a condensed platform. The need to be concise and vastly informative can be a bit of a struggle when it comes to data visualizations. The human brain can only take in a set amount of data at a time from a table or a paragraph. The space of infographics has been a much better way of looking at data on a creative scale. While this may be a way of seeing the data in a friendly way, infographics need to include an interactive piece of data that many people would like to explore.
+Visualizations have become more effective in recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html).
+We were glued to our computers, TVs, and phones for most of the world. 
+As a result, we watched the dashboard change in real-time to adapt to the users' needs. 
+In part to data growth and changing, the dashboard, as well as the visualizations, were needed in a condensed platform. 
+The need to be concise and vastly informative can be a bit of a struggle when it comes to data visualizations. 
+The human brain can only take in a set amount of data at a time from a table or a paragraph. \svp{references?}
+The space of infographics has been a much better way of looking at data on a creative scale. \svp{cite https://doi.org/10.1080/10618600.2012.761140}
+While this may be a way of seeing the data in a friendly way, infographics need to include an interactive piece of data that many people would like to explore.
 
 ### Applications
 

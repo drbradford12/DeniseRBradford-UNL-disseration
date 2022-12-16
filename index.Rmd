@@ -42,29 +42,13 @@ output:
         theme: white
         family: sans
         size: 2
-      sharing:
-        facebook: true
-        github: false
-        twitter: true
-        linkedin: false
-        weibo: false
-        instapaper: false
-        vk: false
-        whatsapp: false
-        all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
       info: true
-  # huskydown::thesis_gitbook: 
-  #   style: style.css
-#  huskydown::thesis_word: default
-#  huskydown::thesis_epub: default
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: bib/apa.csl
 # Download your specific csl file and refer to it in the line above.
 lot: true
 lof: true
-#header-includes:
-#- \usepackage{tikz}
 ---
 
 <!--
