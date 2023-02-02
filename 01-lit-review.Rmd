@@ -3,26 +3,27 @@
 library(knitr)
 library(palmerpenguins)
 library(tidyverse)
+library(nycflights13)
+data(flights)
+
+library(ggpcp)
+library(ggplot2)
+library(dplyr)
+data(nasa)
+
+library(scales)
+library(datasets)
+data("ChickWeight")
+
 ```
 
-# Introduction
-As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. 
-The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly in formal adding sound guidelines with statistically sound metrics that are needed. 
-This work has been explored in various disciplines but not in statistical graphics. 
-We know that dashboards are visual information tools that include and have multiple statistical pictures. 
-Thus, we should consider and think about the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+<!-- \svp{You don't have to motivate your other papers here - that will come later. Focus on the essentials - describe the main pieces of work in the area you're trying to expound upon.} -->
 
+<!-- Since we don't completely understand the way that basic statistical graphics are -->
 
-One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? 
-This is something that visual information researchers explore but don't test. 
+<!-- When effectively adding advanced graphical representations to a naive user, what have we done to create a proper understanding of an engaging idea of what's going on? -->
 
-\svp{You don't have to motivate your other papers here - that will come later. Focus on the essentials - describe the main pieces of work in the area you're trying to expound upon.}
-
-Since we don't completely understand the way that basic statistical graphics are
-
-When effectively adding advanced graphical representations to a naive user, what have we done to create a proper understanding of an engaging idea of what's going on?
-
-<!--  Describe the topic that you have been investigating. Why it is important to the field?-->
+<!--  
 \svp{Start with a definition of what dashboards are. Maybe reference/quote Few? Key components - visualization, interactivity, update frequency, simplicity? (the last one is arguable). Transition to Exploratory Data Analysis by saying that one of the key ways dashboards are used is to allow people to explore the data, and that dashboards are particularly useful for non-experts, as they do not require writing code or understanding how to work with the underlying data. Reference Figure \ref{fig-design-map} in this paragraph.}
 
 \begin{figure}
@@ -51,82 +52,100 @@ First: Outline the general topic - creation of interactive graphics and dashboar
 Conclusion: Connections between EDA and dashboards - not all dashboards are designed for EDA, but most dashboards are designed with end-users, not statisticians, in mind. This requires a different set of optimizations than if we designed for experts. 
 
 ---
+-->
 
-A dashboard is a visual display of the most essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance[@few]. A dashboard has particular characteristics:
+# Introduction
+As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. 
+The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. 
+This work has been explored in various disciplines but not in statistical graphics. 
+We know that dashboards are visual information tools with multiple statistical pictures. 
+Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+
+One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? 
+This is something that visual information researchers explore but don't test. 
+
+
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. The end goal of data analysis is to support decision making and provide a basis for informed action. Data analysis can help organizations to better understand their customers, market trends, and operational performance, among other things. Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
+
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance[@few]. A dashboard has particular characteristics:
 
 - Achieve specific objectives
 - Fits on a single computer screen
 - Information can be displayed in multiple mediums (web browser or mobile device)
 - Can be used to monitor information at a high level
 
-Dashboards can be used to present a variety of statistical data, such as financial performance, website traffic, or customer engagement metrics. They allow users to quickly and easily understand complex data sets by using visual elements such as charts, graphs, and tables to display the information. Additionally, statistics can be used to analyze data that is then presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
+Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
 
-While a dashboard can be extremely useful, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
+While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
 
 Much of the work done within statistical research and dashboard design involves collaboration with other academic researchers. While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds. 
 
-A collaboration is when 2 or more entities work together to produce a desired and shared outcome. Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
-Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js, Highcharts), and many more. These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Additionally, many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding.
+A collaboration is when two or more entities work together to produce a desired and shared outcome. Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
+Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more. These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding.
 
 
-Interactive graphics refer to visual representations of data, such as charts, graphs, maps, or diagrams, that allow users to interact with the data in real-time. This interaction can take many forms, including filtering, sorting, zooming, and highlighting. The goal of interactive graphics is to provide users with a more immersive and engaging experience, enabling them to explore and understand data in new ways. By allowing users to manipulate the data, interactive graphics can help to uncover insights and patterns that might not be immediately apparent from static visualizations. Interactive graphics and dashboards can be created using various tools and technologies, including:
+Interactive graphics refer to visual representations of data, such as charts, graphs, maps, or diagrams, that allow users to interact with the data in real time. This interaction can take many forms, including filtering, sorting, zooming, and highlighting. The goal of interactive graphics is to provide users with a more immersive and engaging experience, enabling them to explore and understand data in new ways. By allowing users to manipulate the data, interactive graphics can uncover insights and patterns that are not immediately apparent from static visualizations. Interactive graphics and dashboards can be created using various tools and technologies, including:
 
 - Data visualization software: Tools such as Tableau, PowerBI, and Looker allow users to create interactive dashboards by connecting to data sources and creating visualizations from that data.
 - Custom development: Dashboards can also be created from scratch using programming languages such as Python, R, and JavaScript, along with libraries like D3.js and Plotly.
 - Cloud-based platforms: Cloud-based platforms like Google Data Studio and Amazon QuickSight offer drag-and-drop interfaces for creating dashboards, making it easier for non-technical users to create interactive graphics.
 
-Regardless of the tool used, the key to creating effective interactive graphics and dashboards is understanding the data and selecting the appropriate visualizations to effectively communicate the story the data is telling.
+Regardless of the tool used, the key to creating compelling interactive graphics and dashboards is understanding the data and selecting the appropriate visualizations to communicate the story the data is telling effectively.
 
-## **Graphics**
-Human perception plays a direct role in the area of visualization. The importance of human perception importance was cited by the NSF panel on graphics and image processing that proposed "scientific visualization" [@NSF].
+## Graphics
+Human perception plays a direct role in the area of visualization. Data Analysis tasks closely resemble the cognitive process known as sensemaking. Tukey and Wilk [@tukey1966] highlight the role of cognitive processes in their initial descriptions of EDA.
 
-Data Analysis tasks closely resemble the cognitive process known as sensemaking. Tukey and Wilk [@tukey1966] highlight the role of cognitive processes in their initial descriptions of EDA.
+Mallows and Walley [@mallows1980] list psychology as one of four areas likely to support a theory of analysis. Data analyses rely on the mind's ability to learn, analyze, and understand. Assigning meaning is not a statistical or computational step but a cognitive one. Each data analysis is part of a more extensive mental process.
 
-> The primary general intent of data analysis is simply to seek through a body of data for exciting relationships and information and to exhibit the results in such a way as to make them recognizable to the data analyzer.
-
-Mallows and Walley [@mallows1980] list psychology as one of four areas likely to support a theory of analysis. Data analyses rely on the mind's ability to learn, analyze, and understand. Assigning meaning is not a statistical or computational step but a cognitive one. Each data analysis is part of a more extensive cognitive process.
-
-Untrained analysts can and do "analyze" data with only their natural mental abilities
-- The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.
+Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.
 
 ### Perceputal Principles
 
-Perceptual principles refer to the ways in which the human brain processes and interprets visual information. These principles guide how people perceive and make sense of the world around them, and they play a critical role in the design of effective visual displays, such as dashboards. Some examples of perceptual principles include:
+Perceptual principles refer to how the human brain processes and interprets visual information. These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards. Some examples of perceptual principles include:
 
-- Proximity: Objects that are close to each other are perceived as related or grouped together.
-- Similarity: Objects that are similar in some way (e.g. shape, color, size) are perceived as related or grouped together.
-- Continuation: The human eye tends to follow lines and patterns, so designers can use this principle to guide the viewer's gaze through a display.
+- Proximity: Objects close to each other are perceived as related or grouped.
+- Similarity: Objects that are similar in some way (e.g., shape, color, size) are perceived as related or grouped.
+- Continuation: The human eye follows lines and patterns, so designers can use this principle to guide the viewer's gaze through a display.
 - Closure: The human brain tends to complete incomplete figures or patterns, so designers can use this principle to create the illusion of missing information.
 - Figure-Ground: The human brain separates the foreground (figure) from the background (ground), so designers can use this principle to create visual hierarchy and emphasis.
-- Contrast: The human eye is drawn to areas of high contrast, so designers can use this principle to create emphasis and hierarchy.
+- Contrast: The human eye is drawn to high-contrast areas, so designers can use this principle to create emphasis and hierarchy.
 - Symmetry and Balance: The human eye finds symmetry and balance visually pleasing, so designers can use this principle to create a sense of harmony and order.
 
-These are just a few examples of the many perceptual principles that designers use to create effective visual displays. These principles are based on cognitive psychology and understanding of how human brain processes visual information
+These are just a few examples of the many perceptual principles that designers use to create compelling visual displays. These principles are based on cognitive psychology and understanding how the human brain processes visual information.
 
-Visual inference uses our ability to detect graphical anomalies. The idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display which is compared to a “reference distribution” of plots showing the null.
+Visual inference uses our ability to detect graphical anomalies. However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.
 
 *Categorical Data Visualization*
-Friendly [@friendly2014] detailed using SAS with hand-on experiment to visually present categorical data analysis. PCPs have been used by researchers, to visualize categorical data. Beygelzimer, Perng, Ma [@beygelzimer2001]; Ma and Hellerstien [@ma2001] created a fast ordering categorical data analysis algorithm helped visualization, where their algorithms help organize the original parallel coordinate plots clearer. Hammock plots are modified versions of parallel coordinate plots, which was invented by Schonlau to visualize categorical data [@schonlau2003]. His design replace coordinate polygons by rectangles to present the number. Treemaps are modified to support categorical data visualization.
+Categorical Data Visualization is the process of visualizing data that can be divided into distinct categories or groups. Categorical data are non-numeric and often represented by words, labels, or symbols, such as gender, product type, color, etc.
 
-CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. Fernstad developed an interactive system combining parallel coordinate, tables and scatterplot matrix together for an overview explorative analysis. Fully research on categorical data visualization to support algorithm understanding. Novel contingency wheel presented by [@alsallakh2011] support visual analytics in categorical data and he measured association based on Pearson's residuals and use visual abstraction based on elements frequency.  
+Visualizing categorical data helps uncover patterns and relationships between categories and can provide insights into the data distribution. Categorical data visualization techniques include bar charts, pie charts, histograms, stacked bar charts, and others. The choice of visual representation will depend on the data's nature and the insights being sought. The goal of categorical data visualization is to communicate the information effectively and make it easier to understand and interpret.
+
+Friendly [@friendly2014] detailed using SAS with hands-on experiments to present categorical data analysis visually. Researchers have used PCPs to visualize categorical data. Beygelzimer, Perng, Ma [@beygelzimer2001]; Ma and Hellerstien [@ma2001] created a fast ordering categorical data analysis algorithm that helped visualization, where their algorithms helped organize the original parallel coordinate plots clearer. Hammock plots are modified versions of similar coordinate plots invented by Schonlau to visualize categorical data [@schonlau2003]. His design replaces coordinate polygons with rectangles to present the number. Treemaps are modified to support categorical data visualization.
+
+CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. Fernstad developed an interactive system combining parallel coordinates, tables, and scatterplot matrices for an overview explorative analysis. Thoroughly research categorical data visualization to support algorithm understanding. The novel contingency wheel presented by [@alsallakh2011] supports visual analytics in categorical data, and he measured association based on Pearson's residuals and used visual abstraction based on elements frequency.  
 
 *High-Dimensional Data Visualization*
-A popular research area in visualization research since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
+High-Dimensional Data Visualization represents complex data sets with many variables or features (also known as high-dimensional data). The goal is to find effective ways to express such data in a form that allows easy understanding, analysis, and interpretation. This is typically achieved by reducing the dimensionality of the data, for example, by projecting the data onto a lower-dimensional space or by aggregating the data in some way. The resulting visualizations can then reveal patterns, relationships, and other insights that would otherwise be difficult to detect from the raw data. For example, high-dimensional data visualization techniques include scatter plots, parallel coordinate plots, heat maps, and many others.
 
-- scatterplots: simply use dot in coordinate to present data point.
-- parallel coordinates: present each dimension as axes and every data item intersects dimensions as polygon line at certain position
+A popular research area in visualization since high-dimensional data is always fuzzy to mining. Direct visualization includes geometric visualizations:
+
+- scatterplots: use dots in coordinate to present data points.
+- parallel coordinates: present each dimension as axes, and every data item intersects dimensions as a polygon line at a particular position
 - RadViz/ PolyViz
 - GridViz
 
-Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyps used funny ways to present multivariate data. Hierarchical methods used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. Rearrange the dimensions by dimensions similarity on parallel coordinates, circle segments and recursive patterns. [@ankerst1998]. [@guo2003] used interactive feature selection method help users identify interesting subspaces from high-dimensional data sets.
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyphs used funny ways to present multivariate data. Hierarchical methods are used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. Rearrange the dimensions by dimension similarity on parallel coordinates, circle segments, and recursive patterns. [@ankerst1998]. [@guo2003] used an interactive feature selection method to help users identify interesting subspaces from high-dimensional data sets.
 
 *Visualizing Complex Data*
+Visualizing Complex Data is representing complex, multi-dimensional data in a graphical or pictorial form to make it easier to understand and interpret. The goal is to turn large, intricate data sets into visually appealing and intuitive representations, such as charts, graphs, maps, and other types of visualizations, to help identify patterns, trends, and relationships that may not be immediately apparent from raw data. This process can help to communicate complex information effectively and make data-driven decisions.
+
 
 William Cleveland's subcycle plots:
-- glyphmaps and binned graphics that are emerging from big data visualization efforts.
+
+- glyph maps and binned graphics emerging from big data visualization efforts.
 - glyphs and other plots have been embedded in maps 
 
-Bertin's semiologic of Graphics, a seminal work  in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data [@wickham2012]; [@hobbs2010]
+Bertin's Semiologic of Graphics is a seminal work in the academic study of visualization. Glyphmaps have been developed as a tool for tracking climate and climate change data [@wickham2012]; [@hobbs2010]
 
 [@schulz2013] define two abstractions for the design of visualizations:
 \begin{center}
@@ -135,9 +154,9 @@ Bertin's semiologic of Graphics, a seminal work  in the academic study of visual
   Data + Visualization = Task
 \end{align*}
 \end{center}
-These abstractions demonstrate dependence between the data, visual representation, and the task. The more the user interacts with the visualization, they gain knowledge. The interactions allow user to be in control of their understanding by providing the flexibility to create new views that help him/her go beyond just the visual representation [@kiem2008]. The field of information visualization is continually adapting to changes with the big data revolution.
+These abstractions demonstrate dependence between the data, visual representation, and the task. The more the user interacts with the visualization, they gain knowledge. The interactions allow the user to control their understanding by providing the flexibility to create new views that help them go beyond just the visual representation [@kiem2008]. The field of information visualization is continually adapting to changes with the big data revolution.
 
-Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@tukey1966] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers [@scaife1996] critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
+Data Scientists and Statisticians have produced more graphics since the pandemic's start. The reasons someone will create a graphic or dashboard may include but are not limited to understanding raw data structures to analyze model assumptions and present predictions, along with displaying key performance metrics of business logic. These goals help work to navigate and are best served by quick-and-dirty representations of the data, while highly polished graphics may be more useful in other situations. It is valuable and essential to convey data correctly, meaning that we need to understand how graphics are perceived on a dashboard on a general level. Previous research by Tukey focused on graphics as a tool for exploratory analysis. Tukey describes in Exploratory Data Analysis [@tukey1966] that pictures are often used to display data in a more enhanced version than a table. Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. The article - "External cognition: how do graphical representations work?" by Scaife and Rogers [@scaife1996] critique the disparate literature on graphical representations, focusing on four representative studies. In general, this will help in the psychology of the perceptual experience.
 
 
 The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process.
@@ -151,6 +170,7 @@ The visual reference model developed by Card et al. [@Card] describes and identi
 While External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware attempt to develop the necessary guidelines that are useful for the work done by the perceptual experience.
 
 Colin Ware "Information Visualization: Perception for Design" [@Ware2004] there are four stages of visualization
+
 - The collection and storage of data itself
 - The preprocessing design to transform the data into something we can understand
 - The display hardware and the graphics algorithms produce the image on the screen.
@@ -159,12 +179,12 @@ Colin Ware "Information Visualization: Perception for Design" [@Ware2004] there 
 
 The overlapping understanding in the field, while Ware takes the process one step further not just to allow the end user to understand the outcomes but to curate the outcomes with a visual perception of the data that makes the cognitive load easier for the end-user.
 
-A dashboard has much information related to tabular data from multiple sources. Design should be recorded a produced with content that will allow for reproducibility. A dashboard should have some content related to interaction with the user. This interaction can be in multiple forms: toggling through the selection of variables to display uniformly to the use of interaction on the graph. Allowing a user to best understand what is being displayed in the graph.
+A dashboard has much information related to tabular data from multiple sources. Design should be recorded a produced with content that will allow for reproducibility. A dashboard should have some content related to interaction with the user. This interaction can be in multiple forms: toggling through the selection of variables to display uniformly to the use of interaction on the graph and allowing a user to understand best what is being shown in the diagram.
 
-The entire dashboard/Interface should have a human perception piece that is useful for the user to comprehend and use. If the user is visually overwhelmed, then the dashboard/interface is not practical.
+The entire dashboard/Interface should have a human perception piece that is useful for the user to comprehend and use. For example, the dashboard/interface could be more practical if the user is visually overwhelmed.
 
 - Identified the highly relevant from a dashboard design perspective [@odonnell2000]
-1. Interaction and feedback are given by information systems
+1. Information systems give interaction and feedback
 2. Type of presentation format to be used
 3. Differences in the amount of information load.
 
@@ -192,13 +212,7 @@ Visual perception involves two elements - the perceptual and conceptual gist. Th
 
 Visual complexity might increase with the quality and range of objects and with varying material and surface styles [@heylighen1997].
 
-Repetitive and uniform patterns and existing knowledge of the objects in the scene reduce visual complexity [@olivia2004]
-
-Guidelines for new generation dashboards refer to:
-1. Aligning business processes with the latest information to provide business intelligence at all levels in the company.
-2. Using intuitive and easy-to-digest visuals for delivering information to busy executives.
-3. Sound Navigation
-[@ZiffDavisEnterprise2008]
+Repetitive and uniform patterns and existing knowledge of the objects in the scene reduce visual complexity [@olivia2004].
 
 If the guidelines on our visual information load can be related to statistical terminology, we can consider this the fisher information of visual information load. This load can be used as a metric for balancing the amount of information rather than overloading the consumer.
 
@@ -207,14 +221,16 @@ Visual Data Mining
 For data mining to be effective, it is important to include humans in the data exploration process and combine the flexibility, creativity, and general knowledge of the computational power of today's computers. Visual data exploration aims at integrating humans in the data exploration process, applying their perceptual abilities to the large data sets available in today's computer systems.[@kiem2002]
 
 The visual data exploration process can be seen as a hypothesis generation process:
+
 - The visualizations of the data allow the user to gain insight into the data and come up with new hypotheses
 - Along with verification of the hypotheses
 
 The main advantages of visual data exploration over automatic data mining techniques from statistics or machine learning are:
 - visual data exploration can efficiently deal with highly inhomogeneous and noisy data.
-- visual data exploration is intuitive and requires no understanding of complex mathematical or statistical algorithms or parameters.
+So - visual data exploration is intuitive and requires no understanding of complex mathematical or statistical algorithms or parameters.
 
 Visual Exploration Paradigm, also known as MGV (Massive Graph Visualizer), is an integrated visualization and exploration system for massive multidigraph navigation.[@abello2002]. MGV usually follows a three-step process:
+
 - overview first
 - zoom and filter
 - details-on-demand
@@ -222,6 +238,7 @@ Visual Exploration Paradigm, also known as MGV (Massive Graph Visualizer), is an
 The user identifies interesting patterns and focuses on one or more of them. Note that visualization technology does not only provide the base visualization techniques for all three steps but also bridges the gap between the steps.
 
 Visualization Technique Classification:
+
 - Standard 2D/3D displays such as bar charts and x-y plots
 - Geometrically transformed displays, such as landscapes and parallel coordinates, as used in a scalable framework
 - Icon-based displays such as needle icons and star icons as used in MGV
@@ -229,6 +246,7 @@ Visualization Technique Classification:
 - Stacked displays, such as treemaps or dimensional stacking
 
 Interaction and distortion techniques allow users to interact directly with the visualizations.
+
 - Projection as used in the Grand Tour System
 - Filtering as used in Polaris
 - Zooming as used in MGV and scalable framework
@@ -237,6 +255,7 @@ Interaction and distortion techniques allow users to interact directly with the 
 Design Theory in Information System
 
 The knowledge is distinguished as the fifth of five types of theory:
+
 1. Analyzing & describing
 2. Understanding
 3. Predicting
@@ -246,10 +265,12 @@ The knowledge is distinguished as the fifth of five types of theory:
 A definition of information systems that are suitable for our purposes concerns: "the effective design delivery use and impact of information technology in organizations and society [@avison1995]. 
 
 The two paradigms characterize much of the research in the Information systems discipline:
+
  - *Behavioral Science Paradigm* - seeks to develop and verify theories that explain or predict human or organizational behavior (roots in natural science research methods).
  - *Data Science Paradigm* - seeks to extend the boundaries of human and organizational capabilities by creating new and innovative artifacts (roots in engineering and the sciences of the artificial).[@simon1996]
  
  Technology and behavior are not dichotomous in an information system. They are inseparable [@lee2000]. Information technology (IT) artifacts are broadly defined as:
+ 
  - constructs (vocabulary & symbols)
  - models (abstractions & representations)
  - methods (algorithms & practices)
@@ -257,14 +278,13 @@ The two paradigms characterize much of the research in the Information systems d
  
 These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ([@march1995]; [@nunamaker1991]). 
  
-
 ### Exploratory Data Analysis
 
-Exploratory Data Analysis (EDA) is a process of analyzing and summarizing a dataset in order to discover patterns, trends, and insights. It is a crucial step in the data analysis process and is often used to identify which variables are important, what the data looks like, and what the underlying structure of the data is. EDA is typically done using a variety of techniques, such as visualizations, statistical summaries, and data transformations.
+Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.
 
-On the other hand, Dashboards are interactive interfaces that display data in a visual format to provide insights and support decision-making. Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. They are often used to display data in real-time, and can be customized to show the data that is most relevant to the user.
+On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. They often display real-time data and can be customized to show the most relevant data to the user.
 
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is a first step for building a dashboard, as the data has to be cleaned, transformed and analyzed to be used in an efficient way on the dashboard. EDA results can be used to identify the most relevant data and metrics to include in the dashboard, and to design the visualizations that will be used to display the data. And also the EDA process can be used to identify the outliers, patterns, trends and insights that will be useful to show in the dashboard to support decision-making.
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.
 
 Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
 Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
@@ -276,9 +296,22 @@ The basic understanding can be formalized to visualize the discovery process.
 
 ### EDA through the eyes of Tukey
 
-John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and rootgram, afaik, who taught us to utilize these methods to organize and demonstrate EDA.
+John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-\svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.}
+```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
+ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
+  geom_violin(aes(fill = Diet), trim = FALSE) +
+  geom_boxplot(width = 0.1) +
+  theme_classic() +
+  theme(legend.position = "none")
+
+p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
+  geom_boxplot()
+p + scale_fill_brewer(palette="Dark2")
+```
+
+
+<!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
 
 Tukey's Principles in EDA:
 
@@ -293,180 +326,239 @@ Tukey's Principles in EDA:
 4. The mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
 - The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
 
-\svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.}
+<!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
 
 
-```{r flights_data_example, echo=FALSE}
+```{r flights_data_example, echo=FALSE, out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold',fig.align='center'}
+# Stacked Density plot
+ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
+geom_density(position="stack")
+
+# Histogram
+ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
+geom_histogram(position="stack")
 
 ```
 
 
 Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience. Digital tools are critical to data science and analytics workflows, and current practice spans the following:
+
 - *Data Analysis Tools* - R, Pandas and SAS
 - *Data Warehousing Services* - MySQL, MongoDB, or Amazon Redshift
 - *Machine Learning Libraries* - scikit-learn o Apache MLlib
 
-A common process typically consists of the following general stages:
+A typical process typically consists of the following general stages:
+
 1. *Discovery*: Formulating an exciting question and determining the data necessary to answer it.
 2. *Acquisition*: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
 3. *Exploration*: Investigating and analyzing the data set to collect insights and understand the data
 4. *Modeling*: Building fitting and validating a model that can explain the data set and the observed phenomena
 5. *Communication*: Disseminating the results to stakeholders in reports, presentations, and charts.
 
-Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. John Tukey's EDA methods are known and well-vetted in the field currently. However, [@satyanarayan2016] began to address this by introducing a high-level grammar of graphics called "Vega-Lite", which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar. Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. For example, John Tukey's EDA methods are currently known and well-vetted in the field. However, [@satyanarayan2016] began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar. Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
 
 
 ### Grammar of Graphics
 
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. The Grammar of Graphics is a framework for understanding the structure of statistical graphics, developed by Leland Wilkinson. It proposes that any statistical graphic can be broken down into a set of basic components, or "grammar," that can be combined in different ways to create a wide range of visualizations. 
+The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. The Grammar of Graphics is a framework for understanding the structure of statistical graphics developed by Leland Wilkinson. It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations. 
 
 Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 The components of the grammar of graphics include:
 
-- Data: The raw data being visualized, represented as a set of observations or values. 
+- Data: The raw data being visualized represents a set of observations or values. 
 - Aesthetic Mappings: The mapping of data variables to visual properties such as position, color, shape, and size. 
 - Scales: The mapping of data values to visual values, such as mapping a numerical value to a bar height. 
-- Geometries: The basic shapes used to represent the data, such as points, lines, bars, and histograms.
-- Facets: The division of a plot into multiple subplots, each representing a different subset of the data.
+- Geometries: The basic shapes representing the data, such as points, lines, bars, and histograms.
+- Facets: The plot division into multiple subplots, each representing a different subset of the data.
 
-For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry. A scatter plot can be created by mapping two numerical variables to the x and y positions, and using points as the geometry. The Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
+For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry. For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry. Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 
 \begin{center}
-\includegraphics[width=\textwidth]{figure/ggDiagram}
+\includegraphics[width=\textwidth]{figure/gglayers}
 \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
 \end{center}
-\svp{Try to grab a diagram from the grammar of graphics book showing the layers instead of your flowchart.}
 
-\svp{Demonstrate these bits using code with line numbers (the ggpcp paper has the right environment in there w/ demos of how to use it). Show the figure output as you add each layer.}
+---
 
-```{r ggpcp_example, echo=FALSE}
+\begin{center}
+\includegraphics[width=\textwidth]{figure/graphic-flowchart}
+\captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work}
+\end{center}
+<!-- \svp{Try to grab a diagram from the grammar of graphics book showing the layers instead of your flowchart.} -->
+
+<!-- \svp{Demonstrate these bits using code with line numbers (the ggpcp paper has the right environment in there w/ demos of how to use it). Show the figure output as you add each layer.} -->
+
+```{r ggpcp_example, echo=FALSE, fig.width=3, fig.height=3,fig.show='hold',fig.align='center', eval = FALSE}
+oranges <- c("#FDBF6F", "#F89D38", "#F37A00")
+purples <- c("#CAB2D6", "#9A78B8", "#6A3D9A")
+greens <- c("#b2df8a", "#73C05B", "#33a02c")
+
+cols <-  c(oranges[2], greens[2], purples[2])
+
+flights %>%
+  filter(origin == "LGA") %>%
+  pcp_select(dest:distance) %>%
+  pcp_scale() %>%
+  ggplot(aes_pcp()) +
+  geom_pcp(alpha = 0.1) +
+  theme_bw()
+
+
+
+df_pcp %>%
+  ggplot(aes_pcp())  +
+  geom_pcp_axes() +
+  geom_pcp(aes(colour = Observation), size=1,
+           data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  geom_point(aes(shape=Observation, colour = Observation), size=5,
+             data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  theme_bw() +
+  xlab("") +
+#  scale_shape_discrete("Observation") +
+  scale_colour_manual("Observation", values=c("darkorange", "purple4")) +
+  ylab("") +
+  theme(axis.title.y = NULL, axis.text.y = NULL, axis.ticks.y = NULL) +
+  scale_y_continuous(labels=c("low", "", "medium", "", "high"),
+                     breaks=c(0,0.25, .5,.75, 1)) +
+  scale_x_discrete(expand = expansion(add=0.2),
+                   labels = c("Bill Length (mm)", "Bill Depth (mm)",
+                              "Flipper Length (mm)", "Body Mass (g)"))
+
 
 ```
 
 
 ### Big Data and graphical solutions
 
-Big Data Analytics is the process of examining large and complex data sets, or "big data," to uncover hidden patterns, correlations, and other insights. The goal of big data analytics is to help organizations make informed decisions by transforming large and complex data into actionable information. The use of big data analytics can provide organizations with a competitive advantage by enabling them to quickly and accurately analyze large volumes of data, identify trends and patterns, and make informed decisions. This can help organizations to improve their operations, identify new opportunities, and make more accurate predictions about future events.
+Big Data Analytics examines large and complex data sets, or "big data," to uncover hidden patterns, correlations, and other insights. Big data analytics aims to help organizations make informed decisions by transforming large and complex data into actionable information. The use of big data analytics can provide organizations with a competitive advantage by enabling them to quickly and accurately analyze large volumes of data, identify trends and patterns, and make informed decisions. This can help organizations to improve their operations, identify new opportunities, and make more accurate predictions about future events.
 
-Graphical solutions for big data refer to the use of visual representations to help analyze and understand large and complex data sets. The following are some common graphical solutions for big data:
+Graphical solutions for big data refer to visual representations to help analyze and understand large and complex data sets. The following are some standard graphic solutions for big data:
 
-- Interactive dashboards: Dashboards provide a visual overview of key metrics and KPIs, allowing users to interact with the data in real-time. Dashboards can be used to display large amounts of data in a clear and concise manner, making it easier to identify trends and patterns.
-- Scatter plots: Scatter plots are used to visualize the relationship between two or more variables. They can be used to identify correlations, outliers, and clusters in big data sets.
-- Heatmaps: Heatmaps are used to visualize the distribution of data across two dimensions. They can be used to identify areas of high and low density in big data sets, making it easier to spot trends and patterns.
+- Interactive dashboards: Dashboards provide a visual overview of critical metrics and KPIs, allowing users to interact with the data in real time. Dashboards can display large amounts of data clearly and concisely, making it easier to identify trends and patterns.
+- Scatter plots: Scatter plots visualize the relationship between two or more variables and can identify correlations, outliers, and clusters in big data sets.
+- Heatmaps: Heatmaps are used to visualize data distribution across two dimensions. They can be used to identify areas of high and low density in big data sets, making it easier to spot trends and patterns.
 - Treemaps: Treemaps are used to visualize hierarchical data structures. They can be used to visualize large data sets in a compact and organized manner, making it easier to identify relationships between different data points.
 - Network graphs: Network graphs are used to visualize relationships between data points. They can be used to identify connections and relationships in big data sets, making it easier to spot patterns and trends.
 
-The goal of using graphical solutions for big data is to help organizations quickly and easily understand large amounts of data, identify patterns and relationships, and make informed decisions. These visual representations can provide a more immersive and engaging experience, making it easier to uncover insights that might not be immediately apparent from raw data.
+Using graphical solutions for big data is to help organizations quickly and easily understand large amounts of data, identify patterns and relationships, and make informed decisions. These visual representations can provide a more immersive and engaging experience, making it easier to uncover insights that might not be immediately apparent from raw data.
 
-Many companies and organizations use big data and graphical solutions to make data-driven decisions, identify new opportunities, and gain a competitive advantage. Additionally, new technologies like data visualization software, cloud computing, and machine learning are making it easier and more efficient to analyze and present big data.
+Many companies and organizations use big data and graphical solutions to make data-driven decisions, identify new opportunities, and gain a competitive advantage. New technologies like data visualization software, cloud computing, and machine learning make analyzing and presenting big data more accessible and efficient.
 
 #### EDA through the eyes of Big Data and Big Data Analytics
 
-Big Data Analytics is where advanced analytic techniques are applied to big data sets. \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...}
+Big Data Analytics is where advanced analytic techniques are applied to big data sets. Big Data Analytics based on extensive data samples reveals and leverage business change. The larger the data set, the more difficult it becomes to manage. This paradigm has only become more of the pieces of data exploration since tabular data is growing.
 
-- Analytics based on extensive data samples reveals and leverages business change.
-The larger the data set, the more difficult it becomes to manage. This paradigm has only become more and more of the pieces of data exploration since tabular data is growing.
+<!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
+
 
 ### Interactive Graphics
 
-The area of interactive graphics is still very much a work in progress despite existing as field of research since the late 1960s. Developments driven in part by new technology, such as `d3` [@bostock2011].
+The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as `d3` [@bostock2011]. Visualizations are more than just a picture. They are now a tool that facilitates analytic activity through different modes of interaction. [@yi2007]. Visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. 
 
-Visualizations are more than just a picture. They are now a tool that facilities analytic activity through different modes of interaction. [@yi2007]. 
-The term visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. 
-van Wiij's [@van2005] simple visualization model shows how insights are generated as the human participates in a feedback  loop between reading and interacting with visualization. 
-This model is also context-free allow for the focus to be on the feedback loops between visualization and user.
-\svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. }
+The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system. It is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. The van Wijk model can be used to represent the flow of data from data sources, through intermediate processing stages, to the final visualization of results. van Wiij's [@van2005] simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization. 
+
+This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.
+
+<!-- \svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. } -->
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
 \captionof{figure}{van Wiij Simple Visualization Model}
 \end{center}
 
-Interaction allows the user to define what data they see and how they see the data creating a dialogue between the user and the system. Theories behind visual representation include:
+Interaction allows the user to define what data they see and how they see it, creating a dialogue between the user and the system. Theories behind visual representation include:
+
 - graphical comprehension ([@cleveland1984])
 - preattentive processing ([@ware2012])
 - gestalt theory ([@few2009])
 - graphical excellence ([@tufte2001])
 
-Theories behind the manipulation of visualizations include but are not limited to 
+Theories behind the manipulation of visualizations include but are not limited to:
+
 - cognitive fit ([@vessey1991])
 - visual perceptual approaches ([@baker2009])
 - human information processing
 
-As interactive visualizations take a larger role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work in concert to facilitate analytical reasoning. They must decided on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization [@boy2014].
+As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning. They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization <!-- [@boy2014].-->
+
+Interactive visualization is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. The goal of EDA is to gain a high-level understanding of the data and to identify patterns, relationships, and anomalies in the data. 
 
 Visualizations have become more effective in recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html).
 We were glued to our computers, TVs, and phones for most of the world. 
 As a result, we watched the dashboard change in real-time to adapt to the users' needs. 
 In part to data growth and changing, the dashboard, as well as the visualizations, were needed in a condensed platform. 
-The need to be concise and vastly informative can be a bit of a struggle when it comes to data visualizations. 
-The human brain can only take in a set amount of data at a time from a table or a paragraph. \svp{references?}
-The space of infographics has been a much better way of looking at data on a creative scale. \svp{cite https://doi.org/10.1080/10618600.2012.761140}
+The need to be concise and vastly informative is a struggle regarding data visualizations. 
+
+The human brain can only take in a set amount of data from a table or a paragraph. \svp{references?}
+The space of infographics has been a much better way of looking at data on a creative scale.[@stat_graph_hist] 
+<!--\svp{cite https://doi.org/10.1080/10618600.2012.761140}-->
 While this may be a way of seeing the data in a friendly way, infographics need to include an interactive piece of data that many people would like to explore.
 
 
-## **Human Computer Interaction (HCI) & UX/UI Design**
+The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization. The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user. In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging. The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.
+
+## Human Computer Interaction (HCI) & UX/UI Design
 
 ### User analysis 
 
-User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. It involves studying the users of a system in order to understand their needs, goals, and behaviors. The goal of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
+User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. It involves studying the users of a system to understand their needs, goals, and behaviors. The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
 
-There are several methods that can be used to conduct user analysis:
+Several methods can be used to conduct user analysis:
 
 - Interviews: This involves conducting in-depth interviews with users to understand their needs, goals, and workflows.
-- Surveys: This involves sending out surveys to users to gather data on their needs and preferences.
-- Observations: This involves observing users as they complete tasks with the interface in order to understand their behaviors and workflows.
-- Personas: This is a method of creating fictional characters that represent the different types of users, it helps to understand the users' needs and goals.
-- Scenarios: This is a method of creating stories that describe how a user might interact with a system, it helps to understand the context and the user's needs.
+- Surveys involve sending out surveys to users to gather data on their needs and preferences.
+- Observations: This involves observing users as they complete tasks with the interface to understand their behaviors and workflows.
+- Personas: This is a method of creating fictional characters that represent the different types of users; it helps to understand the users' needs and goals.
+- Scenarios: This is a method of creating stories that describe how a user might interact with a system; it helps to understand the context and the user's needs.
 - Focus groups: This is a method of gathering a small group of users and facilitating a discussion to understand the users' needs and goals.
-- Contextual inquiry: This is a method of visiting the users in their work environment and observing them while they work, it helps to understand the context and the user's needs.
+- Contextual inquiry: This is a method of visiting the users in their work environment and observing them while they work; it helps to understand the context and the user's needs.
 
-The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. It can also be used to identify areas of the interface that are confusing or difficult to use, and to make recommendations for improvements. User analysis is an iterative process and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs
+The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.
 
 ### Protocols for testing design
 
-There are several protocols and methods that can be used to test the design of a dashboard or other visual display. Some of these include:
+Several protocols and methods can be used to test the design of a dashboard or other visual display. Some of these include:
 
 - Usability testing: This involves having users interact with the dashboard and providing feedback on its usability, including how easy it is to navigate, understand, and use.
 - Cognitive walkthrough: This involves having experts in human-computer interaction evaluate the dashboard, focusing on the cognitive processes required to use it effectively.
-- Eye-tracking: This involves using technology to track the users gaze and interactions, to understand the user's focus and attention on the dashboard elements.
+- Eye-tracking: This involves using technology to track the users' gaze and interactions, to understand the user's focus and attention on the dashboard elements.
 - A/B testing: This involves creating two versions of the dashboard, each with slightly different design elements, and comparing the results to see which design is more effective.
-- Surveys: This involves asking users to complete a survey that measures their satisfaction and understanding of the dashboard, and to provide feedback on what can be improved.
-- Heat maps: This involves using heat maps to track where users are clicking on the dashboard, to identify which elements are being used the most and which are being ignored.
-- Card sorting: This is a method to understand the users mental models and how they would like to organize and categorize the data, it is useful to understand how to structure the dashboard navigation.
+- Surveys: This involves asking users to complete a survey that measures their satisfaction and understanding of the dashboard and to provide feedback on improvements.
+- Heat maps: This involves using heat maps to track where users are clicking on the dashboard to identify which elements are being used the most and which are being ignored.
+- Card sorting: This is a method to understand the users' mental models and how they would like to organize and categorize the data; it is helpful to understand how to structure the dashboard navigation.
 
-These are just a few examples of the many protocols and methods that can be used to test the design of a dashboard. The selection of the appropriate method will depend on the specific goals of the testing and the resources available.
+These are just a few examples of the many protocols and methods that can be used to test the design of a dashboard. The selection of the appropriate way will depend on the specific goals of the testing and the resources available.
 
-It is important to keep in mind that the user's feedback is crucial in the testing process, it will provide the necessary insight to improve the design and make it more efficient.
+Remember that the user's feedback is crucial in the testing process; it will provide the necessary insight to improve the design and make it more efficient.
 
 ## General Dashboard stuff
 
-Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards into different types.
+Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards in different kinds.
 
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
 
 EDA refers to methods and procedures for exploring the data space to learn about a data set. By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.
 
-Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].
+Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].
 
 - PCPs enable the display of multi-dimensional data in two-dimensional space.
 - There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
 - Interactivity is valuable for reordering the axes flexibly and fast.
 - Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
 
-Being able to select subgroups of cases, highlight the selected lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
+Being able to select subgroups of cases, highlight the chosen lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
 
 Cowan [@cowan2001] suggested that the average person can only hold two to six pieces of information in their attention. People can develop detailed understandings of reality, which is infinitely complex.
 
-Cognitive structures consists of mental models and their relationships ([@rumelhart1976], [@carley1992], [@jonassen1996]). Mental models have been studied under several different names, which are displayed in the following image of Cognitive Structures:
+Cognitive structures consist of mental models and their relationships ([@rumelhart1976], [@carley1992], [@jonassen1996]). Mental models have been studied under several different names, which are displayed in the following image of Cognitive Structures:
 
-\begin{center}
-\includegraphics[width=\textwidth]{figure/CognitiveStructuresCitationTimeline}
-\captionof{figure}{Cognitive Structures Citation Timeline}
-\end{center}
+ - Frames: [@Goffman1974]; [@Minsky1975]; [@Rudolph2003]; [@Smith1986]; [@Klein2003]
+ - Scripts: [@ShankandAbelson1977]
+ - Protoypes: [@RoschandMervis1975];[@Rosch1977]; [@Smith1978]
+ - Schemas: [@Bartlett1932]; [@Neisser1976]; [@Piagetandcook1952]
 
-A schema is a mental model containing a breadth of information about a specific object or concept. Schemas are organized into semantic networks based on their relationships to other schemas [@wertheimer1938], [@rumelhart1976]. This arrangement helps the brain process its experiences instead of storing every sensory observation, the brain only needs to maintain its schemas, which are sufficient summaries of all previous observations. Some "memories" may even be complete recreations built with a schema [@bartlett1932], [@klein2007]
+A schema is a mental model containing a breadth of information about a specific object or concept. Schemas are organized into semantic networks based on their relationships to other schemas [@wertheimer1938], [@rumelhart1976]. This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations. Some "memories" may even be complete recreations built with a schema [@bartlett1932], [@klein2007]
 
 [@wixon1990] introduce "contextual design" as a systems development method in which the researcher partners with the user at the user's place of work to "develop a shared understanding" of the user's activities, and they define contextual inquiry as the first part of the broader process. Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
 
@@ -478,7 +570,7 @@ A schema is a mental model containing a breadth of information about a specific 
 [@kandel2012] conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes. Kandal proposes three main archetypes that data scientists may be classed into the following:
 
 - Hackers: who build processes chaining together multiple programming languages of different types (analytical, scripting, and database languages) and use visualization in various environments.
-- Scripters: who perform most of their analysis in an analytical environment (e.g. R or Python) and perform the most complex statistical modeling of the types but who do not perform their ETL
+- Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not performstatements their ETL
 - Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 
 ### Conclusion
