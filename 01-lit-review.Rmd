@@ -55,17 +55,51 @@ Conclusion: Connections between EDA and dashboards - not all dashboards are desi
 -->
 
 # Introduction
+<!-- General purpose of this section: 
+Motivate Dashboards and conclude that it is important to understand how graphs are perceived and used by various target audiences. -->
+
+\svp{Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities. 
+We fit models based on relationships between variables which are often identified visually. 
+We identify problems with those models based on residual plots and other visual diagnostics. 
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.}
+
+\svp{Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
+In addition, we know that ... cite sources ... not all visual displays have equal perceptual value. 
+The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion (cite) affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Other design constraints are due to the audience's experience level: are they used to working with data? 
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
+When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
+}
+
+<!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
 As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. 
+<!-- The work appears how many times in this sentence? -->
 The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. 
-This work has been explored in various disciplines but not in statistical graphics. 
+<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
+This work has been explored in various disciplines but not in statistical graphics.
+<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
 We know that dashboards are visual information tools with multiple statistical pictures. 
+<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example: 
+As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
 Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+<!-- You haven't defined dashboards yet -->
 
 One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard? 
 This is something that visual information researchers explore but don't test. 
+<!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
 
+<!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
+The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
+The end goal of data analysis is to support decision making and provide a basis for informed action. 
+Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
+<!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
+Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
+Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
 
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. The end goal of data analysis is to support decision making and provide a basis for informed action. Data analysis can help organizations to better understand their customers, market trends, and operational performance, among other things. Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
+## Dashboards
 
 A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance[@few]. A dashboard has particular characteristics:
 
