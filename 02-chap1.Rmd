@@ -51,10 +51,7 @@ Thus, in addition to the usual challenges of working with real-world data that i
 
 ## Dashboard Design Considerations
 
-\begin{figure}
-\includegraphics[width=.8\textwidth]{figure/Key_Metrics}
-\caption{Diagram of considerations for our dashboard design process.}\label{fig:metrics}
-\end{figure}
+![Diagram of considerations for our dashboard design process.](figure/Key_Metrics.png){#fig:metrics}
 
 One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.
 
@@ -110,12 +107,11 @@ The initial design sketch and implementation are shown in \autoref{fig:v1}.
 
 Users' towns are at the center of our application, and comparisons to other, similar towns are secondary. As it can be extremely difficult to predict which towns are optimal for comparison purposes (similar may involve population, region, economic indicators, sports rivalries, and any number of other variables), we allow users to modify a set of suggested comparison towns to indicate other towns of interest. 
 
-
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{figure/Version1}
+\includegraphics[width=\textwidth]{figure/Version1.png}
 
-\includegraphics[width=.7\textwidth]{figure/Version2}
+\includegraphics[width=.7\textwidth]{figure/Version2.png}
 \caption{Initial dashboard design sketch (top) and implementation (bottom).}\label{fig:v1}
 \end{figure}
 
@@ -134,9 +130,9 @@ Our conclusion, based on this initial dashboard draft, was that we needed to res
 ### Redesign 
 
 \begin{figure}
-\includegraphics[width=.8\textwidth]{figure/Version3}
+\includegraphics[width=.8\textwidth]{figure/Version3.png}
 
-\includegraphics[width=\textwidth]{figure/Version4}
+\includegraphics[width=\textwidth]{figure/Version4.png}
 \caption{A second iteration of the sketched design (top) and the implementation (bottom).}\label{fig:v2}
 \end{figure}
 
