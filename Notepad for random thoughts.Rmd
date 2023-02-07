@@ -1,0 +1,24 @@
+Questions that I hope that I can answer in the process of my dissertation:
+
+  1. When should we decide and make changes in the graphical representation of "what we've always done" to a graphic that is a better representation of data? 
+    
+    -- This comes from the area of making graphs and charts that we were done in the past for basketball teams. For example, we have done a shot chart with red and green colors to determine the differences of making a shot. The X and O representation of a make and a miss. How do we transition to this expectation after having a categorical shot chart. The categorical shot chart is one that will show the density. 
+    
+  2. How do we find the statistical differences from a density plot with a categorical plot? Is there a clear line when graphs should change?
+  
+  3. How do you gain in the graphics game when adding a line that will have both categorical and numerical data that is useful? Is there a way to test when the cognitive heavy lifting is happening on one side verus the other?
+  
+  4. The divide between the users needs and the developers capabilities/expectations. What does this look like? How to push the line as a deisgner and developer to get the customer to move past their expectations? For example, developing a Shiny app to allow the user to interact with the data but the expectations of the user were to print the outcomes. How to get the user to move in a different direction?
+  
+----
+Interactive graphics refer to visual representations of data, such as charts, graphs, maps, or diagrams, that allow users to interact with the data in real time. 
+This interaction can take many forms, including filtering, sorting, zooming, and highlighting. 
+The goal of interactive graphics is to provide users with a more immersive and engaging experience, enabling them to explore and understand data in new ways. 
+By allowing users to manipulate the data, interactive graphics can uncover insights and patterns that are not immediately apparent from static visualizations. 
+Interactive graphics and dashboards can be created using various tools and technologies, including:
+
+- Data visualization software: Tools such as Tableau, PowerBI, and Looker allow users to create interactive dashboards by connecting to data sources and creating visualizations from that data.
+- Custom development: Dashboards can also be created from scratch using programming languages such as Python, R, and JavaScript, along with libraries like D3.js and Plotly.
+- Cloud-based platforms: Cloud-based platforms like Google Data Studio and Amazon QuickSight offer drag-and-drop interfaces for creating dashboards, making it easier for non-technical users to create interactive graphics.
+
+Regardless of the tool used, the key to creating compelling interactive graphics and dashboards is understanding the data and selecting the appropriate visualizations to communicate the story the data is telling effectively.

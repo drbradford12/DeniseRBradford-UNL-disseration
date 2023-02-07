@@ -271,18 +271,47 @@ Placeholder
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way.
-The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed.
-This work has been explored in various disciplines but not in statistical graphics.
-We know that dashboards are visual information tools with multiple statistical pictures.
-Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics.
+\svp{Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities. 
+We fit models based on relationships between variables which are often identified visually. 
+We identify problems with those models based on residual plots and other visual diagnostics. 
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.}
+
+\svp{Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
+In addition, we know that ... cite sources ... not all visual displays have equal perceptual value. 
+The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion (cite) affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Other design constraints are due to the audience's experience level: are they used to working with data? 
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
+When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
+}
+
+\db{The purpose of statistical graphics with tabular data is to present the data in a visually appealing and informative manner, thereby facilitating data interpretation and analysis. 
+This is accomplished by utilizing various graphical techniques, such as bar charts, line graphs, scatter plots, etc., to represent the data in an easily digestible format that can highlight relationships, patterns, and trends within the data. 
+The data presented is intended to assist researchers, analysts, and decision-makers in making informed decisions.
+}
+
+--\textgreater{}
+--\textgreater{}
+--\textgreater{}
+--\textgreater{}
+--\textgreater{}
 
 One graphic can be misleading alone, but can two graphics be considered misleading when placing two ``correctly'' designed graphics together on a dashboard?
 This is something that visual information researchers explore but don't test.
 
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. The end goal of data analysis is to support decision making and provide a basis for informed action. Data analysis can help organizations to better understand their customers, market trends, and operational performance, among other things. Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data.
+The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data.
+The end goal of data analysis is to support decision making and provide a basis for informed action.
+Data analysis can help organizations to better understand their customers, market trends, and operational performance.
+Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena.
+Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
 
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance(Few, 2006). A dashboard has particular characteristics:
+\hypertarget{dashboards}{%
+\section{Dashboards}\label{dashboards}}
+
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance(Few, 2006).
+Dashboards have particular characteristics:
 
 \begin{itemize}
 \tightlist
@@ -296,28 +325,15 @@ A dashboard is a visual display of the essential information needed to achieve o
   Can be used to monitor information at a high level
 \end{itemize}
 
-Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
+Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics.
+They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information.
+Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
 
-While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used. A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
+While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used.
+A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
 
-Much of the work done within statistical research and dashboard design involves collaboration with other academic researchers. While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds.
-
-A collaboration is when two or more entities work together to produce a desired and shared outcome. Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge.
-Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more. These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding.
-
-Interactive graphics refer to visual representations of data, such as charts, graphs, maps, or diagrams, that allow users to interact with the data in real time. This interaction can take many forms, including filtering, sorting, zooming, and highlighting. The goal of interactive graphics is to provide users with a more immersive and engaging experience, enabling them to explore and understand data in new ways. By allowing users to manipulate the data, interactive graphics can uncover insights and patterns that are not immediately apparent from static visualizations. Interactive graphics and dashboards can be created using various tools and technologies, including:
-
-\begin{itemize}
-\tightlist
-\item
-  Data visualization software: Tools such as Tableau, PowerBI, and Looker allow users to create interactive dashboards by connecting to data sources and creating visualizations from that data.
-\item
-  Custom development: Dashboards can also be created from scratch using programming languages such as Python, R, and JavaScript, along with libraries like D3.js and Plotly.
-\item
-  Cloud-based platforms: Cloud-based platforms like Google Data Studio and Amazon QuickSight offer drag-and-drop interfaces for creating dashboards, making it easier for non-technical users to create interactive graphics.
-\end{itemize}
-
-Regardless of the tool used, the key to creating compelling interactive graphics and dashboards is understanding the data and selecting the appropriate visualizations to communicate the story the data is telling effectively.
+Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users.
+While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds.
 
 \hypertarget{graphics}{%
 \section{Graphics}\label{graphics}}
@@ -1108,7 +1124,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-02-01 22:39:32. The repository is currently at this commit:
+This version of the thesis was generated on 2023-02-03 09:20:43. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1123,7 +1139,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-02-01
+##  date     2023-02-03
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------
