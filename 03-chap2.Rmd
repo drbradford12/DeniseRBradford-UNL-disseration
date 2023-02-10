@@ -51,7 +51,7 @@ Thus, in addition to the usual challenges of working with real-world data that i
 ## Dashboard Design Considerations
 
 \begin{figure}
-\includegraphics[width=.8\textwidth]{Key_Metrics}
+\includegraphics[width=.8\textwidth]{figure/KeyMetrics.png}
 \caption{Diagram of considerations for our dashboard design process.}\label{fig:metrics}
 \end{figure}
 
@@ -111,9 +111,9 @@ Users' towns are at the center of our application, and comparisons to other, sim
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{Version1}
+\includegraphics[width=\textwidth]{figure/Version1.png}
 
-\includegraphics[width=.7\textwidth]{Version2}
+\includegraphics[width=.7\textwidth]{figure/Version2.png}
 \caption{Initial dashboard design sketch (top) and implementation (bottom).}\label{fig:v1}
 \end{figure}
 
@@ -133,9 +133,9 @@ Our conclusion, based on this initial dashboard draft, was that we needed to res
 \subsection{ Redesign }
 
 \begin{figure}
-\includegraphics[width=.8\textwidth]{Version3}
+\includegraphics[width=.8\textwidth]{figure/Version3.png}
 
-\includegraphics[width=\textwidth]{Version4}
+\includegraphics[width=\textwidth]{figure/Version4.png}
 \caption{A second iteration of the sketched design (top) and the implementation (bottom).}\label{fig:v2}
 \end{figure}
 

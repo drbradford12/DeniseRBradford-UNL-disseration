@@ -144,15 +144,15 @@ How do we determine whether there are superior graphical representations when th
 How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
 How do we determine the line distinguishing a density plot from a categorical plot? 
 Consequently, how is this decision made outside of academia and research? 
-In one way, research has been conducted on the visual or human perception of categorical plots.
+In one way, research has been conducted on the visual or human perception of categorical plots.}
 
-In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
+\db{In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
 We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field.
 We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
 It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-This is the application of research to practice.
+This is the application of research to practice.}
 
-What may be considered an exciting thought process in research that is less practical or useful in the field? 
+\db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
 We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 

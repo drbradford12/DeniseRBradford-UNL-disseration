@@ -51,7 +51,7 @@ Thus, in addition to the usual challenges of working with real-world data that i
 
 ## Dashboard Design Considerations
 
-![Diagram of considerations for our dashboard design process.](figure/Key_Metrics.png){#fig:metrics}
+![Diagram of considerations for our dashboard design process.](figure/KeyMetrics.png){#fig:metrics}
 
 One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.
 
