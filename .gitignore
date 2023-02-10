@@ -13,3 +13,4 @@
 *.rdx
 *.rdb
 _bookdown_files
+**/.DS_Store
