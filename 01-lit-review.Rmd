@@ -27,7 +27,7 @@ data("ChickWeight")
 \svp{Start with a definition of what dashboards are. Maybe reference/quote Few? Key components - visualization, interactivity, update frequency, simplicity? (the last one is arguable). Transition to Exploratory Data Analysis by saying that one of the key ways dashboards are used is to allow people to explore the data, and that dashboards are particularly useful for non-experts, as they do not require writing code or understanding how to work with the underlying data. Reference Figure \ref{fig-design-map} in this paragraph.}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{figure/DashboardDesignMap}
+\includegraphics[width=\textwidth]{figure/DashboardDesignMap.png}
 \caption{Dashboard Design Mind Map\label{fig-design-map}. \svp{Dashboard design includes components of exploratory data analysis, interactive graphics, big data analytics, human-computer interaction, and human cognition. XXX For the record, I think UI/UX design and HCI are the same, but that's me.}}
 \end{figure}
 
@@ -73,6 +73,67 @@ When we create visualizations for public consumption we have to consider both pe
 In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 }
 
+## Audience Considerations
+
+### Perception
+
+### Expertise
+
+### Engagement with the data
+
+
+## Data Considerations
+
+### Variable Types
+Not all variables should be used to create all types of charts - variable type informs chart structure
+
+### Grammar of Graphics
+Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.
+
+
+It doesn't help us decide which is better - for that we need user testing.
+
+### Multivariate Data Displays
+
+- Difficulty of visualizing multivariate data
+- Different approaches - briefly mention 
+    - encoding with shape/color/etc.
+    - tours
+    - pcps
+    - linked graphics (interactivity)
+
+This section doesn't need to solve the problem - it just introduces it
+
+## Audience-Data Interactions
+
+### Testing static graphics
+
+Brief overview of user studies that compare different types of graphics, accuracy, etc.
+
+### Testing interactive graphics
+
+Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
+
+## Dashboard Design
+
+Given that the audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics? 
+
+How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
+
+<!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
+
+## Conclusion
+
+In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context. 
+
+Chapter ... demonstrates the process of designing and redesigning a dashboard for public use. 
+Chapter ... discusses PCPs and how they are interpreted... 
+Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data.
+
+<!-- mic drop -->
+
+
+
 <!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
 <!--As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. -->
 \db{The purpose of statistical graphics with tabular data is to present the data in a visually appealing and informative manner, thereby facilitating data interpretation and analysis. 
@@ -102,16 +163,16 @@ Where do we draw the line between what is viewed as an impediment to the develop
 }
 
 
-<!-- <!-- The work appears how many times in this sentence? --> -->
-<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed.  -->
-<!-- <!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? --> -->
+<!-- The work appears how many times in this sentence? --> 
+<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. -->
+<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
 <!-- This work has been explored in various disciplines but not in statistical graphics. -->
-<!-- <!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this --> -->
-<!-- We know that dashboards are visual information tools with multiple statistical pictures.  -->
-<!-- <!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:  -->
-<!-- As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. --> -->
+<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
+<!-- We know that dashboards are visual information tools with multiple statistical pictures. -->
+<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:
+As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
 <!-- Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics. -->
-<!-- <!-- You haven't defined dashboards yet --> -->
+<!-- You haven't defined dashboards yet -->
 
 <!-- One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard?  -->
 <!-- This is something that visual information researchers explore but don't test.  -->
@@ -266,12 +327,12 @@ In general, this will help in the psychology of the perceptual experience.
 The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process.
 
 ```{r graphics, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Visual Reference model by Card',fig.show='hold',fig.align='center'}
-knitr::include_graphics("figure/VizModelDiagram")
+knitr::include_graphics("figure/VizModelDiagram.png")
 ```
 
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/VizModelDiagram} -->
+<!-- \includegraphics[width=\textwidth]{figure/VizModelDiagram.png} -->
 <!-- \captionof{figure}{Visual Reference model by Card} -->
 <!-- \end{center} -->
 
@@ -510,21 +571,21 @@ For example, mapping two numerical variables can create a scatter plot to the x 
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 
 
-```{r graphics, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson's work',fig.show='hold',fig.align='center'}
-knitr::include_graphics("figure/gglayers")
-knitr::include_graphics("figure/graphic-flowchart")
+```{r graphics2, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
+knitr::include_graphics("figure/gglayers.png")
+knitr::include_graphics("figure/graphic-flowchart.png")
 ```
 
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/gglayers} -->
+<!-- \includegraphics[width=\textwidth]{figure/gglayers.png} -->
 <!-- \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work} -->
 <!-- \end{center} -->
 
 <!-- --- -->
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/graphic-flowchart} -->
+<!-- \includegraphics[width=\textwidth]{figure/graphic-flowchart.png} -->
 <!-- \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work} -->
 <!-- \end{center} -->
 <!-- \svp{Try to grab a diagram from the grammar of graphics book showing the layers instead of your flowchart.} -->
@@ -620,7 +681,7 @@ This model is also context-free, allowing for the focus to be on the feedback lo
 <!-- \svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. } -->
 
 \begin{center}
-\includegraphics[width=\textwidth]{figure/vanWiijSimpleModel}
+\includegraphics[width=\textwidth]{figure/vanWiijSimpleModel.png}
 \captionof{figure}{van Wiij Simple Visualization Model}
 \end{center}
 
@@ -817,7 +878,7 @@ Where do we draw the line between what is viewed as an impediment to the develop
 
 <!-- Based on the following diagram -->
 <!-- \begin{figure} -->
-<!-- \includegraphics[width=\textwidth]{figure/RolesofGraphics} -->
+<!-- \includegraphics[width=\textwidth]{figure/RolesofGraphics.png} -->
 <!-- \caption{Roles of Graphics \svp{Use the equal spacing button in excalidraw to make boxes equally distributed horizontally and vertically. Group boxes to treat them as a single object. This will make your sketches neater.}} -->
 <!-- \end{figure} -->
 
@@ -831,7 +892,7 @@ Where do we draw the line between what is viewed as an impediment to the develop
 
 <!-- #### Characteristics of Big Data -->
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/BigDataDiagram} -->
+<!-- \includegraphics[width=\textwidth]{figure/BigDataDiagram.png} -->
 <!-- \captionof{figure}{Big Data Diagram} -->
 <!-- \end{center} -->
 
@@ -867,14 +928,14 @@ Where do we draw the line between what is viewed as an impediment to the develop
 <!-- Tasks can be viewed either by the goal the user is trying to obtain or by the intent the user has  -->
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/tentypetasks} -->
+<!-- \includegraphics[width=\textwidth]{figure/tentypetasks.png} -->
 <!-- \captionof{figure}{10 Type Tasks with Sources} -->
 <!-- \end{center} -->
 
 <!-- Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ([@endert2015], [@sedig2012]). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques [@saket2018]. -->
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/interactiontasks} -->
+<!-- \includegraphics[width=\textwidth]{figure/interactiontasks.png} -->
 <!-- \captionof{figure}{Interaction Types with Sources} -->
 <!-- \end{center} -->
 
@@ -898,7 +959,7 @@ Where do we draw the line between what is viewed as an impediment to the develop
 <!--  ### Interactive Visualization in Exploratory Data Analysis (EDA) -->
 
 <!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/EDAWorkflowElements} -->
+<!-- \includegraphics[width=\textwidth]{figure/EDAWorkflowElements.png} -->
 <!-- \captionof{figure}{Elements of EDA Workflow} -->
 <!-- \end{center} -->
 
