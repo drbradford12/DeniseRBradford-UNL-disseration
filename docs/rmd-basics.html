@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CHAPTER 2 Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</title>
+  <meta name="description" content="CHAPTER 2 Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CHAPTER 2 Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CHAPTER 2 Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  
+  
+  
+
+<meta name="author" content="Denise Renee Bradford" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="math-sci.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#audience-considerations"><i class="fa fa-check"></i><b>1.1</b> Audience Considerations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#perception"><i class="fa fa-check"></i><b>1.1.1</b> Perception</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#expertise"><i class="fa fa-check"></i><b>1.1.2</b> Expertise</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#engagement-with-the-data"><i class="fa fa-check"></i><b>1.1.3</b> Engagement with the data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#data-considerations"><i class="fa fa-check"></i><b>1.2</b> Data Considerations</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#variable-types"><i class="fa fa-check"></i><b>1.2.1</b> Variable Types</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#grammar-of-graphics"><i class="fa fa-check"></i><b>1.2.2</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#multivariate-data-displays"><i class="fa fa-check"></i><b>1.2.3</b> Multivariate Data Displays</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#audience-data-interactions"><i class="fa fa-check"></i><b>1.3</b> Audience-Data Interactions</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#testing-static-graphics"><i class="fa fa-check"></i><b>1.3.1</b> Testing static graphics</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#testing-interactive-graphics"><i class="fa fa-check"></i><b>1.3.2</b> Testing interactive graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#dashboard-design"><i class="fa fa-check"></i><b>1.4</b> Dashboard Design</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#conclusion"><i class="fa fa-check"></i><b>1.5</b> Conclusion</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#dashboards"><i class="fa fa-check"></i><b>1.6</b> Dashboards</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#graphics"><i class="fa fa-check"></i><b>1.7</b> Graphics</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#perceputal-principles"><i class="fa fa-check"></i><b>1.7.1</b> Perceputal Principles</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#categorical-data-visualization"><i class="fa fa-check"></i><b>1.7.2</b> Categorical Data Visualization</a></li>
+<li class="chapter" data-level="1.7.3" data-path="introduction.html"><a href="introduction.html#high-dimensional-data-visualization"><i class="fa fa-check"></i><b>1.7.3</b> High-Dimensional Data Visualization</a></li>
+<li class="chapter" data-level="1.7.4" data-path="introduction.html"><a href="introduction.html#visualizing-complex-data"><i class="fa fa-check"></i><b>1.7.4</b> Visualizing Complex Data</a></li>
+<li class="chapter" data-level="1.7.5" data-path="introduction.html"><a href="introduction.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>1.7.5</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="1.7.6" data-path="introduction.html"><a href="introduction.html#eda-through-the-eyes-of-tukey"><i class="fa fa-check"></i><b>1.7.6</b> EDA through the eyes of Tukey</a></li>
+<li class="chapter" data-level="1.7.7" data-path="introduction.html"><a href="introduction.html#grammar-of-graphics-1"><i class="fa fa-check"></i><b>1.7.7</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="1.7.8" data-path="introduction.html"><a href="introduction.html#big-data-and-graphical-solutions"><i class="fa fa-check"></i><b>1.7.8</b> Big Data and graphical solutions</a></li>
+<li class="chapter" data-level="1.7.9" data-path="introduction.html"><a href="introduction.html#interactive-graphics"><i class="fa fa-check"></i><b>1.7.9</b> Interactive Graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#human-computer-interaction-hci-uxui-design"><i class="fa fa-check"></i><b>1.8</b> Human Computer Interaction (HCI) &amp; UX/UI Design</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#user-analysis"><i class="fa fa-check"></i><b>1.8.1</b> User analysis</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#protocols-for-testing-design"><i class="fa fa-check"></i><b>1.8.2</b> Protocols for testing design</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#general-dashboard-stuff"><i class="fa fa-check"></i><b>1.9</b> General Dashboard stuff</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#conclusion-1"><i class="fa fa-check"></i><b>1.9.1</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rmd-basics.html"><a href="rmd-basics.html"><i class="fa fa-check"></i><b>2</b> Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rmd-basics.html"><a href="rmd-basics.html#abstract"><i class="fa fa-check"></i><b>2.1</b> Abstract</a></li>
+<li class="chapter" data-level="2.2" data-path="rmd-basics.html"><a href="rmd-basics.html#introduction-1"><i class="fa fa-check"></i><b>2.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.3" data-path="rmd-basics.html"><a href="rmd-basics.html#data-description"><i class="fa fa-check"></i><b>2.3</b> Data Description</a></li>
+<li class="chapter" data-level="2.4" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-considerations"><i class="fa fa-check"></i><b>2.4</b> Dashboard Design Considerations</a></li>
+<li class="chapter" data-level="2.5" data-path="rmd-basics.html"><a href="rmd-basics.html#guiding-design-principles"><i class="fa fa-check"></i><b>2.5</b> Guiding Design Principles</a></li>
+<li class="chapter" data-level="2.6" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-process"><i class="fa fa-check"></i><b>2.6</b> Dashboard Design Process</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-components"><i class="fa fa-check"></i><b>2.6.1</b> Dashboard Components</a></li>
+<li class="chapter" data-level="2.6.2" data-path="rmd-basics.html"><a href="rmd-basics.html#initial-draft"><i class="fa fa-check"></i><b>2.6.2</b> Initial Draft</a></li>
+<li class="chapter" data-level="2.6.3" data-path="rmd-basics.html"><a href="rmd-basics.html#redesign"><i class="fa fa-check"></i><b>2.6.3</b> Redesign</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="rmd-basics.html"><a href="rmd-basics.html#discussion"><i class="fa fa-check"></i><b>2.7</b> Discussion</a></li>
+<li class="chapter" data-level="2.8" data-path="rmd-basics.html"><a href="rmd-basics.html#future-work"><i class="fa fa-check"></i><b>2.8</b> Future Work</a></li>
+<li class="chapter" data-level="2.9" data-path="rmd-basics.html"><a href="rmd-basics.html#conclusions"><i class="fa fa-check"></i><b>2.9</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-sci.html"><a href="math-sci.html"><i class="fa fa-check"></i><b>3</b> Chapter 2 Stuff</a></li>
+<li class="chapter" data-level="4" data-path="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html"><a href="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html"><i class="fa fa-check"></i><b>4</b> Chapter Paper on Rural Shrink Smart Manuscriptsubmitted to Journal of Data Science Special Issue</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html"><a href="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html"><a href="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html#dashboard-design-considerations-1"><i class="fa fa-check"></i><b>4.2</b> Dashboard Design Considerations</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html"><a href="chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue.html#guiding-design-principles-1"><i class="fa fa-check"></i><b>4.2.1</b> Guiding Design Principles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ref-labels.html"><a href="ref-labels.html"><i class="fa fa-check"></i><b>5</b> Tables, Graphics, References, and Labels</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ref-labels.html"><a href="ref-labels.html#tables"><i class="fa fa-check"></i><b>5.1</b> Tables</a></li>
+<li class="chapter" data-level="5.2" data-path="ref-labels.html"><a href="ref-labels.html#figures"><i class="fa fa-check"></i><b>5.2</b> Figures</a></li>
+<li class="chapter" data-level="5.3" data-path="ref-labels.html"><a href="ref-labels.html#footnotes-and-endnotes"><i class="fa fa-check"></i><b>5.3</b> Footnotes and Endnotes</a></li>
+<li class="chapter" data-level="5.4" data-path="ref-labels.html"><a href="ref-labels.html#cross-referencing-chapters-and-sections"><i class="fa fa-check"></i><b>5.4</b> Cross-referencing chapters and sections</a></li>
+<li class="chapter" data-level="5.5" data-path="ref-labels.html"><a href="ref-labels.html#bibliographies"><i class="fa fa-check"></i><b>5.5</b> Bibliographies</a></li>
+<li class="chapter" data-level="5.6" data-path="ref-labels.html"><a href="ref-labels.html#anything-else"><i class="fa fa-check"></i><b>5.6</b> Anything else?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion-2.html"><a href="conclusion-2.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="the-first-appendix.html"><a href="the-first-appendix.html"><i class="fa fa-check"></i><b>A</b> The First Appendix</a></li>
+<li class="chapter" data-level="B" data-path="the-second-appendix-for-fun.html"><a href="the-second-appendix-for-fun.html"><i class="fa fa-check"></i><b>B</b> The Second Appendix, for Fun</a></li>
+<li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rmd-basics" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">CHAPTER 2</span> Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue<a href="rmd-basics.html#rmd-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="abstract" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Abstract<a href="rmd-basics.html#abstract" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many small and rural places are shrinking. Interactive dashboards are the most common use cases for data visualization and context for exploratory data tools. In our paper, we will explore the specific scope of how dashboards are used in small and rural area to empower novice analysts to make data-driven decisions. Our framework will suggest a number of research directions to better support small and rural places from shrinking using an interactive dashboard design, implementation and use for the every day analyst.</p>
+</div>
+<div id="introduction-1" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Introduction<a href="rmd-basics.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As the amount of data has increased in nearly every facet of life, the need to make sense of that data in an approachable, accessible form has become ever more important.
+As a result, many companies and organizations use interactive dashboards to present these data in a more useful and visually appealing form <span class="citation">(Sarikaya, Correll, Bartram, Tory, &amp; Fisher, 2019)</span>.</p>
+<p>In many cases, dashboards support viewers’ information processing, helping to make sense of complex data, navigate through a dataset, and supporting decision making based on the data.</p>
+<p>Dashboards are often used, as with the car display of the same name, to provide summary information about many separate attributes of a common entity. One glance at a car’s dashboard will tell you the speed, RPM, engine temperature, amount of gas in the tank; more importantly, however, the goal is not for the user to remember all of these characteristics, but to assess whether any of these quantities is outside of the expected range.
+Similarly, interactive dashboards for data are often used to display many different attributes and performance metrics which are of importance for stakeholders.</p>
+<p>In this paper, we discuss the process of designing a dashboard to present publicly available government data to stakeholders in small Iowa towns to facilitate decision making and objective comparison with other similarly-situated towns.</p>
+<p>Some communities continue to thrive as they lose population because they adapt, maintaining quality of life and community services for residents while investing in the future. This process, , is important for rural areas who have experienced shrinking populations for decades. As small rural towns do not have access to data scientists or even the ability to easily leverage data collected locally to support decisions, our research team will provide communities with data about services in small town Iowa in order to assist with developing strategies to improve quality of life for their residents amid shrinking populations <span class="citation">(Rural Shrink Smart Team, 2022)</span>. We hope to allow towns to explore their own data and compare to other similar towns, centering decision-making on data in the context of small-town Iowa life.</p>
+</div>
+<div id="data-description" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data Description<a href="rmd-basics.html#data-description" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Smart and Connected Community (SCC) dashboard data are primarily assembled from <span class="citation">(State of Iowa, 2020)</span>, with some additional datasets assembled from federal and private sources. Most of these data sets are collected at a town/city or county spatial resolution, requiring us to carefully join data to ensure that these differences are respected while collating relevant information at the city level. In addition to the more commonly available statistics derived from e.g. the census and American Community Survey, contains several unique data sets, including local liquor sales, school building locations, town budgets and expenditures, hospital beds, Medicaid reimbursements, and other details that may provide information about local quality of life.</p>
+<p>Data available on Iowa’s data portal were augmented in some cases with higher-quality data sets in cases where the Iowa data were out of date or insufficiently accurate.
+Data collected from ELSI <span class="citation">(National Center for Education Statistics, 2020)</span> from were used to show the distance to any private or public school. The National Center for Education Statistics (NCES) is the primary federal entity for collecting and analyzing data related to education <span class="citation">(Zarecor, Peters, &amp; Hamideh, 2021)</span>.</p>
+Data collected from the Index of Relative Rurality (IRR) <span class="citation">(USDA - ERS, 2020a)</span> were used in the SCC dashboard to help classify the towns. The Index of Relative Rurality (IRR) is a continuous, threshold-free, and unit-free measure of rurality. It is an alternative to the traditional discrete threshold-based classifications.The IRR ranges between 0 (low level of rurality, i.e., urban) and 1 (most rural). Four steps are involved in its design:
+<p>Data collected from Rural Urban Commuting Area Codes <span class="citation">(USDA - ERS, 2020b)</span> were used to help identify towns with commuting behaviors in our rural areas. The rural-urban commuting area (RUCA) codes classify U.S. census tracts using measures of population density, urbanization, and daily commuting. This data is on a zip code-level that will help identify those communities that commute to more urban areas. The most recent RUCA codes are based on data from the 2010 decennial census and the 2006-10 American Community Survey. The classification contains two levels. Whole numbers (1-10) delineate metropolitan, micropolitan, small town, and rural commuting areas based on the size and direction of the primary (largest) commuting flows.</p>
+<p>One of the interesting features of this assembled data set is that missing data can be missing for multiple reasons: not all state data is complete, but data about certain services may also be missing because towns do not offer that service.
+Thus, in addition to the usual challenges of working with real-world data that is “messy” in a variety of ways, we also have to contend with missing data that is missing due to the size of the community or the lack of services. This makes both visualization and statistical analysis more complicated (and more interesting).</p>
+</div>
+<div id="dashboard-design-considerations" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Dashboard Design Considerations<a href="rmd-basics.html#dashboard-design-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="figure">
+<img src="figure/KeyMetrics.png" id="fig:metrics" alt="" />
+<p class="caption">Diagram of considerations for our dashboard design process.</p>
+</div>
+<p>One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.</p>
+<p>As part of a wider project investigating the strategies towns use to maintain quality of life amid shrinking population, our research team provides communities with data about their own town, but also comparable towns across the state which may have a different approach to city services. In combination with other engagement strategies that are more qualitative, we hope to use this interactive dashboard approach to assist small Iowa cities with generalizing and developing strategies to improve or maintain quality of life amid shrinking populations.</p>
+<p>One factor at the forefront of our visualization design is the importance of reducing the cognitive demands on viewers: we have assembled an incredible amount of data, and it is easy for even statisticians who deal with much larger datasets to get lost in the details of this data. At the same time, we want to invite viewers to engage with the data - to imagine, to draw comparisons, to generalize across towns, and to integrate outside information into the conclusions drawn based on the data we present.
+This invitation to engage with the data is similar to the approach advocated in Guided Discovery Learning, a framework leverages hints, feedback, and other helpful information to guide users in interactive exploration <span class="citation">(DeDonno, 2016)</span>.</p>
+<p>We expect that users will be interested in “sets” of variables from the wider dataset, which we assembled based on quality of life factors in the Iowa Small Town Poll <span class="citation">(David J. Peters, 2019)</span>. For instance, users might be interested in medical and social services available to residents, such as a local primary care clinic, nursing homes which are within driving distance, and the distance to the nearest emergency room; these factors might be explored separately from variables describing the services provided directly by city government, such as parks and recreation expenditures, snow removal services, and the distance to the closest fire station.</p>
+<p>As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours <span class="citation">(Wickham, Cook, Hofmann, &amp; Buja, 2011)</span>, require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s <span class="citation">(d’Ocagne, 1885)</span>, parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show “blocks” of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables <span class="citation">(Bendix, Kosara, &amp; Hauser, 2005)</span>; modifications of this design, such as common-angle plots <span class="citation">(Hofmann &amp; Vendettuoli, 2013)</span>, address the issues which arise due to line-width illusions <span class="citation">VanderPlas &amp; Hofmann (2015)</span>. Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities <span class="citation">(Heinrich &amp; Weiskopf, 2009)</span>. In this paper, we use the package, which leverages the grammar-of-graphics framework introduced in <span class="citation">Wickham (2016)</span>, allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.</p>
+<p>We also anticipate that users will be interested in comparing their town to other, similar towns. We will discuss the different ways that this comparison strategy was implemented in each dashboard in the next section, which describes the evolution of the dashboard over time and accounting for feedback from users and other researchers on the wider project.</p>
+<p>One final component of this project is that our dashboard is part of a wider effort to work with towns to understand the different strategies used to maintain resident quality of life amid shrinking populations. Thus, while the town leaders are our primary audience, we also are creating this applet for use in parallel with a team of other researchers: sociologists, economists, city planning specialists, and artists. These researchers opinions and feedback about the dashboard are also useful and important, as they regularly work with town leaders in different capacities and have an understanding of what factors are most important to them and what types of questions these leaders may have when faced with data and unfamiliar statistical visualizations.</p>
+<p>Throughout the design process, we will assess our visualizations to determine which strategies for user interface and interactive graphics design are most useful to empower town leaders to make discoveries in publicly available data assembled with a focus on items that impact rural quality of life.</p>
+</div>
+<div id="guiding-design-principles" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Guiding Design Principles<a href="rmd-basics.html#guiding-design-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Research on dashboard creation and interactive visualization tends to be very task-specific and hard to apply to more generalized settings. That is, it is relatively easy to create a dashboard that works for a particular task, but it is hard to generalize from that process what will work for the next dashboard. With this in mind, we set out to clearly document our intentions at each stage of the design and evaluation process, with the goal of gathering some useful information about general dashboard design from the process of creating this specific dashboard.</p>
+Thus, our initial set of dashboard design principles is as follows:
+<p>As with many dashboards, this project is under continuous development; while it makes for an unsatisfactory conclusion, we do not have a “final” dashboard design because the application will continue to evolve. However, we have some useful insights into the process of creating an application designed to invite users to explore a large and complex dataset that we believe to be a useful contribution to work in this area.</p>
+</div>
+<div id="dashboard-design-process" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Dashboard Design Process<a href="rmd-basics.html#dashboard-design-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dashboard-components" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Dashboard Components<a href="rmd-basics.html#dashboard-components" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this section, we discuss the philosophy behind the basic “building blocks” of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy’s effectiveness in the conclusion.</p>
+<p>The large set of publicly available data (primarily from ) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload <span class="citation">(Few, 2006)</span>.</p>
+<p>Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking <span class="citation">(S. Lee et al., 2016)</span>, in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions <span class="citation">(Luxen &amp; Vetter, 2011)</span> in R <span class="citation">(R Core Team, 2022)</span> to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the “As the Crow Flies” distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.</p>
+<p>When faced with the next component, a parallel coordinate plot (PCP), a novice user will be able to determine two basic components: Visual Object (textual objects and non-textual objects) and Frame (frame of content and frame of visual encoding).</p>
+<p>Taken together, the app is a single page; the initial “solid ground” which the user explores from consists of maps showing the route from the center of town to necessary services, including the fire department, schools, post offices, and hospitals. In version 2, as shown in , the map portion is condensed, and more space is given to value boxes that show vital statistics about the town’s QoL and financial metrics. This relatively straightforward display is followed by a parallel coordinate plot that allows the user to see similar towns along dimensions such as economic indicators or population size.</p>
+</div>
+<div id="initial-draft" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Initial Draft<a href="rmd-basics.html#initial-draft" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The initial design sketch and implementation are shown in .</p>
+<p>Users’ towns are at the center of our application, and comparisons to other, similar towns are secondary. As it can be extremely difficult to predict which towns are optimal for comparison purposes (similar may involve population, region, economic indicators, sports rivalries, and any number of other variables), we allow users to modify a set of suggested comparison towns to indicate other towns of interest.</p>
+<p>We implemented some suggested town comparisons using unsupervised clustering methods to help our towns make decisions that are informed in comparison to similar towns, for budget size, population size and location. We initially focused on determining the next five to ten similar towns, based on distances to services. This feature became an important diagnostic for our data quality, as it became clear that towns which were grouped with big cities but which did not have a large population were so grouped because of missing data. Unfortunately, this clustering feature was not as useful to the application users, as they came to the dashboard with a pre-existing set of towns to compare to; our suggested comparisons were in the way.</p>
+<p>The initial dashboard design featured several responsive maps showing the distance to the nearest hospital, fire department, post office, and school. These maps were ineffective for several reasons:</p>
+<ul>
+<li>Town residents already know this information (though it was useful for us as the dashboard designers, because we aren’t nearly as familiar with the 900+ small towns in Iowa)</li>
+<li>We computed distance from services relative to the center of town - coordinates provided in the data from . Generally speaking, the post office is at the center of town and the fire department is usually very close to the center of town; these two maps were useless. The school and hospital maps were less useless, but still did not provide particularly useful information to people already familiar with the town.</li>
+<li>It became clear that it might be more useful to show the comparison towns on a map (relative to the town of interest) so that users could compare geographical ratings for unfamiliar data to familiar data.</li>
+</ul>
+<p>In addition, we received feedback on the parallel coordinate plot at the bottom of the app which was surprising: the viewers (in this case, other researchers on the team) were not as intimidated by the parallel coordinate plot as we had expected. They did need some explanation of how to read the plot, and these hints need to be included in the dashboard, but they grasped the fundamental idea of the plot very quickly.</p>
+<p>Our conclusion, based on this initial dashboard draft, was that we needed to restructure the application. Our attempt to show familiar information first to “build up” to the more unfamiliar structure of a parallel coordinate plot was not effective; there was too much clutter and not enough new information to draw users in.</p>
+</div>
+<div id="redesign" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Redesign<a href="rmd-basics.html#redesign" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the initial design, we included a map for each vital service, this initially created a lag for the users’ experience. As a result, we cached map directions from OSRM for each service in our database, which drastically reduced the response time for the user. Our initial design did not naturally focus the user’s eye on the most important parts of the dashboard; the redesign allowed for a cleaner flow from the top to the bottom.</p>
+<p>In addition to the timing due to the map loading slowly, we added the vital statistics at the county level to allow for a more robust understanding of the town and it’s surroundings. The rurality index provided a better classification and the USDA sources allowed for the town to understand the impact of the closest major city due to commuting for work and shopping at larger stores not available within the town.</p>
+<p>We also modified the parallel coordinate plots in several ways:</p>
+<ul>
+<li>Our x-axis had a large number of variables that we as researchers believed to be the most strongly associated with quality of life. However, there were still too many variables for users to successfully parse. We reduced the number of variables, focusing on variables that had the highest data quality, and we grouped these variables by quality of life factor <span class="citation">(David J. Peters, 2019)</span>.</li>
+<li>Originally, parallel coordinate bands were scaled based on the selected comparison towns. This had the effect of truncating the range of variables and over-emphasizing differences between selected towns relative to the overall range of each variable over all towns in our data set. We chose to show all towns in the data set in a very light <span class="math inline">\(\alpha\)</span> grey color to provide some information about the overall range of each variable. Unfortunately, even with the low-<span class="math inline">\(\alpha\)</span> value, this increased the visual complexity of the plot and confused users. Future iterations will likely make use of another aesthetic, such as boxplots or violin plots, to show the range of values for all towns, and then use lines only for towns that are selected by the user. This should strike a balance between visual complexity and representing the data accurately.</li>
+<li>We noticed that users did not make use of our suggested comparison towns, and so we removed that option in favor of allowing users to enter their own comparison towns directly. Users already had pre-determined towns they wanted to compare to, and our suggestions were just in the way.</li>
+</ul>
+<p>While not all of these modifications were well received in our second round of user testing, the changes did incrementally move the dashboard display towards our goal of allowing users to explore the data and engage with it. We continued to be surprised with how well users reacted to the parallel coordinate plots, which we initially thought might be too abstract for users unfamiliar with multivariate data displays, but the ability to compare towns across multiple dimensions and examine the similarities and differences between their approaches to different services seemed to be intuitive for users once they understood that each vertical axis was a different variable.</p>
+</div>
+</div>
+<div id="discussion" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Discussion<a href="rmd-basics.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our dashboard design philosophy worked primarily to promote a town-centric approach application with comparisons to other similar towns being secondary. This approach created a way for the user to see their town information at the top of the page and to explore the PCP after reviewing their own town’s essential statistics. The PCP in the lower part of the dashboard allowed for the user to see the plot and adjust to the fact that they could add more towns to the plot, providing an opportunity to explore the wider dataset from a base of familiar knowledge.</p>
+<p>While we initially framed the design around guided discovery learning, the approach did not seem to suffice for our user base; instead, we found that users were more drawn to the unfamiliar from the start. We will likely leverage this in future iterations by using visual forms such as flower plots to draw the users in; even though these plots are not ideal for numerical display of data, the visual novelty and aesthetic appeal will provide some motivation to continue exploring and thinking about the data.</p>
+<p>One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as “Town 1”, “Town 2”, and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.</p>
+<p>We also recognize that we need to leverage the expertise of others in our research team: we are working with artists, researchers in architecture, economists, and sociologists; these researchers provide outside knowledge that we do not have and may be able to help us create insightful use-cases to showcase the app and teach towns how to use it. We can also leverage the app to connect users with our research team, providing additional value to those who use the applet and facilitating development of strategies for maintaining quality of life amid shrinking populations.</p>
+</div>
+<div id="future-work" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Future Work<a href="rmd-basics.html#future-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One avenue we will explore in future iterations of the dashboard is to incorporate other dashboards generated by different groups within this project. This will create a wider field of information to explore: for instance, some of the additional work will focus on the 99 towns featured in the Iowa Small Town Poll; this will allow us to showcase survey-based measures of quality of life alongside the more objective measurements assembled in the dataset discussed in this paper. While at least one tab of this omni-dashboard will still focus on wider EDA and discovery, we hope to incorporate other information as well to provide a more well-rounded data display encompassing most of the facets of this complex project.</p>
+<p>We are also mindful of a distinction between “eye candy” and purpose-driven data visualization. While we have typically focused on the latter, there is certainly a place in our dashboard for the former as well. “Eye candy” visualization is intended to draw the viewer in and motivate them to explore; while these visualizations may not be particularly effective at communicating quantitative information, if they motivate the user to engage with the rest of the dashboard, they still serve a purpose. It is with this mindset that we intend to explore the use of flower plots - the artistic opportunities combined with the display of quantitative information (even in a form that isn’t optimal for quantitative comparisons) may be useful to engage viewers before transitioning to more useful data visualizations intended to provide accurate quantitative comparisons.</p>
+<p>EDA can be a difficult for a variety of groups of people, novice users and experienced researchers. One of the more difficult components of this project has been clearly articulating the purposes of EDA to a diverse group of researchers unfamiliar with the concept. One of the most useful parts of this dashboard iteration process has been as an aid to data discovery: that is, the dashboard motivated us to find additional data sources and incorporate them into the project. Having conversations with other researchers about the EDA process helped to facilitate these conversations, as each discussion seemed to uncover additional data sources that someone remembered after looking at the dashboard. While this facet of the dashboard process may be difficult to study formally, it would be an interesting avenue for investigation.</p>
+</div>
+<div id="conclusions" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Conclusions<a href="rmd-basics.html#conclusions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this paper, we have documented the process of designing a dashboard for exploration and visualization of a large and complex data set assembled from many different sources. Our primary audience was leaders of small towns in Iowa, with a secondary audience of researchers in fields other than statistics collaborating on this project with us. Through the process of revising our dashboard, we found that the idea of guided discovery learning as implemented in our first version did not work as well as we had anticipated. It was more important to focus on allowing users to explore their questions about the dataset by facilitating user-driven comparisons and exploration, rather than attempting to anticipate user desires by providing comparison towns. In addition, we found that it would be more effective to draw users in with novel visual displays, as these seemed to attract more interest than providing known facts and an opportunity to explore outwards from an initial area of familiarity.</p>
+<p>While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="math-sci.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/edit/master/02-chap1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/blob/master/02-chap1.Rmd",
+"text": null
+},
+"download": [["thesis.pdf", "PDF"]],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
