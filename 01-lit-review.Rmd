@@ -73,69 +73,6 @@ When we create visualizations for public consumption we have to consider both pe
 In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 }
 
-## Audience Considerations
-
-### Perception
-
-### Expertise
-
-### Engagement with the data
-
-
-## Data Considerations
-
-### Variable Types
-Not all variables should be used to create all types of charts - variable type informs chart structure
-
-### Grammar of Graphics
-Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.
-
-
-It doesn't help us decide which is better - for that we need user testing.
-
-### Multivariate Data Displays
-
-- Difficulty of visualizing multivariate data
-- Different approaches - briefly mention 
-    - encoding with shape/color/etc.
-    - tours
-    - pcps
-    - linked graphics (interactivity)
-
-This section doesn't need to solve the problem - it just introduces it
-
-## Audience-Data Interactions
-
-### Testing static graphics
-
-Brief overview of user studies that compare different types of graphics, accuracy, etc.
-
-### Testing interactive graphics
-
-Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
-
-## Dashboard Design
-
-Given that the audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics? 
-
-How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
-
-<!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
-
-## Conclusion
-
-In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context. 
-
-Chapter ... demonstrates the process of designing and redesigning a dashboard for public use. 
-Chapter ... discusses PCPs and how they are interpreted... 
-Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data.
-
-<!-- mic drop -->
-
-
-
-<!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
-<!--As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. -->
 \db{The purpose of statistical graphics with tabular data is to present the data in a visually appealing and informative manner, thereby facilitating data interpretation and analysis. 
 This is accomplished by utilizing various graphical techniques, such as bar charts, line graphs, scatter plots, etc., to represent the data in an easily digestible format that can highlight relationships, patterns, and trends within the data. 
 The data presented is intended to assist researchers, analysts, and decision-makers in making informed decisions.
@@ -157,65 +94,56 @@ For example, in sports, many coaches desire printable diagrams containing all ne
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
 We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
 Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-We're speaking about the same data being represented. However, most of the data is then categorized. 
+IN regards to speaking about the same data being represented, most of the data is then categorized. 
 Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
 Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?
 }
 
 
-<!-- The work appears how many times in this sentence? --> 
-<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. -->
-<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
-<!-- This work has been explored in various disciplines but not in statistical graphics. -->
-<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
-<!-- We know that dashboards are visual information tools with multiple statistical pictures. -->
-<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:
-As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
-<!-- Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics. -->
-<!-- You haven't defined dashboards yet -->
+## Audience Considerations
 
-<!-- One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard?  -->
-<!-- This is something that visual information researchers explore but don't test.  -->
-<!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
+\db{Several factors, including prior experience, context, and personal preferences, can influence the human perception of density and categorical plots.
 
-<!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
-The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
-The end goal of data analysis is to support decision making and provide a basis for informed action. 
-Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
-<!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
-Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
-Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
+In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
+The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
+On the other hand, categorical plots aim to show the frequency or count of observations in each category.
 
-## Dashboards
+When comparing density plots and categorical plots, it's essential to consider the data analysis type. 
+For continuous data, a density plot may provide a more informative representation of the distribution. 
+A categorical plot may provide a more intuitive representation of the distribution of categorical data.
 
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few]. 
-Dashboards have particular characteristics:
+However, for various reasons, some people may prefer one type of plot over the other. 
+For example, some may find density plots more visually appealing, while others may prefer categorical plots for their simplicity and ease of interpretation. 
+Ultimately, the choice between the two types of plots will depend on the context and purpose of the analysis and the preferences of the individual interpreting the data.
 
-- Achieve specific objectives
-- Fits on a single computer screen
-- Information can be displayed in multiple mediums (web browser or mobile device)
-- Can be used to monitor information at a high level
+Do we comprehend why we utilize the graphics we do? 
+Is there a reason we adopt the perception of a previously used graphic? 
+How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
+How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
+How do we determine the line distinguishing a density plot from a categorical plot? 
+Consequently, how is this decision made outside of academia and research? 
+In one way, research has been conducted on the visual or human perception of categorical plots.
 
-Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. 
-They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. 
-Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
+In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
+We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field. 
+We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
+It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
+This is the application of research to practice.
 
-While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used. 
-A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
+What may be considered an exciting thought process in research that is less practical or useful in the field? 
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
+As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
+We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
+Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
+We're speaking about the same data being represented. 
+However, most of the data is then categorized. 
+Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
+Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?}
 
-Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users. 
-While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds. 
 
-<!-- A collaboration is when two or more entities work together to produce a desired and shared outcome.  -->
-<!-- Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge. -->
+### Perception
 
-<!-- Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more.  -->
-<!-- These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding. -->
-
-## Graphics
-
-Human perception plays a direct role in the area of visualization and graphics. 
+\db{Human perception plays a direct role in the area of visualization and graphics. 
 Data Analysis tasks closely resemble the cognitive process known as sensemaking. 
 Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) [@tukey1966].
 Mallows and Walley list psychology as one of four areas likely to support a theory of analysis [@mallows1980]. 
@@ -224,8 +152,6 @@ Assigning meaning is not a statistical or computational step but a cognitive one
 Each step in the data analysis process is part of a more extensive mental process.
 
 Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.
-
-### Perceputal Principles
 
 Perceptual principles refer to how the human brain processes and interprets visual information. 
 These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards. 
@@ -243,53 +169,13 @@ These are just a few examples of the many perceptual principles that designers u
 These principles are based on cognitive psychology and understanding how the human brain processes visual information.
 
 Visual inference uses our ability to detect graphical anomalies. 
-However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.
+However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.}
 
-### Categorical Data Visualization
+### Expertise
 
-Categorical Data Visualization is the process of visualizing data that can be divided into distinct categories or groups. Categorical data are non-numeric and often represented by words, labels, or symbols, such as gender, product type, color, etc.
+### Engagement with the data
 
-Visualizing categorical data helps uncover patterns and relationships between categories and can provide insights into the data distribution. 
-Categorical data visualization techniques include bar charts, pie charts, histograms, stacked bar charts, and others. 
-The choice of visual representation will depend on the data's nature and the insights being sought. 
-The goal of categorical data visualization is to communicate the information effectively and make it easier to understand and interpret.
-
-Friendlydetailed using SAS with hands-on experiments to present categorical data analysis visually [@friendly2014]. 
-Researchers have used PCPs to visualize categorical data. 
-Beygelzimer, Perng, Ma and Hellerstien created a fast ordering categorical data analysis algorithm that helped visualization, where their algorithms helped organize the original parallel coordinate plots clearer ([@beygelzimer2001]; [@ma2001]). 
-Hammock plots are modified versions of similar coordinate plots invented by Schonlau to visualize categorical data [@schonlau2003]. 
-His design replaces coordinate polygons with rectangles to present the number. 
-Treemaps are modified to support categorical data visualization.
-
-CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. 
-Fernstad developed an interactive system combining parallel coordinates, tables, and scatterplot matrices for an overview explorative analysis. 
-Thoroughly research categorical data visualization to support algorithm understanding. 
-The novel contingency wheel presented by [@alsallakh2011] supports visual analytics in categorical data, and he measured association based on Pearson's residuals and used visual abstraction based on elements frequency.  
-
-### High-Dimensional Data Visualization
-
-High-Dimensional Data Visualization represents complex data sets with many variables or features (also known as high-dimensional data). 
-The goal is to find effective ways to express such data in a form that allows easy understanding, analysis, and interpretation.
-This is typically achieved by reducing the dimensionality of the data, for example, by projecting the data onto a lower-dimensional space or by aggregating the data in some way. 
-The resulting visualizations can then reveal patterns, relationships, and other insights that would otherwise be difficult to detect from the raw data. 
-For example, high-dimensional data visualization techniques include scatter plots, parallel coordinate plots, heat maps, and many others.
-
-A popular research area in visualization since high-dimensional data is always fuzzy to mining. 
-Direct visualization includes geometric visualizations:
-
-- scatterplots: use dots in coordinate to present data points.
-- parallel coordinates: present each dimension as axes, and every data item intersects dimensions as a polygon line at a particular position
-- RadViz/ PolyViz
-- GridViz
-
-Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyphs used funny ways to present multivariate data. 
-Hierarchical methods are used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. 
-Rearrange the dimensions by dimension similarity on parallel coordinates, circle segments, and recursive patterns [@ankerst1998]. 
-Guo used an interactive feature selection method to help users identify interesting subspaces from high-dimensional data sets [@guo2003].
-
-### Visualizing Complex Data
-
-Visualizing Complex Data is representing complex, multi-dimensional data in a graphical or pictorial form to make it easier to understand and interpret. 
+\db{Visualizing Complex Data is representing complex, multi-dimensional data in a graphical or pictorial form to make it easier to understand and interpret. 
 The goal is to turn large, intricate data sets into visually appealing and intuitive representations, such as charts, graphs, maps, and other types of visualizations, to help identify patterns, trends, and relationships that may not be immediately apparent from raw data. 
 This process can help to communicate complex information effectively and make data-driven decisions.
 
@@ -329,12 +215,6 @@ The visual reference model developed by Card et al. [@Card] describes and identi
 ```{r graphics, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Visual Reference model by Card',fig.show='hold',fig.align='center'}
 knitr::include_graphics("figure/VizModelDiagram.png")
 ```
-
-
-<!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/VizModelDiagram.png} -->
-<!-- \captionof{figure}{Visual Reference model by Card} -->
-<!-- \end{center} -->
 
 While External Cognition describes the advances in graphical technology and how little had been done in the work of the cognitive framework of the discipline, the following citations by Ware attempt to develop the necessary guidelines that are useful for the work done by the perceptual experience.
 
@@ -456,35 +336,17 @@ Technology and behavior are not dichotomous in an information system. They are i
  - methods (algorithms & practices)
  - instantiations  (implemented & prototype systems)
  
-These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ([@march1995]; [@nunamaker1991]). 
- 
-### Exploratory Data Analysis
+These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ([@march1995]; [@nunamaker1991]). }
 
-Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. 
+## Data Considerations
+
+\db{Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. 
 It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. 
 EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.
 
-On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
-Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
-They often display real-time data and can be customized to show the most relevant data to the user.
-
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
-EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
-And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.
-
-Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
-Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
-When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
-During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
-This will be important to know before starting a linear model analysis. 
-Much of our general understanding is from introductory statistics courses. 
-The basic understanding can be formalized to visualize the discovery process.
-
-### EDA through the eyes of Tukey
-
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
 John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. 
-He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
+He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.}
 
 ```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
@@ -501,7 +363,7 @@ p + scale_fill_brewer(palette="Dark2")
 
 <!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
 
-Tukey's Principles in EDA:
+\db{Tukey's Principles in EDA:
 
 1. Graphical exploration looking for patterns or displaying fit.
 - The method demonstrates things about data that are not understood by a single numeric metric. This has been useful in graphing the data before you develop summary statistics.
@@ -512,7 +374,7 @@ Tukey's Principles in EDA:
 3. The natural scale/state that the data are at their best. This will be the step at which the scale of data can be helpful for analysis. The reexpressing data to a new scale by taking the square root or logarithmic scale.
 
 4. The mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
-- The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
+- The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.}
 
 <!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
 
@@ -529,30 +391,71 @@ geom_histogram(position="stack")
 ```
 
 
-Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience. 
-Digital tools are critical to data science and analytics workflows, and current practice spans the following:
+\db{On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
+Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
+They often display real-time data and can be customized to show the most relevant data to the user.
 
-- *Data Analysis Tools* - R, Pandas and SAS
-- *Data Warehousing Services* - MySQL, MongoDB, or Amazon Redshift
-- *Machine Learning Libraries* - scikit-learn o Apache MLlib
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
+EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
+And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.
 
-A typical process typically consists of the following general stages:
+Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
+Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
+When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
+During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
+This will be important to know before starting a linear model analysis. 
+Much of our general understanding is from introductory statistics courses. 
+The basic understanding can be formalized to visualize the discovery process.}
 
-1. *Discovery*: Formulating an exciting question and determining the data necessary to answer it.
-2. *Acquisition*: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
-3. *Exploration*: Investigating and analyzing the data set to collect insights and understand the data
-4. *Modeling*: Building fitting and validating a model that can explain the data set and the observed phenomena
-5. *Communication*: Disseminating the results to stakeholders in reports, presentations, and charts.
+### Variable Types
 
-Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
-For example, John Tukey's EDA methods are currently known and well-vetted in the field. 
-However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
-Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
+Not all variables should be used to create all types of charts - variable type informs chart structure
+\db{
+Categorical Data Visualization is the process of visualizing data that can be divided into distinct categories or groups. Categorical data are non-numeric and often represented by words, labels, or symbols, such as gender, product type, color, etc.
 
+Visualizing categorical data helps uncover patterns and relationships between categories and can provide insights into the data distribution. 
+Categorical data visualization techniques include bar charts, pie charts, histograms, stacked bar charts, and others. 
+The choice of visual representation will depend on the data's nature and the insights being sought. 
+The goal of categorical data visualization is to communicate the information effectively and make it easier to understand and interpret.
+
+Friendlydetailed using SAS with hands-on experiments to present categorical data analysis visually [@friendly2014]. 
+Researchers have used PCPs to visualize categorical data. 
+Beygelzimer, Perng, Ma and Hellerstien created a fast ordering categorical data analysis algorithm that helped visualization, where their algorithms helped organize the original parallel coordinate plots clearer ([@beygelzimer2001]; [@ma2001]). 
+Hammock plots are modified versions of similar coordinate plots invented by Schonlau to visualize categorical data [@schonlau2003]. 
+His design replaces coordinate polygons with rectangles to present the number. 
+Treemaps are modified to support categorical data visualization.
+
+CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. 
+Fernstad developed an interactive system combining parallel coordinates, tables, and scatterplot matrices for an overview explorative analysis. 
+Thoroughly research categorical data visualization to support algorithm understanding. 
+The novel contingency wheel presented by [@alsallakh2011] supports visual analytics in categorical data, and he measured association based on Pearson's residuals and used visual abstraction based on elements frequency.  
+
+High-Dimensional Data Visualization represents complex data sets with many variables or features (also known as high-dimensional data). 
+The goal is to find effective ways to express such data in a form that allows easy understanding, analysis, and interpretation.
+This is typically achieved by reducing the dimensionality of the data, for example, by projecting the data onto a lower-dimensional space or by aggregating the data in some way. 
+The resulting visualizations can then reveal patterns, relationships, and other insights that would otherwise be difficult to detect from the raw data. 
+For example, high-dimensional data visualization techniques include scatter plots, parallel coordinate plots, heat maps, and many others.
+
+A popular research area in visualization since high-dimensional data is always fuzzy to mining. 
+Direct visualization includes geometric visualizations:
+
+- scatterplots: use dots in coordinate to present data points.
+- parallel coordinates: present each dimension as axes, and every data item intersects dimensions as a polygon line at a particular position
+- RadViz/ PolyViz
+- GridViz
+
+Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyphs used funny ways to present multivariate data. 
+Hierarchical methods are used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. 
+Rearrange the dimensions by dimension similarity on parallel coordinates, circle segments, and recursive patterns [@ankerst1998]. 
+Guo used an interactive feature selection method to help users identify interesting subspaces from high-dimensional data sets [@guo2003].}
 
 ### Grammar of Graphics
+Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.
 
-The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. 
+
+It doesn't help us decide which is better - for that we need user testing.
+
+\db{The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. 
 The Grammar of Graphics is a framework for understanding the structure of statistical graphics developed by Leland Wilkinson. 
 It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations. 
 
@@ -569,102 +472,14 @@ The components of the grammar of graphics include:
 For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry. 
 For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
-
-
+}
 ```{r graphics2, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
 knitr::include_graphics("figure/gglayers.png")
 knitr::include_graphics("figure/graphic-flowchart.png")
 ```
 
-
-<!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/gglayers.png} -->
-<!-- \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work} -->
-<!-- \end{center} -->
-
-<!-- --- -->
-
-<!-- \begin{center} -->
-<!-- \includegraphics[width=\textwidth]{figure/graphic-flowchart.png} -->
-<!-- \captionof{figure}{Grammar of Graphics Diagram of Wickham and Wilkinson's work} -->
-<!-- \end{center} -->
-<!-- \svp{Try to grab a diagram from the grammar of graphics book showing the layers instead of your flowchart.} -->
-
-<!-- \svp{Demonstrate these bits using code with line numbers (the ggpcp paper has the right environment in there w/ demos of how to use it). Show the figure output as you add each layer.} -->
-
-```{r ggpcp_example, echo=FALSE, fig.width=3, fig.height=3,fig.show='hold',fig.align='center', eval = FALSE}
-oranges <- c("#FDBF6F", "#F89D38", "#F37A00")
-purples <- c("#CAB2D6", "#9A78B8", "#6A3D9A")
-greens <- c("#b2df8a", "#73C05B", "#33a02c")
-
-cols <-  c(oranges[2], greens[2], purples[2])
-
-flights %>%
-  filter(origin == "LGA") %>%
-  pcp_select(dest:distance) %>%
-  pcp_scale() %>%
-  ggplot(aes_pcp()) +
-  geom_pcp(alpha = 0.1) +
-  theme_bw()
-
-
-
-df_pcp %>%
-  ggplot(aes_pcp())  +
-  geom_pcp_axes() +
-  geom_pcp(aes(colour = Observation), size=1,
-           data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
-  geom_point(aes(shape=Observation, colour = Observation), size=5,
-             data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
-  theme_bw() +
-  xlab("") +
-#  scale_shape_discrete("Observation") +
-  scale_colour_manual("Observation", values=c("darkorange", "purple4")) +
-  ylab("") +
-  theme(axis.title.y = NULL, axis.text.y = NULL, axis.ticks.y = NULL) +
-  scale_y_continuous(labels=c("low", "", "medium", "", "high"),
-                     breaks=c(0,0.25, .5,.75, 1)) +
-  scale_x_discrete(expand = expansion(add=0.2),
-                   labels = c("Bill Length (mm)", "Bill Depth (mm)",
-                              "Flipper Length (mm)", "Body Mass (g)"))
-
-
-```
-
-
-### Big Data and graphical solutions
-
-Big Data Analytics examines large and complex data sets, or "big data," to uncover hidden patterns, correlations, and other insights. 
-Big data analytics aims to help organizations make informed decisions by transforming large and complex data into actionable information. 
-The use of big data analytics can provide organizations with a competitive advantage by enabling them to quickly and accurately analyze large volumes of data, identify trends and patterns, and make informed decisions. 
-This can help organizations to improve their operations, identify new opportunities, and make more accurate predictions about future events.
-
-Graphical solutions for big data refer to visual representations to help analyze and understand large and complex data sets.
-The following are some standard graphic solutions for big data:
-
-- Interactive dashboards: Dashboards provide a visual overview of critical metrics and KPIs, allowing users to interact with the data in real time. Dashboards can display large amounts of data clearly and concisely, making it easier to identify trends and patterns.
-- Scatter plots: Scatter plots visualize the relationship between two or more variables and can identify correlations, outliers, and clusters in big data sets.
-- Heatmaps: Heatmaps are used to visualize data distribution across two dimensions. They can be used to identify areas of high and low density in big data sets, making it easier to spot trends and patterns.
-- Treemaps: Treemaps are used to visualize hierarchical data structures. They can be used to visualize large data sets in a compact and organized manner, making it easier to identify relationships between different data points.
-- Network graphs: Network graphs are used to visualize relationships between data points. They can be used to identify connections and relationships in big data sets, making it easier to spot patterns and trends.
-
-Using graphical solutions for big data is to help organizations quickly and easily understand large amounts of data, identify patterns and relationships, and make informed decisions. 
-These visual representations can provide a more immersive and engaging experience, making it easier to uncover insights that might not be immediately apparent from raw data.
-
-Many companies and organizations use big data and graphical solutions to make data-driven decisions, identify new opportunities, and gain a competitive advantage. 
-New technologies like data visualization software, cloud computing, and machine learning make analyzing and presenting big data more accessible and efficient.
-
-#### EDA through the eyes of Big Data and Big Data Analytics
-
-Big Data Analytics is where advanced analytic techniques are applied to big data sets. 
-Big Data Analytics based on extensive data samples reveals and leverage business change. 
-The larger the data set, the more difficult it becomes to manage. 
-This paradigm has only become more of the pieces of data exploration since tabular data is growing.
-
-<!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
-
-
-### Interactive Graphics
+\db{
+#### Interactive Graphics
 
 The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as `d3` [@bostock2011]. 
 Visualizations are more than just a picture. 
@@ -721,12 +536,63 @@ The relationship between the van Wijk Simple Visualization Model and Human-Compu
 The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user. 
 In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging. The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
 By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.
+}
 
-## Human Computer Interaction (HCI) & UX/UI Design
+### Multivariate Data Displays
 
-### User analysis 
+- Difficulty of visualizing multivariate data
+- Different approaches - briefly mention 
+    - encoding with shape/color/etc.
+    - tours
+    - pcps
+    - linked graphics (interactivity)
 
-User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. 
+This section doesn't need to solve the problem - it just introduces it
+
+
+```{r ggpcp_example, echo=FALSE, fig.width=3, fig.height=3,fig.show='hold',fig.align='center', eval = FALSE}
+oranges <- c("#FDBF6F", "#F89D38", "#F37A00")
+purples <- c("#CAB2D6", "#9A78B8", "#6A3D9A")
+greens <- c("#b2df8a", "#73C05B", "#33a02c")
+
+cols <-  c(oranges[2], greens[2], purples[2])
+
+flights %>%
+  filter(origin == "LGA") %>%
+  pcp_select(dest:distance) %>%
+  pcp_scale() %>%
+  ggplot(aes_pcp()) +
+  geom_pcp(alpha = 0.1) +
+  theme_bw()
+
+
+
+df_pcp %>%
+  ggplot(aes_pcp())  +
+  geom_pcp_axes() +
+  geom_pcp(aes(colour = Observation), size=1,
+           data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  geom_point(aes(shape=Observation, colour = Observation), size=5,
+             data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  theme_bw() +
+  xlab("") +
+#  scale_shape_discrete("Observation") +
+  scale_colour_manual("Observation", values=c("darkorange", "purple4")) +
+  ylab("") +
+  theme(axis.title.y = NULL, axis.text.y = NULL, axis.ticks.y = NULL) +
+  scale_y_continuous(labels=c("low", "", "medium", "", "high"),
+                     breaks=c(0,0.25, .5,.75, 1)) +
+  scale_x_discrete(expand = expansion(add=0.2),
+                   labels = c("Bill Length (mm)", "Bill Depth (mm)",
+                              "Flipper Length (mm)", "Body Mass (g)"))
+
+
+```
+
+
+## Audience-Data Interactions
+
+\db{User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. 
 It involves studying the users of a system to understand their needs, goals, and behaviors. 
 The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
 
@@ -742,10 +608,17 @@ Several methods can be used to conduct user analysis:
 
 The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. 
 It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
-User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.
+User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
 
-### Protocols for testing design
 
+### Testing static graphics
+
+Brief overview of user studies that compare different types of graphics, accuracy, etc.
+
+\db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
+For example, John Tukey's EDA methods are currently known and well-vetted in the field. 
+However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
+Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
 Several protocols and methods can be used to test the design of a dashboard or other visual display. 
 Some of these include:
 
@@ -760,10 +633,50 @@ Some of these include:
 These are just a few examples of the many protocols and methods that can be used to test the design of a dashboard. 
 The selection of the appropriate way will depend on the specific goals of the testing and the resources available.
 
-Remember that the user's feedback is crucial in the testing process; it will provide the necessary insight to improve the design and make it more efficient.
+Remember that the user's feedback is crucial in the testing process; it will provide the necessary insight to improve the design and make it more efficient.}
 
-## General Dashboard stuff
+### Testing interactive graphics
 
+Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
+\db{Testing interactive graphics using human perception principles in psychology involves considering various aspects of human perception and cognition to evaluate the effectiveness and user experience of the graphics. Here are some steps you can follow to test your interactive graphics:
+
+Usability testing: Conduct a usability test to assess the ease of use and accessibility of the graphics. This includes testing for navigation, user control, and overall user experience.
+
+Perception of visual elements: Evaluate how the visual elements in your graphics, such as color, contrast, size, and position, impact the perception of the information being presented.
+
+Cognitive load: Assess the cognitive load on the user by evaluating how easily they can process and understand the information being presented. Factors such as complexity, amount of information, and type of information presented can impact cognitive load.
+
+Attention allocation: Observe where the user's attention is directed while interacting with the graphics. This can help identify areas that may require improvement or modification to better engage the user's attention.
+
+Memory retention: Evaluate the user's ability to retain and recall information presented in the graphics. This can help determine the effectiveness of the design in supporting memory retention.
+
+User feedback: Obtain user feedback through surveys, interviews, or focus groups to gain insights into the user experience and identify areas for improvement.
+
+It is important to keep in mind that human perception and cognition can vary greatly between individuals and can be influenced by a range of factors, such as age, culture, and personal experience. Testing with a representative sample of your target audience can help ensure that your interactive graphics are optimized for a wide range of users.}
+
+## Dashboard Design
+
+Given that the audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics? 
+
+How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
+
+\db{A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few]. 
+Dashboards have particular characteristics:
+
+- Achieve specific objectives
+- Fits on a single computer screen
+- Information can be displayed in multiple mediums (web browser or mobile device)
+- Can be used to monitor information at a high level
+
+Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. 
+They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. 
+Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
+
+While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used. 
+A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
+
+Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users. 
+While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds.
 Dashboards can help understand and support many data types in essential business objectives. 
 There are many different ways to label and utilize dashboards in different kinds.
 
@@ -811,47 +724,67 @@ They proposes three main archetypes that data scientists may be classed into the
 
 - Hackers: who build processes chaining together multiple programming languages of different types (analytical, scripting, and database languages) and use visualization in various environments.
 - Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not performstatements their ETL
-- Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
+- Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.}
 
-### Conclusion
+<!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
 
-Several factors, including prior experience, context, and personal preferences, can influence the human perception of density and categorical plots.
+## Conclusion
 
-In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
-The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
-On the other hand, categorical plots aim to show the frequency or count of observations in each category.
+In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context. 
 
-When comparing density plots and categorical plots, it's essential to consider the data analysis type. 
-For continuous data, a density plot may provide a more informative representation of the distribution. 
-A categorical plot may provide a more intuitive representation of the distribution of categorical data.
+Chapter ... demonstrates the process of designing and redesigning a dashboard for public use. 
+Chapter ... discusses PCPs and how they are interpreted... 
+Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data.
 
-However, for various reasons, some people may prefer one type of plot over the other. 
-For example, some may find density plots more visually appealing, while others may prefer categorical plots for their simplicity and ease of interpretation. 
-Ultimately, the choice between the two types of plots will depend on the context and purpose of the analysis and the preferences of the individual interpreting the data.
+<!-- mic drop -->
 
-Do we comprehend why we utilize the graphics we do? 
-Is there a reason we adopt the perception of a previously used graphic? 
-How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
-How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
-How do we determine the line distinguishing a density plot from a categorical plot? 
-Consequently, how is this decision made outside of academia and research? 
-In one way, research has been conducted on the visual or human perception of categorical plots.
 
-In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
-We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field. 
-We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
-It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-This is the application of research to practice.
 
-What may be considered an exciting thought process in research that is less practical or useful in the field? 
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
-As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
-Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-We're speaking about the same data being represented. 
-However, most of the data is then categorized. 
-Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
-Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?
+<!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
+<!--As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. -->
+
+
+<!-- The work appears how many times in this sentence? --> 
+<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. -->
+<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
+<!-- This work has been explored in various disciplines but not in statistical graphics. -->
+<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
+<!-- We know that dashboards are visual information tools with multiple statistical pictures. -->
+<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:
+As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
+<!-- Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics. -->
+<!-- You haven't defined dashboards yet -->
+
+<!-- One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard?  -->
+<!-- This is something that visual information researchers explore but don't test.  -->
+<!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
+
+<!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
+The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
+The end goal of data analysis is to support decision making and provide a basis for informed action. 
+Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
+<!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
+Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
+Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
+
+
+
+
+
+<!-- A collaboration is when two or more entities work together to produce a desired and shared outcome.  -->
+<!-- Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge. -->
+
+<!-- Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more.  -->
+<!-- These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding. -->
+
+
+
+
+
+<!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
+
+
 
 <!-- Dashboard Design with naive users at the center of the design with adding new graphical visualization and testing the effectiveness of new graphics. -->
 
