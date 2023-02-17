@@ -73,28 +73,18 @@ When we create visualizations for public consumption we have to consider both pe
 In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 }
 
-\db{The purpose of statistical graphics with tabular data is to present the data in a visually appealing and informative manner, thereby facilitating data interpretation and analysis. 
-This is accomplished by utilizing various graphical techniques, such as bar charts, line graphs, scatter plots, etc., to represent the data in an easily digestible format that can highlight relationships, patterns, and trends within the data. 
-The data presented is intended to assist researchers, analysts, and decision-makers in making informed decisions.
-Do we comprehend why we utilize the graphics we do? Is there a reason we adopt the perception of a previously used graphic? 
-How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
-How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
-How do we determine the line distinguishing a density plot from a categorical plot? 
-Consequently, how is this decision made outside of academia and research? 
-In one way, research has been conducted on the visual or human perception of categorical plots.}
-
-\db{In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
-We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field.
-We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
+\db{
+We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
+We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles. 
 It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-This is the application of research to practice.}
+We would like to see the application of research to practice.}
 
 \db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
 We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
 Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-IN regards to speaking about the same data being represented, most of the data is then categorized. 
+In regards to speaking about the same data being represented, most of the data is then categorized. 
 Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
 Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?
 }
