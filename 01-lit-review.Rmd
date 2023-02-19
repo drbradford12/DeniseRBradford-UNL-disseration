@@ -64,9 +64,9 @@ We identify problems with those models based on residual plots and other visual 
 When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.}
 
 \svp{Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
-In addition, we know that ... cite sources ... not all visual displays have equal perceptual value. 
+In addition, we know that \db{based on the "Perceptual foundations in the design of visual displays" by [@aspillaga1996]} not all visual displays have equal perceptual value. 
 The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion (cite) affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion \db{[@vanderplas2015]} affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
 Other design constraints are due to the audience's experience level: are they used to working with data? 
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
@@ -133,7 +133,10 @@ Where do we draw the line between what is viewed as an impediment to the develop
 
 ### Perception
 
-\db{Human perception plays a direct role in the area of visualization and graphics. 
+\db{To read reality from images is to solve a problem: a series of extremely difficult problems that persist throughout an individual's lifetime. 
+Errors are illusions. 
+Certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general.[@gregory1968]
+Human perception plays a direct role in the area of visualization and graphics. 
 Data Analysis tasks closely resemble the cognitive process known as sensemaking. 
 Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) [@tukey1966].
 Mallows and Walley list psychology as one of four areas likely to support a theory of analysis [@mallows1980]. 
@@ -144,7 +147,7 @@ Each step in the data analysis process is part of a more extensive mental proces
 \db{Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.}
 
 \db{Perceptual principles refer to how the human brain processes and interprets visual information. 
-These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards. }
+These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.}
 
 Some examples of perceptual principles include:
 
@@ -163,6 +166,25 @@ These principles are based on cognitive psychology and understanding how the hum
 However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.}
 
 ### Expertise
+
+\db{Subject matter graphics are visual representations of information and data that help communicate complex concepts, ideas, and information to audiences.
+This expertise is related to knowledge of the topic or subject being presented in the graphic.
+A subject matter expert is someone who has a deep understanding of how people perceive and interpret visual information. 
+Subject matter experts (SMEs) have deep knowledge and experience in a specific field, such as science, finance, or medicine. SMEs provide the necessary information and insights to form the graphic's basis. 
+They ensure that the content presented is accurate, relevant, and informative. 
+They use their human perception and cognition knowledge to design graphics that effectively communicate information to the intended audience. 
+Perception experts in graphics consider a range of factors, including color, shape, size, texture, and spatial relationships, to create graphics that are visually appealing and easy to understand.}
+
+\db{Perception experts in graphics may use different theories and principles to inform their design decisions. 
+For example, they may use Gestalt principles to create visually harmonious and organized graphics. 
+They may also use the principles of visual hierarchy to guide the audience's attention to the essential information in the graphic.}
+
+\db{Perception experts in graphics may also conduct user research to understand how different audiences perceive and interpret visual information. 
+They may use eye-tracking and user testing techniques to evaluate the effectiveness of different graphic designs.}
+
+\db{A perception expert plays a crucial role in designing graphics that effectively communicate information to the intended audience. 
+Their knowledge of human perception and cognition, as well as their expertise in graphic design, allows them to create visually appealing and easily understood graphics.}
+
 
 ### Engagement with the data
 
@@ -203,7 +225,7 @@ In general, this will help in the psychology of the perceptual experience.}
 
 \db{The visual reference model developed by Card et al. [@Card] describes and identifies the three phases of the visualization process.}
 
-```{r graphics, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Visual Reference model by Card',fig.show='hold',fig.align='center'}
+```{r graphics, echo=FALSE, out.width = "75%",fig.cap='Visual Reference model by Card',fig.show='hold',fig.align='center'}
 knitr::include_graphics("figure/VizModelDiagram.png")
 ```
 
@@ -464,9 +486,10 @@ The components of the grammar of graphics include:
 For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 }
-```{r graphics2, echo=FALSE, fig.width=3, fig.height=3,fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
-knitr::include_graphics("figure/gglayers.png")
-knitr::include_graphics("figure/graphic-flowchart.png")
+```{r graphics2, echo=FALSE, out.width = "45%",fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
+#knitr::include_graphics("figure/gglayers.png")
+#knitr::include_graphics("figure/graphic-flowchart.png")
+knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.png"),1))
 ```
 
 
@@ -722,11 +745,26 @@ They proposes three main archetypes that data scientists may be classed into the
 
 ## Conclusion
 
-\db{In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context. }
+\db{In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context.
+In chapter 1, we will demonstrate the process of designing and redesigning a dashboard for public use, we outline and create a framework in which a dashboard generates data that were collected on rural areas.
+In chapter 2, we will discuss parallel coordinate plots (PCPs) and the how they are interpreted.
+In chapter 3, we will introduces new methods for interactive PCPs that faciliate greater user engagement with complex, multivariate data.
+}
 
-Chapter ... demonstrates the process of designing and redesigning a dashboard for public use. 
-Chapter ... discusses PCPs and how they are interpreted... 
-Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data.
+In this research, we conducted a series of three graphical studies to evaluate the impact displaying data on the log scale has on human perception of exponentially increasing trends compared to displaying data on the linear scale.
+The series of graphical tests can be completed [here](https://shiny.srvanderplas.com/perception-of-statistical-graphics/).
+Each study was related to a different graphical task, each requiring a different level of interaction and cognitive use of the data being presented.
+The first experiment evaluated whether our ability to perceptually notice differences in exponentially increasing trends is impacted by the choice of scale. 
+We conducted a visual inference experiment in which participants were shown a series of lineups and asked to identify the plot that differed most from the surrounding plots. 
+The other experimental tasks focused on determining whether there are cognitive disadvantages to log scales: do log scales make it harder to make use of graphical information? 
+To test an individual's ability to make predictions for exponentially increasing data, participants were asked to draw a line using their computer mouse through an exponentially increasing trend shown on both the linear and log scale.
+In addition to differentiation and prediction of exponentially increasing data, an estimation task was conducted to test an individual's ability to translate a graph of exponentially increasing data into real value quantities and extend their estimations by making comparisons.
+Combined, the three studies provide a comprehensive evaluation of the impact of displaying exponentially increasing data on a log scale as it relates to perception, prediction, and estimation.
+The results of these studies help us make recommendations and provide guidelines for the use of log scales.
+
+<!-- Chapter ... demonstrates the process of designing and redesigning a dashboard for public use.  -->
+<!-- Chapter ... discusses PCPs and how they are interpreted...  -->
+<!-- Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data. -->
 
 <!-- mic drop -->
 
@@ -751,19 +789,6 @@ As dashboards are intended to facilitate exploration of and drawing conclusions 
 <!-- This is something that visual information researchers explore but don't test.  -->
 <!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
 
-<!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
-The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
-The end goal of data analysis is to support decision making and provide a basis for informed action. 
-Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
-<!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
-Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
-Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
-
-
-
-
-
 <!-- A collaboration is when two or more entities work together to produce a desired and shared outcome.  -->
 <!-- Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge. -->
 
@@ -771,12 +796,7 @@ Ultimately, the goal of data analysis is to turn data into actionable insights a
 <!-- These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding. -->
 
 
-
-
-
 <!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
-
-
 
 <!-- Dashboard Design with naive users at the center of the design with adding new graphical visualization and testing the effectiveness of new graphics. -->
 
@@ -865,8 +885,6 @@ Ultimately, the goal of data analysis is to turn data into actionable insights a
 <!-- \end{center} -->
 
 <!-- \svp{Not for this particular write-up, but have you analyzed this to see if it's an effective visualization in its own right? I think this might be better as a table with boxes filled in or something?} -->
-
-
 
 
 <!-- ### Applications -->
