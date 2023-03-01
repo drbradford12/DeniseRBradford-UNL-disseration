@@ -75,8 +75,7 @@ Some design constraints stem from limitations of the human perceptual system and
 Other design constraints are due to the audience's experience level: are they used to working with data? 
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
-}
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.}
 
 \db{We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
 We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles. 
