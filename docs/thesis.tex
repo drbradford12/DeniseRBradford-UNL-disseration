@@ -283,16 +283,14 @@ Some design constraints stem from limitations of the human perceptual system and
 Other design constraints are due to the audience's experience level: are they used to working with data? 
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
-}
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.}
 
-\db{
-We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
+\db{We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
 We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles. 
 It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
 We would like to see the application of research to practice.}
 
-\db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
+\db{Consider a novel concept in research can be less practical or useful in the field more often than not. 
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
 We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
@@ -411,6 +409,45 @@ Their knowledge of human perception and cognition, as well as their expertise in
 
 \hypertarget{engagement-with-the-data}{%
 \subsection{Engagement with the data}\label{engagement-with-the-data}}
+
+\db{<!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
+The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
+The end goal of data analysis is to support decision making and provide a basis for informed action. 
+Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
+<!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
+Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
+Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.}
+
+\db{Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience. 
+Digital tools are critical to data science and analytics workflows, and current practice spans the following:}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Data Analysis Tools} - R, Pandas and SAS
+\item
+  \emph{Data Warehousing Services} - MySQL, MongoDB, or Amazon Redshift
+\item
+  \emph{Machine Learning Libraries} - scikit-learn o Apache MLlib
+\end{itemize}
+
+\db{A typical process typically consists of the following general stages:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{Discovery}: Formulating an exciting question and determining the data necessary to answer it.
+\item
+  \emph{Acquisition}: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
+\item
+  \emph{Exploration}: Investigating and analyzing the data set to collect insights and understand the data
+\item
+  \emph{Modeling}: Building fitting and validating a model that can explain the data set and the observed phenomena
+\item
+  \emph{Communication}: Disseminating the results to stakeholders in reports, presentations, and charts.
+\end{enumerate}
 
 \db{Visualizing Complex Data is representing complex, multi-dimensional data in a graphical or pictorial form to make it easier to understand and interpret. 
 The goal is to turn large, intricate data sets into visually appealing and intuitive representations, such as charts, graphs, maps, and other types of visualizations, to help identify patterns, trends, and relationships that may not be immediately apparent from raw data. 
@@ -744,7 +781,10 @@ He was a strong advocate for the importance of EDA as a crucial first step in th
 Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
 They often display real-time data and can be customized to show the most relevant data to the user.}
 
-\db{The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
+\db{Interactive graphics, are central to EDA [@unwin1999]. 
+Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
+User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
 EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
 And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.}
 
@@ -1091,21 +1131,7 @@ By analogy, exploratory modeling analysis (EMA) refers to methods and procedures
 People can develop detailed understandings of reality, which is infinitely complex.}
 
 \db{Cognitive structures consist of mental models and their relationships ([@rumelhart1976], [@carley1992], [@jonassen1996]).
-Mental models have been studied under several different names, which are displayed in the following image of Cognitive Structures:}
-
-\begin{itemize}
-\tightlist
-\item
-  Frames: (\textbf{Goffman1974?}); (\textbf{Minsky1975?}); (\textbf{Rudolph2003?}); (\textbf{Smith1986?}); (\textbf{Klein2003?})
-\item
-  Scripts: (\textbf{ShankandAbelson1977?})
-\item
-  Protoypes: (\textbf{RoschandMervis1975?});(\textbf{Rosch1977?}); (\textbf{Smith1978?})
-\item
-  Schemas: (\textbf{Bartlett1932?}); (\textbf{Neisser1976?}); (\textbf{Piagetandcook1952?})
-\end{itemize}
-
-\db{A schema is a mental model containing a breadth of information about a specific object or concept. 
+A schema is a mental model containing a breadth of information about a specific object or concept. 
 Schemas are organized into semantic networks based on their relationships to other schemas [@wertheimer1938], [@rumelhart1976].
 This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations. 
 Some "memories" may even be complete recreations built with a schema [@bartlett1932], [@klein2007]}
@@ -1136,35 +1162,20 @@ They proposes three main archetypes that data scientists may be classed into the
 \item
   Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not performstatements their ETL
 \item
-  Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.\}
+  Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 \end{itemize}
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
 \db{In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context.
-In chapter 1, we will demonstrate the process of designing and redesigning a dashboard for public use, we outline and create a framework in which a dashboard generates data that were collected on rural areas.
-In chapter 2, we will discuss parallel coordinate plots (PCPs) and the how they are interpreted.
-In chapter 3, we will introduces new methods for interactive PCPs that faciliate greater user engagement with complex, multivariate data.
+Chapter 1 presents a thorough review of the literature regarding graphical and human computer interaction/UI-UX methods. 
+Chapter 2 will explore the process of designing dashboards for public use thorough parallel coordinate plots as a central component to data exploration to make decisions.
+Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
+We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
+Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
+We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
 }
-
-In this research, we conducted a series of three graphical studies to evaluate the impact displaying data on the log scale has on human perception of exponentially increasing trends compared to displaying data on the linear scale.
-The series of graphical tests can be completed \href{https://shiny.srvanderplas.com/perception-of-statistical-graphics/}{here}.
-Each study was related to a different graphical task, each requiring a different level of interaction and cognitive use of the data being presented.
-The first experiment evaluated whether our ability to perceptually notice differences in exponentially increasing trends is impacted by the choice of scale.
-We conducted a visual inference experiment in which participants were shown a series of lineups and asked to identify the plot that differed most from the surrounding plots.
-The other experimental tasks focused on determining whether there are cognitive disadvantages to log scales: do log scales make it harder to make use of graphical information?
-To test an individual's ability to make predictions for exponentially increasing data, participants were asked to draw a line using their computer mouse through an exponentially increasing trend shown on both the linear and log scale.
-In addition to differentiation and prediction of exponentially increasing data, an estimation task was conducted to test an individual's ability to translate a graph of exponentially increasing data into real value quantities and extend their estimations by making comparisons.
-Combined, the three studies provide a comprehensive evaluation of the impact of displaying exponentially increasing data on a log scale as it relates to perception, prediction, and estimation.
-The results of these studies help us make recommendations and provide guidelines for the use of log scales.
-
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data.
-The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data.
-The end goal of data analysis is to support decision making and provide a basis for informed action.
-Data analysis can help organizations to better understand their customers, market trends, and operational performance.
-Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena.
-Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.
 
 \hypertarget{rmd-basics}{%
 \chapter{Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue}\label{rmd-basics}}
@@ -1299,7 +1310,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-02-19 09:44:10. The repository is currently at this commit:
+This version of the thesis was generated on 2023-03-01 12:43:16. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1314,7 +1325,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-02-19
+##  date     2023-03-01
 ##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------
