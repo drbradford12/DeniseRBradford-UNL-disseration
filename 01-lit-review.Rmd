@@ -63,40 +63,49 @@ Conclusion: Connections between EDA and dashboards - not all dashboards are desi
 <!-- General purpose of this section: 
 Motivate Dashboards and conclude that it is important to understand how graphs are perceived and used by various target audiences. -->
 
-\svp{Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities. 
+Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities. 
 We fit models based on relationships between variables which are often identified visually. 
 We identify problems with those models based on residual plots and other visual diagnostics. 
-When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.}
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-\svp{Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
-In addition, we know that \db{based on the "Perceptual foundations in the design of visual displays" by [@aspillaga1996]} not all visual displays have equal perceptual value. 
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
+In addition, we know that not all visual displays have equal perceptual value [@aspillaga1996]. 
 The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion \db{[@vanderplas2015]} affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion [@vanderplas2015] affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
 Other design constraints are due to the audience's experience level: are they used to working with data? 
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be \svp{a} useful \svp{visual display}?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.}
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 
-\db{We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
-We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles. 
-It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-We would like to see the application of research to practice.}
+<!-- We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field. --> <!-- Wait, what? Density plots or categorical plots are the best plots?? -->
+<!-- We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles.  --><!-- This is said in the prev paragraph, minus Few, which we can cite later -->
+<!-- It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting.  -->
+\svp{Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information. 
+As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.}
+<!-- We would like to see the application of research to practice. -->
 
-\db{Consider a novel concept in research can be less practical or useful in the field more often than not. 
+
+<!-- Consider a novel concept in research can be less practical or useful in the field more often than not.  -->
+\svp{In the "real world", however, conventions and familiarity often win out over best practice validated by perceptual experiments.}
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
-Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-In regards to speaking about the same data being represented, most of the data is then categorized. 
-Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
-Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?
-}
+<!-- We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application.  -->
+<!-- Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field.  -->
+<!-- In regards to speaking about the same data being represented, most of the data is then categorized.  -->
+<!-- Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend?  -->
+<!-- Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology? -->
+\svp{Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.}
+\svp{Let us first consider the audience characteristics that affect the selection of graphics. 
+Then, we will engage with considerations based on the data to be displayed. 
+Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.}
+
 
 
 ## Audience Considerations
 
-\db{Several factors, including prior experience, context, and personal preferences, can influence the human perception of density and categorical plots.}
+Several factors, including prior experience, context, and personal preferences, can influence the human perception of <!--density and categorical--> plots.
 
+<!-- Stopped here - SVP -->
 \db{In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
 The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
 On the other hand, categorical plots aim to show the frequency or count of observations in each category.}
