@@ -1,0 +1,288 @@
+<!-- Stopped here - SVP -->
+\db{In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
+The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
+On the other hand, categorical plots aim to show the frequency or count of observations in each category.}
+
+\db{When comparing density plots and categorical plots, it's essential to consider the data analysis type. 
+For continuous data, a density plot may provide a more informative representation of the distribution. 
+A categorical plot may provide a more intuitive representation of the distribution of categorical data.}
+
+\db{However, for various reasons, some people may prefer one type of plot over the other. 
+For example, some may find density plots more visually appealing, while others may prefer categorical plots for their simplicity and ease of interpretation. 
+Ultimately, the choice between the two types of plots will depend on the context and purpose of the analysis and the preferences of the individual interpreting the data.}
+
+\db{Do we comprehend why we utilize the graphics we do? 
+Is there a reason we adopt the perception of a previously used graphic? 
+How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
+How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
+How do we determine the line distinguishing a density plot from a categorical plot? 
+Consequently, how is this decision made outside of academia and research? 
+In one way, research has been conducted on the visual or human perception of categorical plots.}
+
+\db{In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
+We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field. 
+We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
+It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
+This is the application of research to practice.}
+
+\db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
+As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
+We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
+Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
+We're speaking about the same data being represented. 
+However, most of the data is then categorized. 
+Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
+Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?}
+
+<!-- This section is for the what the uncertainty claims based in the Louendousie (sp?) papers; Weather map studies -->
+\db{Subject matter graphics are visual representations of information and data that help communicate complex concepts, ideas, and information to audiences.
+This expertise is related to knowledge of the topic or subject being presented in the graphic.
+A subject matter expert is someone who has a deep understanding of how people perceive and interpret visual information. 
+Subject matter experts (SMEs) have deep knowledge and experience in a specific field, such as science, finance, or medicine. 
+SMEs provide the necessary information and insights to form the graphic's basis. 
+They ensure that the content presented is accurate, relevant, and informative. 
+They use their human perception and cognition knowledge to design graphics that effectively communicate information to the intended audience. 
+Perception experts in graphics consider a range of factors, including color, shape, size, texture, and spatial relationships, to create graphics that are visually appealing and easy to understand.}
+
+\db{Perception experts in graphics may use different theories and principles to inform their design decisions. 
+For example, they may use Gestalt principles to create visually harmonious and organized graphics. 
+They may also use the principles of visual hierarchy to guide the audience's attention to the essential information in the graphic.}
+
+\db{Perception experts in graphics may also conduct user research to understand how different audiences perceive and interpret visual information. 
+They may use eye-tracking and user testing techniques to evaluate the effectiveness of different graphic designs.}
+
+\db{A perception expert plays a crucial role in designing graphics that effectively communicate information to the intended audience. 
+Their knowledge of human perception and cognition, as well as their expertise in graphic design, allows them to create visually appealing and easily understood graphics.}
+
+
+<!-- \svp{You don't have to motivate your other papers here - that will come later. Focus on the essentials - describe the main pieces of work in the area you're trying to expound upon.} -->
+
+<!-- Since we don't completely understand the way that basic statistical graphics are -->
+
+<!-- When effectively adding advanced graphical representations to a naive user, what have we done to create a proper understanding of an engaging idea of what's going on? -->
+
+<!--  
+\svp{Start with a definition of what dashboards are. Maybe reference/quote Few? Key components - visualization, interactivity, update frequency, simplicity? (the last one is arguable). Transition to Exploratory Data Analysis by saying that one of the key ways dashboards are used is to allow people to explore the data, and that dashboards are particularly useful for non-experts, as they do not require writing code or understanding how to work with the underlying data. Reference Figure \ref{fig-design-map} in this paragraph.}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figure/DashboardDesignMap.png}
+\caption{Dashboard Design Mind Map\label{fig-design-map}. \svp{Dashboard design includes components of exploratory data analysis, interactive graphics, big data analytics, human-computer interaction, and human cognition. XXX For the record, I think UI/UX design and HCI are the same, but that's me.}}
+\end{figure}
+-->
+
+Mallows and Walley list psychology as one of four areas likely to support a theory of analysis @mallows1980. 
+Data analyses rely on the mind's ability to learn, analyze, and understand. 
+
+Visual inference uses our ability to detect graphical anomalies. 
+However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.
+
+Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience. 
+Digital tools are critical to data science and analytics workflows, and current practice spans the following:
+
+- *Data Analysis Tools* - R, Pandas and SAS
+- *Data Warehousing Services* - MySQL, MongoDB, or Amazon Redshift
+- *Machine Learning Libraries* - scikit-learn o Apache MLlib
+
+A typical process typically consists of the following general stages:
+
+1. *Discovery*: Formulating an exciting question and determining the data necessary to answer it.
+2. *Acquisition*: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
+3. *Exploration*: Investigating and analyzing the data set to collect insights and understand the data
+4. *Modeling*: Building fitting and validating a model that can explain the data set and the observed phenomena
+5. *Communication*: Disseminating the results to stakeholders in reports, presentations, and charts.
+
+<!-- Chapter ... demonstrates the process of designing and redesigning a dashboard for public use.  -->
+<!-- Chapter ... discusses PCPs and how they are interpreted...  -->
+<!-- Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data. -->
+
+<!-- mic drop -->
+
+
+
+<!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
+<!--As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. -->
+
+
+<!-- The work appears how many times in this sentence? --> 
+<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. -->
+<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
+<!-- This work has been explored in various disciplines but not in statistical graphics. -->
+<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
+<!-- We know that dashboards are visual information tools with multiple statistical pictures. -->
+<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:
+As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
+<!-- Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics. -->
+<!-- You haven't defined dashboards yet -->
+
+<!-- One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard?  -->
+<!-- This is something that visual information researchers explore but don't test.  -->
+<!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
+
+<!-- A collaboration is when two or more entities work together to produce a desired and shared outcome.  -->
+<!-- Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge. -->
+
+<!-- Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more.  -->
+<!-- These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding. -->
+
+
+<!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
+
+<!-- Dashboard Design with naive users at the center of the design with adding new graphical visualization and testing the effectiveness of new graphics. -->
+
+<!-- Data Visualizations are described as \svp{by whom?} a graphical representation of tabular data and information. \svp{You're an expert - you can make definitive statements, like "Data visualizations are graphical summaries of numerical information that can be otherwise presented in tabular or raw form." But you can also back it up with citations if you have them.} -->
+<!-- Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.\svp{This is a victim of over-editing - again, read aloud or run through grammarly to find these and fix them :)} -->
+
+<!-- <!--  Give a "big picture" of the literature--> 
+<!-- This review will explore Exploratory Data Analysis (EDA) through the history of graphical representation, \svp{and will also include an assessment of principles of} Dashboard Design, Visual Information, and Big Data Analytics. \svp{not sure what you mean with the last two - may want to clarify.} -->
+
+<!-- \svp{Not sure what these bits are in here for - comment them out if they're parts of an outline that you forgot to remove?} -->
+<!-- Roles of graphics in Data Analysis: -->
+<!-- Graphics and Tables are forms of communication that we are looking to determine: -->
+
+<!-- *What is the audience?* -->
+<!-- Our audience is those users who “know” their data but cannot utilize it due to a lack of skills and resources. -->
+
+<!-- *What is the message?* -->
+<!-- The message will be to understand how to communicate visual information of statistical graphics in an ethical and understandable way. -->
+
+<!-- We can break down statistical graphics into two categories: -->
+<!-- - Analysis: design to see patterns, trends, and the process of data description, interpretation -->
+<!-- - Presentation: design to attract attention, make a point, illustrate a conclusion -->
+
+
+<!-- Based on the following diagram -->
+<!-- \begin{figure} -->
+<!-- \includegraphics[width=\textwidth]{figure/RolesofGraphics.png} -->
+<!-- \caption{Roles of Graphics \svp{Use the equal spacing button in excalidraw to make boxes equally distributed horizontally and vertically. Group boxes to treat them as a single object. This will make your sketches neater.}} -->
+<!-- \end{figure} -->
+
+<!-- Present a thesis or argument statement - why is it important to explore this topic?-->
+
+
+<!--Theme: Exploratory Data Analysis (EDA) and the History of Graphical Representations -->
+<!--## History of Exploratory Data Analysis (EDA)-->
+<!-- Overview of characteristics of the theme 
+-->
+
+<!-- #### Characteristics of Big Data -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/BigDataDiagram.png} -->
+<!-- \captionof{figure}{Big Data Diagram} -->
+<!-- \end{center} -->
+
+<!-- The Big Data Diagram will display the three main features and characteristics of big data: -->
+<!-- - Volume: is its size and how enormous it is -->
+<!-- - Variety: includes the different formats and types of data, as well as the different kinds of uses and ways of analyzing the data -->
+<!-- - Velocity: refers to the rate with which data is changing or how often it is created -->
+
+
+<!-- #### Big Data Storage and Management -->
+<!-- \svp{I really hope we don't have to get into data lakes/warehouses/etc. for this work...} -->
+
+<!-- We can't discuss big data analytics without discussing data storage and management. Our tasks with big data storage is to determine where and how this data will be stored once it is acquired: -->
+<!-- - Traditional structured data storage and retrieval methods include relational databases, data marts, and data warehouses. -->
+<!-- - Uploaded to the storage from operational data stores using: Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) tools which extract data from outside sources, transform the data to fit operational needs, and transform and cataloged before made available for data mining and online analytical functions. -->
+
+<!-- Given the growing numbers of data sources and the sophistication of data analyses, big data storage should allow analysts to produce and adapt data rapidly. -->
+
+<!-- - This requires an agile database whose current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine. -->
+
+
+<!-- ## History/Review of Graphical Representation -->
+<!-- \svp{I think you're going to want to reformat this and not focus so much on history, instead focus on how we choose a specific graphical representation, the advantages/disadvantages of those representations, and the user factors which weigh in.} -->
+
+<!-- ### History/Origin of Statistical Visualization -->
+
+<!-- Visualization is NOT prediction. Much of the field is focus on prediction models but big data analytics visualization is an important part of working to develop methodology for helping analysts to explore and understand what patterns are presented.  -->
+
+<!-- > The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important. -->
+
+
+
+<!-- Tasks can be viewed either by the goal the user is trying to obtain or by the intent the user has  -->
+
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/tentypetasks.png} -->
+<!-- \captionof{figure}{10 Type Tasks with Sources} -->
+<!-- \end{center} -->
+
+<!-- Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ([@endert2015], [@sedig2012]). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques [@saket2018]. -->
+
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/interactiontasks.png} -->
+<!-- \captionof{figure}{Interaction Types with Sources} -->
+<!-- \end{center} -->
+
+<!-- \svp{Not for this particular write-up, but have you analyzed this to see if it's an effective visualization in its own right? I think this might be better as a table with boxes filled in or something?} -->
+
+
+<!-- ### Applications -->
+
+<!-- Two general applications in areas of visual inference have developed since the work of [@buja2009]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. -->
+
+
+
+<!-- The National Academies defines research collaboration as follows [@NATIONALACADEMYOFSCIENCES]: -->
+
+<!-- > Interdisciplinary Research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice. -->
+
+
+
+<!--  ### Interactive Visualization in Exploratory Data Analysis (EDA) -->
+
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/EDAWorkflowElements.png} -->
+<!-- \captionof{figure}{Elements of EDA Workflow} -->
+<!-- \end{center} -->
+
+
+
+
+<!--Theme: ggpcp/ ggflower -->
+<!-- Overview of characteristics of the theme 
+
+## `ggpcp` package - Generalized Parallel Coordinate Plots
+
+## Parallel Coordinate Plot Visualization Review
+
+Parallel coordinate plots have been implemented in analysis software since the mid-1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of XY coordinate analysis. Parallel coordinate plots have a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, data visualizations will be more critical and valuable to understanding the underlying structures of valid data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+
+Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards into different types.
+
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+### Parallel Coordinates in EDA
+EDA refers to methods and procedures for exploring the data space to learn about a data set. By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexibly and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+Being able to select subgroups of cases, highlight the selected lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
+
+
+### R Packages
+
+R packages exist for Parallel coordinate plots, with some built-in functionality, but only a few exist for advanced exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, which contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. Another package, `gclus` was developed by [@Hurley] and implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
+
+While base R packages are helpful, a few packages within the ggplot2 environment implement parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics is at the focal point of plots. The following packages [@ggally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was initially designed for the following pieces of graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs in addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e., rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
+
+`ggparallel` implements and combines different types of parallel coordinate plots for categorical data: hammock plots, parallel sets plots, typical angle plots, and typical angle plots with a hammock-like adjustment for line widths [@Heike2013].
+
+
+### `ggpcp` package importance
+
+As mentioned in previous sections, that parallel coordinate plots have a long line history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manner of categorical variables. This package separates the data managing part from the plots by giving full user access while keeping the number of parameters manageable. [@ggpcp]
+
+While the `ggpcp` package is the first iteration of the package that can be changed in a way that will allow the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics through the eyes of someone that is not used to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore how one level of interaction from the user can create a better plot for understanding.-->
+
+
+<!--Conclusion -->
+<!-- Overview of characteristics of the theme -->
+
+
+
