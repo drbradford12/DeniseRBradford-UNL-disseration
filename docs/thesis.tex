@@ -263,104 +263,83 @@ Thank you to all my people!
 \mainmatter
 
 
-\hypertarget{unl-thesis-fields}{%
-\chapter{UNL thesis fields}\label{unl-thesis-fields}}
-
-Placeholder
-
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-\svp{Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities. 
-We fit models based on relationships between variables which are often identified visually. 
-We identify problems with those models based on residual plots and other visual diagnostics. 
-When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.}
+Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities.
+We fit models based on relationships between variables which are often identified visually.
+We identify problems with those models based on residual plots and other visual diagnostics.
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-\svp{Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
-In addition, we know that \db{based on the "Perceptual foundations in the design of visual displays" by [@aspillaga1996]} not all visual displays have equal perceptual value. 
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
+In addition, we know that not all visual displays have equal perceptual value (Aspillaga, 1996).
 The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion \db{[@vanderplas2015]} affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
-Other design constraints are due to the audience's experience level: are they used to working with data? 
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful?
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion (VanderPlas \& Hofmann, 2015b) affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Other design constraints are due to the audience's experience level: are they used to working with data?
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be \svp{a} useful \svp{visual display}?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.}
+In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 
-\db{We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field.
-We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles. 
-It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-We would like to see the application of research to practice.}
+\svp{Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information. 
+As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.}
 
-\db{Consider a novel concept in research can be less practical or useful in the field more often than not. 
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
-As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
-Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-In regards to speaking about the same data being represented, most of the data is then categorized. 
-Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
-Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?
-}
+\svp{In the "real world", however, conventions and familiarity often win out over best practice validated by perceptual experiments.}
+
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
+As data in sports becomes more prominent, extensive, and collected, this information must be refined.
+\svp{Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.}
+\svp{Let us first consider the audience characteristics that affect the selection of graphics. 
+Then, we will engage with considerations based on the data to be displayed. 
+Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.}
 
 \hypertarget{audience-considerations}{%
 \section{Audience Considerations}\label{audience-considerations}}
 
-\db{Several factors, including prior experience, context, and personal preferences, can influence the human perception of density and categorical plots.}
-
-\db{In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
-The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
-On the other hand, categorical plots aim to show the frequency or count of observations in each category.}
-
-\db{When comparing density plots and categorical plots, it's essential to consider the data analysis type. 
-For continuous data, a density plot may provide a more informative representation of the distribution. 
-A categorical plot may provide a more intuitive representation of the distribution of categorical data.}
-
-\db{However, for various reasons, some people may prefer one type of plot over the other. 
-For example, some may find density plots more visually appealing, while others may prefer categorical plots for their simplicity and ease of interpretation. 
-Ultimately, the choice between the two types of plots will depend on the context and purpose of the analysis and the preferences of the individual interpreting the data.}
-
-\db{Do we comprehend why we utilize the graphics we do? 
-Is there a reason we adopt the perception of a previously used graphic? 
-How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
-How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
-How do we determine the line distinguishing a density plot from a categorical plot? 
-Consequently, how is this decision made outside of academia and research? 
-In one way, research has been conducted on the visual or human perception of categorical plots.}
-
-\db{In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
-We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field. 
-We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
-It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
-This is the application of research to practice.}
-
-\db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
-As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
-Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
-We're speaking about the same data being represented. 
-However, most of the data is then categorized. 
-Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
-Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?}
+Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.
 
 \hypertarget{perception}{%
 \subsection{Perception}\label{perception}}
 
-\db{To read reality from images is to solve a problem: a series of extremely difficult problems that persist throughout an individual's lifetime. 
+\db{Why is it essential to comprehend perception laws when working with data visualization? 
+First of all, they can guide your decision-making when creating a graph or dashboard. 
+In addition, they assist the reader in quickly organizing and interpreting charts and graphs and making visual sense of the information.
+Assigning meaning is not a statistical or computational step but a cognitive one. 
+Each step in the data analysis process is part of a more extensive mental process.
+To read reality from images is to solve a problem: a series of extremely difficult problems that persist throughout an individual's lifetime. 
 Errors are illusions. 
-Certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general.[@gregory1968]
+Certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general @gregory1968.
 Human perception plays a direct role in the area of visualization and graphics. 
 Data Analysis tasks closely resemble the cognitive process known as sensemaking. 
-Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) [@tukey1966].
-Mallows and Walley list psychology as one of four areas likely to support a theory of analysis [@mallows1980]. 
-Data analyses rely on the mind's ability to learn, analyze, and understand. 
-Assigning meaning is not a statistical or computational step but a cognitive one. 
-Each step in the data analysis process is part of a more extensive mental process.}
+Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) @tukey1966.
+Additionally, short-term memory is crucial to the effectiveness of statistical graphics. 
+Research indicates that our short-term memory can only store a limited amount of information at any given time. 
+Therefore, designers must present data in a manner that is simple to comprehend and remember. 
+Utilizing parallel coordinate plots is one method for achieving this. 
+These plots enable viewers to compare multiple variables concurrently, thereby reducing cognitive load and making it easier to identify patterns and trends.}
 
 \db{Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.}
 
-\db{Perceptual principles refer to how the human brain processes and interprets visual information. 
+\db{The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s. 
+At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts. 
+Our visual interpretation of the world is a major factor in why humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
+Without diving too deeply into sensory perception, brain pathways, and the biology of the eye, let's establish two essential facts:}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  Vision, and how we perceive or interpret what we see, is primarily the result of our brain and nervous system transmitting sensory stimuli through neural pathways.
+  This is why people with perfectly functioning eyes, such as those with Cortical Visual Impairment, may be unable to see if the pathways to the brain are miswired or damaged (see a viz on that here).
+\item
+  While 70\% of our experience of the world is gained through vision, our brains can only simultaneously process less than 5\% of our visual environment.
+\end{enumerate}
+
+\db{All of this suggests that our brain frequently perceives things differently than what is actually present. 
+If you are familiar with optical illusions or the famous "gorilla in the crowd" experiment, you are aware that we do not always process everything in our visual field. 
+There is simply too much information for our brains to process, and if we tried to interpret it all, we would be rendered paralyzed.
+We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
 These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.}
 
-Some examples of perceptual principles include:
+Gestalt principles include:
 
 \begin{itemize}
 \tightlist
@@ -380,32 +359,94 @@ Some examples of perceptual principles include:
   Symmetry and Balance: The human eye finds symmetry and balance visually pleasing, so designers can use this principle to create a sense of harmony and order.
 \end{itemize}
 
-\db{These are just a few examples of the many perceptual principles that designers use to create compelling visual displays. 
-These principles are based on cognitive psychology and understanding how the human brain processes visual information.}
+\begin{figure}
 
-\db{Visual inference uses our ability to detect graphical anomalies. 
-However, the idea of formal testing remains the same in visual inference – with one exception: The test statistic is now a graphical display compared to a “reference distribution” of plots showing the null.}
+{\centering \includegraphics[width=0.75\linewidth]{figure/gestalt_principles} 
+
+}
+
+\caption{Gestalt Principles with Examples}\label{fig:gestalt}
+\end{figure}
+
+\db{These principles are based on cognitive psychology and understanding how the human brain processes visual information.}
+
+\db{Eye tracking regression is a method used in eye tracking studies to analyze eye movement data and identify the factors that influence a participant's gaze behavior. 
+In eye tracking regression, the eye movement data is regressed on a set of predictor variables, such as visual features of the stimulus or task instructions, to determine the degree of influence each variable has on eye movements.
+On the other hand, statistical regression is a technique used in statistics to identify the relationship between a dependent variable and one or more independent variables. 
+Statistical regression is used to make predictions or to explain the relationship between variables. 
+It is used in various fields, such as economics, psychology, and biology, to analyze and understand complex data.
+While both techniques involve regression analysis, they are used for different purposes and with different types of data. 
+Eye-tracking regression is specific to eye-tracking data and is used to understand visual attention and perception. 
+Statistical regression, however, is a more general technique that can be applied to any type of data and is used for modeling relationships between variables.}
+
+\hypertarget{attention-and-memory}{%
+\subsection{Attention and Memory}\label{attention-and-memory}}
+
+Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
+According to (\textbf{baddeley2012?}), STM is a limited-capacity system prone to interference and decay.
+Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential Cowan (2001).
+
+Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research (\textbf{alvarez2004?}).
+
+Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
+
+Furthermore, annotations can also be useful in aiding short-term memory.
+By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on (\textbf{alvarez?}).
+
+According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention (\textbf{treisman1998?}).
+Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
+However, focused attention is required to bind these features into a coherent object representation in STM.
+STM can be improved through various strategies, such as rehearsal, chunking, and elaboration (\textbf{oberauer2009?}).
+For example, by repeating a phone number several times or breaking it down into chunks of two or three digits, we can increase the likelihood of it being stored in STM.
+Similarly, by elaborating on the information we want to remember, such as creating mental associations or visual images, we can enhance its retention in STM (\textbf{bui2015?}).
+
+STM is a dynamic and malleable cognitive system that is crucial to our daily lives.
+Understanding the mechanisms underlying STM and how to improve it can have significant implications for learning, memory, and the treatment of memory disorders.
+
+\hypertarget{constructing-meaning}{%
+\subsection{Constructing Meaning}\label{constructing-meaning}}
+
+Gestalt psychology suggests that humans actively construct meaning by organizing information into patterns and wholes (\textbf{wertheimer1923?}).
+Both top-down and bottom-up processing are involved in the process of meaning construction.
+Bottom-up processing entails analyzing sensory data from the environment and constructing perceptions based on this data.
+Top-down processing is the influence of prior knowledge, expectations, and context on the perception and interpretation of incoming sensory data.
+
+Together, top-down and bottom-up processing facilitate the encoding and retrieval of information in the context of short-term memory.
+Selective attention, the ability to focus on relevant information while ignoring irrelevant information, is an example of top-down processing that aids in the encoding and retrieval of information in short-term memory (\textbf{cowan2010?}).\\
+According to the feature integration theory, the perception of objects involves both the bottom-up analysis of individual features and the top-down processing of higher-level features in order to form a complete perception (\textbf{treisman1980?}).
+
+The Gestalt principles of perception emphasize the significance of bottom-up and top-down processing in constructing meaning from sensory data.
+Both types of processing are involved in encoding and retrieving information, which has significant implications for understanding how short-term memory works.
 
 \hypertarget{expertise}{%
 \subsection{Expertise}\label{expertise}}
 
-\db{Subject matter graphics are visual representations of information and data that help communicate complex concepts, ideas, and information to audiences.
-This expertise is related to knowledge of the topic or subject being presented in the graphic.
-A subject matter expert is someone who has a deep understanding of how people perceive and interpret visual information. 
-Subject matter experts (SMEs) have deep knowledge and experience in a specific field, such as science, finance, or medicine. SMEs provide the necessary information and insights to form the graphic's basis. 
-They ensure that the content presented is accurate, relevant, and informative. 
-They use their human perception and cognition knowledge to design graphics that effectively communicate information to the intended audience. 
-Perception experts in graphics consider a range of factors, including color, shape, size, texture, and spatial relationships, to create graphics that are visually appealing and easy to understand.}
+The development of expertise is a gradual and iterative process that is influenced by numerous psychological factors, such as cognitive processes, automaticity, readily accessible information, and practice effects.
 
-\db{Perception experts in graphics may use different theories and principles to inform their design decisions. 
-For example, they may use Gestalt principles to create visually harmonious and organized graphics. 
-They may also use the principles of visual hierarchy to guide the audience's attention to the essential information in the graphic.}
+Cognitive Processes - the way we think about and approach a task.
 
-\db{Perception experts in graphics may also conduct user research to understand how different audiences perceive and interpret visual information. 
-They may use eye-tracking and user testing techniques to evaluate the effectiveness of different graphic designs.}
+As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata.
+These mental models help us to organize information in a meaningful way, and to quickly identify and solve problems related to the task.
+This process is known as cognitive restructuring and is facilitated by developing domain-specific knowledge (\textbf{ericsson1996?}).
+For example, a chess master is able to quickly recognize patterns and positions on the board that are common in chess, which allows them to make decisions more quickly and accurately than a novice player.
 
-\db{A perception expert plays a crucial role in designing graphics that effectively communicate information to the intended audience. 
-Their knowledge of human perception and cognition, as well as their expertise in graphic design, allows them to create visually appealing and easily understood graphics.}
+Automaticity - the ability to perform a task without conscious effort or attention
+
+As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
+The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process (\textbf{Fitts1967?}).
+For instance, a skilled typist can type without looking at the keyboard because their finger movements have become automatic.
+
+Information Readily Available - the way we process information related to a task
+
+As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice.
+This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly (\textbf{Chase1973?}).
+For instance, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
+
+Practice Effects - extensive practice and experience
+
+Practice effects are the performance enhancements that result from repeated practice.
+These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling (\textbf{Anderson1982?}).
+The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
 
 \hypertarget{engagement-with-the-data}{%
 \subsection{Engagement with the data}\label{engagement-with-the-data}}
@@ -417,37 +458,7 @@ The end goal of data analysis is to support decision making and provide a basis 
 Data analysis can help organizations to better understand their customers, market trends, and operational performance. 
 <!-- What about organizations which aren't profit-driven? They still need to understand the relationship between different variables in the dataset. -->
 Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
-Ultimately, the goal of data analysis is to turn data into actionable insights and information that can inform and improve decision making.}
-
-\db{Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience. 
-Digital tools are critical to data science and analytics workflows, and current practice spans the following:}
-
-\begin{itemize}
-\tightlist
-\item
-  \emph{Data Analysis Tools} - R, Pandas and SAS
-\item
-  \emph{Data Warehousing Services} - MySQL, MongoDB, or Amazon Redshift
-\item
-  \emph{Machine Learning Libraries} - scikit-learn o Apache MLlib
-\end{itemize}
-
-\db{A typical process typically consists of the following general stages:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \emph{Discovery}: Formulating an exciting question and determining the data necessary to answer it.
-\item
-  \emph{Acquisition}: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
-\item
-  \emph{Exploration}: Investigating and analyzing the data set to collect insights and understand the data
-\item
-  \emph{Modeling}: Building fitting and validating a model that can explain the data set and the observed phenomena
-\item
-  \emph{Communication}: Disseminating the results to stakeholders in reports, presentations, and charts.
-\end{enumerate}
+Ultimately, data analysis aims to turn data into actionable insights and information that can inform and improve decision-making.}
 
 \db{Visualizing Complex Data is representing complex, multi-dimensional data in a graphical or pictorial form to make it easier to understand and interpret. 
 The goal is to turn large, intricate data sets into visually appealing and intuitive representations, such as charts, graphs, maps, and other types of visualizations, to help identify patterns, trends, and relationships that may not be immediately apparent from raw data. 
@@ -764,15 +775,18 @@ He was a strong advocate for the importance of EDA as a crucial first step in th
 \end{itemize}
 
 \begin{verbatim}
-## Warning: Groups with fewer than two data points have been dropped.
+## Warning: Groups with fewer than two data points have been
+## dropped.
 \end{verbatim}
 
 \begin{verbatim}
-## Warning: Removed 1 rows containing missing values (position_stack).
+## Warning: Removed 1 rows containing missing values
+## (`position_stack()`).
 \end{verbatim}
 
 \begin{verbatim}
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+## `stat_bin()` using `bins = 30`. Pick better value with
+## `binwidth`.
 \end{verbatim}
 
 \begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-2} \end{center}
@@ -1180,22 +1194,97 @@ We identify visual indicators for parameters in different models and extend the 
 \hypertarget{rmd-basics}{%
 \chapter{Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue}\label{rmd-basics}}
 
-Placeholder
-
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
+
+Many small and rural places are shrinking. Interactive dashboards are the most common use cases for data visualization and context for exploratory data tools. In our paper, we will explore the specific scope of how dashboards are used in small and rural area to empower novice analysts to make data-driven decisions. Our framework will suggest a number of research directions to better support small and rural places from shrinking using an interactive dashboard design, implementation and use for the every day analyst.
 
 \hypertarget{introduction-1}{%
 \section{Introduction}\label{introduction-1}}
 
+As the amount of data has increased in nearly every facet of life, the need to make sense of that data in an approachable, accessible form has become ever more important.
+As a result, many companies and organizations use interactive dashboards to present these data in a more useful and visually appealing form (Sarikaya, Correll, Bartram, Tory, \& Fisher, 2019).
+
+In many cases, dashboards support viewers' information processing, helping to make sense of complex data, navigate through a dataset, and supporting decision making based on the data.
+
+Dashboards are often used, as with the car display of the same name, to provide summary information about many separate attributes of a common entity. One glance at a car's dashboard will tell you the speed, RPM, engine temperature, amount of gas in the tank; more importantly, however, the goal is not for the user to remember all of these characteristics, but to assess whether any of these quantities is outside of the expected range.
+Similarly, interactive dashboards for data are often used to display many different attributes and performance metrics which are of importance for stakeholders.
+
+In this paper, we discuss the process of designing a dashboard to present publicly available government data to stakeholders in small Iowa towns to facilitate decision making and objective comparison with other similarly-situated towns.
+
+Some communities continue to thrive as they lose population because they adapt, maintaining quality of life and community services for residents while investing in the future. This process, \emph{smart shrinkage}, is important for rural areas who have experienced shrinking populations for decades. As small rural towns do not have access to data scientists or even the ability to easily leverage data collected locally to support decisions, our research team will provide communities with data about services in small town Iowa in order to assist with developing strategies to improve quality of life for their residents amid shrinking populations (Rural Shrink Smart Team, 2022). We hope to allow towns to explore their own data and compare to other similar towns, centering decision-making on data in the context of small-town Iowa life.
+
 \hypertarget{data-description}{%
 \section{Data Description}\label{data-description}}
+
+The Smart and Connected Community (SCC) dashboard data are primarily assembled from \url{data.iowa.gov} (State of Iowa, 2020), with some additional datasets assembled from federal and private sources. Most of these data sets are collected at a town/city or county spatial resolution, requiring us to carefully join data to ensure that these differences are respected while collating relevant information at the city level. In addition to the more commonly available statistics derived from e.g.~the census and American Community Survey, \url{data.iowa.gov} contains several unique data sets, including local liquor sales, school building locations, town budgets and expenditures, hospital beds, Medicaid reimbursements, and other details that may provide information about local quality of life.
+
+Data available on Iowa's data portal were augmented in some cases with higher-quality data sets in cases where the Iowa data were out of date or insufficiently accurate.
+Data collected from ELSI (National Center for Education Statistics, 2020) from \url{https://nces.ed.gov} were used to show the distance to any private or public school. The National Center for Education Statistics (NCES) is the primary federal entity for collecting and analyzing data related to education (Zarecor, Peters, \& Hamideh, 2021).
+
+Data collected from the Index of Relative Rurality (IRR) (USDA - ERS, 2020a) were used in the SCC dashboard to help classify the towns. The Index of Relative Rurality (IRR) is a continuous, threshold-free, and unit-free measure of rurality. It is an alternative to the traditional discrete threshold-based classifications.The IRR ranges between 0 (low level of rurality, i.e., urban) and 1 (most rural). Four steps are involved in its design:
+
+\begin{enumerate}
+\item Identifying the dimensions of rurality: population size, density, remoteness, and built-up area.
+\item Selecting measurable variables to adequately represent each dimension:
+    \begin{itemize}
+        \item Size: logarithm of population size
+        \item Density: logarithm of population density.
+        \item Remoteness: network distance.
+        \item Built-up area: urban area (as defined by the US Census Bureau) as a percentage of total land area.
+    \end{itemize}
+\item Re-scaling the variables onto bounded scales that range from 0 to 1.
+\item Selecting a link function: unweighted average of the four re-scaled variable.
+\end{enumerate}
+
+Data collected from Rural Urban Commuting Area Codes (USDA - ERS, 2020b) were used to help identify towns with commuting behaviors in our rural areas. The rural-urban commuting area (RUCA) codes classify U.S. census tracts using measures of population density, urbanization, and daily commuting. This data is on a zip code-level that will help identify those communities that commute to more urban areas. The most recent RUCA codes are based on data from the 2010 decennial census and the 2006-10 American Community Survey. The classification contains two levels. Whole numbers (1-10) delineate metropolitan, micropolitan, small town, and rural commuting areas based on the size and direction of the primary (largest) commuting flows.
+
+One of the interesting features of this assembled data set is that missing data can be missing for multiple reasons: not all state data is complete, but data about certain services may also be missing because towns do not offer that service.
+Thus, in addition to the usual challenges of working with real-world data that is ``messy'' in a variety of ways, we also have to contend with missing data that is missing due to the size of the community or the lack of services. This makes both visualization and statistical analysis more complicated (and more interesting).
 
 \hypertarget{dashboard-design-considerations}{%
 \section{Dashboard Design Considerations}\label{dashboard-design-considerations}}
 
+\begin{figure}
+\hypertarget{fig:metrics}{%
+\centering
+\includegraphics{figure/KeyMetrics.png}
+\caption{Diagram of considerations for our dashboard design process.}\label{fig:metrics}
+}
+\end{figure}
+
+One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.
+
+As part of a wider project investigating the strategies towns use to maintain quality of life amid shrinking population, our research team provides communities with data about their own town, but also comparable towns across the state which may have a different approach to city services. In combination with other engagement strategies that are more qualitative, we hope to use this interactive dashboard approach to assist small Iowa cities with generalizing and developing strategies to improve or maintain quality of life amid shrinking populations.
+
+One factor at the forefront of our visualization design is the importance of reducing the cognitive demands on viewers: we have assembled an incredible amount of data, and it is easy for even statisticians who deal with much larger datasets to get lost in the details of this data. At the same time, we want to invite viewers to engage with the data - to imagine, to draw comparisons, to generalize across towns, and to integrate outside information into the conclusions drawn based on the data we present.
+This invitation to engage with the data is similar to the approach advocated in Guided Discovery Learning, a framework leverages hints, feedback, and other helpful information to guide users in interactive exploration (DeDonno, 2016).
+
+We expect that users will be interested in ``sets'' of variables from the wider dataset, which we assembled based on quality of life factors in the Iowa Small Town Poll (David J. Peters, 2019). For instance, users might be interested in medical and social services available to residents, such as a local primary care clinic, nursing homes which are within driving distance, and the distance to the nearest emergency room; these factors might be explored separately from variables describing the services provided directly by city government, such as parks and recreation expenditures, snow removal services, and the distance to the closest fire station.
+
+As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours (Wickham, Cook, Hofmann, \& Buja, 2011), require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s (d'Ocagne, 1885), parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show ``blocks'' of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables (Bendix, Kosara, \& Hauser, 2005); modifications of this design, such as common-angle plots (Hofmann \& Vendettuoli, 2013), address the issues which arise due to line-width illusions VanderPlas \& Hofmann (2015a). Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities (Heinrich \& Weiskopf, 2009). In this paper, we use the \texttt{ggpcp} package, which leverages the grammar-of-graphics framework introduced in Wickham (2016), allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.
+
+We also anticipate that users will be interested in comparing their town to other, similar towns. We will discuss the different ways that this comparison strategy was implemented in each dashboard in the next section, which describes the evolution of the dashboard over time and accounting for feedback from users and other researchers on the wider project.
+
+One final component of this project is that our dashboard is part of a wider effort to work with towns to understand the different strategies used to maintain resident quality of life amid shrinking populations. Thus, while the town leaders are our primary audience, we also are creating this applet for use in parallel with a team of other researchers: sociologists, economists, city planning specialists, and artists. These researchers opinions and feedback about the dashboard are also useful and important, as they regularly work with town leaders in different capacities and have an understanding of what factors are most important to them and what types of questions these leaders may have when faced with data and unfamiliar statistical visualizations.
+
+Throughout the design process, we will assess our visualizations to determine which strategies for user interface and interactive graphics design are most useful to empower town leaders to make discoveries in publicly available data assembled with a focus on items that impact rural quality of life.
+
 \hypertarget{guiding-design-principles}{%
 \section{Guiding Design Principles}\label{guiding-design-principles}}
+
+Research on dashboard creation and interactive visualization tends to be very task-specific and hard to apply to more generalized settings. That is, it is relatively easy to create a dashboard that works for a particular task, but it is hard to generalize from that process what will work for the next dashboard. With this in mind, we set out to clearly document our intentions at each stage of the design and evaluation process, with the goal of gathering some useful information about general dashboard design from the process of creating this specific dashboard.
+
+Thus, our initial set of dashboard design principles is as follows:
+
+\begin{itemize}
+\item The town leaders are the focus audience; thus, the town itself should be the central focus of the app.
+\item We should facilitate comparisons with other towns in order to allow the user to explore other potential solutions to offering services that enhance resident quality of life.
+\item We will present the user with peer comparisons in order to widen the scope of exploration beyond the initial set of obvious peers in the local region.
+\item We will implement feedback mechanisms that allow us to provide more detailed data and respond to feature requests to improve the dashboard design over time.
+\end{itemize}
+
+As with many dashboards, this project is under continuous development; while it makes for an unsatisfactory conclusion, we do not have a ``final'' dashboard design because the application will continue to evolve. However, we have some useful insights into the process of creating an application designed to invite users to explore a large and complex dataset that we believe to be a useful contribution to work in this area.
 
 \hypertarget{dashboard-design-process}{%
 \section{Dashboard Design Process}\label{dashboard-design-process}}
@@ -1203,57 +1292,460 @@ Placeholder
 \hypertarget{dashboard-components}{%
 \subsection{Dashboard Components}\label{dashboard-components}}
 
+In this section, we discuss the philosophy behind the basic ``building blocks'' of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy's effectiveness in the conclusion.
+
+The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006).
+
+Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
+
+When faced with the next component, a parallel coordinate plot (PCP), a novice user will be able to determine two basic components: Visual Object (textual objects and non-textual objects) and Frame (frame of content and frame of visual encoding).
+
+Taken together, the app is a single page; the initial ``solid ground'' which the user explores from consists of maps showing the route from the center of town to necessary services, including the fire department, schools, post offices, and hospitals. In version 2, as shown in \autoref{fig:v2}, the map portion is condensed, and more space is given to value boxes that show vital statistics about the town's QoL and financial metrics. This relatively straightforward display is followed by a parallel coordinate plot that allows the user to see similar towns along dimensions such as economic indicators or population size.
+
 \hypertarget{initial-draft}{%
 \subsection{Initial Draft}\label{initial-draft}}
+
+The initial design sketch and implementation are shown in \autoref{fig:v1}.
+
+Users' towns are at the center of our application, and comparisons to other, similar towns are secondary. As it can be extremely difficult to predict which towns are optimal for comparison purposes (similar may involve population, region, economic indicators, sports rivalries, and any number of other variables), we allow users to modify a set of suggested comparison towns to indicate other towns of interest.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figure/Version1.png}
+
+\includegraphics[width=.7\textwidth]{figure/Version2.png}
+\caption{Initial dashboard design sketch (top) and implementation (bottom).}\label{fig:v1}
+\end{figure}
+
+We implemented some suggested town comparisons using unsupervised clustering methods to help our towns make decisions that are informed in comparison to similar towns, for budget size, population size and location. We initially focused on determining the next five to ten similar towns, based on distances to services. This feature became an important diagnostic for our data quality, as it became clear that towns which were grouped with big cities but which did not have a large population were so grouped because of missing data. Unfortunately, this clustering feature was not as useful to the application users, as they came to the dashboard with a pre-existing set of towns to compare to; our suggested comparisons were in the way.
+
+The initial dashboard design featured several responsive maps showing the distance to the nearest hospital, fire department, post office, and school. These maps were ineffective for several reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Town residents already know this information (though it was useful for us as the dashboard designers, because we aren't nearly as familiar with the 900+ small towns in Iowa)
+\item
+  We computed distance from services relative to the center of town - coordinates provided in the data from \url{data.iowa.gov}. Generally speaking, the post office is at the center of town and the fire department is usually very close to the center of town; these two maps were useless. The school and hospital maps were less useless, but still did not provide particularly useful information to people already familiar with the town.
+\item
+  It became clear that it might be more useful to show the comparison towns on a map (relative to the town of interest) so that users could compare geographical ratings for unfamiliar data to familiar data.
+\end{itemize}
+
+In addition, we received feedback on the parallel coordinate plot at the bottom of the app which was surprising: the viewers (in this case, other researchers on the team) were not as intimidated by the parallel coordinate plot as we had expected. They did need some explanation of how to read the plot, and these hints need to be included in the dashboard, but they grasped the fundamental idea of the plot very quickly.
+
+Our conclusion, based on this initial dashboard draft, was that we needed to restructure the application. Our attempt to show familiar information first to ``build up'' to the more unfamiliar structure of a parallel coordinate plot was not effective; there was too much clutter and not enough new information to draw users in.
 
 \hypertarget{redesign}{%
 \subsection{Redesign}\label{redesign}}
 
+\begin{figure}
+\includegraphics[width=.8\textwidth]{figure/Version3.png}
+
+\includegraphics[width=\textwidth]{figure/Version4.png}
+\caption{A second iteration of the sketched design (top) and the implementation (bottom).}\label{fig:v2}
+\end{figure}
+
+In the initial design, we included a map for each vital service, this initially created a lag for the users' experience. As a result, we cached map directions from OSRM for each service in our database, which drastically reduced the response time for the user. Our initial design did not naturally focus the user's eye on the most important parts of the dashboard; the redesign allowed for a cleaner flow from the top to the bottom.
+
+In addition to the timing due to the map loading slowly, we added the vital statistics at the county level to allow for a more robust understanding of the town and it's surroundings. The rurality index provided a better classification and the USDA sources allowed for the town to understand the impact of the closest major city due to commuting for work and shopping at larger stores not available within the town.
+
+We also modified the parallel coordinate plots in several ways:
+
+\begin{itemize}
+\tightlist
+\item
+  Our x-axis had a large number of variables that we as researchers believed to be the most strongly associated with quality of life. However, there were still too many variables for users to successfully parse. We reduced the number of variables, focusing on variables that had the highest data quality, and we grouped these variables by quality of life factor (David J. Peters, 2019).
+\item
+  Originally, parallel coordinate bands were scaled based on the selected comparison towns. This had the effect of truncating the range of variables and over-emphasizing differences between selected towns relative to the overall range of each variable over all towns in our data set. We chose to show all towns in the data set in a very light \(\alpha\) grey color to provide some information about the overall range of each variable. Unfortunately, even with the low-\(\alpha\) value, this increased the visual complexity of the plot and confused users. Future iterations will likely make use of another aesthetic, such as boxplots or violin plots, to show the range of values for all towns, and then use lines only for towns that are selected by the user. This should strike a balance between visual complexity and representing the data accurately.
+\item
+  We noticed that users did not make use of our suggested comparison towns, and so we removed that option in favor of allowing users to enter their own comparison towns directly. Users already had pre-determined towns they wanted to compare to, and our suggestions were just in the way.
+\end{itemize}
+
+While not all of these modifications were well received in our second round of user testing, the changes did incrementally move the dashboard display towards our goal of allowing users to explore the data and engage with it. We continued to be surprised with how well users reacted to the parallel coordinate plots, which we initially thought might be too abstract for users unfamiliar with multivariate data displays, but the ability to compare towns across multiple dimensions and examine the similarities and differences between their approaches to different services seemed to be intuitive for users once they understood that each vertical axis was a different variable.
+
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+Our dashboard design philosophy worked primarily to promote a town-centric approach application with comparisons to other similar towns being secondary. This approach created a way for the user to see their town information at the top of the page and to explore the PCP after reviewing their own town's essential statistics. The PCP in the lower part of the dashboard allowed for the user to see the plot and adjust to the fact that they could add more towns to the plot, providing an opportunity to explore the wider dataset from a base of familiar knowledge.
+
+While we initially framed the design around guided discovery learning, the approach did not seem to suffice for our user base; instead, we found that users were more drawn to the unfamiliar from the start. We will likely leverage this in future iterations by using visual forms such as flower plots to draw the users in; even though these plots are not ideal for numerical display of data, the visual novelty and aesthetic appeal will provide some motivation to continue exploring and thinking about the data.
+
+One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as ``Town 1'', ``Town 2'', and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.
+
+We also recognize that we need to leverage the expertise of others in our research team: we are working with artists, researchers in architecture, economists, and sociologists; these researchers provide outside knowledge that we do not have and may be able to help us create insightful use-cases to showcase the app and teach towns how to use it. We can also leverage the app to connect users with our research team, providing additional value to those who use the applet and facilitating development of strategies for maintaining quality of life amid shrinking populations.
 
 \hypertarget{future-work}{%
 \section{Future Work}\label{future-work}}
 
+One avenue we will explore in future iterations of the dashboard is to incorporate other dashboards generated by different groups within this project. This will create a wider field of information to explore: for instance, some of the additional work will focus on the 99 towns featured in the Iowa Small Town Poll; this will allow us to showcase survey-based measures of quality of life alongside the more objective measurements assembled in the dataset discussed in this paper. While at least one tab of this omni-dashboard will still focus on wider EDA and discovery, we hope to incorporate other information as well to provide a more well-rounded data display encompassing most of the facets of this complex project.
+
+We are also mindful of a distinction between ``eye candy'' and purpose-driven data visualization. While we have typically focused on the latter, there is certainly a place in our dashboard for the former as well. ``Eye candy'' visualization is intended to draw the viewer in and motivate them to explore; while these visualizations may not be particularly effective at communicating quantitative information, if they motivate the user to engage with the rest of the dashboard, they still serve a purpose. It is with this mindset that we intend to explore the use of flower plots - the artistic opportunities combined with the display of quantitative information (even in a form that isn't optimal for quantitative comparisons) may be useful to engage viewers before transitioning to more useful data visualizations intended to provide accurate quantitative comparisons.
+
+EDA can be a difficult for a variety of groups of people, novice users and experienced researchers. One of the more difficult components of this project has been clearly articulating the purposes of EDA to a diverse group of researchers unfamiliar with the concept. One of the most useful parts of this dashboard iteration process has been as an aid to data discovery: that is, the dashboard motivated us to find additional data sources and incorporate them into the project. Having conversations with other researchers about the EDA process helped to facilitate these conversations, as each discussion seemed to uncover additional data sources that someone remembered after looking at the dashboard. While this facet of the dashboard process may be difficult to study formally, it would be an interesting avenue for investigation.
+
 \hypertarget{conclusions}{%
 \section{Conclusions}\label{conclusions}}
+
+In this paper, we have documented the process of designing a dashboard for exploration and visualization of a large and complex data set assembled from many different sources. Our primary audience was leaders of small towns in Iowa, with a secondary audience of researchers in fields other than statistics collaborating on this project with us. Through the process of revising our dashboard, we found that the idea of guided discovery learning as implemented in our first version did not work as well as we had anticipated. It was more important to focus on allowing users to explore their questions about the dataset by facilitating user-driven comparisons and exploration, rather than attempting to anticipate user desires by providing comparison towns. In addition, we found that it would be more effective to draw users in with novel visual displays, as these seemed to attract more interest than providing known facts and an opportunity to explore outwards from an initial area of familiarity.
+
+While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.
 
 \hypertarget{math-sci}{%
 \chapter{Chapter 2 Stuff}\label{math-sci}}
 
-Placeholder
+\hypertarget{chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue}{%
+\chapter{Chapter Paper on Rural Shrink Smart Manuscriptsubmitted to Journal of Data Science Special Issue}\label{chapter-paper-on-rural-shrink-smart-manuscriptsubmitted-to-journal-of-data-science-special-issue}}
 
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
 
+As the amount of data has increased in nearly every facet of life, the need to make sense of that data in an approachable, accessible form has become ever more important.
+As a result, many companies and organizations use interactive dashboards to present these data in a more useful and visually appealing form (Sarikaya et al., 2019).
+In many cases, dashboards support viewers' information processing, helping to make sense of complex data, navigate through a dataset, and supporting decision making based on the data.
+
+Dashboards are often used, as with the car display of the same name, to provide summary information about many separate attributes of a common entity. One glance at a car's dashboard will tell you the speed, RPM, engine temperature, amount of gas in the tank; more importantly, however, the goal is not for the user to remember all of these characteristics, but to assess whether any of these quantities is outside of the expected range.
+Similarly, interactive dashboards for data are often used to display many different attributes and performance metrics which are of importance for stakeholders.
+
+In this paper, we discuss the process of designing a dashboard to present publicly available government data to stakeholders in small Iowa towns to facilitate decision making and objective comparison with other similarly-situated towns.
+
+Some communities continue to thrive as they lose population because they adapt, maintaining quality of life and community services for residents while investing in the future. This process, \emph{smart shrinkage}, is important for rural areas who have experienced shrinking populations for decades. As small rural towns, defined in the Iowa Small Town Poll as towns with between 500 and 10,000 people in the 1990 census (David J. Peters, Hamideh, Zarecor, \& Ghandour, 2018), do not have access to data scientists or even the ability to easily leverage data collected locally to support decisions, our research team will provide communities with data about services in small town Iowa in order to assist with developing strategies to improve quality of life for their residents amid shrinking populations (Rural Shrink Smart Team, 2022). We hope to allow towns to explore their own data and compare to other similar towns, centering decision-making on data in the context of small-town Iowa life.
+
+\section{Data Description}
+
+The Smart and Connected Community (SCC) dashboard data are primarily assembled from \url{data.iowa.gov} (State of Iowa, 2020), with some additional datasets assembled from federal and private sources. Most of these data sets are collected at a town/city or county spatial resolution, requiring us to carefully join data to ensure that these differences are respected while collating relevant information at the city level. In addition to the more commonly available statistics derived from e.g.~the census and American Community Survey, \url{data.iowa.gov} contains several unique data sets, including local liquor sales, school building locations, town budgets and expenditures, hospital beds, Medicaid reimbursements, and other details that may provide information about local quality of life.
+
+Data available on Iowa's data portal were augmented in some cases with higher-quality data sets in cases where the Iowa data were out of date or insufficiently accurate.
+Data collected from ELSI (National Center for Education Statistics, 2020) from \url{https://nces.ed.gov} were used to show the distance to any private or public school. The National Center for Education Statistics (NCES) is the primary federal entity for collecting and analyzing data related to education (Zarecor et al., 2021).
+
+Data collected from the Index of Relative Rurality (IRR) (USDA - ERS, 2020a) were used in the SCC dashboard to help classify the towns. The IRR is a continuous, threshold-free, and unit-free measure of rurality. It is an alternative to the traditional discrete threshold-based classifications.The IRR ranges between 0 (low level of rurality, i.e., urban) and 1 (most rural). Four steps are involved in its design:
+
+\begin{enumerate}
+\item Identifying the dimensions of rurality: population size, density, remoteness, and built-up area.
+\item Selecting measurable variables to adequately represent each dimension:
+    \begin{itemize}
+        \item Size: logarithm of population size
+        \item Density: logarithm of population density.
+        \item Remoteness: network distance.
+        \item Built-up area: urban area (as defined by the US Census Bureau) as a percentage of total land area.
+    \end{itemize}
+\item Re-scaling the variables onto bounded scales that range from 0 to 1.
+\item Selecting a link function: unweighted average of the four re-scaled variable.
+\end{enumerate}
+
+Data collected from Rural Urban Commuting Area Codes (USDA - ERS, 2020b) were used to help identify towns with commuting behaviors in our rural areas. The rural-urban commuting area (RUCA) codes classify U.S. census tracts using measures of population density, urbanization, and daily commuting. This data is on a zip code-level that will help identify those communities that commute to more urban areas. The most recent RUCA codes are based on data from the 2010 decennial census and the 2006-10 American Community Survey. The classification contains two levels. Whole numbers (1-10) delineate metropolitan, micropolitan, small town, and rural commuting areas based on the size and direction of the primary (largest) commuting flows.
+
+One of the interesting features of this assembled data set is that missing data can be missing for multiple reasons: not all state data is complete, but data about certain services may also be missing because towns do not offer that service.
+Thus, in addition to the usual challenges of working with real-world data that is ``messy'' in a variety of ways, we also have to contend with missing data that is missing due to the size of the community or the lack of services. This makes both visualization and statistical analysis more complicated (and more interesting).
+
 \hypertarget{dashboard-design-considerations-1}{%
 \section{Dashboard Design Considerations}\label{dashboard-design-considerations-1}}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{figure/KeyMetrics.png}
+\caption{Diagram of considerations for our dashboard design process.}\label{fig:metrics}
+\end{figure}
+
+One problem we identified early in the process of assessing smart-shrinkage strategies in small towns is that these towns do not have the resources to make data-driven decisions. Typically, small towns in Iowa are managed by at most a few part-time employees or volunteers. In some cases, essential management functions of the town are paid, but the municipalities we are interested in do not have sufficient funding to hire professionals to gather and analyze data.
+
+As part of a wider project investigating the strategies towns use to maintain quality of life amid shrinking population, our research team provides communities with data about their own town, but also comparable towns across the state which may have a different approach to city services. In combination with other engagement strategies that are more qualitative, we hope to use this interactive dashboard approach to assist small Iowa cities with generalizing and developing strategies to improve or maintain quality of life amid shrinking populations.
+
+One factor at the forefront of our visualization design is the importance of reducing the cognitive demands on viewers: we have assembled an incredible amount of data, and it is easy for even statisticians who deal with much larger datasets to get lost in the details of this data. At the same time, we want to invite viewers to engage with the data - to imagine, to draw comparisons, to generalize across towns, and to integrate outside information into the conclusions drawn based on the data we present.
+This invitation to engage with the data is similar to the approach advocated in Guided Discovery Learning, a framework that leverages hints, feedback, and other helpful information to guide users in interactive exploration (DeDonno, 2016).
+
+We expect that users will be interested in ``sets'' of variables from the wider dataset, which we assembled based on quality of life factors in the Iowa Small Town Poll (David J. Peters, 2019). For instance, users might be interested in medical and social services available to residents, such as a local primary care clinic, nursing homes which are within driving distance, and the distance to the nearest emergency room; these factors might be explored separately from variables describing the services provided directly by city government, such as parks and recreation expenditures, snow removal services, and the distance to the closest fire station.
+
+As a consequence of this massively multivariate structure, we very quickly focused on the use of parallel coordinate plots; other alternatives, such as tours (Wickham et al., 2011), require much more sustained attention to interactive plots as well as a deeper understanding of projections in multidimensional space which we cannot assume our users will have. Introduced in the 1880s (d'Ocagne, 1885), parallel coordinate or parallel set plots feature a series of vertical axes representing different variables arranged horizontally, with lines connecting each observation. When representing categorical data, parallel set plots may show ``blocks'' of data instead of individual lines, and are useful for representing conditional relationships between adjacent variables (Bendix et al., 2005); modifications of this design, such as common-angle plots (Hofmann \& Vendettuoli, 2013), address the issues which arise due to line-width illusions VanderPlas \& Hofmann (2015a). Parallel coordinate plots have been generalized to allow for continuous data and additional summaries beyond individual data points, such as densities (Heinrich \& Weiskopf, 2009). In this paper, we use the \texttt{ggpcp} package in R Hofmann, VanderPlas, \& Ge (2022), which leverages the grammar-of-graphics framework introduced in Wickham (2016), allowing us to use not only parallel coordinate plots, but also to overlay other statistical summaries, such as boxplots or violin plots, to provide additional context about the marginal distributions of each variable in addition to allowing for exploration of the multivariate space.
+
+We also anticipate that users will be interested in comparing their town to other, similar towns. We will discuss the different ways that this comparison strategy was implemented in each dashboard in the next section, which describes the evolution of the dashboard over time and accounting for feedback from users and other researchers on the wider project.
+
+One final component of this project is that our dashboard is part of a wider effort to work with towns to understand the different strategies used to maintain resident quality of life amid shrinking populations. Thus, while the town leaders are our primary audience, we also are creating this applet for use in parallel with a team of other researchers: sociologists, economists, city planning specialists, and artists. These researchers opinions and feedback about the dashboard are also useful and important, as they regularly work with town leaders in different capacities and have an understanding of what factors are most important to them and what types of questions these leaders may have when faced with data and unfamiliar statistical visualizations.
+
+Throughout the design process, we will assess our visualizations to determine which strategies for user interface and interactive graphics design are most useful to empower town leaders to make discoveries in publicly available data assembled with a focus on items that impact rural quality of life.
 
 \hypertarget{guiding-design-principles-1}{%
 \subsection{Guiding Design Principles}\label{guiding-design-principles-1}}
 
+Research on dashboard creation and interactive visualization tends to be very task-specific and hard to apply to more generalized settings. That is, it is relatively easy to create a dashboard that works for a particular task, but it is hard to generalize from that process what will work for the next dashboard. With this in mind, we set out to clearly document our intentions at each stage of the design and evaluation process, with the goal of gathering some useful information about general dashboard design from the process of creating this specific dashboard.
+
+Thus, our initial set of dashboard design principles is as follows:
+
+\begin{itemize}
+\item The town leaders are the focus audience; thus, the town itself should be the central focus of the app.
+\item We should facilitate comparisons with other towns in order to allow the user to explore other potential solutions to offering services that enhance resident quality of life.
+\item We will present the user with peer comparisons in order to widen the scope of exploration beyond the initial set of obvious peers in the local region.
+\item We will implement feedback mechanisms that allow us to provide more detailed data and respond to feature requests to improve the dashboard design over time.
+\end{itemize}
+
+As with many dashboards, this project is under continuous development; while it makes for an unsatisfactory conclusion, we do not have a ``final'' dashboard design because the application will continue to evolve. However, we have some useful insights into the process of creating an application designed to invite users to explore a large and complex dataset that we believe to be a useful contribution to work in this area.
+
+\section{ Dashboard Design Process}
+
+\subsection{Dashboard Components }
+
+In this section, we discuss the philosophy behind the basic ``building blocks'' of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy's effectiveness in the conclusion.
+
+The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. The user selects a single town of interest and we add summary variables reflecting QoL metrics such as distance to local schools and city budget. Then, the user can in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006).
+
+Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
+
+When faced with the next component, a parallel coordinate plot (PCP), a novice user will be able to determine two basic components: Visual Object (textual objects and non-textual objects) and Frame (frame of content and frame of visual encoding).
+
+Taken together, the app is a single page; the initial ``solid ground'' which the user explores from consists of maps showing the route from the center of town to necessary services, including the fire department, schools, post offices, and hospitals. In version 2, as shown in \autoref{fig:v2}, the map portion is condensed, and more space is given to value boxes that show vital statistics about the town's Quality of Life (QoL) and financial metrics. This relatively straightforward display is followed by a parallel coordinate plot that allows the user to see similar towns along dimensions such as economic indicators or population size.
+
+\subsection{Initial Draft}
+
+The initial design sketch and implementation are shown in \autoref{fig:v1}.
+
+Users' towns are at the center of our application, and comparisons to other, similar towns are secondary. As it can be extremely difficult to predict which towns are optimal for comparison purposes (similar may involve population, region, economic indicators, sports rivalries, and any number of other variables), we allow users to modify a set of suggested comparison towns to indicate other towns of interest.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figure/Version1.png}
+
+\includegraphics[width=.7\textwidth]{figure/Version2.png}
+\caption{Initial dashboard design sketch (top) and implementation (bottom).}\label{fig:v1}
+\end{figure}
+
+We implemented some suggested town comparisons using unsupervised clustering methods to help our towns make decisions that are informed in comparison to similar towns, for budget size, population size and location. We initially focused on determining the next five to ten similar towns, based on distances to services. This feature became an important diagnostic for our data quality, as it became clear that towns which were grouped with big cities but which did not have a large population were so grouped because of missing data. Unfortunately, this clustering feature was not as useful to the application users, as they came to the dashboard with a pre-existing set of towns to compare to; our suggested comparisons were in the way.
+
+The initial dashboard design featured several responsive maps showing the distance to the nearest hospital, fire department, post office, and school. These maps were ineffective for several reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Town residents already know this information (though it was useful for us as the dashboard designers, because we aren't nearly as familiar with the 900+ small towns in Iowa)
+\item
+  We computed distance from services relative to the center of town - coordinates provided in the data from \url{data.iowa.gov}. Generally speaking, the post office is at the center of town and the fire department is usually very close to the center of town; these two maps were useless. The school and hospital maps were less useless, but still did not provide particularly useful information to people already familiar with the town.
+\item
+  It became clear that it might be more useful to show the comparison towns on a map (relative to the town of interest) so that users could compare geographical ratings for unfamiliar data to familiar data.
+\end{itemize}
+
+In addition, we received feedback on the parallel coordinate plot at the bottom of the app which was surprising: the viewers (in this case, other researchers on the team) were not as intimidated by the parallel coordinate plot as we had expected. They did need some explanation of how to read the plot, and these hints need to be included in the dashboard, but they grasped the fundamental idea of the plot very quickly.
+
+Our conclusion, based on this initial dashboard draft, was that we needed to restructure the application. Our attempt to show familiar information first to ``build up'' to the more unfamiliar structure of a parallel coordinate plot was not effective; there was too much clutter and not enough new information to draw users in.
+
+\subsection{ Redesign }
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{figure/Version3.png}
+
+\includegraphics[width=\textwidth]{figure/Version4.png}
+\caption{A second iteration of the sketched design (top) and the implementation (bottom).}\label{fig:v2}
+\end{figure}
+
+In the initial design, we included a map for each vital service, this initially created a lag for the users' experience. As a result, we cached map directions from OSRM for each service in our database, which drastically reduced the response time for the user. Our initial design did not naturally focus the user's eye on the most important parts of the dashboard; the redesign allowed for a cleaner flow from the top to the bottom.
+
+In addition to the timing due to the map loading slowly, we added the vital statistics at the county level to allow for a more robust understanding of the town and it's surroundings. The rurality index provided a better classification and the USDA sources allowed for the town to understand the impact of the closest major city due to commuting for work and shopping at larger stores not available within the town.
+
+We also modified the parallel coordinate plots in several ways:
+
+\begin{itemize}
+\tightlist
+\item
+  Our x-axis had a large number of variables that we as researchers believed to be the most strongly associated with QoL, grouped into four domains: physical, psychological, social, and environmental. However, there were still too many variables for users to successfully parse. We reduced the number of variables, focusing on variables that had the highest data quality, and we grouped these variables by QoL factor (David J. Peters, 2019).
+\item
+  Originally, parallel coordinate bands were scaled based on the selected comparison towns. This had the effect of truncating the range of variables and over-emphasizing differences between selected towns relative to the overall range of each variable over all towns in our data set. We chose to show all towns in the data set in a very light \(\alpha\) grey color to provide some information about the overall range of each variable. Unfortunately, even with the low-\(\alpha\) value, this increased the visual complexity of the plot and confused users. Future iterations will likely make use of another aesthetic, such as boxplots or violin plots, to show the range of values for all towns, and then use lines only for towns that are selected by the user. This should strike a balance between visual complexity and representing the data accurately.
+\item
+  We noticed that users did not make use of our suggested comparison towns, and so we removed that option in favor of allowing users to enter their own comparison towns directly. Users already had pre-determined towns they wanted to compare to, and our suggestions were just in the way.
+\end{itemize}
+
+While not all of these modifications were well received in our second round of user testing, the changes did incrementally move the dashboard display towards our goal of allowing users to explore the data and engage with it. We continued to be surprised with how well users reacted to the parallel coordinate plots, which we initially thought might be too abstract for users unfamiliar with multivariate data displays, but the ability to compare towns across multiple dimensions and examine the similarities and differences between their approaches to different services seemed to be intuitive for users once they understood that each vertical axis was a different variable.
+
+\section{ Discussion}
+
+Our dashboard design philosophy worked primarily to promote a town-centric approach application with comparisons to other similar towns being secondary. This approach created a way for the user to see their town information at the top of the page and to explore the PCP after reviewing their own town's essential statistics. The PCP in the lower part of the dashboard allowed for the user to see the plot and adjust to the fact that they could add more towns to the plot, providing an opportunity to explore the wider dataset from a base of familiar knowledge.
+
+While we initially framed the design around guided discovery learning, the approach did not seem to suffice for our user base; instead, we found that users were more drawn to the unfamiliar from the start. We will likely leverage this in future iterations by using visual forms such as flower plots to draw the users in; even though these plots are not ideal for numerical display of data, the visual novelty and aesthetic appeal will provide some motivation to continue exploring and thinking about the data.
+
+One factor that we have briefly considered and have seen hints of in our user feedback is that towns may not want to be compared negatively with other towns. While users have very definite ideas about which towns they would like to compare to, we can always mask the town names and move back to comparisons based on town size and other factors (for instance, whether or not a town is the county seat is a factor that is important outside of population). Using this approach, we would label each town as ``Town 1'', ``Town 2'', and so on, which would eliminate some of the fears about negative comparisons, but would also remove some of the novelty of the data dashboard for our users and would prevent users from drawing on their own outside knowledge about each of the comparison towns.
+
+We also recognize that we need to leverage the expertise of others in our research team: we are working with artists, researchers in architecture, economists, and sociologists; these researchers provide outside knowledge that we do not have and may be able to help us create insightful use-cases to showcase the applet and teach towns how to use it. We can also leverage the app to connect users with our research team, providing additional value to those who use the applet and facilitating development of strategies for maintaining QoL amid shrinking populations.
+
+\section{ Future Work }
+
+One avenue we will explore in future iterations of the dashboard is to incorporate other dashboards generated by different groups within this project. This will create a wider field of information to explore: for instance, some of the additional work will focus on the 99 towns featured in the Iowa Small Town Poll; this will allow us to showcase survey-based measures of quality of life alongside the more objective measurements assembled in the dataset discussed in this paper. While at least one tab of this omni-dashboard will still focus on wider EDA and discovery, we hope to incorporate other information as well to provide a more well-rounded data display encompassing most of the facets of this complex project.
+
+We are also mindful of a distinction between ``eye candy'' and purpose-driven data visualization. While we have typically focused on the latter, there is certainly a place in our dashboard for the former as well. ``Eye candy'' visualization is intended to draw the viewer in and motivate them to explore; while these visualizations may not be particularly effective at communicating quantitative information, if they motivate the user to engage with the rest of the dashboard, they still serve a purpose. It is with this mindset that we intend to explore the use of flower plots - the artistic opportunities combined with the display of quantitative information (even in a form that isn't optimal for quantitative comparisons) may be useful to engage viewers before transitioning to more useful data visualizations intended to provide accurate quantitative comparisons.
+
+EDA can be difficult for a variety of groups of people, novice users and experienced researchers. One of the more difficult components of this project has been clearly articulating the purposes of EDA to a diverse group of researchers unfamiliar with the concept. One of the most useful parts of this dashboard iteration process has been as an aid to data discovery: that is, the dashboard motivated us to find additional data sources and incorporate them into the project. Having conversations with other researchers about the EDA process helped to facilitate these conversations, as each discussion seemed to uncover additional data sources that someone remembered after looking at the dashboard. While this facet of the dashboard process may be difficult to study formally, it would be an interesting avenue for investigation.
+
+\section{Conclusions}
+
+In this paper, we have documented the process of designing a dashboard for exploration and visualization of a large and complex data set assembled from many different sources. Our primary audience was leaders of small towns in Iowa, with a secondary audience of researchers in fields other than statistics collaborating on this project with us. Through the process of revising our dashboard, we found that the idea of guided discovery learning as implemented in our first version did not work as well as we had anticipated. It was more important to focus on allowing users to explore their questions about the dataset by facilitating user-driven comparisons and exploration, rather than attempting to anticipate user desires by providing comparison towns. In addition, we found that it would be more effective to draw users in with novel visual displays, as these seemed to attract more interest than providing known facts and an opportunity to explore outwards from an initial area of familiarity.
+
+While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.
+
 \hypertarget{ref-labels}{%
 \chapter{Tables, Graphics, References, and Labels}\label{ref-labels}}
-
-Placeholder
 
 \hypertarget{tables}{%
 \section{Tables}\label{tables}}
 
+By far the easiest way to present tables in your thesis is to store the contents of the table in a CSV or Excel file, then read that file in to your R Markdown document as a data frame. Then you can style the table with the \texttt{kable} function, or functions in the \href{https://cran.r-project.org/web/packages/kableExtra/index.html}{kableExtra} pacakge.
+
+In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in {[}R Markdown Basics{]} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3133}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5060}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1807}}@{}}
+\caption{\label{tab:inher} Correlation of Inheritance Factors for Parents and Child}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Factors
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Correlation between Parents \& Child
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Inherited
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Factors
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Correlation between Parents \& Child
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Inherited
+\end{minipage} \\
+\midrule()
+\endhead
+Education & -0.49 & Yes \\
+Socio-Economic Status & 0.28 & Slight \\
+Income & 0.08 & No \\
+Family Size & 0.18 & Slight \\
+Occupational Prestige & 0.21 & Slight \\
+\bottomrule()
+\end{longtable}
+
+We can also create a link to the table by doing the following: Table \ref{tab:inher}. If you go back to {[}Loading and exploring data{]} and look at the \texttt{kable} table, we can create a reference to this max delays table too: Table \ref{tab:maxdelays}. The addition of the \texttt{(\textbackslash{}\#tab:inher)} option to the end of the table caption allows us to then make a reference to Table \texttt{\textbackslash{}@ref(tab:label)}. Note that this reference could appear anywhere throughout the document after the table has appeared.
+
+\clearpage
+
 \hypertarget{figures}{%
 \section{Figures}\label{figures}}
+
+If your thesis has a lot of figures, \emph{R Markdown} might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier. If you label your figures, you can move the figures around and \emph{R Markdown} will automatically adjust the numbering for you. No need for you to remember! So that you don't have to get too far into LaTeX to do this, a couple \textbf{R} functions have been created for you to assist. You'll see their use below.
+
+In the \textbf{R} chunk below, we will load in a picture stored as \texttt{uw.png} in our main directory. We then give it the caption of ``UW logo'', the label of ``uwlogo'', and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{include\_graphics}\NormalTok{(}\AttributeTok{path =} \StringTok{"figure/unl.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figure/unl} \caption{logo}\label{fig:uwlogo}
+\end{figure}
+
+Here is a reference to the UW logo: Figure \ref{fig:uwlogo}. Note the use of the \texttt{fig:} code here. By naming the \textbf{R} chunk that contains the figure, we can then reference that figure later as done in the first sentence here. We can also specify the caption for the figure via the R chunk option \texttt{fig.cap}.
+
+\clearpage
+
+Below we will investigate how to save the output of an \textbf{R} plot and label it in a way similar to that done above. Recall the \texttt{flights} dataset from Chapter \ref{rmd-basics}. (Note that we've shown a different way to reference a section or chapter here.) We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014. Note also the use of the \texttt{scale} parameter which is discussed on the next page.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(nycflights13)}
+\FunctionTok{data}\NormalTok{(flights)}
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{group\_by}\NormalTok{(carrier) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarize}\NormalTok{(}\AttributeTok{mean\_dep\_delay =} \FunctionTok{mean}\NormalTok{(dep\_delay)) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ carrier, }\AttributeTok{y =}\NormalTok{ mean\_dep\_delay)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{,}
+        \AttributeTok{fill =} \StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 15 rows containing missing values
+## (`geom_bar()`).
+\end{verbatim}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{thesis_files/figure-latex/delaysboxplot-1} \caption{Mean Delays by Airline}\label{fig:delaysboxplot}
+\end{figure}
+
+Here is a reference to this image: Figure \ref{fig:delaysboxplot}.
+
+A table linking these carrier codes to airline names is available at \url{https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv}.
+
+\clearpage
+
+Next, we will explore the use of the \texttt{out.extra} chunk option, which can be used to shrink or expand an image loaded from a file by specifying \texttt{"scale=\ "}. Here we use the mathematical graph stored in the ``subdivision.pdf'' file.
+
+\begin{figure}
+\includegraphics[width=\linewidth,scale=0.75]{figure/subdivision} \caption{Subdiv. graph}\label{fig:subd}
+\end{figure}
+
+Here is a reference to this image: Figure \ref{fig:subd}. Note that \texttt{echo=FALSE} is specified so that the \textbf{R} code is hidden in the document.
+
+\textbf{More Figure Stuff}
+
+Lastly, we will explore how to rotate and enlarge figures using the \texttt{out.extra} chunk option. (Currently this only works in the PDF version of the book.)
+
+\begin{figure}
+\includegraphics[width=\linewidth,angle=180, scale=1.1]{figure/subdivision} \caption{A Larger Figure, Flipped Upside Down}\label{fig:subd2}
+\end{figure}
+
+As another example, here is a reference: Figure \ref{fig:subd2}.
 
 \hypertarget{footnotes-and-endnotes}{%
 \section{Footnotes and Endnotes}\label{footnotes-and-endnotes}}
 
+You might want to footnote something. \footnote{footnote text} The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way.
+
 \hypertarget{cross-referencing-chapters-and-sections}{%
 \section{Cross-referencing chapters and sections}\label{cross-referencing-chapters-and-sections}}
+
+The \href{https://bookdown.org/yihui/bookdown/cross-references.html}{bookdown documentation} is an excellent source for learning how to cross-reference in a bookdown project such as a huskydown document. Here we only cover the most common uses for a typical thesis. If you want something more complex or fancy, please refer to the bookdown documentation and seek help from the developers of that package.
+
+By default, all of your chapter and section headers will get an auto-generated ID label For example, e.g., \texttt{\#\ Chapter\ 1} will have an auto-generated ID \texttt{chapter-1}. Note that the ID label is all lower case, and has no spaces. If you have any kind of punctuation in your header, such as a colon (:), it will not appear in the ID label. Then in your text you can reference chapter one in your Rmd file like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(chapter-1)}', which will print as `as discussed in Chapter 1'
+
+We strongly recommend that you to manually assign ID labels to your chapter header to make it easy to cross-reference. For example, at the top of the Rmd file for this chapter, you can see:
+
+\texttt{\#\ Tables,\ Graphics,\ References,\ and\ Labels\ \{\#ref-labels\}}
+
+The \texttt{\{\#ref-labels\}} part of this header is the ID label. It doesn't show in the output, but is there for us to use for easy cross-referencing, because it can be short, and we don't need to change it elsewhere our document when we update the chapter header. We can use this custom ID label in our Rmd document like this: `as discussed in Chapter \texttt{\textbackslash{}@ref(ref-labels)}', which will print as `as discussed in Chapter \ref{ref-labels}'. If you need to show custom text instead of the chapter number, you use this syntax in your Rmd document: \texttt{see\ {[}my\ chapter\ about\ labels{]}(\#ref-labels)\ for\ more\ details} which will appear as `see \protect\hyperlink{ref-labels}{my chapter about labels} for more details'
+
+To cross-reference a specific section in the same chapter, we recommend adding a custom ID label to the section header, and using that to cross-reference. For example, earlier in this chapter we have a section on tables and in the Rmd file we see \texttt{\#\#\ Tables\ \{\#tables\}}. We can cross-reference that in the text like this `as discussed in the section on \texttt{{[}tables{]}(\#tables)}' which will appear as `as discussed in the above section on \protect\hyperlink{tables}{tables}'
+
+To cross-reference a section in a different chapter we can use the ID label from that section directly. For example, we can write in our Rmd document \texttt{as\ discussed\ in\ the\ section\ on\ {[}R\ code\ chunks{]}(\#r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)} which will appear as `as discussed in the section on \protect\hyperlink{r-chunks}{R code chunks} in Chapter \ref{rmd-basics}'.
+
+If you prefer to cross-reference by the section number, we can use custom ID labels in our Rmd document. For example, to refer to a section in our first chapter, we can write in the Rmd document: \texttt{as\ discussed\ in\ section\ \textbackslash{}@ref(r-chunks)\ in\ Chapter\ \textbackslash{}@ref(rmd-basics)}. This will appear with section and chapter numbers like so: as `as discussed in section \ref{r-chunks} in Chapter \ref{rmd-basics}'.
 
 \hypertarget{bibliographies}{%
 \section{Bibliographies}\label{bibliographies}}
 
+Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension). In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero. Some Zotero documentation is at \url{http://libguides.reed.edu/citation/zotero}. In addition, a tutorial is available from Middlebury College at \url{http://sites.middlebury.edu/zoteromiddlebury/}.
+
+\emph{R Markdown} uses \emph{pandoc} (\url{http://pandoc.org/}) to build its bibliographies. One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the ``at'' symbol. For example, here's a reference to a book about worrying: (Molina \& Borkovec, 1994). This \texttt{Molina1994} entry appears in a file called \texttt{thesis.bib} in the \texttt{bib} folder. This bibliography database file was created by a program called BibTeX. You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the \texttt{bib} folder.
+
+For more information about BibTeX and bibliographies, see (\url{http://web.reed.edu/cis/help/latex/index.html})\footnote{Reed~College (2007)}. There are three pages on this topic: \emph{bibtex} (which talks about using BibTeX, at \url{http://web.reed.edu/cis/help/latex/bibtex.html}), \emph{bibtexstyles} (about how to find and use the bibliography style that best suits your needs, at \url{http://web.reed.edu/cis/help/latex/bibtexstyles.html}) and \emph{bibman} (which covers how to make and maintain a bibliography by hand, without BibTeX, at \url{http://web.reed.edu/cis/help/latex/bibman.html}). The last page will not be useful unless you have only a few sources.
+
+If you look at the YAML header at the top of the main .Rmd file you can see that we can specify the style of the bibliography by referencing the appropriate csl file. You can download a variety of different style files at \url{https://www.zotero.org/styles}. Make sure to download the file into the csl folder.
+
+\textbf{Tips for Bibliographies}
+
+\begin{itemize}
+\tightlist
+\item
+  Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better.
+\item
+  The cite key (a citation's label) needs to be unique from the other entries.
+\item
+  When you have more than one author or editor, you need to separate each author's name by the word ``and'' e.g.~\texttt{Author\ =\ \{Noble,\ Sam\ and\ Youngberg,\ Jessica\},}.
+\item
+  Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
+\item
+  To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
+\end{itemize}
+
 \hypertarget{anything-else}{%
 \section{Anything else?}\label{anything-else}}
+
+If you'd like to see examples of other things in this template, please \href{https://github.com/benmarwick/huskydown/issues/new}{contact us} (email \href{mailto:bmarwick@uw.edu}{\nolinkurl{bmarwick@uw.edu}}) with your suggestions. We love to see people using \emph{R Markdown} for their theses, and are happy to help.
 
 \hypertarget{conclusion-1}{%
 \chapter*{Conclusion}\label{conclusion-1}}
@@ -1290,6 +1782,7 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \FunctionTok{library}\NormalTok{(scales)}
 \FunctionTok{library}\NormalTok{(datasets)}
 \FunctionTok{data}\NormalTok{(}\StringTok{"ChickWeight"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(formatR)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1310,166 +1803,352 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-03-01 12:43:16. The repository is currently at this commit:
+This version of the thesis was generated on 2023-04-04 15:07:50. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
 \begin{verbatim}
-## - Session info ---------------------------------------------------------------
+## - Session info -------------------------------------------
 ##  setting  value
-##  version  R version 4.1.0 (2021-05-18)
-##  os       macOS Big Sur 10.16
+##  version  R version 4.2.2 (2022-10-31)
+##  os       macOS Ventura 13.3
 ##  system   x86_64, darwin17.0
-##  ui       X11
+##  ui       RStudio
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-03-01
-##  pandoc   2.11.4 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
+##  date     2023-04-04
+##  rstudio  2023.03.0+386 Cherry Blossom (desktop)
+##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
-## - Packages -------------------------------------------------------------------
+## - Packages -----------------------------------------------
 ##  package        * version date (UTC) lib source
-##  assertthat       0.2.1   2019-03-21 [2] CRAN (R 4.1.0)
-##  backports        1.4.1   2021-12-13 [1] CRAN (R 4.1.0)
-##  bookdown         0.29.1  2022-09-18 [1] Github (rstudio/bookdown@4890be2)
-##  broom            0.8.0   2022-04-13 [2] CRAN (R 4.1.2)
-##  cachem           1.0.6   2021-08-19 [1] CRAN (R 4.1.0)
-##  callr            3.7.0   2021-04-20 [2] CRAN (R 4.1.0)
-##  cellranger       1.1.0   2016-07-27 [2] CRAN (R 4.1.0)
-##  cli              3.4.1   2022-09-23 [1] CRAN (R 4.1.2)
-##  colorspace       2.0-3   2022-02-21 [1] CRAN (R 4.1.2)
-##  crayon           1.5.2   2022-09-29 [1] CRAN (R 4.1.2)
-##  DBI              1.1.2   2021-12-20 [1] CRAN (R 4.1.0)
-##  dbplyr           2.1.1   2021-04-06 [2] CRAN (R 4.1.0)
-##  devtools         2.4.4   2022-07-20 [1] CRAN (R 4.1.2)
-##  digest           0.6.30  2022-10-18 [1] CRAN (R 4.1.2)
-##  dplyr          * 1.0.10  2022-09-01 [1] CRAN (R 4.1.2)
-##  ellipsis         0.3.2   2021-04-29 [2] CRAN (R 4.1.0)
-##  evaluate         0.18    2022-11-07 [1] CRAN (R 4.1.2)
-##  fansi            1.0.3   2022-03-24 [1] CRAN (R 4.1.2)
-##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.1.2)
-##  fastmap          1.1.0   2021-01-25 [2] CRAN (R 4.1.0)
-##  forcats        * 0.5.1   2021-01-27 [1] CRAN (R 4.1.0)
-##  fs               1.5.2   2021-12-08 [1] CRAN (R 4.1.0)
-##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.1.2)
-##  ggpcp          * 0.2.0   2022-03-22 [1] Github (heike/ggpcp@8c02618)
-##  ggplot2        * 3.3.6   2022-05-03 [2] CRAN (R 4.1.2)
-##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
-##  gtable           0.3.0   2019-03-25 [2] CRAN (R 4.1.0)
-##  haven            2.5.0   2022-04-15 [2] CRAN (R 4.1.2)
-##  hms              1.1.1   2021-09-26 [1] CRAN (R 4.1.0)
-##  htmltools        0.5.3   2022-07-18 [1] CRAN (R 4.1.2)
-##  htmlwidgets      1.5.4   2021-09-08 [1] CRAN (R 4.1.0)
-##  httpuv           1.6.6   2022-09-08 [1] CRAN (R 4.1.2)
-##  httr             1.4.3   2022-05-04 [1] CRAN (R 4.1.2)
-##  jsonlite         1.8.3   2022-10-21 [1] CRAN (R 4.1.2)
-##  knitr          * 1.41    2022-11-18 [1] CRAN (R 4.1.2)
-##  labeling         0.4.2   2020-10-20 [2] CRAN (R 4.1.0)
-##  later            1.3.0   2021-08-18 [1] CRAN (R 4.1.0)
-##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.1.2)
-##  lubridate        1.8.0   2021-10-07 [1] CRAN (R 4.1.0)
-##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.1.2)
-##  memoise          2.0.1   2021-11-26 [1] CRAN (R 4.1.0)
-##  mime             0.12    2021-09-28 [1] CRAN (R 4.1.0)
-##  miniUI           0.1.1.1 2018-05-18 [1] CRAN (R 4.1.0)
-##  modelr           0.1.8   2020-05-19 [2] CRAN (R 4.1.0)
-##  munsell          0.5.0   2018-06-12 [2] CRAN (R 4.1.0)
-##  nycflights13   * 1.0.2   2021-04-12 [1] CRAN (R 4.1.0)
-##  palmerpenguins * 0.1.0   2020-07-23 [1] CRAN (R 4.1.0)
-##  pillar           1.8.1   2022-08-19 [1] CRAN (R 4.1.2)
-##  pkgbuild         1.3.1   2021-12-20 [1] CRAN (R 4.1.0)
-##  pkgconfig        2.0.3   2019-09-22 [2] CRAN (R 4.1.0)
-##  pkgload          1.3.0   2022-06-27 [1] CRAN (R 4.1.2)
-##  prettyunits      1.1.1   2020-01-24 [2] CRAN (R 4.1.0)
-##  processx         3.5.3   2022-03-25 [2] CRAN (R 4.1.2)
-##  profvis          0.3.7   2020-11-02 [1] CRAN (R 4.1.0)
-##  promises         1.2.0.1 2021-02-11 [1] CRAN (R 4.1.0)
-##  ps               1.7.0   2022-04-23 [2] CRAN (R 4.1.2)
-##  purrr          * 0.3.5   2022-10-06 [1] CRAN (R 4.1.2)
-##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.1.0)
-##  RColorBrewer     1.1-3   2022-04-03 [1] CRAN (R 4.1.2)
-##  Rcpp             1.0.9   2022-07-08 [1] CRAN (R 4.1.2)
-##  readr          * 2.1.2   2022-01-30 [1] CRAN (R 4.1.2)
-##  readxl           1.4.0   2022-03-28 [2] CRAN (R 4.1.2)
-##  remotes          2.4.2   2021-11-30 [1] CRAN (R 4.1.0)
-##  reprex           2.0.1   2021-08-05 [2] CRAN (R 4.1.0)
-##  rlang            1.0.6   2022-09-24 [1] CRAN (R 4.1.2)
-##  rmarkdown        2.16    2022-08-24 [1] CRAN (R 4.1.2)
-##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.1.2)
-##  rvest            1.0.2   2021-10-16 [1] CRAN (R 4.1.0)
-##  scales         * 1.2.0   2022-04-13 [2] CRAN (R 4.1.2)
-##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.1.0)
-##  shiny            1.7.3   2022-10-25 [1] CRAN (R 4.1.2)
-##  stringi          1.7.8   2022-07-11 [1] CRAN (R 4.1.0)
-##  stringr        * 1.4.1   2022-08-20 [1] CRAN (R 4.1.2)
-##  tibble         * 3.1.8   2022-07-22 [1] CRAN (R 4.1.2)
-##  tidyr          * 1.2.0   2022-02-01 [1] CRAN (R 4.1.2)
-##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.1.2)
-##  tidyverse      * 1.3.1   2021-04-15 [2] CRAN (R 4.1.0)
-##  tzdb             0.3.0   2022-03-28 [1] CRAN (R 4.1.0)
-##  urlchecker       1.0.1   2021-11-30 [1] CRAN (R 4.1.0)
-##  usethis          2.1.6   2022-05-25 [1] CRAN (R 4.1.2)
-##  utf8             1.2.2   2021-07-24 [2] CRAN (R 4.1.0)
-##  vctrs            0.5.1   2022-11-16 [1] CRAN (R 4.1.2)
-##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
-##  xfun             0.35    2022-11-16 [1] CRAN (R 4.1.2)
-##  xml2             1.3.3   2021-11-30 [1] CRAN (R 4.1.0)
-##  xtable           1.8-4   2019-04-21 [2] CRAN (R 4.1.0)
-##  yaml             2.3.6   2022-10-18 [1] CRAN (R 4.1.2)
+##  assertthat       0.2.1   2019-03-21 [1] CRAN (R 4.2.0)
+##  bookdown         0.33    2023-03-06 [1] CRAN (R 4.2.0)
+##  cachem           1.0.7   2023-02-24 [1] CRAN (R 4.2.0)
+##  callr            3.7.3   2022-11-02 [1] CRAN (R 4.2.0)
+##  cli              3.6.0   2023-01-09 [1] CRAN (R 4.2.0)
+##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.2.0)
+##  crayon           1.5.2   2022-09-29 [1] CRAN (R 4.2.0)
+##  devtools         2.4.5   2022-10-11 [1] CRAN (R 4.2.0)
+##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.2.0)
+##  dplyr          * 1.1.1   2023-03-22 [1] CRAN (R 4.2.0)
+##  ellipsis         0.3.2   2021-04-29 [1] CRAN (R 4.2.0)
+##  evaluate         0.20    2023-01-17 [1] CRAN (R 4.2.0)
+##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.2.0)
+##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.2.0)
+##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.2.0)
+##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.2.0)
+##  formatR        * 1.14    2023-01-17 [1] CRAN (R 4.2.0)
+##  fs               1.6.1   2023-02-06 [1] CRAN (R 4.2.0)
+##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.2.0)
+##  ggpcp          * 0.2.0   2022-11-28 [1] CRAN (R 4.2.0)
+##  ggplot2        * 3.4.1   2023-02-10 [1] CRAN (R 4.2.0)
+##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
+##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.2.0)
+##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.2.0)
+##  htmltools        0.5.4   2022-12-07 [1] CRAN (R 4.2.0)
+##  htmlwidgets      1.6.2   2023-03-17 [1] CRAN (R 4.2.0)
+##  httpuv           1.6.9   2023-02-14 [1] CRAN (R 4.2.0)
+##  knitr          * 1.42    2023-01-25 [1] CRAN (R 4.2.0)
+##  labeling         0.4.2   2020-10-20 [1] CRAN (R 4.2.0)
+##  later            1.3.0   2021-08-18 [1] CRAN (R 4.2.0)
+##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.2.0)
+##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.2.0)
+##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
+##  memoise          2.0.1   2021-11-26 [1] CRAN (R 4.2.0)
+##  mime             0.12    2021-09-28 [1] CRAN (R 4.2.0)
+##  miniUI           0.1.1.1 2018-05-18 [1] CRAN (R 4.2.0)
+##  munsell          0.5.0   2018-06-12 [1] CRAN (R 4.2.0)
+##  nycflights13   * 1.0.2   2021-04-12 [1] CRAN (R 4.2.0)
+##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.2.0)
+##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.2.2)
+##  pkgbuild         1.4.0   2022-11-27 [1] CRAN (R 4.2.0)
+##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.2.0)
+##  pkgload          1.3.2   2022-11-16 [1] CRAN (R 4.2.0)
+##  prettyunits      1.1.1   2020-01-24 [1] CRAN (R 4.2.0)
+##  processx         3.8.0   2022-10-26 [1] CRAN (R 4.2.0)
+##  profvis          0.3.7   2020-11-02 [1] CRAN (R 4.2.0)
+##  promises         1.2.0.1 2021-02-11 [1] CRAN (R 4.2.0)
+##  ps               1.7.4   2023-04-02 [1] CRAN (R 4.2.0)
+##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.2.0)
+##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.2.0)
+##  RColorBrewer     1.1-3   2022-04-03 [1] CRAN (R 4.2.0)
+##  Rcpp             1.0.10  2023-01-22 [1] CRAN (R 4.2.0)
+##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.2.0)
+##  remotes          2.4.2   2021-11-30 [1] CRAN (R 4.2.0)
+##  rlang            1.1.0   2023-03-14 [1] CRAN (R 4.2.0)
+##  rmarkdown        2.20    2023-01-19 [1] CRAN (R 4.2.2)
+##  rsconnect        0.8.29  2023-01-09 [1] CRAN (R 4.2.0)
+##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.2.0)
+##  scales         * 1.2.1   2022-08-20 [1] CRAN (R 4.2.0)
+##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
+##  shiny            1.7.4   2022-12-15 [1] CRAN (R 4.2.0)
+##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.2.0)
+##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.2.0)
+##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.2.0)
+##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.2.0)
+##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.2.0)
+##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.2.0)
+##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.2.0)
+##  tzdb             0.3.0   2022-03-28 [1] CRAN (R 4.2.0)
+##  urlchecker       1.0.1   2021-11-30 [1] CRAN (R 4.2.0)
+##  usethis          2.1.6   2022-05-25 [1] CRAN (R 4.2.0)
+##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.2.0)
+##  vctrs            0.6.1   2023-03-22 [1] CRAN (R 4.2.0)
+##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.2.0)
+##  xfun             0.37    2023-01-31 [1] CRAN (R 4.2.0)
+##  xtable           1.8-4   2019-04-21 [1] CRAN (R 4.2.0)
+##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.2.0)
 ## 
-##  [1] /Users/dbradford4/Library/R/x86_64/4.1/library
-##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.2/Resources/library
 ## 
-## ------------------------------------------------------------------------------
+## ----------------------------------------------------------
 \end{verbatim}
+
+\backmatter
 
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
 
-Placeholder
+\noindent
+
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+\db{In general, density plots represent the distribution of continuous variables, while categorical plots represent the distribution of categorical or discrete variables.
+The interpretation of density plots typically involves understanding the shape of the distribution and the presence of any outliers or skewness. 
+On the other hand, categorical plots aim to show the frequency or count of observations in each category.}
+
+\db{When comparing density plots and categorical plots, it's essential to consider the data analysis type. 
+For continuous data, a density plot may provide a more informative representation of the distribution. 
+A categorical plot may provide a more intuitive representation of the distribution of categorical data.}
+
+\db{However, for various reasons, some people may prefer one type of plot over the other. 
+For example, some may find density plots more visually appealing, while others may prefer categorical plots for their simplicity and ease of interpretation. 
+Ultimately, the choice between the two types of plots will depend on the context and purpose of the analysis and the preferences of the individual interpreting the data.}
+
+\db{Do we comprehend why we utilize the graphics we do? 
+Is there a reason we adopt the perception of a previously used graphic? 
+How do we determine whether there are superior graphical representations when the human brain has determined that this is what I comprehend? 
+How do we develop statistical methodologies based on effective testing of statistical graphics on human perceptions of excellent and good? 
+How do we determine the line distinguishing a density plot from a categorical plot? 
+Consequently, how is this decision made outside of academia and research? 
+In one way, research has been conducted on the visual or human perception of categorical plots.}
+
+\db{In addition to graphical elements alongside numerical values and plots such as Parallel Coordinate Plots (PCPs). 
+We wish to discuss and analyze the exploration of using didn't report plots or categorical plots as density plots in the field. 
+We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's whites. 
+It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting. 
+This is the application of research to practice.}
+
+\db{What may be considered an exciting thought process in research that is less practical or useful in the field? 
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
+As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
+We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application. 
+Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field. 
+We're speaking about the same data being represented. 
+However, most of the data is then categorized. 
+Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend? 
+Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology?}
+
+\db{Subject matter graphics are visual representations of information and data that help communicate complex concepts, ideas, and information to audiences.
+This expertise is related to knowledge of the topic or subject being presented in the graphic.
+A subject matter expert is someone who has a deep understanding of how people perceive and interpret visual information. 
+Subject matter experts (SMEs) have deep knowledge and experience in a specific field, such as science, finance, or medicine. 
+SMEs provide the necessary information and insights to form the graphic's basis. 
+They ensure that the content presented is accurate, relevant, and informative. 
+They use their human perception and cognition knowledge to design graphics that effectively communicate information to the intended audience. 
+Perception experts in graphics consider a range of factors, including color, shape, size, texture, and spatial relationships, to create graphics that are visually appealing and easy to understand.}
+
+\db{Perception experts in graphics may use different theories and principles to inform their design decisions. 
+For example, they may use Gestalt principles to create visually harmonious and organized graphics. 
+They may also use the principles of visual hierarchy to guide the audience's attention to the essential information in the graphic.}
+
+\db{Perception experts in graphics may also conduct user research to understand how different audiences perceive and interpret visual information. 
+They may use eye-tracking and user testing techniques to evaluate the effectiveness of different graphic designs.}
+
+\db{A perception expert plays a crucial role in designing graphics that effectively communicate information to the intended audience. 
+Their knowledge of human perception and cognition, as well as their expertise in graphic design, allows them to create visually appealing and easily understood graphics.}
+
+Mallows and Walley list psychology as one of four areas likely to support a theory of analysis Mallows \& Walley (1980).
+Data analyses rely on the mind's ability to learn, analyze, and understand.
+
+Visual inference uses our ability to detect graphical anomalies.
+However, the idea of formal testing remains the same in visual inference -- with one exception: The test statistic is now a graphical display compared to a ``reference distribution'' of plots showing the null.
+
+Data Scientists and other analytic professionals often use interactive visualization in the dissemination phase at the end of a workflow, during which findings are communicated to a wider audience.
+Digital tools are critical to data science and analytics workflows, and current practice spans the following:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Data Analysis Tools} - R, Pandas and SAS
+\item
+  \emph{Data Warehousing Services} - MySQL, MongoDB, or Amazon Redshift
+\item
+  \emph{Machine Learning Libraries} - scikit-learn o Apache MLlib
+\end{itemize}
+
+A typical process typically consists of the following general stages:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{Discovery}: Formulating an exciting question and determining the data necessary to answer it.
+\item
+  \emph{Acquisition}: Locating, organizing, and preparing data to be accessible to the chosen analysis environment.
+\item
+  \emph{Exploration}: Investigating and analyzing the data set to collect insights and understand the data
+\item
+  \emph{Modeling}: Building fitting and validating a model that can explain the data set and the observed phenomena
+\item
+  \emph{Communication}: Disseminating the results to stakeholders in reports, presentations, and charts.
+\end{enumerate}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-booth2006}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-angel2000}{}}%
+Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
+
+\leavevmode\vadjust pre{\hypertarget{ref-angel2001}{}}%
+Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach with QuickTime}. Boston, MA: Wesley Addison Longman.
+
+\leavevmode\vadjust pre{\hypertarget{ref-angel2002a}{}}%
+Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
+
+\leavevmode\vadjust pre{\hypertarget{ref-aspillaga1996}{}}%
+Aspillaga, M. (1996). Perceptual foundations in the design of visual displays. \emph{Computers in Human Behavior}, \emph{12}(4), 587--600.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Bendix:2005}{}}%
+Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
+
+\leavevmode\vadjust pre{\hypertarget{ref-booth2006}{}}%
 Booth, J. L., \& Siegler, R. S. (2006). Developmental and individual differences in pure numerical estimation. \emph{Developmental Psychology}, \emph{42}(1), 189.
 
-\leavevmode\hypertarget{ref-cleveland1984}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-cleveland1984}{}}%
 Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
 
-\leavevmode\hypertarget{ref-few2009}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-cowan2001}{}}%
+Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. \emph{Behavioral and Brain Sciences}, \emph{24}(1), 87--114.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dOcagne:1885}{}}%
+d'Ocagne, M. (1885). {Coordonnées parallèles et axiales : Méthode de transformation géométrique et procédé nouveau de calcul graphique déduits de la considération des coordonnées parallèles}. \emph{Gauthier-Villars}, 112. Retrieved from \url{https://archive.org/details/coordonnesparal00ocaggoog/page/n10}
+
+\leavevmode\vadjust pre{\hypertarget{ref-sine}{}}%
+Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \emph{20}, 49--55.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dedonno}{}}%
+DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discovery learning of a complex real-world task. \emph{Learning and Individual Differences}, \emph{49}, 11--16.
+
+\leavevmode\vadjust pre{\hypertarget{ref-few}{}}%
+Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
+
+\leavevmode\vadjust pre{\hypertarget{ref-few2009}{}}%
 Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quantitative analysis}. Analytics Press.
 
-\leavevmode\hypertarget{ref-huang2006}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-density-pcp}{}}%
+Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{15}(6), 1531--1538. http://doi.org/\href{https://doi.org/10.1109/TVCG.2009.131}{10.1109/TVCG.2009.131}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ggpcp}{}}%
+Hofmann, H., VanderPlas, S., \& Ge, Y. (2022). \emph{Ggpcp: Parallel coordinate plots in the ggplot2 framework}. Retrieved from \url{https://github.com/heike/ggpcp}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Hofmann:2013}{}}%
+Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
+
+\leavevmode\vadjust pre{\hypertarget{ref-huang2006}{}}%
 Huang, Z., Chen, H., Guo, F., Xu, J. J., Wu, S., \& Chen, W.-H. (2006). Expertise visualization: An implementation and study based on cognitive fit theory. \emph{Decision Support Systems}, \emph{42}(3), 1539--1557.
 
-\leavevmode\hypertarget{ref-odonnell2000}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-lee}{}}%
+Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
+
+\leavevmode\vadjust pre{\hypertarget{ref-luxen-vetter-2011}{}}%
+Luxen, D., \& Vetter, C. (2011). Real-time routing with OpenStreetMap data. In \emph{Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems} (pp. 513--516). New York, NY, USA: ACM. http://doi.org/\href{https://doi.org/10.1145/2093973.2094062}{10.1145/2093973.2094062}
+
+\leavevmode\vadjust pre{\hypertarget{ref-mallows1980}{}}%
+Mallows, C., \& Walley, P. (1980). A theory of data analysis. \emph{Proc. Amer. Statist. Assoc. Bus. Econ. Statist. Sec}, 8--14.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Molina1994}{}}%
+Molina, S. T., \& Borkovec, T. D. (1994). The {P}enn {S}tate worry questionnaire: Psychometric properties and associated characteristics. In G. C. L. Davey \& F. Tallis (Eds.), \emph{Worrying: Perspectives on theory, assessment and treatment} (pp. 265--283). New York: Wiley.
+
+\leavevmode\vadjust pre{\hypertarget{ref-elsi}{}}%
+National Center for Education Statistics. (2020). National center for education statistics. \url{https://nces.ed.gov/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-odonnell2000}{}}%
 O'Donnell, E., \& David, J. S. (2000). How information systems influence user decisions: A research framework and literature review. \emph{International Journal of Accounting Information Systems}, \emph{1}(3), 178--203.
 
-\leavevmode\hypertarget{ref-schulz2013}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}}%
+Peters, David J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
+
+\leavevmode\vadjust pre{\hypertarget{ref-peters2018using}{}}%
+Peters, David J., Hamideh, S., Zarecor, K. E., \& Ghandour, M. (2018). Using entrepreneurial social infrastructure to understand smart shrinkage in small towns. \emph{Journal of Rural Studies}, \emph{64}, 39--49.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Rlanguage}{}}%
+R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
+R Core Team. (2022). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-reedweb2007}{}}%
+Reed~College. (2007). LaTeX your document. Retrieved from \url{http://web.reed.edu/cis/help/LaTeX/index.html}
+
+\leavevmode\vadjust pre{\hypertarget{ref-scc}{}}%
+Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksmart.org/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fisher}{}}%
+Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
+
+\leavevmode\vadjust pre{\hypertarget{ref-schulz2013}{}}%
 Schulz, H.-J., Nocke, T., Heitzler, M., \& Schumann, H. (2013). A design space of visualization tasks. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2366--2375.
 
-\leavevmode\hypertarget{ref-simon1996}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-simon1996}{}}%
 Simon, H. A. (1996). The sciences of the artificial 3rd ed. \emph{MIT Press Cambridge}.
 
-\leavevmode\hypertarget{ref-umanath1994}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
+State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-umanath1994}{}}%
 Umanath, N. S., \& Vessey, I. (1994). Multiattribute data presentation and human judgment: A cognitive fit perspective. \emph{Decision Sciences}, \emph{25}(5-6), 795--824.
 
-\leavevmode\hypertarget{ref-vessey1994}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Rural_classification}{}}%
+USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics/rural-economy-population/rural-classifications/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-usda}{}}%
+USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sineillusion}{}}%
+VanderPlas, S., \& Hofmann, H. (2015a). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
+
+\leavevmode\vadjust pre{\hypertarget{ref-vanderplas2015}{}}%
+VanderPlas, S., \& Hofmann, H. (2015b). Signs of the sine illusion---why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190.
+
+\leavevmode\vadjust pre{\hypertarget{ref-vessey1994}{}}%
 Vessey, I. (1994). The effect of information presentation on decision making: A cost-benefit analysis. \emph{Information \& Management}, \emph{27}(2), 103--119.
 
-\leavevmode\hypertarget{ref-vessey1991}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-vessey1991}{}}%
 Vessey, I., \& Galletta, D. (1991). Cognitive fit: An empirical study of information acquisition. \emph{Information Systems Research}, \emph{2}(1), 63--84.
 
-\leavevmode\hypertarget{ref-Ware2004}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ware2004}{}}%
 Ware, C. (2004). \emph{Information visualization: Perception for design}. San Francisco, CA: Morgan Kaufmann Publisher.
 
-\leavevmode\hypertarget{ref-ware2012}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-ware2012}{}}%
 Ware, C. (2012). \emph{Information visualization: Perception for design}. Morgan Kaufmann.
 
-\leavevmode\hypertarget{ref-wickham2012}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-ggplot2}{}}%
+Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed.). Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
+
+\leavevmode\vadjust pre{\hypertarget{ref-tourr}{}}%
+Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for Exploring Multivariate Data with Projections}. \emph{Journal of Statistical Software, Articles}, \emph{40}(2), 1--18. http://doi.org/\href{https://doi.org/10.18637/jss.v040.i02}{10.18637/jss.v040.i02}
+
+\leavevmode\vadjust pre{\hypertarget{ref-wickham2012}{}}%
 Wickham, H., Hofmann, H., Wickham, C., \& Cook, D. (2012). Glyph-maps for visually exploring temporal patterns in climate data and models. \emph{Environmetrics}, \emph{23}(5), 382--393.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zarecor2021rural}{}}%
+Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
 
 \end{CSLReferences}
 

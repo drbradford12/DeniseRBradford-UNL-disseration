@@ -68,4 +68,5 @@ knitr::opts_chunk$set(
   out.width = "\\linewidth", dpi = 300, 
   tidy = T, tidy.opts = list(width.cutoff = 45)
 )
+library(tidyverse)
 ```
