@@ -245,6 +245,45 @@ Ultimately, data analysis aims to turn data into actionable insights and informa
 
 
 ## Data Considerations
+Grammar allow us to separate data type from rendering 
+
+
+<!--### How do we classify graphics? -->
+
+In the field of graphical communication, semiology, or the study of signs and symbols and their use in communication, has been a valuable tool.
+One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) (@Barthes1972). 
+Another essential concept in semiology is the utilization of syntax and semantics to effectively convey meaning in graphic communication. 
+This includes both the syntax and semantics of a graphic's visual elements (@Bertin1983).
+
+The use of color to represent data on maps is an example of successful graphical communication utilizing semiology. 
+By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily. 
+Jacques Bertin (1983) writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points." 
+In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
+
+Graphs are another tool that can be used to effectively communicate information via semiology. 
+By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers. 
+For instance, a line graph can be used to illustrate the change in value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson (@wilkinson2012) writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning."
+
+The application of semiology in graphical communication is not devoid of obstacles. 
+One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (@Bertin1983). 
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (@Norman2013).
+
+Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information. 
+By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
+
+An important contribution made by Friendly has been historical research on statistical graphics. 
+He has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present. 
+In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly (2019) provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey.
+
+Friendly's contributions have significantly advanced the field of statistical graphics. 
+His historical research has yielded significant insights into the origins and evolution of graphical methods, while his development of new techniques has increased the number of data visualization tools available. 
+By emphasizing the role of graphical methods in scientific discovery, Friendly has helped to promote their use in a vast array of disciplines, from the natural sciences to the social sciences and beyond.
+
+<!--### what do we know about "better" graphics for certain tasks? -->
+
+
+
+<!-- ### General guidelines -->
 
 \db{Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. 
 It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. 
