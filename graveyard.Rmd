@@ -414,6 +414,17 @@ This includes testing for navigation, user control, and overall user experience.
 
 \db{It is important to keep in mind that human perception and cognition can vary greatly between individuals and can be influenced by a range of factors, such as age, culture, and personal experience. Testing with a representative sample of your target audience can help ensure that your interactive graphics are optimized for a wide range of users.}
 
+
+\db{EDA refers to methods and procedures for exploring the data space to learn about a data set. 
+By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.}
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexibly and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+\db{Being able to select subgroups of cases, highlight the chosen lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.}
+
 <!-- Chapter ... demonstrates the process of designing and redesigning a dashboard for public use.  -->
 <!-- Chapter ... discusses PCPs and how they are interpreted...  -->
 <!-- Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data. -->

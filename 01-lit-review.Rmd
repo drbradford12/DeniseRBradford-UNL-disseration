@@ -354,8 +354,32 @@ The basic understanding can be formalized to visualize the discovery process.}
 
 <!--### what do we know about "better" graphics for certain tasks? -->
 
-Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations. 
-In this summary, we will examine key strategies for creating better graphics that meet these criteria, based on recent research findings.
+Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations.
+
+Numerical accuracy: In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics. 
+Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (@Cardoso2016).
+
+
+Engagement: Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data. 
+Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.
+
+
+Correct Decision Making: Correct decision making refers to the capacity of data visualization to enable users to make informed and precise decisions based on the presented information. 
+Clear, accurate, and well-designed graphics can help users recognize patterns and insights, resulting in more effective decision making.
+
+
+Correct Predictions: Correct predictions refers to the capability of graphics to accurately forecast or predict future events or outcomes. 
+For accurate predictions, data visualization must include trustworthy data, sound statistical models, and efficient visualization techniques.
+
+
+"Graphical Tests for Power Comparison of Competing Designs" by Hofmann et al. (2012) presents a graphical method for comparing the power of two or more competing designs in an experimental study. The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs. 
+It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
+
+
+Two methods for measuring the particle size distribution in a chemical process were compared in one study. 
+The study evaluated both designs under various operating conditions and compared their power using a graphical method. 
+The results demonstrated that one design was more effective at detecting differences in operating conditions than another.
+
 
 
 \db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
@@ -370,10 +394,7 @@ Vega-Lite has been directly implemented in R via the `ggvis` package using the s
 
 
 
-
 <!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
-
-
 
 <!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
 
@@ -396,10 +417,9 @@ They often display real-time data and can be customized to show the most relevan
 
 
 
-
-
-
 #### Interactive Graphics
+
+\db{Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].}
 
 \db{The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as `d3` [@bostock2011]. 
 Visualizations are more than just a picture. 
@@ -427,7 +447,6 @@ In the context of HCI, the model helps to understand how data is processed, tran
 The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
 By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.}
 
-
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel.png}
 \captionof{figure}{van Wiij Simple Visualization Model}
@@ -450,8 +469,23 @@ Theories behind the manipulation of visualizations include but are not limited t
 \db{As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning. 
 They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization.} <!-- [@boy2014].-->
 
-\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}
+<!--\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}-->
 
+Heer and Bostock (@heer2010) examined how the complexity of interactive visualizations influences the cognitive load of users. 
+The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy. 
+They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
+
+Ko and Kwon (@ko2017) investigated the cognitive load of mobile interactive visualizations. 
+The authors discovered that the limited input options and small screen size of mobile devices can increase cognitive load in interactive visualizations. 
+To reduce cognitive load on mobile devices, they suggested that designers employ suitable visual encoding techniques and simplify interactions.
+
+Nguyen and Gajos (@nguyen2015) investigated the impact of interactive elements on cognitive load in visualizations. 
+Based on the nature of the task and the user's familiarity with the interactive features, the authors discovered that interactive features can both increase and decrease cognitive load. 
+They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations.
+
+These studies suggest that designers should carefully consider the cognitive load implications of interactive graphics and strive, whenever possible, to reduce complexity. 
+Simplifying interactions and implementing suitable visual encoding techniques can reduce cognitive load, especially on mobile devices. 
+In addition, designers should evaluate the cognitive load caused by the interactive features they include in visualizations.
 
 ## Audience-Data Interactions
 
@@ -463,7 +497,7 @@ It can also be used to identify areas of the interface that are confusing or dif
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
 
 
-### Background on static graphics
+### Background Research on testing static graphics
 
 <!-- Brief overview of user studies that compare different types of graphics, accuracy, etc. -->
 
@@ -488,7 +522,7 @@ Furthermore, the use of static graphics enhanced viewers' comprehension and deci
 Overall, these above studies indicate that static graphics are effective at conveying information to viewers, with their effectiveness being influenced by the type of graphic exercised, the use of color, and their capacity to convey uncertainty and variability in data. 
 However, it is important to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the information being presented, and the context in which the graphics are used.
 
-### Background on interactive graphics
+### Background Research on testing interactive graphics
 
 The design space of interactive visualizations, including the use of multiple views and coordinated multiple views, is discussed in a paper by Heer and Bostock @heer2012. 
 The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
@@ -536,18 +570,6 @@ There are many different ways to label and utilize dashboards in different kinds
 \db{Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. 
 Most importantly, dashboards should leverage people's visual cognitive capabilities.}
 
-\db{EDA refers to methods and procedures for exploring the data space to learn about a data set. 
-By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.}
-
-\db{Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].}
-
-- PCPs enable the display of multi-dimensional data in two-dimensional space.
-- There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
-- Interactivity is valuable for reordering the axes flexibly and fast.
-- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
-
-\db{Being able to select subgroups of cases, highlight the chosen lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.}
-
 \db{Cowan suggested that the average person can only hold two to six pieces of information in their attention [@cowan2001]. 
 People can develop detailed understandings of reality, which is infinitely complex.}
 
@@ -574,6 +596,26 @@ They proposes three main archetypes that data scientists may be classed into the
 
 <!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
 
+Combining two effective graphics does not necessarily result in a successful visualization. 
+In certain instances, suboptimal combinations can result in confusion, misinterpretation, and the failure to convey the intended message.
+Combining two charts with distinct scales or units is an example of suboptimal graphic design, which can result in misinterpretation and flawed comparisons. 
+For example, if a bar chart displaying the number of sales is combined with a line chart displaying revenue, meaningful comparisons between the two metrics can be challenging. 
+People frequently make inaccurate judgments when comparing graphs with different scales, according to a study conducted by Cleveland and McGill (@cleveland1984).
+
+Utilizing redundant visual cues or unnecessary embellishments is another example of suboptimal graphics. 
+Although it may be tempting to add extra elements to a chart or graph, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information. 
+Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (@tufte1983).
+
+
+Using multiple color schemes or palettes in the same chart is another instance of suboptimal graphics. 
+While color can be an effective visual communication tool, the use of excessive colors or color schemes can be overwhelming and confusing. 
+This can detract from the primary message and make it challenging for the audience to comprehend the key points. 
+In a study conducted by Heer and Bostock, participants were required to interpret multiple color schemes (@heer2010). 
+Multiple color schemes made it difficult for participants to identify the relationships between different parts of the visualization, according to the study.
+
+Conversely, it can be suboptimal to combine two visually incompatible graphics. 
+For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the incompatibility of the two types of graphics. 
+This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart (@hullman2011).
 
 
 ## Conclusion
