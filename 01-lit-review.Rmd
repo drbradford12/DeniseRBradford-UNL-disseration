@@ -230,7 +230,6 @@ The development of procedural knowledge and automaticity, which allow for more e
 
 
 
-
 ### Engagement with the data
 <!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
 \db{
@@ -246,6 +245,13 @@ Ultimately, data analysis aims to turn data into actionable insights and informa
 
 ## Data Considerations
 Grammar allow us to separate data type from rendering 
+
+\db{Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.}
+
+
+It doesn't help us decide which is better - for that we need user testing.
+
+
 
 
 <!--### How do we classify graphics? -->
@@ -264,150 +270,7 @@ Graphs are another tool that can be used to effectively communicate information 
 By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers. 
 For instance, a line graph can be used to illustrate the change in value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson (@wilkinson2012) writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning."
 
-The application of semiology in graphical communication is not devoid of obstacles. 
-One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (@Bertin1983). 
-Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (@Norman2013).
-
-Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information. 
-By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
-
-An important contribution made by Friendly has been historical research on statistical graphics. 
-He has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present. 
-In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly (2019) provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey.
-
-Friendly's contributions have significantly advanced the field of statistical graphics. 
-His historical research has yielded significant insights into the origins and evolution of graphical methods, while his development of new techniques has increased the number of data visualization tools available. 
-By emphasizing the role of graphical methods in scientific discovery, Friendly has helped to promote their use in a vast array of disciplines, from the natural sciences to the social sciences and beyond.
-
-<!--### what do we know about "better" graphics for certain tasks? -->
-
-
-
-<!-- ### General guidelines -->
-
-\db{Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. 
-It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. 
-EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.}
-
-\db{John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
-John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. 
-He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.}
-
-```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
-ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
-  geom_violin(aes(fill = Diet), trim = FALSE) +
-  geom_boxplot(width = 0.1) +
-  theme_classic() +
-  theme(legend.position = "none")
-
-p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
-  geom_boxplot()
-p + scale_fill_brewer(palette="Dark2")
-```
-
-
-<!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
-
-\db{Tukey's Principles in EDA:}
-
-1. Graphical exploration looking for patterns or displaying fit.
-- The method demonstrates things about data that are not understood by a single numeric metric. This has been useful in graphing the data before you develop summary statistics.
-
-2. Describing the general patterns of the data.
-- This step should be insensitive to outliers. In general, think about the types of resistant measures (i.e., median or mean). This step is making sure to determine data patterns.
-
-3. The natural scale/state that the data are at their best. This will be the step at which the scale of data can be helpful for analysis. The reexpressing data to a new scale by taking the square root or logarithmic scale.
-
-4. The mostly known parts of EDA but is done in the way of accessing fit of the data. This is taught in every statistics 101 class. The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
-- The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.}
-
-<!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
-
-
-```{r flights_data_example, echo=FALSE, out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold',fig.align='center'}
-# Stacked Density plot
-ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
-geom_density(position="stack")
-
-# Histogram
-ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
-geom_histogram(position="stack")
-
-```
-
-
-\db{On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
-Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
-They often display real-time data and can be customized to show the most relevant data to the user.}
-
-\db{Interactive graphics, are central to EDA [@unwin1999]. 
-Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
-User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
-EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
-And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.}
-
-\db{Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
-Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
-When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
-During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
-This will be important to know before starting a linear model analysis. 
-Much of our general understanding is from introductory statistics courses. 
-The basic understanding can be formalized to visualize the discovery process.}
-
-### Variable Types
-
-Not all variables should be used to create all types of charts - variable type informs chart structure
-\db{
-Categorical Data Visualization is the process of visualizing data that can be divided into distinct categories or groups. Categorical data are non-numeric and often represented by words, labels, or symbols, such as gender, product type, color, etc.}
-
-\db{Visualizing categorical data helps uncover patterns and relationships between categories and can provide insights into the data distribution. 
-Categorical data visualization techniques include bar charts, pie charts, histograms, stacked bar charts, and others. 
-The choice of visual representation will depend on the data's nature and the insights being sought. 
-The goal of categorical data visualization is to communicate the information effectively and make it easier to understand and interpret.}
-
-\db{Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually [@friendly2014]. 
-Researchers have used PCPs to visualize categorical data. 
-Beygelzimer, Perng, Ma and Hellerstien created a fast ordering categorical data analysis algorithm that helped visualization, where their algorithms helped organize the original parallel coordinate plots clearer ([@beygelzimer2001]; [@ma2001]). 
-Hammock plots are modified versions of similar coordinate plots invented by Schonlau to visualize categorical data [@schonlau2003]. 
-His design replaces coordinate polygons with rectangles to present the number. 
-Treemaps are modified to support categorical data visualization.}
-
-\db{CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. 
-Fernstad developed an interactive system combining parallel coordinates, tables, and scatterplot matrices for an overview explorative analysis. 
-Thoroughly research categorical data visualization to support algorithm understanding. 
-The novel contingency wheel presented by [@alsallakh2011] supports visual analytics in categorical data, and he measured association based on Pearson's residuals and used visual abstraction based on elements frequency.  }
-
-\db{High-Dimensional Data Visualization represents complex data sets with many variables or features (also known as high-dimensional data). 
-The goal is to find effective ways to express such data in a form that allows easy understanding, analysis, and interpretation.
-This is typically achieved by reducing the dimensionality of the data, for example, by projecting the data onto a lower-dimensional space or by aggregating the data in some way. 
-The resulting visualizations can then reveal patterns, relationships, and other insights that would otherwise be difficult to detect from the raw data. 
-For example, high-dimensional data visualization techniques include scatter plots, parallel coordinate plots, heat maps, and many others.}
-
-\db{A popular research area in visualization since high-dimensional data is always fuzzy to mining. 
-Direct visualization includes geometric visualizations:}
-
-- scatterplots: use dots in coordinate to present data points.
-- parallel coordinates: present each dimension as axes, and every data item intersects dimensions as a polygon line at a particular position
-- RadViz/ PolyViz
-- GridViz
-
-\db{Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyphs used funny ways to present multivariate data. 
-Hierarchical methods are used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. 
-Rearrange the dimensions by dimension similarity on parallel coordinates, circle segments, and recursive patterns [@ankerst1998]. 
-Guo used an interactive feature selection method to help users identify interesting subspaces from high-dimensional data sets [@guo2003].}
-
-### Grammar of Graphics
-\db{Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.}
-
-
-It doesn't help us decide which is better - for that we need user testing.
-
-\db{The grammar of graphics (gg of ggplot2) is a theory that is well-defined for creating statistical graphics with work from Wilkinson [@Wilkinson1999] and Hadley Wickham [@ggplot2]. 
-The Grammar of Graphics is a framework for understanding the structure of statistical graphics developed by Leland Wilkinson. 
-It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations. }
-
-\db{Grammar of graphics is defined as the framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner.}
+\db{It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.}
 
 The components of the grammar of graphics include:
 
@@ -428,12 +291,127 @@ knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.pn
 ```
 
 
+The application of semiology in graphical communication is not devoid of obstacles. 
+One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (@Bertin1983). 
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (@Norman2013).
+
+Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information. 
+By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
+
+Michael Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present. 
+\db{Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually @friendly2014.}
+By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
+In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly (2019) provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey.
+
+<!--His historical research has yielded significant insights into the origins and evolution of graphical methods, while his development of new techniques has increased the number of data visualization tools available. -->
+
+\db{John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
+John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. 
+He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.}
+
+```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
+ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
+  geom_violin(aes(fill = Diet), trim = FALSE) +
+  geom_boxplot(width = 0.1) +
+  theme_classic() +
+  theme(legend.position = "none")
+
+p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
+  geom_boxplot()
+p + scale_fill_brewer(palette="Dark2")
+```
+
+\db{Tukey's Principles in EDA:}
+
+1. Graphical exploration looking for patterns or displaying fit.
+
+- The method demonstrates things about data that are not understood by a single numeric metric. 
+This has been useful in graphing the data before you develop summary statistics.
+
+2. Describing the general patterns of the data.
+
+- This step should be insensitive to outliers. 
+In general, think about the types of resistant measures (i.e., median or mean). 
+This step is making sure to determine data patterns.
+
+3. The natural scale/state that the data are at their best. 
+This will be the step at which the scale of data can be helpful for analysis. 
+The reexpressing data to a new scale by taking the square root or logarithmic scale.
+
+4. The mostly known parts of EDA but is done in the way of accessing fit of the data. 
+This is taught in every statistics 101 class. 
+The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
+
+- The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
+
+\db{Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
+Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
+When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
+During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
+This will be important to know before starting a linear model analysis. 
+Much of our general understanding is from introductory statistics courses. 
+The basic understanding can be formalized to visualize the discovery process.}
+
+<!--### what do we know about "better" graphics for certain tasks? -->
+
+Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations. 
+In this summary, we will examine key strategies for creating better graphics that meet these criteria, based on recent research findings.
+
+
+\db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
+John Tukey's EDA methods are currently known and well-vetted in the field. 
+However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
+Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.}
+
+
+<!-- ### General guidelines -->
+
+
+
+
+
+
+<!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
+
+
+
+<!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
+
+
+```{r flights_data_example, echo=FALSE, out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold',fig.align='center'}
+# Stacked Density plot
+ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
+geom_density(position="stack")
+
+# Histogram
+ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
+geom_histogram(position="stack")
+
+```
+
+
+\db{On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
+Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
+They often display real-time data and can be customized to show the most relevant data to the user.}
+
+
+
+
+
+
 #### Interactive Graphics
 
 \db{The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as `d3` [@bostock2011]. 
 Visualizations are more than just a picture. 
 They are now a tool that facilitates analytic activity through different modes of interaction [@yi2007]. 
 Visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. }
+
+\db{Interactive graphics, are essential to EDA [@unwin1999]. 
+Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
+User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
+EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
+And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.}
 
 \db{The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system. 
 It is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. 
@@ -443,6 +421,12 @@ van Wiij's simple visualization model shows how insights are generated as the hu
 \db{This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.}
 
 <!-- \svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. } -->
+\db{The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization. 
+The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user. 
+In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging. 
+The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
+By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.}
+
 
 \begin{center}
 \includegraphics[width=\textwidth]{figure/vanWiijSimpleModel.png}
@@ -466,143 +450,62 @@ Theories behind the manipulation of visualizations include but are not limited t
 \db{As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning. 
 They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization.} <!-- [@boy2014].-->
 
-\db{Interactive visualization is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. 
-The goal of EDA is to gain a high-level understanding of the data and to identify patterns, relationships, and anomalies in the data. }
-
-\db{Visualizations have become more effective in recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html).
-We were glued to our computers, TVs, and phones for most of the world. 
-As a result, we watched the dashboard change in real-time to adapt to the users' needs. 
-In part to data growth and changing, the dashboard, as well as the visualizations, were needed in a condensed platform. 
-The need to be concise and vastly informative is a struggle regarding data visualizations. }
-
-\db{The human brain can only take in a set amount of data from a table or a paragraph. \svp{references?}
-The space of infographics has been a much better way of looking at data on a creative scale.[@stat\_graph\_hist] 
-While this may be a way of seeing the data in a friendly way, infographics need to include an interactive piece of data that many people would like to explore.}
-
-
-\db{The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization. 
-The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user. 
-In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging. 
-The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
-By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.}
-}
-
-### Multivariate Data Displays
-
-- Difficulty of visualizing multivariate data
-- Different approaches - briefly mention 
-    - encoding with shape/color/etc.
-    - tours
-    - pcps
-    - linked graphics (interactivity)
-
-This section doesn't need to solve the problem - it just introduces it
-
-
-```{r ggpcp_example, echo=FALSE, fig.width=3, fig.height=3,fig.show='hold',fig.align='center', eval = FALSE}
-oranges <- c("#FDBF6F", "#F89D38", "#F37A00")
-purples <- c("#CAB2D6", "#9A78B8", "#6A3D9A")
-greens <- c("#b2df8a", "#73C05B", "#33a02c")
-
-cols <-  c(oranges[2], greens[2], purples[2])
-
-flights %>%
-  filter(origin == "LGA") %>%
-  pcp_select(dest:distance) %>%
-  pcp_scale() %>%
-  ggplot(aes_pcp()) +
-  geom_pcp(alpha = 0.1) +
-  theme_bw()
-
-
-
-df_pcp %>%
-  ggplot(aes_pcp())  +
-  geom_pcp_axes() +
-  geom_pcp(aes(colour = Observation), size=1,
-           data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
-  geom_point(aes(shape=Observation, colour = Observation), size=5,
-             data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
-  theme_bw() +
-  xlab("") +
-#  scale_shape_discrete("Observation") +
-  scale_colour_manual("Observation", values=c("darkorange", "purple4")) +
-  ylab("") +
-  theme(axis.title.y = NULL, axis.text.y = NULL, axis.ticks.y = NULL) +
-  scale_y_continuous(labels=c("low", "", "medium", "", "high"),
-                     breaks=c(0,0.25, .5,.75, 1)) +
-  scale_x_discrete(expand = expansion(add=0.2),
-                   labels = c("Bill Length (mm)", "Bill Depth (mm)",
-                              "Flipper Length (mm)", "Body Mass (g)"))
-
-
-```
+\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}
 
 
 ## Audience-Data Interactions
 
 \db{User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. 
 It involves studying the users of a system to understand their needs, goals, and behaviors. 
-The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.}
-
-Several methods can be used to conduct user analysis:
-
-- Interviews: This involves conducting in-depth interviews with users to understand their needs, goals, and workflows.
-- Surveys involve sending out surveys to users to gather data on their needs and preferences.
-- Observations: This involves observing users as they complete tasks with the interface to understand their behaviors and workflows.
-- Personas: This is a method of creating fictional characters that represent the different types of users; it helps to understand the users' needs and goals.
-- Scenarios: This is a method of creating stories that describe how a user might interact with a system; it helps to understand the context and the user's needs.
-- Focus groups: This is a method of gathering a small group of users and facilitating a discussion to understand the users' needs and goals.
-- Contextual inquiry: This is a method of visiting the users in their work environment and observing them while they work; it helps to understand the context and the user's needs.
-
-\db{The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. 
+The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
+The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. 
 It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
 
 
-### Testing static graphics
+### Background on static graphics
 
-Brief overview of user studies that compare different types of graphics, accuracy, etc.
+<!-- Brief overview of user studies that compare different types of graphics, accuracy, etc. -->
 
-\db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
-For example, John Tukey's EDA methods are currently known and well-vetted in the field. 
-However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
-Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
-Several protocols and methods can be used to test the design of a dashboard or other visual display. 
-Some of these include:}
+Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @Cleveland. 
+People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
 
-- Usability testing: This involves having users interact with the dashboard and providing feedback on its usability, including how easy it is to navigate, understand, and use.
-- Cognitive walkthrough: This involves having experts in human-computer interaction evaluate the dashboard, focusing on the cognitive processes required to use it effectively.
-- Eye-tracking: This involves using technology to track the users' gaze and interactions, to understand the user's focus and attention on the dashboard elements.
-- A/B testing: This involves creating two versions of the dashboard, each with slightly different design elements, and comparing the results to see which design is more effective.
-- Surveys: This involves asking users to complete a survey that measures their satisfaction and understanding of the dashboard and to provide feedback on improvements.
-- Heat maps: This involves using heat maps to track where users are clicking on the dashboard to identify which elements are being used the most and which are being ignored.
-- Card sorting: This is a method to understand the users' mental models and how they would like to organize and categorize the data; it is helpful to understand how to structure the dashboard navigation.
+Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
+The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude.
 
-\db{These are just a few examples of the many protocols and methods that can be used to test the design of a dashboard. 
-The selection of the appropriate way will depend on the specific goals of the testing and the resources available.}
+"The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers @Tufte. 
+The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective. 
+In addition, the researchers discovered that the type of graphic employed influenced the viewers' perceptions and decision-making, highlighting the significance of selecting the most appropriate graphics when conveying information.
 
-\db{Remember that the user's feedback is crucial in the testing process; it will provide the necessary insight to improve the design and make it more efficient.}
+"Using color to code different types of uncertainty in visualization" investigated the effect of color on the communication effectiveness of static graphics @ware2010. 
+Researchers discovered that the use of color in static graphics enhanced viewers' comprehension and memory retention of the presented information. 
+Specifically, it was determined that the use of color to highlight particular data points or trends in a graph or chart was particularly effective.
 
-### Testing interactive graphics
+"Communicating Uncertainty: A Look at Graphical Representations of Error Bars, Box Plots, and Confidence Intervals" examined the efficacy of static graphics in communicating data uncertainty and variability @wainer2020. 
+Researchers discovered that static graphics, such as boxplots and error bars, effectively communicated the range and variability of data. 
+Furthermore, the use of static graphics enhanced viewers' comprehension and decision-making in uncertain situations.
 
-Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
-\db{Testing interactive graphics using human perception principles in psychology involves considering various aspects of human perception and cognition to evaluate the effectiveness and user experience of the graphics. Here are some steps you can follow to test your interactive graphics:}
+Overall, these above studies indicate that static graphics are effective at conveying information to viewers, with their effectiveness being influenced by the type of graphic exercised, the use of color, and their capacity to convey uncertainty and variability in data. 
+However, it is important to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the information being presented, and the context in which the graphics are used.
 
-\db{Usability testing: Conduct a usability test to assess the ease of use and accessibility of the graphics. 
-This includes testing for navigation, user control, and overall user experience.}
+### Background on interactive graphics
 
-\db{Perception of visual elements: Evaluate how the visual elements in your graphics, such as color, contrast, size, and position, impact the perception of the information being presented.}
+The design space of interactive visualizations, including the use of multiple views and coordinated multiple views, is discussed in a paper by Heer and Bostock @heer2012. 
+The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
+It was discovered that interactive graphics are particularly useful for investigating data that is difficult to comprehend with static graphics, such as time series data or data with multiple aggregation levels.
 
-\db{Cognitive load: Assess the cognitive load on the user by evaluating how easily they can process and understand the information being presented. Factors such as complexity, amount of information, and type of information presented can impact cognitive load.}
+Compared to static graphics, interactive graphics can improve users' ability to identify patterns and outliers in data, according to a second study @wu2017. 
+This is due to the fact that interactive graphics enable users to zero in on particular aspects of the data and adjust the visualization in real time to reveal hidden patterns.
 
-\db{Attention allocation: Observe where the user's attention is directed while interacting with the graphics. This can help identify areas that may require improvement or modification to better engage the user's attention.}
+It has also been discovered that interactive graphics increase user engagement with data and improve their decision-making abilities. 
+"Visualizing decision-making: Introducing the analysis, comparison, and exploration system (ACES)" showed that interactive graphics can help users make more informed decisions by allowing them to compare and contrast various scenarios and outcomes @kornhauser2014. 
+Moreover, interactive graphics can help users identify potential biases or errors in their data analysis by allowing them to rapidly explore various visualizations and test their hypotheses.
 
-\db{Memory retention: Evaluate the user's ability to retain and recall information presented in the graphics. This can help determine the effectiveness of the design in supporting memory retention.}
+In addition to their benefits for data exploration and analysis, interactive graphics have been found to be more engaging and enjoyable for users @bresciani2014. 
+This can increase the motivation of users to explore and analyze data, resulting in better decision-making.
 
-\db{User feedback: Obtain user feedback through surveys, interviews, or focus groups to gain insights into the user experience and identify areas for improvement.}
-
-\db{It is important to keep in mind that human perception and cognition can vary greatly between individuals and can be influenced by a range of factors, such as age, culture, and personal experience. Testing with a representative sample of your target audience can help ensure that your interactive graphics are optimized for a wide range of users.}
+In summary, the studies highlighted indicate that interactive graphics can be an effective data visualization and analysis tool, especially for complex and multidimensional data. 
+They can improve users' comprehension, engagement, and decision-making skills, and are ideal for examining data that is difficult to comprehend with static graphics.
 
 ## Dashboard Design
 
@@ -666,10 +569,12 @@ Contextual inquiry is the data collection step of the field research element of 
 They proposes three main archetypes that data scientists may be classed into the following:}
 
 - Hackers: who build processes chaining together multiple programming languages of different types (analytical, scripting, and database languages) and use visualization in various environments.
-- Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not performstatements their ETL
+- Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not perform statements their ETL
 - Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 
 <!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
+
+
 
 ## Conclusion
 

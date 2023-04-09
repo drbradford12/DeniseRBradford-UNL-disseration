@@ -219,6 +219,17 @@ The two paradigms characterize much of the research in the Information systems d
 \db{These are concrete prescriptions that enable IT researchers and practitioners to understand and address the problems inherent in developing and successfully implementing information systems within organizations ([@march1995]; [@nunamaker1991]). }
 
 
+Researchers have used PCPs to visualize categorical data. 
+Beygelzimer, Perng, Ma and Hellerstien created a fast ordering categorical data analysis algorithm that helped visualization, where their algorithms helped organize the original parallel coordinate plots clearer ([@beygelzimer2001]; [@ma2001]). 
+Hammock plots are modified versions of similar coordinate plots invented by Schonlau to visualize categorical data [@schonlau2003]. 
+His design replaces coordinate polygons with rectangles to present the number. 
+Treemaps are modified to support categorical data visualization.
+
+
+\db{Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights. 
+It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. 
+EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.}
+
 <!-- \svp{You don't have to motivate your other papers here - that will come later. Focus on the essentials - describe the main pieces of work in the area you're trying to expound upon.} -->
 
 <!-- Since we don't completely understand the way that basic statistical graphics are -->
@@ -254,6 +265,154 @@ A typical process typically consists of the following general stages:
 3. *Exploration*: Investigating and analyzing the data set to collect insights and understand the data
 4. *Modeling*: Building fitting and validating a model that can explain the data set and the observed phenomena
 5. *Communication*: Disseminating the results to stakeholders in reports, presentations, and charts.
+
+### Variable Types
+
+Not all variables should be used to create all types of charts - variable type informs chart structure
+\db{
+Categorical Data Visualization is the process of visualizing data that can be divided into distinct categories or groups. Categorical data are non-numeric and often represented by words, labels, or symbols, such as gender, product type, color, etc.}
+
+\db{Visualizing categorical data helps uncover patterns and relationships between categories and can provide insights into the data distribution. 
+Categorical data visualization techniques include bar charts, pie charts, histograms, stacked bar charts, and others. 
+The choice of visual representation will depend on the data's nature and the insights being sought. 
+The goal of categorical data visualization is to communicate the information effectively and make it easier to understand and interpret.}
+
+\db{CatTree gives a hierarchical categorical data visualization with interaction [@kolatch2001]. 
+Fernstad developed an interactive system combining parallel coordinates, tables, and scatterplot matrices for an overview explorative analysis. 
+Thoroughly research categorical data visualization to support algorithm understanding. 
+The novel contingency wheel presented by [@alsallakh2011] supports visual analytics in categorical data, and he measured association based on Pearson's residuals and used visual abstraction based on elements frequency.}
+
+\db{High-Dimensional Data Visualization represents complex data sets with many variables or features (also known as high-dimensional data). 
+The goal is to find effective ways to express such data in a form that allows easy understanding, analysis, and interpretation.
+This is typically achieved by reducing the dimensionality of the data, for example, by projecting the data onto a lower-dimensional space or by aggregating the data in some way. 
+The resulting visualizations can then reveal patterns, relationships, and other insights that would otherwise be difficult to detect from the raw data. 
+For example, high-dimensional data visualization techniques include scatter plots, parallel coordinate plots, heat maps, and many others.}
+
+\db{A popular research area in visualization since high-dimensional data is always fuzzy to mining. 
+Direct visualization includes geometric visualizations:}
+
+- scatterplots: use dots in coordinate to present data points.
+- parallel coordinates: present each dimension as axes, and every data item intersects dimensions as a polygon line at a particular position
+- RadViz/ PolyViz
+- GridViz
+
+\db{Besides these traditional geometric visualization methods, iconographic displays like human faces and star glyphs used funny ways to present multivariate data. 
+Hierarchical methods are used widely in parallel coordinates, which give analysts an intuitive view of clustering information [@fua1999]; [@johansson2005]. 
+Rearrange the dimensions by dimension similarity on parallel coordinates, circle segments, and recursive patterns [@ankerst1998]. 
+Guo used an interactive feature selection method to help users identify interesting subspaces from high-dimensional data sets [@guo2003].}
+
+\db{Visualizations have become more effective in recent years due to the pandemic and the Johns Hopkins University COVID-19 Dashboard [@JHPHDashboard] [Dashboard](https://coronavirus.jhu.edu/map.html).
+We were glued to our computers, TVs, and phones for most of the world. 
+As a result, we watched the dashboard change in real-time to adapt to the users' needs. 
+In part to data growth and changing, the dashboard, as well as the visualizations, were needed in a condensed platform. 
+The need to be concise and vastly informative is a struggle regarding data visualizations. }
+
+\db{Interactive visualization is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. 
+The goal of EDA is to gain a high-level understanding of the data and to identify patterns, relationships, and anomalies in the data. }
+
+The space of infographics has been a much better way of looking at data on a creative scale.[@stat\_graph\_hist] 
+While this may be a way of seeing the data in a friendly way, infographics need to include an interactive piece of data that many people would like to explore.
+
+### Multivariate Data Displays
+
+- Difficulty of visualizing multivariate data
+- Different approaches - briefly mention 
+    - encoding with shape/color/etc.
+    - tours
+    - pcps
+    - linked graphics (interactivity)
+
+This section doesn't need to solve the problem - it just introduces it
+
+
+```{r ggpcp_example, echo=FALSE, fig.width=3, fig.height=3,fig.show='hold',fig.align='center', eval = FALSE}
+oranges <- c("#FDBF6F", "#F89D38", "#F37A00")
+purples <- c("#CAB2D6", "#9A78B8", "#6A3D9A")
+greens <- c("#b2df8a", "#73C05B", "#33a02c")
+
+cols <-  c(oranges[2], greens[2], purples[2])
+
+flights %>%
+  filter(origin == "LGA") %>%
+  pcp_select(dest:distance) %>%
+  pcp_scale() %>%
+  ggplot(aes_pcp()) +
+  geom_pcp(alpha = 0.1) +
+  theme_bw()
+
+
+
+df_pcp %>%
+  ggplot(aes_pcp())  +
+  geom_pcp_axes() +
+  geom_pcp(aes(colour = Observation), size=1,
+           data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  geom_point(aes(shape=Observation, colour = Observation), size=5,
+             data = df_pcp %>% filter(pcp_id %in% c(1,275))) +
+  theme_bw() +
+  xlab("") +
+#  scale_shape_discrete("Observation") +
+  scale_colour_manual("Observation", values=c("darkorange", "purple4")) +
+  ylab("") +
+  theme(axis.title.y = NULL, axis.text.y = NULL, axis.ticks.y = NULL) +
+  scale_y_continuous(labels=c("low", "", "medium", "", "high"),
+                     breaks=c(0,0.25, .5,.75, 1)) +
+  scale_x_discrete(expand = expansion(add=0.2),
+                   labels = c("Bill Length (mm)", "Bill Depth (mm)",
+                              "Flipper Length (mm)", "Body Mass (g)"))
+
+
+```
+
+
+Several methods can be used to conduct user analysis:
+
+- Interviews: This involves conducting in-depth interviews with users to understand their needs, goals, and workflows.
+- Surveys involve sending out surveys to users to gather data on their needs and preferences.
+- Observations: This involves observing users as they complete tasks with the interface to understand their behaviors and workflows.
+- Personas: This is a method of creating fictional characters that represent the different types of users; it helps to understand the users' needs and goals.
+- Scenarios: This is a method of creating stories that describe how a user might interact with a system; it helps to understand the context and the user's needs.
+- Focus groups: This is a method of gathering a small group of users and facilitating a discussion to understand the users' needs and goals.
+- Contextual inquiry: This is a method of visiting the users in their work environment and observing them while they work; it helps to understand the context and the user's needs.
+
+
+
+Several protocols and methods can be used to test the design of a dashboard or other visual display. 
+Some of these include:
+
+- Usability testing: This involves having users interact with the dashboard and providing feedback on its usability, including how easy it is to navigate, understand, and use.
+- Cognitive walkthrough: This involves having experts in human-computer interaction evaluate the dashboard, focusing on the cognitive processes required to use it effectively.
+- Eye-tracking: This involves using technology to track the users' gaze and interactions, to understand the user's focus and attention on the dashboard elements.
+- A/B testing: This involves creating two versions of the dashboard, each with slightly different design elements, and comparing the results to see which design is more effective.
+- Surveys: This involves asking users to complete a survey that measures their satisfaction and understanding of the dashboard and to provide feedback on improvements.
+- Heat maps: This involves using heat maps to track where users are clicking on the dashboard to identify which elements are being used the most and which are being ignored.
+- Card sorting: This is a method to understand the users' mental models and how they would like to organize and categorize the data; it is helpful to understand how to structure the dashboard navigation.
+
+
+# Testing Graphics 
+\db{These are just a few examples of the many protocols and methods that can be used to test the design of a dashboard. 
+The selection of the appropriate way will depend on the specific goals of the testing and the resources available. 
+Remember that the user's feedback is crucial in the testing process; it will provide the necessary insight to improve the design and make it more efficient.}
+
+
+Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
+\db{Testing interactive graphics using human perception principles in psychology involves considering various aspects of human perception and cognition to evaluate the effectiveness and user experience of the graphics. 
+Here are some steps you can follow to test your interactive graphics:}
+
+\db{Usability testing: Conduct a usability test to assess the ease of use and accessibility of the graphics. 
+This includes testing for navigation, user control, and overall user experience.}
+
+\db{Perception of visual elements: Evaluate how the visual elements in your graphics, such as color, contrast, size, and position, impact the perception of the information being presented.}
+
+\db{Cognitive load: Assess the cognitive load on the user by evaluating how easily they can process and understand the information being presented. Factors such as complexity, amount of information, and type of information presented can impact cognitive load.}
+
+\db{Attention allocation: Observe where the user's attention is directed while interacting with the graphics. This can help identify areas that may require improvement or modification to better engage the user's attention.}
+
+\db{Memory retention: Evaluate the user's ability to retain and recall information presented in the graphics. This can help determine the effectiveness of the design in supporting memory retention.}
+
+\db{User feedback: Obtain user feedback through surveys, interviews, or focus groups to gain insights into the user experience and identify areas for improvement.}
+
+\db{It is important to keep in mind that human perception and cognition can vary greatly between individuals and can be influenced by a range of factors, such as age, culture, and personal experience. Testing with a representative sample of your target audience can help ensure that your interactive graphics are optimized for a wide range of users.}
 
 <!-- Chapter ... demonstrates the process of designing and redesigning a dashboard for public use.  -->
 <!-- Chapter ... discusses PCPs and how they are interpreted...  -->
