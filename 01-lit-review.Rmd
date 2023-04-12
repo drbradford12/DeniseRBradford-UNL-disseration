@@ -169,8 +169,7 @@ Visual aids such as charts and diagrams can improve short-term memory by allowin
 Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
 
 Furthermore, annotations can also be useful in aiding short-term memory. 
-By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on @alvarez.
-
+By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on @alvarez2004.
 
 <!-- Feature Integration Theory -->
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention @treisman1998. 
@@ -178,14 +177,14 @@ Parallel and independently, the brain processes the physical characteristics of 
 However, focused attention is required to bind these features into a coherent object representation in STM.
 STM can be improved through various strategies, such as rehearsal, chunking, and elaboration @oberauer2009. 
 For example, by repeating a phone number several times or breaking it down into chunks of two or three digits, we can increase the likelihood of it being stored in STM. 
-Similarly, by elaborating on the information we want to remember, such as creating mental associations or visual images, we can enhance its retention in STM @bui2015.
+Similarly, by elaborating on the information we want to remember, such as creating mental associations or visual images, we can enhance its retention in STM @bui2014.
 
 STM is a dynamic and malleable cognitive system that is crucial to our daily lives. 
 Understanding the mechanisms underlying STM and how to improve it can have significant implications for learning, memory, and the treatment of memory disorders.
 
 ### Constructing Meaning
 
-Gestalt psychology suggests that humans actively construct meaning by organizing information into patterns and wholes @wertheimer1923.
+Gestalt psychology suggests that humans actively construct meaning by organizing information into patterns and wholes @wertheimer1938.
 Both top-down and bottom-up processing are involved in the process of meaning construction. 
 Bottom-up processing entails analyzing sensory data from the environment and constructing perceptions based on this data. 
 Top-down processing is the influence of prior knowledge, expectations, and context on the perception and interpretation of incoming sensory data.
@@ -198,9 +197,12 @@ The Gestalt principles of perception emphasize the significance of bottom-up and
 Both types of processing are involved in encoding and retrieving information, which has significant implications for understanding how short-term memory works.
 
 ### Expertise
-The development of expertise is a gradual and iterative process that is influenced by numerous psychological factors, such as cognitive processes, automaticity, readily accessible information, and practice effects.
 
-Cognitive Processes - the way we think about and approach a task.
+However, creating effective graphics is not a simple task, and proficiency in this area is required to create high-quality visualizations. 
+This essay will discuss the contributions to the field of graphics made by research on psychological processes, automaticity, readily available information, and practice effects.
+
+
+**Cognitive Processes - the way we think about and approach a task.**
 
 As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata. 
 These mental models help us to organize information in a meaningful way, and to quickly identify and solve problems related to the task. 
@@ -208,27 +210,36 @@ This process is known as cognitive restructuring and is facilitated by developin
 For example, a chess master is able to quickly recognize patterns and positions on the board that are common in chess, which allows them to make decisions more quickly and accurately than a novice player.
 
 
-Automaticity - the ability to perform a task without conscious effort or attention
+**Automaticity - the ability to perform a task without conscious effort or attention**
 
 As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
 The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process @Fitts1967. 
 For instance, a skilled typist can type without looking at the keyboard because their finger movements have become automatic.
 
 
-Information Readily Available - the way we process information related to a task
+**Information Readily Available - the way we process information related to a task**
 
 As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice. 
 This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly @Chase1973. 
 For instance, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
 
-Practice Effects - extensive practice and experience
+**Practice Effects - extensive practice and experience**
 
 Practice effects are the performance enhancements that result from repeated practice. 
 These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling @Anderson1982. 
 The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
 
 
+The contributions of research on psychological processes, automaticity, readily available information, and practice effects to the field of graphics have significant implications. 
+Expertise is required to create high-quality graphics, which requires a thorough understanding of design principles and the capacity to work quickly and efficiently. 
+The use of automatic processing and domain-specific knowledge can aid designers in processing and deciding on design elements efficiently and quickly. 
+The creation of standardized design templates, workflows, and other tools can aid in enhancing the efficiency and effectiveness of the design process. 
+Design skills can be improved through deliberate guidelines, and educators must focus on developing skills that can be applied in a variety of contexts.
+
+As the significance of graphics in numerous fields continues to rise, the demand for specialists in this area will only intensify. 
+By comprehending the contributions of research on psychological processes, automaticity, readily accessible information, and practice effects, designers, educators, and trainers can develop more effective approaches to graphics design and education. 
+This can help ensure that the graphics used to convey complex information are clear, concise, and effective, making it easier for individuals to comprehend and interpret the required information.
 
 ### Engagement with the data
 <!-- This is a good paragraph -- but I'm not sure it's in the right place.  -->
@@ -259,11 +270,11 @@ It doesn't help us decide which is better - for that we need user testing.
 In the field of graphical communication, semiology, or the study of signs and symbols and their use in communication, has been a valuable tool.
 One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) (@Barthes1972). 
 Another essential concept in semiology is the utilization of syntax and semantics to effectively convey meaning in graphic communication. 
-This includes both the syntax and semantics of a graphic's visual elements (@Bertin1983).
+This includes both the syntax and semantics of a graphic's visual elements (@bertin1983).
 
 The use of color to represent data on maps is an example of successful graphical communication utilizing semiology. 
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily. 
-Jacques Bertin (1983) writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points." 
+Jacques Bertin  writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points", @bertin1983.
 In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
 
 Graphs are another tool that can be used to effectively communicate information via semiology. 
@@ -292,8 +303,8 @@ knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.pn
 
 
 The application of semiology in graphical communication is not devoid of obstacles. 
-One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (@Bertin1983). 
-Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (@Norman2013).
+One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (@bertin1983). 
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (@norman2013).
 
 Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information. 
 By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
@@ -301,7 +312,7 @@ By understanding semiology principles and syntax and semantics' role in graphica
 Michael Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present. 
 \db{Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually @friendly2014.}
 By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
-In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly (2019) provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey.
+In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey (@friendly2001).
 
 <!--His historical research has yielded significant insights into the origins and evolution of graphical methods, while his development of new techniques has increased the number of data visualization tools available. -->
 
@@ -357,7 +368,7 @@ The basic understanding can be formalized to visualize the discovery process.}
 Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations.
 
 Numerical accuracy: In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics. 
-Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (@Cardoso2016).
+Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (@cardoso2016).
 
 
 Engagement: Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data. 
@@ -471,7 +482,7 @@ They must decide on the most effective visual representation without being able 
 
 <!--\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}-->
 
-Heer and Bostock (@heer2010) examined how the complexity of interactive visualizations influences the cognitive load of users. 
+Heer and Bostock  examined how the complexity of interactive visualizations influences the cognitive load of users (@heer2010). 
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy. 
 They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
 
@@ -501,13 +512,13 @@ User analysis is an iterative process, and it should be done in multiple stages 
 
 <!-- Brief overview of user studies that compare different types of graphics, accuracy, etc. -->
 
-Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @Cleveland. 
+Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @cleveland1986. 
 People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
 
 Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
 The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude.
 
-"The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers @Tufte. 
+"The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers @tufte2008. 
 The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective. 
 In addition, the researchers discovered that the type of graphic employed influenced the viewers' perceptions and decision-making, highlighting the significance of selecting the most appropriate graphics when conveying information.
 
@@ -535,7 +546,7 @@ It has also been discovered that interactive graphics increase user engagement w
 "Visualizing decision-making: Introducing the analysis, comparison, and exploration system (ACES)" showed that interactive graphics can help users make more informed decisions by allowing them to compare and contrast various scenarios and outcomes @kornhauser2014. 
 Moreover, interactive graphics can help users identify potential biases or errors in their data analysis by allowing them to rapidly explore various visualizations and test their hypotheses.
 
-In addition to their benefits for data exploration and analysis, interactive graphics have been found to be more engaging and enjoyable for users @bresciani2014. 
+In addition to their benefits for data exploration and analysis, interactive graphics have been found to be more engaging and enjoyable for users @eppler2013. 
 This can increase the motivation of users to explore and analyze data, resulting in better decision-making.
 
 In summary, the studies highlighted indicate that interactive graphics can be an effective data visualization and analysis tool, especially for complex and multidimensional data. 
@@ -547,7 +558,7 @@ Given that the audience has limitations, there are design constraints around the
 
 How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
 
-\db{A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few]. 
+\db{A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few2006]. 
 Dashboards have particular characteristics:}
 
 - Achieve specific objectives
@@ -604,7 +615,7 @@ People frequently make inaccurate judgments when comparing graphs with different
 
 Utilizing redundant visual cues or unnecessary embellishments is another example of suboptimal graphics. 
 Although it may be tempting to add extra elements to a chart or graph, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information. 
-Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (@tufte1983).
+Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (@tufte1985).
 
 
 Using multiple color schemes or palettes in the same chart is another instance of suboptimal graphics. 
