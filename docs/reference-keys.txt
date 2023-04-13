@@ -1,6 +1,5 @@
 fig:gestalt
 fig:graphics2
-fig:graphics
 introduction
 audience-considerations
 perception
@@ -34,10 +33,3 @@ ref-labels
 dashboard-eda
 the-first-appendix
 the-second-appendix-for-fun
-variable-types
-multivariate-data-displays
-testing-graphics
-context-and-background
-knowledge-gap
-significance
-draft-problem-statement
