@@ -11,4 +11,4 @@
 
 - Working dissertation document (TBD)
 - Defense presentation slides (TBD)
-- JDS Paper Documentation ()
+- JDS Paper Documentation (https://doi.org/10.6339/22-JDS1080)
