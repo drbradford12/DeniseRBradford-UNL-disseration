@@ -1,0 +1,68 @@
+---
+output:
+  pdf_document: default
+---
+
+# CONTEXT AND BACKGROUND
+
+Topic: The relationship between good statistical graphics and appropriate dashboard design. 
+
+**What is the current situation?**
+
+- Data Scientists and Data Analysts are responsible for making decisions using large data sources for organizations. Large Data sources in decision-making have become more of the norm, which means that a consistent choice in dashboard design helps in exploratory data analysis (EDA). Limited resources and knowledge about the impact of large data sources can contribute to confusion and misconceptions about using large data in decision-making.    
+
+
+**What is wrong with the situation and/or what needs to change?** 
+
+- Many Dashboards are built to assist in data exploration, but many dashboards lack guidelines and appropriate perception with static and interactive statistical graphics. 
+
+
+**What are the most recent events that led us to the current situation?**
+
+
+
+**What is the setting of the problem?**
+
+- Dashboards with statistical graphics
+
+
+# KNOWLEDGE GAP
+
+
+**What have researchers in similar settings explored or discovered?**
+
+
+
+**What have researchers in other settings explored or discovered?** 
+
+
+
+**What remains unknown about the problem?** 
+
+
+- While it is known that interactive graphics is an essential aspect of statistical graphics and are used in dashboard designs frequently, the inconsistency gap between interactive graphics and dashboard design, it is unknown whether there is a relationship between interactive graphics and effective dashboard design can be implemented in Exploratory Data Analysis (EDA).
+
+# SIGNIFICANCE
+
+
+**Why is it important to fill the knowledge gap?**
+
+- All dashboards will benefit from a comprehensive guidelines for effective dashboard design.
+
+
+**Scope: How big is the problem, and how many people are affected in the field or specific context you are studying?**
+
+- 
+
+**Consequences: What are the consequences of not addressing the problem?**
+
+- Dashboards will continue to be designed without the appropriate perception of good statistical interactive graphics when analysts develop dashboards for exploring large data. 
+
+**Contribution: How will your study contribute to the problem’s solution? How does filling the gap help?**
+
+
+
+# Draft Problem Statement
+
+
+

@@ -213,23 +213,22 @@ For example, a chess master is able to quickly recognize patterns and positions 
 **Automaticity - the ability to perform a task without conscious effort or attention**
 
 As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
-The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process @Fitts1967. 
+The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process @fitts1967. 
 For instance, a skilled typist can type without looking at the keyboard because their finger movements have become automatic.
 
 
 **Information Readily Available - the way we process information related to a task**
 
 As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice. 
-This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly @Chase1973. 
+This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly @chase1973. 
 For instance, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
 
 **Practice Effects - extensive practice and experience**
 
 Practice effects are the performance enhancements that result from repeated practice. 
-These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling @Anderson1982. 
+These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling @anderson1982. 
 The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
-
 
 The contributions of research on psychological processes, automaticity, readily available information, and practice effects to the field of graphics have significant implications. 
 Expertise is required to create high-quality graphics, which requires a thorough understanding of design principles and the capacity to work quickly and efficiently. 
@@ -268,7 +267,7 @@ It doesn't help us decide which is better - for that we need user testing.
 <!--### How do we classify graphics? -->
 
 In the field of graphical communication, semiology, or the study of signs and symbols and their use in communication, has been a valuable tool.
-One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) (@Barthes1972). 
+One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) (@barthes1972). 
 Another essential concept in semiology is the utilization of syntax and semantics to effectively convey meaning in graphic communication. 
 This includes both the syntax and semantics of a graphic's visual elements (@bertin1983).
 
@@ -295,6 +294,7 @@ The components of the grammar of graphics include:
 For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 }
+
 ```{r graphics2, echo=FALSE, out.width = "45%",fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
 #knitr::include_graphics("figure/gglayers.png")
 #knitr::include_graphics("figure/graphic-flowchart.png")
@@ -383,14 +383,14 @@ Correct Predictions: Correct predictions refers to the capability of graphics to
 For accurate predictions, data visualization must include trustworthy data, sound statistical models, and efficient visualization techniques.
 
 
-"Graphical Tests for Power Comparison of Competing Designs" by Hofmann et al. (2012) presents a graphical method for comparing the power of two or more competing designs in an experimental study. The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs. 
+"Graphical Tests for Power Comparison of Competing Designs" by Hofmann et al. presents a graphical method for comparing the power of two or more competing designs in an experimental study @hofmann2012.
+The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs. 
 It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
 
 
 Two methods for measuring the particle size distribution in a chemical process were compared in one study. 
 The study evaluated both designs under various operating conditions and compared their power using a graphical method. 
 The results demonstrated that one design was more effective at detecting differences in operating conditions than another.
-
 
 
 \db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
@@ -401,7 +401,24 @@ Vega-Lite has been directly implemented in R via the `ggvis` package using the s
 
 <!-- ### General guidelines -->
 
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from (@few2012, @tufte1983, @cairo2016):
 
+1. Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+
+2. Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+
+3. Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+
+4. Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+
+5. Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+
+6. Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+
+7. Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
 
 
 
@@ -425,7 +442,6 @@ geom_histogram(position="stack")
 \db{On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
 Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
 They often display real-time data and can be customized to show the most relevant data to the user.}
-
 
 
 #### Interactive Graphics
@@ -482,15 +498,15 @@ They must decide on the most effective visual representation without being able 
 
 <!--\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}-->
 
-Heer and Bostock  examined how the complexity of interactive visualizations influences the cognitive load of users (@heer2010). 
+Heer and Bostock examined how the complexity of interactive visualizations influences the cognitive load of users (@heer2010). 
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy. 
 They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
 
-Ko and Kwon (@ko2017) investigated the cognitive load of mobile interactive visualizations. 
+Eissele et al investigated the cognitive load of mobile interactive visualizations (@eissele2009).
 The authors discovered that the limited input options and small screen size of mobile devices can increase cognitive load in interactive visualizations. 
 To reduce cognitive load on mobile devices, they suggested that designers employ suitable visual encoding techniques and simplify interactions.
 
-Nguyen and Gajos (@nguyen2015) investigated the impact of interactive elements on cognitive load in visualizations. 
+Toyama et al. investigated the impact of interactive elements on cognitive load in visualizations. (@toyama2015)
 Based on the nature of the task and the user's familiarity with the interactive features, the authors discovered that interactive features can both increase and decrease cognitive load. 
 They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations.
 
@@ -508,7 +524,7 @@ It can also be used to identify areas of the interface that are confusing or dif
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
 
 
-### Background Research on testing static graphics
+### Testing static graphics
 
 <!-- Brief overview of user studies that compare different types of graphics, accuracy, etc. -->
 
@@ -533,7 +549,7 @@ Furthermore, the use of static graphics enhanced viewers' comprehension and deci
 Overall, these above studies indicate that static graphics are effective at conveying information to viewers, with their effectiveness being influenced by the type of graphic exercised, the use of color, and their capacity to convey uncertainty and variability in data. 
 However, it is important to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the information being presented, and the context in which the graphics are used.
 
-### Background Research on testing interactive graphics
+### Testing interactive graphics
 
 The design space of interactive visualizations, including the use of multiple views and coordinated multiple views, is discussed in a paper by Heer and Bostock @heer2012. 
 The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
@@ -616,7 +632,6 @@ People frequently make inaccurate judgments when comparing graphs with different
 Utilizing redundant visual cues or unnecessary embellishments is another example of suboptimal graphics. 
 Although it may be tempting to add extra elements to a chart or graph, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information. 
 Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (@tufte1985).
-
 
 Using multiple color schemes or palettes in the same chart is another instance of suboptimal graphics. 
 While color can be an effective visual communication tool, the use of excessive colors or color schemes can be overwhelming and confusing. 

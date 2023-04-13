@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C Testing Graphics | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</title>
+  <meta name="description" content="C Testing Graphics | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C Testing Graphics | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C Testing Graphics | DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  
+  
+  
+
+<meta name="author" content="Denise Renee Bradford" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="references.html"/>
+<link rel="next" href="context-and-background.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#audience-considerations"><i class="fa fa-check"></i><b>1.1</b> Audience Considerations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#perception"><i class="fa fa-check"></i><b>1.1.1</b> Perception</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#attention-and-memory"><i class="fa fa-check"></i><b>1.1.2</b> Attention and Memory</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#constructing-meaning"><i class="fa fa-check"></i><b>1.1.3</b> Constructing Meaning</a></li>
+<li class="chapter" data-level="1.1.4" data-path="introduction.html"><a href="introduction.html#expertise"><i class="fa fa-check"></i><b>1.1.4</b> Expertise</a></li>
+<li class="chapter" data-level="1.1.5" data-path="introduction.html"><a href="introduction.html#engagement-with-the-data"><i class="fa fa-check"></i><b>1.1.5</b> Engagement with the data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#data-considerations"><i class="fa fa-check"></i><b>1.2</b> Data Considerations</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#audience-data-interactions"><i class="fa fa-check"></i><b>1.3</b> Audience-Data Interactions</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#testing-static-graphics"><i class="fa fa-check"></i><b>1.3.1</b> Testing static graphics</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#testing-interactive-graphics"><i class="fa fa-check"></i><b>1.3.2</b> Testing interactive graphics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#dashboard-design"><i class="fa fa-check"></i><b>1.4</b> Dashboard Design</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#conclusion"><i class="fa fa-check"></i><b>1.5</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rmd-basics.html"><a href="rmd-basics.html"><i class="fa fa-check"></i><b>2</b> Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rmd-basics.html"><a href="rmd-basics.html#abstract"><i class="fa fa-check"></i><b>2.1</b> Abstract</a></li>
+<li class="chapter" data-level="2.2" data-path="rmd-basics.html"><a href="rmd-basics.html#introduction-1"><i class="fa fa-check"></i><b>2.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.3" data-path="rmd-basics.html"><a href="rmd-basics.html#data-description"><i class="fa fa-check"></i><b>2.3</b> Data Description</a></li>
+<li class="chapter" data-level="2.4" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-considerations"><i class="fa fa-check"></i><b>2.4</b> Dashboard Design Considerations</a></li>
+<li class="chapter" data-level="2.5" data-path="rmd-basics.html"><a href="rmd-basics.html#guiding-design-principles"><i class="fa fa-check"></i><b>2.5</b> Guiding Design Principles</a></li>
+<li class="chapter" data-level="2.6" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-process"><i class="fa fa-check"></i><b>2.6</b> Dashboard Design Process</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-components"><i class="fa fa-check"></i><b>2.6.1</b> Dashboard Components</a></li>
+<li class="chapter" data-level="2.6.2" data-path="rmd-basics.html"><a href="rmd-basics.html#initial-draft"><i class="fa fa-check"></i><b>2.6.2</b> Initial Draft</a></li>
+<li class="chapter" data-level="2.6.3" data-path="rmd-basics.html"><a href="rmd-basics.html#redesign"><i class="fa fa-check"></i><b>2.6.3</b> Redesign</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="rmd-basics.html"><a href="rmd-basics.html#discussion"><i class="fa fa-check"></i><b>2.7</b> Discussion</a></li>
+<li class="chapter" data-level="2.8" data-path="rmd-basics.html"><a href="rmd-basics.html#future-work"><i class="fa fa-check"></i><b>2.8</b> Future Work</a></li>
+<li class="chapter" data-level="2.9" data-path="rmd-basics.html"><a href="rmd-basics.html#conclusions"><i class="fa fa-check"></i><b>2.9</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-sci.html"><a href="math-sci.html"><i class="fa fa-check"></i><b>3</b> Chapter 2 Stuff</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-sci.html"><a href="math-sci.html#many-useful-visualizations-dont-have-easy-interactivity"><i class="fa fa-check"></i><b>3.1</b> Many useful visualizations don’t have easy interactivity</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ref-labels.html"><a href="ref-labels.html"><i class="fa fa-check"></i><b>4</b> Tables, Graphics, References, and Labels</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ref-labels.html"><a href="ref-labels.html#dashboard-eda"><i class="fa fa-check"></i><b>4.1</b> Dashboard EDA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion-1.html"><a href="conclusion-1.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="the-first-appendix.html"><a href="the-first-appendix.html"><i class="fa fa-check"></i><b>A</b> The First Appendix</a></li>
+<li class="chapter" data-level="B" data-path="the-second-appendix-for-fun.html"><a href="the-second-appendix-for-fun.html"><i class="fa fa-check"></i><b>B</b> The Second Appendix, for Fun</a></li>
+<li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="references.html"><a href="references.html#variable-types"><i class="fa fa-check"></i><b>B.0.1</b> Variable Types</a></li>
+<li class="chapter" data-level="B.0.2" data-path="references.html"><a href="references.html#multivariate-data-displays"><i class="fa fa-check"></i><b>B.0.2</b> Multivariate Data Displays</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="testing-graphics.html"><a href="testing-graphics.html"><i class="fa fa-check"></i><b>C</b> Testing Graphics</a></li>
+<li class="chapter" data-level="D" data-path="context-and-background.html"><a href="context-and-background.html"><i class="fa fa-check"></i><b>D</b> CONTEXT AND BACKGROUND</a></li>
+<li class="chapter" data-level="E" data-path="knowledge-gap.html"><a href="knowledge-gap.html"><i class="fa fa-check"></i><b>E</b> KNOWLEDGE GAP</a></li>
+<li class="chapter" data-level="F" data-path="significance.html"><a href="significance.html"><i class="fa fa-check"></i><b>F</b> SIGNIFICANCE</a></li>
+<li class="chapter" data-level="G" data-path="draft-problem-statement.html"><a href="draft-problem-statement.html"><i class="fa fa-check"></i><b>G</b> Draft Problem Statement</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="testing-graphics" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">C</span> Testing Graphics<a href="testing-graphics.html#testing-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Overview of testing methods for interactive graphics - talk aloud, measuring user engagement, etc.
+</p>
+<ul>
+<li>PCPs enable the display of multi-dimensional data in two-dimensional space.</li>
+<li>There must be some loss of information, but this can be partly counteracted by varying the order of the axes.</li>
+<li>Interactivity is valuable for reordering the axes flexibly and fast.</li>
+<li>Interaction is valuable for dealing with the dense mass of lines produced by large data sets.</li>
+</ul>
+<!-- Chapter ... demonstrates the process of designing and redesigning a dashboard for public use.  -->
+<!-- Chapter ... discusses PCPs and how they are interpreted...  -->
+<!-- Chapter ... introduces new methods for interactive PCPs that facilitate greater user engagement with complex, multivariate data. -->
+<!-- mic drop -->
+<!-- This is a bit trite - let's come back to it and figure out how to not make it sound like the statistic equivalent of "since the beginning of time".  -->
+<!--As tabular data grows in our society, it has pushed our need to create visualizations that represent that data in a correct and digestible way. -->
+<!-- The work appears how many times in this sentence? -->
+<!-- The work that has been done in statistical graphics research would suggest that the work that is done in this work has grown increasingly formal, adding sound guidelines with statistically sound metrics that are needed. -->
+<!-- I'm not sure what this is saying, exactly. In plain language, what's the goal? -->
+<!-- This work has been explored in various disciplines but not in statistical graphics. -->
+<!-- Starting with a definition of a dashboard (or even a motivating example, like a famous COVID dashboard?) might be an easier way to introduce this -->
+<!-- We know that dashboards are visual information tools with multiple statistical pictures. -->
+<!-- We should consider the fact that we may need to consider? You're showing you're an expert here - quit hedging! You know your stuff, so make definitive statements. Example:
+As dashboards are intended to facilitate exploration of and drawing conclusions from data, we need to design dashboards that represent and model the data accurately, but it is also important to consider how the intended audience will be able to interact with the dashboard and perceive the visual elements. -->
+<!-- Thus, we should consider the fact that we may need to consider the statistical and psychological framework in a dashboard that will combine multiple statistical graphics. -->
+<!-- You haven't defined dashboards yet -->
+<!-- One graphic can be misleading alone, but can two graphics be considered misleading when placing two "correctly" designed graphics together on a dashboard?  -->
+<!-- This is something that visual information researchers explore but don't test.  -->
+<!-- This is a good point, but is it something we're going to explore? If not, let's focus on whether charts which are used by statisticians are good for general audiences. We can first talk about the naive design of the dashboard and the revisions in Ch. 2, then we can talk about ggflower in Ch. 3, then making PCPs interactive in Ch. 4-->
+<!-- A collaboration is when two or more entities work together to produce a desired and shared outcome.  -->
+<!-- Interdisciplinary research with collaboration is a pinnacle aspect of dashboards and statistical graphics to produce innovation and scientific knowledge. -->
+<!-- Interactive graphics and dashboards can be created using various programming languages and libraries such as Python (with libraries like Plotly, Bokeh, and Dash), R (with libraries like Shiny), JavaScript (with libraries like D3.js and Highcharts), and many more.  -->
+<!-- These libraries allow you to create visualizations and dashboards that can be easily interacted with, such as zoom, hover, pan, and other features. Many data visualization platforms, such as Tableau and Power BI, provide drag-and-drop interfaces for creating interactive graphics and dashboards without coding. -->
+<!-- \svp{Probably need to define "big" here, as it has widely different meanings depending on the type of data we're talking about...} -->
+<!-- Dashboard Design with naive users at the center of the design with adding new graphical visualization and testing the effectiveness of new graphics. -->
+<!-- Data Visualizations are described as \svp{by whom?} a graphical representation of tabular data and information. \svp{You're an expert - you can make definitive statements, like "Data visualizations are graphical summaries of numerical information that can be otherwise presented in tabular or raw form." But you can also back it up with citations if you have them.} -->
+<!-- Data visualization tools are used in ways to accessible way to see and understand trends, outlines, and patterns in data.\svp{This is a victim of over-editing - again, read aloud or run through grammarly to find these and fix them :)} -->
+<!-- <!--  Give a "big picture" of the literature-->
+<!-- This review will explore Exploratory Data Analysis (EDA) through the history of graphical representation, \svp{and will also include an assessment of principles of} Dashboard Design, Visual Information, and Big Data Analytics. \svp{not sure what you mean with the last two - may want to clarify.} -->
+<!-- \svp{Not sure what these bits are in here for - comment them out if they're parts of an outline that you forgot to remove?} -->
+<!-- Roles of graphics in Data Analysis: -->
+<!-- Graphics and Tables are forms of communication that we are looking to determine: -->
+<!-- *What is the audience?* -->
+<!-- Our audience is those users who “know” their data but cannot utilize it due to a lack of skills and resources. -->
+<!-- *What is the message?* -->
+<!-- The message will be to understand how to communicate visual information of statistical graphics in an ethical and understandable way. -->
+<!-- We can break down statistical graphics into two categories: -->
+<!-- - Analysis: design to see patterns, trends, and the process of data description, interpretation -->
+<!-- - Presentation: design to attract attention, make a point, illustrate a conclusion -->
+<!-- Based on the following diagram -->
+<!-- \begin{figure} -->
+<!-- \includegraphics[width=\textwidth]{figure/RolesofGraphics.png} -->
+<!-- \caption{Roles of Graphics \svp{Use the equal spacing button in excalidraw to make boxes equally distributed horizontally and vertically. Group boxes to treat them as a single object. This will make your sketches neater.}} -->
+<!-- \end{figure} -->
+<!-- Present a thesis or argument statement - why is it important to explore this topic?-->
+<!--Theme: Exploratory Data Analysis (EDA) and the History of Graphical Representations -->
+<!--## History of Exploratory Data Analysis (EDA)-->
+<!-- Overview of characteristics of the theme 
+-->
+<!-- #### Characteristics of Big Data -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/BigDataDiagram.png} -->
+<!-- \captionof{figure}{Big Data Diagram} -->
+<!-- \end{center} -->
+<!-- The Big Data Diagram will display the three main features and characteristics of big data: -->
+<!-- - Volume: is its size and how enormous it is -->
+<!-- - Variety: includes the different formats and types of data, as well as the different kinds of uses and ways of analyzing the data -->
+<!-- - Velocity: refers to the rate with which data is changing or how often it is created -->
+<!-- #### Big Data Storage and Management -->
+<!-- \svp{I really hope we don't have to get into data lakes/warehouses/etc. for this work...} -->
+<!-- We can't discuss big data analytics without discussing data storage and management. Our tasks with big data storage is to determine where and how this data will be stored once it is acquired: -->
+<!-- - Traditional structured data storage and retrieval methods include relational databases, data marts, and data warehouses. -->
+<!-- - Uploaded to the storage from operational data stores using: Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) tools which extract data from outside sources, transform the data to fit operational needs, and transform and cataloged before made available for data mining and online analytical functions. -->
+<!-- Given the growing numbers of data sources and the sophistication of data analyses, big data storage should allow analysts to produce and adapt data rapidly. -->
+<!-- - This requires an agile database whose current data analyses use complex statistical methods, and analysts need to be able to be deep and serve as a sophisticated algorithmic run time engine. -->
+<!-- ## History/Review of Graphical Representation -->
+<!-- \svp{I think you're going to want to reformat this and not focus so much on history, instead focus on how we choose a specific graphical representation, the advantages/disadvantages of those representations, and the user factors which weigh in.} -->
+<!-- ### History/Origin of Statistical Visualization -->
+<!-- Visualization is NOT prediction. Much of the field is focus on prediction models but big data analytics visualization is an important part of working to develop methodology for helping analysts to explore and understand what patterns are presented.  -->
+<!-- > The data from plots can be very different from what would be learned by modeling and prediction which means both types of summarization are equally important. -->
+<!-- Tasks can be viewed either by the goal the user is trying to obtain or by the intent the user has  -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/tentypetasks.png} -->
+<!-- \captionof{figure}{10 Type Tasks with Sources} -->
+<!-- \end{center} -->
+<!-- Interaction of Type Tasks facilitate data exploration leading to the generation of new insights. Interactions explicitly place humans in the loop where visualizations leverage the human perceptual system reducing the cognitive load required for data analysis ([@endert2015], [@sedig2012]). More systems are using interactive visualizations, as opposed to static visualizations, which in turn requires a strong need to fully understanding the effectiveness of interaction techniques [@saket2018]. -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/interactiontasks.png} -->
+<!-- \captionof{figure}{Interaction Types with Sources} -->
+<!-- \end{center} -->
+<!-- \svp{Not for this particular write-up, but have you analyzed this to see if it's an effective visualization in its own right? I think this might be better as a table with boxes filled in or something?} -->
+<!-- ### Applications -->
+<!-- Two general applications in areas of visual inference have developed since the work of [@buja2009]. These applications are actual methodology and methodology based on protocols.  Actual methodology applications are used with alternative and corresponding null hypotheses, which perform visual inference tests to show many participants of different backgrounds with lineups. -->
+<!-- The National Academies defines research collaboration as follows [@NATIONALACADEMYOFSCIENCES]: -->
+<!-- > Interdisciplinary Research (IDR) is a mode of research by teams or individuals that integrates information, data, techniques, tools, perspectives, concepts, and/or theories from two or more disciplines or bodies of specialized knowledge to advance fundamental understanding or to solve problems whose solutions are beyond the scope of a single discipline or field of research practice. -->
+<!--  ### Interactive Visualization in Exploratory Data Analysis (EDA) -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=\textwidth]{figure/EDAWorkflowElements.png} -->
+<!-- \captionof{figure}{Elements of EDA Workflow} -->
+<!-- \end{center} -->
+<!--Theme: ggpcp/ ggflower -->
+<!-- Overview of characteristics of the theme 
+
+## `ggpcp` package - Generalized Parallel Coordinate Plots
+
+## Parallel Coordinate Plot Visualization Review
+
+Parallel coordinate plots have been implemented in analysis software since the mid-1980s ([@Inselberg], [@Wegman]). Parallel Coordinate Plot Visualization, also called parallel plot, is an established field of high dimensional visualization of XY coordinate analysis. Parallel coordinate plots have a unique structure that will allow for data structures with n-dimensions. As data grows in exploratory data analysis, data visualizations will be more critical and valuable to understanding the underlying structures of valid data for analyses. Several packages in R are dedicated to visualizing parallel coordinate plots.
+
+Dashboards can help understand and support many data types in essential business objectives. There are many different ways to label and utilize dashboards into different types.
+
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. Most importantly, dashboards should leverage people's visual cognitive capabilities.
+
+### Parallel Coordinates in EDA
+EDA refers to methods and procedures for exploring the data space to learn about a data set. By analogy, exploratory modeling analysis (EMA) refers to methods and procedures for exploring the space of models which may be fit to a data set.
+
+Interactive graphics are excellent for EDA, they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].
+
+- PCPs enable the display of multi-dimensional data in two-dimensional space.
+- There must be some loss of information, but this can be partly counteracted by varying the order of the axes.
+- Interactivity is valuable for reordering the axes flexibly and fast.
+- Interaction is valuable for dealing with the dense mass of lines produced by large data sets.
+
+Being able to select subgroups of cases, highlight the selected lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.
+
+
+### R Packages
+
+R packages exist for Parallel coordinate plots, with some built-in functionality, but only a few exist for advanced exploratory data analysis visualizations. Beginning with base plot package `parcoord` developed in MASS by [@Venables and Ripley 2004]. The package is limited by extensive, which contains more than methods for the parallel coordinate plot visualization. It contains the following tools for 2D visualization of PCPs. Another package, `gclus` was developed by [@Hurley] and implements `cparcoord` to include panel color of the strength of a correlation between neighboring axes.
+
+While base R packages are helpful, a few packages within the ggplot2 environment implement parallel coordinate plots. With ggplot2 extension packages, the theory of grammar of graphics is at the focal point of plots. The following packages [@ggally] and `ggpcp` are built with the fundamental guidelines for graphic literacy for numeric variables. `GGally` was initially designed for the following pieces of graphic design: [LIST THE PACKAGE'S STARTING PLANS](), so it also contains much more capabilities for PCPs in addition to visualizations. `ggpcp` we separate the data transformations from the visualization, i.e., rather than working with a single function to draw a plot, we are providing a set of functions that work together [@ggpcp].
+
+`ggparallel` implements and combines different types of parallel coordinate plots for categorical data: hammock plots, parallel sets plots, typical angle plots, and typical angle plots with a hammock-like adjustment for line widths [@Heike2013].
+
+
+### `ggpcp` package importance
+
+As mentioned in previous sections, that parallel coordinate plots have a long line history. However, we are now looking to incorporate the use of categorical data. The `ggpcp` implements the Grammar of graphics and the principled manner of categorical variables. This package separates the data managing part from the plots by giving full user access while keeping the number of parameters manageable. [@ggpcp]
+
+While the `ggpcp` package is the first iteration of the package that can be changed in a way that will allow the user to rearrange the variables on the y-axis, this use can be helpful so that someone will be able to understand better. When we look at graphics through the eyes of someone that is not used to a graphic, we can see the usefulness and effectiveness of allowing more interaction from the user. This consideration is one that will be exhausted in my work. We will explore how one level of interaction from the user can create a better plot for understanding.-->
+<!--Conclusion -->
+<!-- Overview of characteristics of the theme -->
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="context-and-background.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/edit/master/graveyard.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/blob/master/graveyard.Rmd",
+"text": null
+},
+"download": [["thesis.pdf", "PDF"]],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

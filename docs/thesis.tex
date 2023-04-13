@@ -386,12 +386,12 @@ Short-term memory (STM), also known as working memory, is the stage of temporary
 According to Baddeley (2012), STM is a limited-capacity system prone to interference and decay.
 Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential Cowan (2001).
 
-Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research (\textbf{alvarez2004?}).
+Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research Alvarez \& Cavanagh (2004).
 
 Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
 
 Furthermore, annotations can also be useful in aiding short-term memory.
-By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on (\textbf{alvarez2004?}).
+By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on Alvarez \& Cavanagh (2004).
 
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention A. Treisman (1998).
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
@@ -434,19 +434,19 @@ For example, a chess master is able to quickly recognize patterns and positions 
 \textbf{Automaticity - the ability to perform a task without conscious effort or attention}
 
 As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
-The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process (\textbf{Fitts1967?}).
+The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process Fitts \& Posner (1967).
 For instance, a skilled typist can type without looking at the keyboard because their finger movements have become automatic.
 
 \textbf{Information Readily Available - the way we process information related to a task}
 
 As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice.
-This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly (\textbf{Chase1973?}).
+This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly Chase \& Simon (1973).
 For instance, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
 \textbf{Practice Effects - extensive practice and experience}
 
 Practice effects are the performance enhancements that result from repeated practice.
-These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling (\textbf{Anderson1982?}).
+These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling Anderson (1982).
 The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
 
 The contributions of research on psychological processes, automaticity, readily available information, and practice effects to the field of graphics have significant implications.
@@ -481,7 +481,7 @@ Grammar allow us to separate data type from rendering
 It doesn't help us decide which is better - for that we need user testing.
 
 In the field of graphical communication, semiology, or the study of signs and symbols and their use in communication, has been a valuable tool.
-One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) ((\textbf{Barthes1972?})).
+One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) ((\textbf{barthes1972?})).
 Another essential concept in semiology is the utilization of syntax and semantics to effectively convey meaning in graphic communication.
 This includes both the syntax and semantics of a graphic's visual elements (Monmonier (1985)).
 
@@ -516,6 +516,7 @@ The components of the grammar of graphics include:
 For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 }
+
 \begin{figure}
 
 {\centering \includegraphics[width=0.45\linewidth]{figure/gglayers} \includegraphics[width=0.45\linewidth]{figure/graphic-flowchart} 
@@ -605,7 +606,7 @@ The basic understanding can be formalized to visualize the discovery process.}
 Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations.
 
 Numerical accuracy: In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics.
-Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions ((\textbf{cardoso2016?})).
+Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (Cardoso, Leite, \& Aquino (2016)).
 
 Engagement: Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data.
 Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.
@@ -616,7 +617,8 @@ Clear, accurate, and well-designed graphics can help users recognize patterns an
 Correct Predictions: Correct predictions refers to the capability of graphics to accurately forecast or predict future events or outcomes.
 For accurate predictions, data visualization must include trustworthy data, sound statistical models, and efficient visualization techniques.
 
-``Graphical Tests for Power Comparison of Competing Designs'' by Hofmann et al.~(2012) presents a graphical method for comparing the power of two or more competing designs in an experimental study. The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs.
+``Graphical Tests for Power Comparison of Competing Designs'' by Hofmann et al.~presents a graphical method for comparing the power of two or more competing designs in an experimental study (\textbf{hofmann2012?}).
+The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs.
 It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
 
 Two methods for measuring the particle size distribution in a chemical process were compared in one study.
@@ -628,21 +630,41 @@ John Tukey's EDA methods are currently known and well-vetted in the field.
 However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
 Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.}
 
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from ((\textbf{few2012?}), (\textbf{tufte1983?}), Cairo (2016)):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+\item
+  Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+\item
+  Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+\item
+  Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+\item
+  Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+\item
+  Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+\item
+  Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
+\end{enumerate}
+
 \begin{verbatim}
-## Warning: Groups with fewer than two
-## data points have been
+## Warning: Groups with fewer than two data points have been
 ## dropped.
 \end{verbatim}
 
 \begin{verbatim}
-## Warning: Removed 1 rows containing
-## missing values
+## Warning: Removed 1 rows containing missing values
 ## (`position_stack()`).
 \end{verbatim}
 
 \begin{verbatim}
-## `stat_bin()` using `bins =
-## 30`. Pick better value with
+## `stat_bin()` using `bins = 30`. Pick better value with
 ## `binwidth`.
 \end{verbatim}
 
@@ -709,7 +731,7 @@ Theories behind the manipulation of visualizations include but are not limited t
 \item
   cognitive fit ((Vessey \& Galletta, 1991))
 \item
-  visual perceptual approaches ((\textbf{baker2009?}))
+  visual perceptual approaches ((Baker, Jones, \& Burkman, 2009))
 \item
   human information processing
 \end{itemize}
@@ -721,11 +743,11 @@ Heer and Bostock examined how the complexity of interactive visualizations influ
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy.
 They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
 
-Ko and Kwon ((\textbf{ko2017?})) investigated the cognitive load of mobile interactive visualizations.
+Eissele et al investigated the cognitive load of mobile interactive visualizations (Eissele, Weiskopf, \& Ertl (2009)).
 The authors discovered that the limited input options and small screen size of mobile devices can increase cognitive load in interactive visualizations.
 To reduce cognitive load on mobile devices, they suggested that designers employ suitable visual encoding techniques and simplify interactions.
 
-Nguyen and Gajos ((\textbf{nguyen2015?})) investigated the impact of interactive elements on cognitive load in visualizations.
+Toyama et al.~investigated the impact of interactive elements on cognitive load in visualizations. (Toyama, Sonntag, Orlosky, \& Kiyokawa (2015))
 Based on the nature of the task and the user's familiarity with the interactive features, the authors discovered that interactive features can both increase and decrease cognitive load.
 They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations.
 
@@ -743,8 +765,8 @@ The results of user analysis can be used to inform the design of the interface, 
 It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
 
-\hypertarget{background-research-on-testing-static-graphics}{%
-\subsection{Background Research on testing static graphics}\label{background-research-on-testing-static-graphics}}
+\hypertarget{testing-static-graphics}{%
+\subsection{Testing static graphics}\label{testing-static-graphics}}
 
 Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks Cleveland \& McGill (1986).
 People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
@@ -767,8 +789,8 @@ Furthermore, the use of static graphics enhanced viewers' comprehension and deci
 Overall, these above studies indicate that static graphics are effective at conveying information to viewers, with their effectiveness being influenced by the type of graphic exercised, the use of color, and their capacity to convey uncertainty and variability in data.
 However, it is important to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the information being presented, and the context in which the graphics are used.
 
-\hypertarget{background-research-on-testing-interactive-graphics}{%
-\subsection{Background Research on testing interactive graphics}\label{background-research-on-testing-interactive-graphics}}
+\hypertarget{testing-interactive-graphics}{%
+\subsection{Testing interactive graphics}\label{testing-interactive-graphics}}
 
 The design space of interactive visualizations, including the use of multiple views and coordinated multiple views, is discussed in a paper by Heer and Bostock Heer \& Shneiderman (2012).
 The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
@@ -880,7 +902,7 @@ Multiple color schemes made it difficult for participants to identify the relati
 
 Conversely, it can be suboptimal to combine two visually incompatible graphics.
 For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the incompatibility of the two types of graphics.
-This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart ((\textbf{hullman2011?})).
+This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart (Hullman, Adar, \& Shah (2011)).
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1161,12 +1183,12 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-04-11 20:52:04. The repository is currently at this commit:
+This version of the thesis was generated on 2023-04-12 20:36:48. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
 \begin{verbatim}
-## - Session info -------------
+## - Session info -------------------------------------------
 ##  setting  value
 ##  version  R version 4.2.2 (2022-10-31)
 ##  os       macOS Big Sur ... 10.16
@@ -1176,10 +1198,10 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-04-11
+##  date     2023-04-12
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
-## - Packages -----------------
+## - Packages -----------------------------------------------
 ##  package        * version date (UTC) lib source
 ##  assertthat       0.2.1   2019-03-21 [1] CRAN (R 4.2.0)
 ##  bookdown         0.33    2023-03-06 [1] CRAN (R 4.2.0)
@@ -1260,7 +1282,7 @@ The computational environment that was used to generate this version is as follo
 ## 
 ##  [1] /Library/Frameworks/R.framework/Versions/4.2/Resources/library
 ## 
-## ----------------------------
+## ----------------------------------------------------------
 \end{verbatim}
 
 \backmatter
@@ -1796,19 +1818,114 @@ By analogy, exploratory modeling analysis (EMA) refers to methods and procedures
 
 \db{Being able to select subgroups of cases, highlight the chosen lines, and switch between different subgroups all assist in interpreting the otherwise intricate displays which arise.}
 
+\hypertarget{context-and-background}{%
+\chapter{CONTEXT AND BACKGROUND}\label{context-and-background}}
+
+Topic: The relationship between good statistical graphics and appropriate dashboard design.
+
+\textbf{What is the current situation?}
+
+\begin{itemize}
+\tightlist
+\item
+  Data Scientists and Data Analysts are responsible for making decisions using large data sources for organizations. Large Data sources in decision-making have become more of the norm, which means that a consistent choice in dashboard design helps in exploratory data analysis (EDA). Limited resources and knowledge about the impact of large data sources can contribute to confusion and misconceptions about using large data in decision-making.
+\end{itemize}
+
+\textbf{What is wrong with the situation and/or what needs to change?}
+
+\begin{itemize}
+\tightlist
+\item
+  Many Dashboards are built to assist in data exploration, but many dashboards lack guidelines and appropriate perception with static and interactive statistical graphics.
+\end{itemize}
+
+\textbf{What are the most recent events that led us to the current situation?}
+
+\textbf{What is the setting of the problem?}
+
+\begin{itemize}
+\tightlist
+\item
+  Dashboards with statistical graphics
+\end{itemize}
+
+\hypertarget{knowledge-gap}{%
+\chapter{KNOWLEDGE GAP}\label{knowledge-gap}}
+
+\textbf{What have researchers in similar settings explored or discovered?}
+
+\textbf{What have researchers in other settings explored or discovered?}
+
+\textbf{What remains unknown about the problem?}
+
+\begin{itemize}
+\tightlist
+\item
+  While it is known that interactive graphics is an essential aspect of statistical graphics and are used in dashboard designs frequently, the inconsistency gap between interactive graphics and dashboard design, it is unknown whether there is a relationship between interactive graphics and effective dashboard design can be implemented in Exploratory Data Analysis (EDA).
+\end{itemize}
+
+\hypertarget{significance}{%
+\chapter{SIGNIFICANCE}\label{significance}}
+
+\textbf{Why is it important to fill the knowledge gap?}
+
+\begin{itemize}
+\tightlist
+\item
+  All dashboards will benefit from a comprehensive guidelines for effective dashboard design.
+\end{itemize}
+
+\textbf{Scope: How big is the problem, and how many people are affected in the field or specific context you are studying?}
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+\textbf{Consequences: What are the consequences of not addressing the problem?}
+
+\begin{itemize}
+\tightlist
+\item
+  Dashboards will continue to be designed without the appropriate perception of good statistical interactive graphics when analysts develop dashboards for exploring large data.
+\end{itemize}
+
+\textbf{Contribution: How will your study contribute to the problem's solution? How does filling the gap help?}
+
+\hypertarget{draft-problem-statement}{%
+\chapter{Draft Problem Statement}\label{draft-problem-statement}}
+
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-alvarez2004}{}}%
+Alvarez, G. A., \& Cavanagh, P. (2004). The capacity of visual short-term memory is set both by visual information load and by number of objects. \emph{Psychological Science}, \emph{15}(2), 106--111.
+
+\leavevmode\vadjust pre{\hypertarget{ref-anderson1982}{}}%
+Anderson, J. R. (1982). Acquisition of cognitive skill. \emph{Psychological Review}, \emph{89}(4), 369.
+
 \leavevmode\vadjust pre{\hypertarget{ref-aspillaga1996}{}}%
 Aspillaga, M. (1996). Perceptual foundations in the design of visual displays. \emph{Computers in Human Behavior}, \emph{12}(4), 587--600.
 
 \leavevmode\vadjust pre{\hypertarget{ref-baddeley2012}{}}%
 Baddeley, A. (2012). Working memory: Theories, models, and controversies. \emph{Annual Review of Psychology}, \emph{63}, 1--29.
 
+\leavevmode\vadjust pre{\hypertarget{ref-baker2009}{}}%
+Baker, J., Jones, D., \& Burkman, J. (2009). Using visual representations of data to enhance sensemaking in data exploration tasks. \emph{Journal of the Association for Information Systems}, \emph{10}(7), 2.
+
 \leavevmode\vadjust pre{\hypertarget{ref-Bendix:2005}{}}%
 Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
 
 \leavevmode\vadjust pre{\hypertarget{ref-bui2014}{}}%
 Bui, D. C., \& Myerson, J. (2014). The role of working memory abilities in lecture note-taking. \emph{Learning and Individual Differences}, \emph{33}, 12--22.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cairo2016}{}}%
+Cairo, A. (2016). \emph{The truthful art: Data, charts, and maps for communication}. New Riders.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cardoso2016}{}}%
+Cardoso, R. L., Leite, R. O., \& Aquino, A. C. B. de. (2016). A graph is worth a thousand words: How overconfidence and graphical disclosure of numerical information influence financial analysts accuracy on decision making. \emph{PloS One}, \emph{11}(8), e0160443.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chase1973}{}}%
+Chase, W. G., \& Simon, H. A. (1973). Perception in chess. \emph{Cognitive Psychology}, \emph{4}(1), 55--81.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1984}{}}%
 Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
@@ -1831,6 +1948,9 @@ Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \e
 \leavevmode\vadjust pre{\hypertarget{ref-dedonno}{}}%
 DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discovery learning of a complex real-world task. \emph{Learning and Individual Differences}, \emph{49}, 11--16.
 
+\leavevmode\vadjust pre{\hypertarget{ref-eissele2009}{}}%
+Eissele, M., Weiskopf, D., \& Ertl, T. (2009). Interactive context-aware visualization for mobile devices. In \emph{International symposium on smart graphics}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-eppler2013}{}}%
 Eppler, M. J., \& Bresciani, S. (2013). Visualization in management: From communication to collaboration. A response to zhang. \emph{Journal of Visual Languages \& Computing}, \emph{24}(2), 146--149.
 
@@ -1842,6 +1962,9 @@ Few, S. (2006). \emph{Information dashboard design: The effective visual communi
 
 \leavevmode\vadjust pre{\hypertarget{ref-few2009}{}}%
 Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quantitative analysis}. Analytics Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-fitts1967}{}}%
+Fitts, P. M., \& Posner, M. I. (1967). Human performance.
 
 \leavevmode\vadjust pre{\hypertarget{ref-friendly2001}{}}%
 Friendly, M., \& Denis, D. J. (2001). Milestones in the history of thematic cartography, statistical graphics, and data visualization. \emph{URL Http://Www. Datavis. Ca/Milestones}, \emph{32}, 13.
@@ -1857,6 +1980,9 @@ Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{I
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hofmann:2013}{}}%
 Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
+
+\leavevmode\vadjust pre{\hypertarget{ref-hullman2011}{}}%
+Hullman, J., Adar, E., \& Shah, P. (2011). Benefitting infovis with visual difficulties. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2213--2222.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lee}{}}%
 Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
@@ -1890,6 +2016,9 @@ Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do 
 
 \leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-toyama2015}{}}%
+Toyama, T., Sonntag, D., Orlosky, J., \& Kiyokawa, K. (2015). Attention engagement and cognitive state analysis for augmented reality text display functions. In \emph{Proceedings of the 20th international conference on intelligent user interfaces} (pp. 322--332).
 
 \leavevmode\vadjust pre{\hypertarget{ref-treisman1998}{}}%
 Treisman, A. (1998). Feature binding, attention and object perception. \emph{Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences}, \emph{353}(1373), 1295--1306.
