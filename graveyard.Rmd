@@ -617,5 +617,3 @@ While the `ggpcp` package is the first iteration of the package that can be chan
 <!--Conclusion -->
 <!-- Overview of characteristics of the theme -->
 
-
-

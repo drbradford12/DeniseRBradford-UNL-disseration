@@ -168,7 +168,7 @@ Visual aids such as charts and diagrams can improve short-term memory by allowin
 
 Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
 
-Furthermore, annotations can also be useful in aiding short-term memory. 
+Furthermore, annotations can also help aid short-term memory. 
 By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on @alvarez2004.
 
 <!-- Feature Integration Theory -->
@@ -655,4 +655,3 @@ We conclude with a Shiny application that facilitates a better understanding of 
 Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
 We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
 }
-
