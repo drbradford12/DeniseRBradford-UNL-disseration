@@ -65,23 +65,13 @@ Do they understand specialized techniques such as principal component analysis t
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
 In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
 
-<!-- We wish to discuss and analyze the exploration of using density plots or categorical plots as "best" plots in the field. --> <!-- Wait, what? Density plots or categorical plots are the best plots?? -->
-<!-- We will analyze statistical data and graphics alongside dashboard design, starting with Steven Few's principles.  --><!-- This is said in the prev paragraph, minus Few, which we can cite later -->
-<!-- It would be worthwhile to investigate the development of dashboards from static graphical representations in a practical setting to dynamic representations in an application setting.  -->
 \svp{Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information. 
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.}
-<!-- We would like to see the application of research to practice. -->
 
-
-<!-- Consider a novel concept in research can be less practical or useful in the field more often than not.  -->
 \svp{In the "real world", however, conventions and familiarity often win out over best practice validated by perceptual experiments.}
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-<!-- We will adopt the concept of dynamically introducing the application to stakeholders with a static representation and migrating them into an active application.  -->
-<!-- Once this dynamic application is utilized or migrated to that space, it is necessary to comprehend why categorical representations are more critical than density representations in the field.  -->
-<!-- In regards to speaking about the same data being represented, most of the data is then categorized.  -->
-<!-- Is it because categorical shot charts in tables are perceived to be digestible or because density plots become cluttered and difficult to comprehend?  -->
-<!-- Where do we draw the line between what is viewed as an impediment to the development of applicable graphics methodology? -->
+
 \svp{Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.}
 \svp{Let us first consider the audience characteristics that affect the selection of graphics. 
 Then, we will engage with considerations based on the data to be displayed. 
@@ -93,43 +83,57 @@ Finally, we will consider the interactions between the audience and the data: ho
 
 Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.
 
+The term "data visualization" dates all the way back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies. 
+Throughout human history, data visualization has significantly contributed to invention and discovery @Crapo2000.
+The introduction of computer technology dramatically changed the visual representation of data. 
+Using computer-based graphical data visualization, data analysts have become faster and more precise. 
+Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc.
+The origin of data visualization being a sub-category, it is regarded as "the science of the visual representation of data," @friendly2009.
+"Data Visualization: a successful design process" defined data visualization as "the representation and presentation of data that exploits our visual perception abilities to amplify cognition," @kirk2012. 
+This suggests that data visualization involves the exploitation of human visual perception in addition to the presentation of data.
+Assigning meaning to visualization is not a statistical or computational step but a cognitive one. 
+Each step in the data analysis process is part of a more extensive mental process.
+
 
 ### Perception
 
-\db{Why is it essential to comprehend perception laws when working with data visualization? 
-First of all, they can guide your decision-making when creating a graph or dashboard. 
-In addition, they assist the reader in quickly organizing and interpreting charts and graphs and making visual sense of the information.
-Assigning meaning is not a statistical or computational step but a cognitive one. 
-Each step in the data analysis process is part of a more extensive mental process.
-To read reality from images is to solve a problem: a series of extremely difficult problems that persist throughout an individual's lifetime. 
-Errors are illusions. 
-Certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general @gregory1968.
-Human perception plays a direct role in the area of visualization and graphics. 
-Data Analysis tasks closely resemble the cognitive process known as sensemaking. 
-Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) @tukey1966.
-Additionally, short-term memory is crucial to the effectiveness of statistical graphics. 
+Human perception is an essential component of data visualization. 
+Colin Ware suggests that perception can significantly enhance both the content and quantity of displayed information, @ware2012. 
+Perception refers to the organization, interpretation, and conscious experience of sensory data.
+Perception is also defined as "the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information," @ward2010.
+Ward et al. explain the notion of perception as the following:
+> Simply put, perception is the process by which we interpret the world around us, forming a mental representation of the environment. This representation is not isomorphic to the world, but it’s subject to many correspondence differences and errors. The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand. 
+
+Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, @reuter1990.
+Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general @gregory1968.
+Additional to the general process of human visual perception process and efficacy of a visualization in communicating, short-term memory is crucial to the effectiveness of statistical graphics. 
 Research indicates that our short-term memory can only store a limited amount of information at any given time. 
 Therefore, designers must present data in a manner that is simple to comprehend and remember. 
-Utilizing parallel coordinate plots is one method for achieving this. 
-These plots enable viewers to compare multiple variables concurrently, thereby reducing cognitive load and making it easier to identify patterns and trends.}
 
-\db{Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.}
+Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input. 
+In a later chapter, we will show how a utilizing parallel coordinate plot is one method for achieving a simple design to comprehend. 
+These plots enable viewers to compare multiple variables concurrently, thereby reducing cognitive load and making it easier to identify patterns and trends.
 
-\db{The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s. 
-At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts. 
+<!--I need to close this section to introduce the principles of Gestolt and eye tracking-->
+
+### Gestalt Principles
+
 Our visual interpretation of the world is a major factor in why humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
-Without diving too deeply into sensory perception, brain pathways, and the biology of the eye, let's establish two essential facts:}
+The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s. 
+Gestalt therapy is founded on the notion that overall perception is contingent upon the interaction of numerous factors.
+These principles include proximity, similarity, closure, continuity, symmetry, and figure-ground relationships, @. 
+By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements. 
+For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard
 
-(1) Vision, and how we perceive or interpret what we see, is primarily the result of our brain and nervous system transmitting sensory stimuli through neural pathways. 
-This is why people with perfectly functioning eyes, such as those with Cortical Visual Impairment, may be unable to see if the pathways to the brain are miswired or damaged (see a viz on that here).
+At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts. 
 
-(2) While 70% of our experience of the world is gained through vision, our brains can only simultaneously process less than 5% of our visual environment.
 
-\db{All of this suggests that our brain frequently perceives things differently than what is actually present. 
+
+All of this suggests that our brain frequently perceives things differently than what is actually present. 
 If you are familiar with optical illusions or the famous "gorilla in the crowd" experiment, you are aware that we do not always process everything in our visual field. 
 There is simply too much information for our brains to process, and if we tried to interpret it all, we would be rendered paralyzed.
 We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
-These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.}
+These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
 
 Gestalt principles include:
 
@@ -146,16 +150,16 @@ knitr::include_graphics("figure/gestalt_principles.png")
 ```
 
 
-\db{These principles are based on cognitive psychology and understanding how the human brain processes visual information.}
+These principles are based on cognitive psychology and understanding how the human brain processes visual information.
 
-\db{Eye tracking regression is a method used in eye tracking studies to analyze eye movement data and identify the factors that influence a participant's gaze behavior. 
+Eye tracking regression is a method used in eye tracking studies to analyze eye movement data and identify the factors that influence a participant's gaze behavior. 
 In eye tracking regression, the eye movement data is regressed on a set of predictor variables, such as visual features of the stimulus or task instructions, to determine the degree of influence each variable has on eye movements.
 On the other hand, statistical regression is a technique used in statistics to identify the relationship between a dependent variable and one or more independent variables. 
 Statistical regression is used to make predictions or to explain the relationship between variables. 
 It is used in various fields, such as economics, psychology, and biology, to analyze and understand complex data.
 While both techniques involve regression analysis, they are used for different purposes and with different types of data. 
 Eye-tracking regression is specific to eye-tracking data and is used to understand visual attention and perception. 
-Statistical regression, however, is a more general technique that can be applied to any type of data and is used for modeling relationships between variables.}
+Statistical regression, however, is a more general technique that can be applied to any type of data and is used for modeling relationships between variables.
 
 
 ### Attention and Memory
