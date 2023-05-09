@@ -80,6 +80,18 @@ William Cleveland's subcycle plots:
 - glyphs and other plots have been embedded in maps 
 
 <!-- How do we classify charts? -->
+<!-- I like this but not sure if we need this, if we focus on the gestalt principle that may help more in the explanations for the brain to understand the dashboard.
+
+Eye tracking regression is a method used in eye tracking studies to analyze eye movement data and identify the factors that influence a participant's gaze behavior. 
+In eye tracking regression, the eye movement data is regressed on a set of predictor variables, such as visual features of the stimulus or task instructions, to determine the degree of influence each variable has on eye movements.
+On the other hand, statistical regression is a technique used in statistics to identify the relationship between a dependent variable and one or more independent variables. 
+
+
+Statistical regression is used to make predictions or to explain the relationship between variables. 
+It is used in various fields, such as economics, psychology, and biology, to analyze and understand complex data.
+While both techniques involve regression analysis, they are used for different purposes and with different types of data. 
+Eye-tracking regression is specific to eye-tracking data and is used to understand visual attention and perception. 
+Statistical regression, however, is a more general technique that can be applied to any type of data and is used for modeling relationships between variables.-->
 Bertin's Semiologic of Graphics is a seminal work in the academic study of visualization. 
 [@schulz2013] define two abstractions for the design of visualizations:
 \begin{center}
@@ -631,3 +643,6 @@ While the `ggpcp` package is the first iteration of the package that can be chan
 <!--Conclusion -->
 <!-- Overview of characteristics of the theme -->
 
+<!-- \svp{Ok, he was a bit more than a person. He's the creator of the boxplot, stem and leaf plot, and rootogram, afaik. Add pictures demonstrating these things. Explain why they're important.} -->
+
+<!-- \svp{assessing, not accessing. Use an example in this section to provide a clear demonstration of what each principle might look like. The flights data or the diamonds data might be good options here, since they're both large.} -->
