@@ -168,7 +168,7 @@ The Gestalt principles describe how humans perceive and organize visual informat
 It's worth exploring the efficacy of short-term memory when developing effective dashboards.
 
 Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended. 
-According to @baddeley2012, STM is a limited-capacity system prone to interference and decay. 
+According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, @baddeley2012. 
 Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, @cowan2001.
 
 Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research, @alvarez2004.
@@ -261,22 +261,14 @@ Ultimately, data analysis aims to turn data into actionable insights and informa
 
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
 Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
-In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data more enhanced understanding than table @tukey1966. 
+In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, @tukey1966. 
 Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. 
-John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. 
+<!--John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. -->
 He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
-ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
-  geom_violin(aes(fill = Diet), trim = FALSE) +
-  geom_boxplot(width = 0.1) +
-  theme_classic() +
-  theme(legend.position = "none")
-
-p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
-  geom_boxplot()
-p + scale_fill_brewer(palette="Dark2")
-```
+Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
+Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique. 
+In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
 
 Tukey's Principles in EDA:
 
@@ -296,22 +288,34 @@ The reexpressing data to a new scale by taking the square root or logarithmic sc
 This is taught in every statistics 101 class. 
 The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
 
-The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
+```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
+ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
+  geom_violin(aes(fill = Diet), trim = FALSE) +
+  geom_boxplot(width = 0.1) +
+  theme_classic() +
+  theme(legend.position = "none")
 
-Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
-Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
-When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
+p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
+  geom_boxplot()
+p + scale_fill_brewer(palette="Dark2")
+```
+
+Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
+Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone. 
+Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently. 
+Through visualizations, analysts can also identify potential issues or biases in the data, resulting in better decisions and models. 
+Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights.
 During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
 <!--This will be important to know before starting a linear model analysis. 
 Much of our general understanding is from introductory statistics courses. -->
 The basic understanding can be formalized to visualize the discovery process.
 
-The field of graphical communication, which can is directly related to EDA, semiology, or the study of signs and symbols and their use in touch, has been a valuable tool and extension of the EDA thoughts that Tukey expressed.
+The field of graphical communication, which is directly related to EDA, semiology, and their use in touch, has been a valuable tool and extension of the EDA thoughts that Tukey expressed.
 One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified), @barthes1972. 
 Another essential concept in semiology is using syntax and semantics to convey meaning in graphic communication effectively. 
 This includes both the syntax and semantics of a graphic's visual elements, @bertin1983.
 
-The use of color to represent data on maps is an example of successful graphical communication utilizing semiology. 
+Using color to represent data on maps is an example of successful graphical communication utilizing semiology. 
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily. 
 Jacques Bertin  writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points", @bertin1983.
 In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
