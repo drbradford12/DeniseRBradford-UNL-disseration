@@ -287,6 +287,7 @@ As a result, it can be hard to generalize this research to practical application
 
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
 As data in sports becomes more prominent, extensive, and collected, this information must be refined.
+
 \svp{Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.}
 \svp{Let us first consider the audience characteristics that affect the selection of graphics. 
 Then, we will engage with considerations based on the data to be displayed. 
@@ -297,47 +298,57 @@ Finally, we will consider the interactions between the audience and the data: ho
 
 Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.
 
+Perception and attention are crucial cognitive processes that allow us to interpret and make sense of data visualizations.
+Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information.
+
+Our ability to perceive and pay attention to pertinent features, such as patterns, trends, and relationships, is essential for comprehending data visualizations.
+This is especially true when working with unfamiliar or complex data sets, as our ability to focus on pertinent information becomes more difficult.
+
+In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations.
+Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
+
+In conclusion, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, in order to interpret and comprehend the presented information.
+
+The term ``data visualization'' dates back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies.
+Throughout human history, data visualization has significantly contributed to invention and discovery (\textbf{Crapo2000?}).
+The introduction of computer technology dramatically changed the visual representation of data.
+Using computer-based graphical data visualization, data analysts have become faster and more precise.
+Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc.
+The origin of data visualization being a sub-category, it is regarded as ``the science of the visual representation of data,'' (\textbf{friendly2009?}).
+``Data Visualization: a successful design process'' defined data visualization as ``the representation and presentation of data that exploits our visual perception abilities to amplify cognition,'' Kirk (2012).
+This suggests that data visualization involves the exploitation of human visual perception in addition to the presentation of data.
+Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
+Each step in the data analysis process is part of a more extensive mental process.
+
 \hypertarget{perception}{%
 \subsection{Perception}\label{perception}}
 
-\db{Why is it essential to comprehend perception laws when working with data visualization? 
-First of all, they can guide your decision-making when creating a graph or dashboard. 
-In addition, they assist the reader in quickly organizing and interpreting charts and graphs and making visual sense of the information.
-Assigning meaning is not a statistical or computational step but a cognitive one. 
-Each step in the data analysis process is part of a more extensive mental process.
-To read reality from images is to solve a problem: a series of extremely difficult problems that persist throughout an individual's lifetime. 
-Errors are illusions. 
-Certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general @gregory1968.
-Human perception plays a direct role in the area of visualization and graphics. 
-Data Analysis tasks closely resemble the cognitive process known as sensemaking. 
-Tukey and Wilk highlight the role of cognitive processes in their initial descriptions of Exploratory Data Analysis (EDA) @tukey1966.
-Additionally, short-term memory is crucial to the effectiveness of statistical graphics. 
-Research indicates that our short-term memory can only store a limited amount of information at any given time. 
-Therefore, designers must present data in a manner that is simple to comprehend and remember. 
-Utilizing parallel coordinate plots is one method for achieving this. 
-These plots enable viewers to compare multiple variables concurrently, thereby reducing cognitive load and making it easier to identify patterns and trends.}
+Human perception is an essential component of data visualization.
+Colin Ware suggests that perception can significantly enhance both the content and quantity of displayed information, Ware (2012).
+Perception refers to the organization, interpretation, and conscious experience of sensory data.
+Perception is also defined as ``the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information,'' Ward, Grinstein, \& Keim (2010).
+Ward et al.~explain the notion of perception as the following:
+\textgreater{} Simply put, perception is the process by which we interpret the world around us, forming a mental representation of the environment. This representation is not isomorphic to the world, but it's subject to many correspondence differences and errors. The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.
 
-\db{Untrained analysts can and do "analyze" data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.}
+Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, Reuter, Tukey, Maloney, Pani, \& Smith (1990).
+Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general (\textbf{gregory1968?}).
+Additional to the general process of human visual perception process and efficacy of a visualization in communicating, short-term memory is crucial to the effectiveness of statistical graphics.
+Research indicates that our short-term memory can only store a limited amount of information at any given time.
+Therefore, designers must present data in a manner that is simple to comprehend and remember.
 
-\db{The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s. 
-At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts. 
+Untrained analysts can and do ``analyze'' data with only their natural mental abilities - The mind performs its data analysis-like process to create detailed understandings of reality from bits of sensory input.
+In a later chapter, we will show how a utilizing parallel coordinate plot is one method for achieving a simple design to comprehend.
+These plots enable viewers to compare multiple variables concurrently, thereby reducing cognitive load and making it easier to identify patterns and trends.
+
+Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how perception functions.
+
+\hypertarget{gestalt-principles}{%
+\subsection{Gestalt Principles}\label{gestalt-principles}}
+
 Our visual interpretation of the world is a major factor in why humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
-Without diving too deeply into sensory perception, brain pathways, and the biology of the eye, let's establish two essential facts:}
-
-\begin{enumerate}
-\def\labelenumi{(\arabic{enumi})}
-\item
-  Vision, and how we perceive or interpret what we see, is primarily the result of our brain and nervous system transmitting sensory stimuli through neural pathways.
-  This is why people with perfectly functioning eyes, such as those with Cortical Visual Impairment, may be unable to see if the pathways to the brain are miswired or damaged (see a viz on that here).
-\item
-  While 70\% of our experience of the world is gained through vision, our brains can only simultaneously process less than 5\% of our visual environment.
-\end{enumerate}
-
-\db{All of this suggests that our brain frequently perceives things differently than what is actually present. 
-If you are familiar with optical illusions or the famous "gorilla in the crowd" experiment, you are aware that we do not always process everything in our visual field. 
-There is simply too much information for our brains to process, and if we tried to interpret it all, we would be rendered paralyzed.
-We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
-These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.}
+The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s.
+Gestalt therapy is founded on the notion that overall perception is contingent upon the interaction of numerous factors.
+These principles include proximity, similarity, closure, continuity, symmetry, and figure-ground relationships formally outlined in ``Principles of Gestalt Psychology'', Koffka (2013).
 
 Gestalt principles include:
 
@@ -368,30 +379,32 @@ Gestalt principles include:
 \caption{Gestalt Principles with Examples}\label{fig:gestalt}
 \end{figure}
 
-\db{These principles are based on cognitive psychology and understanding how the human brain processes visual information.}
+These principles are based on cognitive psychology and understanding how the human brain processes visual information.
+By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements.
+For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
+At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts.
 
-\db{Eye tracking regression is a method used in eye tracking studies to analyze eye movement data and identify the factors that influence a participant's gaze behavior. 
-In eye tracking regression, the eye movement data is regressed on a set of predictor variables, such as visual features of the stimulus or task instructions, to determine the degree of influence each variable has on eye movements.
-On the other hand, statistical regression is a technique used in statistics to identify the relationship between a dependent variable and one or more independent variables. 
-Statistical regression is used to make predictions or to explain the relationship between variables. 
-It is used in various fields, such as economics, psychology, and biology, to analyze and understand complex data.
-While both techniques involve regression analysis, they are used for different purposes and with different types of data. 
-Eye-tracking regression is specific to eye-tracking data and is used to understand visual attention and perception. 
-Statistical regression, however, is a more general technique that can be applied to any type of data and is used for modeling relationships between variables.}
+All of this suggests that our brain frequently perceives things differently than what is actually present.
+If you are familiar with optical illusions or the famous ``gorilla in the crowd'' experiment, you are aware that we do not always process everything in our visual field.
+There is simply too much information for our brains to process, and if we tried to interpret it all, we would be rendered paralyzed.
+We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
+These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
+Understanding the Gestalt principles can also cast light on how information is processed and stored in short-term memory and attention's critical role in this process.
 
 \hypertarget{attention-and-memory}{%
 \subsection{Attention and Memory}\label{attention-and-memory}}
 
+The Gestalt principles describe how humans perceive and organize visual information into meaningful patterns and structures to help the brain to effectively process and organize incoming visual information, making it easier to attend to and remember.
+It's worth exploring the efficacy of short-term memory when developing effective dashboards.
+
 Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
-According to Baddeley (2012), STM is a limited-capacity system prone to interference and decay.
-Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential Cowan (2001).
+According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, Baddeley (2012).
+Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, Cowan (2001).
 
-Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research Alvarez \& Cavanagh (2004).
-
+Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research, Alvarez \& Cavanagh (2004).
 Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
-
 Furthermore, annotations can also help aid short-term memory.
-By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on Alvarez \& Cavanagh (2004).
+By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, Alvarez \& Cavanagh (2004).
 
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention A. Treisman (1998).
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
@@ -402,6 +415,7 @@ Similarly, by elaborating on the information we want to remember, such as creati
 
 STM is a dynamic and malleable cognitive system that is crucial to our daily lives.
 Understanding the mechanisms underlying STM and how to improve it can have significant implications for learning, memory, and the treatment of memory disorders.
+By analyzing the relationship between attention and working memory, we can gain insight into how we construct meaning from the information in our environment.
 
 \hypertarget{constructing-meaning}{%
 \subsection{Constructing Meaning}\label{constructing-meaning}}
@@ -426,22 +440,22 @@ This essay will discuss the contributions to the field of graphics made by resea
 
 \textbf{Cognitive Processes - the way we think about and approach a task.}
 
-As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata.
+As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata, a heuristic technique to encode and retrieve memories, the majority of typical situations do not require much strenuous processing.
 These mental models help us to organize information in a meaningful way, and to quickly identify and solve problems related to the task.
 This process is known as cognitive restructuring and is facilitated by developing domain-specific knowledge Ericsson \& Lehmann (1996).
-For example, a chess master is able to quickly recognize patterns and positions on the board that are common in chess, which allows them to make decisions more quickly and accurately than a novice player.
+For example, a basketball coach is able to quickly recognize patterns and positions on a court that are common in basketball, which allows them to make decisions more quickly and accurately than a novice coach or player.
 
 \textbf{Automaticity - the ability to perform a task without conscious effort or attention}
 
 As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
 The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process Fitts \& Posner (1967).
-For instance, a skilled typist can type without looking at the keyboard because their finger movements have become automatic.
+For example, a well-trained quarterback can throw a ball without looking at the wide receiver because their throwing movements have become automatic.
 
 \textbf{Information Readily Available - the way we process information related to a task}
 
 As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice.
 This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly Chase \& Simon (1973).
-For instance, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
+For example, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
 \textbf{Practice Effects - extensive practice and experience}
 
@@ -462,39 +476,79 @@ This can help ensure that the graphics used to convey complex information are cl
 \hypertarget{engagement-with-the-data}{%
 \subsection{Engagement with the data}\label{engagement-with-the-data}}
 
-\db{
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data. 
-The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data. 
-The end goal of data analysis is to support decision making and provide a basis for informed action. 
-Data analysis can help organizations to better understand their customers, market trends, and operational performance. }
-
-\db{Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena. 
-Ultimately, data analysis aims to turn data into actionable insights and information that can inform and improve decision-making.}
+The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data.
+The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data.
+The end goal of data analysis is to support decision making and provide a basis for informed action.
+Data analysis can help organizations to better understand their customers, market trends, and operational performance.
+Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena.
+Ultimately, data analysis aims to turn data into actionable insights and information that can inform and improve decision-making.
 
 \hypertarget{data-considerations}{%
 \section{Data Considerations}\label{data-considerations}}
 
-Grammar allow us to separate data type from rendering
+John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA).
+Previous research by Tukey focused on graphics as a tool for exploratory analysis.
+In ``Exploratory Data Analysis,'' Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, Tukey \& Wilk (1966).
+Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics.
+He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-\db{Frame as a way to easily change between appropriate forms of presentation for a given variable or set of variables.}
+Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
+Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique.
+In this way, Tukey's Principles have revolutionized our data analysis approach and~become the foundational framework for EDA.
 
-It doesn't help us decide which is better - for that we need user testing.
+Tukey's Principles in EDA:
 
-In the field of graphical communication, semiology, or the study of signs and symbols and their use in communication, has been a valuable tool.
-One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified) ((\textbf{barthes1972?})).
-Another essential concept in semiology is the utilization of syntax and semantics to effectively convey meaning in graphic communication.
-This includes both the syntax and semantics of a graphic's visual elements (Monmonier (1985)).
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Graphical exploration, looking for patterns or displaying fit, the method demonstrates things about data that a single numeric metric does not understand.
+  This has been useful in graphing the data before you develop summary statistics.
+\item
+  Describing the general patterns of the data.
+  This step should be insensitive to outliers.
+  In general, think about the types of resistant measures (i.e., median or mean).
+  This step is making sure to determine data patterns.
+\item
+  The natural scale/state that the data are at their best.
+  This will be the step at which the scale of data can be helpful for analysis.
+  The reexpressing data to a new scale by taking the square root or logarithmic scale.
+\item
+  The mostly known parts of EDA but is done in the way of accessing fit of the data.
+  This is taught in every statistics 101 class.
+  The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
+\end{enumerate}
 
-The use of color to represent data on maps is an example of successful graphical communication utilizing semiology.
+\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-2} \end{center}
+
+Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
+Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone.
+Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently.
+Through visualizations, analysts can also identify potential issues or biases in the data, resulting in better decisions and models.
+Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights.
+During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.
+The basic understanding can be formalized to visualize the discovery process.
+
+The field of graphical communication, which is directly related to EDA, semiology, and their use in touch, has been a valuable tool and extension of the EDA thoughts that Tukey expressed.
+One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified), (\textbf{barthes1972?}).
+Another essential concept in semiology is using syntax and semantics to convey meaning in graphic communication effectively.
+This includes both the syntax and semantics of a graphic's visual elements, Monmonier (1985).
+
+Using color to represent data on maps is an example of successful graphical communication utilizing semiology.
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily.
 Jacques Bertin writes in ``Semiology of Graphics'' that color can be used to ``emphasize a point, distinguish one category from another, or establish a relationship between two points'', Monmonier (1985).
 In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
 
-Graphs are another tool that can be used to effectively communicate information via semiology.
-By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers.
-For instance, a line graph can be used to illustrate the change in value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson (Wilkinson (2012)) writes in his book ``The Grammar of Graphics'' that ``graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning.''
+The application of semiology in graphical communication is not devoid of obstacles.
+One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended, Monmonier (1985).
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another, Norman (2013).
 
-\db{It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.}
+Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information.
+By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
+
+By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers.
+For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson writes in his book ``The Grammar of Graphics'' that ``graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning,''Wilkinson (2012).
+
+It proposes that any statistical graphic can be broken down into a set of essential components, or ``grammar,'' that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 The components of the grammar of graphics include:
 
@@ -512,10 +566,9 @@ The components of the grammar of graphics include:
   Facets: The plot division into multiple subplots, each representing a different subset of the data.
 \end{itemize}
 
-\db{For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry. 
+For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry.
 For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
-}
 
 \begin{figure}
 
@@ -526,95 +579,24 @@ Finally, the Grammar of Graphics provides a systematic way of thinking about vis
 \caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2}
 \end{figure}
 
-The application of semiology in graphical communication is not devoid of obstacles.
-One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended (Monmonier (1985)).
-Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another (Norman (2013)).
-
-Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information.
-By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
-
 Michael Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present.
-\db{Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually @friendly2014.}
+Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually, Friendly (2014).
 By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
 In his book ``Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization,'' Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey (Friendly \& Denis (2001)).
 
-\db{John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
-John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. 
-He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.}
+As discussed regarding semiology, Tukey's Exploratory Data Analysis (EDA), and the introduction of the Grammar of Graphics, we should be mindful that a well-constructed graphic can be misleading out of context.
+Compelling graphics can be a powerful tool for communicating complex information, making numerical accuracy, engagement, correct decision-making, and accurate predictions crucial.
 
-\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-2} \end{center}
-
-\db{Tukey's Principles in EDA:}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Graphical exploration looking for patterns or displaying fit.
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  The method demonstrates things about data that are not understood by a single numeric metric.
-  This has been useful in graphing the data before you develop summary statistics.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Describing the general patterns of the data.
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  This step should be insensitive to outliers.
-  In general, think about the types of resistant measures (i.e., median or mean).
-  This step is making sure to determine data patterns.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\item
-  The natural scale/state that the data are at their best.
-  This will be the step at which the scale of data can be helpful for analysis.
-  The reexpressing data to a new scale by taking the square root or logarithmic scale.
-\item
-  The mostly known parts of EDA but is done in the way of accessing fit of the data.
-  This is taught in every statistics 101 class.
-  The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
-\end{enumerate}
-
-\begin{itemize}
-\tightlist
-\item
-  The idea generally is to determine the deviations in the data from a general pattern by looking at the data from the fit of the data.
-\end{itemize}
-
-\db{Visualizations of data are essential for exploratory data analysis (EDA) along with model diagnostics. 
-Plots for EDA are a valuable tool for guiding an analyst in discovering the relationships between variables in their data. 
-When using plots in model diagnostics, plots help analysts determine whether or not the model is an appropriate way to model. 
-During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot. 
-This will be important to know before starting a linear model analysis. 
-Much of our general understanding is from introductory statistics courses. 
-The basic understanding can be formalized to visualize the discovery process.}
-
-Effective graphics can be a powerful tool for communicating complex information, which makes numerical accuracy, engagement, correct decision-making, and accurate predictions crucial considerations.
-
-Numerical accuracy: In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics.
+In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics.
 Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (Cardoso, Leite, \& Aquino (2016)).
 
-Engagement: Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data.
+Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data.
 Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.
 
-Correct Decision Making: Correct decision making refers to the capacity of data visualization to enable users to make informed and precise decisions based on the presented information.
+Correct decision making refers to the capacity of data visualization to enable users to make informed and precise decisions based on the presented information.
 Clear, accurate, and well-designed graphics can help users recognize patterns and insights, resulting in more effective decision making.
 
-Correct Predictions: Correct predictions refers to the capability of graphics to accurately forecast or predict future events or outcomes.
+Correct predictions refers to the capability of graphics to accurately forecast or predict future events or outcomes.
 For accurate predictions, data visualization must include trustworthy data, sound statistical models, and efficient visualization techniques.
 
 ``Graphical Tests for Power Comparison of Competing Designs'' by Hofmann et al.~presents a graphical method for comparing the power of two or more competing designs in an experimental study (\textbf{hofmann2012?}).
@@ -625,10 +607,10 @@ Two methods for measuring the particle size distribution in a chemical process w
 The study evaluated both designs under various operating conditions and compared their power using a graphical method.
 The results demonstrated that one design was more effective at detecting differences in operating conditions than another.
 
-\db{Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
-John Tukey's EDA methods are currently known and well-vetted in the field. 
-However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
-Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.}
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis.
+John Tukey's EDA methods are currently known and well-vetted in the field.
+However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar (Satyanarayan, Moritz, Wongsuphasawat, \& Heer, 2016).
+Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
 
 When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
 Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
@@ -670,58 +652,62 @@ Here are some general guidelines for making better graphics with works from ((\t
 
 \begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-2} \end{center}
 
-\db{On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
-Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
-They often display real-time data and can be customized to show the most relevant data to the user.}
+On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making.
+Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data.
+They often display real-time data and can be customized to show the most relevant data to the user.
 
 \hypertarget{interactive-graphics}{%
 \subsubsection{Interactive Graphics}\label{interactive-graphics}}
 
-\db{Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic [@unwin2003].}
+Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic, Unwin, Volinsky, \& Winkler (2003).
 
-\db{The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as `d3` [@bostock2011]. 
-Visualizations are more than just a picture. 
-They are now a tool that facilitates analytic activity through different modes of interaction [@yi2007]. 
-Visualization is context-free, as it can mean different things to different people depending on the situation [@parsons2014]. }
+The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s---developments are driven partly by new technology, such as \texttt{d3} (Bostock, Ogievetsky, \& Heer, 2011).
+Visualizations are more than just a picture.
+They are now a tool that facilitates analytic activity through different modes of interaction (Yi, Kang, Stasko, \& Jacko, 2007).
+Visualization is context-free, as it can mean different things to different people depending on the situation (Parsons \& Sedig, 2014).
 
-\db{Interactive graphics, are essential to EDA [@unwin1999]. 
-Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
-User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
-EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
-And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.}
+Interactive graphics, are essential to EDA (Unwin, 1999).
+Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis.
+User interaction and direct manipulation are required for dynamic graphics to reach their full potential (Cook, Buja, Cabrera, \& Hurley (1995); Unwin (1999)).
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard.
+EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data.
+And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.
 
-\db{The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system. 
-It is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process. 
-The van Wijk model can be used to represent the flow of data from data sources, through intermediate processing stages, to the final visualization of results. 
-van Wiij's simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization [@van2005]. }
+The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system.
+It is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process.
+The van Wijk model can be used to represent the flow of data from data sources, through intermediate processing stages, to the final visualization of results.
+van Wiij's simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization, Van Wijk (2005).
 
-\db{This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.}
+This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.
 
-\db{The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization. 
-The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user. 
-In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging. 
-The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
-By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.}
+The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization.
+The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user.
+In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging.
+The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results.
+By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.
 
-\begin{center}
-\includegraphics[width=\textwidth]{figure/vanWiijSimpleModel.png}
-\captionof{figure}{van Wiij Simple Visualization Model}
-\end{center}
+\begin{figure}
 
-\db{Interaction allows the user to define what data they see and how they see it, creating a dialogue between the user and the system. 
-Theories behind visual representation include:}
+{\centering \includegraphics[width=0.45\linewidth]{figure/vanWiijSimpleModel} 
+
+}
+
+\caption{van Wiij Simple Visualization Model}\label{fig:vanWiijmodel}
+\end{figure}
+
+Interaction allows the user to define what data they see and how they see it, creating a dialogue between the user and the system.
+Theories behind visual representation include:
 
 \begin{itemize}
 \tightlist
 \item
-  graphical comprehension ((Cleveland \& McGill, 1984))
+  graphical comprehension (Cleveland \& McGill (1984))
 \item
-  preattentive processing ((Ware, 2012))
+  preattentive processing (Ware (2012))
 \item
-  gestalt theory ((Few, 2009))
+  gestalt theory (Few (2009))
 \item
-  graphical excellence ((Edward R. Tufte, 2001))
+  graphical excellence (Edward R. Tufte (2001))
 \end{itemize}
 
 Theories behind the manipulation of visualizations include but are not limited to:
@@ -729,15 +715,15 @@ Theories behind the manipulation of visualizations include but are not limited t
 \begin{itemize}
 \tightlist
 \item
-  cognitive fit ((Vessey \& Galletta, 1991))
+  cognitive fit (Vessey \& Galletta (1991))
 \item
-  visual perceptual approaches ((Baker, Jones, \& Burkman, 2009))
+  visual perceptual approaches (Baker, Jones, \& Burkman (2009))
 \item
   human information processing
 \end{itemize}
 
-\db{As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning. 
-They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization.}
+As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning.
+They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization.
 
 Heer and Bostock examined how the complexity of interactive visualizations influences the cognitive load of users (Heer \& Bostock (2010)).
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy.
@@ -758,12 +744,12 @@ In addition, designers should evaluate the cognitive load caused by the interact
 \hypertarget{audience-data-interactions}{%
 \section{Audience-Data Interactions}\label{audience-data-interactions}}
 
-\db{User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design. 
-It involves studying the users of a system to understand their needs, goals, and behaviors. 
+User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design.
+It involves studying the users of a system to understand their needs, goals, and behaviors.
 The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
-The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. 
-It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
-User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.}
+The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality.
+It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements.
+User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.
 
 \hypertarget{testing-static-graphics}{%
 \subsection{Testing static graphics}\label{testing-static-graphics}}
@@ -816,8 +802,8 @@ Given that the audience has limitations, there are design constraints around the
 
 How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
 
-\db{A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few2006]. 
-Dashboards have particular characteristics:}
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance (Few, 2006a).
+Dashboards have particular characteristics:
 
 \begin{itemize}
 \tightlist
@@ -831,32 +817,32 @@ Dashboards have particular characteristics:}
   Can be used to monitor information at a high level
 \end{itemize}
 
-\db{Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. 
-They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. 
-Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.}
+Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics.
+They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information.
+Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
 
-\db{While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used. 
-A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.}
+While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used.
+A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
 
-\db{Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users. 
+Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users.
 While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds.
-Dashboards can help understand and support many data types in essential business objectives. 
-There are many different ways to label and utilize dashboards in different kinds.}
+Dashboards can help understand and support many data types in essential business objectives.
+There are many different ways to label and utilize dashboards in different kinds.
 
-\db{Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. 
-Most importantly, dashboards should leverage people's visual cognitive capabilities.}
+Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers.
+Most importantly, dashboards should leverage people's visual cognitive capabilities.
 
-\db{Cowan suggested that the average person can only hold two to six pieces of information in their attention [@cowan2001]. 
-People can develop detailed understandings of reality, which is infinitely complex.}
+Cowan suggested that the average person can only hold two to six pieces of information in their attention Cowan (2001).
+People can develop detailed understandings of reality, which is infinitely complex.
 
-\db{Cognitive structures consist of mental models and their relationships ([@rumelhart1976], [@carley1992], [@jonassen1996]).
-A schema is a mental model containing a breadth of information about a specific object or concept. 
-Schemas are organized into semantic networks based on their relationships to other schemas [@wertheimer1938], [@rumelhart1976].
-This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations. 
-Some "memories" may even be complete recreations built with a schema [@bartlett1932], [@klein2007]}
+Cognitive structures consist of mental models and their relationships (Rumelhart \& Ortony (1976); Carley \& Palmquist (1992); (\textbf{jonassen1996?})).
+A schema is a mental model containing a breadth of information about a specific object or concept.
+Schemas are organized into semantic networks based on their relationships to other schemas (Wertheimer (1938); Rumelhart \& Ortony (1976)).
+This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations.
+Some ``memories'' may even be complete recreations built with a schema ((\textbf{bartlett1932?}); Klein, Phillips, Rall, \& Peluso (2007))
 
-\db{Wixon introduce "contextual design" as a systems development method in which the researcher partners with the user at the user's place of work to "develop a shared understanding" of the user's activities, and they define contextual inquiry as the first part of the broader process [@cowan2001]. 
-Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:}
+Wixon introduce ``contextual design'' as a systems development method in which the researcher partners with the user at the user's place of work to ``develop a shared understanding'' of the user's activities, and they define contextual inquiry as the first part of the broader process (Cowan, 2001).
+Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -871,8 +857,8 @@ Contextual inquiry is the data collection step of the field research element of 
   The focus of the study is central to the approach taken by the interviewer
 \end{enumerate}
 
-\db{Kandal conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes [@kandel2012]. 
-They proposes three main archetypes that data scientists may be classed into the following:}
+Kandal conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes (Kandel, Paepcke, Hellerstein, \& Heer, 2012).
+They proposes three main archetypes that data scientists may be classed into the following:
 
 \begin{itemize}
 \tightlist
@@ -907,14 +893,13 @@ This issue was highlighted by Hullman et al., who discovered that viewers had di
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-\db{In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context.
-Chapter 1 presents a thorough review of the literature regarding graphical and human computer interaction/UI-UX methods. 
+In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context.
+Chapter 1 presents a thorough review of the literature regarding graphical and human computer interaction/UI-UX methods.
 Chapter 2 will explore the process of designing dashboards for public use thorough parallel coordinate plots as a central component to data exploration to make decisions.
 Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
 We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
-Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
+Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model.
 We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
-}
 
 \hypertarget{rmd-basics}{%
 \chapter{Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue}\label{rmd-basics}}
@@ -1019,7 +1004,7 @@ As with many dashboards, this project is under continuous development; while it 
 
 In this section, we discuss the philosophy behind the basic ``building blocks'' of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy's effectiveness in the conclusion.
 
-The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006).
+The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006b).
 
 Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
 
@@ -1183,7 +1168,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-04-22 19:15:50. The repository is currently at this commit:
+This version of the thesis was generated on 2023-05-10 22:58:58. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1198,7 +1183,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-04-22
+##  date     2023-05-10
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -1906,6 +1891,9 @@ Baker, J., Jones, D., \& Burkman, J. (2009). Using visual representations of dat
 \leavevmode\vadjust pre{\hypertarget{ref-Bendix:2005}{}}%
 Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of Categorical Data}. In \emph{2005 IEEE symposium on information visualization (INFOVIS'05)} (pp. 133--140). IEEE. http://doi.org/\href{https://doi.org/10.1109/INFOVIS.2005.27}{10.1109/INFOVIS.2005.27}
 
+\leavevmode\vadjust pre{\hypertarget{ref-bostock2011}{}}%
+Bostock, M., Ogievetsky, V., \& Heer, J. (2011). D\(^3\) data-driven documents. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2301--2309.
+
 \leavevmode\vadjust pre{\hypertarget{ref-bui2014}{}}%
 Bui, D. C., \& Myerson, J. (2014). The role of working memory abilities in lecture note-taking. \emph{Learning and Individual Differences}, \emph{33}, 12--22.
 
@@ -1915,6 +1903,9 @@ Cairo, A. (2016). \emph{The truthful art: Data, charts, and maps for communicati
 \leavevmode\vadjust pre{\hypertarget{ref-cardoso2016}{}}%
 Cardoso, R. L., Leite, R. O., \& Aquino, A. C. B. de. (2016). A graph is worth a thousand words: How overconfidence and graphical disclosure of numerical information influence financial analysts accuracy on decision making. \emph{PloS One}, \emph{11}(8), e0160443.
 
+\leavevmode\vadjust pre{\hypertarget{ref-carley1992}{}}%
+Carley, K., \& Palmquist, M. (1992). Extracting, representing, and analyzing mental models. \emph{Social Forces}, \emph{70}(3), 601--636.
+
 \leavevmode\vadjust pre{\hypertarget{ref-chase1973}{}}%
 Chase, W. G., \& Simon, H. A. (1973). Perception in chess. \emph{Cognitive Psychology}, \emph{4}(1), 55--81.
 
@@ -1923,6 +1914,9 @@ Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experiment
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1986}{}}%
 Cleveland, W. S., \& McGill, R. (1986). An experiment in graphical perception. \emph{International Journal of Man-Machine Studies}, \emph{25}(5), 491--500.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cook1995}{}}%
+Cook, D., Buja, A., Cabrera, J., \& Hurley, C. (1995). Grand tour and projection pursuit. \emph{Journal of Computational and Graphical Statistics}, \emph{4}(3), 155--172.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cowan2001}{}}%
 Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. \emph{Behavioral and Brain Sciences}, \emph{24}(1), 87--114.
@@ -1948,14 +1942,20 @@ Eppler, M. J., \& Bresciani, S. (2013). Visualization in management: From commun
 \leavevmode\vadjust pre{\hypertarget{ref-ericsson1996}{}}%
 Ericsson, K. A., \& Lehmann, A. C. (1996). Expert and exceptional performance: Evidence of maximal adaptation to task constraints. \emph{Annual Review of Psychology}, \emph{47}(1), 273--305.
 
+\leavevmode\vadjust pre{\hypertarget{ref-few2006}{}}%
+Few, S. (2006a). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
+
 \leavevmode\vadjust pre{\hypertarget{ref-few}{}}%
-Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
+Few, S. (2006b). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
 
 \leavevmode\vadjust pre{\hypertarget{ref-few2009}{}}%
 Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quantitative analysis}. Analytics Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fitts1967}{}}%
 Fitts, P. M., \& Posner, M. I. (1967). Human performance.
+
+\leavevmode\vadjust pre{\hypertarget{ref-friendly2014}{}}%
+Friendly, M. (2014). Comment on {``the generalized pairs plot.''} \emph{Journal of Computational and Graphical Statistics}, \emph{23}(1), 290--291.
 
 \leavevmode\vadjust pre{\hypertarget{ref-friendly2001}{}}%
 Friendly, M., \& Denis, D. J. (2001). Milestones in the history of thematic cartography, statistical graphics, and data visualization. \emph{URL Http://Www. Datavis. Ca/Milestones}, \emph{32}, 13.
@@ -1975,6 +1975,18 @@ Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True V
 \leavevmode\vadjust pre{\hypertarget{ref-hullman2011}{}}%
 Hullman, J., Adar, E., \& Shah, P. (2011). Benefitting infovis with visual difficulties. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2213--2222.
 
+\leavevmode\vadjust pre{\hypertarget{ref-kandel2012}{}}%
+Kandel, S., Paepcke, A., Hellerstein, J. M., \& Heer, J. (2012). Enterprise data analysis and visualization: An interview study. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{18}(12), 2917--2926.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kirk2012}{}}%
+Kirk, A. (2012). \emph{Data visualization: A successful design process}. Packt publishing LTD.
+
+\leavevmode\vadjust pre{\hypertarget{ref-klein2007}{}}%
+Klein, G., Phillips, J. K., Rall, E. L., \& Peluso, D. A. (2007). A data--frame theory of sensemaking. In \emph{Expertise out of context} (pp. 118--160). Psychology Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-koffka1935}{}}%
+Koffka, K. (2013). \emph{Principles of gestalt psychology} (Vol. 44). routledge.
+
 \leavevmode\vadjust pre{\hypertarget{ref-lee}{}}%
 Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
 
@@ -1993,17 +2005,29 @@ Norman, D. (2013). \emph{The design of everyday things: Revised and expanded edi
 \leavevmode\vadjust pre{\hypertarget{ref-oberauer2009}{}}%
 Oberauer, K. (2009). Design for a working memory. \emph{Psychology of Learning and Motivation}, \emph{51}, 45--100.
 
+\leavevmode\vadjust pre{\hypertarget{ref-parsons2014}{}}%
+Parsons, P., \& Sedig, K. (2014). Adjustable properties of visual representations: Improving the quality of human-information interaction. \emph{Journal of the Association for Information Science and Technology}, \emph{65}(3), 455--482.
+
 \leavevmode\vadjust pre{\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}}%
 Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
 
 \leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
 R Core Team. (2022). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
+\leavevmode\vadjust pre{\hypertarget{ref-reuter1990}{}}%
+Reuter, L. H., Tukey, P., Maloney, L. T., Pani, J. R., \& Smith, S. (1990). Human perception and visualization. In \emph{Proceedings of the 1st conference on visualization'90} (pp. 401--406).
+
+\leavevmode\vadjust pre{\hypertarget{ref-rumelhart1976}{}}%
+Rumelhart, D. E., \& Ortony, A. (1976). The representation of knowledge in memory. In \emph{Center for human information processing}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-scc}{}}%
 Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksmart.org/}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fisher}{}}%
 Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
+
+\leavevmode\vadjust pre{\hypertarget{ref-satyanarayan2016}{}}%
+Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite: A grammar of interactive graphics. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{23}(1), 341--350.
 
 \leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
@@ -2026,11 +2050,23 @@ Tufte, Edward R. (2001). \emph{The visual display of quantitative information (2
 \leavevmode\vadjust pre{\hypertarget{ref-tufte2008}{}}%
 Tufte, Edward R. (2008). The cognitive style of PowerPoint: Pitching out corrupts within. \emph{Education Review}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-tukey1966}{}}%
+Tukey, J. W., \& Wilk, M. B. (1966). Data analysis and statistics: An expository overview. In \emph{Proceedings of the november 7-10, 1966, fall joint computer conference} (pp. 695--709).
+
+\leavevmode\vadjust pre{\hypertarget{ref-unwin1999}{}}%
+Unwin, A. (1999). Requirements for interactive graphics software for exploratory data analysis. \emph{Computational Statistics}, \emph{14}(1), 7--22.
+
+\leavevmode\vadjust pre{\hypertarget{ref-unwin2003}{}}%
+Unwin, A., Volinsky, C., \& Winkler, S. (2003). Parallel coordinates for exploratory modelling analysis. \emph{Computational Statistics \& Data Analysis}, \emph{43}, 553--564. http://doi.org/\href{https://doi.org/10.1016/S0167-9473(02)00292-X}{10.1016/S0167-9473(02)00292-X}
+
 \leavevmode\vadjust pre{\hypertarget{ref-Rural_classification}{}}%
 USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics/rural-economy-population/rural-classifications/}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-usda}{}}%
 USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-van2005}{}}%
+Van Wijk, J. J. (2005). The value of visualization. In \emph{VIS 05. IEEE visualization, 2005.} (pp. 79--86). IEEE.
 
 \leavevmode\vadjust pre{\hypertarget{ref-sineillusion}{}}%
 VanderPlas, S., \& Hofmann, H. (2015a). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
@@ -2040,6 +2076,9 @@ VanderPlas, S., \& Hofmann, H. (2015b). Signs of the sine illusion---why we need
 
 \leavevmode\vadjust pre{\hypertarget{ref-vessey1991}{}}%
 Vessey, I., \& Galletta, D. (1991). Cognitive fit: An empirical study of information acquisition. \emph{Information Systems Research}, \emph{2}(1), 63--84.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ward2010}{}}%
+Ward, M., Grinstein, G., \& Keim, D. (2010). \emph{Interactive data visualization: Foundations, techniques, and applications} (p. 81). http://doi.org/\href{https://doi.org/10.1201/b10683}{10.1201/b10683}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ware2012}{}}%
 Ware, C. (2012). \emph{Information visualization: Perception for design}. Morgan Kaufmann.
@@ -2055,6 +2094,9 @@ Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for
 
 \leavevmode\vadjust pre{\hypertarget{ref-wilkinson2012}{}}%
 Wilkinson, L. (2012). \emph{The grammar of graphics}. Springer.
+
+\leavevmode\vadjust pre{\hypertarget{ref-yi2007}{}}%
+Yi, J. S., Kang, Y. ah, Stasko, J., \& Jacko, J. A. (2007). Toward a deeper understanding of the role of interaction in information visualization. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{13}(6), 1224--1231.
 
 \leavevmode\vadjust pre{\hypertarget{ref-zarecor2021rural}{}}%
 Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.

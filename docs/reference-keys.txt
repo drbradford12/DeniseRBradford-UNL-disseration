@@ -1,9 +1,11 @@
 fig:gestalt
 fig:graphics2
+fig:vanWiijmodel
 fig:graphics
 introduction
 audience-considerations
 perception
+gestalt-principles
 attention-and-memory
 constructing-meaning
 expertise
