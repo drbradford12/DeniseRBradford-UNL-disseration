@@ -465,35 +465,34 @@ Another concern is the possibility of cultural differences in interpretation, in
 By understanding semiology principles and syntax and semantics’ role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.</p>
 <!--Graphs are another tool that can be used to effectively communicate information via semiology. -->
 <p>By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers.
-For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson writes in his book “The Grammar of Graphics” that “graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning,”<span class="citation">Wilkinson (2012)</span>.</p>
+For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson writes in his book “The Grammar of Graphics” that “graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning,” <span class="citation">Wilkinson (2012)</span>.</p>
 <p>It proposes that any statistical graphic can be broken down into a set of essential components, or “grammar,” that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.</p>
 <p>The components of the grammar of graphics include:</p>
 <ul>
-<li>Data: The raw data being visualized represents a set of observations or values.</li>
-<li>Aesthetic Mappings: The mapping of data variables to visual properties such as position, color, shape, and size.</li>
-<li>Scales: The mapping of data values to visual values, such as mapping a numerical value to a bar height.</li>
-<li>Geometries: The basic shapes representing the data, such as points, lines, bars, and histograms.</li>
-<li>Facets: The plot division into multiple subplots, each representing a different subset of the data.</li>
+<li><p>Data: The raw data being visualized represents a set of observations or values.</p></li>
+<li><p>Aesthetic Mappings: The mapping of data variables to visual properties such as position, color, shape, and size.</p></li>
+<li><p>Scales: The mapping of data values to visual values, such as mapping a numerical value to a bar height.</p></li>
+<li><p>Geometries: The basic shapes representing the data, such as points, lines, bars, and histograms.</p></li>
+<li><p>Facets: The plot division into multiple subplots, each representing a different subset of the data.</p></li>
 </ul>
 <p>For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry.
-For example, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
-Finally, the Grammar of Graphics provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.</p>
+Moreover, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
+Finally, the “Grammar of Graphics” provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:graphics2"></span>
 <img src="figure/gglayers.png" alt="Grammar of Graphics Diagram of Wickham and Wilkinson's work" width="45%" /><img src="figure/graphic-flowchart.png" alt="Grammar of Graphics Diagram of Wickham and Wilkinson's work" width="45%" />
 <p class="caption">
 Figure 1.2: Grammar of Graphics Diagram of Wickham and Wilkinson’s work
 </p>
 </div>
-<p>Michael Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present.
-Friendly detailed using SAS with hands-on experiments to present categorical data analysis visually, <span class="citation">Friendly (2014)</span>.
+<p>Michael Friendly, a leading expert in data visualization, has utilized the principles of the grammar of graphics to develop innovative teaching methods that make complex data visualization concepts more accessible to a broader audience.
+Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present.
+He used SAS with hands-on experiments to present categorical data analysis visually, <span class="citation">Friendly (2014)</span>.
 By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
-In his book “Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization,” Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey (<span class="citation">Friendly &amp; Denis (2001)</span>).</p>
-<!--His historical research has yielded significant insights into the origins and evolution of graphical methods, while his development of new techniques has increased the number of data visualization tools available. -->
-<!--### what do we know about "better" graphics for certain tasks? -->
+In his book “Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization,” Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey, <span class="citation">Friendly &amp; Denis (2001)</span>.</p>
 <p>As discussed regarding semiology, Tukey’s Exploratory Data Analysis (EDA), and the introduction of the Grammar of Graphics, we should be mindful that a well-constructed graphic can be misleading out of context.
 Compelling graphics can be a powerful tool for communicating complex information, making numerical accuracy, engagement, correct decision-making, and accurate predictions crucial.</p>
 <p>In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics.
-Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions (<span class="citation">Cardoso, Leite, &amp; Aquino (2016)</span>).</p>
+Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions, <span class="citation">Cardoso, Leite, &amp; Aquino (2016)</span>.</p>
 <p>Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data.
 Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.</p>
 <p>Correct decision making refers to the capacity of data visualization to enable users to make informed and precise decisions based on the presented information.
@@ -508,12 +507,13 @@ The study evaluated both designs under various operating conditions and compared
 The results demonstrated that one design was more effective at detecting differences in operating conditions than another.</p>
 <p>Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis.
 John Tukey’s EDA methods are currently known and well-vetted in the field.
-However, Satyanarayan et. al began to address this by introducing a high-level grammar of graphics called “Vega-Lite,” which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar <span class="citation">(Satyanarayan, Moritz, Wongsuphasawat, &amp; Heer, 2016)</span>.
+However, Satyanarayan et al. addressed this by introducing a high-level grammar of graphics called “Vega-Lite,” which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar <span class="citation">Satyanarayan, Moritz, Wongsuphasawat, &amp; Heer (2016)</span>.
 Vega-Lite has been directly implemented in R via the <code>ggvis</code> package using the same - albeit slightly lower-level.</p>
-<p>When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+<p>Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
 Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic’s effectiveness.
 In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic’s clarity and precision.
-Here are some general guidelines for making better graphics with works from (<span class="citation">(<strong>few2012?</strong>)</span>, <span class="citation">(<strong>tufte1983?</strong>)</span>, <span class="citation">Cairo (2016)</span>):</p>
+Here are some general guidelines for making better graphics with works from Few (<span class="citation">(<strong>few2012?</strong>)</span>), Tufte (<span class="citation">(<strong>tufte1983?</strong>)</span>), and Cairo (<span class="citation">Cairo (2016)</span>):</p>
 <ol style="list-style-type: decimal">
 <li><p>Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.</p></li>
 <li><p>Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer’s focus.</p></li>
@@ -530,31 +530,37 @@ Here are some general guidelines for making better graphics with works from (<sp
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with
 ## `binwidth`.</code></pre>
 <p><img src="thesis_files/figure-html/flights_data_example-1.png" width=".49\linewidth" style="display: block; margin: auto;" /><img src="thesis_files/figure-html/flights_data_example-2.png" width=".49\linewidth" style="display: block; margin: auto;" /></p>
-<p>On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making.
-Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data.
-They often display real-time data and can be customized to show the most relevant data to the user.</p>
+<!--On the other hand, Dashboards are interactive interfaces that display data visually to provide insights and support decision-making. 
+Dashboards can be used to monitor key performance indicators, track progress over time, and identify patterns and trends in data. 
+They often display real-time data and can be customized to show the most relevant data to the user.-->
+<p>On the other hand, Interactive graphics provide a more dynamic and engaging way to explore and analyze complex data sets than traditional static visualizations.
+By allowing users to manipulate and explore data in real-time, interactive graphics can reveal hidden patterns and relationships that may be difficult to discern in static visualizations, making them a valuable tool for data analysis.</p>
 <div id="interactive-graphics" class="section level4 hasAnchor" number="1.2.0.1">
 <h4><span class="header-section-number">1.2.0.1</span> Interactive Graphics<a href="introduction.html#interactive-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic, <span class="citation">Unwin, Volinsky, &amp; Winkler (2003)</span>.</p>
-<p>The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s—developments are driven partly by new technology, such as <code>d3</code> <span class="citation">(Bostock, Ogievetsky, &amp; Heer, 2011)</span>.
+<p>As previously mentioned, theories behind visual representation include - graphical comprehension (<span class="citation">Cleveland &amp; McGill (1984)</span>), preattentive processing (<span class="citation">Ware (2012)</span>), gestalt theory (<span class="citation">Few (2009)</span>), and graphical excellence (<span class="citation">Edward R. Tufte (2001)</span>).
+Interactive graphics offer a number of advantages when analyzing complex data sets, and technological progress has played a crucial role in making these tools more accessible and widely adopted, especially in interactive graphics.
+Compared to static visualizations, interactive graphics offer a more engaging and dynamic way to explore and analyze complex data sets.
+To gain a deeper understanding of the data, users are able to modify parameters, zoom in on specific regions, and rapidly explore various variables.
+In addition, interactive graphics offer a more intuitive method of communicating findings to non-technical users, making them a valuable asset for data-driven decision making.
+Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic, <span class="citation">Unwin, Volinsky, &amp; Winkler (2003)</span>.
+Overall, interactive graphics are a potent data analysis tool, allowing analysts to gain a deeper understanding of complex data sets and to make more informed decisions.</p>
+<p>The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s.
+Developments are driven partly by new technology, such as <code>d3</code> <span class="citation">(Bostock, Ogievetsky, &amp; Heer, 2011)</span>.
 Visualizations are more than just a picture.
 They are now a tool that facilitates analytic activity through different modes of interaction <span class="citation">(Yi, Kang, Stasko, &amp; Jacko, 2007)</span>.
 Visualization is context-free, as it can mean different things to different people depending on the situation <span class="citation">(Parsons &amp; Sedig, 2014)</span>.</p>
-<p>Interactive graphics, are essential to EDA <span class="citation">(Unwin, 1999)</span>.
-Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis.
-User interaction and direct manipulation are required for dynamic graphics to reach their full potential (<span class="citation">Cook, Buja, Cabrera, &amp; Hurley (1995)</span>; <span class="citation">Unwin (1999)</span>).
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard.
-EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data.
-And also, the EDA process can be used to identify the outliers, patterns, trends, and insights that will be useful to show in the dashboard to support decision-making.</p>
-<p>The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system.
-It is a commonly used tool in Exploratory Data Analysis (EDA), which is the initial step in the data analysis process.
-The van Wijk model can be used to represent the flow of data from data sources, through intermediate processing stages, to the final visualization of results.
-van Wiij’s simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization, <span class="citation">Van Wijk (2005)</span>.</p>
-<p>This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.</p>
-<!-- \svp{This is new to me, but seems like it would be a good way to bridge between the graphics and UI/UX sections I proposed above. } -->
-<p>The relationship between the van Wijk Simple Visualization Model and Human-Computer Interaction (HCI) lies in the area of data visualization.
-The van Wijk Model provides a framework for understanding how information and data flow through a system to be displayed to the user.
-In the context of HCI, the model helps to understand how data is processed, transformed and presented to the user in a way that is intuitive, informative and engaging.
+<!--Interactive graphics are essential to EDA [@unwin1999]. 
+Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
+User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
+EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
+Additionally, the EDA process can identify the outliers, patterns, trends, and insights helpful to show in the dashboard to support decision-making.-->
+<p>In recent years, interactive graphics that enable users to manipulate and explore visualizations in real-time have grown in popularity and align with the van Wijk Simple Visualization Model framework.
+The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system.
+van Wiij’s simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization, <span class="citation">Van Wijk (2005)</span>.
+It is a commonly used tool in EDA, the initial step in the data analysis.
+The van Wijk model can represent data flow from data sources, through intermediate processing stages, to the final visualization of results.
+This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.
 The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results.
 By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vanWiijmodel"></span>
@@ -563,32 +569,27 @@ By doing so, it supports the design of more effective and user-friendly visualiz
 Figure 1.3: van Wiij Simple Visualization Model
 </p>
 </div>
-<p>Interaction allows the user to define what data they see and how they see it, creating a dialogue between the user and the system.
-Theories behind visual representation include:</p>
-<ul>
-<li>graphical comprehension (<span class="citation">Cleveland &amp; McGill (1984)</span>)</li>
-<li>preattentive processing (<span class="citation">Ware (2012)</span>)</li>
-<li>gestalt theory (<span class="citation">Few (2009)</span>)</li>
-<li>graphical excellence (<span class="citation">Edward R. Tufte (2001)</span>)</li>
-</ul>
-<p>Theories behind the manipulation of visualizations include but are not limited to:</p>
-<ul>
-<li>cognitive fit (<span class="citation">Vessey &amp; Galletta (1991)</span>)</li>
-<li>visual perceptual approaches (<span class="citation">Baker, Jones, &amp; Burkman (2009)</span>)</li>
-<li>human information processing</li>
-</ul>
+<p>While the van Wijk Simple Visualization Model provides a valuable framework for designing compelling visualizations, it should not be used in isolation.
+Instead, effective data visualization requires a thorough understanding of human perception, cognition, and Human-Computer Interaction (HCI) principles.
+Later in this review, we will explore the fundamental principles of Human-Computer Interaction and how they can be applied to the design of compelling interactive graphics.</p>
+<p>Based on the above best practices on the concept of cognitive load in graphics, the theory of manipulation of visualizations provides a set of guidelines and best practices for designing interactive graphics that minimize cognitive load and facilitate practical data analysis.</p>
+<!--The theories behind the manipulation of visualizations are deeply involved the following work will be included:
+
+- Visual perceptual approaches - The most effective visual representations for data exploration tasks are those that (1) support the four basic human visual perceptual approaches of association, differentiation, ordered perception, and quantitative perception, (2) have strong Gestalt properties, (3) are consistent with the viewer's stored knowledge, and (4) facilitate analogical reasoning, @baker2009.
+
+ Human information processing - The authors discuss various cognitive processes involved in human-computer interaction, including attention, perception, memory, and problem-solving, and provide guidelines for designing effective computer systems that align with these processes. @card1983 -->
 <p>As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning.
-They must decide on the most effective visual representation without being able to estimate every user’s ability to read and interpret the visualization. <!-- [@boy2014].--></p>
-<!--\db{The human brain can only take in a set amount of data from a table or a paragraph.} \svp{references?}-->
-<p>Heer and Bostock examined how the complexity of interactive visualizations influences the cognitive load of users (<span class="citation">Heer &amp; Bostock (2010)</span>).
+They must decide on the most effective visual representation without being able to estimate every user’s ability to read and interpret the visualization.</p>
+<p>An influential framework developed by Vessey et al refers to the degree to which a person’s cognitive abilities match the cognitive demands of a task, <span class="citation">Vessey &amp; Galletta (1991)</span>, in the field of cognitive load research has been improved by Heer and Bostock, providing examined how the complexity of interactive visualizations influences users’ cognitive load, <span class="citation">Heer &amp; Bostock (2010)</span>.
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy.
 They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.</p>
-<p>Eissele et al investigated the cognitive load of mobile interactive visualizations (<span class="citation">Eissele, Weiskopf, &amp; Ertl (2009)</span>).
+<p>While the direct relationship to traditional mobile devices, such as phone screens, will not be discussed, it is noteworthy to account for the impact of larger screen mobile devices, such as iPads and other portable devices, concerning a user’s cognitive abilities.
+Eissele et al investigated the cognitive load of mobile interactive visualizations, <span class="citation">Eissele, Weiskopf, &amp; Ertl (2009)</span>.
 The authors discovered that the limited input options and small screen size of mobile devices can increase cognitive load in interactive visualizations.
 To reduce cognitive load on mobile devices, they suggested that designers employ suitable visual encoding techniques and simplify interactions.</p>
-<p>Toyama et al. investigated the impact of interactive elements on cognitive load in visualizations. (<span class="citation">Toyama, Sonntag, Orlosky, &amp; Kiyokawa (2015)</span>)
+<p>Lastly, Toyama et al. investigated the impact of interactive elements on cognitive load in visualizations, <span class="citation">Toyama, Sonntag, Orlosky, &amp; Kiyokawa (2015)</span>.
 Based on the nature of the task and the user’s familiarity with the interactive features, the authors discovered that interactive features can both increase and decrease cognitive load.
-They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations.</p>
+They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations</p>
 <p>These studies suggest that designers should carefully consider the cognitive load implications of interactive graphics and strive, whenever possible, to reduce complexity.
 Simplifying interactions and implementing suitable visual encoding techniques can reduce cognitive load, especially on mobile devices.
 In addition, designers should evaluate the cognitive load caused by the interactive features they include in visualizations.</p>
@@ -596,17 +597,46 @@ In addition, designers should evaluate the cognitive load caused by the interact
 </div>
 <div id="audience-data-interactions" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Audience-Data Interactions<a href="introduction.html#audience-data-interactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>User analysis is a crucial step in the design of user interfaces, especially in Human-Computer Interaction (HCI) and User Experience (UX) design.
-It involves studying the users of a system to understand their needs, goals, and behaviors.
+<p>Effective design of interactive graphics necessitates a comprehensive knowledge of Human-Computer Interaction (HCI) and User Experience (UX) design principles to ensure that the visualizations are engaging, informative, intuitive, and user-friendly.</p>
+<p>Designing an effective interactive dashboard involves much more than simply selecting a set of visualizations and arranging them on a page.
+It requires a comprehensive knowledge of Human-Computer Interaction (HCI) and User Experience (UX) design principles and the ability to apply these principles to data analysis and visualization.
+Before designing an interactive dashboard, it is crucial to have a thorough understanding of the underlying HCI and UX frameworks and the specific needs and preferences of the intended audience.
+By understanding the principles of HCI and UX design, it is possible to create interactive dashboards that facilitate effective data analysis and offer a seamless and engaging user experience.
+This can result in greater engagement with the data, more profound insights, and better-informed decisions.</p>
+<div id="human-computer-interaction-hci" class="section level4 hasAnchor" number="1.3.0.1">
+<h4><span class="header-section-number">1.3.0.1</span> Human-Computer Interaction (HCI)<a href="introduction.html#human-computer-interaction-hci" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.</p>
+<p>In the 1970s and 1980s, HCI researchers began to concentrate on developing user interface design theories and methodologies.
+The “GOMS” model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, <span class="citation">Card, Moran, &amp; Newell (1983)</span>.
+During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.</p>
+<p>The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform.
+This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites.
+In 1995, Don Norman published his influential book “The Design of Everyday Things,” emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, <span class="citation">Norman (2013)</span>).</p>
+<p>In the 2000s, HCI research expanded to include new technologies such as mobile devices, touchscreens, and virtual and augmented reality, <span class="citation">O’Brien &amp; Toms (2008)</span>.
+There was also an increased focus on designing interfaces for diverse user populations, including people with disabilities and older adults.</p>
+<p>HCI research evolves and adapts to new technologies and user requirements. The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.</p>
+</div>
+<div id="user-experience-ux" class="section level4 hasAnchor" number="1.3.0.2">
+<h4><span class="header-section-number">1.3.0.2</span> User Experience (UX)<a href="introduction.html#user-experience-ux" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The history of UX can be traced back to the early days of human-computer interaction (HCI) research, but it has evolved to become a distinct discipline in its own right. User Experience (UX) refers to the overall interaction between a user and a product or service. It includes the interface, functionality, content, and aesthetics.</p>
+<p>The origins of user experience research can be traced back to the 1970s and 1980s.
+At this time, researchers were primarily focused on developing efficient and effective user interface design theories and methodologies.
+As computer use became more prevalent in the 1990s, the emphasis shifted to designing interfaces that were not only functional but also enjoyable to use.
+In his influential 1995 book, “The Design of Everyday Things,” Donald Norman argued that good design should center on the needs and behaviors of the user.
+Jesse James Garrett coined the term “user experience design” in 2000 to describe the process of designing intuitive, efficient, and enjoyable user interfaces, <span class="citation">Garrett (2003)</span>.
+The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities.
+As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, <span class="citation">Hassenzahl (2010)</span>.</p>
+<!--It involves studying the users of a system to understand their needs, goals, and behaviors. 
 The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
-The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality.
-It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements.
-User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users’ needs.</p>
+The results of user analysis can be used to inform the design of the interface, including the layout, navigation, and functionality. 
+It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
+User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.-->
+</div>
 <div id="testing-static-graphics" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Testing static graphics<a href="introduction.html#testing-static-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<!-- Brief overview of user studies that compare different types of graphics, accuracy, etc. -->
+<p>While understanding HCI and UX design principles helps create compelling interactive graphics, it is equally important to rigorously test and evaluate the usability and efficacy of both interactive and static graphics to ensure they achieve their intended purpose.</p>
 <p>Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks <span class="citation">Cleveland &amp; McGill (1986)</span>.
-People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.</p>
+People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones</p>
 <p>Jiao et al. examine the use of unit charts to represent large-scale data <span class="citation">(<strong>jiao?</strong>)</span>.
 The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude.</p>
 <p>“The cognitive style of PowerPoint: Pitching out corrupts within” examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers <span class="citation">Edward R. Tufte (2008)</span>.

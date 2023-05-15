@@ -510,7 +510,7 @@ Before designing an interactive dashboard, it is crucial to have a thorough unde
 By understanding the principles of HCI and UX design, it is possible to create interactive dashboards that facilitate effective data analysis and offer a seamless and engaging user experience. 
 This can result in greater engagement with the data, more profound insights, and better-informed decisions.
 
-#### Human-Computer Interaction (HCI)
+### Human-Computer Interaction (HCI)
 
 Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.
 
@@ -518,9 +518,10 @@ In the 1970s and 1980s, HCI researchers began to concentrate on developing user 
 The "GOMS" model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, @card1983.
 During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.
 
-```{r goms_model, echo=FALSE, out.width = "45%",fig.cap='GOMS Model',fig.show='hold',fig.align='center'}
+```{r goms_model, eval=FALSE, echo=FALSE, out.width = "45%",fig.cap='GOMS Model created by Card, Moran and Newell', fig.show='hold', fig.align='center'}
 knitr::include_graphics("figure/goms_model.png")
 ```
+
 
 The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform. 
 This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites. 
@@ -532,7 +533,7 @@ There was also an increased focus on designing interfaces for diverse user popul
 HCI research evolves and adapts to new technologies and user requirements. The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
 
 
-#### User Experience (UX)
+### User Experience (UX)
 
 The history of UX can be traced back to the early days of human-computer interaction (HCI) research, but it has evolved to become a distinct discipline in its own right. User Experience (UX) refers to the overall interaction between a user and a product or service. It includes the interface, functionality, content, and aesthetics.
 
@@ -544,6 +545,7 @@ Jesse James Garrett coined the term "user experience design" in 2000 to describe
 The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities. 
 As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, @hassenzahl2010. 
 
+Overall, understanding the design principles of UX and HCI and the importance of testing static graphics can significantly inform the design of interactive dashboards, as we will explore in more detail later in this review.
 
 <!--It involves studying the users of a system to understand their needs, goals, and behaviors. 
 The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
@@ -555,18 +557,23 @@ User analysis is an iterative process, and it should be done in multiple stages 
 ### Testing static graphics
 
 While understanding HCI and UX design principles helps create compelling interactive graphics, it is equally important to rigorously test and evaluate the usability and efficacy of both interactive and static graphics to ensure they achieve their intended purpose.
+Kosara highlighted the significance of user testing in identifying potential problems in static visualizations, @kosara2007. 
+User testing aids in comprehending the users' behavior and perceptions of the visualization, thereby facilitating the identification of issues that designers may have overlooked.
+User testing also identifies the graphic's confusing or ineffective visual aspects, allowing designers to refine the design and increase its effectiveness.
 
-Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @cleveland1986. 
+The evolution of testing static graphics has progressed through several chronological moments, each building on the knowledge and techniques of the past, starting with the thoughts of Cleveland and McGill to Hofmann, who explored the statistical testing of categorical data.
+
+Firstly, Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @cleveland1986. 
 People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
 
-Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
-The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude.
+<!--Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
+The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude. -->
 
-"The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers @tufte2008. 
+"The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers, @tufte2008. 
 The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective. 
 In addition, the researchers discovered that the type of graphic employed influenced the viewers' perceptions and decision-making, highlighting the significance of selecting the most appropriate graphics when conveying information.
 
-"Using color to code different types of uncertainty in visualization" investigated the effect of color on the communication effectiveness of static graphics @ware2010. 
+"Using color to code different types of uncertainty in visualization," investigated the effect of color on the communication effectiveness of static graphics @ware2010. 
 Researchers discovered that the use of color in static graphics enhanced viewers' comprehension and memory retention of the presented information. 
 Specifically, it was determined that the use of color to highlight particular data points or trends in a graph or chart was particularly effective.
 
@@ -574,20 +581,23 @@ Specifically, it was determined that the use of color to highlight particular da
 Researchers discovered that static graphics, such as boxplots and error bars, effectively communicated the range and variability of data. 
 Furthermore, the use of static graphics enhanced viewers' comprehension and decision-making in uncertain situations.
 
-Overall, these above studies indicate that static graphics are effective at conveying information to viewers, with their effectiveness being influenced by the type of graphic exercised, the use of color, and their capacity to convey uncertainty and variability in data. 
-However, it is important to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the information being presented, and the context in which the graphics are used.
+Overall, these above studies indicate that static graphics effectively convey information to viewers. 
+Nonetheless, their effectiveness is influenced by the type of graphic exercised, the use of color, and their capacity to express uncertainty and variability in data. 
+It is essential to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the presented information, and the context in which the graphics are used.
 
 ### Testing interactive graphics
 
-The design space of interactive visualizations, including the use of multiple views and coordinated multiple views, is discussed in a paper by Heer and Bostock @heer2012. 
-The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
-It was discovered that interactive graphics are particularly useful for investigating data that is difficult to comprehend with static graphics, such as time series data or data with multiple aggregation levels.
+The significance of testing and evaluating static graphics to ensure their effectiveness and user-friendliness naturally segues into the similar, yet distinct challenge of evaluating interactive graphics
 
-Compared to static graphics, interactive graphics can improve users' ability to identify patterns and outliers in data, according to a second study @wu2017. 
-This is due to the fact that interactive graphics enable users to zero in on particular aspects of the data and adjust the visualization in real time to reveal hidden patterns.
+The design space of interactive visualizations, including the use of multiple views and coordinated various perspectives, is discussed in a paper by Heer and Bostock @heer2012. 
+The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
+It was discovered that interactive graphics are beneficial for investigating data that is difficult to comprehend with static graphics, such as time series data or data with multiple aggregation levels.
+
+Compared to static graphics, interactive graphics can improve users' ability to identify patterns and outliers in data, according to a second study, @wu2017. 
+This is because interactive graphics enable users to zero in on particular aspects of the data and adjust the visualization in real-time to reveal hidden patterns.
 
 It has also been discovered that interactive graphics increase user engagement with data and improve their decision-making abilities. 
-"Visualizing decision-making: Introducing the analysis, comparison, and exploration system (ACES)" showed that interactive graphics can help users make more informed decisions by allowing them to compare and contrast various scenarios and outcomes @kornhauser2014. 
+<!--"Visualizing decision-making: Introducing the analysis, comparison, and exploration system (ACES)" showed that interactive graphics can help users make more informed decisions by allowing them to compare and contrast various scenarios and outcomes, @kornhauser2014. -->
 Moreover, interactive graphics can help users identify potential biases or errors in their data analysis by allowing them to rapidly explore various visualizations and test their hypotheses.
 
 In addition to their benefits for data exploration and analysis, interactive graphics have been found to be more engaging and enjoyable for users @eppler2013. 
