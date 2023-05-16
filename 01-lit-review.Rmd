@@ -608,17 +608,21 @@ They can improve users' comprehension, engagement, and decision-making skills, a
 
 ## Dashboard Design
 
-Given that the audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics? 
-
+Given that the intended audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics? 
 How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
+Solutions to these questions can start with a dashboard.
 
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the information can be monitored at a glance [@few2006]. 
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance [@few2006]. 
 Dashboards have particular characteristics:
 
 - Achieve specific objectives
+
 - Fits on a single computer screen
+
 - Information can be displayed in multiple mediums (web browser or mobile device)
+
 - Can be used to monitor information at a high level
+
 
 Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics. 
 They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information. 
@@ -635,58 +639,76 @@ There are many different ways to label and utilize dashboards in different kinds
 Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers. 
 Most importantly, dashboards should leverage people's visual cognitive capabilities.
 
-Cowan suggested that the average person can only hold two to six pieces of information in their attention @cowan2001. 
+Cowan suggested that the average person can only hold two to six pieces of information in their attention, @cowan2001. 
 People can develop detailed understandings of reality, which is infinitely complex.
 
-Cognitive structures consist of mental models and their relationships (@rumelhart1976; @carley1992; @jonassen1996).
-A schema is a mental model containing a breadth of information about a specific object or concept. 
+It is important to consider how users construct mental models of the presented data and information.
+Researchers have introduced cognitive structures consisting of mental models and their relationships (@rumelhart1976; @carley1992; @jonassen1996).
+In cognitive psychology, a schema is a mental model representing a person's general knowledge or expectations regarding a particular concept or situation.
 Schemas are organized into semantic networks based on their relationships to other schemas (@wertheimer1938; @rumelhart1976).
 This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations. 
 Some "memories" may even be complete recreations built with a schema (@bartlett1932; @klein2007)
 
-Wixon introduce "contextual design" as a systems development method in which the researcher partners with the user at the user's place of work to "develop a shared understanding" of the user's activities, and they define contextual inquiry as the first part of the broader process [@cowan2001]. 
+Wixon introduced the concept of "contextual design" as a systems development method in which the researcher partners with the user at the user's place of work to "develop a shared understanding" of the user's activities, and they define contextual inquiry as the first part of the broader process, @cowan2001. 
 Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
 
-1. The context of the activity being performed by the user 
+1. The context of the activity being performed by the user
+
 2. The partnership between the researcher and the participant
+
 3. The spoken verification that the investigator's interpretation of the activity matches the user's
+
 4. The focus of the study is central to the approach taken by the interviewer
 
-Kandal conducted what might be considered a contextual interview study similar to ours in that they analyzed data scientists' self-reported work processes [@kandel2012]. 
+Kandal conducted what might be considered a contextual interview study in that they analyzed data scientists' self-reported work processes, @kandel2012. 
 They proposes three main archetypes that data scientists may be classed into the following:
 
 - Hackers: who build processes chaining together multiple programming languages of different types (analytical, scripting, and database languages) and use visualization in various environments.
-- Scripters: who perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but who do not perform statements their ETL
+
+- Scripters perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but do not perform statements in their Extract, Transform, and Load (ETL).
+
 - Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
 
 <!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
 
-Combining two effective graphics does not necessarily result in a successful visualization. 
+Combining two compelling graphics does not necessarily result in a successful visualization. 
 In certain instances, suboptimal combinations can result in confusion, misinterpretation, and the failure to convey the intended message.
 Combining two charts with distinct scales or units is an example of suboptimal graphic design, which can result in misinterpretation and flawed comparisons. 
-For example, if a bar chart displaying the number of sales is combined with a line chart displaying revenue, meaningful comparisons between the two metrics can be challenging. 
-People frequently make inaccurate judgments when comparing graphs with different scales, according to a study conducted by Cleveland and McGill (@cleveland1984).
+For example, if a bar chart displaying the number of sales is combined with a line chart showing revenue, meaningful comparisons between the two metrics can be challenging. 
+According to a study conducted by Cleveland and McGill, people frequently make inaccurate judgments when comparing graphs with different scales, @cleveland1984.
 
-Utilizing redundant visual cues or unnecessary embellishments is another example of suboptimal graphics. 
-Although it may be tempting to add extra elements to a chart or graph, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information. 
-Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (@tufte1985).
+In addition, combining two difficult-to-compare graphics with redundant visual cues or unnecessary embellishments such as colors, 3D effects, or patterns can increase cognitive load and reduce the dashboard's effectiveness.
+Although adding extra elements to a chart or graph may be tempting, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information. 
+Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data, @tufte1985.
 
-Using multiple color schemes or palettes in the same chart is another instance of suboptimal graphics. 
+For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the two graphics types' incompatibility. 
+This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart, @hullman2011.
+
+<!--Using multiple color schemes or palettes in the same chart is another instance of suboptimal graphics. 
 While color can be an effective visual communication tool, the use of excessive colors or color schemes can be overwhelming and confusing. 
 This can detract from the primary message and make it challenging for the audience to comprehend the key points. 
 In a study conducted by Heer and Bostock, participants were required to interpret multiple color schemes (@heer2010). 
 Multiple color schemes made it difficult for participants to identify the relationships between different parts of the visualization, according to the study.
 
-Conversely, it can be suboptimal to combine two visually incompatible graphics. 
-For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the incompatibility of the two types of graphics. 
-This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart (@hullman2011).
+Conversely, it can be suboptimal to combine two visually incompatible graphics. -->
+
 
 
 ## Conclusion
 
-In this dissertation, I address this question of design for dashboards, as well as tools which can be used to support the display of multivariate data in an interactive context.
-Chapter 1 presents a thorough review of the literature regarding graphical and human computer interaction/UI-UX methods. 
-Chapter 2 will explore the process of designing dashboards for public use thorough parallel coordinate plots as a central component to data exploration to make decisions.
+The lack of integration between statistical interactive graphics and Gestalt principles is a research gap in this field. 
+Gestalt principles provide a framework for understanding how visual elements are perceived and organized in the human brain, whereas statistical interactive graphics enable the manipulation and exploration of complex data sets. 
+This integration can result in more effective and efficient visualization tools that take human perception and cognition into account.
+
+In addition, there is a lack of research on the application of dashboards in visual communication. 
+Dashboards are becoming increasingly popular to present data and information in a concise and easily accessible format. 
+Still, there is a shortage of research on designing and employing dashboards to communicate complex data effectively.
+
+This research seeks to bridge the gap between statistical interactive graphics, Gestalt principles, and dashboards so that users can more effectively explore complex data. 
+This can be accomplished by designing interactive visualizations that adhere to Gestalt principles, enabling users to recognize patterns and trends in the data quickly and easily. 
+Incorporating statistical interactive graphics into dashboards can also provide users with a more comprehensive view of the data, enabling them to make more effective data-driven decisions.
+Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods. 
+Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
 Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
 We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
 Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
