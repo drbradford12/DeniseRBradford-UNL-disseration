@@ -1,5 +1,6 @@
 ---
 output:
+  word_document: default
   pdf_document: default
 ---
 
@@ -59,7 +60,7 @@ When our modeling work has been completed, we present our results to interested 
 Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
 In addition, we know that not all visual displays have equal perceptual value [@aspillaga1996]. 
 The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion [@vanderplas2015] affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina [@vanderplas2015].
 Other design constraints are due to the audience's experience level: are they used to working with data? 
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be \svp{a} useful \svp{visual display}?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
@@ -69,6 +70,7 @@ In this introduction, we explore previous research related to the construction o
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.}
 
 \svp{In the "real world", however, conventions and familiarity often win out over best practice validated by perceptual experiments.}
+
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
 As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
 
@@ -76,6 +78,18 @@ As data in sports becomes more prominent, extensive, and collected, this informa
 \svp{Let us first consider the audience characteristics that affect the selection of graphics. 
 Then, we will engage with considerations based on the data to be displayed. 
 Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.}
+
+### The increase of dashboards in day-to-day 
+
+Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool. 
+The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights. 
+Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, @few2006. 
+Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields. 
+Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
+
+
+### Misleading/Terrible Graphics
+
 
 
 ## Audience Considerations
@@ -94,11 +108,11 @@ Expertise in a particular field can enable individuals to better interpret and c
 In conclusion, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, in order to interpret and comprehend the presented information.
 
 The term "data visualization" dates back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies. 
-Throughout human history, data visualization has significantly contributed to invention and discovery @Crapo2000.
+Throughout human history, data visualization has significantly contributed to invention and discovery @crapo2000.
 The introduction of computer technology dramatically changed the visual representation of data. 
 Using computer-based graphical data visualization, data analysts have become faster and more precise. 
 Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc.
-The origin of data visualization being a sub-category, it is regarded as "the science of the visual representation of data," @friendly2009.
+The origin of data visualization being a sub-category, it is regarded as "the science of the visual representation of data,"
 "Data Visualization: a successful design process" defined data visualization as "the representation and presentation of data that exploits our visual perception abilities to amplify cognition," @kirk2012. 
 This suggests that data visualization involves the exploitation of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one. 
@@ -112,6 +126,7 @@ Colin Ware suggests that perception can significantly enhance both the content a
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
 Perception is also defined as "the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information," @ward2010.
 Ward et al. explain the notion of perception as the following:
+
 > Simply put, perception is the process by which we interpret the world around us, forming a mental representation of the environment. This representation is not isomorphic to the world, but it’s subject to many correspondence differences and errors. The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand. 
 
 Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, @reuter1990.
@@ -176,7 +191,8 @@ Consequently, utilizing visual aids such as charts can be advantageous for enhan
 Furthermore, annotations can also help aid short-term memory. 
 By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, @alvarez2004.
 
-<!-- Feature Integration Theory -->
+**Feature Integration Theory (FIT)**
+
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention @treisman1998. 
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing. 
 However, focused attention is required to bind these features into a coherent object representation in STM.
@@ -525,12 +541,15 @@ knitr::include_graphics("figure/goms_model.png")
 
 The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform. 
 This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites. 
-In 1995, Don Norman published his influential book "The Design of Everyday Things," emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, @norman2013).
+In 1995, Don Norman published his influential book "The Design of Everyday Things," emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, @norman2013). 
+His influential book examines the principles of user-centered design and the critical role that psychology plays in shaping user experiences. 
+It emphasizes the significance of user-friendly and intuitive designs in everyday objects.
 
 In the 2000s, HCI research expanded to include new technologies such as mobile devices, touchscreens, and virtual and augmented reality, @obrien2008. 
 There was also an increased focus on designing interfaces for diverse user populations, including people with disabilities and older adults. 
 
-HCI research evolves and adapts to new technologies and user requirements. The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
+HCI research evolves and adapts to new technologies and user requirements. 
+The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
 
 
 ### User Experience (UX)
@@ -544,6 +563,20 @@ In his influential 1995 book, "The Design of Everyday Things," Donald Norman arg
 Jesse James Garrett coined the term "user experience design" in 2000 to describe the process of designing intuitive, efficient, and enjoyable user interfaces, @garrett2003.
 The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities. 
 As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, @hassenzahl2010. 
+
+Alan Cooper's "The Inmates Are Running the Asylum" - Cooper discusses the significance of user-centered design and the challenges and opportunities in the software design field in this book. 
+He advocates placing the needs and objectives of users at the forefront of the design process, @cooper1999.
+"About Face: The Essentials of Interaction Design" - This comprehensive guide covers interaction design principles, methods, and best practices. 
+It provides designers with useful insights and real-world examples to assist them in developing effective and engaging user experiences, @cooper2014.
+
+Dan Saffer's "Designing for Interaction: Creating Smart Applications and Clever Devices" delves into the history and evolution of interaction design and offers practical advice for creating meaningful user experiences. 
+The book examines a variety of design strategies and techniques for designing interactive applications and devices, @saffer2007.
+
+"A Project Guide to UX Design: For User Experience Designers in the Field or in the Making" by Russ Unger and Carolyn Chandler provides step-by-step approaches, techniques, and examples for the entire UX design process. 
+It is intended for both seasoned designers and newcomers to the field, @chandler2012.
+
+"Information Architecture: For the Web and Beyond" by Louis Rosenfeld and Peter Morville focuses on the optimal organization of information for online and offline user experiences. 
+It investigates the principles and methods of information architecture as well as its influence on user-centered design, @morville2015.
 
 Overall, understanding the design principles of UX and HCI and the importance of testing static graphics can significantly inform the design of interactive dashboards, as we will explore in more detail later in this review.
 
@@ -692,7 +725,15 @@ Multiple color schemes made it difficult for participants to identify the relati
 
 Conversely, it can be suboptimal to combine two visually incompatible graphics. -->
 
+## Dissertation Map
+This dissertation will be constructed as follows.
 
+Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods. 
+Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
+Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
+We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
+Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
+We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
 
 ## Conclusion
 
@@ -707,10 +748,4 @@ Still, there is a shortage of research on designing and employing dashboards to 
 This research seeks to bridge the gap between statistical interactive graphics, Gestalt principles, and dashboards so that users can more effectively explore complex data. 
 This can be accomplished by designing interactive visualizations that adhere to Gestalt principles, enabling users to recognize patterns and trends in the data quickly and easily. 
 Incorporating statistical interactive graphics into dashboards can also provide users with a more comprehensive view of the data, enabling them to make more effective data-driven decisions.
-Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods. 
-Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
-Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
-We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
-Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model. 
-We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
 
