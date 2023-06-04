@@ -586,6 +586,46 @@ The results of user analysis can be used to inform the design of the interface, 
 It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.-->
 
+### UX and Cognitive Load
+
+Since 1980s, cognitive load theory (CLT) of Human-Computer Interaction (HCI) was developed by cognitive psychologist John Sweller. 
+The primary focus of Sweller's research was on learning and the cognitive processes underlying the acquisition of new knowledge and skills.
+
+The evolution of CLT was influenced by a number of fundamental concepts and theories. 
+Information processing theory, which posits that individuals process information sequentially using sensory memory, working memory, and long-term memory, was one of the major influences. 
+Sweller's research extended this theory by highlighting the limitations of working memory and its role in cognitive load, @sweller1994.
+In addition, CLT distinguished between intrinsic, extraneous, and relevant cognitive load. 
+The intrinsic load of a task is its inherent complexity, which cannot be altered by the interface design. 
+On the other hand, the extraneous load is the cognitive load imposed by the design of the learning environment or interface, which can be reduced through practical methods. 
+Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, @hollender20210.
+
+The original purpose of CLT was to improve instructional design and learning outcomes by minimizing irrelevant cognitive load and optimizing relevant cognitive load. 
+However, its principles and concepts have been applied to the field of HCI, recognizing the significance of cognitive load in the design of interactive systems and user interfaces.
+
+The cognitive load theory of HCI illuminates human-computer interaction cognitive processes. 
+By comprehending the cognitive load imposed by interfaces and learning environments, designers can create more efficient and user-friendly systems that maximize users' mental resources. 
+CLT has continued to evolve and inform interface design over time, improving HCI's usability, user experience, and cognitive support.
+
+
+### Infomation Search Enviroment
+
+In the article, "Web Designers and web users: Influence of the ergonomic quality of the web site on the information search," written by Aline Chevalier and Maud Kicka outline investigate the difficulties of web designers or compare their respective activities, @chevalier2006. 
+The two experimental studies presented in this article compare the strategies developed by professional web designers and (novice versus experienced) web users while searching for information on websites with varying ergonomic qualities. 
+The results of the two experiments, that web designers are incapable of predicting the strategies of novice users and do not behave like novices. 
+Therefore, techniques for assisting web designers in developing a user-centered activity are required, and a few of these techniques are suggested at the conclusion of this article.
+
+In the article, "Predicting graph reading performance: a cognitive approach, by Huang, Hong, and Eades outlines that performance and preference metrics are frequently employed in evaluating visualization techniques, @huang2006.
+To introduce a cognitive method for assessing the effectiveness and efficiency of visualization. 
+Huang et al. propose a model of user performance, mental effort, and cognitive load (memory demand) and incorporate additional mental effort and visualization efficiency measures into our analysis.
+
+Huang et al. build on the understanding that Richard Atkinson and Richard Shiffrin,  wrote the information processing model of memory, @atkinson1968.
+
+```{r atkinson_model, eval=FALSE, echo=FALSE, out.width = "45%",fig.cap='Information Processing Model created by Atkinson and Shiffin, 1968', fig.show='hold', fig.align='center'}
+knitr::include_graphics("figure/info_model.png")
+```
+
+
+
 
 ### Testing static graphics
 
