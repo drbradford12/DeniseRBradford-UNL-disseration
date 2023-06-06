@@ -166,6 +166,8 @@ div.csl-indent {
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
+<li class="chapter" data-level="1.0.1" data-path="introduction.html"><a href="introduction.html#the-increase-of-dashboards-in-day-to-day"><i class="fa fa-check"></i><b>1.0.1</b> The increase of dashboards in day-to-day</a></li>
+<li class="chapter" data-level="1.0.2" data-path="introduction.html"><a href="introduction.html#misleadingterrible-graphics"><i class="fa fa-check"></i><b>1.0.2</b> Misleading/Terrible Graphics</a></li>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#audience-considerations"><i class="fa fa-check"></i><b>1.1</b> Audience Considerations</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#perception"><i class="fa fa-check"></i><b>1.1.1</b> Perception</a></li>
@@ -180,11 +182,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#human-computer-interaction-hci"><i class="fa fa-check"></i><b>1.3.1</b> Human-Computer Interaction (HCI)</a></li>
 <li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#user-experience-ux"><i class="fa fa-check"></i><b>1.3.2</b> User Experience (UX)</a></li>
-<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#testing-static-graphics"><i class="fa fa-check"></i><b>1.3.3</b> Testing static graphics</a></li>
-<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#testing-interactive-graphics"><i class="fa fa-check"></i><b>1.3.4</b> Testing interactive graphics</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#ux-and-cognitive-load"><i class="fa fa-check"></i><b>1.3.3</b> UX and Cognitive Load</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#infomation-search-enviroment"><i class="fa fa-check"></i><b>1.3.4</b> Infomation Search Enviroment</a></li>
+<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#testing-static-graphics"><i class="fa fa-check"></i><b>1.3.5</b> Testing static graphics</a></li>
+<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#testing-interactive-graphics"><i class="fa fa-check"></i><b>1.3.6</b> Testing interactive graphics</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#dashboard-design"><i class="fa fa-check"></i><b>1.4</b> Dashboard Design</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#conclusion"><i class="fa fa-check"></i><b>1.5</b> Conclusion</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#dissertation-map"><i class="fa fa-check"></i><b>1.5</b> Dissertation Map</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#conclusion"><i class="fa fa-check"></i><b>1.6</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="rmd-basics.html"><a href="rmd-basics.html"><i class="fa fa-check"></i><b>2</b> Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue</a>
 <ul>
@@ -253,13 +258,24 @@ When our modeling work has been completed, we present our results to interested 
 <p>Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
 In addition, we know that not all visual displays have equal perceptual value <span class="citation">(Aspillaga, 1996)</span>.
 The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion <span class="citation">(VanderPlas &amp; Hofmann, 2015b)</span> affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina <span class="citation">(VanderPlas &amp; Hofmann, 2015b)</span>.
 Other design constraints are due to the audience’s experience level: are they used to working with data?
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be useful ?
 When we create visualizations for public consumption we have to consider both perceptual factors and the target audience’s domain knowledge.
 In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.</p>
 <p>For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
 As data in sports becomes more prominent, extensive, and collected, this information must be refined.</p>
+<div id="the-increase-of-dashboards-in-day-to-day" class="section level3 hasAnchor" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> The increase of dashboards in day-to-day<a href="introduction.html#the-increase-of-dashboards-in-day-to-day" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
+The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights.
+Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, <span class="citation">Few (2006a)</span>.
+Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields.
+Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.</p>
+</div>
+<div id="misleadingterrible-graphics" class="section level3 hasAnchor" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> Misleading/Terrible Graphics<a href="introduction.html#misleadingterrible-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 <div id="audience-considerations" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Audience Considerations<a href="introduction.html#audience-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.</p>
@@ -271,11 +287,11 @@ This is especially true when working with unfamiliar or complex data sets, as ou
 Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.</p>
 <p>In conclusion, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, in order to interpret and comprehend the presented information.</p>
 <p>The term “data visualization” dates back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies.
-Throughout human history, data visualization has significantly contributed to invention and discovery <span class="citation">(<strong>Crapo2000?</strong>)</span>.
+Throughout human history, data visualization has significantly contributed to invention and discovery <span class="citation">Crapo, Waisel, Wallace, &amp; Willemain (2000)</span>.
 The introduction of computer technology dramatically changed the visual representation of data.
 Using computer-based graphical data visualization, data analysts have become faster and more precise.
 Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc.
-The origin of data visualization being a sub-category, it is regarded as “the science of the visual representation of data,” <span class="citation">(<strong>friendly2009?</strong>)</span>.
+The origin of data visualization being a sub-category, it is regarded as “the science of the visual representation of data,”
 “Data Visualization: a successful design process” defined data visualization as “the representation and presentation of data that exploits our visual perception abilities to amplify cognition,” <span class="citation">Kirk (2012)</span>.
 This suggests that data visualization involves the exploitation of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
@@ -286,10 +302,12 @@ Each step in the data analysis process is part of a more extensive mental proces
 Colin Ware suggests that perception can significantly enhance both the content and quantity of displayed information, <span class="citation">Ware (2012)</span>.
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
 Perception is also defined as “the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information,” <span class="citation">Ward, Grinstein, &amp; Keim (2010)</span>.
-Ward et al. explain the notion of perception as the following:
-&gt; Simply put, perception is the process by which we interpret the world around us, forming a mental representation of the environment. This representation is not isomorphic to the world, but it’s subject to many correspondence differences and errors. The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.</p>
+Ward et al. explain the notion of perception as the following:</p>
+<blockquote>
+<p>Simply put, perception is the process by which we interpret the world around us, forming a mental representation of the environment. This representation is not isomorphic to the world, but it’s subject to many correspondence differences and errors. The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.</p>
+</blockquote>
 <p>Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, <span class="citation">Reuter, Tukey, Maloney, Pani, &amp; Smith (1990)</span>.
-Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general <span class="citation">(<strong>gregory1968?</strong>)</span>.
+Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general <span class="citation">Gregory (1968)</span>.
 Additional to the general process of human visual perception process and efficacy of a visualization in communicating, short-term memory is crucial to the effectiveness of statistical graphics.
 Research indicates that our short-term memory can only store a limited amount of information at any given time.
 Therefore, designers must present data in a manner that is simple to comprehend and remember.</p>
@@ -337,13 +355,13 @@ Understanding the Gestalt principles can also cast light on how information is p
 <p>The Gestalt principles describe how humans perceive and organize visual information into meaningful patterns and structures to help the brain to effectively process and organize incoming visual information, making it easier to attend to and remember.
 It’s worth exploring the efficacy of short-term memory when developing effective dashboards.</p>
 <p>Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
-According to Alan Baddeley’s Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, <span class="citation">Baddeley (2012)</span>.
+According to Alan Baddeley’s Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, <span class="citation">A. Baddeley (2012)</span>.
 Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, <span class="citation">Cowan (2001)</span>.</p>
 <p>Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research, <span class="citation">Alvarez &amp; Cavanagh (2004)</span>.
 Consequently, utilizing visual aids such as charts can be advantageous for enhancing our short-term memory.
 Furthermore, annotations can also help aid short-term memory.
 By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, <span class="citation">Alvarez &amp; Cavanagh (2004)</span>.</p>
-<!-- Feature Integration Theory -->
+<p><strong>Feature Integration Theory (FIT)</strong></p>
 <p>According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention <span class="citation">A. Treisman (1998)</span>.
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
 However, focused attention is required to bind these features into a coherent object representation in STM.
@@ -599,15 +617,25 @@ This can result in greater engagement with the data, more profound insights, and
 <div id="human-computer-interaction-hci" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Human-Computer Interaction (HCI)<a href="introduction.html#human-computer-interaction-hci" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.</p>
+<p>In 1968, the model proposed by Atkinson and Shiffrin posited a sequential flow of information through memory systems, emphasizing the processes of encoding, storage, and retrieval <span class="citation">Atkinson &amp; Shiffrin (1968)</span>.
+Unless actively practiced, short-term memory has a limited capacity and a short duration of retention.
+If information is deemed significant or sufficiently rehearsed, it can be encoded and transferred to long-term memory, which has an almost unlimited capacity and long-term storage.</p>
+<p>Baddeley expanded our understanding of working memory by emphasizing its active processing nature, expanding upon the model of Atkinson and Shiffrin.
+The influential model developed by Baddeley, known as the working memory model, proposed a more complex structure with multiple components, <span class="citation">Baddeley Alan D. (1976)</span>.</p>
+<p>Together, Atkinson and Shiffrin’s model of information processing and Baddeley’s model of working memory provided a comprehensive framework for studying memory and cognition.
+They contributed to the understanding of how information is processed, encoded, stored, and retrieved in human memory systems, laying the groundwork for subsequent research and theories in cognitive psychology.</p>
 <p>In the 1970s and 1980s, HCI researchers began to concentrate on developing user interface design theories and methodologies.
 The “GOMS” model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, <span class="citation">Card, Moran, &amp; Newell (1983)</span>.
 During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.</p>
 <p>The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform.
 This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites.
-In 1995, Don Norman published his influential book “The Design of Everyday Things,” emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, <span class="citation">Norman (2013)</span>).</p>
+In 1995, Don Norman published his influential book “The Design of Everyday Things,” emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, <span class="citation">Norman (2013)</span>).
+His influential book examines the principles of user-centered design and the critical role that psychology plays in shaping user experiences.
+It emphasizes the significance of user-friendly and intuitive designs in everyday objects.</p>
 <p>In the 2000s, HCI research expanded to include new technologies such as mobile devices, touchscreens, and virtual and augmented reality, <span class="citation">O’Brien &amp; Toms (2008)</span>.
 There was also an increased focus on designing interfaces for diverse user populations, including people with disabilities and older adults.</p>
-<p>HCI research evolves and adapts to new technologies and user requirements. The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.</p>
+<p>HCI research evolves and adapts to new technologies and user requirements.
+The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.</p>
 </div>
 <div id="user-experience-ux" class="section level3 hasAnchor" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> User Experience (UX)<a href="introduction.html#user-experience-ux" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -619,6 +647,16 @@ In his influential 1995 book, “The Design of Everyday Things,” Donald Norman
 Jesse James Garrett coined the term “user experience design” in 2000 to describe the process of designing intuitive, efficient, and enjoyable user interfaces, <span class="citation">Garrett (2003)</span>.
 The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities.
 As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, <span class="citation">Hassenzahl (2010)</span>.</p>
+<p>Alan Cooper’s “The Inmates Are Running the Asylum” - Cooper discusses the significance of user-centered design and the challenges and opportunities in the software design field in this book.
+He advocates placing the needs and objectives of users at the forefront of the design process, <span class="citation">Cooper (1999)</span>.
+“About Face: The Essentials of Interaction Design” - This comprehensive guide covers interaction design principles, methods, and best practices.
+It provides designers with useful insights and real-world examples to assist them in developing effective and engaging user experiences, <span class="citation">Cooper, Reimann, Cronin, &amp; Noessel (2014)</span>.</p>
+<p>Dan Saffer’s “Designing for Interaction: Creating Smart Applications and Clever Devices” delves into the history and evolution of interaction design and offers practical advice for creating meaningful user experiences.
+The book examines a variety of design strategies and techniques for designing interactive applications and devices, <span class="citation">Saffer (2007)</span>.</p>
+<p>“A Project Guide to UX Design: For User Experience Designers in the Field or in the Making” by Russ Unger and Carolyn Chandler provides step-by-step approaches, techniques, and examples for the entire UX design process.
+It is intended for both seasoned designers and newcomers to the field, <span class="citation">Chandler &amp; Unger (2012)</span>.</p>
+<p>“Information Architecture: For the Web and Beyond” by Louis Rosenfeld and Peter Morville focuses on the optimal organization of information for online and offline user experiences.
+It investigates the principles and methods of information architecture as well as its influence on user-centered design, <span class="citation">Morville, Rosenfeld, &amp; Arango (2015)</span>.</p>
 <p>Overall, understanding the design principles of UX and HCI and the importance of testing static graphics can significantly inform the design of interactive dashboards, as we will explore in more detail later in this review.</p>
 <!--It involves studying the users of a system to understand their needs, goals, and behaviors. 
 The purpose of user analysis is to create interfaces that are easy to use, efficient, and effective for the intended audience.
@@ -626,8 +664,41 @@ The results of user analysis can be used to inform the design of the interface, 
 It can also be used to identify areas of the interface that are confusing or difficult to use and to make recommendations for improvements. 
 User analysis is an iterative process, and it should be done in multiple stages of the design process to ensure that the final product is tailored to the users' needs.-->
 </div>
-<div id="testing-static-graphics" class="section level3 hasAnchor" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Testing static graphics<a href="introduction.html#testing-static-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ux-and-cognitive-load" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> UX and Cognitive Load<a href="introduction.html#ux-and-cognitive-load" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Since 1980s, cognitive load theory (CLT) of Human-Computer Interaction (HCI) was developed by cognitive psychologist John Sweller.
+The primary focus of Sweller’s research was on learning and the cognitive processes underlying the acquisition of new knowledge and skills.</p>
+<p>The evolution of CLT was influenced by a number of fundamental concepts and theories.
+Information processing theory, which posits that individuals process information sequentially using sensory memory, working memory, and long-term memory, was one of the major influences.
+Sweller’s research extended this theory by highlighting the limitations of working memory and its role in cognitive load, <span class="citation">Sweller &amp; Chandler (1994)</span>.
+In addition, CLT distinguished between intrinsic, extraneous, and relevant cognitive load.
+The intrinsic load of a task is its inherent complexity, which cannot be altered by the interface design.
+On the other hand, the extraneous load is the cognitive load imposed by the design of the learning environment or interface, which can be reduced through practical methods.
+Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, <span class="citation">(<strong>hollender20210?</strong>)</span>.</p>
+<p>The original purpose of CLT was to improve instructional design and learning outcomes by minimizing irrelevant cognitive load and optimizing relevant cognitive load.
+However, its principles and concepts have been applied to the field of HCI, recognizing the significance of cognitive load in the design of interactive systems and user interfaces.</p>
+<p>The cognitive load theory of HCI illuminates human-computer interaction cognitive processes.
+By comprehending the cognitive load imposed by interfaces and learning environments, designers can create more efficient and user-friendly systems that maximize users’ mental resources.
+CLT has continued to evolve and inform interface design over time, improving HCI’s usability, user experience, and cognitive support.</p>
+</div>
+<div id="infomation-search-enviroment" class="section level3 hasAnchor" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Infomation Search Enviroment<a href="introduction.html#infomation-search-enviroment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the article, “Web Designers and web users: Influence of the ergonomic quality of the web site on the information search,” written by Aline Chevalier and Maud Kicka outline investigate the difficulties of web designers or compare their respective activities, <span class="citation">Chevalier &amp; Kicka (2006)</span>.
+The two experimental studies presented in this article compare the strategies developed by professional web designers and (novice versus experienced) web users while searching for information on websites with varying ergonomic qualities.
+The results of the two experiments, that web designers are incapable of predicting the strategies of novice users and do not behave like novices.
+Therefore, techniques for assisting web designers in developing a user-centered activity are required, and a few of these techniques are suggested at the conclusion of this article.</p>
+<p>In the article, “Predicting graph reading performance: a cognitive approach, by Huang, Hong, and Eades outlines that performance and preference metrics are frequently employed in evaluating visualization techniques, <span class="citation">Huang, Hong, &amp; Eades (2006)</span>.
+To introduce a cognitive method for assessing the effectiveness and efficiency of visualization.
+Huang et al. propose a model of user performance, mental effort, and cognitive load (memory demand) and incorporate additional mental effort and visualization efficiency measures into our analysis.</p>
+<p>Huang et al. build on the understanding that Richard Atkinson and Richard Shiffrin, wrote the information processing model of memory.</p>
+<p>Measuring Visualization Efficiency can be calculated using the method proposed in 2004 to measure the relative effectiveness of various instructional conditions, <span class="citation">Tuovinen &amp; Paas (2004)</span>.
+This method relates mental effort to performance measures within the context of visualization efficiency, which is defined as the ratio of cognitive cost (in this study, mental effort and response time) to response accuracy</p>
+<p>The efficiency (E) is calculated by converting mental effort (ME), response time (RT) and accuracy (RA) into z-scores, and combining them using the following formula:</p>
+<p><span class="math display">\[E = \frac{RA - ME - RT}{\sqrt{3}}\]</span>
+where E of zero means that cognitive cost and performance accuracy are balanced.</p>
+</div>
+<div id="testing-static-graphics" class="section level3 hasAnchor" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Testing static graphics<a href="introduction.html#testing-static-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>While understanding HCI and UX design principles helps create compelling interactive graphics, it is equally important to rigorously test and evaluate the usability and efficacy of both interactive and static graphics to ensure they achieve their intended purpose.
 Kosara highlighted the significance of user testing in identifying potential problems in static visualizations, <span class="citation">Kosara (2007)</span>.
 User testing aids in comprehending the users’ behavior and perceptions of the visualization, thereby facilitating the identification of issues that designers may have overlooked.
@@ -635,8 +706,6 @@ User testing also identifies the graphic’s confusing or ineffective visual asp
 <p>The evolution of testing static graphics has progressed through several chronological moments, each building on the knowledge and techniques of the past, starting with the thoughts of Cleveland and McGill to Hofmann, who explored the statistical testing of categorical data.</p>
 <p>Firstly, Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks <span class="citation">Cleveland &amp; McGill (1986)</span>.
 People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.</p>
-<!--Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
-The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude. -->
 <p>“The cognitive style of PowerPoint: Pitching out corrupts within” examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers, <span class="citation">Edward R. Tufte (2008)</span>.
 The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective.
 In addition, the researchers discovered that the type of graphic employed influenced the viewers’ perceptions and decision-making, highlighting the significance of selecting the most appropriate graphics when conveying information.</p>
@@ -650,8 +719,8 @@ Furthermore, the use of static graphics enhanced viewers’ comprehension and de
 Nonetheless, their effectiveness is influenced by the type of graphic exercised, the use of color, and their capacity to express uncertainty and variability in data.
 It is essential to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the presented information, and the context in which the graphics are used.</p>
 </div>
-<div id="testing-interactive-graphics" class="section level3 hasAnchor" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Testing interactive graphics<a href="introduction.html#testing-interactive-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="testing-interactive-graphics" class="section level3 hasAnchor" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Testing interactive graphics<a href="introduction.html#testing-interactive-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The significance of testing and evaluating static graphics to ensure their effectiveness and user-friendliness naturally segues into the similar, yet distinct challenge of evaluating interactive graphics</p>
 <p>The design space of interactive visualizations, including the use of multiple views and coordinated various perspectives, is discussed in a paper by Heer and Bostock <span class="citation">Heer &amp; Shneiderman (2012)</span>.
 The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
@@ -733,8 +802,18 @@ Multiple color schemes made it difficult for participants to identify the relati
 
 Conversely, it can be suboptimal to combine two visually incompatible graphics. -->
 </div>
-<div id="conclusion" class="section level2 hasAnchor" number="1.5">
-<h2><span class="header-section-number">1.5</span> Conclusion<a href="introduction.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dissertation-map" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Dissertation Map<a href="introduction.html#dissertation-map" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This dissertation will be constructed as follows.</p>
+<p>Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods.
+Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
+Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
+We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
+Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model.
+We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.</p>
+</div>
+<div id="conclusion" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Conclusion<a href="introduction.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The lack of integration between statistical interactive graphics and Gestalt principles is a research gap in this field.
 Gestalt principles provide a framework for understanding how visual elements are perceived and organized in the human brain, whereas statistical interactive graphics enable the manipulation and exploration of complex data sets.
 This integration can result in more effective and efficient visualization tools that take human perception and cognition into account.</p>
@@ -743,13 +822,7 @@ Dashboards are becoming increasingly popular to present data and information in 
 Still, there is a shortage of research on designing and employing dashboards to communicate complex data effectively.</p>
 <p>This research seeks to bridge the gap between statistical interactive graphics, Gestalt principles, and dashboards so that users can more effectively explore complex data.
 This can be accomplished by designing interactive visualizations that adhere to Gestalt principles, enabling users to recognize patterns and trends in the data quickly and easily.
-Incorporating statistical interactive graphics into dashboards can also provide users with a more comprehensive view of the data, enabling them to make more effective data-driven decisions.
-Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods.
-Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
-Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
-We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
-Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model.
-We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.</p>
+Incorporating statistical interactive graphics into dashboards can also provide users with a more comprehensive view of the data, enabling them to make more effective data-driven decisions.</p>
 
 <!--
 The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.

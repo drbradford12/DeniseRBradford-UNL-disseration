@@ -530,11 +530,32 @@ This can result in greater engagement with the data, more profound insights, and
 
 Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.
 
+In 1968, the model proposed by Atkinson and Shiffrin posited a sequential flow of information through memory systems, emphasizing the processes of encoding, storage, and retrieval @atkinson1968.
+Unless actively practiced, short-term memory has a limited capacity and a short duration of retention.
+If information is deemed significant or sufficiently rehearsed, it can be encoded and transferred to long-term memory, which has an almost unlimited capacity and long-term storage.
+
+
+```{r atkinsonmodel, echo=FALSE, out.width = "45%",fig.cap='Information Processing Model created by Atkinson and Shiffin', fig.show='hold', fig.align='center'}
+
+knitr::include_graphics("figure/info_model.png")
+```
+
+Baddeley expanded our understanding of working memory by emphasizing its active processing nature, expanding upon the model of Atkinson and Shiffrin. 
+The influential model developed by Baddeley, known as the working memory model, proposed a more complex structure with multiple components, @baddeley1976.
+
+```{r baddeleymodel, eval=F, echo=FALSE, out.width = "45%",fig.cap='Working Memory Model created by Baddeley', fig.show='hold', fig.align='center'}
+
+knitr::include_graphics("figure/Working_Memory_Model.png")
+```
+
+Together, Atkinson and Shiffrin's model of information processing and Baddeley's model of working memory provided a comprehensive framework for studying memory and cognition. 
+They contributed to the understanding of how information is processed, encoded, stored, and retrieved in human memory systems, laying the groundwork for subsequent research and theories in cognitive psychology.
+
 In the 1970s and 1980s, HCI researchers began to concentrate on developing user interface design theories and methodologies. 
 The "GOMS" model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, @card1983.
 During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.
 
-```{r goms_model, eval=FALSE, echo=FALSE, out.width = "45%",fig.cap='GOMS Model created by Card, Moran and Newell', fig.show='hold', fig.align='center'}
+```{r gomsmodel, echo=FALSE, out.width = "45%",fig.cap='GOMS Model created by Card Moran and Newell', fig.show='hold', fig.align='center'}
 knitr::include_graphics("figure/goms_model.png")
 ```
 
@@ -618,13 +639,20 @@ In the article, "Predicting graph reading performance: a cognitive approach, by 
 To introduce a cognitive method for assessing the effectiveness and efficiency of visualization. 
 Huang et al. propose a model of user performance, mental effort, and cognitive load (memory demand) and incorporate additional mental effort and visualization efficiency measures into our analysis.
 
-Huang et al. build on the understanding that Richard Atkinson and Richard Shiffrin,  wrote the information processing model of memory, @atkinson1968.
+Huang et al. build on the understanding that Richard Atkinson and Richard Shiffrin, wrote the information processing model of memory.
 
-```{r atkinson_model, eval=FALSE, echo=FALSE, out.width = "45%",fig.cap='Information Processing Model created by Atkinson and Shiffin, 1968', fig.show='hold', fig.align='center'}
-knitr::include_graphics("figure/info_model.png")
+Measuring Visualization Efficiency can be calculated using the method proposed in 2004 to measure the relative effectiveness of various instructional conditions, @tuovinen2004.
+This method relates mental effort to performance measures within the context of visualization efficiency, which is defined as the ratio of cognitive cost (in this study, mental effort and response time) to response accuracy
+
+```{r viseff, echo=FALSE, out.width = "45%",fig.cap='Multi-dimensional visualization efficiency (a) modified from Tuovinen et al. [2004]; (b) modified from Kalyuga et al. [1999]', fig.show='hold', fig.align='center'}
+knitr::include_graphics("figure/multi_dim_viz.png")
 ```
 
 
+The efficiency (E) is calculated by converting mental effort (ME), response time (RT) and accuracy (RA) into z-scores, and combining them using the following formula:
+
+$$E = \frac{RA - ME - RT}{\sqrt{3}}$$
+where E of zero means that cognitive cost and performance accuracy are balanced.
 
 
 ### Testing static graphics
@@ -638,9 +666,6 @@ The evolution of testing static graphics has progressed through several chronolo
 
 Firstly, Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks @cleveland1986. 
 People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
-
-<!--Jiao et al. examine the use of unit charts to represent large-scale data @jiao. 
-The study discovered that unit charts are more precise and easier to read than traditional bar graphs for representing values across multiple orders of magnitude. -->
 
 "The cognitive style of PowerPoint: Pitching out corrupts within" examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers, @tufte2008. 
 The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective. 

@@ -418,7 +418,7 @@ The Gestalt principles describe how humans perceive and organize visual informat
 It's worth exploring the efficacy of short-term memory when developing effective dashboards.
 
 Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
-According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, Baddeley (2012).
+According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, A. Baddeley (2012).
 Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, Cowan (2001).
 
 Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, according to research, Alvarez \& Cavanagh (2004).
@@ -752,18 +752,49 @@ This can result in greater engagement with the data, more profound insights, and
 
 Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.
 
+In 1968, the model proposed by Atkinson and Shiffrin posited a sequential flow of information through memory systems, emphasizing the processes of encoding, storage, and retrieval Atkinson \& Shiffrin (1968).
+Unless actively practiced, short-term memory has a limited capacity and a short duration of retention.
+If information is deemed significant or sufficiently rehearsed, it can be encoded and transferred to long-term memory, which has an almost unlimited capacity and long-term storage.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/info_model} 
+
+}
+
+\caption{Information Processing Model created by Atkinson and Shiffin}\label{fig:atkinsonmodel}
+\end{figure}
+
+Baddeley expanded our understanding of working memory by emphasizing its active processing nature, expanding upon the model of Atkinson and Shiffrin.
+The influential model developed by Baddeley, known as the working memory model, proposed a more complex structure with multiple components, Baddeley Alan D. (1976).
+
+Together, Atkinson and Shiffrin's model of information processing and Baddeley's model of working memory provided a comprehensive framework for studying memory and cognition.
+They contributed to the understanding of how information is processed, encoded, stored, and retrieved in human memory systems, laying the groundwork for subsequent research and theories in cognitive psychology.
+
 In the 1970s and 1980s, HCI researchers began to concentrate on developing user interface design theories and methodologies.
 The ``GOMS'' model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, Card, Moran, \& Newell (1983).
 During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/goms_model} 
+
+}
+
+\caption{GOMS Model created by Card Moran and Newell}\label{fig:gomsmodel}
+\end{figure}
+
 The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform.
 This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites.
 In 1995, Don Norman published his influential book ``The Design of Everyday Things,'' emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, Norman (2013)).
+His influential book examines the principles of user-centered design and the critical role that psychology plays in shaping user experiences.
+It emphasizes the significance of user-friendly and intuitive designs in everyday objects.
 
 In the 2000s, HCI research expanded to include new technologies such as mobile devices, touchscreens, and virtual and augmented reality, O'Brien \& Toms (2008).
 There was also an increased focus on designing interfaces for diverse user populations, including people with disabilities and older adults.
 
-HCI research evolves and adapts to new technologies and user requirements. The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
+HCI research evolves and adapts to new technologies and user requirements.
+The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
 
 \hypertarget{user-experience-ux}{%
 \subsection{User Experience (UX)}\label{user-experience-ux}}
@@ -778,7 +809,73 @@ Jesse James Garrett coined the term ``user experience design'' in 2000 to descri
 The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities.
 As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, Hassenzahl (2010).
 
+Alan Cooper's ``The Inmates Are Running the Asylum'' - Cooper discusses the significance of user-centered design and the challenges and opportunities in the software design field in this book.
+He advocates placing the needs and objectives of users at the forefront of the design process, Cooper (1999).
+``About Face: The Essentials of Interaction Design'' - This comprehensive guide covers interaction design principles, methods, and best practices.
+It provides designers with useful insights and real-world examples to assist them in developing effective and engaging user experiences, Cooper, Reimann, Cronin, \& Noessel (2014).
+
+Dan Saffer's ``Designing for Interaction: Creating Smart Applications and Clever Devices'' delves into the history and evolution of interaction design and offers practical advice for creating meaningful user experiences.
+The book examines a variety of design strategies and techniques for designing interactive applications and devices, Saffer (2007).
+
+``A Project Guide to UX Design: For User Experience Designers in the Field or in the Making'' by Russ Unger and Carolyn Chandler provides step-by-step approaches, techniques, and examples for the entire UX design process.
+It is intended for both seasoned designers and newcomers to the field, Chandler \& Unger (2012).
+
+``Information Architecture: For the Web and Beyond'' by Louis Rosenfeld and Peter Morville focuses on the optimal organization of information for online and offline user experiences.
+It investigates the principles and methods of information architecture as well as its influence on user-centered design, Morville, Rosenfeld, \& Arango (2015).
+
 Overall, understanding the design principles of UX and HCI and the importance of testing static graphics can significantly inform the design of interactive dashboards, as we will explore in more detail later in this review.
+
+\hypertarget{ux-and-cognitive-load}{%
+\subsection{UX and Cognitive Load}\label{ux-and-cognitive-load}}
+
+Since 1980s, cognitive load theory (CLT) of Human-Computer Interaction (HCI) was developed by cognitive psychologist John Sweller.
+The primary focus of Sweller's research was on learning and the cognitive processes underlying the acquisition of new knowledge and skills.
+
+The evolution of CLT was influenced by a number of fundamental concepts and theories.
+Information processing theory, which posits that individuals process information sequentially using sensory memory, working memory, and long-term memory, was one of the major influences.
+Sweller's research extended this theory by highlighting the limitations of working memory and its role in cognitive load, Sweller \& Chandler (1994).
+In addition, CLT distinguished between intrinsic, extraneous, and relevant cognitive load.
+The intrinsic load of a task is its inherent complexity, which cannot be altered by the interface design.
+On the other hand, the extraneous load is the cognitive load imposed by the design of the learning environment or interface, which can be reduced through practical methods.
+Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, (\textbf{hollender20210?}).
+
+The original purpose of CLT was to improve instructional design and learning outcomes by minimizing irrelevant cognitive load and optimizing relevant cognitive load.
+However, its principles and concepts have been applied to the field of HCI, recognizing the significance of cognitive load in the design of interactive systems and user interfaces.
+
+The cognitive load theory of HCI illuminates human-computer interaction cognitive processes.
+By comprehending the cognitive load imposed by interfaces and learning environments, designers can create more efficient and user-friendly systems that maximize users' mental resources.
+CLT has continued to evolve and inform interface design over time, improving HCI's usability, user experience, and cognitive support.
+
+\hypertarget{infomation-search-enviroment}{%
+\subsection{Infomation Search Enviroment}\label{infomation-search-enviroment}}
+
+In the article, ``Web Designers and web users: Influence of the ergonomic quality of the web site on the information search,'' written by Aline Chevalier and Maud Kicka outline investigate the difficulties of web designers or compare their respective activities, Chevalier \& Kicka (2006).
+The two experimental studies presented in this article compare the strategies developed by professional web designers and (novice versus experienced) web users while searching for information on websites with varying ergonomic qualities.
+The results of the two experiments, that web designers are incapable of predicting the strategies of novice users and do not behave like novices.
+Therefore, techniques for assisting web designers in developing a user-centered activity are required, and a few of these techniques are suggested at the conclusion of this article.
+
+In the article, ``Predicting graph reading performance: a cognitive approach, by Huang, Hong, and Eades outlines that performance and preference metrics are frequently employed in evaluating visualization techniques, Huang, Hong, \& Eades (2006).
+To introduce a cognitive method for assessing the effectiveness and efficiency of visualization.
+Huang et al.~propose a model of user performance, mental effort, and cognitive load (memory demand) and incorporate additional mental effort and visualization efficiency measures into our analysis.
+
+Huang et al.~build on the understanding that Richard Atkinson and Richard Shiffrin, wrote the information processing model of memory.
+
+Measuring Visualization Efficiency can be calculated using the method proposed in 2004 to measure the relative effectiveness of various instructional conditions, Tuovinen \& Paas (2004).
+This method relates mental effort to performance measures within the context of visualization efficiency, which is defined as the ratio of cognitive cost (in this study, mental effort and response time) to response accuracy
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/multi_dim_viz} 
+
+}
+
+\caption{Multi-dimensional visualization efficiency (a) modified from Tuovinen et al. [2004]; (b) modified from Kalyuga et al. [1999]}\label{fig:viseff}
+\end{figure}
+
+The efficiency (E) is calculated by converting mental effort (ME), response time (RT) and accuracy (RA) into z-scores, and combining them using the following formula:
+
+\[E = \frac{RA - ME - RT}{\sqrt{3}}\]
+where E of zero means that cognitive cost and performance accuracy are balanced.
 
 \hypertarget{testing-static-graphics}{%
 \subsection{Testing static graphics}\label{testing-static-graphics}}
@@ -1052,7 +1149,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-05-26 16:10:31. The repository is currently at this commit:
+This version of the thesis was generated on 2023-06-05 23:50:34. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1067,7 +1164,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-05-26
+##  date     2023-06-05
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------
@@ -1076,23 +1173,23 @@ The computational environment that was used to generate this version is as follo
 ##  bookdown         0.33    2023-03-06 [1] CRAN (R 4.2.0)
 ##  cachem           1.0.7   2023-02-24 [1] CRAN (R 4.2.0)
 ##  callr            3.7.3   2022-11-02 [1] CRAN (R 4.2.0)
-##  cli              3.6.0   2023-01-09 [1] CRAN (R 4.2.0)
+##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.2.0)
 ##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.2.0)
 ##  crayon           1.5.2   2022-09-29 [1] CRAN (R 4.2.0)
 ##  devtools         2.4.5   2022-10-11 [1] CRAN (R 4.2.0)
 ##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.2.0)
-##  dplyr          * 1.1.1   2023-03-22 [1] CRAN (R 4.2.0)
+##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.2.0)
 ##  ellipsis         0.3.2   2021-04-29 [1] CRAN (R 4.2.0)
-##  evaluate         0.20    2023-01-17 [1] CRAN (R 4.2.0)
+##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.2.0)
 ##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.2.0)
 ##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.2.0)
 ##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.2.0)
 ##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.2.0)
 ##  formatR        * 1.14    2023-01-17 [1] CRAN (R 4.2.0)
-##  fs               1.6.1   2023-02-06 [1] CRAN (R 4.2.0)
+##  fs               1.6.2   2023-04-25 [1] CRAN (R 4.2.0)
 ##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.2.0)
 ##  ggpcp          * 0.2.0   2022-11-28 [1] CRAN (R 4.2.0)
-##  ggplot2        * 3.4.1   2023-02-10 [1] CRAN (R 4.2.0)
+##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.2.0)
 ##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
 ##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.2.0)
 ##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.2.0)
@@ -1116,17 +1213,17 @@ The computational environment that was used to generate this version is as follo
 ##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.2.0)
 ##  pkgload          1.3.2   2022-11-16 [1] CRAN (R 4.2.0)
 ##  prettyunits      1.1.1   2020-01-24 [1] CRAN (R 4.2.0)
-##  processx         3.8.0   2022-10-26 [1] CRAN (R 4.2.0)
+##  processx         3.8.1   2023-04-18 [1] CRAN (R 4.2.0)
 ##  profvis          0.3.7   2020-11-02 [1] CRAN (R 4.2.0)
 ##  promises         1.2.0.1 2021-02-11 [1] CRAN (R 4.2.0)
-##  ps               1.7.4   2023-04-02 [1] CRAN (R 4.2.0)
+##  ps               1.7.5   2023-04-18 [1] CRAN (R 4.2.0)
 ##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.2.0)
 ##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.2.0)
 ##  RColorBrewer     1.1-3   2022-04-03 [1] CRAN (R 4.2.0)
 ##  Rcpp             1.0.10  2023-01-22 [1] CRAN (R 4.2.0)
 ##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.2.0)
 ##  remotes          2.4.2   2021-11-30 [1] CRAN (R 4.2.0)
-##  rlang            1.1.0   2023-03-14 [1] CRAN (R 4.2.0)
+##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.2.0)
 ##  rmarkdown        2.20    2023-01-19 [1] CRAN (R 4.2.2)
 ##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.2.0)
 ##  scales         * 1.2.1   2022-08-20 [1] CRAN (R 4.2.0)
@@ -1143,7 +1240,7 @@ The computational environment that was used to generate this version is as follo
 ##  urlchecker       1.0.1   2021-11-30 [1] CRAN (R 4.2.0)
 ##  usethis          2.1.6   2022-05-25 [1] CRAN (R 4.2.0)
 ##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.2.0)
-##  vctrs            0.6.1   2023-03-22 [1] CRAN (R 4.2.0)
+##  vctrs            0.6.2   2023-04-19 [1] CRAN (R 4.2.0)
 ##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.2.0)
 ##  xfun             0.37    2023-01-31 [1] CRAN (R 4.2.0)
 ##  xtable           1.8-4   2019-04-21 [1] CRAN (R 4.2.0)
@@ -1171,8 +1268,14 @@ Anderson, J. R. (1982). Acquisition of cognitive skill. \emph{Psychological Revi
 \leavevmode\vadjust pre{\hypertarget{ref-aspillaga1996}{}}%
 Aspillaga, M. (1996). Perceptual foundations in the design of visual displays. \emph{Computers in Human Behavior}, \emph{12}(4), 587--600.
 
+\leavevmode\vadjust pre{\hypertarget{ref-atkinson1968}{}}%
+Atkinson, R. C., \& Shiffrin, R. M. (1968). Human memory: A proposed system and its control processes. In \emph{Psychology of learning and motivation} (Vol. 2, pp. 89--195). Elsevier.
+
 \leavevmode\vadjust pre{\hypertarget{ref-baddeley2012}{}}%
 Baddeley, A. (2012). Working memory: Theories, models, and controversies. \emph{Annual Review of Psychology}, \emph{63}, 1--29.
+
+\leavevmode\vadjust pre{\hypertarget{ref-baddeley1976}{}}%
+Baddeley, Alan D. (1976). \emph{The psychology of memory / alan d. baddeley} (pp. xvii, 430 p. :). Book, Basic Books New York.
 
 \leavevmode\vadjust pre{\hypertarget{ref-bartlett1932}{}}%
 Bartlett, F. A., \& Remembering, A. (1932). A study in experimental and social psychology. New York: Cambridge University Press.
@@ -1195,14 +1298,26 @@ Cardoso, R. L., Leite, R. O., \& Aquino, A. C. B. de. (2016). A graph is worth a
 \leavevmode\vadjust pre{\hypertarget{ref-carley1992}{}}%
 Carley, K., \& Palmquist, M. (1992). Extracting, representing, and analyzing mental models. \emph{Social Forces}, \emph{70}(3), 601--636.
 
+\leavevmode\vadjust pre{\hypertarget{ref-chandler2012}{}}%
+Chandler, C., \& Unger, R. (2012). \emph{A project guide to UX design: For user experience designers in the field or in the making}. New Riders.
+
 \leavevmode\vadjust pre{\hypertarget{ref-chase1973}{}}%
 Chase, W. G., \& Simon, H. A. (1973). Perception in chess. \emph{Cognitive Psychology}, \emph{4}(1), 55--81.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chevalier2006}{}}%
+Chevalier, A., \& Kicka, M. (2006). Web designers and web users: Influence of the ergonomic quality of the web site on the information search. \emph{International Journal of Human-Computer Studies}, \emph{64}(10), 1031--1048.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1984}{}}%
 Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1986}{}}%
 Cleveland, W. S., \& McGill, R. (1986). An experiment in graphical perception. \emph{International Journal of Man-Machine Studies}, \emph{25}(5), 491--500.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cooper1999}{}}%
+Cooper, A. (1999). \emph{The inmates are running the asylum}. Springer.
+
+\leavevmode\vadjust pre{\hypertarget{ref-cooper2014}{}}%
+Cooper, A., Reimann, R., Cronin, D., \& Noessel, C. (2014). \emph{About face: The essentials of interaction design}. John Wiley \& Sons.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cowan2001}{}}%
 Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. \emph{Behavioral and Brain Sciences}, \emph{24}(1), 87--114.
@@ -1252,6 +1367,9 @@ Heer, J., \& Bostock, M. (2010). Crowdsourcing graphical perception: Using mecha
 \leavevmode\vadjust pre{\hypertarget{ref-heer2012}{}}%
 Heer, J., \& Shneiderman, B. (2012). Interactive dynamics for visual analysis. \emph{Commun. ACM}, \emph{55}(4), 45--54. http://doi.org/\href{https://doi.org/10.1145/2133806.2133821}{10.1145/2133806.2133821}
 
+\leavevmode\vadjust pre{\hypertarget{ref-huang2006}{}}%
+Huang, W., Hong, S.-H., \& Eades, P. (2006). Predicting graph reading performance: A cognitive approach. In \emph{ACM international conference proceeding series} (Vol. 164, pp. 207--216).
+
 \leavevmode\vadjust pre{\hypertarget{ref-hullman2011}{}}%
 Hullman, J., Adar, E., \& Shah, P. (2011). Benefitting infovis with visual difficulties. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2213--2222.
 
@@ -1273,6 +1391,9 @@ Kosara, R. (2007). Visualization criticism-the missing link between information 
 \leavevmode\vadjust pre{\hypertarget{ref-bertin1983}{}}%
 Monmonier, M. (1985). \emph{Annals of the Association of American Geographers}, \emph{75}(4), 605--609. Retrieved from \url{http://www.jstor.org/stable/2563117}
 
+\leavevmode\vadjust pre{\hypertarget{ref-morville2015}{}}%
+Morville, P., Rosenfeld, L. B., \& Arango, J. (2015). Information architecture for the web and beyond. \emph{(No Title)}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-norman2013}{}}%
 Norman, D. (2013). \emph{The design of everyday things: Revised and expanded edition}. Basic books.
 
@@ -1291,8 +1412,14 @@ Reuter, L. H., Tukey, P., Maloney, L. T., Pani, J. R., \& Smith, S. (1990). Huma
 \leavevmode\vadjust pre{\hypertarget{ref-rumelhart1976}{}}%
 Rumelhart, D. E., \& Ortony, A. (1976). The representation of knowledge in memory. In \emph{Center for human information processing}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-saffer2007}{}}%
+Saffer, D. (2007). Designing for interaction: Creating smart applications and clever devices. New riders. AIGE design press.
+
 \leavevmode\vadjust pre{\hypertarget{ref-satyanarayan2016}{}}%
 Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite: A grammar of interactive graphics. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{23}(1), 341--350.
+
+\leavevmode\vadjust pre{\hypertarget{ref-sweller1994}{}}%
+Sweller, J., \& Chandler, P. (1994). Why some material is difficult to learn. \emph{Cognition and Instruction}, \emph{12}(3), 185--233.
 
 \leavevmode\vadjust pre{\hypertarget{ref-toyama2015}{}}%
 Toyama, T., Sonntag, D., Orlosky, J., \& Kiyokawa, K. (2015). Attention engagement and cognitive state analysis for augmented reality text display functions. In \emph{Proceedings of the 20th international conference on intelligent user interfaces} (pp. 322--332).
@@ -1314,6 +1441,9 @@ Tufte, Edward R. (2008). The cognitive style of PowerPoint: Pitching out corrupt
 
 \leavevmode\vadjust pre{\hypertarget{ref-tukey1966}{}}%
 Tukey, J. W., \& Wilk, M. B. (1966). Data analysis and statistics: An expository overview. In \emph{Proceedings of the november 7-10, 1966, fall joint computer conference} (pp. 695--709).
+
+\leavevmode\vadjust pre{\hypertarget{ref-tuovinen2004}{}}%
+Tuovinen, J. E., \& Paas, F. (2004). Exploring multidimensional approaches to the efficiency of instructional conditions. \emph{Instructional Science}, 133--152.
 
 \leavevmode\vadjust pre{\hypertarget{ref-unwin2003}{}}%
 Unwin, A., Volinsky, C., \& Winkler, S. (2003). Parallel coordinates for exploratory modelling analysis. \emph{Computational Statistics \& Data Analysis}, \emph{43}, 553--564. http://doi.org/\href{https://doi.org/10.1016/S0167-9473(02)00292-X}{10.1016/S0167-9473(02)00292-X}
