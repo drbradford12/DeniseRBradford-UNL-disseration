@@ -628,6 +628,17 @@ By comprehending the cognitive load imposed by interfaces and learning environme
 CLT has continued to evolve and inform interface design over time, improving HCI's usability, user experience, and cognitive support.
 
 
+Both CLT and HCI were based on the same theories of cognition. 
+Both emphasized the reduction of unnecessary cognitive load. 
+With the concept of germane cognitive load, CLT incorporated principles to promote germane learning processes, which may result in a rise in cognitive load.
+
+In relation to Cognitive Load Theory (CLT), the split-attention principle addresses the negative effects of dividing a learner's attention between multiple sources of information during learning tasks. 
+The split-attention principle focuses specifically on reducing extraneous cognitive load, which refers to cognitive processing that does not contribute directly to learning, @nielsen1994.
+
+Because the goal of instructional design should be to present information in an integrated and coherent manner to reduce the effect of divided attention. 
+This can be accomplished by spatially aligning relevant text and visuals, such as by placing labels near the corresponding elements in a diagram or by employing captions to provide explanations directly alongside visual representations. 
+The split-attention principle optimizes cognitive resources for learning tasks by reducing the necessity for learners to mentally integrate distinct sources of information.
+
 ### Infomation Search Enviroment
 
 In the article, "Web Designers and web users: Influence of the ergonomic quality of the web site on the information search," written by Aline Chevalier and Maud Kicka outline investigate the difficulties of web designers or compare their respective activities, @chevalier2006. 
@@ -652,7 +663,7 @@ knitr::include_graphics("figure/multi_dim_viz.png")
 The efficiency (E) is calculated by converting mental effort (ME), response time (RT) and accuracy (RA) into z-scores, and combining them using the following formula:
 
 $$E = \frac{RA - ME - RT}{\sqrt{3}}$$
-where E of zero means that cognitive cost and performance accuracy are balanced.
+where E of zero means that cognitive cost and performance accuracy are balanced. 
 
 
 ### Testing static graphics
