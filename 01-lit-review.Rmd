@@ -618,7 +618,7 @@ Sweller's research extended this theory by highlighting the limitations of worki
 In addition, CLT distinguished between intrinsic, extraneous, and relevant cognitive load. 
 The intrinsic load of a task is its inherent complexity, which cannot be altered by the interface design. 
 On the other hand, the extraneous load is the cognitive load imposed by the design of the learning environment or interface, which can be reduced through practical methods. 
-Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, @hollender20210.
+Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, @hollender2010.
 
 The original purpose of CLT was to improve instructional design and learning outcomes by minimizing irrelevant cognitive load and optimizing relevant cognitive load. 
 However, its principles and concepts have been applied to the field of HCI, recognizing the significance of cognitive load in the design of interactive systems and user interfaces.
