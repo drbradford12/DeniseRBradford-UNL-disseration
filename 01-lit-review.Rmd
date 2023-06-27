@@ -85,30 +85,48 @@ Finally, we will consider the interactions between the audience and the data: ho
 Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.
 
 Perception and attention are crucial cognitive processes that allow us to interpret and make sense of data visualizations. 
-Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information.
+Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information [@attention].
 
-Our ability to perceive and pay attention to pertinent features, such as patterns, trends, and relationships, is essential for comprehending data visualizations. 
-This is especially true when working with unfamiliar or complex data sets, as our ability to focus on pertinent information becomes more difficult.
+<!--Our ability to perceive and pay attention to pertinent features, such as patterns, trends, and relationships, is essential for comprehending data visualizations. 
+This is especially true when working with unfamiliar or complex data sets, as our ability to focus on pertinent information becomes more difficult.-->
 
 In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations. 
 Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
 
-In conclusion, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, in order to interpret and comprehend the presented information.
+<!--In conclusion, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, in order to interpret and comprehend the presented information.
 
-<!--The term "data visualization" dates back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies. 
+The term "data visualization" dates back to the 2nd century A.D. drawings and other visual representations were used to investigate the world and record historical events in ancient societies. 
 Throughout human history, data visualization has significantly contributed to invention and discovery [@crapo2000].
 The introduction of computer technology dramatically changed the visual representation of data. 
 Using computer-based graphical data visualization, data analysts have become faster and more precise. 
-Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc.-->
+Data visualization has become an integral component of research in numerous disciplines, such as algorithms, human perception, animation, computer vision, etc
+
+"Data Visualization: a successful design process" defined data visualization as "the representation and presentation of data that exploits our visual perception abilities to amplify cognition," [@kirk2012]. 
+This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
+Assigning meaning to visualization is not a statistical or computational step but a cognitive one. 
+Each step in the data analysis process is part of a more extensive mental process.-->
+
 "Data Visualization: a successful design process" defined data visualization as "the representation and presentation of data that exploits our visual perception abilities to amplify cognition," [@kirk2012]. 
 This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one. 
 Each step in the data analysis process is part of a more extensive mental process.
 
+Studying cognitive science, human-computer interaction, and statistical graphics reveals fascinating connections and interdependencies that must be thoroughly investigated. 
+The cognitive theory of working memory clarifies the mechanisms underlying our capacity to store and manipulate information temporarily. 
+Expertise in long-term memory, on the other hand, sheds light on how our knowledge and experiences shape our cognitive processes. 
+Attention concepts such as feature integration theory investigate how attention is directed and how the brain integrates various features into a coherent perceptual experience. 
+The Gestalt principles illustrate the fundamental means by which we organize and perceive visual information.
+Statistical graphics and dashboard design bring together data visualization techniques, empowering effective communication and decision-making through meaningful visual representations. 
+Ultimately, this knowledge paves the way for creating more effective and impactful interactions between humans and technology in our increasingly information-rich world.
+
 ### Visual System
 
-Human perception is an essential component of data visualization. 
-Colin Ware suggests that perception can significantly enhance both the content and quantity of displayed information, [@ware2012]. 
+Perception can be understood at the biology level through sensory systems and their corresponding neural mechanisms. 
+The transduction of sensory stimuli into neural signals is a crucial aspect of perception. 
+Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret. 
+For example, in vision, light enters the eye. It activates photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex via the optical nerve [@hubel2004].
+
+Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information, [@ware2012]. 
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
 Perception is also defined as "the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information," [@ward2010].
 Ward et al. explain the notion of perception as the following:
@@ -148,7 +166,6 @@ knitr::include_graphics("figure/GestaltPrinciplesofVisualPerception.png")
 Visual attention is defined as "the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience," [@treisman1980], [@itti2001].
 
 The famous experiment in optical illusion, "Gorilla in the Midst" or "Invisible Gorilla" video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris [@gorillavideo1999]. The purpose of the video was to demonstrate a phenomenon known as "inattentional blindness" and highlight some visual attention principles. 
-
 
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention [@treisman1998]. 
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing. 
@@ -215,36 +232,42 @@ By adding annotations, such as notes or highlights, to information we are trying
 ### Role of Expertise 
 
 However, creating effective graphics is not a simple task, and proficiency in this area is required to create high-quality visualizations. 
-This essay will discuss the contributions to the field of graphics made by research on psychological processes, automaticity, readily available information, and practice effects.
+This section will discuss the contributions to the field of graphics made by research on psychological processes, automaticity, readily available information, and practice effects.
 
-
-**Cognitive Processes - the way we think about and approach a task.**
-
+The first concept - **cognitive processes** in the long-term memory (LTM) process are defined as the way we think about and approach a task.
 As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata, a heuristic technique to encode and retrieve memories, the majority of typical situations do not require much strenuous processing. 
 These mental models help us to organize information in a meaningful way, and to quickly identify and solve problems related to the task. 
 This process is known as cognitive restructuring and is facilitated by developing domain-specific knowledge [@ericsson1996]. 
-For example, a basketball coach is able to quickly recognize patterns and positions on a court that are common in basketball, which allows them to make decisions more quickly and accurately than a novice coach or player.
+For example, a basketball coach is able to quickly recognize patterns and positions on a court that are common in basketball to do so we can  mentally visualizing the arrangement and relationships between teams in a scatter plot, individuals are able to encode the spatial patterns and interpret the data points and relationships later.
 
-
-**Automaticity - the ability to perform a task without conscious effort or attention**
-
+The second concept -  **Automaticity** in the LTM process can be defined based on the ability to perform a task without conscious effort or attention.
+It occurs when a particular task or piece of information has been repeatedly practiced and encoded to the point where it is readily accessible and automatic [@anderson1992]. 
+While the concept of automaticity may not be directly related to statistical graphics, it can have an impact on how individuals interpret and process statistical information presented in graphics.
 As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
 The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process [@fitts1967]. 
 For example, a well-trained quarterback can throw a ball without looking at the wide receiver because their throwing movements have become automatic.
+In this case, the hypothesis testing will be the probability that the wide receiver will always be there 80% of the time when not being defended by a safety or cornerback.  
+The degree to which statistical concepts and procedures are automated can affect how individuals interact with statistical graphics. 
+Those who have a deep understanding of, say, hypothesis testing or statistical significance may apply these concepts automatically when analyzing data presented in a graph. 
+This automated application of statistical principles can influence their perception of the data and guide their decision-making processes.
 
 
-**Information Readily Available - the way we process information related to a task**
-
-As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice. 
+The third concept - **Information Readily Available** is defined by how we process information related to a task in the LTM process. 
+As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice.
 This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly [@chase1973]. 
+Statistical graphics are often presented in specific contexts, such as scientific research, business reports, or news articles. 
+LTM contains a wealth of contextual knowledge that can be drawn upon to better understand and interpret the statistical graphics within their specific domains. 
+Contextual knowledge can help individuals connect the presented information to real-world scenarios, evaluate the credibility of the data, and make informed decisions based on the graphics.
 For example, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
 
-**Practice Effects - extensive practice and experience**
-
-Practice effects are the performance enhancements that result from repeated practice. 
-These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling [@anderson1982]. 
+The fourth concept - **Practice effects** are the performance enhancements that result from repeated practice. 
+These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling [@anderson1982].
 The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
+When statistical graphics are used alongside explanations and discussions of statistical concepts, repeated exposure to these graphics strengthens the retention of the underlying statistical principles. 
+Repetitive interaction with statistical graphics aids in the retention of concepts like distributions, central tendencies, variability, and correlations. 
+This practice effect in LTM facilitates statistical knowledge integration and its application to data analysis and decision-making.
+
 
 The contributions of research on psychological processes, automaticity, readily available information, and practice effects to the field of graphics have significant implications. 
 Expertise is required to create high-quality graphics, which requires a thorough understanding of design principles and the capacity to work quickly and efficiently. 
@@ -493,7 +516,7 @@ Based on the above best practices on the concept of cognitive load in graphics, 
 As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning. 
 They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization. 
 
-An influential framework developed by Vessey et al refers to the degree to which a person's cognitive abilities match the cognitive demands of a task, @vessey1991, in the field of cognitive load research has been improved by Heer and Bostock, providing examined how the complexity of interactive visualizations influences users' cognitive load, @heer2010.
+An influential framework developed by Vessey et al refers to the degree to which a person's cognitive abilities match the cognitive demands of a task, [@vessey1991], in the field of cognitive load research has been improved by Heer and Bostock, providing examined how the complexity of interactive visualizations influences users' cognitive load, [@heer2010].
 The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy. 
 They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
 
@@ -607,7 +630,7 @@ Both emphasized the reduction of unnecessary cognitive load.
 With the concept of germane cognitive load, CLT incorporated principles to promote germane learning processes, which may result in a rise in cognitive load.
 
 In relation to Cognitive Load Theory (CLT), the split-attention principle addresses the negative effects of dividing a learner's attention between multiple sources of information during learning tasks. 
-The split-attention principle focuses specifically on reducing extraneous cognitive load, which refers to cognitive processing that does not contribute directly to learning, @nielsen1994.
+The split-attention principle focuses specifically on reducing extraneous cognitive load, which refers to cognitive processing that does not contribute directly to learning, [@nielsen1994].
 
 Because the goal of instructional design should be to present information in an integrated and coherent manner to reduce the effect of divided attention. 
 This can be accomplished by spatially aligning relevant text and visuals, such as by placing labels near the corresponding elements in a diagram or by employing captions to provide explanations directly alongside visual representations. 
@@ -643,7 +666,7 @@ where E of zero means that cognitive cost and performance accuracy are balanced.
 ### Testing static graphics
 
 While understanding HCI and UX design principles helps create compelling interactive graphics, it is equally important to rigorously test and evaluate the usability and efficacy of both interactive and static graphics to ensure they achieve their intended purpose.
-Kosara highlighted the significance of user testing in identifying potential problems in static visualizations, @kosara2007. 
+Kosara highlighted the significance of user testing in identifying potential problems in static visualizations, [@kosara2007]. 
 User testing aids in comprehending the users' behavior and perceptions of the visualization, thereby facilitating the identification of issues that designers may have overlooked.
 User testing also identifies the graphic's confusing or ineffective visual aspects, allowing designers to refine the design and increase its effectiveness.
 
@@ -733,9 +756,9 @@ People can develop detailed understandings of reality, which is infinitely compl
 It is important to consider how users construct mental models of the presented data and information.
 Researchers have introduced cognitive structures consisting of mental models and their relationships [@rumelhart1976], [@carley1992]; [@jonassen1996].
 In cognitive psychology, a schema is a mental model representing a person's general knowledge or expectations regarding a particular concept or situation.
-Schemas are organized into semantic networks based on their relationships to other schemas ([@wertheimer1938,;[@rumelhart1976]).
+Schemas are organized into semantic networks based on their relationships to other schemas [@wertheimer1938,[@rumelhart1976].
 This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations. 
-Some "memories" may even be complete recreations built with a schema ([@bartlett1932], [@klein2007])
+Some "memories" may even be complete recreations built with a schema [@bartlett1932], [@klein2007]
 
 Wixon introduced the concept of "contextual design" as a systems development method in which the researcher partners with the user at the user's place of work to "develop a shared understanding" of the user's activities, and they define contextual inquiry as the first part of the broader process, [@cowan2001]. 
 Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
@@ -748,14 +771,14 @@ Contextual inquiry is the data collection step of the field research element of 
 
 4. The focus of the study is central to the approach taken by the interviewer
 
-Kandal conducted what might be considered a contextual interview study in that they analyzed data scientists' self-reported work processes, [@kandel2012]. 
+<!--Kandal conducted what might be considered a contextual interview study in that they analyzed data scientists' self-reported work processes, [@kandel2012]. 
 They proposes three main archetypes that data scientists may be classed into the following:
 
 - Hackers: who build processes chaining together multiple programming languages of different types (analytical, scripting, and database languages) and use visualization in various environments.
 
-- Scripters perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but do not perform statements in their Extract, Transform, and Load (ETL).
+- Scripters perform most of their analysis in an analytical environment (e.g., R or Python) and execute the most complex statistical modeling of the types but do not perform statements in their Extract, Transform, and Load (ETL). 
 
-- Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.
+- Application Users: who performed most or all of their work in an application such as Excel or SPSS and, like scripters, relied on others (namely, their organizations' IT departments) for ETL.-->
 
 <!-- This is where your paragraph about 2 good graphics being suboptimal together should go -->
 
