@@ -271,19 +271,20 @@ Placeholder
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
 
-Statisticians use graphs in almost every stage of their work: we create charts when we get new data, to explore what we have and identify potential problems and opportunities.
-We fit models based on relationships between variables which are often identified visually.
+Statisticians use graphs in almost every stage of their work. They create charts to summarize and explore new data and identify potential problems and opportunities.
+Models are fit based on relationships between variables which are often identified visually.
 We identify problems with those models based on residual plots and other visual diagnostics.
 When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications such as exploratory analysis, and are unsuitable for other applications, such as presentation to an outside group.
-In addition, we know that not all visual displays have equal perceptual value Aspillaga (1996).
-The best graphics are designed to account for both the features of the dataset and the features of the intended audience.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization: the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina (VanderPlas \& Hofmann, 2015).
-Other design constraints are due to the audience's experience level: are they used to working with data?
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group.
+In addition, not all visual displays have equal perceptual value Aspillaga (1996).
+The best graphics are designed to account for both the dataset and the intended audience's features.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization.
+For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina (VanderPlas \& Hofmann, 2015).
+Other design constraints are due to the audience's experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful).
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
-When we create visualizations for public consumption we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, we explore previous research related to the construction of interactive and static visual displays for different audiences and consider the implications of this research when designing interactive data displays such as dashboards.
+When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
+In this introduction, previous research related to constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards is presented.
 
 Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control.
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
@@ -291,6 +292,12 @@ As a result, it can be hard to generalize this research to practical application
 In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
 For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
 As data in sports becomes more prominent, extensive, and collected, this information must be refined.
+
+Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
+The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights.
+Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, (Few, 2006).
+Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields.
+Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
 
 Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
 Let us first consider the audience characteristics that affect the selection of graphics.
@@ -300,15 +307,16 @@ Finally, we will consider the interactions between the audience and the data: ho
 \hypertarget{perceptual-and-cognitive-process-of-graph-perception}{%
 \section{Perceptual and Cognitive Process of Graph Perception}\label{perceptual-and-cognitive-process-of-graph-perception}}
 
-Several factors, including perception, attention, and expertise, can influence our desire and ability to read and engage with data visualization.
+Several factors influence an individual's ability to read and engage with data visualizations, including perception, attention, and expertise.
 
-Perception and attention are crucial cognitive processes that allow us to interpret and make sense of data visualizations.
+Perception and attention are crucial cognitive processes that allow usr to interpret and make sense of data visualizations.
 Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information (McCallum, n.d.).
 
 In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations.
 Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
+Thus, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, to interpret and comprehend the presented information.
 
-``Data Visualization: a successful design process'' defined data visualization as ``the representation and presentation of data that exploits our visual perception abilities to amplify cognition,'' (Kirk, 2012).
+In the book ``Data Visualization: a successful design process,'' Andy Kirk defined data visualization as ``the representation and presentation of data that exploits our visual perception abilities to amplify cognition'' (Kirk, 2012).
 This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
 Each step in the data analysis process is part of a more extensive mental process.
@@ -346,8 +354,10 @@ Examining the Gestalt principles, which describe how our brain organizes and int
 \hypertarget{gestalt-principles}{%
 \subsection{Gestalt Principles}\label{gestalt-principles}}
 
-Our visual interpretation of the world is a major factor in why humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
-The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s.
+Visual interpretation describes how humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
+The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s.\\
+Gestalt principles describe how humans perceive and organize visual information into meaningful patterns and structures to help the brain to effectively process and organize incoming visual information, making it easier to attend to and remember.
+Gestalt principles are grounded in cognitive psychology and address how the human brain processes visual information.
 Gestalt therapy is founded on the notion that overall perception is contingent upon the interaction of numerous factors.
 These principles include proximity, similarity, closure, continuity, symmetry, and figure-ground relationships formally outlined in ``Principles of Gestalt Psychology'', (Koffka, 2013).
 
@@ -371,21 +381,49 @@ Gestalt principles include:
   Symmetry and Balance: The human eye finds symmetry and balance visually pleasing, so designers can use this principle to create a sense of harmony and order.
 \end{itemize}
 
+By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements.
+For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
+At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts, seen in the following figure provided by (EVALUATION LLC, n.d.).
+
 \begin{figure}
 
 {\centering \includegraphics[width=0.75\linewidth]{figure/GestaltPrinciplesofVisualPerception} 
 
 }
 
-\caption{Gestalt Principles with Examples [@gestaltimage]}\label{fig:gestalt}
+\caption{Gestalt Principles with Examples }\label{fig:gestalt}
 \end{figure}
+
+All of this suggests that brains frequently perceives things differently than what is actually present.
+For example, optical illusions or the ``gorilla in the crowd'' experiment show that we do not always process everything in our visual field because there is too much information for our brains to process.
+We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
+These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
+Understanding the Gestalt principles can also illuminate how information is processed and stored in short-term memory and attention's critical role in this process.
 
 \hypertarget{role-of-attention-and-f.i.t.-feature-integration-theory}{%
 \subsection{Role of Attention and F.I.T. (Feature Integration Theory)}\label{role-of-attention-and-f.i.t.-feature-integration-theory}}
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/visual_system} 
+
+}
+
+\caption{Visual Attentionn can repersented by the following}\label{fig:visual}
+\end{figure}
+
 Visual attention is defined as ``the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience,'' (A. M. Treisman \& Gelade, 1980), (Itti \& Koch, 2001).
 
 The famous experiment in optical illusion, ``Gorilla in the Midst'' or ``Invisible Gorilla'' video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris (Scot Covey \& Simons, n.d.). The purpose of the video was to demonstrate a phenomenon known as ``inattentional blindness'' and highlight some visual attention principles.
+
+Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
+According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, (A. Baddeley, 2012).
+Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, (Cowan, 2001).
+
+Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, (Alvarez \& Cavanagh, 2004).
+Utilizing visual aids such as charts can enhance our short-term memory by .
+Furthermore, annotations can also help aid short-term memory.
+By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, (Alvarez \& Cavanagh, 2004).
 
 According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention (A. Treisman, 1998).
 Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
@@ -401,17 +439,17 @@ By analyzing the relationship between attention and working memory, we can gain 
 \hypertarget{top-down-vs.-bottom-up-construting-meaning}{%
 \subsection{Top-Down vs.~Bottom-Up (Construting Meaning)}\label{top-down-vs.-bottom-up-construting-meaning}}
 
-Gestalt psychology suggests that humans actively construct meaning by organizing information into patterns and wholes (Wertheimer, 1938).
+Gestalt psychology indicates that humans actively construct meaning by organizing information into patterns and wholes (Wertheimer, 1938).
 Both top-down and bottom-up processing are involved in the process of meaning construction.
 Bottom-up processing entails analyzing sensory data from the environment and constructing perceptions based on this data.
-Top-down processing is the influence of prior knowledge, expectations, and context on the perception and interpretation of incoming sensory data.
+Top-down processing reflects the influence of prior knowledge, expectations, and context on the perception and interpretation of incoming sensory data.
 
-Together, top-down and bottom-up processing facilitate the encoding and retrieval of information in the context of short-term memory.
-Selective attention, the ability to focus on relevant information while ignoring irrelevant information, is an example of top-down processing that aids in the encoding and retrieval of information in short-term memory (Cowan, 2010).\\
-According to the feature integration theory, the perception of objects involves both the bottom-up analysis of individual features and the top-down processing of higher-level features in order to form a complete perception (A. M. Treisman \& Gelade, 1980).
+Together, top-down and bottom-up processing facilitate the encoding and retrieval of information from STM.
+Selective attention, which is the ability to focus on relevant information while ignoring irrelevant information, is an example of top-down processing that aids in the encoding and retrieval of information in STM (Cowan, 2010).\\
+According to FIT, perceiving objects involves both the bottom-up analysis of individual features and the top-down processing of higher-level features in order to form a complete perception (A. M. Treisman \& Gelade, 1980).
 
-The Gestalt principles of perception emphasize the significance of bottom-up and top-down processing in constructing meaning from sensory data.
-Both types of processing are involved in encoding and retrieving information, which has significant implications for understanding how short-term memory works.
+The Gestalt principles of perception address how humans construct meaning from sensory data through both bottom-up and top-down processing.
+Both types of processing are involved in encoding and retrieving information, which has significant implications for understanding the mechanisms of STM.
 
 These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
 Understanding the Gestalt principles can also cast light on how information is processed and stored in short-term memory and attention's critical role in this process.
@@ -424,7 +462,7 @@ Unless actively practiced, short-term memory has a limited capacity and a short 
 If information is deemed significant or sufficiently rehearsed, it can be encoded and transferred to long-term memory, which has an almost unlimited capacity and long-term storage.
 The influential model developed by Baddeley, known as the working memory model, proposed a more complex structure with multiple components, (Baddeley Alan D., 1976).
 
-The Baddeley Memory Model is an updated and influential model of working memory that was developed by Alan Baddeley and his colleagues.
+The Baddeley Memory Model is an updated and influential model of working memory.
 It includes the phonological loop (maintenance of verbal information), the visuospatial sketchpad (maintenance of visual and spatial information), the central executive (attentional control), and the episodic buffer (integrated storage).
 Together, these components facilitate the active processing and temporary storage of data in working memory.
 
@@ -444,20 +482,11 @@ Utilizing working memory resources effectively can aid in comprehending and reme
 Together, Baddeley's model of working memory provided a comprehensive framework for studying memory and cognition.
 They contributed to the understanding of how information is processed, encoded, stored, and retrieved in human memory systems, laying the groundwork for subsequent research and theories in cognitive psychology.
 
-Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
-According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, (A. Baddeley, 2012).
-Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, (Cowan, 2001).
-
-Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, (Alvarez \& Cavanagh, 2004).
-Utilizing visual aids such as charts can enhance our short-term memory by .
-Furthermore, annotations can also help aid short-term memory.
-By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, (Alvarez \& Cavanagh, 2004).
-
 \hypertarget{role-of-expertise}{%
 \subsection{Role of Expertise}\label{role-of-expertise}}
 
 However, creating effective graphics is not a simple task, and proficiency in this area is required to create high-quality visualizations.
-This section will discuss the contributions to the field of graphics made by research on psychological processes, automaticity, readily available information, and practice effects.
+In the upcoming sections, contributions made to the field of graphics by research on psychological processes, automaticity, readily available information, and practice effects are described.
 
 The first concept - \textbf{cognitive processes} in the long-term memory (LTM) process are defined as the way we think about and approach a task.
 As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata, a heuristic technique to encode and retrieve memories, the majority of typical situations do not require much strenuous processing.
@@ -484,9 +513,9 @@ LTM contains a wealth of contextual knowledge that can be drawn upon to better u
 Contextual knowledge can help individuals connect the presented information to real-world scenarios, evaluate the credibility of the data, and make informed decisions based on the graphics.
 For example, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
 
-The fourth concept - \textbf{Practice effects} are the performance enhancements that result from repeated practice.
-These gains are frequently most significant at the outset of practice, but gradually diminish as the individual approaches their performance ceiling (Anderson, 1982).
-The development of procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitates the effects of the practice.
+The fourth concept - \textbf{Practice effects} effects are the improvements in performance that result from repeated practice.
+The most gains generally occur at the outset of a new practice, but the gains gradually diminish as the individual approaches their performance ceiling (Anderson, 1982).
+Procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitate practice effects.
 When statistical graphics are used alongside explanations and discussions of statistical concepts, repeated exposure to these graphics strengthens the retention of the underlying statistical principles.
 Repetitive interaction with statistical graphics aids in the retention of concepts like distributions, central tendencies, variability, and correlations.
 This practice effect in LTM facilitates statistical knowledge integration and its application to data analysis and decision-making.
@@ -1140,7 +1169,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-06-27 00:29:50. The repository is currently at this commit:
+This version of the thesis was generated on 2023-06-29 20:12:20. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1155,7 +1184,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-06-27
+##  date     2023-06-29
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------
@@ -1324,6 +1353,9 @@ Eppler, M. J., \& Bresciani, S. (2013). Visualization in management: From commun
 
 \leavevmode\vadjust pre{\hypertarget{ref-ericsson1996}{}}%
 Ericsson, K. A., \& Lehmann, A. C. (1996). Expert and exceptional performance: Evidence of maximal adaptation to task constraints. \emph{Annual Review of Psychology}, \emph{47}(1), 273--305.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gestaltimage}{}}%
+EVALUATION LLC, D. E. \&. (n.d.). Gestalt principle of visual perception. \url{https://dataspire.org/blog/leveraging-perception-science-to-our-advantage}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-few2006}{}}%
 Few, S. (2006). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
