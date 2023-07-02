@@ -309,8 +309,9 @@ Finally, we will consider the interactions between the audience and the data: ho
 
 Several factors influence an individual's ability to read and engage with data visualizations, including perception, attention, and expertise.
 
-Perception and attention are crucial cognitive processes that allow usr to interpret and make sense of data visualizations.
+Perception and attention are crucial cognitive processes that allow users to interpret and make sense of data visualizations.
 Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information (McCallum, n.d.).
+Expectations of perception and attention are important in data visualization interactions, however expertise is the in-depth knowledge and skills that come from having a lot of experience and learning over a long period of time.
 
 In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations.
 Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
@@ -319,7 +320,7 @@ Thus, the ability to perceive and interact with data visualizations requires a c
 In the book ``Data Visualization: a successful design process,'' Andy Kirk defined data visualization as ``the representation and presentation of data that exploits our visual perception abilities to amplify cognition'' (Kirk, 2012).
 This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
-Each step in the data analysis process is part of a more extensive mental process.
+Each step in the data analysis process is part of a more extensive mental process of constructing meaning with important cognitive-based concepts.
 
 Studying cognitive science, human-computer interaction, and statistical graphics reveals fascinating connections and interdependencies that must be thoroughly investigated.
 The cognitive theory of working memory clarifies the mechanisms underlying our capacity to store and manipulate information temporarily.
@@ -335,7 +336,17 @@ Ultimately, this knowledge paves the way for creating more effective and impactf
 Perception can be understood at the biology level through sensory systems and their corresponding neural mechanisms.
 The transduction~of sensory stimuli into neural signals is a crucial aspect of perception.
 Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
-For example, in vision, light enters the eye. It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve (Hubel \& Wiesel, 2004).
+For example, in vision, light enters the eye.
+It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve (Hubel \& Wiesel, 2004).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.55\linewidth]{figure/photoreceptors_image} 
+
+}
+
+\caption{An example of how the retina signals the visual cortex}\label{fig:photoreceptor}
+\end{figure}
 
 Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information, (Ware, 2012).
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
@@ -348,6 +359,22 @@ The brain makes assumptions about the world to overcome the inherent ambiguity i
 
 Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, (Reuter, Tukey, Maloney, Pani, \& Smith, 1990).
 Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general (Gregory, 1968).
+
+The principles of eye-tracking involve the investigation of eye movements and fixations during visual perception.
+Eye-tracking technology permits researchers to monitor and record where individuals look and how their gaze traverses a visual scene.
+This data can be utilized to analyze patterns of attention, gaze behavior, and the sequence of fixations.
+The principles of eye-tracking provide valuable information regarding how individuals allocate their attention, which elements attract their gaze, and how they visually explore and process information.
+
+Gestalt principles, on the other hand, examine how humans perceive and organize visual elements into meaningful patterns and wholes.
+These principles originated in the field of Gestalt psychology, which emphasized that perception is influenced by the arrangement and grouping of its constituent parts.
+The Gestalt principles of proximity, similarity, closure, and continuity describe how our brains organize visual stimuli to form coherent and meaningful perceptions.
+
+Eye-tracking provides objective data on how individuals visually interact with a stimulus, revealing attention patterns and fixation sequences.
+This data can be used to determine how individuals explore and process visual data over time.
+
+Eye-tracking and Gestalt principles together contribute to our understanding of visual perception.
+Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli.
+By combining these methodologies, researchers can better understand~how humans perceive and interpret the visual world.
 
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
 
@@ -468,11 +495,19 @@ Together, these components facilitate the active processing and temporary storag
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.45\linewidth]{figure/Baddeley_model} \includegraphics[width=0.45\linewidth]{figure/info_model} 
+{\centering \includegraphics[width=0.45\linewidth]{figure/Baddeley_model} 
 
 }
 
-\caption{Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)}\label{fig:baddeleymodel}
+\caption{Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)}\label{fig:baddeleymodel-1}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/info_model} 
+
+}
+
+\caption{Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)}\label{fig:baddeleymodel-2}
 \end{figure}
 
 Visual and spatial information is processed and temporarily stored in the visuospatial sketchpad when individuals view statistical graphics.
@@ -575,7 +610,9 @@ Tukey's Principles in EDA:
   The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
 \end{enumerate}
 
-\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-2} \end{center}
+\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-1} \end{center}
+
+\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/violin_plot-2} \end{center}
 
 Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
 Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone.
@@ -628,11 +665,19 @@ Finally, the ``Grammar of Graphics'' provides a systematic way of thinking about
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.45\linewidth]{figure/gglayers} \includegraphics[width=0.45\linewidth]{figure/graphic-flowchart} 
+{\centering \includegraphics[width=0.45\linewidth]{figure/gglayers} 
 
 }
 
-\caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2}
+\caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2-1}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{figure/graphic-flowchart} 
+
+}
+
+\caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2-2}
 \end{figure}
 
 Michael Friendly, a leading expert in data visualization, has utilized the principles of the grammar of graphics to develop innovative teaching methods that make complex data visualization concepts more accessible to a broader audience.
@@ -701,11 +746,13 @@ Here are some general guidelines for making better graphics with works from Few 
 ## Warning: Removed 1 rows containing missing values (`position_stack()`).
 \end{verbatim}
 
+\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-1} \end{center}
+
 \begin{verbatim}
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-1} \includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-2} \end{center}
+\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-2} \end{center}
 
 On the other hand, Interactive graphics provide a more dynamic and engaging way to explore and analyze complex data sets than traditional static visualizations.
 By allowing users to manipulate and explore data in real-time, interactive graphics can reveal hidden patterns and relationships that may be difficult to discern in static visualizations, making them a valuable tool for data analysis.
@@ -1169,7 +1216,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-06-29 20:12:20. The repository is currently at this commit:
+This version of the thesis was generated on 2023-07-01 11:45:04. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1184,7 +1231,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-06-29
+##  date     2023-07-01
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------

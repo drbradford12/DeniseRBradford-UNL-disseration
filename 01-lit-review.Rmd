@@ -91,8 +91,9 @@ Finally, we will consider the interactions between the audience and the data: ho
 
 Several factors influence an individual’s ability to read and engage with data visualizations, including perception, attention, and expertise.
 
-Perception and attention are crucial cognitive processes that allow usr to interpret and make sense of data visualizations. 
+Perception and attention are crucial cognitive processes that allow users to interpret and make sense of data visualizations. 
 Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information [@attention].
+Expectations of perception and attention are important in data visualization interactions, however expertise is the in-depth knowledge and skills that come from having a lot of experience and learning over a long period of time. 
 
 <!--Our ability to perceive and pay attention to pertinent features, such as patterns, trends, and relationships, is essential for comprehending data visualizations. 
 This is especially true when working with unfamiliar or complex data sets, as our ability to focus on pertinent information becomes more difficult.-->
@@ -117,7 +118,7 @@ Each step in the data analysis process is part of a more extensive mental proces
 In the book "Data Visualization: a successful design process," Andy Kirk defined data visualization as "the representation and presentation of data that exploits our visual perception abilities to amplify cognition" [@kirk2012]. 
 This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
-Each step in the data analysis process is part of a more extensive mental process.
+Each step in the data analysis process is part of a more extensive mental process of constructing meaning with important cognitive-based concepts.
 
 Studying cognitive science, human-computer interaction, and statistical graphics reveals fascinating connections and interdependencies that must be thoroughly investigated. 
 The cognitive theory of working memory clarifies the mechanisms underlying our capacity to store and manipulate information temporarily. 
@@ -130,9 +131,18 @@ Ultimately, this knowledge paves the way for creating more effective and impactf
 ### Visual System
 
 Perception can be understood at the biology level through sensory systems and their corresponding neural mechanisms. 
+The retina is a multi-layered sensory tissue that lines the back of the eye and acts at the interface of input light and visual perception. 
+The retina is the primary function that captures the photons and convert those photons into electrical impulses that travel along the optic nerve to the brain where they turned into images.
 The transduction of sensory stimuli into neural signals is a crucial aspect of perception. 
 Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret. 
-For example, in vision, light enters the eye. It activates photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex via the optical nerve [@hubel2004].
+For example, in vision, light enters the eye. 
+It activates photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex via the optical nerve [@hubel2004].
+These photoreceptor cells are convert light into electrochemical signals that 
+
+```{r photoreceptor, echo=FALSE, out.width = "55%", fig.cap='An example of how the retina signals the visual cortex',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/photoreceptors_image.jpeg")
+```
+
 
 Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information, [@ware2012]. 
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
@@ -144,7 +154,22 @@ Ward et al. explain the notion of perception as the following:
 Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, [@reuter1990].
 Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general [@gregory1968].
 
-<!--I need to close this section to introduce the principles of Gestalt and eye tracking-->
+The principles of eye-tracking involve the investigation of eye movements and fixations during visual perception. 
+Eye-tracking technology permits researchers to monitor and record where individuals look and how their gaze traverses a visual scene. 
+This data can be utilized to analyze patterns of attention, gaze behavior, and the sequence of fixations. 
+The principles of eye-tracking provide valuable information regarding how individuals allocate their attention, which elements attract their gaze, and how they visually explore and process information.
+
+Gestalt principles, on the other hand, examine how humans perceive and organize visual elements into meaningful patterns and wholes. 
+These principles originated in the field of Gestalt psychology, which emphasized that perception is influenced by the arrangement and grouping of its constituent parts. 
+The Gestalt principles of proximity, similarity, closure, and continuity describe how our brains organize visual stimuli to form coherent and meaningful perceptions.
+
+Eye-tracking provides objective data on how individuals visually interact with a stimulus, revealing attention patterns and fixation sequences. 
+This data can be used to determine how individuals explore and process visual data over time.
+
+Eye-tracking and Gestalt principles together contribute to our understanding of visual perception. 
+Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli. 
+By combining these methodologies, researchers can better understand how humans perceive and interpret the visual world.
+
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
 
 ### Gestalt Principles
@@ -170,7 +195,7 @@ By applying these principles to dashboard design, designers can create visual ar
 For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard. 
 At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts, seen in the following figure provided by [@gestaltimage].
 
-```{r gestalt, echo=FALSE, out.width = "75%", fig.cap='Gestalt Principles with Examples ',fig.show='hold',fig.align='center'}
+```{r gestalt, echo=FALSE, out.width = "75%", fig.cap='Gestalt Principles with Examples ',fig.show='asis',fig.align='center'}
 knitr::include_graphics("figure/GestaltPrinciplesofVisualPerception.png")
 ```
 
@@ -184,7 +209,7 @@ Understanding the Gestalt principles can also illuminate how information is proc
 
 
 
-```{r visual, echo=FALSE, out.width = "45%", fig.cap='Visual Attentionn can repersented by the following',fig.show='hold',fig.align='center'}
+```{r visual, echo=FALSE, out.width = "45%", fig.cap='Visual Attentionn can repersented by the following',fig.show='asis',fig.align='center'}
 knitr::include_graphics("figure/visual_system.png")
 ```
 
@@ -243,7 +268,7 @@ The Baddeley Memory Model is an updated and influential model of working memory.
 It includes the phonological loop (maintenance of verbal information), the visuospatial sketchpad (maintenance of visual and spatial information), the central executive (attentional control), and the episodic buffer (integrated storage). 
 Together, these components facilitate the active processing and temporary storage of data in working memory.
 
-```{r baddeleymodel, echo=FALSE, out.width = "45%", fig.cap='Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)', fig.show='hold', fig.align='center'}
+```{r baddeleymodel, echo=FALSE, out.width = "45%", fig.cap='Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)', fig.show='asis', fig.align='center'}
 knitr::include_graphics(rep(c("figure/Baddeley_model.png", "figure/info_model.png"),1))
 #knitr::include_graphics("figure/Baddeley_model.png")
 ```
@@ -348,7 +373,7 @@ The reexpressing data to a new scale by taking the square root or logarithmic sc
 This is taught in every statistics 101 class. 
 The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
 
-```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold', fig.align='center'}
+```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
   geom_violin(aes(fill = Diet), trim = FALSE) +
   geom_boxplot(width = 0.1) +
@@ -410,7 +435,7 @@ For example, a bar chart can be created by mapping a categorical variable to the
 Moreover, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the "Grammar of Graphics" provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
 
-```{r graphics2, echo=FALSE, out.width = "45%",fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='hold',fig.align='center'}
+```{r graphics2, echo=FALSE, out.width = "45%",fig.cap='Grammar of Graphics Diagram of Wickham and Wilkinson\'s work',fig.show='asis',fig.align='center'}
 #knitr::include_graphics("figure/gglayers.png")
 #knitr::include_graphics("figure/graphic-flowchart.png")
 knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.png"),1))
@@ -471,7 +496,7 @@ Here are some general guidelines for making better graphics with works from Few 
 7. Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
 
 
-```{r flights_data_example, echo=FALSE, out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='hold',fig.align='center'}
+```{r flights_data_example, echo=FALSE, out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis',fig.align='center'}
 # Stacked Density plot
 ggplot(data=flights %>% filter(dest %in% c("ATL", "ORD","MDW") ), aes(x=distance, fill=carrier)) +
 geom_density(position="stack")
@@ -522,7 +547,7 @@ This model is also context-free, allowing for the focus to be on the feedback lo
 The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results. 
 By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.
 
-```{r vanWiijmodel, echo=FALSE, out.width = "45%",fig.cap='van Wiij Simple Visualization Model',fig.show='hold',fig.align='center'}
+```{r vanWiijmodel, echo=FALSE, out.width = "45%",fig.cap='van Wiij Simple Visualization Model',fig.show='asis',fig.align='center'}
 knitr::include_graphics("figure/vanWiijSimpleModel.png")
 ```
 
@@ -579,7 +604,7 @@ In the 1970s and 1980s, HCI researchers began to concentrate on developing user 
 The "GOMS" model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, [@card1983].
 During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.
 
-```{r gomsmodel, echo=FALSE, out.width = "45%",fig.cap='GOMS Model created by Card Moran and Newell', fig.show='hold', fig.align='center'}
+```{r gomsmodel, echo=FALSE, out.width = "45%",fig.cap='GOMS Model created by Card Moran and Newell', fig.show='asis', fig.align='center'}
 knitr::include_graphics("figure/goms_model.png")
 ```
 
@@ -679,7 +704,7 @@ Huang et al. build on the understanding that Richard Atkinson and Richard Shiffr
 Measuring Visualization Efficiency can be calculated using the method proposed in 2004 to measure the relative effectiveness of various instructional conditions, @tuovinen2004.
 This method relates mental effort to performance measures within the context of visualization efficiency, which is defined as the ratio of cognitive cost (in this study, mental effort and response time) to response accuracy
 
-```{r viseff, echo=FALSE, out.width = "45%",fig.cap='Multi-dimensional visualization efficiency (a) modified from Tuovinen et al. [2004]; (b) modified from Kalyuga et al. [1999]', fig.show='hold', fig.align='center'}
+```{r viseff, echo=FALSE, out.width = "45%",fig.cap='Multi-dimensional visualization efficiency (a) modified from Tuovinen et al. [2004]; (b) modified from Kalyuga et al. [1999]', fig.show='asis', fig.align='center'}
 knitr::include_graphics("figure/multi_dim_viz.png")
 ```
 
@@ -688,6 +713,76 @@ The efficiency (E) is calculated by converting mental effort (ME), response time
 
 $$E = \frac{RA - ME - RT}{\sqrt{3}}$$
 where E of zero means that cognitive cost and performance accuracy are balanced. 
+
+### Chart Coordination/Viusal Linking
+
+Visual Linking, also known as visual connections or coordinated views, refers to establishing relationships or connections between various visual representations or charts within a data visualization system. 
+Visual linking enables users to explore and analyze data by making it easier to identify patterns, trends, and correlations across multiple charts or views.
+The goal of visual linking is to enable users to explore and analyze data by facilitating the identification of patterns, trends, and correlations across multiple charts or views.
+
+"Snap-together visualization: A user interface for coordinating visualizations via relational schemata" is a research paper by Chris North and Ben Shneiderman, [@north2000]. 
+The paper introduces the concept of a user interface called Snap-Together Visualization (STV) that facilitates the coordination of multiple visualizations using relational schemata.
+The STV system enables users to create, modify, and manipulate relational schemata, thereby enabling coordinated interactions between visualizations. 
+Users can link multiple views by specifying data attributes or values that serve as connection points between the visualizations.
+They illustrate how users can create meaningful connections between visualizations in order to gain insights, compare data across different views, and discover relationships that may not be apparent in individual visualizations.
+
+"A framework for unifying presentation space" is a research paper by Melanie Tory and Colin Swindells, [@carpendale2001].
+The paper presents a framework that seeks to unify the presentation space in visualizations, thereby facilitating the coordination of multiple visual representations.
+The framework highlights the significance of integrating various visualization components into a cohesive and coordinated presentation. 
+It addresses the difficulties associated with managing the spatial arrangement and interaction of different visual elements within a visualization system.
+They illustrate how the framework can be utilized to create coordinated views, manage interactions, and provide users with a unified visual experience.
+
+
+The research paper titled "Software Design Patterns for Information Visualization" was written by Jeffrey Heer and Maneesh Agrawala, [@heer2006]. 
+Specifically tailored software design patterns for information visualization systems are introduced in this paper. 
+The authors propose a set of design patterns to improve the development of interactive visualizations and address common challenges.
+Information visualization emphasizes the importance of adopting well-established software design principles. 
+It discusses the advantages of employing design patterns, which are reusable solutions to common design problems, to improve visualization systems' adaptability, scalability, and maintainability.
+
+Among the design patterns discussed in the paper are the following:
+
+**Marks** pattern focuses on the visual representation of data items, including points, lines, and bars. 
+It discusses techniques for rendering and interacting with marks efficiently.
+
+**Layout** pattern addresses the organization of visual elements in the visualization space. 
+It investigates various strategies for organizing and positioning visual elements to maximize screen real estate.
+
+**Axes** pattern addresses the presentation of axes and scales in order to provide context and reference for interpreting visualizations. 
+It discusses various labeling, formatting, and scaling strategies for axes.
+
+**Interaction** pattern addresses techniques for enabling user interactions and exploration in visualizations. 
+It examines techniques such as brushing and linking, direct manipulation, and coordinated views to facilitate data analysis and exploration.
+
+**View Coordination** pattern focuses on connecting multiple views or visualizations to facilitate coordinated analysis. 
+It discusses techniques for visual linking and synchronization that permit users to establish connections between distinct views.
+
+
+"Exploring the design space of composite visualization" is a research paper by Waqas Javed and Niklas Elmqvist, [@javed2012]. 
+This paper examines the concept of composite visualization, which combines multiple interconnected visualizations to support complex data exploration tasks.
+The authors discuss the design space of composite visualization, which encompasses multiple facets of effectively creating and employing multiple linked visualizations. 
+They investigate various methods for designing and arranging visualizations, such as juxtaposition, superposition, and overlay.
+
+The article highlights the concept composite visualization initially introduced by Card et al., [@card1999]'s pipeline concepts: 
+
+- visual structure: the mapping from data to visual form (i.e., the result of a visualization technique);
+
+- view: the physical display space (typically 2D) in which a visual structure is rendered.
+
+CVV (Composite Visualization View) design patterns refer to reusable solutions or approaches for designing composite visualizations, which involve combining multiple linked visualizations into a cohesive and interactive whole.
+The method for visual composition is an emerging theme in the literature on composite visualizations. 
+In other words, the various compositions of two visualizations A and B in the same visual space appear to be a useful organizing principle in this domain. 
+Based on the literature, we derive the four visual compositions that give rise to four broad categories for composing visualizations, which we refer to as CVV design patterns:
+
+- Juxtaposition: Placing visualizations side-by-side in one view, [@roberts2007];
+
+- Superimposition: Over laying two visualizations in a single view;
+
+- Overloading: Utilizing the space of one visualization for another; 
+
+- Nesting: Nesting the contents of one visualization in side another visualization; and
+
+- Integration: Placing visualizations in the same view with visual links.
+
 
 
 ### Testing static graphics
