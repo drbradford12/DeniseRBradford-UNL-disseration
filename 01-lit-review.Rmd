@@ -170,6 +170,18 @@ Eye-tracking and Gestalt principles together contribute to our understanding of 
 Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli. 
 By combining these methodologies, researchers can better understand how humans perceive and interpret the visual world.
 
+Perceptual grouping is a fundamental process in visual perception involving the organization of individual visual elements into coherent perceptual units based on their inherent properties and spatial relationships. 
+It helps us make sense of the complex visual world by grouping elements that belong to the same object or structure and separating elements that belong to different entities. 
+Gestalt psychologists have extensively studied the concept of perceptual grouping, proposing principles such as proximity, similarity, closure, and continuity as grouping's underlying mechanisms. 
+These principles govern our perception of objects, edges, contours, and patterns, enabling us to perceive organized and meaningful visual information ([@wertheimer1938], [@wagemans2012], [@palmer2002]).
+
+Figure xxx shows that the perceptual grouping that is illustrated by [@palmer2002]....  
+
+```{r perceptualgrouping, echo=FALSE, out.width = "55%", fig.cap='Perceptual Grouping illustrated by Palmer in 2002',fig.show='asis',fig.align='center'}
+knitr::include_graphics("figure/Perceptual_grouping.png")
+```
+
+
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
 
 ### Gestalt Principles
@@ -206,6 +218,36 @@ These principles guide how people perceive and make sense of the world around th
 Understanding the Gestalt principles can also illuminate how information is processed and stored in short-term memory and attention’s critical role in this process.
 
 ### Role of Attention and F.I.T. (Feature Integration Theory)
+
+Starting with Wertheimer's experiments on the perception of motion examined the phenomenon of apparent motion, which refers to the perception of motion when successive stationary stimuli are presented. 
+Wertheimer investigated the principles underlying the perception of motion and provided insights into the Gestalt principles of visual perception by conducting a series of perceptual experiments.
+
+[@wertheimer1912] investigated the phi motion, a type of motion in which the rapid presentation of two stationary stimuli creates the perception of movement. 
+By manipulating the temporal and spatial arrangement of stimuli systematically, Wertheimer was able to identify critical factors that influenced the perception of motion. 
+His experiments revealed that the perception of motion results from the interaction between sensory input and perceptual organization processes.
+
+The research of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion. 
+He hypothesized that the visual system tends to group stimuli that are close in space or have similar properties, resulting in the perception of a continuous and smooth motion between them.
+The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences. 
+Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception.
+
+
+
+
+Preattentive processing in vision refers to the rapid and automatic extraction of basic visual features from the environment before conscious attention is directed to particular objects or regions. 
+The effortless and parallel initiation of visual processing occurs across the visual field.
+Preattentive processing entails the extraction of low-level visual characteristics such as color, shape, movement, and orientation. 
+These features are processed in a highly efficient and automatic manner, allowing the brain to detect and classify visual information rapidly and unconsciously.
+
+
+
+
+The capacity of the visual system to automatically integrate and extract relevant information from visual stimuli, even in the absence of focused attention, is referred to as the ability to perceive unity, uniformity, and global patterns without conscious attention. 
+This preattentive processing enables rapid perception of the visual environment's global patterns and structures.
+
+[@goldberg1994] conducted research focusing specifically on the perception of unity and uniformity prior to attention. 
+They provided evidence for the preattentive extraction of global features such as shape, orientation, and motion through their experiments. 
+The findings suggested that the visual system integrates local elements into coherent global patterns automatically, allowing for the perception of unity and uniformity without conscious attention.
 
 
 
@@ -783,6 +825,9 @@ Based on the literature, we derive the four visual compositions that give rise t
 
 - Integration: Placing visualizations in the same view with visual links.
 
+```{r VisualComposition, echo=FALSE, out.width = "75%",fig.cap='Four different visual composition operators (from the left): juxtaposition, superimposition, overloading, andnesting.', fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/VisualComposition.png")
+```
 
 
 ### Testing static graphics
