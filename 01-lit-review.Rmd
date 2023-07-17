@@ -166,6 +166,30 @@ Eye-tracking and Gestalt principles together contribute to our understanding of 
 Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli. 
 By combining these methodologies, researchers can better understand how humans perceive and interpret the visual world.
 
+The F-pattern theory is founded on the observation that website visitors frequently scan content in a "F" shape. 
+When interacting with text-heavy pages, such as articles or search engine results, this pattern is prevalent. 
+The F-pattern suggests that users should initially scan horizontally across the top of the page (forming the top bar of the F), then move down slightly and scan horizontally across a shorter line (forming the middle bar of the F), and finally scan vertically along the left side of the page (forming the vertical bar of the F), [@nielsen2006].
+
+As demonstrated by figure xxx, [@alberts2019] provides F-pattern reading flow support. 
+The highlighted areas indicate where the user's attention was drawn. 
+The users began with the top-left corner, scanned the first line with KPIs (big font attracted the attention), moved to the second line, scanned each chart (colors attracted the attention), and only glanced briefly at the last line to focus more on the last chart (colors also attracted the attention).
+
+```{r eyetracking, echo=FALSE, out.width = "45%", fig.cap='Example of eyetracking using noting the F-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/eyetracking_dashboards_f_pattern.png")
+```
+
+The Z-pattern theory is another commonly observed eye-tracking pattern when users interact with webpage content. 
+This pattern is better suited for pages with more visual elements, such as landing pages and ad layouts. 
+In the Z-pattern, users scan horizontally across the top of the page (from left to right), then move diagonally to the left (forming the first diagonal of the Z), and finally scan horizontally across the bottom of the page (from left to right), [@nielsen1997].
+
+Figure xxx,[@alberts2019], has less content density and supports a Z-pattern reading flow in which users begin in the upper-left corner and zigzag to the bottom.
+Users only viewed the title briefly, most likely because it is brief and large, making it easy to read quickly. 
+
+```{r eyetracking2, echo=FALSE, out.width = "45%", fig.cap='Example of eyetracking using noting the Z-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/eyetracking_dashboards_z_pattern.png")
+```
+
+
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
 
 ### Gestalt Principles
@@ -238,9 +262,10 @@ Wertheimer investigated the principles underlying the perception of motion and p
 By manipulating the temporal and spatial arrangement of stimuli systematically, Wertheimer was able to identify critical factors that influenced the perception of motion.
 His experiments revealed that motion perception results from the interaction between sensory input and perceptual organization processes. 
 
-The research of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
+The work of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
 He hypothesized that the visual system tends to group stimuli that are close in space or have similar properties, resulting in the perception of a continuous and smooth motion between them. 
-The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences. Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception. 
+The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences. 
+Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception. 
 
 According to [@goldstein2021], preattentive processing automatically extracts and analyzes basic features such as color, shape, orientation, and motion.
 These features are processed in parallel across the visual field, allowing for the rapid detection and identification of salient environmental stimuli. 

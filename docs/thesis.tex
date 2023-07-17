@@ -284,7 +284,7 @@ For example, the sine illusion affects anyone with binocular depth perception, a
 Other design constraints are due to the audience's experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful).
 Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
 When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
-In this introduction, previous research related to constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards is presented.
+This introduction presents previous research on constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards.
 
 Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control.
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
@@ -316,9 +316,7 @@ Expectations of perception and attention are important in data visualization int
 In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations.
 Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
 Thus, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, to interpret and comprehend the presented information.
-
-In the book ``Data Visualization: a successful design process,'' Andy Kirk defined data visualization as ``the representation and presentation of data that exploits our visual perception abilities to amplify cognition'' (Kirk, 2012).
-This suggests that data visualization involves the misuse of human visual perception in addition to the presentation of data.
+This suggests that data visualization involves the misuse of human visual perception in the visual presentation of data.
 Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
 Each step in the data analysis process is part of a more extensive mental process of constructing meaning with important cognitive-based concepts.
 
@@ -340,7 +338,6 @@ The transduction~of sensory stimuli into neural signals is a crucial aspect of p
 Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
 For example, in vision, light enters the eye.
 It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve (Hubel \& Wiesel, 2004).
-These photoreceptor cells are convert light into electrochemical signals that
 
 \begin{figure}
 
@@ -354,11 +351,7 @@ These photoreceptor cells are convert light into electrochemical signals that
 Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information, (Ware, 2012).
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
 Perception is also defined as ``the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information,'' (Ward, Grinstein, \& Keim, 2010).
-Ward et al.~explain the notion of perception as the following:
-
-\begin{quote}
-The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.
-\end{quote}
+Ward et al.~explain the notion of perception as the following, ``The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.''
 
 Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, (Reuter, Tukey, Maloney, Pani, \& Smith, 1990).
 Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general (Gregory, 1968).
@@ -378,21 +371,23 @@ This data can be used to determine how individuals explore and process visual da
 Eye-tracking and Gestalt principles together contribute to our understanding of visual perception.
 Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli.
 By combining these methodologies, researchers can better understand~how humans perceive and interpret the visual world.
-
-Perceptual grouping is a fundamental process in visual perception involving the organization of individual visual elements into coherent perceptual units based on their inherent properties and spatial relationships.
-It helps us make sense of the complex visual world by grouping elements that belong to the same object or structure and separating elements that belong to different entities.
-Gestalt psychologists have extensively studied the concept of perceptual grouping, proposing principles such as proximity, similarity, closure, and continuity as grouping's underlying mechanisms.
-These principles govern our perception of objects, edges, contours, and patterns, enabling us to perceive organized and meaningful visual information ((Wertheimer, 1938), (Wagemans et al., 2012), (Palmer, 2002)).
-
-Figure xxx shows that the perceptual grouping that is illustrated by (Palmer, 2002)\ldots.
+Given in figure xxx, we can see that\ldots{} (Alberts, 2019)
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.55\linewidth]{figure/Perceptual_grouping} 
+{\centering \includegraphics[width=0.5\linewidth]{figure/eyetracking_dashboards_f_pattern} 
 
 }
 
-\caption{Perceptual Grouping illustrated by Palmer in 2002}\label{fig:perceptualgrouping}
+\caption{Examples of eyetracking on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking-1}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{figure/eyetracking_dashboards_z_pattern} 
+
+}
+
+\caption{Examples of eyetracking on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking-2}
 \end{figure}
 
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
@@ -429,7 +424,7 @@ Gestalt principles include:
 
 By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements.
 For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
-At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts, seen in the following figure provided by (EVALUATION LLC, n.d.).
+At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts, seen in the following figure xxx provided by (EVALUATION LLC, n.d.).
 
 \begin{figure}
 
@@ -437,41 +432,73 @@ At its most basic, the entire form is perceived (or emerges to our visual pathwa
 
 }
 
-\caption{Gestalt Principles with Examples }\label{fig:gestalt}
+\caption{Gestalt Principles with Examples}\label{fig:gestalt}
 \end{figure}
 
-All of this suggests that brains frequently perceives things differently than what is actually present.
+This suggests that our brains frequently perceive things differently than what is present.
 For example, optical illusions or the ``gorilla in the crowd'' experiment show that we do not always process everything in our visual field because there is too much information for our brains to process.
 We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
 These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
-Understanding the Gestalt principles can also illuminate how information is processed and stored in short-term memory and attention's critical role in this process.
+Understanding Gestalt principles can also illuminate how information is processed and stored in short-term memory and attention's critical role in this process.
+
+Perceptual grouping is a fundamental process in visual perception that involves organizing individual graphical elements into coherent perceptual units based on their inherent properties and spatial relationships.
+It helps us make sense of the complex visual world by grouping elements that belong to the same object or structure and separating elements that belong to different entities. Gestalt psychologists have extensively studied the concept of perceptual grouping, proposing principles such as proximity, similarity, closure, and continuity as grouping's underlying mechanisms.~
+These principles govern our perception of objects, edges, contours, and patterns, enabling us to perceive organized and meaningful visual information ((Wertheimer, 1938), (Wagemans et al., 2012), (Palmer, 2002)).
+
+Figure xxx shows that the perceptual grouping introduced by (Palmer, 2002), focuses on proximity, similar size, similar orientation, and common region concepts that will directly impact dashboard design through the lenses of the user.
+Perceptual grouping introduced by (Palmer, 2002), focuses on the proximity, similar size, similar orientation, and common region concepts that will directly impact dashboard design through the lenses of the user.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.55\linewidth]{figure/Perceptual_grouping} 
+
+}
+
+\caption{Perceptual Grouping illustrated by Stephen E. Palmer in 2002}\label{fig:perceptualgrouping}
+\end{figure}
+
+The proximity principle states that elements occupying close spatial proximity are perceived as belonging.
+Gestalt psychologists emphasized this principle when they argued that nearby elements are more likely to be grouped (WERTHEIMER, 1923).
+Due to the proximity of a series of dots arranged in a line, we perceive them as a single line rather than individual dots.
+
+The principle of similar size states that perceptually similar-sized elements are grouped.
+This principle is based on the observation that similar-sized objects or elements are typically perceived as belonging to the same group.
+For example, when we see a collection of circles of varying sizes, we tend to perceive those with similar dimensions as belonging to the same group and those with distinct sizes as distinct entities.
+
+According to the principle of similar orientation, elements with relative orientations or directions are grouped.
+This principle proposes that elements with similar orientations are perceived as constituting a coherent pattern or object.
+For instance, when we see lines arranged at various angles, we tend to group lines with similar orientations, such as horizontal or vertical lines.
+
+The principle of common region states that elements that share a boundary or area should be grouped.
+This principle states that elements within the same enclosed space are perceived as a unit.
+For instance, we perceive a collection of dots arranged in a circle as a single entity due to the shared region they occupy.
 
 \hypertarget{role-of-attention-and-f.i.t.-feature-integration-theory}{%
 \subsection{Role of Attention and F.I.T. (Feature Integration Theory)}\label{role-of-attention-and-f.i.t.-feature-integration-theory}}
 
-Starting with Wertheimer's experiments on the perception of motion examined the phenomenon of apparent motion, which refers to the perception of motion when successive stationary stimuli are presented.
+Starting with Wertheimer's experiments on the perception of motion, he examined the phenomenon of apparent motion, which refers to the perception of motion when successive stationary stimuli are presented.~
 Wertheimer investigated the principles underlying the perception of motion and provided insights into the Gestalt principles of visual perception by conducting a series of perceptual experiments.
 
 (Wertheimer, 1912) investigated the phi motion, a type of motion in which the rapid presentation of two stationary stimuli creates the perception of movement.
 By manipulating the temporal and spatial arrangement of stimuli systematically, Wertheimer was able to identify critical factors that influenced the perception of motion.
-His experiments revealed that the perception of motion results from the interaction between sensory input and perceptual organization processes.
+His experiments revealed that motion perception results from the interaction between sensory input and perceptual organization processes.
 
-The research of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
+The work of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
 He hypothesized that the visual system tends to group stimuli that are close in space or have similar properties, resulting in the perception of a continuous and smooth motion between them.
 The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences.
 Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception.
 
-Preattentive processing in vision refers to the rapid and automatic extraction of basic visual features from the environment before conscious attention is directed to particular objects or regions.
-The effortless and parallel initiation of visual processing occurs across the visual field.
-Preattentive processing entails the extraction of low-level visual characteristics such as color, shape, movement, and orientation.
-These features are processed in a highly efficient and automatic manner, allowing the brain to detect and classify visual information rapidly and unconsciously.
+According to (Goldstein \& Cacciamani, 2021), preattentive processing automatically extracts and analyzes basic features such as color, shape, orientation, and motion.
+These features are processed in parallel across the visual field, allowing for the rapid detection and identification of salient environmental stimuli.
+Preattentive processing occurs effortlessly and outside conscious awareness, laying the foundation for subsequent attentional selection and more elaborate perceptual processing.
 
-The capacity of the visual system to automatically integrate and extract relevant information from visual stimuli, even in the absence of focused attention, is referred to as the ability to perceive unity, uniformity, and global patterns without conscious attention.
-This preattentive processing enables rapid perception of the visual environment's global patterns and structures.
+The theories of Goldstein emphasize the significance of preattentive processes in various perceptual domains.
+For instance, he discusses the preattentive analysis of visual features such as color and orientation, which contribute to the visual perception of objects, scenes, and graphic patterns.
+In the auditory domain, preattentive processes automatically extract basic acoustic features like pitch and loudness.
+This makes it easier to find the source of sounds and tell them apart.
 
-(\textbf{goldberg1994?}) conducted research focusing specifically on the perception of unity and uniformity prior to attention.
-They provided evidence for the preattentive extraction of global features such as shape, orientation, and motion through their experiments.
-The findings suggested that the visual system integrates local elements into coherent global patterns automatically, allowing for the perception of unity and uniformity without conscious attention.
+By examining preattentive processing, Goldstein's theories provide a framework for comprehending the initial stages of sensory processing and the automatic extraction of fundamental perceptual features.
+These theories have significant implications for understanding how automatic and controlled processes shape perception.~
 
 \begin{figure}
 
@@ -484,9 +511,9 @@ The findings suggested that the visual system integrates local elements into coh
 
 Visual attention is defined as ``the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience,'' (A. M. Treisman \& Gelade, 1980), (Itti \& Koch, 2001).
 
-The famous experiment in optical illusion, ``Gorilla in the Midst'' or ``Invisible Gorilla'' video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris (Scot Covey \& Simons, n.d.). The purpose of the video was to demonstrate a phenomenon known as ``inattentional blindness'' and highlight some visual attention principles.
+The famous experiment in optical illusion, ``Gorilla in the Midst'' or ``Invisible Gorilla'' video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris (Scot Covey \& Simons, n.d.). The video aims to demonstrate a phenomenon known as ``inattentional blindness'' and highlight some visual attention principles.
 
-Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where the majority of memory retention effort is expended.
+Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where most memory retention effort is expended.
 According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, (A. Baddeley, 2012).
 Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, (Cowan, 2001).
 
@@ -1342,7 +1369,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-07-05 19:58:59. The repository is currently at this commit:
+This version of the thesis was generated on 2023-07-17 17:19:44. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1357,7 +1384,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-07-05
+##  date     2023-07-17
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -------------------------------------------------------------------
@@ -1452,6 +1479,9 @@ Placeholder
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-alberts2019}{}}%
+Alberts, A. (2019). \emph{How to develop a designer's instinct: A study on eye tracking}. Tableau.
+
 \leavevmode\vadjust pre{\hypertarget{ref-alvarez2004}{}}%
 Alvarez, G. A., \& Cavanagh, P. (2004). The capacity of visual short-term memory is set both by visual information load and by number of objects. \emph{Psychological Science}, \emph{15}(2), 106--111.
 
@@ -1554,6 +1584,9 @@ Friendly, M., \& Denis, D. J. (2001). Milestones in the history of thematic cart
 \leavevmode\vadjust pre{\hypertarget{ref-garrett2003}{}}%
 Garrett, J. J. (2003). The elements of user experience: User-centered design for the web.
 
+\leavevmode\vadjust pre{\hypertarget{ref-goldstein2021}{}}%
+Goldstein, E. B., \& Cacciamani, L. (2021). \emph{Sensation and perception, 11th edition}. Cengage Learning.
+
 \leavevmode\vadjust pre{\hypertarget{ref-gregory1968}{}}%
 Gregory, R. L. (1968). Perceptual illusions and brain models. \emph{Proceedings of the Royal Society of London. Series B. Biological Sciences}, \emph{171}(1024), 279--296.
 
@@ -1586,9 +1619,6 @@ Itti, L., \& Koch, C. (2001). Computational modelling of visual attention. \emph
 
 \leavevmode\vadjust pre{\hypertarget{ref-javed2012}{}}%
 Javed, W., \& Elmqvist, N. (2012). Exploring the design space of composite visualization. In \emph{2012 ieee pacific visualization symposium} (pp. 1--8). IEEE.
-
-\leavevmode\vadjust pre{\hypertarget{ref-kirk2012}{}}%
-Kirk, A. (2012). \emph{Data visualization: A successful design process}. Packt publishing LTD.
 
 \leavevmode\vadjust pre{\hypertarget{ref-klein2007}{}}%
 Klein, G., Phillips, J. K., Rall, E. L., \& Peluso, D. A. (2007). A data--frame theory of sensemaking. In \emph{Expertise out of context} (pp. 118--160). Psychology Press.
@@ -1700,6 +1730,9 @@ Ware, C. (2012). \emph{Information visualization: Perception for design}. Morgan
 
 \leavevmode\vadjust pre{\hypertarget{ref-wertheimer1912}{}}%
 Wertheimer, M. (1912). Experimentelle studien uber das sehen von bewegung (translated extract reprinted as {``experimental studies on the seeing of motion''}). \emph{Zeitschrift Fur Psychologie}, \emph{61}, 161--165.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wertheimer1923}{}}%
+WERTHEIMER, M. (1923). Laws of organization in perceptual forms. First published as untersuchungen zur lehre von der gestalt II. \emph{Psychologische Forschung}, \emph{4}, 301--350.
 
 \leavevmode\vadjust pre{\hypertarget{ref-wertheimer1938}{}}%
 Wertheimer, M. (1938). Laws of organization in perceptual forms.
