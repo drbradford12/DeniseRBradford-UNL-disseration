@@ -134,7 +134,7 @@ The retina is the primary function that captures the photons and convert those p
 The transduction of sensory stimuli into neural signals is a crucial aspect of perception. 
 Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret. 
 For example, in vision, light enters the eye. 
-It activates photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex via the optical nerve [@hubel2004].
+It activates photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex via the optical nerve, \@ref(tab:photoreceptor) [@hubel2004].
 <!--These photoreceptor cells are convert light into electrochemical signals that -->
 
 ```{r photoreceptor, echo=FALSE, out.width = "55%", fig.cap='An example of how the retina signals the visual cortex',fig.show='asis', fig.align='center'}
@@ -170,7 +170,7 @@ The F-pattern theory is founded on the observation that website visitors frequen
 When interacting with text-heavy pages, such as articles or search engine results, this pattern is prevalent. 
 The F-pattern suggests that users should initially scan horizontally across the top of the page (forming the top bar of the F), then move down slightly and scan horizontally across a shorter line (forming the middle bar of the F), and finally scan vertically along the left side of the page (forming the vertical bar of the F), [@nielsen2006].
 
-As demonstrated by figure xxx, [@alberts2019] provides F-pattern reading flow support. 
+As demonstrated by figure \@ref(tab:eyetracking), [@alberts2019] provides F-pattern reading flow support. 
 The highlighted areas indicate where the user's attention was drawn. 
 The users began with the top-left corner, scanned the first line with KPIs (big font attracted the attention), moved to the second line, scanned each chart (colors attracted the attention), and only glanced briefly at the last line to focus more on the last chart (colors also attracted the attention).
 
@@ -182,7 +182,7 @@ The Z-pattern theory is another commonly observed eye-tracking pattern when user
 This pattern is better suited for pages with more visual elements, such as landing pages and ad layouts. 
 In the Z-pattern, users scan horizontally across the top of the page (from left to right), then move diagonally to the left (forming the first diagonal of the Z), and finally scan horizontally across the bottom of the page (from left to right), [@nielsen1997].
 
-Figure xxx,[@alberts2019], has less content density and supports a Z-pattern reading flow in which users begin in the upper-left corner and zigzag to the bottom.
+Figure \@ref(tab:eyetracking2),[@alberts2019], has less content density and supports a Z-pattern reading flow in which users begin in the upper-left corner and zigzag to the bottom.
 Users only viewed the title briefly, most likely because it is brief and large, making it easy to read quickly. 
 
 ```{r eyetracking2, echo=FALSE, out.width = "45%", fig.cap='Example of eyetracking using noting the Z-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau',fig.show='asis', fig.align='center'}

@@ -337,7 +337,7 @@ The retina is the primary function that captures the photons and convert those p
 The transduction~of sensory stimuli into neural signals is a crucial aspect of perception.
 Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
 For example, in vision, light enters the eye.
-It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve (Hubel \& Wiesel, 2004).
+It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve, \ref{tab:photoreceptor} (Hubel \& Wiesel, 2004).
 
 \begin{figure}
 
@@ -371,23 +371,38 @@ This data can be used to determine how individuals explore and process visual da
 Eye-tracking and Gestalt principles together contribute to our understanding of visual perception.
 Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli.
 By combining these methodologies, researchers can better understand~how humans perceive and interpret the visual world.
-Given in figure xxx, we can see that\ldots{} (Alberts, 2019)
+
+The F-pattern theory is founded on the observation that website visitors frequently scan content in a ``F'' shape.
+When interacting with text-heavy pages, such as articles or search engine results, this pattern is prevalent.
+The F-pattern suggests that users should initially scan horizontally across the top of the page (forming the top bar of the F), then move down slightly and scan horizontally across a shorter line (forming the middle bar of the F), and finally scan vertically along the left side of the page (forming the vertical bar of the F), (Nielsen, 2006).
+
+As demonstrated by figure \ref{tab:eyetracking}, (Alberts, 2019) provides F-pattern reading flow support.
+The highlighted areas indicate where the user's attention was drawn.
+The users began with the top-left corner, scanned the first line with KPIs (big font attracted the attention), moved to the second line, scanned each chart (colors attracted the attention), and only glanced briefly at the last line to focus more on the last chart (colors also attracted the attention).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{figure/eyetracking_dashboards_f_pattern} 
+{\centering \includegraphics[width=0.45\linewidth]{figure/eyetracking_dashboards_f_pattern} 
 
 }
 
-\caption{Examples of eyetracking on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking-1}
+\caption{Example of eyetracking using noting the F-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking}
 \end{figure}
+
+The Z-pattern theory is another commonly observed eye-tracking pattern when users interact with webpage content.
+This pattern is better suited for pages with more visual elements, such as landing pages and ad layouts.
+In the Z-pattern, users scan horizontally across the top of the page (from left to right), then move diagonally to the left (forming the first diagonal of the Z), and finally scan horizontally across the bottom of the page (from left to right), (Nielsen, 1997).
+
+Figure \ref{tab:eyetracking2},(Alberts, 2019), has less content density and supports a Z-pattern reading flow in which users begin in the upper-left corner and zigzag to the bottom.
+Users only viewed the title briefly, most likely because it is brief and large, making it easy to read quickly.
+
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{figure/eyetracking_dashboards_z_pattern} 
+{\centering \includegraphics[width=0.45\linewidth]{figure/eyetracking_dashboards_z_pattern} 
 
 }
 
-\caption{Examples of eyetracking on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking-2}
+\caption{Example of eyetracking using noting the Z-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking2}
 \end{figure}
 
 Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
@@ -1369,7 +1384,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-07-17 17:19:44. The repository is currently at this commit:
+This version of the thesis was generated on 2023-07-17 18:14:00. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1640,6 +1655,12 @@ Morville, P., Rosenfeld, L. B., \& Arango, J. (2015). Information architecture f
 
 \leavevmode\vadjust pre{\hypertarget{ref-nielsen1994}{}}%
 Nielsen, J. (1994). \emph{Usability engineering}. Morgan Kaufmann.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nielsen1997}{}}%
+Nielsen, J. (1997). How users read on the web. \emph{Http://Www.useit.com/Alertbox/9710a.html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nielsen2006}{}}%
+Nielsen, J. (2006). F-shaped pattern for reading web content, jakob nielsen's alertbox. \emph{Http://Www.useit.com/Alertbox/Reading\_pattern. Html}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-norman2013}{}}%
 Norman, D. (2013). \emph{The design of everyday things: Revised and expanded edition}. Basic books.
