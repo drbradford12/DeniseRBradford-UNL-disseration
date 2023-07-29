@@ -1,3 +1,31 @@
-# Tables, Graphics, References, and Labels {#ref-labels}
+---
+output:
+  word_document: default
+  html_document: default
+---
+# Ensemble Perecption and Bland Altman Plots {#ref-labels}
 
-## Dashboard EDA
+## Abstract:
+
+The present study aims to compare and distinguish two significant methodologies for perception analysis, specifically Bland-Altman plots and Ensemble Perception encoding.
+Both techniques are widely employed in their respective fields, but their underlying principles, strengths, and weaknesses are distinct. 
+Bland-Altman plots are commonly used in medical and health science research to assess agreement between two different measures or techniques [@bland1986], whereas Ensemble Perception encoding is widely used in cognitive science to evaluate how observers extract summary statistics from complex sensory inputs [@alvarez2011].
+
+The study's first part explores Bland-Altman plots and their utility in identifying systematic bias between two measurements, in addition to potential outliers. 
+Bland-Altman plots demonstrate strong capabilities in analyzing the degree of agreement and the level of variability or bias between two different measurement systems, providing a visual representation of measurement differences against their mean [@giavarina2015].
+
+The second part of the study delves into Ensemble Perception encoding, a cognitive process that helps the human brain to comprehend large amounts of data quickly. 
+The process is critical in summarizing and interpreting complex sensory inputs by rapidly extracting their statistical properties, thereby facilitating efficient cognitive processing [@whitney2018].
+
+Our findings systematically distinguish between these two methodologies, noting that while both are used to analyze data and reveal underlying patterns, they apply to different domains and address distinct research questions. 
+This study aims to enhance researchers' understanding of these methodologies and guide them in selecting the most appropriate analytical tool based on their study objectives.
+
+```{r baplot, echo=FALSE, out.width = "45%", fig.cap='Example 1 Bland-Altman Plot without color and annotations',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/baplot.png")
+```
+
+
+```{r baplot1, echo=FALSE, out.width = "45%", fig.cap='Example 2 Bland-Altman Plot with color and no annotations',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/baplot1.png")
+```
+

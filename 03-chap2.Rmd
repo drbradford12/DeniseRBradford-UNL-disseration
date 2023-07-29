@@ -1,4 +1,9 @@
-# Chapter 2 Stuff {#math-sci}
+---
+output:
+  word_document: default
+  html_document: default
+---
+# The Dashboard as a Unified Chart: Enhancing Data Visualization and Insights {#math-sci}
 
 <!-- Required to number equations in HTML files -->
 <script type="text/x-mathjax-config">
@@ -7,5 +12,108 @@ MathJax.Hub.Config({
 });
 </script>
 
+## Abstract:
 
-## Many useful visualizations don't have easy interactivity
+This write-up explores the concept of considering an entire dashboard as a unified chart in data visualization. 
+Traditionally, dashboards are composed of multiple charts representing various aspects of data. 
+However, this study proposes a novel approach where the entire dashboard is treated as a single chart, leveraging its interactive and interconnected elements to enhance data visualization and insights. 
+
+## Introduction:
+
+The grammar of graphics is a framework for designing and comprehending data visualizations. 
+By decomposing graphics into components such as data, aesthetics, and geometries, the grammar of graphics provides a structured method for conceiving and creating visualizations. 
+It permits a high degree of customization and flexibility in the creation of visualizations.
+The principles of the grammar of graphics can be applied to dashboard design to create more effective and informative dashboards. 
+
+## Related Work:
+
+### Dashboard Design
+
+The process of creating visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format is dashboard design. 
+The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.
+
+### Grammar of Graphics
+
+The central concept of the grammar of graphics is the representation of visualizations as a combination of essential components, including data, aesthetics, geometries, scales, and statistics. 
+These components can be combined in numerous ways to generate a vast array of visual representations. 
+For instance, data is the foundational element, aesthetics map data variables to visual properties, geometries determine the representation of data points, scales map data values to visual values, and statistics transform the data prior to visualization.
+
+<!--Identification of gaps and opportunities in the current state of dashboard design. -->
+While the grammar of graphics provides a powerful theoretical framework for data visualization, there may be research gaps in its application to dashboard design and functionality. 
+Such as the following missing pieces:
+
+**Interactivity and User Experience:** 
+Graphics grammar primarily emphasizes static visualizations. 
+However, dashboards are inherently interactive, allowing users to explore the data and interact with it.
+There is a need for research to determine how to effectively incorporate the principles of the grammar of graphics into interactive dashboards while maintaining a positive user experience and avoiding user overload.
+
+**Dashboard Composition:** 
+The grammar of graphics emphasizes the creation of individual visualizations. 
+Yet, dashboards involve combining multiple visualizations into a single interface. 
+Research is needed to explore best practices for composing different charts and graphs in a dashboard to ensure coherent storytelling and effective data communication.
+
+**Data Synchronization:** 
+Dashboards often present data from multiple sources or datasets. 
+Ensuring data synchronization across different visualizations and components is critical to maintain accuracy and consistency. 
+Research is needed to investigate methods for handling data updates, refresh rates, and synchronization challenges in dashboard design.
+
+**User-Centered Design:** 
+The grammar of graphics focuses on data-driven principles, but effective dashboard design also requires a deep understanding of user needs, tasks, and goals. 
+Further research should investigate how to integrate user-centered design practices into the application of the grammar of graphics in dashboard development.
+
+
+## Unified Chart Dashboard Design:
+
+<!--Explanation of the principles and concepts behind the unified chart dashboard approach.-->
+Here is how published theory relates graphic grammar to dashboard design:
+
+**Data Layer:** 
+Data is the foundation of visualizations in the grammar of graphics. 
+This means that data should drive the dashboard design process. 
+Dashboards should be constructed using accurate, pertinent, and well-organized data that aligns with the dashboard's objectives.
+
+**Aesthetics Layer:** 
+refer to the mapping of data variables to visual properties such as color, size, shape, and position. 
+Aesthetics play a crucial role in dashboard design for accurately and effectively representing data. 
+Choosing appropriate colors, scales, and shapes for visual elements expedites users' ability to comprehend and interpret data.
+
+**Geometries:** 
+determine how data points, such as bars, lines, points, or areas, are represented in the visualization. 
+The selection of appropriate geometries is crucial in dashboard design for communicating the intended message. 
+Various types of charts and graphs may be used to represent various types of data or to illustrate particular relationships.
+
+**Composition and Layers:** 
+The grammar of graphics permits the combination of multiple layers of data and geometries to generate more complex visualizations. 
+This translates to structuring information hierarchically in dashboard design, utilizing multiple charts, graphs, or elements to present a comprehensive view of the data without overwhelming the user.
+
+**Faceting:** is the process of dividing data into subsets and displaying them as multiple smaller visualizations. 
+Faceting can be used in dashboard design to display multiple aspects of the data simultaneously, making it easier for users to compare and contrast various parts of the data.
+
+**Annotations:** As mentioned in the previous response, annotations are a crucial component of statistical graphics and also apply to dashboard design. 
+Annotations strategically placed can aid users in comprehending key insights, provide context, and guide them through the dashboard's narrative.
+
+Using the principles of the grammar of graphics, designers can create visually appealing, informative, and user-friendly dashboards that effectively convey data-driven insights to their audience.
+
+## Experimential Ideas/Methods to test theory:
+
+Testing the effectiveness of a dashboard as a unified chart involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience. 
+Here are some key steps and methods to test the effectiveness of a dashboard with a unified chart:
+
+**Usability Testing:** 
+Conduct usability testing with real users to observe how they interact with the dashboard. 
+Use think-aloud protocols, where users vocalize their thoughts while using the dashboard. 
+Observe if users can easily navigate, interpret data, and find relevant information using the unified chart.
+
+**A/B Testing:** 
+Implement A/B testing by creating different versions of the dashboard. 
+Present one group of users with the unified chart version and the other group with a non-unified chart version. 
+Compare user performance and feedback between the two groups to determine the impact of the unified chart.
+
+**Eye-Tracking:** 
+Use eye-tracking technology to understand where users focus their attention on the dashboard. 
+This will reveal if users are drawn to the critical information presented through the unified chart.
+
+**User Interviews and Observations:** 
+Conduct interviews with users to gain deeper insights into their experiences and preferences regarding the unified chart. 
+Observe how users interact with the dashboard in their natural environment.
+
