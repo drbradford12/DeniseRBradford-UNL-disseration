@@ -3,11 +3,11 @@ output:
   word_document: default
   html_document: default
 ---
-# Does Color Help?: Utilizing Variability Ensemble Coding for Enhanced Interpretation of Bland-Altman Plots {#ref-labels}
+# Does Color Help?: Testing Variability Ensemble Coding for Enhanced Interpretation of Bland-Altman Plots {#ref-labels}
 
 ## Abstract:
 
-This article presents a novel method for interpreting Bland-Altman plots based on the principles of variability ensemble coding. 
+This article presents a method for interpreting Bland-Altman plots based on the principles of variability ensemble coding. 
 The purpose of this study is to evaluate the efficacy of this method, with the hypothesis that employing color coding to represent variability could facilitate intuitive comprehension of data dispersion, thereby enhancing the practical utility of Bland-Altman plots.
 
 ## Introduction:
@@ -18,13 +18,28 @@ Ensemble coding, a perceptual mechanism that provides a statistical summary of a
 
 ## Methods:
 
-In this fictitious study, we propose utilizing color coding to represent varying levels of variability in Bland-Altman plots. 
+In this proposed study, we utilize color coding to represent varying levels of variability in Bland-Altman plots. 
 To ensure the universal interpretability of the plots [@ware2012], the color palette will be selected with care, taking into account potential issues such as color blindness.
 
 For this study, two Bland-Altman plots will be generated. 
 A traditional plot without color-coding and a plot using the color-coding technique we propose. 
 Both plots will be presented to a group of participants that includes both experts and non-experts in data interpretation and statistics. 
 The participants will be required to interpret the plots and complete a questionnaire to assess their comprehension and speed of interpretation.
+
+For a layer of interactivity in our study, we will generate interactive Bland-Altman plots incorporating ensemble coding of variability through color gradations. 
+Interactivity will be implemented via D3, providing detailed information about each data point when hovered over, as well as zoom features allowing users to zero in on areas of interest.
+
+### Design of the User Studies
+
+User studies will be designed to assess the effectiveness of the interactive Bland-Altman plots in conveying information about the variability of data points. 
+The studies will consist of two parts:
+
+**Task-based Evaluation:** Participants will be given a set of tasks to complete using both the interactive color-coded Bland-Altman plot and a traditional static Bland-Altman plot. 
+Tasks will involve identifying specific data points, interpreting data variability, and answering questions about the overall data trend. 
+Metrics such as task completion time, success rate, and error rate will be recorded [@rubin2008].
+
+**Subjective Evaluation:** After completing the tasks, participants will be asked to fill out a questionnaire assessing their user experience. 
+The questionnaire will include items related to the perceived ease of use, satisfaction, and preference between the traditional and interactive color-coded Bland-Altman plots.
 
 ## Discussion: 
 

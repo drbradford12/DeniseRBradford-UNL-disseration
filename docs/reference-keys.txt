@@ -59,6 +59,7 @@ ref-labels
 abstract-2
 introduction-3
 methods
+design-of-the-user-studies
 discussion-1
 the-first-appendix
 the-second-appendix-for-fun
