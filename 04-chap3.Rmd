@@ -3,29 +3,44 @@ output:
   word_document: default
   html_document: default
 ---
-# Ensemble Perecption and Bland Altman Plots {#ref-labels}
+# Does Color Help?: Utilizing Variability Ensemble Coding for Enhanced Interpretation of Bland-Altman Plots {#ref-labels}
 
 ## Abstract:
 
-The present study aims to compare and distinguish two significant methodologies for perception analysis, specifically Bland-Altman plots and Ensemble Perception encoding.
-Both techniques are widely employed in their respective fields, but their underlying principles, strengths, and weaknesses are distinct. 
-Bland-Altman plots are commonly used in medical and health science research to assess agreement between two different measures or techniques [@bland1986], whereas Ensemble Perception encoding is widely used in cognitive science to evaluate how observers extract summary statistics from complex sensory inputs [@alvarez2011].
+This article presents a novel method for interpreting Bland-Altman plots based on the principles of variability ensemble coding. 
+The purpose of this study is to evaluate the efficacy of this method, with the hypothesis that employing color coding to represent variability could facilitate intuitive comprehension of data dispersion, thereby enhancing the practical utility of Bland-Altman plots.
 
-The study's first part explores Bland-Altman plots and their utility in identifying systematic bias between two measurements, in addition to potential outliers. 
-Bland-Altman plots demonstrate strong capabilities in analyzing the degree of agreement and the level of variability or bias between two different measurement systems, providing a visual representation of measurement differences against their mean [@giavarina2015].
+## Introduction:
 
-The second part of the study delves into Ensemble Perception encoding, a cognitive process that helps the human brain to comprehend large amounts of data quickly. 
-The process is critical in summarizing and interpreting complex sensory inputs by rapidly extracting their statistical properties, thereby facilitating efficient cognitive processing [@whitney2018].
+The Bland-Altman plot is a powerful statistical tool for comparing and assessing agreement between two distinct measurement techniques [@bland1986]. 
+Due to the density and distribution of data points, understanding and interpreting these plots can be difficult despite their effectiveness. 
+Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene [@alvarez2011] offers a promising solution to this issue by facilitating the rapid extraction of variability information.
 
-Our findings systematically distinguish between these two methodologies, noting that while both are used to analyze data and reveal underlying patterns, they apply to different domains and address distinct research questions. 
-This study aims to enhance researchers' understanding of these methodologies and guide them in selecting the most appropriate analytical tool based on their study objectives.
+## Methods:
 
-```{r baplot, echo=FALSE, out.width = "45%", fig.cap='Example 1 Bland-Altman Plot without color and annotations',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/baplot.png")
+In this fictitious study, we propose utilizing color coding to represent varying levels of variability in Bland-Altman plots. 
+To ensure the universal interpretability of the plots [@ware2012], the color palette will be selected with care, taking into account potential issues such as color blindness.
+
+For this study, two Bland-Altman plots will be generated. 
+A traditional plot without color-coding and a plot using the color-coding technique we propose. 
+Both plots will be presented to a group of participants that includes both experts and non-experts in data interpretation and statistics. 
+The participants will be required to interpret the plots and complete a questionnaire to assess their comprehension and speed of interpretation.
+
+## Discussion: 
+
+We anticipate that the application of ensemble coding for variability will aid in the comprehension of Bland-Altman plots. 
+Based on ensemble coding principles, the color-coded plot should enable faster and more accurate interpretation of data variability [@haberman2012]. 
+This method has the potential to enhance the interpretability and utility of these graphs, making them accessible to a broader audience and facilitating more efficient data communication.
+
+
+
+```{r baplot, echo=FALSE, out.width = "45%", fig.cap='Examples of Bland-Altman Plot with and without color and annotations',fig.show='asis', fig.align='center', eval=FALSE}
+knitr::include_graphics(rep(c("figure/baplot.png", "figure/baplot1.png"),1))
+#knitr::include_graphics("figure/baplot.png")
 ```
 
 
-```{r baplot1, echo=FALSE, out.width = "45%", fig.cap='Example 2 Bland-Altman Plot with color and no annotations',fig.show='asis', fig.align='center'}
+```{r baplot1, echo=FALSE, out.width = "45%", fig.cap='Example 2 Bland-Altman Plot with color and no annotations',fig.show='asis', fig.align='center', eval=FALSE}
 knitr::include_graphics("figure/baplot1.png")
 ```
 

@@ -1473,13 +1473,24 @@ In this paper, we have documented the process of designing a dashboard for explo
 While it is hard to apply the findings from one fairly specific visualization project more widely, there is a lack of resources in this area that provide both design philosophies and actual analysis of user feedback in a qualitative sense. We have attempted to address this dearth of information by providing the design strategies, user feedback, and our planned and executed modifications, in the hopes that others facing the daunting challenge of designing a dashboard for EDA may learn something from our experiences.
 
 \hypertarget{math-sci}{%
-\chapter{The Dashboard as a Unified Chart: Enhancing Data Visualization and Insights}\label{math-sci}}
+\chapter{Dashboard Poetry: The Grammar of Graphics as a collection of charts should be considered a symphony of charts}\label{math-sci}}
 
 \hypertarget{abstract-1}{%
 \section{Abstract:}\label{abstract-1}}
 
-This write-up explores the concept of considering an entire dashboard as a unified chart in data visualization.
-Traditionally, dashboards are composed of multiple charts representing various aspects of data.
+A chart is similar to a sentence in that it presents a single, straightforward piece of information and visually represents data to facilitate comprehension.
+For example, a chart could be a bar graph depicting sales over the course of a year, a pie chart illustrating the percentage distribution of a budget, or a scatter plot illustrating the correlation between two variables.
+In the same way that a sentence expresses a single complete thought, a chart conveys a single data narrative.
+
+In contrast, a dashboard is analogous to a paragraph.
+It is a collection of charts (similar to sentences) that present a more comprehensive view of the data landscape.
+Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept.
+A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends.
+
+In contrast, a dashboard integrates these individual `data stories' to create a multidimensional, comprehensive understanding of a larger data scenario.
+Charts are the building blocks of dashboards, just as sentences are the building blocks of paragraphs.
+
+This write-up explores the concept of considering an entire dashboard as a well orchestrated collection of charts in data visualization.
 However, this study proposes a novel approach where the entire dashboard is treated as a single chart, leveraging its interactive and interconnected elements to enhance data visualization and insights.
 
 \hypertarget{introduction-2}{%
@@ -1496,6 +1507,7 @@ The principles of the grammar of graphics can be applied to dashboard design to 
 \hypertarget{dashboard-design-1}{%
 \subsection{Dashboard Design}\label{dashboard-design-1}}
 
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006a).
 The process of creating visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format is dashboard design.
 The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.
 
@@ -1509,15 +1521,10 @@ For instance, data is the foundational element, aesthetics map data variables to
 While the grammar of graphics provides a powerful theoretical framework for data visualization, there may be research gaps in its application to dashboard design and functionality.
 Such as the following missing pieces:
 
-\textbf{Interactivity and User Experience:}
+\textbf{Interactivity:}
 Graphics grammar primarily emphasizes static visualizations.
 However, dashboards are inherently interactive, allowing users to explore the data and interact with it.
 There is a need for research to determine how to effectively incorporate the principles of the grammar of graphics into interactive dashboards while maintaining a positive user experience and avoiding user overload.
-
-\textbf{Dashboard Composition:}
-The grammar of graphics emphasizes the creation of individual visualizations.
-Yet, dashboards involve combining multiple visualizations into a single interface.
-Research is needed to explore best practices for composing different charts and graphs in a dashboard to ensure coherent storytelling and effective data communication.
 
 \textbf{Data Synchronization:}
 Dashboards often present data from multiple sources or datasets.
@@ -1528,34 +1535,30 @@ Research is needed to investigate methods for handling data updates, refresh rat
 The grammar of graphics focuses on data-driven principles, but effective dashboard design also requires a deep understanding of user needs, tasks, and goals.
 Further research should investigate how to integrate user-centered design practices into the application of the grammar of graphics in dashboard development.
 
-\hypertarget{unified-chart-dashboard-design}{%
-\section{Unified Chart Dashboard Design:}\label{unified-chart-dashboard-design}}
+\hypertarget{dashboard-design-as-the-symphony-of-charts}{%
+\section{Dashboard Design as the Symphony of Charts:}\label{dashboard-design-as-the-symphony-of-charts}}
 
 Here is how published theory relates graphic grammar to dashboard design:
 
-\textbf{Data Layer:}
-Data is the foundation of visualizations in the grammar of graphics.
+\textbf{Data Layer:} is the foundation of visualizations in the grammar of graphics.
 This means that data should drive the dashboard design process.
 Dashboards should be constructed using accurate, pertinent, and well-organized data that aligns with the dashboard's objectives.
 
-\textbf{Aesthetics Layer:}
-refer to the mapping of data variables to visual properties such as color, size, shape, and position.
+\textbf{Aesthetics Layer:} refer to the mapping of data variables to visual properties such as color, size, shape, and position.
 Aesthetics play a crucial role in dashboard design for accurately and effectively representing data.
 Choosing appropriate colors, scales, and shapes for visual elements expedites users' ability to comprehend and interpret data.
 
-\textbf{Geometries:}
-determine how data points, such as bars, lines, points, or areas, are represented in the visualization.
+\textbf{Geometries:} determine how data points, such as bars, lines, points, or areas, are represented in the visualization.
 The selection of appropriate geometries is crucial in dashboard design for communicating the intended message.
 Various types of charts and graphs may be used to represent various types of data or to illustrate particular relationships.
 
-\textbf{Composition and Layers:}
-The grammar of graphics permits the combination of multiple layers of data and geometries to generate more complex visualizations.
+\textbf{Composition and Layers:} Graphics grammar permits combining multiple layers of data and geometries to generate more complex visualizations.
 This translates to structuring information hierarchically in dashboard design, utilizing multiple charts, graphs, or elements to present a comprehensive view of the data without overwhelming the user.
 
 \textbf{Faceting:} is the process of dividing data into subsets and displaying them as multiple smaller visualizations.
 Faceting can be used in dashboard design to display multiple aspects of the data simultaneously, making it easier for users to compare and contrast various parts of the data.
 
-\textbf{Annotations:} As mentioned in the previous response, annotations are a crucial component of statistical graphics and also apply to dashboard design.
+\textbf{Annotations:} as mentioned in the previous response, annotations are a crucial component of statistical graphics and also apply to dashboard design.
 Annotations strategically placed can aid users in comprehending key insights, provide context, and guide them through the dashboard's narrative.
 
 Using the principles of the grammar of graphics, designers can create visually appealing, informative, and user-friendly dashboards that effectively convey data-driven insights to their audience.
@@ -1564,62 +1567,54 @@ Using the principles of the grammar of graphics, designers can create visually a
 \section{Experimential Ideas/Methods to test theory:}\label{experimential-ideasmethods-to-test-theory}}
 
 Testing the effectiveness of a dashboard as a unified chart involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience.
-Here are some key steps and methods to test the effectiveness of a dashboard with a unified chart:
+Here are some key steps and methods to test the effectiveness of a dashboard:
 
 \textbf{Usability Testing:}
 Conduct usability testing with real users to observe how they interact with the dashboard.
 Use think-aloud protocols, where users vocalize their thoughts while using the dashboard.
-Observe if users can easily navigate, interpret data, and find relevant information using the unified chart.
-
-\textbf{A/B Testing:}
-Implement A/B testing by creating different versions of the dashboard.
-Present one group of users with the unified chart version and the other group with a non-unified chart version.
-Compare user performance and feedback between the two groups to determine the impact of the unified chart.
+Observe if users can easily navigate, interpret data, and find relevant information using the collection of charts.
 
 \textbf{Eye-Tracking:}
 Use eye-tracking technology to understand where users focus their attention on the dashboard.
-This will reveal if users are drawn to the critical information presented through the unified chart.
+This will reveal if users are drawn to the critical information presented through the collection of charts.
 
 \textbf{User Interviews and Observations:}
-Conduct interviews with users to gain deeper insights into their experiences and preferences regarding the unified chart.
+Conduct interviews with users to gain deeper insights into their experiences and preferences regarding the collection of charts.
 Observe how users interact with the dashboard in their natural environment.
 
 \hypertarget{ref-labels}{%
-\chapter{Ensemble Perecption and Bland Altman Plots}\label{ref-labels}}
+\chapter{Does Color Help?: Utilizing Variability Ensemble Coding for Enhanced Interpretation of Bland-Altman Plots}\label{ref-labels}}
 
 \hypertarget{abstract-2}{%
 \section{Abstract:}\label{abstract-2}}
 
-The present study aims to compare and distinguish two significant methodologies for perception analysis, specifically Bland-Altman plots and Ensemble Perception encoding.
-Both techniques are widely employed in their respective fields, but their underlying principles, strengths, and weaknesses are distinct.
-Bland-Altman plots are commonly used in medical and health science research to assess agreement between two different measures or techniques (Bland \& Altman, 1986), whereas Ensemble Perception encoding is widely used in cognitive science to evaluate how observers extract summary statistics from complex sensory inputs (Alvarez, 2011).
+This article presents a novel method for interpreting Bland-Altman plots based on the principles of variability ensemble coding.
+The purpose of this study is to evaluate the efficacy of this method, with the hypothesis that employing color coding to represent variability could facilitate intuitive comprehension of data dispersion, thereby enhancing the practical utility of Bland-Altman plots.
 
-The study's first part explores Bland-Altman plots and their utility in identifying systematic bias between two measurements, in addition to potential outliers.
-Bland-Altman plots demonstrate strong capabilities in analyzing the degree of agreement and the level of variability or bias between two different measurement systems, providing a visual representation of measurement differences against their mean (Giavarina, 2015).
+\hypertarget{introduction-3}{%
+\section{Introduction:}\label{introduction-3}}
 
-The second part of the study delves into Ensemble Perception encoding, a cognitive process that helps the human brain to comprehend large amounts of data quickly.
-The process is critical in summarizing and interpreting complex sensory inputs by rapidly extracting their statistical properties, thereby facilitating efficient cognitive processing (Whitney \& Yamanashi Leib, 2018).
+The Bland-Altman plot is a powerful statistical tool for comparing and assessing agreement between two distinct measurement techniques (Bland \& Altman, 1986).
+Due to the density and distribution of data points, understanding and interpreting these plots can be difficult despite their effectiveness.
+Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene (Alvarez, 2011) offers a promising solution to this issue by facilitating the rapid extraction of variability information.
 
-Our findings systematically distinguish between these two methodologies, noting that while both are used to analyze data and reveal underlying patterns, they apply to different domains and address distinct research questions.
-This study aims to enhance researchers' understanding of these methodologies and guide them in selecting the most appropriate analytical tool based on their study objectives.
+\hypertarget{methods}{%
+\section{Methods:}\label{methods}}
 
-\begin{figure}
+In this fictitious study, we propose utilizing color coding to represent varying levels of variability in Bland-Altman plots.
+To ensure the universal interpretability of the plots (Ware, 2012), the color palette will be selected with care, taking into account potential issues such as color blindness.
 
-{\centering \includegraphics[width=0.45\linewidth]{figure/baplot} 
+For this study, two Bland-Altman plots will be generated.
+A traditional plot without color-coding and a plot using the color-coding technique we propose.
+Both plots will be presented to a group of participants that includes both experts and non-experts in data interpretation and statistics.
+The participants will be required to interpret the plots and complete a questionnaire to assess their comprehension and speed of interpretation.
 
-}
+\hypertarget{discussion-1}{%
+\section{Discussion:}\label{discussion-1}}
 
-\caption{Example 1 Bland-Altman Plot without color and annotations}\label{fig:baplot}
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/baplot1} 
-
-}
-
-\caption{Example 2 Bland-Altman Plot with color and no annotations}\label{fig:baplot1}
-\end{figure}
+We anticipate that the application of ensemble coding for variability will aid in the comprehension of Bland-Altman plots.
+Based on ensemble coding principles, the color-coded plot should enable faster and more accurate interpretation of data variability (Haberman \& Whitney, 2012).
+This method has the potential to enhance the interpretability and utility of these graphs, making them accessible to a broader audience and facilitating more efficient data communication.
 
 \hypertarget{conclusion-1}{%
 \chapter*{Conclusion}\label{conclusion-1}}
@@ -1677,7 +1672,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-07-29 15:59:40. The repository is currently at this commit:
+This version of the thesis was generated on 2023-08-03 22:31:49. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -1692,7 +1687,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/New_York
-##  date     2023-07-29
+##  date     2023-08-03
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -1919,14 +1914,14 @@ Friendly, M., \& Denis, D. J. (2001). Milestones in the history of thematic cart
 \leavevmode\vadjust pre{\hypertarget{ref-garrett2003}{}}%
 Garrett, J. J. (2003). The elements of user experience: User-centered design for the web.
 
-\leavevmode\vadjust pre{\hypertarget{ref-giavarina2015}{}}%
-Giavarina, D. (2015). Understanding bland altman analysis. \emph{Biochemia Medica}, \emph{25}(2), 141--151.
-
 \leavevmode\vadjust pre{\hypertarget{ref-goldstein2021}{}}%
 Goldstein, E. B., \& Cacciamani, L. (2021). \emph{Sensation and perception, 11th edition}. Cengage Learning.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gregory1968}{}}%
 Gregory, R. L. (1968). Perceptual illusions and brain models. \emph{Proceedings of the Royal Society of London. Series B. Biological Sciences}, \emph{171}(1024), 279--296.
+
+\leavevmode\vadjust pre{\hypertarget{ref-haberman2012}{}}%
+Haberman, J., \& Whitney, D. (2012). Ensemble perception: Summarizing the scene and broadening the limits of visual processing. \emph{From Perception to Consciousness: Searching with Anne Treisman}, \emph{33}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hassenzahl2010}{}}%
 Hassenzahl, M. (2010). Experience design: Technology for all the right reasons. \emph{Synthesis Lectures on Human-Centered Informatics}, \emph{3}(1), 1--95.
@@ -2119,9 +2114,6 @@ WERTHEIMER, M. (1923). Laws of organization in perceptual forms. First published
 
 \leavevmode\vadjust pre{\hypertarget{ref-wertheimer1938}{}}%
 Wertheimer, M. (1938). Laws of organization in perceptual forms.
-
-\leavevmode\vadjust pre{\hypertarget{ref-whitney2018}{}}%
-Whitney, D., \& Yamanashi Leib, A. (2018). Ensemble perception. \emph{Annual Review of Psychology}, \emph{69}, 105--129.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ggplot2}{}}%
 Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed.). Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}

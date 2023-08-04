@@ -12,8 +12,6 @@ fig:vanWiijmodel
 fig:gomsmodel
 fig:viseff
 fig:VisualComposition
-fig:baplot
-fig:baplot1
 introduction
 perceptual-and-cognitive-process-of-graph-perception
 visual-system
@@ -55,9 +53,12 @@ introduction-2
 related-work
 dashboard-design-1
 grammar-of-graphics
-unified-chart-dashboard-design
+dashboard-design-as-the-symphony-of-charts
 experimential-ideasmethods-to-test-theory
 ref-labels
 abstract-2
+introduction-3
+methods
+discussion-1
 the-first-appendix
 the-second-appendix-for-fun
