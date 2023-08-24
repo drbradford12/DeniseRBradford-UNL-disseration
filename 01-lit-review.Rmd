@@ -233,7 +233,7 @@ Figure xxx shows that the perceptual grouping introduced by [@palmer2002], focus
 Perceptual grouping introduced by [@palmer2002], focuses on the proximity, similar size, similar orientation, and common region concepts that will directly impact dashboard design through the lenses of the user. 
 
 ```{r perceptualgrouping, echo=FALSE, out.width = "55%", fig.cap='Perceptual Grouping illustrated by Stephen E. Palmer in 2002',fig.show='asis',fig.align='center'}
-knitr::include_graphics("figure/Perceptual_grouping.png")
+knitr::include_graphics("figure/perceptual_grouping.png")
 ```
 
 The proximity principle states that elements occupying close spatial proximity are perceived as belonging. 
