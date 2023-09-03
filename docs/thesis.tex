@@ -34,13 +34,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -48,7 +48,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -57,7 +57,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -1496,13 +1496,51 @@ However, this study proposes a novel approach where the entire dashboard is trea
 \hypertarget{introduction-2}{%
 \section{Introduction:}\label{introduction-2}}
 
-The grammar of graphics is a framework for designing and comprehending data visualizations.
+``How do changes in real-time data displayed on a dashboard affect ensemble perception and consequently, the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment?''
+
+This research question explores the intersection of ensemble perception and real-time, dynamic data visualization.
+It considers how ensemble perception operates when data are static and how it adapts to fundamental changes, particularly on a dashboard where such fluctuations are common.
+By focusing on the user's decision-making capabilities, the research also aims to make practical contributions to designing more effective dashboards.
+
+The grammar of graphics is a framework for designing and comprehending data visualizations (Wilkinson, 2012).
 By decomposing graphics into components such as data, aesthetics, and geometries, the grammar of graphics provides a structured method for conceiving and creating visualizations.
 It permits a high degree of customization and flexibility in the creation of visualizations.
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis.
+John Tukey's EDA methods are currently known and well-vetted in the field.
+However, Satyanarayan et al.~addressed this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar (Satyanarayan et al., 2016).
+Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
 The principles of the grammar of graphics can be applied to dashboard design to create more effective and informative dashboards.
 
-\hypertarget{related-work}{%
-\section{Related Work:}\label{related-work}}
+``Graphical Tests for Power Comparison of Competing Designs'' by Hofmann et al.~presents a graphical method for comparing the power of two or more competing designs in an experimental study (\textbf{hofmann2012?}).
+The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs.
+It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
+
+Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from Few (\textbf{few2012?}), Tufte (\textbf{tufte1983?}), and Cairo (Cairo, 2016):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+\item
+  Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+\item
+  Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+\item
+  Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+\item
+  Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+\item
+  Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+\item
+  Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
+\end{enumerate}
+
+\hypertarget{literature-review}{%
+\section{Literature Review:}\label{literature-review}}
 
 \hypertarget{dashboard-design-1}{%
 \subsection{Dashboard Design}\label{dashboard-design-1}}
@@ -1510,6 +1548,41 @@ The principles of the grammar of graphics can be applied to dashboard design to 
 A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006a).
 The process of creating visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format is dashboard design.
 The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.
+
+As organizations increasingly rely on data-driven decision-making, the role of well-designed dashboards becomes pivotal.
+The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on key frameworks such as Evaluation Criteria in Healthcare, Learning Dashboards in educational settings, Design Patterns and Trade-offs, Academic Literature Reviews, and Practical Tips for implementation.
+Each of these frameworks offers unique perspectives and actionable insights, serving as pillars for the subsequent discussion on how to create dashboards that are both functional and impactful.
+
+(Karami, Langarizadeh, \& Fatehi, 2017) study focuses on creating evaluation criteria for effective dashboards in healthcare organizations.
+The study employs a Delphi method to offer a set of criteria that can be universally applied to assess the effectiveness of dashboards in healthcare settings.
+Utilizing a Delphi method, the study aims to establish a robust set of criteria for evaluating the effectiveness of dashboards within healthcare organizations.
+The research provides a structured framework that healthcare professionals can use to assess the utility, functionality, and impact of their dashboards.
+By doing so, the study contributes to improving both patient care and operational efficiency.
+This work serves as a valuable guide for healthcare organizations looking to implement or refine their dashboard systems, offering a set of universally applicable criteria for effectiveness.
+
+A systematic literature review by (Schwendimann et al., 2016) discusses the state-of-the-art in learning dashboards.
+The paper identifies critical design features, dividing them into functional and visual features.
+This study is particularly useful for educational institutions aiming to implement learning analytics dashboards.
+Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective.
+The research is especially relevant for educational institutions aiming to implement or optimize learning analytics dashboards.
+By identifying key design elements and their impact on student performance, the paper serves as a foundational resource for educators and administrators looking to leverage dashboards as a tool for enhancing educational outcomes.
+
+A 2022 paper by (Bach et al., 2022) discusses design patterns and trade-offs in dashboard design.
+The paper also talks about possible design frameworks, providing a comprehensive view of the design aspects that go into creating a dashboard.
+The study not only reviews existing design frameworks but also introduces a collection of new patterns that can guide designers in creating more effective dashboards.
+By discussing the trade-offs involved in choosing specific design elements, the paper provides a balanced view that helps designers make informed decisions.
+This work is particularly valuable for those involved in designing and developing dashboards, offering a comprehensive set of guidelines and frameworks that can be applied across various sectors and use cases.
+
+(Scheuer, Jache, Sumfleth, Wellmann, \& Haase, 2021) paper discusses the integration of interactive dashboards into academic literature reviews.
+The study argues that such integration can make academic research more accessible, interactive, and impactful.
+By leveraging dashboard tools, researchers can better synthesize and present complex data, broadening academic literature's reach and utility.
+This paper serves as a pioneering resource for academics and researchers, suggesting a novel approach to literature review synthesis that can enhance both the process and the dissemination of scholarly work.
+
+Microsoft provides practical tips for designing an effective Power BI dashboard, focusing on making the most important information stand out.
+Focusing on the importance of making key information stand out, the guide provides actionable tips that can be immediately applied by practitioners.
+While not a peer-reviewed article, this resource is invaluable for professionals in various sectors who are looking to design or optimize their Power BI dashboards.
+It emphasizes user-centric design and data visualization techniques to ensure that the dashboard serves as a functional tool for data-driven decision-making, making it a go-to resource for best practices in Power BI dashboard design.
+Although not a peer-reviewed article, it offers valuable insights for practitioners (Staff, 2023).
 
 \hypertarget{grammar-of-graphics}{%
 \subsection{Grammar of Graphics}\label{grammar-of-graphics}}
@@ -1519,24 +1592,30 @@ These components can be combined in numerous ways to generate a vast array of vi
 For instance, data is the foundational element, aesthetics map data variables to visual properties, geometries determine the representation of data points, scales map data values to visual values, and statistics transform the data prior to visualization.
 
 While the grammar of graphics provides a powerful theoretical framework for data visualization, there may be research gaps in its application to dashboard design and functionality.
-Such as the following missing pieces:
+There are still glaring research gaps in the areas of interactivity, data synchronization, and user-centered design despite major developments in the fields of data visualization and human-computer interaction.
+Users' capacity to interact interactively with visual data hasn't been adequately investigated in terms of its effects on cognition and best design practices.
+Another area that needs more in-depth research is data synchronization, particularly in multi-user and multi-device scenarios; seamlessly integrating real-time data changes across many platforms is essential for creating increasingly powerful collaboration tools.
+In research, user-centered design, which puts the requirements and behaviors of the end-users first, also frequently takes a backseat, resulting in products that may be technically remarkable but lack intuitive usability.
+These gaps highlight the necessity for more targeted research projects to comprehend the technology potential and the human elements that contribute to the efficacy of interactive systems and data visualization.
 
-\textbf{Interactivity:}
 Graphics grammar primarily emphasizes static visualizations.
-However, dashboards are inherently interactive, allowing users to explore the data and interact with it.
+However, dashboards are inherently interactive, allowing users to explore and interact with the data.
 There is a need for research to determine how to effectively incorporate the principles of the grammar of graphics into interactive dashboards while maintaining a positive user experience and avoiding user overload.
 
-\textbf{Data Synchronization:}
 Dashboards often present data from multiple sources or datasets.
-Ensuring data synchronization across different visualizations and components is critical to maintain accuracy and consistency.
+Ensuring data synchronization across different visualizations and components is critical to maintaining accuracy and consistency.
 Research is needed to investigate methods for handling data updates, refresh rates, and synchronization challenges in dashboard design.
 
-\textbf{User-Centered Design:}
 The grammar of graphics focuses on data-driven principles, but effective dashboard design also requires a deep understanding of user needs, tasks, and goals.
 Further research should investigate how to integrate user-centered design practices into the application of the grammar of graphics in dashboard development.
 
-\hypertarget{dashboard-design-as-the-symphony-of-charts}{%
-\section{Dashboard Design as the Symphony of Charts:}\label{dashboard-design-as-the-symphony-of-charts}}
+\hypertarget{why-grammar-of-graphics-dashboard-design}{%
+\section{Why Grammar of Graphics \& Dashboard Design?}\label{why-grammar-of-graphics-dashboard-design}}
+
+In the evolving discourse on data visualization and dashboard design, the proposing theory positing the ``grammar of graphics'' as the foundational framework offers a compelling analogy: if a graph is akin to a sentence, then a dashboard can be considered a paragraph.
+Just as sentences are constructed using grammatical rules to convey complex ideas clearly, graphs employ principles, such as scales, coordinates, and marks, to represent data comprehensibly.
+Extending this analogy, a dashboard serves as a cohesive ``paragraph,'' where multiple graphs or ``sentences'' are organized in a meaningful sequence to provide a more nuanced understanding or narrative.
+This framework suggests that the same rigorous thought applied to individual data visualizations should also be extended to the design of dashboards, where the interplay of multiple graphs must be syntactically and semantically harmonized to communicate the overarching message or insight effectively.
 
 Here is how published theory relates graphic grammar to dashboard design:
 
@@ -1563,10 +1642,10 @@ Annotations strategically placed can aid users in comprehending key insights, pr
 
 Using the principles of the grammar of graphics, designers can create visually appealing, informative, and user-friendly dashboards that effectively convey data-driven insights to their audience.
 
-\hypertarget{experimential-ideasmethods-to-test-theory}{%
-\section{Experimential Ideas/Methods to test theory:}\label{experimential-ideasmethods-to-test-theory}}
+\hypertarget{methods-to-test-theory}{%
+\section{Methods to test theory:}\label{methods-to-test-theory}}
 
-Testing the effectiveness of a dashboard as a unified chart involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience.
+Testing the effectiveness of a dashboard involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience.
 Here are some key steps and methods to test the effectiveness of a dashboard:
 
 \textbf{Usability Testing:}
@@ -1583,23 +1662,120 @@ Conduct interviews with users to gain deeper insights into their experiences and
 Observe how users interact with the dashboard in their natural environment.
 
 \hypertarget{ref-labels}{%
-\chapter{Does Color Help?: Testing Variability Ensemble Coding for Enhanced Interpretation of Bland-Altman Plots}\label{ref-labels}}
+\chapter{Does Color Help?: Multidimensional Ensembles in Bland-Altman Plots: An Exploration}\label{ref-labels}}
 
 \hypertarget{abstract-2}{%
 \section{Abstract:}\label{abstract-2}}
 
-This article presents a method for interpreting Bland-Altman plots based on the principles of variability ensemble coding.
-The purpose of this study is to evaluate the efficacy of this method, with the hypothesis that employing color coding to represent variability could facilitate intuitive comprehension of data dispersion, thereby enhancing the practical utility of Bland-Altman plots.
+It is common practice to evaluate the agreement between two different measuring techniques using Bland-Altman graphs.
+Their potential for integrating ensemble perception across multidimensional ensembles has not been adequately investigated, despite the fact that they offer a basic representation of data.
+This theoretical article explores the potential use of multidimensional ensembles in Bland-Altman plots and speculates how it can improve the robustness and understandability of these graphs.
 
 \hypertarget{introduction-3}{%
 \section{Introduction:}\label{introduction-3}}
 
-The Bland-Altman plot is a powerful statistical tool for comparing and assessing agreement between two distinct measurement techniques (Bland \& Altman, 1986).
-Due to the density and distribution of data points, understanding and interpreting these plots can be difficult despite their effectiveness.
-Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene (Alvarez, 2011) offers a promising solution to this issue by facilitating the rapid extraction of variability information.
+``How can multidimensional ensembles be effectively incorporated into Bland-Altman Plots to enhance the accuracy and comprehensibility of assessing agreement between multiple sets of measurement techniques?''
+This research question explores the theoretical and practical implications of incorporating ensemble perception and multidimensional data into Bland-Altman Plots, traditionally used for comparing two measurement methods.
+By doing so, the research seeks to advance the utility and interpretability of these plots in complex, real-world scenarios where multiple dimensions are often at play.
+
+The interpretation of Bland-Altman plots is conventionally one-dimensional, focusing primarily on the mean difference and limits of agreement (Bland \& Altman, 1986).
+However, in real-world applications, the measurements under consideration often contain multiple dimensions that could contribute to the interpretation of the agreement or disagreement between two techniques (Chong \& Treisman, 2003).
+Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene offers a promising solution to this issue by facilitating the rapid extraction of variability information (Alvarez, 2011).
+The theory of ensemble perception offers a framework for understanding how these multiple dimensions could be processed simultaneously (J. Haberman, Brady, \& Alvarez, 2015); (Whitney, Haberman, \& Sweeny, 2014).
+
+\hypertarget{ensemble-perception}{%
+\subsection{Ensemble Perception}\label{ensemble-perception}}
+
+Ensemble perception is the cognitive ability to quickly derive summary statistics from sets of similar items (Chong \& Treisman, 2003).
+This component of visual cognition enables the visual system to summarize and describe collections of comparable objects or features effectively.
+This capability is often activated in a brief glance and is crucial for making sense of complex visual scenes.
+David Whitney's fundamental review outlines the core principles of ensemble perception, emphasizing the extraction of summary statistical information from groups of similar objects (Whitney et al., 2014), (Dakin \& Watt, 1997).
+(J. Haberman et al., 2015) further discussed that individual differences exist in ensemble perception capabilities, indicating the presence of multiple, independent levels of ensemble representation.
+
+Recent studies have expanded on these principles.
+Khayat et al.'s work explores how ensemble perception can create a unified perception from groups of similar objects and also delves into the implicit perception and memory of set statistics (Khayat, Ahissar, \& Hochstein, 2023), (Khayat, Fusi, \& Hochstein, 2021).
+
+The study ``Perceptual history biases in serial ensemble representation'' by Khayat et al.~focuses on the concept of ensemble perception, specifically examining how past visual experiences influence the perception of current visual ensembles.
+The study investigates the serial dependence of ensemble perception when each ensemble set is presented simultaneously but spatially distributed over the screen.
+This suggests that our perception of groups of similar objects is not just influenced by the objects themselves but also by our past experiences with similar ensembles (Khayat et al., 2023).
+This adds a layer of complexity to the understanding of ensemble perception, which is generally considered as the visual system's ability to efficiently summarize groups of similar objects into a unified perception.
+
+The study ``Perceiving ensemble statistics of novel image sets'' by Khayat at el. focuses on how the human visual system perceives summary statistics of sets of stimulus elements.
+The study is particularly interested in the perception of novel image sets, suggesting that our ability to understand and interpret new visual information is influenced by our capacity to quickly summarize statistical data from these sets (Khayat et al., 2021).
+This research contributes to the broader field of ensemble perception, which explores how the visual system can efficiently represent groups of similar objects as a unified perception.
+The study implies that not only can the visual system quickly grasp the ``gist'' or essence of familiar visual ensembles, but it can also do so for novel sets of images.
+This ability to quickly summarize statistical information from new visual stimuli could be a fundamental feature of human perception (Khayat \& Hochstein, 2018).
+
+Other research has investigated the role of ensemble perception in both high- and low-level visual information, such as emotion and brightness, and how it can even operate when scene information is incomplete (Chakrabarty \& Wada, 2020), (J. M. Haberman \& Ulrich, 2019).
+
+Furthermore, ensemble perception is not just a specialized function but a pervasive aspect of visual perception.
+It has been discussed in a holistic manner to engage a general audience and has been shown to condense redundant information into summary statistical representations (Corbett, Utochkin, \& Hochstein, 2023), (Whitney \& Manassi, 2022).
+
+Lastly, stable ensemble representations have been found to facilitate visual search, even when they are not predictive of a target location (Utochkin, Choi, \& Chong, 2023).
+The study focuses on a coding model that emphasizes the crucial role of the ``pooling layer'' in ensemble perception.
+Ensemble perception refers to the ability of the visual system to summarize information from a group of similar objects quickly.
+The ``pooling layer'' in the model likely serves as a computational mechanism for aggregating or summarizing this information, potentially providing insights into how the brain processes complex visual scenes.
+In summary, the study aims to provide a more structured understanding of ensemble perception by introducing a model that highlights the importance of a specific computational layer, known as the ``pooling layer,'' in the process of summarizing visual information.
+
+\hypertarget{multidimensional-ensembles}{%
+\subsection{Multidimensional Ensembles}\label{multidimensional-ensembles}}
+
+Initial research on ensemble perception primarily focused on one-dimensional ensembles, where summary statistics are extracted from a single feature or dimension (J. Haberman et al., 2015).
+However, as (\textbf{maule2016?}) note, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles.
+
+Research on multidimensional ensembles has ventured into understanding how people perceive summary statistics across multiple attributes, such as size and color, simultaneously.
+(Dakin \& Watt, 1997) were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting.
+(J. Haberman et al., 2015) expanded this research by showing that individual differences exist in ensemble perception capabilities, suggesting that there are multiple, independent levels of ensemble representation.
+
+The existing literature on multidimensional ensembles in visual information covers a range of topics, from neuroscience to data visualization.
+For instance, studies have explored the role of neuronal ensembles in controlling visually guided behavior and their influence on visual working memory (Carrillo-Reid, Han, Yang, Akrouh, \& Yuste, 2019).
+Research has also delved into the use of aggregated plots for multidimensional visual analysis, although these don't explicitly mention ensembles (Fofonov \& Linsen, 2018).
+
+The concept of fast ensemble representations has been investigated to understand high-level perceptual impressions based on visual information (Leib, Kosovicheva, \& Whitney, 2016).
+Additionally, the aesthetic complexity of visual information has been quantified using information theory, offering a potential framework for ensemble-based representations (Karjus, Solà, Ohm, Ahnert, \& Schich, 2023).
+
+Long-term stability of neuronal ensembles in the visual cortex has been studied, shedding light on their potential role in visual perception (Pérez-Ortega, Alejandre-Garcı́a, \& Yuste, 2021).
+Ensemble visualization techniques, particularly in computer simulations, have also been reviewed (Afzal et al., 2019).
+Lastly, the structure of neural networks has been shown to affect working memory, which could have implications for visual ensembles (Leavitt, Pieper, Sachs, \& Martinez-Trujillo, 2017).
+
+\hypertarget{bland-altman-plots}{%
+\subsection{Bland-Altman Plots}\label{bland-altman-plots}}
+
+The study of multidimensional ensembles has seen applications in the field of data visualization.
+(\textbf{szafir2018?}) showed that understanding color differences could improve the design of visualizations that require the viewer to integrate multiple pieces of information.
+This work suggested that effective visualization tools could be designed by leveraging the human ability to process multidimensional ensembles rapidly.
+
+Bland-Altman Plots are widely used in clinical research for assessing the agreement between two measurement techniques by plotting the differences against the means (Bland \& Altman, 1986).
+They offer a straightforward representation of data, making them a popular choice for visualizing measurement bias.
+However, the plots are conventionally one-dimensional, primarily focusing on mean differences and limits of agreement.
+
+\hypertarget{the-intersection-of-multidimensional-ensembles-and-bland-altman-plots}{%
+\subsection{The intersection of Multidimensional Ensembles and Bland-Altman Plots}\label{the-intersection-of-multidimensional-ensembles-and-bland-altman-plots}}
+
+The application of multidimensional ensembles in Bland-Altman Plots could potentially offer a more nuanced understanding of data.
+For example, integrating color coding to indicate standard deviation and shape variations to indicate skewness could offer additional layers of information in a single plot (\textbf{szafir2018?}).
+Such an approach could leverage our innate abilities in ensemble perception to offer a more comprehensive assessment of agreement between multiple sets of measurement techniques (Szafir, Haroz, Gleicher, \& Franconeri, 2016).
+
+\hypertarget{gaps-in-research}{%
+\subsection{Gaps in Research}\label{gaps-in-research}}
+
+While the fields of ensemble perception and data visualization have seen significant growth, there is a lack of research focusing on the application of ensemble perception, particularly multidimensional ensembles, in Bland-Altman Plots.
+This gap points to the need for empirical studies designed to validate theoretical frameworks and to assess the practical utility of incorporating multidimensional ensembles into Bland-Altman Plots.
 
 \hypertarget{methods}{%
 \section{Methods:}\label{methods}}
+
+Ensemble perception involves the rapid and often unconscious extraction of summary statistics from a set of similar items (\textbf{chonog2003?}), (Whitney et al., 2014).
+In the context of multidimensional ensembles, this would refer to the simultaneous extraction of various features such as mean, variance, and other statistical attributes across multiple dimensions (Maule \& Franklin, 2015), (J. Haberman et al., 2015).
+Understanding this concept will provide a unique way to interpret Bland-Altman plots that contain data from multiple dimensions.
+
+Traditionally, Bland-Altman plots present the difference between two sets of measurements against their mean, providing a graphical representation of agreement or bias.
+However, this one-dimensional representation might not capture the full complexity of real-world data, where measurements can often be multidimensional (Dakin \& Watt, 1997).
+Given the human brain's ability to rapidly process multidimensional ensemble statistics (J. Haberman et al., 2015), incorporating this aspect into Bland-Altman plots might yield a more nuanced interpretation (\textbf{bauer2015?}), (Szafir et al., 2016).
+
+One way to incorporate multidimensionality into Bland-Altman plots is by adding layers that represent different statistical attributes.
+For example, varying shades of color could indicate the standard deviation within each plotted point, and shape variations could indicate another dimension such as skewness or kurtosis (\textbf{szafir2018?}).
+This model would require human observers to simultaneously extract multiple summary statistics, leveraging the brain's capabilities in ensemble perception (Chong \& Treisman, 2003).
 
 In this proposed study, we utilize color coding to represent varying levels of variability in Bland-Altman plots.
 To ensure the universal interpretability of the plots (Ware, 2012), the color palette will be selected with care, taking into account potential issues such as color blindness.
@@ -1629,7 +1805,7 @@ The questionnaire will include items related to the perceived ease of use, satis
 \section{Discussion:}\label{discussion-1}}
 
 We anticipate that the application of ensemble coding for variability will aid in the comprehension of Bland-Altman plots.
-Based on ensemble coding principles, the color-coded plot should enable faster and more accurate interpretation of data variability (Haberman \& Whitney, 2012).
+Based on ensemble coding principles, the color-coded plot should enable faster and more accurate interpretation of data variability (J. Haberman \& Whitney, 2012).
 This method has the potential to enhance the interpretability and utility of these graphs, making them accessible to a broader audience and facilitating more efficient data communication.
 
 \hypertarget{conclusion-1}{%
@@ -1688,107 +1864,104 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-08-24 09:48:34.341332. The repository is currently at this commit:
+This version of the thesis was generated on 2023-09-03 14:56:56. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
 \begin{verbatim}
 ## - Session info -------------------------------------------
 ##  setting  value
-##  version  R version 4.3.1 (2023-06-16)
-##  os       Ubuntu 22.04.3 LTS
-##  system   x86_64, linux-gnu
+##  version  R version 4.2.2 (2022-10-31)
+##  os       macOS Big Sur ... 10.16
+##  system   x86_64, darwin17.0
 ##  ui       X11
 ##  language (EN)
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
-##  tz       America/Chicago
-##  date     2023-08-24
-##  pandoc   3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
+##  tz       America/New_York
+##  date     2023-09-03
+##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
 ##  package        * version date (UTC) lib source
-##  assertthat       0.2.1   2019-03-21 [2] CRAN (R 4.0.5)
-##  bookdown         0.34    2023-05-09 [1] CRAN (R 4.3.0)
-##  cachem           1.0.8   2023-05-01 [1] CRAN (R 4.3.0)
-##  callr            3.7.3   2022-11-02 [1] CRAN (R 4.3.0)
-##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.3.0)
-##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.3.0)
-##  crayon           1.5.2   2022-09-29 [1] CRAN (R 4.3.0)
-##  devtools         2.4.5   2022-10-11 [1] CRAN (R 4.3.1)
-##  digest           0.6.33  2023-07-07 [1] CRAN (R 4.3.1)
-##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.3.1)
-##  ellipsis         0.3.2   2021-04-29 [1] CRAN (R 4.3.0)
-##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.3.0)
-##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.3.0)
-##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.3.0)
-##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
-##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
-##  formatR        * 1.14    2023-01-17 [1] CRAN (R 4.3.0)
-##  fs               1.6.2   2023-04-25 [1] CRAN (R 4.3.0)
-##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
-##  ggpcp          * 0.2.0   2022-11-28 [1] CRAN (R 4.3.1)
-##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.3.1)
-##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
-##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.3.0)
-##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.3.0)
-##  htmltools        0.5.5   2023-03-23 [1] CRAN (R 4.3.1)
-##  htmlwidgets      1.6.2   2023-03-17 [1] CRAN (R 4.3.0)
-##  httpuv           1.6.10  2023-05-08 [1] CRAN (R 4.3.0)
-##  knitr          * 1.43    2023-05-25 [1] CRAN (R 4.3.1)
-##  labeling         0.4.2   2020-10-20 [2] CRAN (R 4.0.5)
-##  later            1.3.1   2023-05-02 [1] CRAN (R 4.3.0)
-##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
-##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.3.1)
-##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
-##  memoise          2.0.1   2021-11-26 [1] CRAN (R 4.3.0)
-##  mime             0.12    2021-09-28 [1] CRAN (R 4.3.0)
-##  miniUI           0.1.1.1 2018-05-18 [2] CRAN (R 4.0.5)
-##  munsell          0.5.0   2018-06-12 [2] CRAN (R 4.0.5)
-##  nycflights13   * 1.0.2   2021-04-12 [2] CRAN (R 4.0.5)
-##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.3.1)
-##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
-##  pkgbuild         1.4.0   2022-11-27 [1] CRAN (R 4.3.0)
-##  pkgconfig        2.0.3   2019-09-22 [2] CRAN (R 4.0.5)
-##  pkgload          1.3.2   2022-11-16 [1] CRAN (R 4.3.0)
-##  prettyunits      1.1.1   2020-01-24 [2] CRAN (R 4.0.5)
-##  processx         3.8.1   2023-04-18 [1] CRAN (R 4.3.0)
-##  profvis          0.3.8   2023-05-02 [1] CRAN (R 4.3.0)
-##  promises         1.2.0.1 2021-02-11 [2] CRAN (R 4.0.5)
-##  ps               1.7.5   2023-04-18 [1] CRAN (R 4.3.0)
-##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.3.0)
-##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.3.0)
-##  RColorBrewer     1.1-3   2022-04-03 [1] CRAN (R 4.3.1)
-##  Rcpp             1.0.10  2023-01-22 [1] CRAN (R 4.3.0)
-##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.3.1)
-##  remotes          2.4.2.1 2023-07-18 [1] CRAN (R 4.3.1)
-##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.3.0)
-##  rmarkdown        2.21    2023-03-26 [1] CRAN (R 4.3.0)
-##  rstudioapi       0.15.0  2023-07-07 [1] CRAN (R 4.3.1)
-##  scales         * 1.2.1   2022-08-20 [1] CRAN (R 4.3.1)
-##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.3.0)
-##  shiny            1.7.4.1 2023-07-06 [1] CRAN (R 4.3.1)
-##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.3.0)
-##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.3.1)
-##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.3.0)
-##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.3.1)
-##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.3.0)
-##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.3.0)
-##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.3.0)
-##  tzdb             0.3.0   2022-03-28 [1] CRAN (R 4.3.0)
-##  urlchecker       1.0.1   2021-11-30 [1] CRAN (R 4.3.1)
-##  usethis          2.1.6   2022-05-25 [1] CRAN (R 4.3.0)
-##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.3.0)
-##  vctrs            0.6.3   2023-06-14 [1] CRAN (R 4.3.1)
-##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.3.0)
-##  xfun             0.39    2023-04-20 [1] CRAN (R 4.3.0)
-##  xtable           1.8-4   2019-04-21 [2] CRAN (R 4.0.5)
-##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
+##  assertthat       0.2.1   2019-03-21 [1] CRAN (R 4.2.0)
+##  bookdown         0.33    2023-03-06 [1] CRAN (R 4.2.0)
+##  cachem           1.0.7   2023-02-24 [1] CRAN (R 4.2.0)
+##  callr            3.7.3   2022-11-02 [1] CRAN (R 4.2.0)
+##  cli              3.6.1   2023-03-23 [1] CRAN (R 4.2.0)
+##  colorspace       2.1-0   2023-01-23 [1] CRAN (R 4.2.0)
+##  crayon           1.5.2   2022-09-29 [1] CRAN (R 4.2.0)
+##  devtools         2.4.5   2022-10-11 [1] CRAN (R 4.2.0)
+##  digest           0.6.31  2022-12-11 [1] CRAN (R 4.2.0)
+##  dplyr          * 1.1.2   2023-04-20 [1] CRAN (R 4.2.0)
+##  ellipsis         0.3.2   2021-04-29 [1] CRAN (R 4.2.0)
+##  evaluate         0.21    2023-05-05 [1] CRAN (R 4.2.0)
+##  fansi            1.0.4   2023-01-22 [1] CRAN (R 4.2.0)
+##  farver           2.1.1   2022-07-06 [1] CRAN (R 4.2.0)
+##  fastmap          1.1.1   2023-02-24 [1] CRAN (R 4.2.0)
+##  forcats        * 1.0.0   2023-01-29 [1] CRAN (R 4.2.0)
+##  formatR        * 1.14    2023-01-17 [1] CRAN (R 4.2.0)
+##  fs               1.6.2   2023-04-25 [1] CRAN (R 4.2.0)
+##  generics         0.1.3   2022-07-05 [1] CRAN (R 4.2.0)
+##  ggpcp          * 0.2.0   2022-11-28 [1] CRAN (R 4.2.0)
+##  ggplot2        * 3.4.2   2023-04-03 [1] CRAN (R 4.2.0)
+##  glue             1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
+##  gtable           0.3.3   2023-03-21 [1] CRAN (R 4.2.0)
+##  hms              1.1.3   2023-03-21 [1] CRAN (R 4.2.0)
+##  htmltools        0.5.4   2022-12-07 [1] CRAN (R 4.2.0)
+##  htmlwidgets      1.6.2   2023-03-17 [1] CRAN (R 4.2.0)
+##  httpuv           1.6.9   2023-02-14 [1] CRAN (R 4.2.0)
+##  knitr          * 1.42    2023-01-25 [1] CRAN (R 4.2.0)
+##  labeling         0.4.2   2020-10-20 [1] CRAN (R 4.2.0)
+##  later            1.3.0   2021-08-18 [1] CRAN (R 4.2.0)
+##  lifecycle        1.0.3   2022-10-07 [1] CRAN (R 4.2.0)
+##  lubridate      * 1.9.2   2023-02-10 [1] CRAN (R 4.2.0)
+##  magrittr         2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
+##  memoise          2.0.1   2021-11-26 [1] CRAN (R 4.2.0)
+##  mime             0.12    2021-09-28 [1] CRAN (R 4.2.0)
+##  miniUI           0.1.1.1 2018-05-18 [1] CRAN (R 4.2.0)
+##  munsell          0.5.0   2018-06-12 [1] CRAN (R 4.2.0)
+##  nycflights13   * 1.0.2   2021-04-12 [1] CRAN (R 4.2.0)
+##  palmerpenguins * 0.1.1   2022-08-15 [1] CRAN (R 4.2.0)
+##  pillar           1.9.0   2023-03-22 [1] CRAN (R 4.2.2)
+##  pkgbuild         1.4.0   2022-11-27 [1] CRAN (R 4.2.0)
+##  pkgconfig        2.0.3   2019-09-22 [1] CRAN (R 4.2.0)
+##  pkgload          1.3.2   2022-11-16 [1] CRAN (R 4.2.0)
+##  prettyunits      1.1.1   2020-01-24 [1] CRAN (R 4.2.0)
+##  processx         3.8.1   2023-04-18 [1] CRAN (R 4.2.0)
+##  profvis          0.3.7   2020-11-02 [1] CRAN (R 4.2.0)
+##  promises         1.2.0.1 2021-02-11 [1] CRAN (R 4.2.0)
+##  ps               1.7.5   2023-04-18 [1] CRAN (R 4.2.0)
+##  purrr          * 1.0.1   2023-01-10 [1] CRAN (R 4.2.0)
+##  R6               2.5.1   2021-08-19 [1] CRAN (R 4.2.0)
+##  RColorBrewer     1.1-3   2022-04-03 [1] CRAN (R 4.2.0)
+##  Rcpp             1.0.10  2023-01-22 [1] CRAN (R 4.2.0)
+##  readr          * 2.1.4   2023-02-10 [1] CRAN (R 4.2.0)
+##  remotes          2.4.2   2021-11-30 [1] CRAN (R 4.2.0)
+##  rlang            1.1.1   2023-04-28 [1] CRAN (R 4.2.0)
+##  rmarkdown        2.20    2023-01-19 [1] CRAN (R 4.2.2)
+##  rstudioapi       0.14    2022-08-22 [1] CRAN (R 4.2.0)
+##  scales         * 1.2.1   2022-08-20 [1] CRAN (R 4.2.0)
+##  sessioninfo      1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
+##  shiny            1.7.4   2022-12-15 [1] CRAN (R 4.2.0)
+##  stringi          1.7.12  2023-01-11 [1] CRAN (R 4.2.0)
+##  stringr        * 1.5.0   2022-12-02 [1] CRAN (R 4.2.0)
+##  tibble         * 3.2.1   2023-03-20 [1] CRAN (R 4.2.0)
+##  tidyr          * 1.3.0   2023-01-24 [1] CRAN (R 4.2.0)
+##  tidyselect       1.2.0   2022-10-10 [1] CRAN (R 4.2.0)
+##  tidyverse      * 2.0.0   2023-02-22 [1] CRAN (R 4.2.0)
+##  timechange       0.2.0   2023-01-11 [1] CRAN (R 4.2.0)
+##  tzdb             0.3.0   2022-03-28 [1] CRAN (R 4.2.0)
+##  urlchecker       1.0.1   2021-11-30 [1] CRAN (R 4.2.0)
+##  usethis          2.1.6   2022-05-25 [1] CRAN (R 4.2.0)
+##  utf8             1.2.3   2023-01-31 [1] CRAN (R 4.2.0)
+##  vctrs            0.6.2   2023-04-19 [1] CRAN (R 4.2.0)
+##  withr            2.5.0   2022-03-03 [1] CRAN (R 4.2.0)
+##  xfun             0.37    2023-01-31 [1] CRAN (R 4.2.0)
+##  xtable           1.8-4   2019-04-21 [1] CRAN (R 4.2.0)
+##  yaml             2.3.7   2023-01-23 [1] CRAN (R 4.2.0)
 ## 
-##  [1] /home/susan/R/x86_64-pc-linux-gnu-library/4.3
-##  [2] /usr/local/lib/R/site-library
-##  [3] /usr/lib/R/site-library
-##  [4] /usr/lib/R/library
+##  [1] /Library/Frameworks/R.framework/Versions/4.2/Resources/library
 ## 
 ## ----------------------------------------------------------
 \end{verbatim}
@@ -1807,6 +1980,9 @@ The computational environment that was used to generate this version is as follo
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-afzal2019}{}}%
+Afzal, S., Hittawe, M. M., Ghani, S., Jamil, T., Knio, O., Hadwiger, M., \& Hoteit, I. (2019). The state of the art in visual analysis approaches for ocean and atmospheric datasets. In \emph{Computer graphics forum} (Vol. 38, pp. 881--907). Wiley Online Library.
+
 \leavevmode\vadjust pre{\hypertarget{ref-alberts2019}{}}%
 Alberts, A. (2019). \emph{How to develop a designer's instinct: A study on eye tracking}. Tableau.
 
@@ -1824,6 +2000,9 @@ Anderson, J. R. (1992). Automaticity and the ACT theory. \emph{The American Jour
 
 \leavevmode\vadjust pre{\hypertarget{ref-aspillaga1996}{}}%
 Aspillaga, M. (1996). Perceptual foundations in the design of visual displays. \emph{Computers in Human Behavior}, \emph{12}(4), 587--600.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bach2022}{}}%
+Bach, B., Freeman, E., Abdul-Rahman, A., Turkay, C., Khan, S., Fan, Y., \& Chen, M. (2022). Dashboard design patterns. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{29}(1), 342--352.
 
 \leavevmode\vadjust pre{\hypertarget{ref-baddeley2012}{}}%
 Baddeley, A. (2012). Working memory: Theories, models, and controversies. \emph{Annual Review of Psychology}, \emph{63}, 1--29.
@@ -1864,6 +2043,12 @@ Carley, K., \& Palmquist, M. (1992). Extracting, representing, and analyzing men
 \leavevmode\vadjust pre{\hypertarget{ref-carpendale2001}{}}%
 Carpendale, M. S. T., \& Montagnese, C. (2001). A framework for unifying presentation space. In \emph{Proceedings of the 14th annual ACM symposium on user interface software and technology} (pp. 61--70).
 
+\leavevmode\vadjust pre{\hypertarget{ref-carrillo2019}{}}%
+Carrillo-Reid, L., Han, S., Yang, W., Akrouh, A., \& Yuste, R. (2019). Controlling visually guided behavior by holographic recalling of cortical ensembles. \emph{Cell}, \emph{178}(2), 447--457.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chakrabarty2020}{}}%
+Chakrabarty, M., \& Wada, M. (2020). Perceptual effects of fast and automatic visual ensemble statistics from faces in individuals with typical development and autism spectrum conditions. \emph{Scientific Reports}, \emph{10}(1), 2169.
+
 \leavevmode\vadjust pre{\hypertarget{ref-chandler2012}{}}%
 Chandler, C., \& Unger, R. (2012). \emph{A project guide to UX design: For user experience designers in the field or in the making}. New Riders.
 
@@ -1872,6 +2057,9 @@ Chase, W. G., \& Simon, H. A. (1973). Perception in chess. \emph{Cognitive Psych
 
 \leavevmode\vadjust pre{\hypertarget{ref-chevalier2006}{}}%
 Chevalier, A., \& Kicka, M. (2006). Web designers and web users: Influence of the ergonomic quality of the web site on the information search. \emph{International Journal of Human-Computer Studies}, \emph{64}(10), 1031--1048.
+
+\leavevmode\vadjust pre{\hypertarget{ref-chong2003}{}}%
+Chong, S. C., \& Treisman, A. (2003). Representation of statistical properties. \emph{Vision Research}, \emph{43}(4), 393--404.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1984}{}}%
 Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
@@ -1885,6 +2073,9 @@ Cooper, A. (1999). \emph{The inmates are running the asylum}. Springer.
 \leavevmode\vadjust pre{\hypertarget{ref-cooper2014}{}}%
 Cooper, A., Reimann, R., Cronin, D., \& Noessel, C. (2014). \emph{About face: The essentials of interaction design}. John Wiley \& Sons.
 
+\leavevmode\vadjust pre{\hypertarget{ref-corbett2023}{}}%
+Corbett, J. E., Utochkin, I., \& Hochstein, S. (2023). \emph{The pervasiveness of ensemble perception: Not just your average review}. Cambridge University Press.
+
 \leavevmode\vadjust pre{\hypertarget{ref-cowan2001}{}}%
 Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. \emph{Behavioral and Brain Sciences}, \emph{24}(1), 87--114.
 
@@ -1893,6 +2084,9 @@ Cowan, N. (2010). The magical mystery four: How is working memory capacity limit
 
 \leavevmode\vadjust pre{\hypertarget{ref-dOcagne:1885}{}}%
 d'Ocagne, M. (1885). {Coordonnées parallèles et axiales : Méthode de transformation géométrique et procédé nouveau de calcul graphique déduits de la considération des coordonnées parallèles}. \emph{Gauthier-Villars}, 112. Retrieved from \url{https://archive.org/details/coordonnesparal00ocaggoog/page/n10}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dakin1997}{}}%
+Dakin, S. C., \& Watt, R. (1997). The computation of orientation statistics from visual texture. \emph{Vision Research}, \emph{37}(22), 3181--3192.
 
 \leavevmode\vadjust pre{\hypertarget{ref-sine}{}}%
 Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \emph{20}, 49--55.
@@ -1924,6 +2118,9 @@ Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quanti
 \leavevmode\vadjust pre{\hypertarget{ref-fitts1967}{}}%
 Fitts, P. M., \& Posner, M. I. (1967). Human performance.
 
+\leavevmode\vadjust pre{\hypertarget{ref-fofonov2018}{}}%
+Fofonov, A., \& Linsen, L. (2018). A top-down interactive visual analysis approach for physical simulation ensembles at different aggregation levels. \emph{Information}, \emph{9}(7), 163.
+
 \leavevmode\vadjust pre{\hypertarget{ref-friendly2014}{}}%
 Friendly, M. (2014). Comment on {``the generalized pairs plot.''} \emph{Journal of Computational and Graphical Statistics}, \emph{23}(1), 290--291.
 
@@ -1938,6 +2135,12 @@ Goldstein, E. B., \& Cacciamani, L. (2021). \emph{Sensation and perception, 11th
 
 \leavevmode\vadjust pre{\hypertarget{ref-gregory1968}{}}%
 Gregory, R. L. (1968). Perceptual illusions and brain models. \emph{Proceedings of the Royal Society of London. Series B. Biological Sciences}, \emph{171}(1024), 279--296.
+
+\leavevmode\vadjust pre{\hypertarget{ref-haberman2019}{}}%
+Haberman, J. M., \& Ulrich, L. (2019). Precise ensemble face representation given incomplete visual input. \emph{I-Perception}, \emph{10}(1), 2041669518819014.
+
+\leavevmode\vadjust pre{\hypertarget{ref-haberman2015}{}}%
+Haberman, J., Brady, T. F., \& Alvarez, G. A. (2015). Individual differences in ensemble perception reveal multiple, independent levels of ensemble representation. \emph{Journal of Experimental Psychology: General}, \emph{144}(2), 432.
 
 \leavevmode\vadjust pre{\hypertarget{ref-haberman2012}{}}%
 Haberman, J., \& Whitney, D. (2012). Ensemble perception: Summarizing the scene and broadening the limits of visual processing. \emph{From Perception to Consciousness: Searching with Anne Treisman}, \emph{33}.
@@ -1978,6 +2181,21 @@ Itti, L., \& Koch, C. (2001). Computational modelling of visual attention. \emph
 \leavevmode\vadjust pre{\hypertarget{ref-javed2012}{}}%
 Javed, W., \& Elmqvist, N. (2012). Exploring the design space of composite visualization. In \emph{2012 ieee pacific visualization symposium} (pp. 1--8). IEEE.
 
+\leavevmode\vadjust pre{\hypertarget{ref-karami2017}{}}%
+Karami, M., Langarizadeh, M., \& Fatehi, M. (2017). Evaluation of effective dashboards: Key concepts and criteria. \emph{The Open Medical Informatics Journal}, \emph{11}, 52.
+
+\leavevmode\vadjust pre{\hypertarget{ref-karjus2023}{}}%
+Karjus, A., Solà, M. C., Ohm, T., Ahnert, S. E., \& Schich, M. (2023). Compression ensembles quantify aesthetic complexity and the evolution of visual art. \emph{EPJ Data Science}, \emph{12}(1), 21.
+
+\leavevmode\vadjust pre{\hypertarget{ref-khayat2023}{}}%
+Khayat, N., Ahissar, M., \& Hochstein, S. (2023). Perceptual history biases in serial ensemble representation. \emph{Journal of Vision}, \emph{23}(3), 7--7.
+
+\leavevmode\vadjust pre{\hypertarget{ref-khayat2021}{}}%
+Khayat, N., Fusi, S., \& Hochstein, S. (2021). Perceiving ensemble statistics of novel image sets. \emph{Attention, Perception, \& Psychophysics}, \emph{83}, 1312--1328.
+
+\leavevmode\vadjust pre{\hypertarget{ref-khayat2018}{}}%
+Khayat, N., \& Hochstein, S. (2018). Perceiving set mean and range: Automaticity and precision. \emph{Journal of Vision}, \emph{18}(9), 23--23.
+
 \leavevmode\vadjust pre{\hypertarget{ref-klein2007}{}}%
 Klein, G., Phillips, J. K., Rall, E. L., \& Peluso, D. A. (2007). A data--frame theory of sensemaking. In \emph{Expertise out of context} (pp. 118--160). Psychology Press.
 
@@ -1987,11 +2205,20 @@ Koffka, K. (2013). \emph{Principles of gestalt psychology} (Vol. 44). routledge.
 \leavevmode\vadjust pre{\hypertarget{ref-kosara2007}{}}%
 Kosara, R. (2007). Visualization criticism-the missing link between information visualization and art. In \emph{2007 11th international conference information visualization (IV'07)} (pp. 631--636). IEEE.
 
+\leavevmode\vadjust pre{\hypertarget{ref-leavitt2017}{}}%
+Leavitt, M. L., Pieper, F., Sachs, A. J., \& Martinez-Trujillo, J. C. (2017). Correlated variability modifies working memory fidelity in primate prefrontal neuronal ensembles. \emph{Proceedings of the National Academy of Sciences}, \emph{114}(12), E2494--E2503.
+
 \leavevmode\vadjust pre{\hypertarget{ref-lee}{}}%
 Lee, S., Kim, S.-H., Hung, Y.-H., Lam, H., Kang, Y., \& Yi, J. S. (2016). How do people make sense of unfamiliar visualizations?: A grounded model of novice's information visualization sensemaking. \emph{IEEE}, \emph{22}, 499--508.
 
+\leavevmode\vadjust pre{\hypertarget{ref-leib2016}{}}%
+Leib, A. Y., Kosovicheva, A., \& Whitney, D. (2016). Fast ensemble representations for abstract visual impressions. \emph{Nature Communications}, \emph{7}(1), 13186.
+
 \leavevmode\vadjust pre{\hypertarget{ref-luxen-vetter-2011}{}}%
 Luxen, D., \& Vetter, C. (2011). Real-time routing with OpenStreetMap data. In \emph{Proceedings of the 19th ACM SIGSPATIAL international conference on advances in geographic information systems} (pp. 513--516). New York, NY, USA: ACM. http://doi.org/\href{https://doi.org/10.1145/2093973.2094062}{10.1145/2093973.2094062}
+
+\leavevmode\vadjust pre{\hypertarget{ref-maule2015}{}}%
+Maule, J., \& Franklin, A. (2015). Effects of ensemble complexity and perceptual similarity on rapid averaging of hue. \emph{Journal of Vision}, \emph{15}(4), 6--6.
 
 \leavevmode\vadjust pre{\hypertarget{ref-attention}{}}%
 McCallum, W. C. (n.d.). Attention. \url{https://www.britannica.com/science/attention}.
@@ -2032,6 +2259,9 @@ Palmer, S. E. (2002). Perceptual organization in vision. \emph{Stevens' Handbook
 \leavevmode\vadjust pre{\hypertarget{ref-parsons2014}{}}%
 Parsons, P., \& Sedig, K. (2014). Adjustable properties of visual representations: Improving the quality of human-information interaction. \emph{Journal of the Association for Information Science and Technology}, \emph{65}(3), 455--482.
 
+\leavevmode\vadjust pre{\hypertarget{ref-perez2021}{}}%
+Pérez-Ortega, J., Alejandre-Garcı́a, T., \& Yuste, R. (2021). Long-term stability of cortical ensembles. \emph{Elife}, \emph{10}, e64449.
+
 \leavevmode\vadjust pre{\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}}%
 Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
 
@@ -2062,14 +2292,26 @@ Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do 
 \leavevmode\vadjust pre{\hypertarget{ref-satyanarayan2016}{}}%
 Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite: A grammar of interactive graphics. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{23}(1), 341--350.
 
+\leavevmode\vadjust pre{\hypertarget{ref-scheuer2021}{}}%
+Scheuer, S., Jache, J., Sumfleth, L., Wellmann, T., \& Haase, D. (2021). Creating accessible evidence bases: Opportunities through the integration of interactive tools into literature review synthesis. \emph{MethodsX}, \emph{8}, 101558.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schwendimann2016}{}}%
+Schwendimann, B. A., Rodriguez-Triana, M. J., Vozniuk, A., Prieto, L. P., Boroujeni, M. S., Holzer, A., \ldots{} Dillenbourg, P. (2016). Perceiving learning at a glance: A systematic literature review of learning dashboard research. \emph{IEEE Transactions on Learning Technologies}, \emph{10}(1), 30--41.
+
 \leavevmode\vadjust pre{\hypertarget{ref-gorillavideo1999}{}}%
 Scot Covey, Rafael Fernandez, \& Simons, D. (n.d.). The invisible gorilla. \url{http://www.theinvisiblegorilla.com/videos.html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-microsoft}{}}%
+Staff, M. (2023). Tips for designing a great power BI dashboard. \url{https://learn.microsoft.com/en-us/power-bi/create-reports/service-dashboards-design-tips}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-sweller1994}{}}%
 Sweller, J., \& Chandler, P. (1994). Why some material is difficult to learn. \emph{Cognition and Instruction}, \emph{12}(3), 185--233.
+
+\leavevmode\vadjust pre{\hypertarget{ref-szafir2016}{}}%
+Szafir, D. A., Haroz, S., Gleicher, M., \& Franconeri, S. (2016). Four types of ensemble coding in data visualizations. \emph{Journal of Vision}, \emph{16}(5), 11--11.
 
 \leavevmode\vadjust pre{\hypertarget{ref-toyama2015}{}}%
 Toyama, T., Sonntag, D., Orlosky, J., \& Kiyokawa, K. (2015). Attention engagement and cognitive state analysis for augmented reality text display functions. In \emph{Proceedings of the 20th international conference on intelligent user interfaces} (pp. 322--332).
@@ -2104,6 +2346,9 @@ USDA - ERS. (2020a). Rural classifications. \url{https://www.ers.usda.gov/topics
 \leavevmode\vadjust pre{\hypertarget{ref-usda}{}}%
 USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-utochkin2023}{}}%
+Utochkin, I. S., Choi, J., \& Chong, S. C. (2023). A population response model of ensemble perception. \emph{Psychological Review}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-van2005}{}}%
 Van Wijk, J. J. (2005). The value of visualization. In \emph{VIS 05. IEEE visualization, 2005.} (pp. 79--86). IEEE.
 
@@ -2136,6 +2381,12 @@ WERTHEIMER, M. (1923). Laws of organization in perceptual forms. First published
 
 \leavevmode\vadjust pre{\hypertarget{ref-wertheimer1938}{}}%
 Wertheimer, M. (1938). Laws of organization in perceptual forms.
+
+\leavevmode\vadjust pre{\hypertarget{ref-whitney2014}{}}%
+Whitney, D., Haberman, J., \& Sweeny, T. D. (2014). 49 from textures to crowds: Multiple levels of summary statistical perception. \emph{The New Visual Neurosciences}, 695--710.
+
+\leavevmode\vadjust pre{\hypertarget{ref-whitney2022}{}}%
+Whitney, D., \& Manassi, M. (2022). Ensemble perception: Stacking the hay to find the needle. \emph{Current Biology}, \emph{32}(22), R1264--R1266.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ggplot2}{}}%
 Wickham, H. (2016). \emph{{ggplot2: Elegant Graphics for Data Analysis}} (2nd ed.). Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}

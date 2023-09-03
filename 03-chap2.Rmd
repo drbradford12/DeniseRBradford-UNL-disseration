@@ -14,25 +14,22 @@ MathJax.Hub.Config({
 
 ## Abstract:
 
+This write-up explores the concept of considering an entire dashboard as a well-orchestrated collection of charts in data visualization. 
 A chart is similar to a sentence in that it presents a single, straightforward piece of information and visually represents data to facilitate comprehension. 
 For example, a chart could be a bar graph depicting sales over the course of a year, a pie chart illustrating the percentage distribution of a budget, or a scatter plot illustrating the correlation between two variables. 
 In the same way that a sentence expresses a single complete thought, a chart conveys a single data narrative.
 
-In contrast, a dashboard is analogous to a paragraph. 
+A dashboard is analogous to a paragraph. 
 It is a collection of charts (similar to sentences) that present a more comprehensive view of the data landscape. 
 Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept. 
 A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends.
 
 In contrast, a dashboard integrates these individual 'data stories' to create a multidimensional, comprehensive understanding of a larger data scenario. 
 Charts are the building blocks of dashboards, just as sentences are the building blocks of paragraphs.
-
-This write-up explores the concept of considering an entire dashboard as a well orchestrated collection of charts in data visualization. 
 However, this study proposes a novel approach where the entire dashboard is treated as a single chart, leveraging its interactive and interconnected elements to enhance data visualization and insights.
 
 ## Introduction:
-<!-- What? Why? How?
-Research Question; Summary of Proposal
--->
+
 "How do changes in real-time data displayed on a dashboard affect ensemble perception and consequently, the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment?"
 
 This research question explores the intersection of ensemble perception and real-time, dynamic data visualization. 
@@ -72,13 +69,48 @@ Here are some general guidelines for making better graphics with works from Few 
 
 7. Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
 
-## Related Work:
+## Literature Review:
 
 ### Dashboard Design
 
 A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance [@few2006]. 
 The process of creating visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format is dashboard design. 
 The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.
+
+As organizations increasingly rely on data-driven decision-making, the role of well-designed dashboards becomes pivotal. 
+The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on key frameworks such as Evaluation Criteria in Healthcare, Learning Dashboards in educational settings, Design Patterns and Trade-offs, Academic Literature Reviews, and Practical Tips for implementation. 
+Each of these frameworks offers unique perspectives and actionable insights, serving as pillars for the subsequent discussion on how to create dashboards that are both functional and impactful.
+
+[@karami2017] study focuses on creating evaluation criteria for effective dashboards in healthcare organizations. 
+The study employs a Delphi method to offer a set of criteria that can be universally applied to assess the effectiveness of dashboards in healthcare settings.
+Utilizing a Delphi method, the study aims to establish a robust set of criteria for evaluating the effectiveness of dashboards within healthcare organizations. 
+The research provides a structured framework that healthcare professionals can use to assess the utility, functionality, and impact of their dashboards. 
+By doing so, the study contributes to improving both patient care and operational efficiency. 
+This work serves as a valuable guide for healthcare organizations looking to implement or refine their dashboard systems, offering a set of universally applicable criteria for effectiveness.
+
+A systematic literature review by [@schwendimann2016] discusses the state-of-the-art in learning dashboards. 
+The paper identifies critical design features, dividing them into functional and visual features. 
+This study is particularly useful for educational institutions aiming to implement learning analytics dashboards.
+Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective. 
+The research is especially relevant for educational institutions aiming to implement or optimize learning analytics dashboards. 
+By identifying key design elements and their impact on student performance, the paper serves as a foundational resource for educators and administrators looking to leverage dashboards as a tool for enhancing educational outcomes.
+
+A 2022 paper by [@bach2022] discusses design patterns and trade-offs in dashboard design. 
+The paper also talks about possible design frameworks, providing a comprehensive view of the design aspects that go into creating a dashboard.
+The study not only reviews existing design frameworks but also introduces a collection of new patterns that can guide designers in creating more effective dashboards. 
+By discussing the trade-offs involved in choosing specific design elements, the paper provides a balanced view that helps designers make informed decisions. 
+This work is particularly valuable for those involved in designing and developing dashboards, offering a comprehensive set of guidelines and frameworks that can be applied across various sectors and use cases.
+
+[@scheuer2021] paper discusses the integration of interactive dashboards into academic literature reviews. 
+The study argues that such integration can make academic research more accessible, interactive, and impactful. 
+By leveraging dashboard tools, researchers can better synthesize and present complex data, broadening academic literature's reach and utility. 
+This paper serves as a pioneering resource for academics and researchers, suggesting a novel approach to literature review synthesis that can enhance both the process and the dissemination of scholarly work.
+
+Microsoft provides practical tips for designing an effective Power BI dashboard, focusing on making the most important information stand out.
+Focusing on the importance of making key information stand out, the guide provides actionable tips that can be immediately applied by practitioners. 
+While not a peer-reviewed article, this resource is invaluable for professionals in various sectors who are looking to design or optimize their Power BI dashboards. 
+It emphasizes user-centric design and data visualization techniques to ensure that the dashboard serves as a functional tool for data-driven decision-making, making it a go-to resource for best practices in Power BI dashboard design.
+Although not a peer-reviewed article, it offers valuable insights for practitioners [@microsoft].
 
 ### Grammar of Graphics
 
@@ -88,26 +120,31 @@ For instance, data is the foundational element, aesthetics map data variables to
 
 <!--Identification of gaps and opportunities in the current state of dashboard design. -->
 While the grammar of graphics provides a powerful theoretical framework for data visualization, there may be research gaps in its application to dashboard design and functionality. 
-Such as the following missing pieces:
+There are still glaring research gaps in the areas of interactivity, data synchronization, and user-centered design despite major developments in the fields of data visualization and human-computer interaction. 
+Users' capacity to interact interactively with visual data hasn't been adequately investigated in terms of its effects on cognition and best design practices. 
+Another area that needs more in-depth research is data synchronization, particularly in multi-user and multi-device scenarios; seamlessly integrating real-time data changes across many platforms is essential for creating increasingly powerful collaboration tools. 
+In research, user-centered design, which puts the requirements and behaviors of the end-users first, also frequently takes a backseat, resulting in products that may be technically remarkable but lack intuitive usability. 
+These gaps highlight the necessity for more targeted research projects to comprehend the technology potential and the human elements that contribute to the efficacy of interactive systems and data visualization.
 
-**Interactivity:** 
 Graphics grammar primarily emphasizes static visualizations. 
-However, dashboards are inherently interactive, allowing users to explore the data and interact with it.
+However, dashboards are inherently interactive, allowing users to explore and interact with the data.
 There is a need for research to determine how to effectively incorporate the principles of the grammar of graphics into interactive dashboards while maintaining a positive user experience and avoiding user overload.
 
-**Data Synchronization:** 
 Dashboards often present data from multiple sources or datasets. 
-Ensuring data synchronization across different visualizations and components is critical to maintain accuracy and consistency. 
+Ensuring data synchronization across different visualizations and components is critical to maintaining accuracy and consistency. 
 Research is needed to investigate methods for handling data updates, refresh rates, and synchronization challenges in dashboard design.
 
-**User-Centered Design:** 
 The grammar of graphics focuses on data-driven principles, but effective dashboard design also requires a deep understanding of user needs, tasks, and goals. 
 Further research should investigate how to integrate user-centered design practices into the application of the grammar of graphics in dashboard development.
 
 
-## Dashboard Design as the Symphony of Charts:
+## Interplay between Grammar of Graphics & Dashboard Design
 
-<!--Explanation of the principles and concepts behind the unified chart dashboard approach.-->
+In the evolving discourse on data visualization and dashboard design, the proposing theory positing the "grammar of graphics" as the foundational framework offers a compelling analogy: if a graph is akin to a sentence, then a dashboard can be considered a paragraph. 
+Just as sentences are constructed using grammatical rules to convey complex ideas clearly, graphs employ principles, such as scales, coordinates, and marks, to represent data comprehensibly. 
+Extending this analogy, a dashboard serves as a cohesive "paragraph," where multiple graphs or "sentences" are organized in a meaningful sequence to provide a more nuanced understanding or narrative. 
+This framework suggests that the same rigorous thought applied to individual data visualizations should also be extended to the design of dashboards, where the interplay of multiple graphs must be syntactically and semantically harmonized to communicate the overarching message or insight effectively.
+
 Here is how published theory relates graphic grammar to dashboard design:
 
 **Data Layer:**  is the foundation of visualizations in the grammar of graphics. 
@@ -133,9 +170,9 @@ Annotations strategically placed can aid users in comprehending key insights, pr
 
 Using the principles of the grammar of graphics, designers can create visually appealing, informative, and user-friendly dashboards that effectively convey data-driven insights to their audience.
 
-## Experimential Ideas/Methods to test theory:
+## Methods to test theory:
 
-Testing the effectiveness of a dashboard as a unified chart involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience. 
+Testing the effectiveness of a dashboard involves evaluating its usability, user experience, and the effectiveness of conveying information to the target audience. 
 Here are some key steps and methods to test the effectiveness of a dashboard:
 
 **Usability Testing:** 

@@ -5,12 +5,6 @@ output:
 ---
 # Does Color Help?: Multidimensional Ensembles in Bland-Altman Plots: An Exploration {#ref-labels}
 
-## Abstract:
-
-It is common practice to evaluate the agreement between two different measuring techniques using Bland-Altman graphs. 
-Their potential for integrating ensemble perception across multidimensional ensembles has not been adequately investigated, despite the fact that they offer a basic representation of data. 
-This theoretical article explores the potential use of multidimensional ensembles in Bland-Altman plots and speculates how it can improve the robustness and understandability of these graphs.
-
 ## Introduction:
 
 "How can multidimensional ensembles be effectively incorporated into Bland-Altman Plots to enhance the accuracy and comprehensibility of assessing agreement between multiple sets of measurement techniques?"
@@ -36,20 +30,30 @@ Khayat et al.'s work explores how ensemble perception can create a unified perce
 The study "Perceptual history biases in serial ensemble representation" by Khayat et al. focuses on the concept of ensemble perception, specifically examining how past visual experiences influence the perception of current visual ensembles. 
 The study investigates the serial dependence of ensemble perception when each ensemble set is presented simultaneously but spatially distributed over the screen. 
 This suggests that our perception of groups of similar objects is not just influenced by the objects themselves but also by our past experiences with similar ensembles [@khayat2023].
+This adds a layer of complexity to the understanding of ensemble perception, which is generally considered as the visual system's ability to efficiently summarize groups of similar objects into a unified perception.
 
 The study "Perceiving ensemble statistics of novel image sets" by Khayat at el. focuses on how the human visual system perceives summary statistics of sets of stimulus elements. 
 The study is particularly interested in the perception of novel image sets, suggesting that our ability to understand and interpret new visual information is influenced by our capacity to quickly summarize statistical data from these sets [@khayat2021].
+This research contributes to the broader field of ensemble perception, which explores how the visual system can efficiently represent groups of similar objects as a unified perception. 
+The study implies that not only can the visual system quickly grasp the "gist" or essence of familiar visual ensembles, but it can also do so for novel sets of images. 
+This ability to quickly summarize statistical information from new visual stimuli could be a fundamental feature of human perception [@khayat2018].
 
 Other research has investigated the role of ensemble perception in both high- and low-level visual information, such as emotion and brightness, and how it can even operate when scene information is incomplete [@chakrabarty2020], [@haberman2019].
 
 Furthermore, ensemble perception is not just a specialized function but a pervasive aspect of visual perception. 
 It has been discussed in a holistic manner to engage a general audience and has been shown to condense redundant information into summary statistical representations [@corbett2023], [@whitney2022].
+
 Lastly, stable ensemble representations have been found to facilitate visual search, even when they are not predictive of a target location [@utochkin2023].
+The study focuses on a coding model that emphasizes the crucial role of the "pooling layer" in ensemble perception. 
+Ensemble perception refers to the ability of the visual system to summarize information from a group of similar objects quickly. 
+The "pooling layer" in the model likely serves as a computational mechanism for aggregating or summarizing this information, potentially providing insights into how the brain processes complex visual scenes.
+In summary, the study aims to provide a more structured understanding of ensemble perception by introducing a model that highlights the importance of a specific computational layer, known as the "pooling layer," in the process of summarizing visual information.
+
 
 ### Multidimensional Ensembles
 
 Initial research on ensemble perception primarily focused on one-dimensional ensembles, where summary statistics are extracted from a single feature or dimension [@haberman2015]. 
-However, as [@maule2016] note, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles.
+However, as [@maule2015] note, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles.
 
 Research on multidimensional ensembles has ventured into understanding how people perceive summary statistics across multiple attributes, such as size and color, simultaneously. 
 [@dakin1997] were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting. 
@@ -69,7 +73,7 @@ Lastly, the structure of neural networks has been shown to affect working memory
 ### Bland-Altman Plots
 
 The study of multidimensional ensembles has seen applications in the field of data visualization. 
-[@szafir2018] showed that understanding color differences could improve the design of visualizations that require the viewer to integrate multiple pieces of information. 
+[@szafir2017] showed that understanding color differences could improve the design of visualizations that require the viewer to integrate multiple pieces of information. 
 This work suggested that effective visualization tools could be designed by leveraging the human ability to process multidimensional ensembles rapidly.
 
 Bland-Altman Plots are widely used in clinical research for assessing the agreement between two measurement techniques by plotting the differences against the means [@bland1986]. 
@@ -79,7 +83,7 @@ However, the plots are conventionally one-dimensional, primarily focusing on mea
 ### The intersection of Multidimensional Ensembles and Bland-Altman Plots
 
 The application of multidimensional ensembles in Bland-Altman Plots could potentially offer a more nuanced understanding of data. 
-For example, integrating color coding to indicate standard deviation and shape variations to indicate skewness could offer additional layers of information in a single plot [@szafir2018]. 
+For example, integrating color coding to indicate standard deviation and shape variations to indicate skewness could offer additional layers of information in a single plot [@szafir2017]. 
 Such an approach could leverage our innate abilities in ensemble perception to offer a more comprehensive assessment of agreement between multiple sets of measurement techniques [@szafir2016].
 
 ### Gaps in Research
@@ -89,16 +93,16 @@ This gap points to the need for empirical studies designed to validate theoretic
 
 ## Methods:
 
-Ensemble perception involves the rapid and often unconscious extraction of summary statistics from a set of similar items [@chonog2003], [@whitney2014]. 
+Ensemble perception involves the rapid and often unconscious extraction of summary statistics from a set of similar items [@chong2003], [@whitney2014]. 
 In the context of multidimensional ensembles, this would refer to the simultaneous extraction of various features such as mean, variance, and other statistical attributes across multiple dimensions [@maule2015], [@haberman2015].
 Understanding this concept will provide a unique way to interpret Bland-Altman plots that contain data from multiple dimensions.
 
 Traditionally, Bland-Altman plots present the difference between two sets of measurements against their mean, providing a graphical representation of agreement or bias.
 However, this one-dimensional representation might not capture the full complexity of real-world data, where measurements can often be multidimensional [@dakin1997].
-Given the human brain's ability to rapidly process multidimensional ensemble statistics [@haberman2015], incorporating this aspect into Bland-Altman plots might yield a more nuanced interpretation [@bauer2015], [@szafir2016].
+Given the human brain's ability to rapidly process multidimensional ensemble statistics [@haberman2015], incorporating this aspect into Bland-Altman plots might yield a more nuanced interpretation [@bauer2009], [@szafir2016].
 
 One way to incorporate multidimensionality into Bland-Altman plots is by adding layers that represent different statistical attributes. 
-For example, varying shades of color could indicate the standard deviation within each plotted point, and shape variations could indicate another dimension such as skewness or kurtosis [@szafir2018]. 
+For example, varying shades of color could indicate the standard deviation within each plotted point, and shape variations could indicate another dimension such as skewness or kurtosis [@szafir2017]. 
 This model would require human observers to simultaneously extract multiple summary statistics, leveraging the brain's capabilities in ensemble perception [@chong2003].
 
 In this proposed study, we utilize color coding to represent varying levels of variability in Bland-Altman plots. 
