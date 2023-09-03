@@ -30,11 +30,47 @@ This write-up explores the concept of considering an entire dashboard as a well 
 However, this study proposes a novel approach where the entire dashboard is treated as a single chart, leveraging its interactive and interconnected elements to enhance data visualization and insights.
 
 ## Introduction:
+<!-- What? Why? How?
+Research Question; Summary of Proposal
+-->
+"How do changes in real-time data displayed on a dashboard affect ensemble perception and consequently, the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment?"
 
-The grammar of graphics is a framework for designing and comprehending data visualizations. 
+This research question explores the intersection of ensemble perception and real-time, dynamic data visualization. 
+It considers how ensemble perception operates when data are static and how it adapts to fundamental changes, particularly on a dashboard where such fluctuations are common. 
+By focusing on the user's decision-making capabilities, the research also aims to make practical contributions to designing more effective dashboards.
+
+The grammar of graphics is a framework for designing and comprehending data visualizations [@wilkinson2012]. 
 By decomposing graphics into components such as data, aesthetics, and geometries, the grammar of graphics provides a structured method for conceiving and creating visualizations. 
 It permits a high degree of customization and flexibility in the creation of visualizations.
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
+John Tukey's EDA methods are currently known and well-vetted in the field. 
+However, Satyanarayan et al. addressed this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
+Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
 The principles of the grammar of graphics can be applied to dashboard design to create more effective and informative dashboards. 
+
+"Graphical Tests for Power Comparison of Competing Designs" by Hofmann et al. presents a graphical method for comparing the power of two or more competing designs in an experimental study [@hofmann2012].
+The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs. 
+It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
+
+Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from Few [@few2012], Tufte [@tufte1983], and Cairo [@cairo2016]:
+
+1. Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+
+2. Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+
+3. Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+
+4. Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+
+5. Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+
+6. Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+
+7. Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
 
 ## Related Work:
 
