@@ -7,68 +7,67 @@ output:
 
 ## Introduction:
 
-"How can multidimensional ensembles be effectively incorporated into Bland-Altman Plots to enhance the accuracy and comprehensibility of assessing agreement between multiple sets of measurement techniques?"
-This research question explores the theoretical and practical implications of incorporating ensemble perception and multidimensional data into Bland-Altman Plots, traditionally used for comparing two measurement methods. 
+"How can multidimensional ensembles be effectively incorporated into Bland-Altman plots to enhance the accuracy and comprehensibility of assessing agreement between multiple measurement techniques?" 
+This research question explores the theoretical and practical implications of incorporating ensemble perception and multidimensional data into Bland-Altman plots, traditionally used for comparing two measurement methods.
 By doing so, the research seeks to advance the utility and interpretability of these plots in complex, real-world scenarios where multiple dimensions are often at play.
-
-The interpretation of Bland-Altman plots is conventionally one-dimensional, focusing primarily on the mean difference and limits of agreement [@bland1986]. 
-However, in real-world applications, the measurements under consideration often contain multiple dimensions that could contribute to the interpretation of the agreement or disagreement between two techniques [@chong2003]. 
-Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene offers a promising solution to this issue by facilitating the rapid extraction of variability information [@alvarez2011].
-The theory of ensemble perception offers a framework for understanding how these multiple dimensions could be processed simultaneously [@haberman2015]; [@whitney2014].
+The interpretation of Bland-Altman plots is conventionally one-dimensional, focusing primarily on the mean difference and limits of agreement [@bland1986].
+However, in real-world applications, the measurements under consideration often contain multiple dimensions that could contribute to interpreting the agreement or disagreement between two techniques [@chong2003]. 
+A detailed counterexample of the utility and interpretability of Bland-Altman plots in complex, real-world scenarios can be seen where two techniques are being compared for measuring blood pressure. 
+The Bland-Altman plot may show good agreement between the mean difference and the limits of agreement, suggesting high concordance. 
+However, when considering additional dimensions such as accuracy and precision in different subgroups (e.g., age, gender), it could reveal significant discrepancies and limitations in the interpretation of Ensemble coding, a perceptual mechanism that provides a statistical summary of a visual scene, offers a promising solution by facilitating the rapid extraction of variability information [@alvarez2011]. 
+The theory of ensemble perception offers a framework for understanding how these multiple dimensions could be processed simultaneously [@haberman2015] and [@whitney2014].
 
 ### Ensemble Perception
 
-Ensemble perception is the cognitive ability to quickly derive summary statistics from sets of similar items [@chong2003]. 
-This component of visual cognition enables the visual system to summarize and describe collections of comparable objects or features effectively.
-This capability is often activated in a brief glance and is crucial for making sense of complex visual scenes. 
-David Whitney's fundamental review outlines the core principles of ensemble perception, emphasizing the extraction of summary statistical information from groups of similar objects [@whitney2014], [@dakin1997]. 
-[@haberman2015] further discussed that individual differences exist in ensemble perception capabilities, indicating the presence of multiple, independent levels of ensemble representation.
+Ensemble perception is the cognitive ability to quickly derive summary statistics from sets of similar items [@chong2003].
+This component of visual cognition enables the visual system to summarize and describe collections of comparable objects or features effectively. 
+This capability is often activated at a glance and is crucial for making sense of complex visual scenes.  
 
-Recent studies have expanded on these principles. 
-Khayat et al.'s work explores how ensemble perception can create a unified perception from groups of similar objects and also delves into the implicit perception and memory of set statistics [@khayat2023], [@khayat2021].
+David Whitney's fundamental review outlines the core principles of ensemble perception, emphasizing the extraction of summary statistical information from groups of similar objects [@whitney2014] and [@dakin1997].  
+[@haberman2015] further discussed that individual differences exist in ensemble perception capabilities, indicating the presence of multiple, independent levels of ensemble representation.  
+Recent studies have expanded on these principles.  
+Khayat et al.'s work explores how ensemble perception can create a unified perception from groups of similar objects and also delves into the implicit perception and memory of set statistics [@khayat2023] and [@khayat2021].  
+The study "Perceptual History Biases in Serial Ensemble Representation" by Khayat et al. focuses on ensemble perception, explicitly examining how past visual experiences influence the perception of current visual ensembles.  
+The study investigates the serial dependence of ensemble perception when each ensemble set is presented simultaneously but spatially distributed over the screen.  
+This suggests that the objects and our prior experiences with similar ensembles impact how we perceive groups of similar objects [@khayat2023]. 
+This adds a layer of complexity to the understanding of ensemble perception, which is generally considered the visual system's ability to summarize groups of similar objects into a unified perception efficiently.  
+The study "Perceiving ensemble statistics of novel image sets" by Khayat et al. focuses on how the human visual system perceives summary statistics of sets of stimulus elements.  
+The study is particularly interested in how we perceive novel image sets and hypothesizes that our capacity to summarize statistical data from these sets affects how well we can comprehend and interpret new visual information [@khayat2021]. 
+This research contributes to the broader field of ensemble perception, which explores how the visual system can efficiently represent groups of similar objects as a unified perception.  
+The study implies that not only can the visual system quickly grasp the "gist" or essence of familiar visual ensembles, but it can also do so for novel sets of images.  
+This ability to quickly summarize statistical information from new visual stimuli could be a fundamental feature of human perception [@khayat2018].  
+Other research has investigated the role of ensemble perception in both high- and low-level visual information, such as emotion and brightness, and how it can even operate when scene information is incomplete [@chakrabarty2020] and [@haberman2019].
 
-The study "Perceptual history biases in serial ensemble representation" by Khayat et al. focuses on the concept of ensemble perception, specifically examining how past visual experiences influence the perception of current visual ensembles. 
-The study investigates the serial dependence of ensemble perception when each ensemble set is presented simultaneously but spatially distributed over the screen. 
-This suggests that our perception of groups of similar objects is not just influenced by the objects themselves but also by our past experiences with similar ensembles [@khayat2023].
-This adds a layer of complexity to the understanding of ensemble perception, which is generally considered as the visual system's ability to efficiently summarize groups of similar objects into a unified perception.
-
-The study "Perceiving ensemble statistics of novel image sets" by Khayat at el. focuses on how the human visual system perceives summary statistics of sets of stimulus elements. 
-The study is particularly interested in the perception of novel image sets, suggesting that our ability to understand and interpret new visual information is influenced by our capacity to quickly summarize statistical data from these sets [@khayat2021].
-This research contributes to the broader field of ensemble perception, which explores how the visual system can efficiently represent groups of similar objects as a unified perception. 
-The study implies that not only can the visual system quickly grasp the "gist" or essence of familiar visual ensembles, but it can also do so for novel sets of images. 
-This ability to quickly summarize statistical information from new visual stimuli could be a fundamental feature of human perception [@khayat2018].
-
-Other research has investigated the role of ensemble perception in both high- and low-level visual information, such as emotion and brightness, and how it can even operate when scene information is incomplete [@chakrabarty2020], [@haberman2019].
-
-Furthermore, ensemble perception is not just a specialized function but a pervasive aspect of visual perception. 
-It has been discussed in a holistic manner to engage a general audience and has been shown to condense redundant information into summary statistical representations [@corbett2023], [@whitney2022].
-
-Lastly, stable ensemble representations have been found to facilitate visual search, even when they are not predictive of a target location [@utochkin2023].
-The study focuses on a coding model that emphasizes the crucial role of the "pooling layer" in ensemble perception. 
-Ensemble perception refers to the ability of the visual system to summarize information from a group of similar objects quickly. 
-The "pooling layer" in the model likely serves as a computational mechanism for aggregating or summarizing this information, potentially providing insights into how the brain processes complex visual scenes.
-In summary, the study aims to provide a more structured understanding of ensemble perception by introducing a model that highlights the importance of a specific computational layer, known as the "pooling layer," in the process of summarizing visual information.
-
+Furthermore, ensemble perception is not just a specialized function but a pervasive aspect of visual perception.  
+It has been discussed holistically to engage a general audience and has been shown to condense redundant information into summary statistical representations [@corbett2023] and [@whitney2022].  
+Lastly, stable ensemble representations have been found to facilitate visual search, even when they are not predictive of a target location [@utochkin2023]. 
+The study focuses on a coding model that emphasizes the crucial role of the "pooling layer" in ensemble perception.  
+Ensemble perception refers to the ability of the visual system to summarize information from a group of similar objects. 
+The "pooling layer" in the model likely serves as a computational mechanism for aggregating or summarizing this information, potentially providing insights into how the brain processes complex visual scenes. 
+The study aims to provide a more structured understanding of ensemble perception by introducing a model highlighting the importance of a specific computational layer, known as the "pooling layer," in summarizing visual information.   
 
 ### Multidimensional Ensembles
 
 Initial research on ensemble perception primarily focused on one-dimensional ensembles, where summary statistics are extracted from a single feature or dimension [@haberman2015]. 
-However, as [@maule2015] note, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles.
+For example, in a study on facial expression perception, participants were presented with an ensemble of faces displaying different emotions. 
+In this case, the pooling layer would analyze the overall emotional expression of the ensemble, summarizing the various individual facial expressions into one general emotion perception. 
+This model allows researchers to understand how humans perceive and interpret complex emotional expressions more systematically. 
+However, as [@maule2015] notes, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles. 
+Research on multidimensional ensembles has explored how people simultaneously perceive summary statistics across multiple attributes, such as size and color.  
 
-Research on multidimensional ensembles has ventured into understanding how people perceive summary statistics across multiple attributes, such as size and color, simultaneously. 
-[@dakin1997] were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting. 
-[@haberman2015] expanded this research by showing that individual differences exist in ensemble perception capabilities, suggesting that there are multiple, independent levels of ensemble representation.
+[@dakin1997] were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting.
+[@haberman2015] expanded this research by showing that individual differences exist in ensemble perception capabilities, suggesting multiple, independent levels of ensemble representation exist.
+The existing literature on multidimensional ensembles in visual information covers various topics, from neuroscience to data visualization.  
+For instance, studies have explored the role of neuronal ensembles in controlling visually guided behavior and their influence on visual working memory [@carrillo2019]. 
+Research has also delved into the use of aggregated plots for multidimensional visual analysis, although these don't explicitly mention ensembles [@fofonov2018].  
+Fast ensemble representations have been investigated to understand high-level perceptual impressions based on visual information [@leib2016].
 
-The existing literature on multidimensional ensembles in visual information covers a range of topics, from neuroscience to data visualization. 
-For instance, studies have explored the role of neuronal ensembles in controlling visually guided behavior and their influence on visual working memory [@carrillo2019].
-Research has also delved into the use of aggregated plots for multidimensional visual analysis, although these don't explicitly mention ensembles [@fofonov2018].
-
-The concept of fast ensemble representations has been investigated to understand high-level perceptual impressions based on visual information [@leib2016].
-Additionally, the aesthetic complexity of visual information has been quantified using information theory, offering a potential framework for ensemble-based representations [@karjus2023].
-
-Long-term stability of neuronal ensembles in the visual cortex has been studied, shedding light on their potential role in visual perception [@perez2021].
-Ensemble visualization techniques, particularly in computer simulations, have also been reviewed [@afzal2019].
-Lastly, the structure of neural networks has been shown to affect working memory, which could have implications for visual ensembles [@leavitt2017].
+Additionally, the aesthetic complexity of visual information has been quantified using information theory, offering a potential framework for ensemble-based representations [@karjus2023]. 
+But a detailed example of why you shouldn't use aggregated plots for multidimensional visual analysis is when the individual data points in the ensemble show significant differences. Data aggregation may obscure important patterns in such scenarios and lead to misleading interpretations.
+Further, ensembles may fail to capture the fine-grained details and nuances present in the individual plots, compromising the overall accuracy and precision of the analysis. 
+The long-term stability of neuronal ensembles in the visual cortex has been studied, shedding light on their potential role in visual perception [@perez2021]. 
+Ensemble visualization techniques, particularly in computer simulations, have also been reviewed [@afzal2019]. 
+Lastly, the structure of neural networks has been shown to affect working memory, which could have implications for visual ensembles [@leavitt2017].  
 
 ### Bland-Altman Plots
 
