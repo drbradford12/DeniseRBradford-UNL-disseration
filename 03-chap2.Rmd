@@ -20,44 +20,43 @@ The research objective of this study is to investigate how changes in real-time 
 
 ## Introduction
 
-With the exponential growth of data in various domains, there is an increasing necessity to comprehend and present this data in a manner that is both comprehensible and easily accessible.
-Consequently, numerous firms and organizations employ interactive dashboards as a means to convey this data in a manner that is both more practical and aesthetically pleasing [@fisher].
+With the exponential growth of data in various domains, there is an increasing necessity to comprehend and present this data in a manner that is both comprehensible and easily accessible. 
+Consequently, numerous firms and organizations employ interactive dashboards as a means to convey this data in a manner that is both more practical and more aesthetically pleasing, [@fisher].
 
 Dashboards often play a crucial role in facilitating viewers' cognitive processes by aiding in the comprehension of intricate data, facilitating navigation within a dataset, and enabling data-driven decision-making.
 
-Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders.
-Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept.  
-A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends. 
+Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders. 
+Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept. 
+A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends.
 
 <!--- CHARTS: DEFINE AND GIVE EXAMPLES-->
-John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
+John Tukey was the first to organize the collection and methods associated with philosophy into exploratory data analysis (EDA). 
 Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
-In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, [@tukey1966]. 
-Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. 
+In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table [@tukey1966]. 
+Tukey outlines in detail the types of different graphics and in which situations to utilize them.
 <!--John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. -->
 He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
+Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries. 
 Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique. 
-In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
+In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
 
 Tukey's Principles in EDA:
 
-1. Graphical exploration, looking for patterns or displaying fit, the method demonstrates things about data that a single numeric metric does not understand. 
+1. Through graphic exploration (looking for patterns or displaying fit), the method demonstrates things about data that a single numeric metric does not understand. 
 This has been useful in graphing the data before you develop summary statistics.
 
-2. Describing the general patterns of the data. 
-This step should be insensitive to outliers. 
+2. Describing the general patterns of the data This step should be insensitive to outliers. 
 In general, think about the types of resistant measures (i.e., median or mean). 
-This step is making sure to determine data patterns.
+This step makes sure to determine data patterns.
 
-3. The natural scale/state that the data are at their best. 
-This will be the step at which the scale of data can be helpful for analysis. 
-The reexpressing data to a new scale by taking the square root or logarithmic scale.
+3. The natural scale or state in which the data are at their best. 
+This will be the step at which the scale of the data can be helpful for analysis. 
+Reexpressing data on a new scale by taking the square root or logarithmic scale.
 
-4. The mostly known parts of EDA but is done in the way of accessing fit of the data. 
+4. The most known part of EDA is done by accessing the fit of the data. 
 This is taught in every statistics 101 class. 
-The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.
+With the growth of machine learning and prediction methods, residuals are now more widely used in the toolbox for assessing the best prediction models.
 
 ```{r, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
@@ -71,20 +70,21 @@ p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
 p + scale_fill_brewer(palette="Dark2")
 ```
 
-Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
+Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone. 
 Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone. 
 Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently. 
 Through visualizations, analysts can also identify potential issues or biases in the data, resulting in better decisions and models. 
-Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights.
+Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights. 
 During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.
 
 Using color to represent data on maps is an example of successful graphical communication utilizing semiology. 
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily. 
-Jacques Bertin  writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points", [@bertin1983].
+Jacques Bertin writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points", [@bertin1983]. 
 In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
 
 By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers. 
-For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning," [@wilkinson2012].
+For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. 
+Leland Wilkinson writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication but also superior to numerical or verbal methods for certain types of data and reasoning" [@wilkinson2012].
 
 It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.
 
