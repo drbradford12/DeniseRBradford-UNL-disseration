@@ -284,7 +284,7 @@ These theories have significant implications for understanding how automatic and
 knitr::include_graphics("figure/visual_system.png")
 ```
 
-Visual attention is defined as "the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience," [@treisman1980], [@itti2001].
+Visual attention is defined as "the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience," [@treisman1980] and [@itti2001].
 
 
 The famous experiment in optical illusion, "Gorilla in the Midst" or "Invisible Gorilla" video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris [@gorillavideo1999]. The video aims to demonstrate a phenomenon known as "inattentional blindness" and highlight some visual attention principles. 
@@ -416,7 +416,7 @@ Ultimately, data analysis aims to turn data into actionable insights and informa
 
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
 Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
-In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, @tukey1966. 
+In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, [@tukey1966]. 
 Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics. 
 <!--John Tukey, creator of stem-and-leaf plot, boxplot-resistant smooth, and the violin plot (also known as rootgram) who taught us to utilize these methods to organize and demonstrate EDA. -->
 He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
@@ -477,7 +477,7 @@ In addition, Bertin explains that the use of color can help overcome language ba
 
 The application of semiology in graphical communication is not devoid of obstacles. 
 One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended, [@bertin1983]. 
-Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another, @norman2013.
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another, [@norman2013].
 
 Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information. 
 By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
