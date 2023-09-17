@@ -1478,14 +1478,49 @@ While it is hard to apply the findings from one fairly specific visualization pr
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
 
-With the exponential growth of data in various domains, there is an increasing necessity to comprehend and present this data in a manner that is both comprehensible and easily accessible.
-Consequently, numerous firms and organizations employ interactive dashboards as a means to convey this data in a manner that is both more practical and more aesthetically pleasing, (Sarikaya et al., 2019).
+Statisticians use graphs in almost every stage of their work.
+They create charts to summarize and explore new data and identify potential problems and opportunities.
+Models are fit based on relationships between variables which are often identified visually.
+We identify problems with those models based on residual plots and other visual diagnostics.
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-Dashboards often play a crucial role in facilitating viewers' cognitive processes by aiding in the comprehension of intricate data, facilitating navigation within a dataset, and enabling data-driven decision-making.
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group.
+In addition, not all visual displays have equal perceptual value (Unwin et al., 2003) and (Aspillaga, 1996).
+The best graphics are designed to account for both the dataset and the intended audience's features.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization.
+For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina (VanderPlas \& Hofmann, 2015b).
+Other design constraints are due to the audience's experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful).
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
+When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
+
+Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control.
+As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
+
+In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
+As data in sports becomes more prominent, extensive, and collected, this information must be refined.
+
+Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
+The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights.
+Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, (Few, 2006a).
+Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields.
+Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
+
+Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
+Let us first consider the audience characteristics that affect the selection of graphics.
+Then, we will engage with considerations based on the data to be displayed.
+Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
 
 Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders.
 Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept.
+A chart is similar to a sentence in that it presents a straightforward piece of information and visually represents data to facilitate comprehension.
+For example, a chart could be a bar graph depicting sales over a year, a pie chart illustrating the percentage distribution of a budget, or a scatter plot illustrating the correlation between two variables.
 A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends.
+
+However, a counterexample to this analogy could be a poorly designed dashboard presenting overwhelming information without clear organization or hierarchy.
+In such a case, the charts may compete for attention and confuse the reader, similar to how a paragraph with too many disjointed sentences can lead to confusion and a lack of coherence.
+This counterexample highlights the importance of thoughtful design and effective communication in creating an informative and comprehensible dashboard.
+The research objective of this study is to investigate how changes in real-time data displayed on a dashboard affect ensemble perception and the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment.
 
 John Tukey was the first to organize the collection and methods associated with philosophy into exploratory data analysis (EDA).
 Previous research by Tukey focused on graphics as a tool for exploratory analysis.
@@ -1651,7 +1686,8 @@ Moving forward, designers must navigate the delicate balance of complexity and c
 
 Perception is a biological process involving sensory systems and neural mechanisms.
 The retina, a multi-layered tissue, lines the back of the eye and converts photons into electrical impulses that travel along the optic nerve to the brain.
-This process is crucial for understanding perception. Sensory modality, such as sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
+This process is crucial for understanding perception.
+Sensory modality, such as sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
 For instance, light enters the eye and activates photoreceptor cells in the retina, (Hubel \& Wiesel, 2004).
 
 \begin{figure}
@@ -1680,6 +1716,42 @@ The Gestalt principles of proximity, similarity, closure, and continuity describ
 Perceptual grouping is a fundamental process in visual perception that involves organizing individual graphical elements into coherent perceptual units based on their inherent properties and spatial relationships.
 It helps us make sense of the complex visual world by grouping elements that belong to the same object or structure and separating elements that belong to different entities. Gestalt psychologists have extensively studied the concept of perceptual grouping, proposing principles such as proximity, similarity, closure, and continuity as grouping's underlying mechanisms.~
 These principles govern our perception of objects, edges, contours, and patterns, enabling us to perceive organized and meaningful visual information (Wertheimer, 1938), (Wagemans et al., 2012) and (Palmer, 2002).
+
+The Gestalt principles play a crucial role in directing eye movements and cognitive processes involved in scanning scenes.
+The integration of scene scanning with Gestalt grouping concepts synergistically contributes to the facilitation of visual scene perception and comprehension.
+In the course of scene scanning, individuals frequently employ Gestalt grouping principles, such as proximity and similarity, in an unconscious manner to arrange diverse visual elements into cohesive groups.
+This process facilitates the rapid and efficient interpretation of intricate scenes (WERTHEIMER, 1923) and (Wertheimer, 1938).
+They facilitate the efficient assimilation and processing of visual information by emphasizing specific clusters or patterns in the visual field.
+
+Scene scanning is the cognitive process of visually examining a given scene in order to acquire relevant information pertaining to the surrounding environment.
+The aforementioned procedure encompasses the utilization of both ocular motions and cognitive mechanisms to comprehend and analyze the visual data inherent in a given scenario.
+The subject matter is frequently examined within the framework of disciplines such as psychology, neuroscience, and computer vision.
+
+The process of exploring visual scenes involves an intricate interaction of cognitive processes that influence an individual's perception and interaction with their surroundings.
+The saliency-driven focus is a key mechanism that guides scene scanning.
+This process involves both overt and covert shifts of visual attention, which are directed towards specific characteristics in the environment.
+Itti and Koch have extensively studied and explained this phenomena.
+Furthermore, the cognitive processes involved in perceiving scenes frequently involve a higher-level comprehension that entails a synergistic equilibrium between bottom-up processes driven by stimuli and top-down strategies driven by information (Itti \& Koch, 2000).
+This theoretical perspective is supported by the work of Henderson and Hollingworth (Henderson \& Hollingworth, 1999).
+The aforementioned phenomena are applicable to various cognitive processes such as reading, visual searches, and scene perception, as demonstrated by (Rayner, 2009).
+In this study, it was found that eye movements during these activities are notably impacted by individual cognitive processes, including linguistic comprehension and visual interpretation.
+Moreover, the interpretation and allocation of attention during scene scanning are influenced by the context in which visual items are encountered, as emphasized by (Bar, 2004).
+The significance of global features in the search for objects in real-world settings is crucial for guiding eye movements and attention within a contextual framework, (\textbf{torrablba2006?}).
+
+By examining the complexities of scene scanning, it becomes evident that attention plays a crucial role in directing the eyes systematically as they analyze and comprehend the visual narratives present in each gaze.
+This process contributes to a complex cognitive framework that integrates perception and interpretation through an interactive and dynamic relationship.
+
+Starting with Wertheimer's experiments on the perception of motion, he examined the phenomenon of apparent motion, which refers to the perception of motion when successive stationary stimuli are presented.~
+Wertheimer investigated the principles underlying the perception of motion and provided insights into the Gestalt principles of visual perception by conducting a series of perceptual experiments.
+
+(Wertheimer, 1912) investigated the phi motion, a type of motion in which the rapid presentation of two stationary stimuli creates the perception of movement.
+By manipulating the temporal and spatial arrangement of stimuli systematically, Wertheimer was able to identify critical factors that influenced the perception of motion.
+His experiments revealed that motion perception results from the interaction between sensory input and perceptual organization processes.
+
+The work of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
+He hypothesized that the visual system tends to group stimuli that are close in space or have similar properties, resulting in the perception of a continuous and smooth motion between them.
+The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences.
+Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception.
 
 According to (Goldstein \& Cacciamani, 2021), preattentive processing automatically extracts and analyzes basic features such as color, shape, orientation, and motion.
 These features are processed in parallel across the visual field, allowing for the rapid detection and identification of salient environmental stimuli.
@@ -1776,9 +1848,18 @@ This component of visual cognition enables the visual system to summarize and de
 This capability is often activated at a glance and is crucial for making sense of complex visual scenes.
 
 David Whitney's fundamental review outlines the core principles of ensemble perception, emphasizing the extraction of summary statistical information from groups of similar objects (Whitney, Haberman, \& Sweeny, 2014) and (Dakin \& Watt, 1997).
+Ensemble perception pertains to the capacity of the human visual system to efficiently and swiftly extract statistical data from a collection of items or objects, as opposed to separately processing each item.
+The application of ensemble perception can be observed through the utilization of Gestalt principles of visual perception, including proximity (referring to the nearness of objects), similarity (pertaining to similar appearance), and closure (denoting the completion of shapes).
+These concepts facilitate the perception of patterns and groups in visual scenes without necessitating a detailed examination of each individual piece.
+
 Huberman et al.~further discussed that individual differences exist in ensemble perception capabilities, indicating the presence of multiple, independent levels of ensemble representation (J. Haberman, Brady, \& Alvarez, 2015).\\
 Recent studies have expanded on these principles.\\
 Khayat et al.'s work explores how ensemble perception can create a unified perception from groups of similar objects and also delves into the implicit perception and memory of set statistics (Khayat, Ahissar, \& Hochstein, 2023) and (Khayat, Fusi, \& Hochstein, 2021).
+Examples of perception and memory of set statistics in visual information can best be described when you look at a field of flowers with various colors.
+Your perception quickly summarizes the set statistics of color, such as the overall color distribution, or in a crowd of people, your perception helps you group individuals into categories based on shared characteristics like clothing color, height, or age.
+In brief, the cognitive processes of perceiving and remembering statistical information in visual stimuli are crucial for efficiently comprehending and retaining the statistical characteristics of visual scenes and objects.
+These mechanisms play a significant role in enhancing our comprehension and analysis of the visual environment.
+
 The study ``Perceptual History Biases in Serial Ensemble Representation'' by Khayat et al.~focuses on ensemble perception, explicitly examining how past visual experiences influence the perception of current visual ensembles.\\
 The study investigates the serial dependence of ensemble perception when each ensemble set is presented simultaneously but spatially distributed over the screen.\\
 This suggests that the objects and our prior experiences with similar ensembles impact how we perceive groups of similar objects (Khayat et al., 2023).
@@ -1797,6 +1878,27 @@ It has been discussed holistically to engage a general audience and has been sho
 Stable ensemble representations have been found to facilitate visual search, even when they are not predictive of a target location (Utochkin, Choi, \& Chong, 2023).
 The study focuses on a coding model that emphasizes the crucial role of the ``pooling layer'' in ensemble perception.
 
+\hypertarget{ensemble-visualization}{%
+\subsection{Ensemble Visualization}\label{ensemble-visualization}}
+
+Ensemble visualization refers to the graphical representation of ensemble data, which typically consists of multiple related datasets.
+It aims to provide a comprehensive view that allows for rapidly extracting visual statistics and insights about distributed information.\\
+Ensemble visualization techniques can vary, including Ensemble Surface Slicing (ESS) to visualize regions of similarity and difference among surfaces and statistical visualization techniques to identify areas of interest quickly (Alabi et al., 2012) and (Potter et al., 2009).\\
+The aim is to provide a comprehensive view that allows for the rapid extraction of visual statistics and insights about distributed information.\\
+By combining various statistical visualization techniques, Potter presents the Ensemble-Vis framework in his paper as a way for scientists to identify areas of interest quickly, (Potter et al., 2009).
+The paper's thorough methodology, which combines various statistical visualization techniques to build a more helpful ensemble visualization framework, makes it noteworthy.
+This framework has been referenced by many other studies, leading to the development of new visualization methods.
+
+By exploring the effects of ensemble and summary displays on data interpretation, Padilla's research adds valuable insights to the field, (Padilla, Ruginski, \& Creem-Regehr, 2017).
+Padilla investigates how ensemble displays, which plot multiple data points on the same Cartesian coordinate plane, affect the viewer's understanding and interpretation of the data.
+The paper contributes to the theory by examining the cognitive aspects of ensemble visualization.
+However, a counterexample to the effectiveness of ensemble displays can be observed when the data points are highly overlapping and densely packed, leading to visual clutter and difficulty distinguishing individual data points.
+In such cases, ensemble displays may hinder the viewer's understanding and interpretation of the data rather than enhance it.
+This highlights the importance of considering the specific characteristics of the presented data when deciding whether to use ensemble displays.
+Additionally, summary displays, which provide an overview of the data, can be a helpful alternative in situations where ensemble displays may be less effective.
+Summary displays condense the data into crucial statistics or visual representations, allowing for more straightforward interpretation and analysis, especially when dealing with complex or dense datasets.
+Further research is needed to explore the optimal conditions for ensemble and summary displays to maximize their effectiveness in data interpretation.
+
 \hypertarget{multidimensional-ensembles}{%
 \subsection{Multidimensional Ensembles}\label{multidimensional-ensembles}}
 
@@ -1804,11 +1906,11 @@ Initial research on ensemble perception primarily focused on one-dimensional ens
 For example, in a study on facial expression perception, participants were presented with an ensemble of faces displaying different emotions.
 In this case, the pooling layer would analyze the overall emotional expression of the ensemble, summarizing the various individual facial expressions into one general emotion perception.
 This model allows researchers to understand how humans perceive and interpret complex emotional expressions more systematically.
-However, as (Maule \& Franklin, 2015) notes, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles.
+However, as Maule and Franklin note, real-world scenes often consist of complex, multidimensional attributes, and research has gradually shifted towards understanding how the human visual system processes these more intricate ensembles (Maule \& Franklin, 2015).
 Research on multidimensional ensembles has explored how people simultaneously perceive summary statistics across multiple attributes, such as size and color.
 
-(Dakin \& Watt, 1997) were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting.
-(J. Haberman et al., 2015) expanded this research by showing that individual differences exist in ensemble perception capabilities, suggesting multiple, independent levels of ensemble representation exist.
+Darkin and Watt were among the first to explore how orientation statistics are computed from visual textures, extending the concept of ensemble perception into a multidimensional setting, (Dakin \& Watt, 1997).
+Haberman et al.~expanded this research by showing that individual differences exist in ensemble perception capabilities, suggesting multiple, independent levels of ensemble representation exist, (J. Haberman et al., 2015).
 The existing literature on multidimensional ensembles in visual information covers various topics, from neuroscience to data visualization.\\
 For instance, studies have explored the role of neuronal ensembles in controlling visually guided behavior and their influence on visual working memory (Carrillo-Reid, Han, Yang, Akrouh, \& Yuste, 2019).
 Research has also delved into the use of aggregated plots for multidimensional visual analysis, although these don't explicitly mention ensembles (Fofonov \& Linsen, 2018).\\
@@ -1820,28 +1922,6 @@ Further, ensembles may fail to capture the fine-grained details and nuances pres
 The long-term stability of neuronal ensembles in the visual cortex has been studied, shedding light on their potential role in visual perception (Pérez-Ortega, Alejandre-Garcı́a, \& Yuste, 2021).
 Ensemble visualization techniques, particularly in computer simulations, have also been reviewed (Afzal et al., 2019).
 Lastly, the structure of neural networks has been shown to affect working memory, which could have implications for visual ensembles (Leavitt, Pieper, Sachs, \& Martinez-Trujillo, 2017).
-
-\hypertarget{ensemble-visualization}{%
-\subsection{Ensemble Visualization}\label{ensemble-visualization}}
-
-Ensemble visualization refers to the graphical representation of ensemble data, which typically consists of multiple related datasets.
-It aims to provide a comprehensive view that allows for rapidly extracting visual statistics and insights about distributed information.\\
-Ensemble visualization techniques can vary, including Ensemble Surface Slicing (ESS) to visualize regions of similarity and difference among surfaces and statistical visualization techniques to identify areas of interest quickly (Alabi et al., 2012) and (Potter et al., 2009).\\
-Ensemble visualization is an emerging field focusing on the graphical representation of ensemble data, which typically consists of multiple related datasets.\\
-The aim is to provide a comprehensive view that allows for the rapid extraction of visual statistics and insights about distributed information.\\
-By combining various statistical visualization techniques, (Potter et al., 2009) presents the Ensemble-Vis framework in his paper as a way for scientists to identify areas of interest quickly.
-The paper's thorough methodology, which combines various statistical visualization techniques to build a more helpful ensemble visualization framework, makes it noteworthy.
-This framework has been referenced by many other studies, leading to the development of new visualization methods.
-
-By exploring the effects of ensemble and summary displays on data interpretation, Padilla's research adds valuable insights to the field (Padilla, Ruginski, \& Creem-Regehr, 2017).
-Padilla investigates how ensemble displays, which plot multiple data points on the same Cartesian coordinate plane, affect the viewer's understanding and interpretation of the data.
-The paper contributes to the theory by examining the cognitive aspects of ensemble visualization.
-However, a counterexample to the effectiveness of ensemble displays can be observed when the data points are highly overlapping and densely packed, leading to visual clutter and difficulty distinguishing individual data points.
-In such cases, ensemble displays may hinder the viewer's understanding and interpretation of the data rather than enhance it.
-This highlights the importance of considering the specific characteristics of the presented data when deciding whether to use ensemble displays.
-Additionally, summary displays, which provide an overview of the data, can be a helpful alternative in situations where ensemble displays may be less effective.
-Summary displays condense the data into crucial statistics or visual representations, allowing for more straightforward interpretation and analysis, especially when dealing with complex or dense datasets.
-Further research is needed to explore the optimal conditions for ensemble and summary displays to maximize their effectiveness in data interpretation.
 
 \hypertarget{ref-labels}{%
 \chapter{Does Color Help?: Multidimensional Ensembles in Bland-Altman Plots: An Exploration}\label{ref-labels}}
@@ -2039,7 +2119,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-09-16 20:47:57. The repository is currently at this commit:
+This version of the thesis was generated on 2023-09-17 18:09:04. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -2054,7 +2134,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Detroit
-##  date     2023-09-16
+##  date     2023-09-17
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -2184,6 +2264,9 @@ Baddeley, A. (2012). Working memory: Theories, models, and controversies. \emph{
 
 \leavevmode\vadjust pre{\hypertarget{ref-baddeley1976}{}}%
 Baddeley, Alan D. (1976). \emph{The psychology of memory / alan d. baddeley} (pp. xvii, 430 p. :). Book, Basic Books New York.
+
+\leavevmode\vadjust pre{\hypertarget{ref-bar2004}{}}%
+Bar, M. (2004). Visual objects in context. \emph{Nature Reviews Neuroscience}, \emph{5}(8), 617--629.
 
 \leavevmode\vadjust pre{\hypertarget{ref-bartlett1932}{}}%
 Bartlett, F. A., \& Remembering, A. (1932). A study in experimental and social psychology. New York: Cambridge University Press.
@@ -2338,6 +2421,9 @@ Heer, J., \& Shneiderman, B. (2012). Interactive dynamics for visual analysis. \
 \leavevmode\vadjust pre{\hypertarget{ref-density-pcp}{}}%
 Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{15}(6), 1531--1538. http://doi.org/\href{https://doi.org/10.1109/TVCG.2009.131}{10.1109/TVCG.2009.131}
 
+\leavevmode\vadjust pre{\hypertarget{ref-henderson1999}{}}%
+Henderson, J. M., \& Hollingworth, A. (1999). High-level scene perception. \emph{Annual Review of Psychology}, \emph{50}(1), 243--271.
+
 \leavevmode\vadjust pre{\hypertarget{ref-hofmann2012}{}}%
 Hofmann, H., Follett, L., Majumder, M., \& Cook, D. (2012). Graphical tests for power comparison of competing designs. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{18}(12), 2441--2448.
 
@@ -2355,6 +2441,9 @@ Hubel, D. H., \& Wiesel, T. N. (2004). \emph{Brain and visual perception: The st
 
 \leavevmode\vadjust pre{\hypertarget{ref-hullman2011}{}}%
 Hullman, J., Adar, E., \& Shah, P. (2011). Benefitting infovis with visual difficulties. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2213--2222.
+
+\leavevmode\vadjust pre{\hypertarget{ref-itti2000}{}}%
+Itti, L., \& Koch, C. (2000). A saliency-based search mechanism for overt and covert shifts of visual attention. \emph{Vision Research}, \emph{40}(10-12), 1489--1506.
 
 \leavevmode\vadjust pre{\hypertarget{ref-itti2001}{}}%
 Itti, L., \& Koch, C. (2001). Computational modelling of visual attention. \emph{Nature Reviews Neuroscience}, \emph{2}(3), 194--203.
@@ -2451,6 +2540,9 @@ Potter, K., Wilson, A., Bremer, P.-T., Williams, D., Doutriaux, C., Pascucci, V.
 
 \leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
 R Core Team. (2022). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\vadjust pre{\hypertarget{ref-rayner2009}{}}%
+Rayner, K. (2009). The 35th sir frederick bartlett lecture: Eye movements and attention in reading, scene perception, and visual search. \emph{Quarterly Journal of Experimental Psychology}, \emph{62}(8), 1457--1506.
 
 \leavevmode\vadjust pre{\hypertarget{ref-reuter1990}{}}%
 Reuter, L. H., Tukey, P., Maloney, L. T., Pani, J. R., \& Smith, S. (1990). Human perception and visualization. In \emph{Proceedings of the 1st conference on visualization'90} (pp. 401--406).

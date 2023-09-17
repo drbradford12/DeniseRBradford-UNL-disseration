@@ -57,8 +57,8 @@ introduction-2
 dashbaord-construction
 cognitive-principles
 ensemble-perception
-multidimensional-ensembles
 ensemble-visualization
+multidimensional-ensembles
 ref-labels
 introduction-3
 ensemble-perception-1
