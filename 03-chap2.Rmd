@@ -21,45 +21,67 @@ The research objective of this study is to investigate how changes in real-time 
 ## Introduction
 
 Statisticians use graphs in almost every stage of their work. 
-They create charts to summarize and explore new data and identify potential problems and opportunities. 
-Models are fit based on relationships between variables which are often identified visually. 
+They create charts to summarize and explore new data and identify potential problems and opportunities [@tukey1966]. 
+Models are fit based on relationships between variables which are often identified visually [@hullman2021]. 
 We identify problems with those models based on residual plots and other visual diagnostics. 
+<!-- TODO: Add citations to the following paragraph.-->
 When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group. 
-In addition, not all visual displays have equal perceptual value [@unwin2003] and [@aspillaga1996]. 
+When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience’s domain knowledge.
+In addition, not all visual displays have equal perceptual value [@unwin2003 and @aspillaga1996]. 
 The best graphics are designed to account for both the dataset and the intended audience's features.
+<!--TODO: Add an example here once I decide how I want to establish types of decisions on a dataset. Let's say EDA-->
 Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization. 
 For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina [@vanderplas2015].
+<!--TODO: Try to find a few studies examing expertise in graphics -->
 Other design constraints are due to the audience’s experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful). 
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
-When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience’s domain knowledge.
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group. 
+
 
 Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control. 
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
+<!-- TODO: Expand on this paragraph and the ideas in it -->
 
+
+<!-- TODO: Expand on this paragraph and the ideas in it -->
 In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
-As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
-<!-- Other examples needed, profile of pie charts after 100 years of research saying they suck.-->
+In "The Commercial and Political Atlas," Playfair used various types of graphical representations to illustrate economic and political data. 
+He included a chart that he called a "circle chart" or "pie chart" to display the distribution of imports and exports of England in 1781 [@playfair2005]. 
+Scholars frequently choose to utilize pie charts as a means of presenting data, acknowledging the widespread familiarity of this particular chart format among readers [@tufte2001].
+Discrete categories can be effectively highlighted by their utilization. 
+Moreover, researchers have the ability to enhance the accessibility of their study findings to a broader range of individuals. 
+However, there are certain limitations that should be acknowledged. 
+Pie charts may not be appropriate for visualizing datasets that have a large number of categories or require precise comparisons. 
+This is because it can be difficult to precisely perceive slight differences in the sizes of the pie chart's wedges. 
+In addition, the presence of inaccurate labeling and scaling has the potential to result in misinterpretation. 
+Hence, it is imperative for researchers to exercise prudence while utilizing pie charts as a visualization tool for categorical data, in order to guarantee precise and significant portrayal. 
 
-Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool. 
+<!--For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
+As data in sports becomes more prominent, extensive, and collected, this information must be refined.--> 
+
+
+Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
+The John Hopkins COVID-19 Dashboard is a reputable online platform that offers current and comprehensive data and statistics pertaining to the worldwide COVID-19 epidemic. 
+The tool mentioned earlier functions as a highly helpful instrument in monitoring the dissemination of the virus, providing up-to-date information on the prevalence of cases, fatalities, and immunization rates within various nations and geographical areas. 
+This dashboard is widely utilized by researchers, politicians, and the general public as a reliable and authoritative resource for continuously monitoring the ongoing effects of the epidemic [@JHUCovidDashboard].
 The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights. 
 Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, [@few2006]. 
 Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields. 
 Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
 
-Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
+<!--Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
 Let us first consider the audience characteristics that affect the selection of graphics. 
 Then, we will engage with considerations based on the data to be displayed. 
 Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
 
-Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders. 
+Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders. -->
+
+<!--TODO: Explain a dashboard by using a screenshot and using the analogy step-by-step -->
 Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept. 
 A chart is similar to a sentence in that it presents a straightforward piece of information and visually represents data to facilitate comprehension.
 For example, a chart could be a bar graph depicting sales over a year, a pie chart illustrating the percentage distribution of a budget, or a scatter plot illustrating the correlation between two variables.
 A dashboard may combine multiple graphs, tables, and metrics to provide an all-encompassing view of a company's performance, a project's development, or market trends.
-<!-- Insert the JHSPH Dashboard for COVID -->
+
 
 However, a counterexample to this analogy could be a poorly designed dashboard presenting overwhelming information without clear organization or hierarchy. 
 In such a case, the charts may compete for attention and confuse the reader, similar to how a paragraph with too many disjointed sentences can lead to confusion and a lack of coherence. 
@@ -67,15 +89,12 @@ This counterexample highlights the importance of thoughtful design and effective
 The research objective of this study is to investigate how changes in real-time data displayed on a dashboard affect ensemble perception and the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment.
 
 John Tukey was the first to organize the collection and methods associated with philosophy into exploratory data analysis (EDA). 
-Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
+Tukey used graphics as a tool for exploratory analysis. 
 In "Exploratory Data Analysis," Tukey wrote that graphics and charts often display data with more enhanced understanding than a table [@tukey1966]. 
 Tukey outlines in detail the types of different graphics and in which situations to utilize them.
 He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries. 
-Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique. 
-In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
-
+John Tukey's exploratory data analysis (EDA) principles revolutionized the way we approach data exploration and visualization, emphasizing the importance of understanding data's underlying structure and patterns before diving into formal statistical analysis.
 Tukey's Principles in EDA:
 
 1. Through graphic exploration (looking for patterns or displaying fit), the method demonstrates things about data that a single numeric metric does not understand. 
@@ -87,11 +106,16 @@ This step makes sure to determine data patterns.
 
 3. The natural scale or state in which the data are at their best. 
 This will be the step at which the scale of the data can be helpful for analysis. 
-Reexpressing data on a new scale by taking the square root or logarithmic scale.
 
-4. The most known part of EDA is done by accessing the fit of the data. 
+4. The most known part of EDA is done by assessing the fit of the data. 
 This is taught in every statistics 101 class. 
 With the growth of machine learning and prediction methods, residuals are now more widely used in the toolbox for assessing the best prediction models.
+
+Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries. 
+Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique. 
+In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
+
+
 
 ```{r, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
@@ -107,20 +131,24 @@ p + scale_fill_brewer(palette="Dark2")
 
 Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone. 
 Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone. 
-Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently. 
+<!--TODO: Add citations of factual claims here -->
+Visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently. 
 Also, analysts can use visualizations to identify potential issues or biases in the data, resulting in better decisions and models. 
-Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights. 
-During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.
 
+<!--During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.-->
+
+<!--TODO: Add a transition to talking about semiology -->
 Using color to represent data on maps is an example of successful graphical communication utilizing semiology. 
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily. 
 Jacques Bertin writes in "Semiology of Graphics" that color can be used to "emphasize a point, distinguish one category from another, or establish a relationship between two points", [@bertin1983]. 
 In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.
 
-By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers. 
+<!--TODO: Add a transition sentence to the previous paragraph-->
+By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers. <!--Add citation for this -->
 For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. 
-Leland Wilkinson writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication but also superior to numerical or verbal methods for certain types of data and reasoning" [@wilkinson2012].
+Leland Wilkinson writes in his book "The Grammar of Graphics" that "graphical methods are not only superior to other forms of communication but also superior to numerical or verbal methods for certain types of data and reasoning" [@wilkinson2012]. <!-- Explain what Wilkinson use to support his claim here -->
 
+<!--TODO: Add more about grammar of graphics here-->
 It proposes that any statistical graphic can be broken down into a set of essential components, or "grammar," that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.
 
 The components of the grammar of graphics include:
@@ -135,7 +163,7 @@ The components of the grammar of graphics include:
 
 - Facets: The plot division into multiple subplots, each representing a different subset of the data.
 
-
+<!-- TODO: Create a better examples -->
 For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry. 
 Moreover, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
 Finally, the "Grammar of Graphics" provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
@@ -148,32 +176,33 @@ knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.pn
 
 
 A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance [@few2006]. 
-Dashboard design creates visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format.  
-The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.  
-As organizations increasingly rely on data-driven decision-making, well-designed dashboards become pivotal.  
-The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on critical frameworks such as evaluation criteria in healthcare, learning dashboards in educational settings, design patterns and trade-offs, academic literature reviews, and practical tips for implementation.  
-Each of these frameworks offers unique perspectives and actionable insights. 
-These frameworks serve as pillars for the subsequent discussion on creating functional and impactful dashboards.  
-However, it is essential to note that even with a comprehensive roadmap, the success of dashboards heavily relies on the quality and accuracy of the presented data. 
+Dashboard design creates visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format.
+The objective of KPIs are to provide users with insights and enable them to make intelligent decisions based on the presented data.  
+As organizations increasingly rely on data-driven decision-making, well-designed dashboards become pivotal.<!-- TODO: Add citation here -->  
+The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on critical applications such as evaluation criteria in healthcare, learning dashboards in educational settings, design patterns and trade-offs, academic literature reviews, and practical tips for implementation.
+<!-- Give examples of dashboards here -->
+Each of these applications offers unique perspectives and actionable insights. 
+<!--These frameworks serve as pillars for the subsequent discussion on creating functional and impactful dashboards.  
+However, it is essential to note that even with a comprehensive roadmap, the success of dashboards heavily relies on the quality and accuracy of the presented data. -->
 If the data used in the design and implementation of dashboards is flawed or incomplete, it can lead to misleading insights and ineffective decision-making. 
-Additionally, different user groups' specific needs and preferences may not always align with the frameworks provided, requiring customization and adaptation that may not be adequately addressed in the comprehensive roadmap.
+Additionally, different user groups' specific needs and preferences may not always align with the applications provided.
 
 A systematic literature review by [@schwendimann2016] discusses the state-of-the-art in learning dashboards. 
 The paper identifies critical design features, dividing them into functional and visual features.  
 This study is particularly useful for educational institutions implementing learning analytics dashboards. 
-Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective.  
-The research is especially relevant for educational institutions implementing or optimizing learning analytics dashboards.  
+Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective.
+<!-- TODO: This needs to be connected to the main point of the paragraph-->
 By identifying key design elements and their impact on student performance, the paper is a foundational resource for educators and administrators looking to leverage dashboards to enhance educational outcomes.  
 
 ## Dashbaord Construction
-<!-- How do charts fit within larger DB Framework>? Reference of other views on the topic -->
+<!-- How do charts fit within larger DB Framework? Reference of other views on the topic -->
 
 Given that the intended audience has limitations, there are design constraints around the data, and the audience has the ability to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics?
 How do we maintain user attention, create a desire to explore, and accurately communicate the data through the medium of an interactive data dashboard? 
 Solutions to these questions can start with a dashboard.
 
 A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance [@few2006]. 
-Dashboards have particular characteristics:
+<!--Dashboards have particular characteristics:
 
 - Achieve specific objectives
 
@@ -181,7 +210,7 @@ Dashboards have particular characteristics:
 
 - Information can be displayed in multiple mediums (web browser or mobile device)
 
-- Can be used to monitor information at a high level
+- Can be used to monitor information at a high level -->
 
 Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics.
 They allow users to quickly and easily understand complex data sets by using visual elements such as charts, graphs, and tables to display the information.
@@ -202,8 +231,33 @@ According to a study conducted by Cleveland and McGill, people frequently make i
 In addition, combining two difficult-to-compare graphics with redundant visual cues or unnecessary embellishments such as colors, 3D effects, or patterns can increase cognitive load and reduce the dashboard's effectiveness. 
 Although adding extra elements to a chart or graph may be tempting, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information.
 Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data [@tufte1985]. 
-Dashboards are cognitive tools that should be used to improve understanding of data and help people visually find relationships, trends, patterns, and outliers.  
+<!--Dashboards are cognitive tools that should be used to improve understanding of data and help people visually find relationships, trends, patterns, and outliers.-->
 Most importantly, dashboards should leverage people's visual and cognitive capabilities.
+
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis. 
+John Tukey's EDA methods are currently known and well-vetted in the field. 
+However, Satyanarayan et al. addressed this by introducing a high-level grammar of graphics called "Vega-Lite," which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar [@satyanarayan2016]. 
+Vega-Lite has been directly implemented in R via the `ggvis` package using the same - albeit slightly lower-level.
+
+Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from Few [@few2012], Tufte [@tufte1983], and Cairo [@cairo2016]:
+
+1. Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+
+2. Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+
+3. Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+
+4. Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+
+5. Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+
+6. Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+
+7. Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
 
 These principles are based on cognitive psychology and understanding how the human brain processes visual information. 
 Cowan suggested that the average person can only hold two to six pieces of information at a time [@cowan2001]. 

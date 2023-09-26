@@ -513,7 +513,7 @@ knitr::include_graphics(rep(c("figure/gglayers.png","figure/graphic-flowchart.pn
 
 Michael Friendly, a leading expert in data visualization, has utilized the principles of the grammar of graphics to develop innovative teaching methods that make complex data visualization concepts more accessible to a broader audience.
 Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present.
-He used SAS with hands-on experiments to present categorical data analysis visually, @friendly2014.
+He used SAS with hands-on experiments to present categorical data analysis visually, [@friendly2014].
 By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
 In his book "Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization," Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey, [@friendly2001].
 
@@ -521,7 +521,7 @@ As discussed regarding semiology, Tukey's Exploratory Data Analysis (EDA), and t
 Compelling graphics can be a powerful tool for communicating complex information, making numerical accuracy, engagement, correct decision-making, and accurate predictions crucial. 
 
 In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics. 
-Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions, @cardoso2016.
+Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions, [@cardoso2016].
 
 Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data. 
 Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.
