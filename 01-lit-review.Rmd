@@ -1,6 +1,59 @@
+---
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r include_packages, include = FALSE}
+library(knitr)
+library(palmerpenguins)
+library(tidyverse)
+library(nycflights13)
+data(flights)
+
+library(ggpcp)
+library(ggplot2)
+library(dplyr)
+data(nasa)
+
+library(scales)
+library(datasets)
+data("ChickWeight")
+library(formatR)
+
+```
+
 # General Introduction
 
-## Exploratory Data Analysis (EDA)
+Statisticians use graphs in almost every stage of their work. 
+They create charts to summarize and explore new data and identify potential problems and opportunities. 
+Models are fit based on relationships between variables which are often identified visually. 
+We identify problems with those models based on residual plots and other visual diagnostics. 
+When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
+
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group. 
+In addition, not all visual displays have equal perceptual value [@unwin2003, @aspillaga1996]. 
+The best graphics are designed to account for both the dataset and the intended audience's features.
+Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization. 
+For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina [@vanderplas2015].
+Other design constraints are due to the audience’s experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful). 
+Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
+When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience’s domain knowledge.
+This introduction presents previous research on constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards.
+
+Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control. 
+As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
+
+In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
+For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
+As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
+
+Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
+Let us first consider the audience characteristics that affect the selection of graphics. 
+Then, we will engage with considerations based on the data to be displayed. 
+Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
+
+## Methodology - Exploratory Data Analysis (EDA)
 
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
 Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
@@ -69,12 +122,16 @@ It is a crucial step in the data analysis process and is often used to identify 
 EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.
 
 
-## Open-Source 
+## Open-Source Data: Suitability and Integration
 
-Open-source data, deeply rooted in the foundational principles of shared knowledge that has driven human progress for millennia, has evolved significantly over the decades. 
+The concept of open source originated long before computers, where shared knowledge formed the basis of human progress.
 Originating from the frustrations of figures like Richard Stallman in the 1980s, who championed the free software movement and paved the way for the creation of transformative licenses such as the GNU General Public License, the concept has grown to encompass more than just software. [@stallman2002]
 With organizations like the Open Source Initiative standardizing open-source practices and monumental projects like Linux showcasing its potential, open-source principles expanded by the late 1990s to include data.
 This movement towards openness has been marked by a commitment to transparency, collaboration, and unrestricted access, revolutionizing how we perceive and interact with data in the modern era.
+Linux, an open-source operating system kernel initiated by Linus Torvalds in 1991, became one of the most popular examples of open-source success.
+The Apache HTTP Server, released in 1995, became another success story, powering a large fraction of the internet [@weber2004].
+Open-source principles began expanding from software to data in the late 1990s and early 2000s. The idea was to share data sets for public use without restrictions.
+Projects like the Human Genome Project advocated for open data to advance science and medicine [@sulston2002].
 
 The principles of open-source data revolve around the concepts of free access, transparency, collaboration, and redistribution, fostering a community-driven approach to data sharing and utilization.
 At its core, open source is about making the source content (usually software code) freely available. 
@@ -95,16 +152,7 @@ Open source principles prioritize the end user’s interests.
 This user-centric approach often leads to software or content that's more aligned with what users genuinely need and want.
 
 
-## Origins of Open Source
-
-The concept of open source originated long before computers, where shared knowledge formed the basis of human progress.
-With the advent of computers, Richard Stallman, frustrated with a printer that didn’t have available source code, initiated the free software movement in the 1980s and established the GNU Project and the Free Software Foundation [@stallman2002].
-Linux, an open-source operating system kernel initiated by Linus Torvalds in 1991, became one of the most popular examples of open-source success.
-The Apache HTTP Server, released in 1995, became another success story, powering a large fraction of the internet [@weber2004].
-Open-source principles began expanding from software to data in the late 1990s and early 2000s. The idea was to share data sets for public use without restrictions.
-Projects like the Human Genome Project advocated for open data to advance science and medicine [@sulston2002].
-
-## Open Access Data Repositories
+### Open Access Data Repositories
 
 In the digital age, open access data repositories have become crucial platforms, transforming how data are shared, accessed, and stored among academic and research communities. 
 These repositories are online spaces created specifically to store datasets and make them available to everyone. In line with the principles of open science, which promote knowledge sharing, transparency, and reproducibility in research endeavors, their main objective is to democratize access to data.
@@ -168,74 +216,45 @@ Similarly, a researcher studying urban air quality might merge satellite observa
 Leveraging multiple data sources offers depth and breadth in insights but necessitates careful management to ensure data integrity and comparability. -->
 
 
-<!-- - Exploratory Data Analysis (EDA) -->
-
-<!--     - Layout Framework of EDA with modern technology  -->
-
-
 <!--     - R packages  -->
 R has become a prominent and adaptable programming language within the domain of data analysis and exploratory data analysis (EDA). 
-A number of crucial R packages have been created to streamline the processes of data manipulation, visualization, and statistical analysis. 
-One of the prominent programs in this category is ggplot2, which was developed by Hadley Wickham. 
+A number of R packages have been created to streamline the processes of data manipulation, visualization, and statistical analysis. 
+One of the prominent programs in this category is `ggplot2`, which was developed by Hadley Wickham. 
 This package is widely recognized for its versatility and aesthetic appeal in generating a diverse range of visually appealing and informative data visualizations [@wickham2016]. 
-Wickham et al. have developed dplyr and tidyr, which offer convenient functionalities for filtering, summarizing, and reshaping data frames, hence enhancing the efficiency of data manipulation activities [@wickham2021]. 
-The data.table package, developed by Matt Dowle, is widely recognized for its remarkable speed and efficiency in handling huge datasets, particularly in the context of performance-oriented data manipulation tasks [@dowle2021]. 
-Although not classified as a R package, it is noteworthy to include Wes McKinney's Python library, pandas, due to its significant influence in the field of data manipulation and analysis in the Python programming language [@mcKinney2010]. 
-Within the field of psychology and psychometrics, the psych package developed by William Revelle serves as an extensive tool for doing factor analysis and reliability analysis [@revelle202]. 
+Wickham et al. have developed `dplyr` and `tidyr`, which offer convenient functionalities for filtering, summarizing, and reshaping data frames, hence enhancing the efficiency of data manipulation activities [@wickham2021]. 
+The `data.table` package, developed by Matt Dowle, is widely recognized for its remarkable speed and efficiency in handling huge datasets, particularly in the context of performance-oriented data manipulation tasks [@dowle2021]. 
+Although not classified as a R package, it is noteworthy to include Wes McKinney's Python library, `pandas`, due to its significant influence in the field of data manipulation and analysis in the Python programming language [@mcKinney2010]. 
+Within the field of psychology and psychometrics, the `psych` package developed by William Revelle serves as an extensive tool for doing factor analysis and reliability analysis [@revelle202]. 
 
 Furthermore, there are other software packages available that may be utilized by researchers and analysts to enhance their data management and analysis processes. 
-For instance, the naniar package, developed by [@tierney2020], is specifically designed for handling missing data. Another useful package is summarytools, created by [@comtois2021], which enables the generation of descriptive statistics. 
-Additionally, the corrplot package, developed by Wei and Simko [@wei2017], provides significant tools for displaying correlation matrices. 
+For instance, the `naniar` package, developed by [@tierney2020], is specifically designed for handling missing data. Another useful package is `summarytools`, created by [@comtois2021], which enables the generation of descriptive statistics. 
+Additionally, the `corrplot` package, developed by Wei and Simko [@wei2017], provides significant tools for displaying correlation matrices. 
 These packages provide researchers and analysts a range of valuable resources to aid in their work. 
-The FactoMineR package, developed by Husson, Lê, and Pagès [@husson2020], offers crucial techniques for conducting multivariate data analysis, including principal component analysis and clustering. 
+The `FactoMineR` package, developed by Husson, Lê, and Pagès [@husson2020], offers crucial techniques for conducting multivariate data analysis, including principal component analysis and clustering. 
 These software programs, created by renowned individuals in the discipline, jointly provide data analysts and scientists with the necessary tools to efficiently investigate and analyze data.
 
+    
+## Dimension Reduction
 
-Here are some popular R packages for exploratory data analysis along with a brief summary:
+Exploratory Data Analysis (EDA) and Dimension Reduction Techniques are closely intertwined in the realm of data analysis. 
+EDA serves as the initial step in understanding and visualizing complex datasets, helping analysts uncover patterns, anomalies, and relationships within the data. 
+However, as datasets grow in dimensionality, the complexity of EDA can become overwhelming. This is where Dimension Reduction Techniques come into play. 
+By reducing the number of features or variables while preserving the most critical information, these methods simplify the data, making it more manageable for further analysis. 
+Dimension Reduction Techniques, such as Principal Component Analysis (PCA) or t-Distributed Stochastic Neighbor Embedding (t-SNE), complement EDA by providing a way to condense high-dimensional data into a lower-dimensional space without losing significant insights. 
+This synergy between EDA and Dimension Reduction Techniques empowers data scientists and analysts to gain deeper insights into their data while efficiently handling large and complex datasets.
 
-1. **ggplot2**:
-   - Summary: ggplot2 is a powerful data visualization package for creating a wide range of high-quality plots and charts. 
-   It follows the Grammar of Graphics framework, making it highly customizable and flexible.
-   - Author: Hadley Wickham
 
-2. **dplyr**:
-   - Summary: dplyr is a package for data manipulation. 
-   It provides a set of easy-to-use functions that facilitate common data manipulation tasks such as filtering, selecting, grouping, and summarizing data.
-   - Author: Hadley Wickham
+## Interactive Graphics
 
-3. **tidyr**:
-   - Summary: tidyr is another package by Hadley Wickham that is used for tidying and reshaping data. 
-   It helps in converting data from wide to long format and vice versa, making it suitable for analysis and visualization.
-
-4. **data.table**:
-   - Summary: data.table is an efficient package for data manipulation and analysis. 
-   It is particularly well-suited for large datasets and complex operations.
-
-5. **pandas** (not an R package, but widely used in Python for EDA):
-   - Summary: pandas is a Python library for data manipulation and analysis. 
-   It provides data structures like DataFrames and Series, along with a wide range of functions for data cleaning and analysis.
-
-6. **psych**:
-   - Summary: The psych package in R provides various functions for conducting psychometric and psychological research. 
-   It includes tools for factor analysis, reliability analysis, and data visualization.
-
-7. **naniar**:
-   - Summary: naniar is an R package that helps with missing data exploration and visualization. 
-   It provides functions for identifying, visualizing, and handling missing data in datasets.
-
-8. **summarytools**:
-   - Summary: summarytools is a package for creating beautiful and informative summary tables and charts for descriptive statistics. 
-   It can be helpful for summarizing and exploring data.
-
-9. **corrplot**:
-   - Summary: corrplot is a package for visualizing correlation matrices. 
-   It provides various plot types and customization options for exploring relationships between variables.
-
-10. **FactoMineR**:
-    - Summary: FactoMineR is a package for multivariate data analysis, including methods for principal component analysis (PCA), factor analysis, and clustering. 
-    It is useful for exploring complex datasets.
-
+Interactive graphics are essential to EDA [@unwin1999]. 
+Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
+User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
+The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
+EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
+Additionally, the EDA process can identify the outliers, patterns, trends, and insights helpful to show in the dashboard to support decision-making.
 <!--     - The importance of the grammar of data manipulation (dplyr and tidyverse)  -->
+
+
 
 
 <!-- - What is Data Manipulation? -->
@@ -245,4 +264,14 @@ Here are some popular R packages for exploratory data analysis along with a brie
 
 
 
+Through a multi-phase investigation, this dissertation will:
 
+1. Review the current landscape of dashboard design principles and best practices.
+
+2. Analyze the characteristics and quality of open-source data and its suitability for dashboard integration.
+
+3. Conduct user-based experiments to determine the challenges and pitfalls naive users face when interacting with dashboards.
+
+4. Propose design recommendations for dashboards that effectively convey statistical information to naive users, ensuring correct visual inference and minimizing misinterpretations.
+
+The findings from this research aim to bridge the gap between data experts and naive users, democratizing data interpretation and empowering more individuals to make informed decisions based on open-source data.

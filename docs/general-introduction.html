@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</title>
+  <meta name="description" content="DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS" />
+  
+  
+  
+
+<meta name="author" content="Denise Renee Bradford" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="rmd-basics.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="general-introduction.html"><a href="general-introduction.html"><i class="fa fa-check"></i><b>1</b> General Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="general-introduction.html"><a href="general-introduction.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>1.1</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="1.2" data-path="general-introduction.html"><a href="general-introduction.html#open-source"><i class="fa fa-check"></i><b>1.2</b> Open-Source</a></li>
+<li class="chapter" data-level="1.3" data-path="general-introduction.html"><a href="general-introduction.html#origins-of-open-source"><i class="fa fa-check"></i><b>1.3</b> Origins of Open Source</a></li>
+<li class="chapter" data-level="1.4" data-path="general-introduction.html"><a href="general-introduction.html#open-access-data-repositories"><i class="fa fa-check"></i><b>1.4</b> Open Access Data Repositories</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rmd-basics.html"><a href="rmd-basics.html"><i class="fa fa-check"></i><b>2</b> Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rmd-basics.html"><a href="rmd-basics.html#abstract"><i class="fa fa-check"></i><b>2.1</b> Abstract</a></li>
+<li class="chapter" data-level="2.2" data-path="rmd-basics.html"><a href="rmd-basics.html#introduction"><i class="fa fa-check"></i><b>2.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.3" data-path="rmd-basics.html"><a href="rmd-basics.html#data-description"><i class="fa fa-check"></i><b>2.3</b> Data Description</a></li>
+<li class="chapter" data-level="2.4" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-considerations"><i class="fa fa-check"></i><b>2.4</b> Dashboard Design Considerations</a></li>
+<li class="chapter" data-level="2.5" data-path="rmd-basics.html"><a href="rmd-basics.html#guiding-design-principles"><i class="fa fa-check"></i><b>2.5</b> Guiding Design Principles</a></li>
+<li class="chapter" data-level="2.6" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-design-process"><i class="fa fa-check"></i><b>2.6</b> Dashboard Design Process</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="rmd-basics.html"><a href="rmd-basics.html#dashboard-components"><i class="fa fa-check"></i><b>2.6.1</b> Dashboard Components</a></li>
+<li class="chapter" data-level="2.6.2" data-path="rmd-basics.html"><a href="rmd-basics.html#initial-draft"><i class="fa fa-check"></i><b>2.6.2</b> Initial Draft</a></li>
+<li class="chapter" data-level="2.6.3" data-path="rmd-basics.html"><a href="rmd-basics.html#redesign"><i class="fa fa-check"></i><b>2.6.3</b> Redesign</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="rmd-basics.html"><a href="rmd-basics.html#discussion"><i class="fa fa-check"></i><b>2.7</b> Discussion</a></li>
+<li class="chapter" data-level="2.8" data-path="rmd-basics.html"><a href="rmd-basics.html#future-work"><i class="fa fa-check"></i><b>2.8</b> Future Work</a></li>
+<li class="chapter" data-level="2.9" data-path="rmd-basics.html"><a href="rmd-basics.html#conclusions"><i class="fa fa-check"></i><b>2.9</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-sci.html"><a href="math-sci.html"><i class="fa fa-check"></i><b>3</b> Dashboard Poetry</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-sci.html"><a href="math-sci.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="math-sci.html"><a href="math-sci.html#dashbaord-construction"><i class="fa fa-check"></i><b>3.2</b> Dashbaord Construction</a></li>
+<li class="chapter" data-level="3.3" data-path="math-sci.html"><a href="math-sci.html#cognitive-principles"><i class="fa fa-check"></i><b>3.3</b> Cognitive Principles</a></li>
+<li class="chapter" data-level="3.4" data-path="math-sci.html"><a href="math-sci.html#ensemble-perception"><i class="fa fa-check"></i><b>3.4</b> Ensemble Perception</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="math-sci.html"><a href="math-sci.html#ensemble-visualization"><i class="fa fa-check"></i><b>3.4.1</b> Ensemble Visualization</a></li>
+<li class="chapter" data-level="3.4.2" data-path="math-sci.html"><a href="math-sci.html#multidimensional-ensembles"><i class="fa fa-check"></i><b>3.4.2</b> Multidimensional Ensembles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ref-labels.html"><a href="ref-labels.html"><i class="fa fa-check"></i><b>4</b> Does Color Help?: Multidimensional Ensembles in Bland-Altman Plots: An Exploration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ref-labels.html"><a href="ref-labels.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction:</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="ref-labels.html"><a href="ref-labels.html#ensemble-perception-1"><i class="fa fa-check"></i><b>4.1.1</b> Ensemble Perception</a></li>
+<li class="chapter" data-level="4.1.2" data-path="ref-labels.html"><a href="ref-labels.html#multidimensional-ensembles-1"><i class="fa fa-check"></i><b>4.1.2</b> Multidimensional Ensembles</a></li>
+<li class="chapter" data-level="4.1.3" data-path="ref-labels.html"><a href="ref-labels.html#bland-altman-plots"><i class="fa fa-check"></i><b>4.1.3</b> Bland-Altman Plots</a></li>
+<li class="chapter" data-level="4.1.4" data-path="ref-labels.html"><a href="ref-labels.html#the-intersection-of-multidimensional-ensembles-and-bland-altman-plots"><i class="fa fa-check"></i><b>4.1.4</b> The intersection of Multidimensional Ensembles and Bland-Altman Plots</a></li>
+<li class="chapter" data-level="4.1.5" data-path="ref-labels.html"><a href="ref-labels.html#gaps-in-research"><i class="fa fa-check"></i><b>4.1.5</b> Gaps in Research</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="ref-labels.html"><a href="ref-labels.html#methods"><i class="fa fa-check"></i><b>4.2</b> Methods:</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="ref-labels.html"><a href="ref-labels.html#design-of-the-user-studies"><i class="fa fa-check"></i><b>4.2.1</b> Design of the User Studies</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="ref-labels.html"><a href="ref-labels.html#discussion-1"><i class="fa fa-check"></i><b>4.3</b> Discussion:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="the-first-appendix.html"><a href="the-first-appendix.html"><i class="fa fa-check"></i><b>A</b> The First Appendix</a></li>
+<li class="chapter" data-level="B" data-path="the-second-appendix-for-fun.html"><a href="the-second-appendix-for-fun.html"><i class="fa fa-check"></i><b>B</b> The Second Appendix, for Fun</a></li>
+<li class="chapter" data-level="" data-path="colophon.html"><a href="colophon.html"><i class="fa fa-check"></i>Colophon</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS</h1>
+<p class="author"><em>Denise Renee Bradford</em></p>
+<div class="abstract">
+<p class="abstract">Abstract</p>
+<p>Here is my abstract. <em>(350 word limit)</em></p>
+</div>
+</div>
+<div id="general-introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">CHAPTER 1</span> General Introduction<a href="general-introduction.html#general-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="exploratory-data-analysis-eda" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Exploratory Data Analysis (EDA)<a href="general-introduction.html#exploratory-data-analysis-eda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA).
+Previous research by Tukey focused on graphics as a tool for exploratory analysis.
+In “Exploratory Data Analysis,” Tukey wrote that graphics and charts often display data with more enhanced understanding than a table, <span class="citation">(Tukey &amp; Wilk, 1966)</span>.
+Tukey outlines detailed the types of different graphics and in which situations to utilize these graphics.
+He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.</p>
+<p>Tukey’s Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
+Tukey’s principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique.
+In this way, Tukey’s Principles have revolutionized our data analysis approach and become the foundational framework for EDA.</p>
+<p>Tukey’s Principles in EDA:</p>
+<ol style="list-style-type: decimal">
+<li><p>Graphical exploration, looking for patterns or displaying fit, the method demonstrates things about data that a single numeric metric does not understand.
+This has been useful in graphing the data before you develop summary statistics.</p></li>
+<li><p>Describing the general patterns of the data.
+This step should be insensitive to outliers.
+In general, think about the types of resistant measures (i.e., median or mean).
+This step is making sure to determine data patterns.</p></li>
+<li><p>The natural scale/state that the data are at their best.
+This will be the step at which the scale of data can be helpful for analysis.
+The reexpressing data to a new scale by taking the square root or logarithmic scale.</p></li>
+<li><p>The mostly known parts of EDA but is done in the way of accessing fit of the data.
+This is taught in every statistics 101 class.
+The growth of machine learning and prediction methods have now used residuals more in the toolbox to assessing the best prediction models.</p></li>
+</ol>
+<p><img src="thesis_files/figure-html/violin_plot-1.png" width=".49\linewidth" style="display: block; margin: auto;" /><img src="thesis_files/figure-html/violin_plot-2.png" width=".49\linewidth" style="display: block; margin: auto;" /></p>
+<p>Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
+Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone.
+Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently.
+Through visualizations, analysts can also identify potential issues or biases in the data, resulting in better decisions and models.
+Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights.
+During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.
+The basic understanding can be formalized to visualize the discovery process.</p>
+<p>The field of graphical communication, which is directly related to EDA, semiology, and their use in touch, has been a valuable tool and extension of the EDA thoughts that Tukey expressed.
+One of the fundamental principles of semiology is the relationship between signifier and signified, in which a visual element (the signifier) represents a particular meaning or concept (the signified), <span class="citation">(<strong>barthes1972?</strong>)</span>.
+Another essential concept in semiology is using syntax and semantics to convey meaning in graphic communication effectively.
+This includes both the syntax and semantics of a graphic’s visual elements, <span class="citation">(Monmonier, 1985)</span>.</p>
+<p>Using color to represent data on maps is an example of successful graphical communication utilizing semiology.
+By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily.
+Jacques Bertin writes in “Semiology of Graphics” that color can be used to “emphasize a point, distinguish one category from another, or establish a relationship between two points”, <span class="citation">(Monmonier, 1985)</span>.
+In addition, Bertin explains that the use of color can help overcome language barriers, making it easier for the audience to comprehend the presented information.</p>
+<p>The application of semiology in graphical communication is not devoid of obstacles.
+One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended, <span class="citation">(Monmonier, 1985)</span>.
+Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another, <span class="citation">(Norman, 2013)</span>.</p>
+<p>Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights.
+It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is.
+EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.</p>
+</div>
+<div id="open-source" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Open-Source<a href="general-introduction.html#open-source" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Open-source data, deeply rooted in the foundational principles of shared knowledge that has driven human progress for millennia, has evolved significantly over the decades.
+Originating from the frustrations of figures like Richard Stallman in the 1980s, who championed the free software movement and paved the way for the creation of transformative licenses such as the GNU General Public License, the concept has grown to encompass more than just software. <span class="citation">(Stallman, 2002)</span>
+With organizations like the Open Source Initiative standardizing open-source practices and monumental projects like Linux showcasing its potential, open-source principles expanded by the late 1990s to include data.
+This movement towards openness has been marked by a commitment to transparency, collaboration, and unrestricted access, revolutionizing how we perceive and interact with data in the modern era.</p>
+<p>The principles of open-source data revolve around the concepts of free access, transparency, collaboration, and redistribution, fostering a community-driven approach to data sharing and utilization.
+At its core, open source is about making the source content (usually software code) freely available.
+This transparency allows anyone to review, inspect, and understand the source.
+The freedom to use, modify, distribute, and study the source content without restrictions is a cornerstone of open source.
+This is articulated in various open source licenses, like the GNU General Public License (GPL), which emphasizes the rights of end users.
+Open source projects thrive on collaborative efforts.
+Diverse groups of people from around the world contribute, enhancing the project’s robustness and creativity.
+Tools like Git and platforms like GitHub have made this collaborative approach more streamlined.
+Open source projects often foster strong communities.
+These communities not only contribute code but also offer support, documentation, and strategies for the project’s future.
+These communities’ sense of belonging and shared purpose is a driving force behind many successful open-source projects.
+Contributions to open source projects are often evaluated based on merit.
+The best ideas or implementations, regardless of their source, are adopted, promoting a culture of excellence.
+The principle of redistribution ensures that modified versions of open source content remain open.
+This ensures a perpetual cycle of community-driven improvement and access.
+Open source principles prioritize the end user’s interests.
+This user-centric approach often leads to software or content that’s more aligned with what users genuinely need and want.</p>
+</div>
+<div id="origins-of-open-source" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Origins of Open Source<a href="general-introduction.html#origins-of-open-source" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The concept of open source originated long before computers, where shared knowledge formed the basis of human progress.
+With the advent of computers, Richard Stallman, frustrated with a printer that didn’t have available source code, initiated the free software movement in the 1980s and established the GNU Project and the Free Software Foundation <span class="citation">(Stallman, 2002)</span>.
+Linux, an open-source operating system kernel initiated by Linus Torvalds in 1991, became one of the most popular examples of open-source success.
+The Apache HTTP Server, released in 1995, became another success story, powering a large fraction of the internet <span class="citation">(Weber, 2004)</span>.
+Open-source principles began expanding from software to data in the late 1990s and early 2000s. The idea was to share data sets for public use without restrictions.
+Projects like the Human Genome Project advocated for open data to advance science and medicine <span class="citation">(Sulston &amp; Ferry, 2002)</span>.</p>
+</div>
+<div id="open-access-data-repositories" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Open Access Data Repositories<a href="general-introduction.html#open-access-data-repositories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the digital age, open access data repositories have become crucial platforms, transforming how data are shared, accessed, and stored among academic and research communities.
+These repositories are online spaces created specifically to store datasets and make them available to everyone. In line with the principles of open science, which promote knowledge sharing, transparency, and reproducibility in research endeavors, their main objective is to democratize access to data.</p>
+<p>These repositories serve many different purposes at their core.
+They support openness in the scientific method first and foremost.
+It enables other researchers and the general public to examine, confirm, and replicate research findings by providing unrestricted access to datasets. Collaboration is also encouraged by this open model.
+Datasets are accessible to researchers in a variety of fields and locations, providing opportunities to expand upon, combine, or compare various sets of data.
+Eliminating research duplication is a significant additional benefit.
+Access to data from earlier studies reduces the need to repeatedly collect similar data, which saves time, effort, and resources.
+Additionally, these repositories are essential for the long-term preservation of data, guaranteeing that datasets are accessible for future scientific research and for posterity.</p>
+<p>A closer look at the features of these repositories reveals several standard components.
+Metadata is paramount; this descriptive information elucidates the context, origin, methodology, and other pertinent details of the datasets, ensuring they are comprehensible to those accessing them.
+Many repositories also emphasize the citability of datasets.
+By assigning a Digital Object Identifier (DOI), datasets become easily referable in academic and research contexts.
+Licensing is another cornerstone. To clarify usage rights and conditions, datasets are often accompanied by explicit licenses, with Creative Commons licenses being particularly prevalent.
+These licenses can stipulate various conditions, with attribution being a common requirement.
+Furthermore, the user experience is enhanced through tools that facilitate easy searching, accessing, and downloading of datasets.</p>
+<p>However, like all systems, open access data repositories face challenges.
+Ensuring data privacy is a significant concern, especially in datasets derived from human subjects, such as in health or social research.
+Standardization is another hurdle.
+Given the diverse range of researchers and datasets being uploaded, achieving a standardized format for data and metadata is daunting.
+And not to be overlooked is the challenge of sustainability.
+Maintaining a sophisticated digital platform requires both financial resources and technical expertise.
+Ensuring the longevity of such repositories, especially in a rapidly evolving digital landscape, remains a concern.</p>
+<p>Several prominent examples underscore the significance and diversity of open access data repositories.
+Zenodo, developed under the European OpenAIRE program, serves as a multifaceted platform catering to researchers across disciplines.
+Dryad specializes in datasets linked to scientific publications, predominantly in life sciences and biomedicine.
+Figshare offers a broader spectrum, allowing researchers to deposit a range of research outputs, including datasets, making them available to the public.</p>
+<p>Historically, the rise of these repositories can be contextualized within the broader open science movement.
+This movement, gathering momentum over recent decades, has been advocating for a more transparent, accessible, and shared research process.
+As technological advancements surged, leading to an exponential growth in digital data, the emphasis on preserving and sharing this data treasure trove intensified.</p>
+<p>Today, the significance of open access data repositories is further underscored by policies and guidelines from influential bodies.
+A growing number of funding agencies and academic journals are either mandating or recommending that data underpinning research findings be housed in open access repositories.
+This trend not only ensures that research outputs, especially data, remain accessible but also reflects a broader societal push towards transparency, especially when research is funded by public coffers.</p>
+<!--     - Single Data Source with multiple variables (n > 10 columns) 
+## Single Open-source Data
+
+A single data source refers to a specific origin or repository from which data is derived or collected, ensuring uniformity and consistency in the information presented. 
+It contrasts with multiple data sources where data is aggregated from various origins, potentially introducing discrepancies or inconsistencies. 
+For example, a company might maintain a single database that logs all customer transactions. 
+This database would be considered a single data source. 
+Another illustration could be a researcher conducting a study on climate change, who decides to rely solely on temperature readings from a specific meteorological station; in this case, the meteorological station's data would be the single data source.
+Utilizing a single data source simplifies data management and analysis but may also limit the available breadth and diversity of information. -->
+<!--     - Multiple Data Sources with multiple variables (n > 10 columns) 
+
+## Multiple Open-source Data
+
+Multiple data sources refer to the amalgamation of data from various origins or repositories, providing a comprehensive and diverse piece of information. 
+By drawing from different sources, analysts can gain a richer and more holistic view of the subject, although it may introduce data integration and consistency. 
+For instance, in business intelligence, a company might combine sales data from their online store, physical retail outlets, and third-party distributors to get a complete picture of their sales performance. 
+Similarly, a researcher studying urban air quality might merge satellite observations, ground-based air quality monitors, and citizen-reported data to achieve a multifaceted understanding. 
+Leveraging multiple data sources offers depth and breadth in insights but necessitates careful management to ensure data integrity and comparability. -->
+<!-- - Exploratory Data Analysis (EDA) -->
+<!--     - Layout Framework of EDA with modern technology  -->
+<!--     - R packages  -->
+<p>R has become a prominent and adaptable programming language within the domain of data analysis and exploratory data analysis (EDA).
+A number of crucial R packages have been created to streamline the processes of data manipulation, visualization, and statistical analysis.
+One of the prominent programs in this category is ggplot2, which was developed by Hadley Wickham.
+This package is widely recognized for its versatility and aesthetic appeal in generating a diverse range of visually appealing and informative data visualizations <span class="citation">(<strong>wickham2016?</strong>)</span>.
+Wickham et al. have developed dplyr and tidyr, which offer convenient functionalities for filtering, summarizing, and reshaping data frames, hence enhancing the efficiency of data manipulation activities <span class="citation">(<strong>wickham2021?</strong>)</span>.
+The data.table package, developed by Matt Dowle, is widely recognized for its remarkable speed and efficiency in handling huge datasets, particularly in the context of performance-oriented data manipulation tasks <span class="citation">(<strong>dowle2021?</strong>)</span>.
+Although not classified as a R package, it is noteworthy to include Wes McKinney’s Python library, pandas, due to its significant influence in the field of data manipulation and analysis in the Python programming language <span class="citation">(<strong>mcKinney2010?</strong>)</span>.
+Within the field of psychology and psychometrics, the psych package developed by William Revelle serves as an extensive tool for doing factor analysis and reliability analysis <span class="citation">(<strong>revelle202?</strong>)</span>.</p>
+<p>Furthermore, there are other software packages available that may be utilized by researchers and analysts to enhance their data management and analysis processes.
+For instance, the naniar package, developed by <span class="citation">(<strong>tierney2020?</strong>)</span>, is specifically designed for handling missing data. Another useful package is summarytools, created by <span class="citation">(<strong>comtois2021?</strong>)</span>, which enables the generation of descriptive statistics.
+Additionally, the corrplot package, developed by Wei and Simko <span class="citation">(Wei et al., 2017)</span>, provides significant tools for displaying correlation matrices.
+These packages provide researchers and analysts a range of valuable resources to aid in their work.
+The FactoMineR package, developed by Husson, Lê, and Pagès <span class="citation">(<strong>husson2020?</strong>)</span>, offers crucial techniques for conducting multivariate data analysis, including principal component analysis and clustering.
+These software programs, created by renowned individuals in the discipline, jointly provide data analysts and scientists with the necessary tools to efficiently investigate and analyze data.</p>
+<p>Here are some popular R packages for exploratory data analysis along with a brief summary:</p>
+<ol style="list-style-type: decimal">
+<li><strong>ggplot2</strong>:
+<ul>
+<li>Summary: ggplot2 is a powerful data visualization package for creating a wide range of high-quality plots and charts.
+It follows the Grammar of Graphics framework, making it highly customizable and flexible.</li>
+<li>Author: Hadley Wickham</li>
+</ul></li>
+<li><strong>dplyr</strong>:
+<ul>
+<li>Summary: dplyr is a package for data manipulation.
+It provides a set of easy-to-use functions that facilitate common data manipulation tasks such as filtering, selecting, grouping, and summarizing data.</li>
+<li>Author: Hadley Wickham</li>
+</ul></li>
+<li><strong>tidyr</strong>:
+<ul>
+<li>Summary: tidyr is another package by Hadley Wickham that is used for tidying and reshaping data.
+It helps in converting data from wide to long format and vice versa, making it suitable for analysis and visualization.</li>
+</ul></li>
+<li><strong>data.table</strong>:
+<ul>
+<li>Summary: data.table is an efficient package for data manipulation and analysis.
+It is particularly well-suited for large datasets and complex operations.</li>
+</ul></li>
+<li><strong>pandas</strong> (not an R package, but widely used in Python for EDA):
+<ul>
+<li>Summary: pandas is a Python library for data manipulation and analysis.
+It provides data structures like DataFrames and Series, along with a wide range of functions for data cleaning and analysis.</li>
+</ul></li>
+<li><strong>psych</strong>:
+<ul>
+<li>Summary: The psych package in R provides various functions for conducting psychometric and psychological research.
+It includes tools for factor analysis, reliability analysis, and data visualization.</li>
+</ul></li>
+<li><strong>naniar</strong>:
+<ul>
+<li>Summary: naniar is an R package that helps with missing data exploration and visualization.
+It provides functions for identifying, visualizing, and handling missing data in datasets.</li>
+</ul></li>
+<li><strong>summarytools</strong>:
+<ul>
+<li>Summary: summarytools is a package for creating beautiful and informative summary tables and charts for descriptive statistics.
+It can be helpful for summarizing and exploring data.</li>
+</ul></li>
+<li><strong>corrplot</strong>:
+<ul>
+<li>Summary: corrplot is a package for visualizing correlation matrices.
+It provides various plot types and customization options for exploring relationships between variables.</li>
+</ul></li>
+<li><strong>FactoMineR</strong>:
+<ul>
+<li>Summary: FactoMineR is a package for multivariate data analysis, including methods for principal component analysis (PCA), factor analysis, and clustering.
+It is useful for exploring complex datasets.</li>
+</ul></li>
+</ol>
+<!--     - The importance of the grammar of data manipulation (dplyr and tidyverse)  -->
+<!-- - What is Data Manipulation? -->
+<!--     - A formal definition and construction of data manipulation  -->
+<!--     - The application of data manipulation  -->
+<!-- - Summary -->
+
+<!--
+The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.
+-->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="rmd-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/edit/master/01-lit-review.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/drbradford12/DeniseRBradford-UNL-disseration/blob/master/01-lit-review.Rmd",
+"text": null
+},
+"download": [["thesis.pdf", "PDF"]],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

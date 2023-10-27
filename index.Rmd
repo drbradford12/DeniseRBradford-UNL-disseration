@@ -1,6 +1,6 @@
 ---
 # UNL thesis fields
-title: "DATA SCIENCE, DASHBOARDS, AND THE WAY IT WORKS WITH STATISTICS"
+title: "An investigation into how well dashboards using open-source data support statistical visual inference for naive users."
 author: "Denise Renee Bradford"
 month: "Month"
 year: "Year"
@@ -8,7 +8,8 @@ location: "Lincoln, Nebraska"
 major: "Statistics"
 adviser: "Susan R. VanderPlas, Ph.D"
 abstract: |
-  Here is my abstract. *(350 word limit)*
+  In the modern digital era, the exponential growth of data has forced the development and use of user-friendly tools to visualize this data, most notably dashboards. Dashboards are essential for interpreting complex datasets and supporting well-informed decision-making because they are interactive visual representation platforms. This dissertation examines how well these dashboards, in particular those that use open-source data, enable statistical visual inference for users, or "naive users," who have little or no experience with data analytics.
+  Due to its democratized nature, open-source data has become a significant source of information, assisting a variety of industries from public health to urban planning. Utilizing this data in dashboards can be extremely beneficial for the general public, especially for those without a thorough understanding of data interpretation. The difficulty, however, lies in creating dashboards that can not only effectively present data but also help uninformed users make accurate statistical inferences without misunderstanding.
 acknowledgments: |
   Thank you to all my people!
 dedication: |

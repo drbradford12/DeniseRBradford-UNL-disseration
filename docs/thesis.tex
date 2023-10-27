@@ -263,400 +263,11 @@ Thank you to all my people!
 \mainmatter
 
 
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
-
-Statisticians use graphs in almost every stage of their work. They create charts to summarize and explore new data and identify potential problems and opportunities.
-Models are fit based on relationships between variables which are often identified visually.
-We identify problems with those models based on residual plots and other visual diagnostics.
-When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
-
-Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group.
-In addition, not all visual displays have equal perceptual value Aspillaga (1996).
-The best graphics are designed to account for both the dataset and the intended audience's features.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization.
-For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina (VanderPlas \& Hofmann, 2015b).
-Other design constraints are due to the audience's experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful).
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
-When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
-This introduction presents previous research on constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards.
-
-Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control.
-As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
-
-In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
-As data in sports becomes more prominent, extensive, and collected, this information must be refined.
-
-Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
-The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights.
-Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, (Few, 2006a).
-Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields.
-Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
-
-Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
-Let us first consider the audience characteristics that affect the selection of graphics.
-Then, we will engage with considerations based on the data to be displayed.
-Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
-
-\hypertarget{perceptual-and-cognitive-process-of-graph-perception}{%
-\section{Perceptual and Cognitive Process of Graph Perception}\label{perceptual-and-cognitive-process-of-graph-perception}}
-
-Several factors influence an individual's ability to read and engage with data visualizations, including perception, attention, and expertise.
-
-Perception and attention are crucial cognitive processes that allow users to interpret and make sense of data visualizations.
-Perception refers to the manner in which we interpret and organize sensory information from our environment, whereas attention refers to the capacity to selectively focus on particular aspects of this information (McCallum, n.d.).
-Expectations of perception and attention are important in data visualization interactions, however expertise is the in-depth knowledge and skills that come from having a lot of experience and learning over a long period of time.
-
-In addition to perception and focus, domain-specific knowledge is essential for understanding and interacting with data visualizations.
-Expertise in a particular field can enable individuals to better interpret and comprehend the significance of the presented data, as well as identify potential biases or errors in the visualization.
-Thus, the ability to perceive and interact with data visualizations requires a combination of perceptual and attentional processes, as well as domain-specific knowledge, to interpret and comprehend the presented information.
-This suggests that data visualization involves the misuse of human visual perception in the visual presentation of data.
-Assigning meaning to visualization is not a statistical or computational step but a cognitive one.
-Each step in the data analysis process is part of a more extensive mental process of constructing meaning with important cognitive-based concepts.
-
-Studying cognitive science, human-computer interaction, and statistical graphics reveals fascinating connections and interdependencies that must be thoroughly investigated.
-The cognitive theory of working memory clarifies the mechanisms underlying our capacity to store and manipulate information temporarily.
-Expertise in long-term memory, on the other hand, sheds light on how our knowledge and experiences shape our cognitive processes.
-Attention concepts such as feature integration theory investigate how attention is directed and how the brain integrates various features into a coherent perceptual experience.
-The Gestalt principles illustrate the fundamental means by which we organize and perceive visual information.
-Statistical graphics and dashboard design bring together data visualization techniques, empowering effective communication and decision-making through meaningful visual representations.
-Ultimately, this knowledge paves the way for creating more effective and impactful interactions between humans and technology in our increasingly information-rich world.
-
-\hypertarget{visual-system}{%
-\subsection{Visual System}\label{visual-system}}
-
-Perception can be understood at the biology level through sensory systems and their corresponding neural mechanisms.
-The retina is a multi-layered sensory tissue that lines the back of the eye and acts at the interface of input light and visual perception.
-The retina is the primary function that captures the photons and convert those photons into electrical impulses that travel along the optic nerve to the brain where they turned into images.
-The transduction~of sensory stimuli into neural signals is a crucial aspect of perception.
-Each sensory modality, including sight, hearing, and touch, has specialized receptors that convert physical stimuli into electrical signals that the brain can interpret.
-For example, in vision, light enters the eye.
-It activates~photoreceptor cells in the retina, initiating a cascade of neural signals transmitted to the brain's visual cortex~via the optical nerve, \ref{tab:photoreceptor} (Hubel \& Wiesel, 2004).
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.55\linewidth]{figure/photoreceptors_image} 
-
-}
-
-\caption{An example of how the retina signals the visual cortex}\label{fig:photoreceptor}
-\end{figure}
-
-Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information, (Ware, 2012).
-Perception refers to the organization, interpretation, and conscious experience of sensory data.
-Perception is also defined as ``the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information,'' (Ward, Grinstein, \& Keim, 2010).
-Ward et al.~explain the notion of perception as the following, ``The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data, and in response to the task at hand.''
-
-Human visual perception is a highly complex and subjective process, and the efficacy of a visualization in communicating objective understanding depends on a vast array of subtle factors, (Reuter, Tukey, Maloney, Pani, \& Smith, 1990).
-Furthermore, certain situations present unique challenges and lead to systematic errors; can these provide insight into how the brain solves the problem of which objects are represented by which images in general (Gregory, 1968).
-
-The principles of eye-tracking involve the investigation of eye movements and fixations during visual perception.
-Eye-tracking technology permits researchers to monitor and record where individuals look and how their gaze traverses a visual scene.
-This data can be utilized to analyze patterns of attention, gaze behavior, and the sequence of fixations.
-The principles of eye-tracking provide valuable information regarding how individuals allocate their attention, which elements attract their gaze, and how they visually explore and process information.
-
-Gestalt principles, on the other hand, examine how humans perceive and organize visual elements into meaningful patterns and wholes.
-These principles originated in the field of Gestalt psychology, which emphasized that perception is influenced by the arrangement and grouping of its constituent parts.
-The Gestalt principles of proximity, similarity, closure, and continuity describe how our brains organize visual stimuli to form coherent and meaningful perceptions.
-
-Eye-tracking provides objective data on how individuals visually interact with a stimulus, revealing attention patterns and fixation sequences.
-This data can be used to determine how individuals explore and process visual data over time.
-
-Eye-tracking and Gestalt principles together contribute to our understanding of visual perception.
-Eye-tracking provides empirical data on eye movements and attention, whereas Gestalt principles provide frameworks for comprehending the organization and interpretation of visual stimuli.
-By combining these methodologies, researchers can better understand~how humans perceive and interpret the visual world.
-
-The F-pattern theory is founded on the observation that website visitors frequently scan content in a ``F'' shape.
-When interacting with text-heavy pages, such as articles or search engine results, this pattern is prevalent.
-The F-pattern suggests that users should initially scan horizontally across the top of the page (forming the top bar of the F), then move down slightly and scan horizontally across a shorter line (forming the middle bar of the F), and finally scan vertically along the left side of the page (forming the vertical bar of the F), (Nielsen, 2006).
-
-As demonstrated by figure \ref{tab:eyetracking}, (Alberts, 2019) provides F-pattern reading flow support.
-The highlighted areas indicate where the user's attention was drawn.
-The users began with the top-left corner, scanned the first line with KPIs (big font attracted the attention), moved to the second line, scanned each chart (colors attracted the attention), and only glanced briefly at the last line to focus more on the last chart (colors also attracted the attention).
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/eyetracking_dashboards_f_pattern} 
-
-}
-
-\caption{Example of eyetracking using noting the F-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking}
-\end{figure}
-
-The Z-pattern theory is another commonly observed eye-tracking pattern when users interact with webpage content.
-This pattern is better suited for pages with more visual elements, such as landing pages and ad layouts.
-In the Z-pattern, users scan horizontally across the top of the page (from left to right), then move diagonally to the left (forming the first diagonal of the Z), and finally scan horizontally across the bottom of the page (from left to right), (Nielsen, 1997).
-
-Figure \ref{tab:eyetracking2},(Alberts, 2019), has less content density and supports a Z-pattern reading flow in which users begin in the upper-left corner and zigzag to the bottom.
-Users only viewed the title briefly, most likely because it is brief and large, making it easy to read quickly.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/eyetracking_dashboards_z_pattern} 
-
-}
-
-\caption{Example of eyetracking using noting the Z-pattern reading flow on dashbaords used in a white paper written by Amy Albert with Tableau}\label{fig:eyetracking2}
-\end{figure}
-
-Examining the Gestalt principles, which describe how our brain organizes and interprets sensory information to form coherent patterns and objects, is one way to gain a deeper understanding of how this particular perception functions.
-
-\hypertarget{gestalt-principles}{%
-\subsection{Gestalt Principles}\label{gestalt-principles}}
-
-Visual interpretation describes how humans perceive the world and its objects as organized, regular, and simple shapes, schemas, figures, or forms.
-The theory of Gestalt has philosophical and psychological roots that date back to the late 1800s.\\
-Gestalt principles describe how humans perceive and organize visual information into meaningful patterns and structures to help the brain to effectively process and organize incoming visual information, making it easier to attend to and remember.
-Gestalt principles are grounded in cognitive psychology and address how the human brain processes visual information.
-Gestalt therapy is founded on the notion that overall perception is contingent upon the interaction of numerous factors.
-These principles include proximity, similarity, closure, continuity, symmetry, and figure-ground relationships formally outlined in ``Principles of Gestalt Psychology'', (Koffka, 2013).
-
-Gestalt principles include:
-
-\begin{itemize}
-\tightlist
-\item
-  Proximity: Objects close to each other are perceived as related or grouped.
-\item
-  Similarity: Objects that are similar in some way (e.g., shape, color, size) are perceived as related or grouped.
-\item
-  Continuation: The human eye follows lines and patterns, so designers can use this principle to guide the viewer's gaze through a display.
-\item
-  Closure: The human brain tends to complete incomplete figures or patterns, so designers can use this principle to create the illusion of missing information.
-\item
-  Figure-Ground: The human brain separates the foreground (figure) from the background (ground), so designers can use this principle to create visual hierarchy and emphasis.
-\item
-  Contrast: The human eye is drawn to high-contrast areas, so designers can use this principle to create emphasis and hierarchy.
-\item
-  Symmetry and Balance: The human eye finds symmetry and balance visually pleasing, so designers can use this principle to create a sense of harmony and order.
-\end{itemize}
-
-By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements.
-For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
-At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts, seen in the following figure xxx provided by (EVALUATION LLC, n.d.).
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{figure/GestaltPrinciplesofVisualPerception} 
-
-}
-
-\caption{Gestalt Principles with Examples}\label{fig:gestalt}
-\end{figure}
-
-This suggests that our brains frequently perceive things differently than what is present.
-For example, optical illusions or the ``gorilla in the crowd'' experiment show that we do not always process everything in our visual field because there is too much information for our brains to process.
-We organize the world according to Gestalt principles and pre-attentive attributes so that it is familiar, makes sense, and is easy to process.
-These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
-Understanding Gestalt principles can also illuminate how information is processed and stored in short-term memory and attention's critical role in this process.
-
-Perceptual grouping is a fundamental process in visual perception that involves organizing individual graphical elements into coherent perceptual units based on their inherent properties and spatial relationships.
-It helps us make sense of the complex visual world by grouping elements that belong to the same object or structure and separating elements that belong to different entities. Gestalt psychologists have extensively studied the concept of perceptual grouping, proposing principles such as proximity, similarity, closure, and continuity as grouping's underlying mechanisms.~
-These principles govern our perception of objects, edges, contours, and patterns, enabling us to perceive organized and meaningful visual information ((Wertheimer, 1938), (Wagemans et al., 2012), (Palmer, 2002)).
-
-Figure xxx shows that the perceptual grouping introduced by (Palmer, 2002), focuses on proximity, similar size, similar orientation, and common region concepts that will directly impact dashboard design through the lenses of the user.
-Perceptual grouping introduced by (Palmer, 2002), focuses on the proximity, similar size, similar orientation, and common region concepts that will directly impact dashboard design through the lenses of the user.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.55\linewidth]{figure/perceptual_grouping} 
-
-}
-
-\caption{Perceptual Grouping illustrated by Stephen E. Palmer in 2002}\label{fig:perceptualgrouping}
-\end{figure}
-
-The proximity principle states that elements occupying close spatial proximity are perceived as belonging.
-Gestalt psychologists emphasized this principle when they argued that nearby elements are more likely to be grouped (WERTHEIMER, 1923).
-Due to the proximity of a series of dots arranged in a line, we perceive them as a single line rather than individual dots.
-
-The principle of similar size states that perceptually similar-sized elements are grouped.
-This principle is based on the observation that similar-sized objects or elements are typically perceived as belonging to the same group.
-For example, when we see a collection of circles of varying sizes, we tend to perceive those with similar dimensions as belonging to the same group and those with distinct sizes as distinct entities.
-
-According to the principle of similar orientation, elements with relative orientations or directions are grouped.
-This principle proposes that elements with similar orientations are perceived as constituting a coherent pattern or object.
-For instance, when we see lines arranged at various angles, we tend to group lines with similar orientations, such as horizontal or vertical lines.
-
-The principle of common region states that elements that share a boundary or area should be grouped.
-This principle states that elements within the same enclosed space are perceived as a unit.
-For instance, we perceive a collection of dots arranged in a circle as a single entity due to the shared region they occupy.
-
-\hypertarget{role-of-attention-and-f.i.t.-feature-integration-theory}{%
-\subsection{Role of Attention and F.I.T. (Feature Integration Theory)}\label{role-of-attention-and-f.i.t.-feature-integration-theory}}
-
-Starting with Wertheimer's experiments on the perception of motion, he examined the phenomenon of apparent motion, which refers to the perception of motion when successive stationary stimuli are presented.~
-Wertheimer investigated the principles underlying the perception of motion and provided insights into the Gestalt principles of visual perception by conducting a series of perceptual experiments.
-
-(Wertheimer, 1912) investigated the phi motion, a type of motion in which the rapid presentation of two stationary stimuli creates the perception of movement.
-By manipulating the temporal and spatial arrangement of stimuli systematically, Wertheimer was able to identify critical factors that influenced the perception of motion.
-His experiments revealed that motion perception results from the interaction between sensory input and perceptual organization processes.
-
-The work of Wertheimer emphasized the significance of perceptual grouping principles, such as proximity and similarity, in the perception of motion.
-He hypothesized that the visual system tends to group stimuli that are close in space or have similar properties, resulting in the perception of a continuous and smooth motion between them.
-The results of Wertheimer's experiments on the perception of motion were instrumental in developing Gestalt psychology, which emphasized the significance of holistic and organized perceptual experiences.
-Wertheimer's work influenced our understanding of how the brain processes visual information to create motion perception by laying the groundwork for subsequent studies on motion perception.
-
-According to (Goldstein \& Cacciamani, 2021), preattentive processing automatically extracts and analyzes basic features such as color, shape, orientation, and motion.
-These features are processed in parallel across the visual field, allowing for the rapid detection and identification of salient environmental stimuli.
-Preattentive processing occurs effortlessly and outside conscious awareness, laying the foundation for subsequent attentional selection and more elaborate perceptual processing.
-
-The theories of Goldstein emphasize the significance of preattentive processes in various perceptual domains.
-For instance, he discusses the preattentive analysis of visual features such as color and orientation, which contribute to the visual perception of objects, scenes, and graphic patterns.
-In the auditory domain, preattentive processes automatically extract basic acoustic features like pitch and loudness.
-This makes it easier to find the source of sounds and tell them apart.
-
-By examining preattentive processing, Goldstein's theories provide a framework for comprehending the initial stages of sensory processing and the automatic extraction of fundamental perceptual features.
-These theories have significant implications for understanding how automatic and controlled processes shape perception.~
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/visual_system} 
-
-}
-
-\caption{Visual Attentionn can repersented by the following}\label{fig:visual}
-\end{figure}
-
-Visual attention is defined as ``the process of allocating cognitive resources to specific regions or features of the visual input based on their relevance and salience,'' (A. M. Treisman \& Gelade, 1980) and (Itti \& Koch, 2001).
-
-The famous experiment in optical illusion, ``Gorilla in the Midst'' or ``Invisible Gorilla'' video, which was utilized in a well-known 1999 study conducted by Daniel Simons and Christopher Chabris (Scot Covey \& Simons, n.d.). The video aims to demonstrate a phenomenon known as ``inattentional blindness'' and highlight some visual attention principles.
-
-Short-term memory (STM), also known as working memory, is the stage of temporary storage and processing where most memory retention effort is expended.
-According to Alan Baddeley's Working memory: Theories, models, and controversies, STM is a limited-capacity system prone to interference and decay, (A. Baddeley, 2012).
-Selective attention is essential for the maintenance of STM because it allows us to filter out irrelevant information and concentrate on what is essential, (Cowan, 2001).
-
-Visual aids such as charts and diagrams can improve short-term memory by allowing us to encode and retain information more effectively, (Alvarez \& Cavanagh, 2004).
-Utilizing visual aids such as charts can enhance our short-term memory by .
-Furthermore, annotations can also help aid short-term memory.
-By adding annotations, such as notes or highlights, to information we are trying to remember, we can improve our recall of the information later on, (Alvarez \& Cavanagh, 2004).
-
-According to the Feature Integration Theory (FIT), STM is composed of two stages: pre-attentive processing and focused attention (A. Treisman, 1998).
-Parallel and independently, the brain processes the physical characteristics of an object, such as its color, shape, and orientation, during pre-attentive processing.
-However, focused attention is required to bind these features into a coherent object representation in STM.
-STM can be improved through various strategies, such as rehearsal, chunking, and elaboration (Oberauer, 2009).
-For example, by repeating a phone number several times or breaking it down into chunks of two or three digits, we can increase the likelihood of it being stored in STM.
-Similarly, by elaborating on the information we want to remember, such as creating mental associations or visual images, we can enhance its retention in STM (Bui \& Myerson, 2014).
-
-STM is a dynamic and malleable cognitive system that is crucial to our daily lives.
-Understanding the mechanisms underlying STM and how to improve it can have significant implications for learning, memory, and the treatment of memory disorders.
-By analyzing the relationship between attention and working memory, we can gain insight into how we construct meaning from the information in our environment.
-
-\hypertarget{top-down-vs.-bottom-up-construting-meaning}{%
-\subsection{Top-Down vs.~Bottom-Up (Construting Meaning)}\label{top-down-vs.-bottom-up-construting-meaning}}
-
-Gestalt psychology indicates that humans actively construct meaning by organizing information into patterns and wholes (Wertheimer, 1938).
-Both top-down and bottom-up processing are involved in the process of meaning construction.
-Bottom-up processing entails analyzing sensory data from the environment and constructing perceptions based on this data.
-Top-down processing reflects the influence of prior knowledge, expectations, and context on the perception and interpretation of incoming sensory data.
-
-Together, top-down and bottom-up processing facilitate the encoding and retrieval of information from STM.
-Selective attention, which is the ability to focus on relevant information while ignoring irrelevant information, is an example of top-down processing that aids in the encoding and retrieval of information in STM (Cowan, 2010).\\
-According to FIT, perceiving objects involves both the bottom-up analysis of individual features and the top-down processing of higher-level features in order to form a complete perception (A. M. Treisman \& Gelade, 1980).
-
-The Gestalt principles of perception address how humans construct meaning from sensory data through both bottom-up and top-down processing.
-Both types of processing are involved in encoding and retrieving information, which has significant implications for understanding the mechanisms of STM.
-
-These principles guide how people perceive and make sense of the world around them, and they play a critical role in designing effective visual displays, such as dashboards.
-Understanding the Gestalt principles can also cast light on how information is processed and stored in short-term memory and attention's critical role in this process.
-
-\hypertarget{working-memory-why-cant-i-remember-someones-phone-number}{%
-\subsection{Working Memory (Why can't I remember someone's phone number?)}\label{working-memory-why-cant-i-remember-someones-phone-number}}
-
-Baddeley expanded our understanding of working memory by emphasizing its active processing nature, expanding upon the model of Atkinson and Shiffrin's Information Model developed in the 1968, which emphasizes the process of encoding, storage, and retrieval.
-Unless actively practiced, short-term memory has a limited capacity and a short duration of retention.
-If information is deemed significant or sufficiently rehearsed, it can be encoded and transferred to long-term memory, which has an almost unlimited capacity and long-term storage.
-The influential model developed by Baddeley, known as the working memory model, proposed a more complex structure with multiple components, (Baddeley Alan D., 1976).
-
-The Baddeley Memory Model is an updated and influential model of working memory.
-It includes the phonological loop (maintenance of verbal information), the visuospatial sketchpad (maintenance of visual and spatial information), the central executive (attentional control), and the episodic buffer (integrated storage).
-Together, these components facilitate the active processing and temporary storage of data in working memory.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/Baddeley_model} 
-
-}
-
-\caption{Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)}\label{fig:baddeleymodel-1}
-\end{figure}
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/info_model} 
-
-}
-
-\caption{Working Memory Model created by Baddeley (left) and Information Processing Model created by Atkinson and Shiffrin (right)}\label{fig:baddeleymodel-2}
-\end{figure}
-
-Visual and spatial information is processed and temporarily stored in the visuospatial sketchpad when individuals view statistical graphics.
-The central executive component facilitates the interpretation and analysis of the presented data by directing attention to pertinent aspects of the graphic.
-Utilizing working memory resources effectively can aid in comprehending and remembering the statistical information conveyed by the graphics.
-
-Together, Baddeley's model of working memory provided a comprehensive framework for studying memory and cognition.
-They contributed to the understanding of how information is processed, encoded, stored, and retrieved in human memory systems, laying the groundwork for subsequent research and theories in cognitive psychology.
-
-\hypertarget{role-of-expertise}{%
-\subsection{Role of Expertise}\label{role-of-expertise}}
-
-However, creating effective graphics is not a simple task, and proficiency in this area is required to create high-quality visualizations.
-In the upcoming sections, contributions made to the field of graphics by research on psychological processes, automaticity, readily available information, and practice effects are described.
-
-The first concept - \textbf{cognitive processes} in the long-term memory (LTM) process are defined as the way we think about and approach a task.
-As we become more proficient in a particular skill, we develop more complex and efficient mental models or schemata, a heuristic technique to encode and retrieve memories, the majority of typical situations do not require much strenuous processing.
-These mental models help us to organize information in a meaningful way, and to quickly identify and solve problems related to the task.
-This process is known as cognitive restructuring and is facilitated by developing domain-specific knowledge (Ericsson \& Lehmann, 1996).
-For example, a basketball coach is able to quickly recognize patterns and positions on a court that are common in basketball to do so we can mentally visualizing the arrangement and relationships between teams in a scatter plot, individuals are able to encode the spatial patterns and interpret the data points and relationships later.
-
-The second concept - \textbf{Automaticity} in the LTM process can be defined based on the ability to perform a task without conscious effort or attention.
-It occurs when a particular task or piece of information has been repeatedly practiced and encoded to the point where it is readily accessible and automatic (Anderson, 1992).
-While the concept of automaticity may not be directly related to statistical graphics, it can have an impact on how individuals interpret and process statistical information presented in graphics.
-As our proficiency in a task increases, our performance becomes more automatic, thereby freeing up cognitive resources for other tasks.
-The development of procedural knowledge, which is the ability to perform a series of steps or actions in a particular order, facilitates this process (Fitts \& Posner, 1967).
-For example, a well-trained quarterback can throw a ball without looking at the wide receiver because their throwing movements have become automatic.
-In this case, the hypothesis testing will be the probability that the wide receiver will always be there 80\% of the time when not being defended by a safety or cornerback.\\
-The degree to which statistical concepts and procedures are automated can affect how individuals interact with statistical graphics.
-Those who have a deep understanding of, say, hypothesis testing or statistical significance may apply these concepts automatically when analyzing data presented in a graph.
-This automated application of statistical principles can influence their perception of the data and guide their decision-making processes.
-
-The third concept - \textbf{Information Readily Available} is defined by how we process information related to a task in the LTM process.
-As our proficiency increases, we can recognize and retrieve pertinent information more rapidly and precisely than a novice.
-This is made possible by the creation of domain-specific knowledge structures that allow us to retrieve pertinent information from memory quickly (Chase \& Simon, 1973).
-Statistical graphics are often presented in specific contexts, such as scientific research, business reports, or news articles.
-LTM contains a wealth of contextual knowledge that can be drawn upon to better understand and interpret the statistical graphics within their specific domains.
-Contextual knowledge can help individuals connect the presented information to real-world scenarios, evaluate the credibility of the data, and make informed decisions based on the graphics.
-For example, a medical expert can quickly identify signs and diagnose a patient using their knowledge of disease symptoms and risk factors.
-
-The fourth concept - \textbf{Practice effects} effects are the improvements in performance that result from repeated practice.
-The most gains generally occur at the outset of a new practice, but the gains gradually diminish as the individual approaches their performance ceiling (Anderson, 1982).
-Procedural knowledge and automaticity, which allow for more efficient and accurate task performance, facilitate practice effects.
-When statistical graphics are used alongside explanations and discussions of statistical concepts, repeated exposure to these graphics strengthens the retention of the underlying statistical principles.
-Repetitive interaction with statistical graphics aids in the retention of concepts like distributions, central tendencies, variability, and correlations.
-This practice effect in LTM facilitates statistical knowledge integration and its application to data analysis and decision-making.
-
-The contributions of research on psychological processes, automaticity, readily available information, and practice effects to the field of graphics have significant implications.
-Expertise is required to create high-quality graphics, which requires a thorough understanding of design principles and the capacity to work quickly and efficiently.
-The use of automatic processing and domain-specific knowledge can aid designers in processing and deciding on design elements efficiently and quickly.
-The creation of standardized design templates, workflows, and other tools can aid in enhancing the efficiency and effectiveness of the design process.
-Design skills can be improved through deliberate guidelines, and educators must focus on developing skills that can be applied in a variety of contexts.
-
-As the significance of graphics in numerous fields continues to rise, the demand for specialists in this area will only intensify.
-By comprehending the contributions of research on psychological processes, automaticity, readily accessible information, and practice effects, designers, educators, and trainers can develop more effective approaches to graphics design and education.
-This can help ensure that the graphics used to convey complex information are clear, concise, and effective, making it easier for individuals to comprehend and interpret the required information.
-
-\hypertarget{engagement-with-the-data}{%
-\subsection{Engagement with the data}\label{engagement-with-the-data}}
-
-The goal of data analysis is to extract meaningful insights, patterns, and knowledge from data.
-The process of data analysis involves collecting, cleaning, transforming, and modeling data, followed by the use of statistical and machine learning methods to uncover patterns and relationships within the data.
-The end goal of data analysis is to support decision making and provide a basis for informed action.
-Data analysis can help organizations to better understand their customers, market trends, and operational performance.
-Additionally, data analysis can support scientific research by helping researchers to test hypotheses, develop theories, and gain a deeper understanding of complex phenomena.
-Ultimately, data analysis aims to turn data into actionable insights and information that can inform and improve decision-making.
-
-\hypertarget{data-considerations}{%
-\section{Data Considerations}\label{data-considerations}}
+\hypertarget{general-introduction}{%
+\chapter{General Introduction}\label{general-introduction}}
+
+\hypertarget{exploratory-data-analysis-eda}{%
+\section{Exploratory Data Analysis (EDA)}\label{exploratory-data-analysis-eda}}
 
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA).
 Previous research by Tukey focused on graphics as a tool for exploratory analysis.
@@ -716,562 +327,205 @@ The application of semiology in graphical communication is not devoid of obstacl
 One difficulty is the possibility of misinterpretation, in which viewers may assign a different meaning to a visual element than was intended, (Monmonier, 1985).
 Another concern is the possibility of cultural differences in interpretation, in which a visual element may have a different meaning in one culture versus another, (Norman, 2013).
 
-Despite these obstacles, semiology in graphical communication remains an indispensable tool for effectively conveying information.
-By understanding semiology principles and syntax and semantics' role in graphical communication, designers can create compelling visual representations that convey information clearly and concisely.
+Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover patterns, trends, and insights.
+It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is.
+EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.
 
-By utilizing visual elements such as bars and lines to represent data, graphs can make complex information more understandable to viewers.
-For instance, a line graph can be used to illustrate the change in the value of a stock over time, making it easier for investors to identify trends and patterns. Leland Wilkinson writes in his book ``The Grammar of Graphics'' that ``graphical methods are not only superior to other forms of communication, but also superior to numerical or verbal methods for certain types of data and reasoning,'' (Wilkinson, 2012).
+\hypertarget{open-source}{%
+\section{Open-Source}\label{open-source}}
 
-It proposes that any statistical graphic can be broken down into a set of essential components, or ``grammar,'' that can be combined in different ways to create a wide range of visualizations, following a layered approach to describe and construct visualizations or graphics in a structured manner.
+Open-source data, deeply rooted in the foundational principles of shared knowledge that has driven human progress for millennia, has evolved significantly over the decades.
+Originating from the frustrations of figures like Richard Stallman in the 1980s, who championed the free software movement and paved the way for the creation of transformative licenses such as the GNU General Public License, the concept has grown to encompass more than just software. (Stallman, 2002)
+With organizations like the Open Source Initiative standardizing open-source practices and monumental projects like Linux showcasing its potential, open-source principles expanded by the late 1990s to include data.
+This movement towards openness has been marked by a commitment to transparency, collaboration, and unrestricted access, revolutionizing how we perceive and interact with data in the modern era.
 
-The components of the grammar of graphics include:
+The principles of open-source data revolve around the concepts of free access, transparency, collaboration, and redistribution, fostering a community-driven approach to data sharing and utilization.
+At its core, open source is about making the source content (usually software code) freely available.
+This transparency allows anyone to review, inspect, and understand the source.
+The freedom to use, modify, distribute, and study the source content without restrictions is a cornerstone of open source.
+This is articulated in various open source licenses, like the GNU General Public License (GPL), which emphasizes the rights of end users.
+Open source projects thrive on collaborative efforts.
+Diverse groups of people from around the world contribute, enhancing the project's robustness and creativity.
+Tools like Git and platforms like GitHub have made this collaborative approach more streamlined.
+Open source projects often foster strong communities.
+These communities not only contribute code but also offer support, documentation, and strategies for the project's future.
+These communities' sense of belonging and shared purpose is a driving force behind many successful open-source projects.
+Contributions to open source projects are often evaluated based on merit.
+The best ideas or implementations, regardless of their source, are adopted, promoting a culture of excellence.
+The principle of redistribution ensures that modified versions of open source content remain open.
+This ensures a perpetual cycle of community-driven improvement and access.
+Open source principles prioritize the end user's interests.
+This user-centric approach often leads to software or content that's more aligned with what users genuinely need and want.
 
-\begin{itemize}
-\item
-  Data: The raw data being visualized represents a set of observations or values.
-\item
-  Aesthetic Mappings: The mapping of data variables to visual properties such as position, color, shape, and size.
-\item
-  Scales: The mapping of data values to visual values, such as mapping a numerical value to a bar height.
-\item
-  Geometries: The basic shapes representing the data, such as points, lines, bars, and histograms.
-\item
-  Facets: The plot division into multiple subplots, each representing a different subset of the data.
-\end{itemize}
+\hypertarget{origins-of-open-source}{%
+\section{Origins of Open Source}\label{origins-of-open-source}}
 
-For example, a bar chart can be created by mapping a categorical variable to the x-axis, mapping a numerical variable to bar heights, and using rectangular bars as the geometry.
-Moreover, mapping two numerical variables can create a scatter plot to the x and y positions and use points as the geometry.
-Finally, the ``Grammar of Graphics'' provides a systematic way of thinking about visualizations, making it easier to choose the appropriate visual representation for a given dataset.
+The concept of open source originated long before computers, where shared knowledge formed the basis of human progress.
+With the advent of computers, Richard Stallman, frustrated with a printer that didn't have available source code, initiated the free software movement in the 1980s and established the GNU Project and the Free Software Foundation (Stallman, 2002).
+Linux, an open-source operating system kernel initiated by Linus Torvalds in 1991, became one of the most popular examples of open-source success.
+The Apache HTTP Server, released in 1995, became another success story, powering a large fraction of the internet (Weber, 2004).
+Open-source principles began expanding from software to data in the late 1990s and early 2000s. The idea was to share data sets for public use without restrictions.
+Projects like the Human Genome Project advocated for open data to advance science and medicine (Sulston \& Ferry, 2002).
 
-\begin{figure}
+\hypertarget{open-access-data-repositories}{%
+\section{Open Access Data Repositories}\label{open-access-data-repositories}}
 
-{\centering \includegraphics[width=0.45\linewidth]{figure/gglayers} 
+In the digital age, open access data repositories have become crucial platforms, transforming how data are shared, accessed, and stored among academic and research communities.
+These repositories are online spaces created specifically to store datasets and make them available to everyone. In line with the principles of open science, which promote knowledge sharing, transparency, and reproducibility in research endeavors, their main objective is to democratize access to data.
 
-}
+These repositories serve many different purposes at their core.
+They support openness in the scientific method first and foremost.
+It enables other researchers and the general public to examine, confirm, and replicate research findings by providing unrestricted access to datasets. Collaboration is also encouraged by this open model.
+Datasets are accessible to researchers in a variety of fields and locations, providing opportunities to expand upon, combine, or compare various sets of data.
+Eliminating research duplication is a significant additional benefit.
+Access to data from earlier studies reduces the need to repeatedly collect similar data, which saves time, effort, and resources.
+Additionally, these repositories are essential for the long-term preservation of data, guaranteeing that datasets are accessible for future scientific research and for posterity.
 
-\caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2-1}
-\end{figure}
-\begin{figure}
+A closer look at the features of these repositories reveals several standard components.
+Metadata is paramount; this descriptive information elucidates the context, origin, methodology, and other pertinent details of the datasets, ensuring they are comprehensible to those accessing them.
+Many repositories also emphasize the citability of datasets.
+By assigning a Digital Object Identifier (DOI), datasets become easily referable in academic and research contexts.
+Licensing is another cornerstone. To clarify usage rights and conditions, datasets are often accompanied by explicit licenses, with Creative Commons licenses being particularly prevalent.
+These licenses can stipulate various conditions, with attribution being a common requirement.
+Furthermore, the user experience is enhanced through tools that facilitate easy searching, accessing, and downloading of datasets.
 
-{\centering \includegraphics[width=0.45\linewidth]{figure/graphic-flowchart} 
+However, like all systems, open access data repositories face challenges.
+Ensuring data privacy is a significant concern, especially in datasets derived from human subjects, such as in health or social research.
+Standardization is another hurdle.
+Given the diverse range of researchers and datasets being uploaded, achieving a standardized format for data and metadata is daunting.
+And not to be overlooked is the challenge of sustainability.
+Maintaining a sophisticated digital platform requires both financial resources and technical expertise.
+Ensuring the longevity of such repositories, especially in a rapidly evolving digital landscape, remains a concern.
 
-}
+Several prominent examples underscore the significance and diversity of open access data repositories.
+Zenodo, developed under the European OpenAIRE program, serves as a multifaceted platform catering to researchers across disciplines.
+Dryad specializes in datasets linked to scientific publications, predominantly in life sciences and biomedicine.
+Figshare offers a broader spectrum, allowing researchers to deposit a range of research outputs, including datasets, making them available to the public.
 
-\caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:graphics2-2}
-\end{figure}
+Historically, the rise of these repositories can be contextualized within the broader open science movement.
+This movement, gathering momentum over recent decades, has been advocating for a more transparent, accessible, and shared research process.
+As technological advancements surged, leading to an exponential growth in digital data, the emphasis on preserving and sharing this data treasure trove intensified.
 
-Michael Friendly, a leading expert in data visualization, has utilized the principles of the grammar of graphics to develop innovative teaching methods that make complex data visualization concepts more accessible to a broader audience.
-Friendly has investigated the origins and development of graphic techniques, tracing their evolution from antiquity to the present.
-He used SAS with hands-on experiments to present categorical data analysis visually, Friendly (2014).
-By emphasizing the role of graphical methods in scientific discovery, Friendly has helped promote his use in various disciplines, from the natural sciences to the social sciences and beyond.
-In his book ``Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization,'' Friendly provides a comprehensive overview of the key milestones in the evolution of statistical graphics, including the contributions of pioneers like William Playfair, Charles Minard, and John Tukey, (Friendly \& Denis, 2001).
+Today, the significance of open access data repositories is further underscored by policies and guidelines from influential bodies.
+A growing number of funding agencies and academic journals are either mandating or recommending that data underpinning research findings be housed in open access repositories.
+This trend not only ensures that research outputs, especially data, remain accessible but also reflects a broader societal push towards transparency, especially when research is funded by public coffers.
 
-As discussed regarding semiology, Tukey's Exploratory Data Analysis (EDA), and the introduction of the Grammar of Graphics, we should be mindful that a well-constructed graphic can be misleading out of context.
-Compelling graphics can be a powerful tool for communicating complex information, making numerical accuracy, engagement, correct decision-making, and accurate predictions crucial.
+R has become a prominent and adaptable programming language within the domain of data analysis and exploratory data analysis (EDA).
+A number of crucial R packages have been created to streamline the processes of data manipulation, visualization, and statistical analysis.
+One of the prominent programs in this category is ggplot2, which was developed by Hadley Wickham.
+This package is widely recognized for its versatility and aesthetic appeal in generating a diverse range of visually appealing and informative data visualizations (\textbf{wickham2016?}).
+Wickham et al.~have developed dplyr and tidyr, which offer convenient functionalities for filtering, summarizing, and reshaping data frames, hence enhancing the efficiency of data manipulation activities (\textbf{wickham2021?}).
+The data.table package, developed by Matt Dowle, is widely recognized for its remarkable speed and efficiency in handling huge datasets, particularly in the context of performance-oriented data manipulation tasks (\textbf{dowle2021?}).
+Although not classified as a R package, it is noteworthy to include Wes McKinney's Python library, pandas, due to its significant influence in the field of data manipulation and analysis in the Python programming language (\textbf{mcKinney2010?}).
+Within the field of psychology and psychometrics, the psych package developed by William Revelle serves as an extensive tool for doing factor analysis and reliability analysis (\textbf{revelle202?}).
 
-In the context of data visualization, numerical accuracy refers to the precision and correctness of the numerical data displayed in graphics.
-Accurate graphics can assist users in comprehending complex numerical data and making more informed decisions, Cardoso, Leite, \& Aquino (2016).
+Furthermore, there are other software packages available that may be utilized by researchers and analysts to enhance their data management and analysis processes.
+For instance, the naniar package, developed by (\textbf{tierney2020?}), is specifically designed for handling missing data. Another useful package is summarytools, created by (\textbf{comtois2021?}), which enables the generation of descriptive statistics.
+Additionally, the corrplot package, developed by Wei and Simko (Wei et al., 2017), provides significant tools for displaying correlation matrices.
+These packages provide researchers and analysts a range of valuable resources to aid in their work.
+The FactoMineR package, developed by Husson, Lê, and Pagès (\textbf{husson2020?}), offers crucial techniques for conducting multivariate data analysis, including principal component analysis and clustering.
+These software programs, created by renowned individuals in the discipline, jointly provide data analysts and scientists with the necessary tools to efficiently investigate and analyze data.
 
-Engagement in the context of data visualization is the extent to which viewers are drawn to and interested in the displayed data.
-Engaging graphics can encourage users to interact with and explore data further, resulting in a more thorough comprehension of the data.
-
-Correct decision making refers to the capacity of data visualization to enable users to make informed and precise decisions based on the presented information.
-Clear, accurate, and well-designed graphics can help users recognize patterns and insights, resulting in more effective decision making.
-
-Correct predictions refers to the capability of graphics to accurately forecast or predict future events or outcomes.
-For accurate predictions, data visualization must include trustworthy data, sound statistical models, and efficient visualization techniques.
-
-``Graphical Tests for Power Comparison of Competing Designs'' by Hofmann et al.~presents a graphical method for comparing the power of two or more competing designs in an experimental study (Hofmann, Follett, Majumder, \& Cook, 2012).
-The article demonstrates that the graphical method is a useful tool for comparing the effectiveness of various experimental designs.
-It enables researchers to visualize and compare the effectiveness of different designs in an intuitive and straightforward manner.
-
-Two methods for measuring the particle size distribution in a chemical process were compared in one study.
-The study evaluated both designs under various operating conditions and compared their power using a graphical method.
-The results demonstrated that one design was more effective at detecting differences in operating conditions than another.
-
-Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis.
-John Tukey's EDA methods are currently known and well-vetted in the field.
-However, Satyanarayan et al.~addressed this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar (Satyanarayan, Moritz, Wongsuphasawat, \& Heer, 2016).
-Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
-
-Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
-When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
-Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
-In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
-Here are some general guidelines for making better graphics with works from Few (\textbf{few2012?}), Tufte (\textbf{tufte1983?}), and Cairo (Cairo, 2016):
+Here are some popular R packages for exploratory data analysis along with a brief summary:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+  \textbf{ggplot2}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: ggplot2 is a powerful data visualization package for creating a wide range of high-quality plots and charts.
+    It follows the Grammar of Graphics framework, making it highly customizable and flexible.
+  \item
+    Author: Hadley Wickham
+  \end{itemize}
 \item
-  Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+  \textbf{dplyr}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: dplyr is a package for data manipulation.
+    It provides a set of easy-to-use functions that facilitate common data manipulation tasks such as filtering, selecting, grouping, and summarizing data.
+  \item
+    Author: Hadley Wickham
+  \end{itemize}
 \item
-  Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+  \textbf{tidyr}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: tidyr is another package by Hadley Wickham that is used for tidying and reshaping data.
+    It helps in converting data from wide to long format and vice versa, making it suitable for analysis and visualization.
+  \end{itemize}
 \item
-  Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+  \textbf{data.table}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: data.table is an efficient package for data manipulation and analysis.
+    It is particularly well-suited for large datasets and complex operations.
+  \end{itemize}
 \item
-  Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+  \textbf{pandas} (not an R package, but widely used in Python for EDA):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: pandas is a Python library for data manipulation and analysis.
+    It provides data structures like DataFrames and Series, along with a wide range of functions for data cleaning and analysis.
+  \end{itemize}
 \item
-  Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+  \textbf{psych}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: The psych package in R provides various functions for conducting psychometric and psychological research.
+    It includes tools for factor analysis, reliability analysis, and data visualization.
+  \end{itemize}
 \item
-  Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
+  \textbf{naniar}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: naniar is an R package that helps with missing data exploration and visualization.
+    It provides functions for identifying, visualizing, and handling missing data in datasets.
+  \end{itemize}
+\item
+  \textbf{summarytools}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: summarytools is a package for creating beautiful and informative summary tables and charts for descriptive statistics.
+    It can be helpful for summarizing and exploring data.
+  \end{itemize}
+\item
+  \textbf{corrplot}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: corrplot is a package for visualizing correlation matrices.
+    It provides various plot types and customization options for exploring relationships between variables.
+  \end{itemize}
+\item
+  \textbf{FactoMineR}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Summary: FactoMineR is a package for multivariate data analysis, including methods for principal component analysis (PCA), factor analysis, and clustering.
+    It is useful for exploring complex datasets.
+  \end{itemize}
 \end{enumerate}
-
-\begin{verbatim}
-## Warning: Groups with fewer than two data points have been
-## dropped.
-\end{verbatim}
-
-\begin{verbatim}
-## Warning: Removed 1 rows containing missing values
-## (`position_stack()`).
-\end{verbatim}
-
-\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-1} \end{center}
-
-\begin{verbatim}
-## `stat_bin()` using `bins = 30`. Pick better value with
-## `binwidth`.
-\end{verbatim}
-
-\begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/flights_data_example-2} \end{center}
-
-On the other hand, Interactive graphics provide a more dynamic and engaging way to explore and analyze complex data sets than traditional static visualizations.
-By allowing users to manipulate and explore data in real-time, interactive graphics can reveal hidden patterns and relationships that may be difficult to discern in static visualizations, making them a valuable tool for data analysis.
-
-\hypertarget{interactive-graphics}{%
-\subsubsection{Interactive Graphics}\label{interactive-graphics}}
-
-As previously mentioned, theories behind visual representation include - graphical comprehension (Cleveland \& McGill, 1984), preattentive processing (Ware, 2012), gestalt theory (Few, 2009), and graphical excellence (Edward R. Tufte, 2001).
-Interactive graphics offer a number of advantages when analyzing complex data sets, and technological progress has played a crucial role in making these tools more accessible and widely adopted, especially in interactive graphics.
-Compared to static visualizations, interactive graphics offer a more engaging and dynamic way to explore and analyze complex data sets.
-To gain a deeper understanding of the data, users are able to modify parameters, zoom in on specific regions, and rapidly explore various variables.
-In addition, interactive graphics offer a more intuitive method of communicating findings to non-technical users, making them a valuable asset for data-driven decision making.
-Interactive graphics are excellent for EDA; they are designed for exploring rather than presenting information (and more) and can be obtained by directly querying the graphic, Unwin et al. (2003).
-Overall, interactive graphics are a potent data analysis tool, allowing analysts to gain a deeper understanding of complex data sets and to make more informed decisions.
-
-The area of interactive graphics is still very much a work in progress despite existing as a field of research since the late 1960s.
-Developments are driven partly by new technology, such as \texttt{d3} (Bostock, Ogievetsky, \& Heer, 2011).
-Visualizations are more than just a picture.
-They are now a tool that facilitates analytic activity through different modes of interaction (Yi, Kang, Stasko, \& Jacko, 2007).
-Visualization is context-free, as it can mean different things to different people depending on the situation (Parsons \& Sedig, 2014).
-
-In recent years, interactive graphics that enable users to manipulate and explore visualizations in real-time have grown in popularity and align with the van Wijk Simple Visualization Model framework.
-The van Wijk Simple Visualization Model is a diagrammatic representation that provides a simple and effective way to understand and visualize the flow of information and data through a system.
-van Wiij's simple visualization model shows how insights are generated as the human participates in a feedback loop between reading and interacting with visualization, (Van Wijk, 2005).
-It is a commonly used tool in EDA, the initial step in the data analysis.
-The van Wijk model can represent data flow from data sources, through intermediate processing stages, to the final visualization of results.
-This model is also context-free, allowing for the focus to be on the feedback loops between visualization and the user.
-The model helps to identify the various steps involved in the visualization process, from the collection and processing of data to the presentation of results.
-By doing so, it supports the design of more effective and user-friendly visualizations, which can enhance the overall user experience.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/vanWiijSimpleModel} 
-
-}
-
-\caption{van Wiij Simple Visualization Model}\label{fig:vanWiijmodel}
-\end{figure}
-
-While the van Wijk Simple Visualization Model provides a valuable framework for designing compelling visualizations, it should not be used in isolation.
-Instead, effective data visualization requires a thorough understanding of human perception, cognition, and Human-Computer Interaction (HCI) principles.
-Later in this review, we will explore the fundamental principles of Human-Computer Interaction and how they can be applied to the design of compelling interactive graphics.
-
-Based on the above best practices on the concept of cognitive load in graphics, the theory of manipulation of visualizations provides a set of guidelines and best practices for designing interactive graphics that minimize cognitive load and facilitate practical data analysis.
-
-As interactive visualizations play a more significant role in information systems, designers must know what tasks, visual representations, and interaction techniques are available and how they work to facilitate analytical reasoning.
-They must decide on the most effective visual representation without being able to estimate every user's ability to read and interpret the visualization.
-
-An influential framework developed by Vessey et al refers to the degree to which a person's cognitive abilities match the cognitive demands of a task, (Vessey \& Galletta, 1991), in the field of cognitive load research has been improved by Heer and Bostock, providing examined how the complexity of interactive visualizations influences users' cognitive load, (Heer \& Bostock, 2010).
-The authors discovered that more intricate visualizations tend to increase cognitive load, especially for users with lower visual literacy.
-They recommended that designers consider the cognitive load of interactive visualizations and strive to reduce complexity whenever possible.
-
-While the direct relationship to traditional mobile devices, such as phone screens, will not be discussed, it is noteworthy to account for the impact of larger screen mobile devices, such as iPads and other portable devices, concerning a user's cognitive abilities.
-Eissele et al investigated the cognitive load of mobile interactive visualizations, (Eissele, Weiskopf, \& Ertl, 2009).
-The authors discovered that the limited input options and small screen size of mobile devices can increase cognitive load in interactive visualizations.
-To reduce cognitive load on mobile devices, they suggested that designers employ suitable visual encoding techniques and simplify interactions.
-
-Lastly, Toyama et al.~investigated the impact of interactive elements on cognitive load in visualizations, (Toyama, Sonntag, Orlosky, \& Kiyokawa, 2015).
-Based on the nature of the task and the user's familiarity with the interactive features, the authors discovered that interactive features can both increase and decrease cognitive load.
-They suggested that designers should evaluate the cognitive load caused by the interactive elements they include in visualizations
-
-These studies suggest that designers should carefully consider the cognitive load implications of interactive graphics and strive, whenever possible, to reduce complexity.
-Simplifying interactions and implementing suitable visual encoding techniques can reduce cognitive load, especially on mobile devices.
-In addition, designers should evaluate the cognitive load caused by the interactive features they include in visualizations.
-
-\hypertarget{audience-data-interactions}{%
-\section{Audience-Data Interactions}\label{audience-data-interactions}}
-
-Effective design of interactive graphics necessitates a comprehensive knowledge of Human-Computer Interaction (HCI) and User Experience (UX) design principles to ensure that the visualizations are engaging, informative, intuitive, and user-friendly.
-
-Designing an effective interactive dashboard involves much more than simply selecting a set of visualizations and arranging them on a page.
-It requires a comprehensive knowledge of Human-Computer Interaction (HCI) and User Experience (UX) design principles and the ability to apply these principles to data analysis and visualization.
-Before designing an interactive dashboard, it is crucial to have a thorough understanding of the underlying HCI and UX frameworks and the specific needs and preferences of the intended audience.
-By understanding the principles of HCI and UX design, it is possible to create interactive dashboards that facilitate effective data analysis and offer a seamless and engaging user experience.
-This can result in greater engagement with the data, more profound insights, and better-informed decisions.
-
-\hypertarget{human-computer-interaction-hci}{%
-\subsection{Human-Computer Interaction (HCI)}\label{human-computer-interaction-hci}}
-
-Human-Computer Interaction (HCI) refers to the study of the interaction between humans and computers. It encompasses the design, evaluation, and implementation of computer systems that are intuitive, efficient, and effective to use.
-
-In the 1970s and 1980s, HCI researchers began to concentrate on developing user interface design theories and methodologies.
-The ``GOMS'' model, created by Card, Moran, and Newell in 1983, was an influential framework that provided a way to model user behavior when interacting with computer systems, (S. Card, Moran, \& Newell, 1983).
-During this time, the field of usability engineering emerged, which involved designing and testing interfaces to ensure that they were user-friendly and efficient.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/goms_model} 
-
-}
-
-\caption{GOMS Model created by Card Moran and Newell}\label{fig:gomsmodel}
-\end{figure}
-
-The 1990s witnessed a significant rise in the popularity and accessibility of personal computers, as well as the emergence of the World Wide Web as the dominant information-sharing platform.
-This resulted in an emphasis on designing interfaces for web-based applications and research into the usability of websites.
-In 1995, Don Norman published his influential book ``The Design of Everyday Things,'' emphasizing the importance of designing intuitive and user-friendly products and interfaces (revisited and revised in 2013, (Norman, 2013).
-His influential book examines the principles of user-centered design and the critical role that psychology plays in shaping user experiences.
-It emphasizes the significance of user-friendly and intuitive designs in everyday objects.
-
-In the 2000s, HCI research expanded to include new technologies such as mobile devices, touchscreens, and virtual and augmented reality, O'Brien \& Toms (2008).
-There was also an increased focus on designing interfaces for diverse user populations, including people with disabilities and older adults.
-
-HCI research evolves and adapts to new technologies and user requirements.
-The use of artificial intelligence and machine learning in interface design, designing interfaces for wearable devices, and designing interfaces for social and collaborative systems are some current research areas.
-
-\hypertarget{user-experience-ux}{%
-\subsection{User Experience (UX)}\label{user-experience-ux}}
-
-The history of UX can be traced back to the early days of human-computer interaction (HCI) research, but it has evolved to become a distinct discipline in its own right. User Experience (UX) refers to the overall interaction between a user and a product or service. It includes the interface, functionality, content, and aesthetics.
-
-The origins of user experience research can be traced back to the 1970s and 1980s.
-At this time, researchers were primarily focused on developing efficient and effective user interface design theories and methodologies.
-As computer use became more prevalent in the 1990s, the emphasis shifted to designing interfaces that were not only functional but also enjoyable to use.
-In his influential 1995 book, ``The Design of Everyday Things,'' Donald Norman argued that good design should center on the needs and behaviors of the user.
-Jesse James Garrett coined the term ``user experience design'' in 2000 to describe the process of designing intuitive, efficient, and enjoyable user interfaces, Garrett (2003).
-The rise of mobile devices in the late 2000s and early 2010s presented UX designers with new challenges and opportunities.
-As users began interacting with devices featuring smaller screens and touch-based interfaces, designers were forced to reevaluate traditional interface design principles and adopt new interaction paradigms, (Hassenzahl, 2010).
-
-Alan Cooper's ``The Inmates Are Running the Asylum'' - Cooper discusses the significance of user-centered design and the challenges and opportunities in the software design field in this book.
-He advocates placing the needs and objectives of users at the forefront of the design process, (Cooper, 1999).
-``About Face: The Essentials of Interaction Design'' - This comprehensive guide covers interaction design principles, methods, and best practices.
-It provides designers with useful insights and real-world examples to assist them in developing effective and engaging user experiences, (Cooper, Reimann, Cronin, \& Noessel, 2014).
-
-Dan Saffer's ``Designing for Interaction: Creating Smart Applications and Clever Devices'' delves into the history and evolution of interaction design and offers practical advice for creating meaningful user experiences.
-The book examines a variety of design strategies and techniques for designing interactive applications and devices, (Saffer, 2007).
-
-``A Project Guide to UX Design: For User Experience Designers in the Field or in the Making'' by Russ Unger and Carolyn Chandler provides step-by-step approaches, techniques, and examples for the entire UX design process.
-It is intended for both seasoned designers and newcomers to the field, (Chandler \& Unger, 2012).
-
-``Information Architecture: For the Web and Beyond'' by Louis Rosenfeld and Peter Morville focuses on the optimal organization of information for online and offline user experiences.
-It investigates the principles and methods of information architecture as well as its influence on user-centered design, (Morville, Rosenfeld, \& Arango, 2015).
-
-Overall, understanding the design principles of UX and HCI and the importance of testing static graphics can significantly inform the design of interactive dashboards, as we will explore in more detail later in this review.
-
-\hypertarget{ux-and-cognitive-load}{%
-\subsection{UX and Cognitive Load}\label{ux-and-cognitive-load}}
-
-Since 1980s, cognitive load theory (CLT) of Human-Computer Interaction (HCI) was developed by cognitive psychologist John Sweller.
-The primary focus of Sweller's research was on learning and the cognitive processes underlying the acquisition of new knowledge and skills.
-
-The evolution of CLT was influenced by a number of fundamental concepts and theories.
-Information processing theory, which posits that individuals process information sequentially using sensory memory, working memory, and long-term memory, was one of the major influences.
-Sweller's research extended this theory by highlighting the limitations of working memory and its role in cognitive load, (Sweller \& Chandler, 1994).
-In addition, CLT distinguished between intrinsic, extraneous, and relevant cognitive load.
-The intrinsic load of a task is its inherent complexity, which cannot be altered by the interface design.
-On the other hand, the extraneous load is the cognitive load imposed by the design of the learning environment or interface, which can be reduced through practical methods.
-Finally, germane load refers to the cognitive effort required for learning and acquiring knowledge, (Hollender, Hofmann, Deneke, \& Schmitz, 2010).
-
-The original purpose of CLT was to improve instructional design and learning outcomes by minimizing irrelevant cognitive load and optimizing relevant cognitive load.
-However, its principles and concepts have been applied to the field of HCI, recognizing the significance of cognitive load in the design of interactive systems and user interfaces.
-
-The cognitive load theory of HCI illuminates human-computer interaction cognitive processes.
-By comprehending the cognitive load imposed by interfaces and learning environments, designers can create more efficient and user-friendly systems that maximize users' mental resources.
-CLT has continued to evolve and inform interface design over time, improving HCI's usability, user experience, and cognitive support.
-
-Both CLT and HCI were based on the same theories of cognition.
-Both emphasized the reduction of unnecessary cognitive load.
-With the concept of germane cognitive load, CLT incorporated principles to promote germane learning processes, which may result in a rise in cognitive load.
-
-In relation to Cognitive Load Theory (CLT), the split-attention principle addresses the negative effects of dividing a learner's attention between multiple sources of information during learning tasks.
-The split-attention principle focuses specifically on reducing extraneous cognitive load, which refers to cognitive processing that does not contribute directly to learning, (Nielsen, 1994).
-
-Because the goal of instructional design should be to present information in an integrated and coherent manner to reduce the effect of divided attention.
-This can be accomplished by spatially aligning relevant text and visuals, such as by placing labels near the corresponding elements in a diagram or by employing captions to provide explanations directly alongside visual representations.
-The split-attention principle optimizes cognitive resources for learning tasks by reducing the necessity for learners to mentally integrate distinct sources of information.
-
-\hypertarget{infomation-search-enviroment}{%
-\subsection{Infomation Search Enviroment}\label{infomation-search-enviroment}}
-
-In the article, ``Web Designers and web users: Influence of the ergonomic quality of the web site on the information search,'' written by Aline Chevalier and Maud Kicka outline investigate the difficulties of web designers or compare their respective activities, Chevalier \& Kicka (2006).
-The two experimental studies presented in this article compare the strategies developed by professional web designers and (novice versus experienced) web users while searching for information on websites with varying ergonomic qualities.
-The results of the two experiments, that web designers are incapable of predicting the strategies of novice users and do not behave like novices.
-Therefore, techniques for assisting web designers in developing a user-centered activity are required, and a few of these techniques are suggested at the conclusion of this article.
-
-In the article, ``Predicting graph reading performance: a cognitive approach, by Huang, Hong, and Eades outlines that performance and preference metrics are frequently employed in evaluating visualization techniques, (Huang, Hong, \& Eades, 2006).
-To introduce a cognitive method for assessing the effectiveness and efficiency of visualization.
-Huang et al.~propose a model of user performance, mental effort, and cognitive load (memory demand) and incorporate additional mental effort and visualization efficiency measures into our analysis.
-
-Huang et al.~build on the understanding that Richard Atkinson and Richard Shiffrin, wrote the information processing model of memory.
-
-Measuring Visualization Efficiency can be calculated using the method proposed in 2004 to measure the relative effectiveness of various instructional conditions, Tuovinen \& Paas (2004).
-This method relates mental effort to performance measures within the context of visualization efficiency, which is defined as the ratio of cognitive cost (in this study, mental effort and response time) to response accuracy
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/multi_dim_viz} 
-
-}
-
-\caption{Multi-dimensional visualization efficiency (a) modified from Tuovinen et al. [2004]; (b) modified from Kalyuga et al. [1999]}\label{fig:viseff}
-\end{figure}
-
-The efficiency (E) is calculated by converting mental effort (ME), response time (RT) and accuracy (RA) into z-scores, and combining them using the following formula:
-
-\[E = \frac{RA - ME - RT}{\sqrt{3}}\]
-where E of zero means that cognitive cost and performance accuracy are balanced.
-
-\hypertarget{chart-coordinationviusal-linking}{%
-\subsection{Chart Coordination/Viusal Linking}\label{chart-coordinationviusal-linking}}
-
-Visual Linking, also known as visual connections or coordinated views, refers to establishing relationships or connections between various visual representations or charts within a data visualization system.
-Visual linking enables users to explore and analyze data by making it easier to identify patterns, trends, and correlations across multiple charts or views.
-The goal of visual linking is to enable users to explore and analyze data by facilitating the identification of patterns, trends, and correlations across multiple charts or views.
-
-``Snap-together visualization: A user interface for coordinating visualizations via relational schemata'' is a research paper by Chris North and Ben Shneiderman, (North \& Shneiderman, 2000).
-The paper introduces the concept of a user interface called Snap-Together Visualization (STV) that facilitates the coordination of multiple visualizations using relational schemata.
-The STV system enables users to create, modify, and manipulate relational schemata, thereby enabling coordinated interactions between visualizations.
-Users can link multiple views by specifying data attributes or values that serve as connection points between the visualizations.
-They illustrate how users can create meaningful connections between visualizations in order to gain insights, compare data across different views, and discover relationships that may not be apparent in individual visualizations.
-
-``A framework for unifying presentation space'' is a research paper by Melanie Tory and Colin Swindells, (Carpendale \& Montagnese, 2001).
-The paper presents a framework that seeks to unify the presentation space in visualizations, thereby facilitating the coordination of multiple visual representations.
-The framework highlights the significance of integrating various visualization components into a cohesive and coordinated presentation.
-It addresses the difficulties associated with managing the spatial arrangement and interaction of different visual elements within a visualization system.
-They illustrate how the framework can be utilized to create coordinated views, manage interactions, and provide users with a unified visual experience.
-
-The research paper titled ``Software Design Patterns for Information Visualization'' was written by Jeffrey Heer and Maneesh Agrawala, (Heer \& Agrawala, 2006).
-Specifically tailored software design patterns for information visualization systems are introduced in this paper.
-The authors propose a set of design patterns to improve the development of interactive visualizations and address common challenges.
-Information visualization emphasizes the importance of adopting well-established software design principles.
-It discusses the advantages of employing design patterns, which are reusable solutions to common design problems, to improve visualization systems' adaptability, scalability, and maintainability.
-
-Among the design patterns discussed in the paper are the following:
-
-\textbf{Marks} pattern focuses on the visual representation of data items, including points, lines, and bars.
-It discusses techniques for rendering and interacting with marks efficiently.
-
-\textbf{Layout} pattern addresses the organization of visual elements in the visualization space.
-It investigates various strategies for organizing and positioning visual elements to maximize screen real estate.
-
-\textbf{Axes} pattern addresses the presentation of axes and scales in order to provide context and reference for interpreting visualizations.
-It discusses various labeling, formatting, and scaling strategies for axes.
-
-\textbf{Interaction} pattern addresses techniques for enabling user interactions and exploration in visualizations.
-It examines techniques such as brushing and linking, direct manipulation, and coordinated views to facilitate data analysis and exploration.
-
-\textbf{View Coordination} pattern focuses on connecting multiple views or visualizations to facilitate coordinated analysis.
-It discusses techniques for visual linking and synchronization that permit users to establish connections between distinct views.
-
-``Exploring the design space of composite visualization'' is a research paper by Waqas Javed and Niklas Elmqvist, (Javed \& Elmqvist, 2012).
-This paper examines the concept of composite visualization, which combines multiple interconnected visualizations to support complex data exploration tasks.
-The authors discuss the design space of composite visualization, which encompasses multiple facets of effectively creating and employing multiple linked visualizations.
-They investigate various methods for designing and arranging visualizations, such as juxtaposition, superposition, and overlay.
-
-The article highlights the concept composite visualization initially introduced by Card et al., (S. K. Card, Mackinlay, \& Shneiderman, 1999)'s pipeline concepts:
-
-\begin{itemize}
-\item
-  visual structure: the mapping from data to visual form (i.e., the result of a visualization technique);
-\item
-  view: the physical display space (typically 2D) in which a visual structure is rendered.
-\end{itemize}
-
-CVV (Composite Visualization View) design patterns refer to reusable solutions or approaches for designing composite visualizations, which involve combining multiple linked visualizations into a cohesive and interactive whole.
-The method for visual composition is an emerging theme in the literature on composite visualizations.
-In other words, the various compositions of two visualizations A and B in the same visual space appear to be a useful organizing principle in this domain.
-Based on the literature, we derive the four visual compositions that give rise to four broad categories for composing visualizations, which we refer to as CVV design patterns:
-
-\begin{itemize}
-\item
-  Juxtaposition: Placing visualizations side-by-side in one view, (Roberts, 2007);
-\item
-  Superimposition: Over laying two visualizations in a single view;
-\item
-  Overloading: Utilizing the space of one visualization for another;
-\item
-  Nesting: Nesting the contents of one visualization in side another visualization; and
-\item
-  Integration: Placing visualizations in the same view with visual links.
-\end{itemize}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{figure/VisualComposition} 
-
-}
-
-\caption{Four different visual composition operators (from the left): juxtaposition, superimposition, overloading, andnesting.}\label{fig:VisualComposition}
-\end{figure}
-
-\hypertarget{testing-static-graphics}{%
-\subsection{Testing static graphics}\label{testing-static-graphics}}
-
-While understanding HCI and UX design principles helps create compelling interactive graphics, it is equally important to rigorously test and evaluate the usability and efficacy of both interactive and static graphics to ensure they achieve their intended purpose.
-Kosara highlighted the significance of user testing in identifying potential problems in static visualizations, (Kosara, 2007).
-User testing aids in comprehending the users' behavior and perceptions of the visualization, thereby facilitating the identification of issues that designers may have overlooked.
-User testing also identifies the graphic's confusing or ineffective visual aspects, allowing designers to refine the design and increase its effectiveness.
-
-The evolution of testing static graphics has progressed through several chronological moments, each building on the knowledge and techniques of the past, starting with the thoughts of Cleveland and McGill to Hofmann, who explored the statistical testing of categorical data.
-
-Firstly, Cleveland and McGill investigated the effect of various bar chart designs on the accuracy with which viewers perform simple perceptual tasks Cleveland \& McGill (1986).
-People perform significantly worse on stacked bar charts than on simple bar charts, and bar charts with filled bars are generally superior to those with empty ones.
-
-``The cognitive style of PowerPoint: Pitching out corrupts within'' examined the effect of static graphics, such as bar charts, line charts, and pie charts, on the comprehension and decision-making of viewers, (Edward R. Tufte, 2008).
-The results indicated that the bar chart was most effective at accurately communicating information, while the pie chart was least effective.
-In addition, the researchers discovered that the ty pe of graphic employed influenced the viewers' perceptions and decision-making, highlighting the significance of selecting the most appropriate graphics when conveying information.
-
-``Using color to code different types of uncertainty in visualization,'' investigated the effect of color on the communication effectiveness of static graphics Ware (2010).
-Researchers discovered that the use of color in static graphics enhanced viewers' comprehension and memory retention of the presented information.
-Specifically, it was determined that the use of color to highlight particular data points or trends in a graph or chart was particularly effective.
-
-``Communicating Uncertainty: A Look at Graphical Representations of Error Bars, Box Plots, and Confidence Intervals'' examined the efficacy of static graphics in communicating data uncertainty and variability (\textbf{wainer2020?}).
-Researchers discovered that static graphics, such as boxplots and error bars, effectively communicated the range and variability of data.
-Furthermore, the use of static graphics enhanced viewers' comprehension and decision-making in uncertain situations.
-
-Overall, these above studies indicate that static graphics effectively convey information to viewers.
-Nonetheless, their effectiveness is influenced by the type of graphic exercised, the use of color, and their capacity to express uncertainty and variability in data.
-It is essential to note that the effectiveness of static graphics can also be affected by audience knowledge and experience, the complexity of the presented information, and the context in which the graphics are used.
-
-\hypertarget{testing-interactive-graphics}{%
-\subsection{Testing interactive graphics}\label{testing-interactive-graphics}}
-
-The significance of testing and evaluating static graphics to ensure their effectiveness and user-friendliness naturally segues into the similar, yet distinct challenge of evaluating interactive graphics
-
-The design space of interactive visualizations, including the use of multiple views and coordinated various perspectives, is discussed in a paper by Heer and Bostock Heer \& Shneiderman (2012).
-The authors argue that interactive visualizations can enhance comprehension and decision-making by enabling users to investigate complex data and the relationships between multiple variables.
-It was discovered that interactive graphics are beneficial for investigating data that is difficult to comprehend with static graphics, such as time series data or data with multiple aggregation levels.
-
-Compared to static graphics, interactive graphics can improve users' ability to identify patterns and outliers in data, according to a second study, (\textbf{wu2017?}).
-This is because interactive graphics enable users to zero in on particular aspects of the data and adjust the visualization in real-time to reveal hidden patterns.
-
-It has also been discovered that interactive graphics increase user engagement with data and improve their decision-making abilities.
-Moreover, interactive graphics can help users identify potential biases or errors in their data analysis by allowing them to rapidly explore various visualizations and test their hypotheses.
-
-In addition to their benefits for data exploration and analysis, interactive graphics have been found to be more engaging and enjoyable for users (Eppler \& Bresciani, 2013).
-This can increase the motivation of users to explore and analyze data, resulting in better decision-making.
-
-In summary, the studies highlighted indicate that interactive graphics can be an effective data visualization and analysis tool, especially for complex and multidimensional data.
-They can improve users' comprehension, engagement, and decision-making skills, and are ideal for examining data that is difficult to comprehend with static graphics.
-
-\hypertarget{dashboard-design}{%
-\section{Dashboard Design}\label{dashboard-design}}
-
-Given that the intended audience has limitations, there are design constraints around the data, and the ability of the audience to successfully use the graphical displays of the data, what can we take from this body of research that applies to more complicated sets of graphics?
-How do we maintain user attention, desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
-Solutions to these questions can start with a dashboard.
-
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006a).
-Dashboards have particular characteristics:
-
-\begin{itemize}
-\item
-  Achieve specific objectives
-\item
-  Fits on a single computer screen
-\item
-  Information can be displayed in multiple mediums (web browser or mobile device)
-\item
-  Can be used to monitor information at a high level
-\end{itemize}
-
-Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics.
-They allow users to quickly and easily understand complex data sets using visual elements such as charts, graphs, and tables to display the information.
-Additionally, statistics can be used to analyze data presented on a dashboard, providing insights into trends and patterns that can inform decision-making.
-
-While a dashboard can be handy, it may be worth describing that a poorly designed dashboard will not be used.
-A dashboard should be concise, clear, and intuitive when displaying components in combination with a customized list of requirements of users.
-
-Much of the work done within statistical research and dashboard design involves collaboration with other researchers and users.
-While this may be the best for the growth of the discipline, one will find that working with collaborators with non-STEM backgrounds.
-Dashboards can help understand and support many data types in essential business objectives.
-There are many different ways to label and utilize dashboards in different kinds.
-
-Dashboards are cognitive tools that should be used to improve understanding of data, which should help people visually find relationships, trends, patterns, and outliers.
-Most importantly, dashboards should leverage people's visual cognitive capabilities.
-
-These principles are based on cognitive psychology and understanding how the human brain processes visual information.
-By applying these principles to dashboard design, designers can create visual arrangements that make it easier for viewers to understand the relationships between data elements.
-For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
-At its most basic, the entire form is perceived (or emerges to our visual pathways) as opposed to its component parts.
-
-Cowan suggested that the average person can only hold two to six pieces of information in their attention, (Cowan, 2001).
-People can develop detailed understandings of reality, which is infinitely complex.
-
-It is important to consider how users construct mental models of the presented data and information.
-Researchers have introduced cognitive structures consisting of mental models and their relationships (Rumelhart \& Ortony, 1976), (Carley \& Palmquist, 1992); (\textbf{jonassen1996?}).
-In cognitive psychology, a schema is a mental model representing a person's general knowledge or expectations regarding a particular concept or situation.
-Schemas are organized into semantic networks based on their relationships to other schemas {[}Wertheimer (1938),(Rumelhart \& Ortony, 1976).
-This arrangement helps the brain process its experiences instead of storing every sensory observation; the brain only needs to maintain its schemas, which are good summaries of all previous observations.
-Some ``memories'' may even be complete recreations built with a schema (Bartlett \& Remembering, 1932), (Klein, Phillips, Rall, \& Peluso, 2007)
-
-Wixon introduced the concept of ``contextual design'' as a systems development method in which the researcher partners with the user at the user's place of work to ``develop a shared understanding'' of the user's activities, and they define contextual inquiry as the first part of the broader process, (Cowan, 2001).
-Contextual inquiry is the data collection step of the field research element of the contextual design method, and it emphasizes four essential principles:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  The context of the activity being performed by the user
-\item
-  The partnership between the researcher and the participant
-\item
-  The spoken verification that the investigator's interpretation of the activity matches the user's
-\item
-  The focus of the study is central to the approach taken by the interviewer
-\end{enumerate}
-
-Combining two compelling graphics does not necessarily result in a successful visualization.
-In certain instances, suboptimal combinations can result in confusion, misinterpretation, and the failure to convey the intended message.
-Combining two charts with distinct scales or units is an example of suboptimal graphic design, which can result in misinterpretation and flawed comparisons.
-For example, if a bar chart displaying the number of sales is combined with a line chart showing revenue, meaningful comparisons between the two metrics can be challenging.
-According to a study conducted by Cleveland and McGill, people frequently make inaccurate judgments when comparing graphs with different scales, (Cleveland \& McGill, 1984).
-
-In addition, combining two difficult-to-compare graphics with redundant visual cues or unnecessary embellishments such as colors, 3D effects, or patterns can increase cognitive load and reduce the dashboard's effectiveness.
-Although adding extra elements to a chart or graph may be tempting, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information.
-Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data, (Edward R. Tufte, 1985).
-
-For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the two graphics types' incompatibility.
-This issue was highlighted by Hullman et al., who discovered that viewers had difficulty interpreting a visualization that incorporated a scatter plot and a line chart, (Hullman, Adar, \& Shah, 2011).
-
-\hypertarget{dissertation-map}{%
-\section{Dissertation Map}\label{dissertation-map}}
-
-This dissertation will be constructed as follows.
-
-Chapter 1 thoroughly reviews the literature regarding graphical and human-computer interaction/UI-UX methods.
-Chapter 2 will explore the process of designing dashboards for public use through parallel coordinate plots as a central component of data exploration to make decisions.
-Chapter 3 focuses on graphical methods for multidimensional categorical variables and visualization methods have for growth.
-We conclude with a Shiny application that facilitates a better understanding of the possible forms a parallel coordinate plots in exploratory data analysis can take by accommodating a through examination through variables and structural changes to the parallel coordinate plot with a click of a mouse.
-Chapter 4 further explores multidimensional categorical data visualizations and develops an approach to using parallel coordinate plots to assess predictive model.
-We identify visual indicators for parameters in different models and extend the connection between parallel coordinate plots of binary tables and odds ratios to include logistic regression models with categorical variables.
-
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
-
-The lack of integration between statistical interactive graphics and Gestalt principles is a research gap in this field.
-Gestalt principles provide a framework for understanding how visual elements are perceived and organized in the human brain, whereas statistical interactive graphics enable the manipulation and exploration of complex data sets.
-This integration can result in more effective and efficient visualization tools that take human perception and cognition into account.
-
-In addition, there is a lack of research on the application of dashboards in visual communication.
-Dashboards are becoming increasingly popular to present data and information in a concise and easily accessible format.
-Still, there is a shortage of research on designing and employing dashboards to communicate complex data effectively.
-
-This research seeks to bridge the gap between statistical interactive graphics, Gestalt principles, and dashboards so that users can more effectively explore complex data.
-This can be accomplished by designing interactive visualizations that adhere to Gestalt principles, enabling users to recognize patterns and trends in the data quickly and easily.
-Incorporating statistical interactive graphics into dashboards can also provide users with a more comprehensive view of the data, enabling them to make more effective data-driven decisions.
 
 \hypertarget{rmd-basics}{%
 \chapter{Chapter Paper on Rural Shrink Smart Manuscript submitted to Journal of Data Science Special Issue}\label{rmd-basics}}
@@ -1281,8 +535,8 @@ Incorporating statistical interactive graphics into dashboards can also provide 
 
 Many small and rural places are shrinking. Interactive dashboards are the most common use cases for data visualization and context for exploratory data tools. In our paper, we will explore the specific scope of how dashboards are used in small and rural area to empower novice analysts to make data-driven decisions. Our framework will suggest a number of research directions to better support small and rural places from shrinking using an interactive dashboard design, implementation and use for the every day analyst.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 As the amount of data has increased in nearly every facet of life, the need to make sense of that data in an approachable, accessible form has become ever more important.
 As a result, many companies and organizations use interactive dashboards to present these data in a more useful and visually appealing form (Sarikaya, Correll, Bartram, Tory, \& Fisher, 2019).
@@ -1376,7 +630,7 @@ As with many dashboards, this project is under continuous development; while it 
 
 In this section, we discuss the philosophy behind the basic ``building blocks'' of the dashboard. This philosophy is present in all of the iterations of the dashboard that we present in this discussion, and we will evaluate the overall philosophy's effectiveness in the conclusion.
 
-The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006b).
+The large set of publicly available data (primarily from \url{data.iowa.gov}) we have assembled is useful, but we must be careful with how we present this data because it would be easy to overwhelm the user with small details that mask the bigger picture. We select a small subset of towns (out of the 999 towns in Iowa) and a small subset of variables of interest to start with, and then allow the user to increase the complexity of the display in accordance with their interest. This avoids some of the pitfalls of dashboard design that can easily lead to user overload (Few, 2006a).
 
 Our primary objective is to provide users with a town-centric approach: their town is at the center of our application, and comparisons to other, similar towns are secondary. As a result, the next component of the dashboard is intended to provide a brief overview of the information we have about a specific town of interest. This design is based on research into visualization sensemaking (Lee et al., 2016), in that we allow users to explore outward from the familiar to the unknown. The map visuals were built using Open Source Routing Machine (OSRM) route functions (Luxen \& Vetter, 2011) in R (R Core Team, 2022) to amplify the accuracy of the distances from necessary services in town-centric point. OSRM allows for finding the ``As the Crow Flies'' distance and time on the road for our vital services map, since OSRM technology is similar to Google maps.
 
@@ -1475,43 +729,47 @@ While it is hard to apply the findings from one fairly specific visualization pr
 \hypertarget{math-sci}{%
 \chapter{Dashboard Poetry}\label{math-sci}}
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 Statisticians use graphs in almost every stage of their work.
-They create charts to summarize and explore new data and identify potential problems and opportunities.
-Models are fit based on relationships between variables which are often identified visually.
+They create charts to summarize and explore new data and identify potential problems and opportunities (Tukey \& Wilk, 1966).
+Models are fit based on relationships between variables which are often identified visually (Hullman \& Gelman, 2021).
 We identify problems with those models based on residual plots and other visual diagnostics.
 When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
 
-Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group.
-In addition, not all visual displays have equal perceptual value (Unwin et al., 2003) and (Aspillaga, 1996).
+When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
+In addition, not all visual displays have equal perceptual value Aspillaga (1996).
 The best graphics are designed to account for both the dataset and the intended audience's features.
 Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization.
 For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina (VanderPlas \& Hofmann, 2015b).
 Other design constraints are due to the audience's experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful).
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
-When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience's domain knowledge.
+Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group.
 
 Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control.
 As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
 
 In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page.
-As data in sports becomes more prominent, extensive, and collected, this information must be refined.
+In ``The Commercial and Political Atlas,'' Playfair used various types of graphical representations to illustrate economic and political data.
+He included a chart that he called a ``circle chart'' or ``pie chart'' to display the distribution of imports and exports of England in 1781 (Playfair, 2005).
+Scholars frequently choose to utilize pie charts as a means of presenting data, acknowledging the widespread familiarity of this particular chart format among readers (Edward R. Tufte, 2001).
+Discrete categories can be effectively highlighted by their utilization.
+Moreover, researchers have the ability to enhance the accessibility of their study findings to a broader range of individuals.
+However, there are certain limitations that should be acknowledged.
+Pie charts may not be appropriate for visualizing datasets that have a large number of categories or require precise comparisons.
+This is because it can be difficult to precisely perceive slight differences in the sizes of the pie chart's wedges.
+In addition, the presence of inaccurate labeling and scaling has the potential to result in misinterpretation.
+Hence, it is imperative for researchers to exercise prudence while utilizing pie charts as a visualization tool for categorical data, in order to guarantee precise and significant portrayal.
 
 Dashboards have seen a significant increase in day-to-day usage as a potent data visualization and decision-making tool.
+The John Hopkins COVID-19 Dashboard is a reputable online platform that offers current and comprehensive data and statistics pertaining to the worldwide COVID-19 epidemic.
+The tool mentioned earlier functions as a highly helpful instrument in monitoring the dissemination of the virus, providing up-to-date information on the prevalence of cases, fatalities, and immunization rates within various nations and geographical areas.
+This dashboard is widely utilized by researchers, politicians, and the general public as a reliable and authoritative resource for continuously monitoring the ongoing effects of the epidemic ({``John hopkins university covid-19 dashboard,''} n.d.).
 The proliferation of dashboards can be attributed to several factors, including the growing availability of data from various sources and the increasing need for organizations to extract actionable insights.
-Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, (Few, 2006a).
+Steven Few found that the widespread use of dashboards is attributable to their capacity to present key performance indicators and relevant metrics in a visually appealing and easily digestible format, (Few, 2006b).
 Moreover, technological advancements and the development of user-friendly dashboard platforms have facilitated the creation and effective utilization of dashboards by individuals from diverse fields.
 Dashboards have revolutionized data analysis and presentation, allowing users to gain valuable insights and make data-driven decisions more effectively.
 
-Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
-Let us first consider the audience characteristics that affect the selection of graphics.
-Then, we will engage with considerations based on the data to be displayed.
-Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
-
-Interactive data dashboards are frequently employed to present many pertinent qualities and performance measures that carry significance for stakeholders.
 Each chart on the dashboard contributes to the overall comprehension of the situation, similar to how each sentence in a paragraph contributes to the larger concept.
 A chart is similar to a sentence in that it presents a straightforward piece of information and visually represents data to facilitate comprehension.
 For example, a chart could be a bar graph depicting sales over a year, a pie chart illustrating the percentage distribution of a budget, or a scatter plot illustrating the correlation between two variables.
@@ -1523,15 +781,12 @@ This counterexample highlights the importance of thoughtful design and effective
 The research objective of this study is to investigate how changes in real-time data displayed on a dashboard affect ensemble perception and the user's ability to make accurate and rapid decisions based on summary statistics in a dynamic environment.
 
 John Tukey was the first to organize the collection and methods associated with philosophy into exploratory data analysis (EDA).
-Previous research by Tukey focused on graphics as a tool for exploratory analysis.
+Tukey used graphics as a tool for exploratory analysis.
 In ``Exploratory Data Analysis,'' Tukey wrote that graphics and charts often display data with more enhanced understanding than a table (Tukey \& Wilk, 1966).
 Tukey outlines in detail the types of different graphics and in which situations to utilize them.
 He was a strong advocate for the importance of EDA as a crucial first step in the data analysis process and emphasized the need for visualization and interactive techniques to understand patterns and relationships in data.
 
-Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
-Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique.
-In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
-
+John Tukey's exploratory data analysis (EDA) principles revolutionized the way we approach data exploration and visualization, emphasizing the importance of understanding data's underlying structure and patterns before diving into formal statistical analysis.
 Tukey's Principles in EDA:
 
 \begin{enumerate}
@@ -1546,12 +801,15 @@ Tukey's Principles in EDA:
 \item
   The natural scale or state in which the data are at their best.
   This will be the step at which the scale of the data can be helpful for analysis.
-  Reexpressing data on a new scale by taking the square root or logarithmic scale.
 \item
-  The most known part of EDA is done by accessing the fit of the data.
+  The most known part of EDA is done by assessing the fit of the data.
   This is taught in every statistics 101 class.
   With the growth of machine learning and prediction methods, residuals are now more widely used in the toolbox for assessing the best prediction models.
 \end{enumerate}
+
+Tukey's Principles of EDA have become a cornerstone in the field of statistics and have been adopted by data professionals in various industries.
+Tukey's principles have enabled data professionals to understand complex data sets better and make more informed decisions by emphasizing the importance of visual exploration, data characterization, and model critique.
+In this way, Tukey's Principles have revolutionized our data analysis approach and become the foundational framework for EDA.
 
 \begin{center}\includegraphics[width=.49\linewidth]{thesis_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
@@ -1559,10 +817,8 @@ Tukey's Principles in EDA:
 
 Data visualizations are an integral part of the EDA process, enabling analysts to discern patterns and relationships in the data that would otherwise be difficult to discern from tabular data alone.
 Through data visualization, analysts can quickly identify trends, outliers, and other patterns that may be missed through numerical analysis alone.
-Moreover, visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently.
+Visualizations facilitate the communication of findings to non-technical stakeholders, allowing them to comprehend complex data sets more efficiently.
 Also, analysts can use visualizations to identify potential issues or biases in the data, resulting in better decisions and models.
-Thus, visualizations play a crucial role in the EDA process by enabling analysts to more effectively explore, comprehend, and communicate data-derived insights.
-During the initial EDA stage, an analyst may find that a variable or a covariate is directly related to the dependent variable when looking at a correlation heatmap or a scatterplot.
 
 Using color to represent data on maps is an example of successful graphical communication utilizing semiology.
 By using different colors to represent different data points, viewers can comprehend patterns and relationships in the data quickly and easily.
@@ -1611,22 +867,19 @@ Finally, the ``Grammar of Graphics'' provides a systematic way of thinking about
 \caption{Grammar of Graphics Diagram of Wickham and Wilkinson's work}\label{fig:unnamed-chunk-2-2}
 \end{figure}
 
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006a).
-Dashboard design creates visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format.\\
-The objective is to provide users with insights and enable them to make intelligent decisions based on the presented data.\\
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006b).
+Dashboard design creates visually informative and interactive interfaces that present data and key performance indicators (KPIs) in a consolidated and simple-to-understand format.
+The objective of KPIs are to provide users with insights and enable them to make intelligent decisions based on the presented data.\\
 As organizations increasingly rely on data-driven decision-making, well-designed dashboards become pivotal.\\
-The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on critical frameworks such as evaluation criteria in healthcare, learning dashboards in educational settings, design patterns and trade-offs, academic literature reviews, and practical tips for implementation.\\
-Each of these frameworks offers unique perspectives and actionable insights.
-These frameworks serve as pillars for the subsequent discussion on creating functional and impactful dashboards.\\
-However, it is essential to note that even with a comprehensive roadmap, the success of dashboards heavily relies on the quality and accuracy of the presented data.
+The literature on dashboard design provides a comprehensive roadmap for understanding and implementing effective dashboards, focusing on critical applications such as evaluation criteria in healthcare, learning dashboards in educational settings, design patterns and trade-offs, academic literature reviews, and practical tips for implementation.
+Each of these applications offers unique perspectives and actionable insights.
 If the data used in the design and implementation of dashboards is flawed or incomplete, it can lead to misleading insights and ineffective decision-making.
-Additionally, different user groups' specific needs and preferences may not always align with the frameworks provided, requiring customization and adaptation that may not be adequately addressed in the comprehensive roadmap.
+Additionally, different user groups' specific needs and preferences may not always align with the applications provided.
 
 A systematic literature review by (Schwendimann et al., 2016) discusses the state-of-the-art in learning dashboards.
 The paper identifies critical design features, dividing them into functional and visual features.\\
 This study is particularly useful for educational institutions implementing learning analytics dashboards.
-Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective.\\
-The research is especially relevant for educational institutions implementing or optimizing learning analytics dashboards.\\
+Conducted as a systematic literature review, the study categorizes critical design features into functional and visual aspects, providing a comprehensive understanding of what makes a learning dashboard effective.
 By identifying key design elements and their impact on student performance, the paper is a foundational resource for educators and administrators looking to leverage dashboards to enhance educational outcomes.
 
 \hypertarget{dashbaord-construction}{%
@@ -1636,19 +889,7 @@ Given that the intended audience has limitations, there are design constraints a
 How do we maintain user attention, create a desire to explore, and accurately communicate the data through the medium of an interactive data dashboard?
 Solutions to these questions can start with a dashboard.
 
-A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006a).
-Dashboards have particular characteristics:
-
-\begin{itemize}
-\item
-  Achieve specific objectives
-\item
-  Fits on a single computer screen
-\item
-  Information can be displayed in multiple mediums (web browser or mobile device)
-\item
-  Can be used to monitor information at a high level
-\end{itemize}
+A dashboard is a visual display of the essential information needed to achieve one or more objectives, consolidated and arranged on a single screen so the data can be monitored at a glance (Few, 2006b).
 
 Dashboards can present various statistical data, such as financial performance, website traffic, or customer engagement metrics.
 They allow users to quickly and easily understand complex data sets by using visual elements such as charts, graphs, and tables to display the information.
@@ -1669,8 +910,36 @@ According to a study conducted by Cleveland and McGill, people frequently make i
 In addition, combining two difficult-to-compare graphics with redundant visual cues or unnecessary embellishments such as colors, 3D effects, or patterns can increase cognitive load and reduce the dashboard's effectiveness.
 Although adding extra elements to a chart or graph may be tempting, doing so can detract from the primary message and make it more difficult for the audience to focus on the essential information.
 Tufte discovered that adding unnecessary visual cues to a graph decreases its effectiveness because viewers are more likely to focus on the embellishments rather than the data (Edward R. Tufte, 1985).
-Dashboards are cognitive tools that should be used to improve understanding of data and help people visually find relationships, trends, patterns, and outliers.\\
 Most importantly, dashboards should leverage people's visual and cognitive capabilities.
+
+Static Visualization is commonly used in the communication phase of data science workflows, and data scientists sometimes use them as part of the analysis.
+John Tukey's EDA methods are currently known and well-vetted in the field.
+However, Satyanarayan et al.~addressed this by introducing a high-level grammar of graphics called ``Vega-Lite,'' which presents a set of standardized linguistic rules for producing interactive information visualizations using a concise JSON format for data to be represented by the grammar (Satyanarayan, Moritz, Wongsuphasawat, \& Heer, 2016).
+Vega-Lite has been directly implemented in R via the \texttt{ggvis} package using the same - albeit slightly lower-level.
+
+Understanding cognitive load is crucial for designing compelling data visualizations, as it influences how users perceive, process, and remember the data presented in the visualization.
+When designing visuals, it is essential to consider the cognitive load they may place on the viewer.
+Cognitive load is the amount of mental effort required to process information, and minimizing it can enhance a graphic's effectiveness.
+In addition, displaying as much raw data as possible while minimizing cognitive load can improve the graphic's clarity and precision.
+Here are some general guidelines for making better graphics with works from Few (\textbf{few2012?}), Tufte (\textbf{tufte1983?}), and Cairo (Cairo, 2016):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Keep it simple - Avoid overwhelming the viewer with too much information at once by employing a clear and concise design with minimal distractions.
+\item
+  Use visual hierarchy - Utilize size, color, contrast, and placement to highlight important information and direct the viewer's focus.
+\item
+  Choose appropriate charts - Choose the chart type that best illustrates the data and facilitates comprehension.
+\item
+  Label clearly - Use labels that are clear and concise for axes, legends, and other essential information to avoid confusion.
+\item
+  Use data-to-ink ratio - Focus on the data by minimizing the amount of non-data ink, such as decorative elements or excessive grid lines.
+\item
+  Avoid distortion - Use appropriate scaling and avoid distortions to ensure that the graphics accurately represent the data.
+\item
+  Provide context - Add context to assist the viewer in comprehending the significance of the data and its relevance to the topic.
+\end{enumerate}
 
 These principles are based on cognitive psychology and understanding how the human brain processes visual information.
 Cowan suggested that the average person can only hold two to six pieces of information at a time (Cowan, 2001).
@@ -1678,7 +947,7 @@ By applying these principles to dashboard design, designers can create visual ar
 For example, proximity can be used to group related elements together, while symmetry can be used to create balance and harmony in the overall layout of the dashboard.
 At its most basic, the entire form is perceived (or emerges from our visual pathways) as opposed to its component parts.
 For instance, if a scatter plot and a bar chart are combined, the resulting visualization may be difficult to interpret due to the two graphics types' incompatibility.
-Hullman et al. (Hullman et al., 2011) discovered that viewers had trouble understanding a visualization that included a scatter plot and a line chart, which brought attention to this issue.
+Hullman et al. (Hullman, Adar, \& Shah, 2011) discovered that viewers had trouble understanding a visualization that included a scatter plot and a line chart, which brought attention to this issue.
 Moving forward, designers must navigate the delicate balance of complexity and comprehension to ensure that dashboards serve as a potent tool for conveying information succinctly and effectively, enhancing the viewer's ability to grasp and analyze the presented data seamlessly.
 
 \hypertarget{cognitive-principles}{%
@@ -1701,7 +970,7 @@ For instance, light enters the eye and activates photoreceptor cells in the reti
 
 Human perception is an essential component of data visualization that can significantly enhance both the content and quantity of displayed information (Ware, 2012).
 Perception refers to the organization, interpretation, and conscious experience of sensory data.
-Perception is also defined as ``the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information'' (Ward et al., 2010).
+Perception is also defined as ``the process of recognizing (being aware of), organizing (gathering and storing), and interpreting (binding to knowledge) sensory information'' (Ward, Grinstein, \& Keim, 2010).
 Ward et al.~explain the notion of perception as follows: ``The brain makes assumptions about the world to overcome the inherent ambiguity in all sensory data and in response to the task at hand.''
 
 The principles of eye-tracking involve the investigation of eye movements and fixations during visual perception.
@@ -1926,8 +1195,8 @@ Lastly, the structure of neural networks has been shown to affect working memory
 \hypertarget{ref-labels}{%
 \chapter{Does Color Help?: Multidimensional Ensembles in Bland-Altman Plots: An Exploration}\label{ref-labels}}
 
-\hypertarget{introduction-3}{%
-\section{Introduction:}\label{introduction-3}}
+\hypertarget{introduction-2}{%
+\section{Introduction:}\label{introduction-2}}
 
 ``How can multidimensional ensembles be effectively incorporated into Bland-Altman plots to enhance the accuracy and comprehensibility of assessing agreement between multiple measurement techniques?''
 This research question explores the theoretical and practical implications of incorporating ensemble perception and multidimensional data into Bland-Altman plots, traditionally used for comparing two measurement methods.
@@ -2063,8 +1332,8 @@ We anticipate that the application of ensemble coding for variability will aid i
 Based on ensemble coding principles, the color-coded plot should enable faster and more accurate interpretation of data variability (J. Haberman \& Whitney, 2012).
 This method has the potential to enhance the interpretability and utility of these graphs, making them accessible to a broader audience and facilitating more efficient data communication.
 
-\hypertarget{conclusion-1}{%
-\chapter*{Conclusion}\label{conclusion-1}}
+\hypertarget{conclusion}{%
+\chapter*{Conclusion}\label{conclusion}}
 \addcontentsline{toc}{chapter}{Conclusion}
 
 If we don't want Conclusion to have a chapter number next to it, we can add the \texttt{\{-\}} attribute.
@@ -2119,7 +1388,7 @@ This document was typeset using the XeTeX typesetting system, and the \href{http
 
 The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at \url{https://github.com/xxx/xxx}. A hard copy of the thesis can be found in the University of Washington library.
 
-This version of the thesis was generated on 2023-09-17 18:09:04. The repository is currently at this commit:
+This version of the thesis was generated on 2023-10-14 21:06:47. The repository is currently at this commit:
 
 The computational environment that was used to generate this version is as follows:
 
@@ -2134,7 +1403,7 @@ The computational environment that was used to generate this version is as follo
 ##  collate  en_US.UTF-8
 ##  ctype    en_US.UTF-8
 ##  tz       America/Detroit
-##  date     2023-09-17
+##  date     2023-10-14
 ##  pandoc   2.19.2 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 ## 
 ## - Packages -----------------------------------------------
@@ -2241,20 +1510,11 @@ Afzal, S., Hittawe, M. M., Ghani, S., Jamil, T., Knio, O., Hadwiger, M., \& Hote
 \leavevmode\vadjust pre{\hypertarget{ref-alabi2012}{}}%
 Alabi, O. S., Wu, X., Harter, J. M., Phadke, M., Pinto, L., Petersen, H., et al.others. (2012). Comparative visualization of ensembles using ensemble surface slicing. In \emph{Visualization and data analysis 2012} (Vol. 8294, pp. 318--329). SPIE.
 
-\leavevmode\vadjust pre{\hypertarget{ref-alberts2019}{}}%
-Alberts, A. (2019). \emph{How to develop a designer's instinct: A study on eye tracking}. Tableau.
-
 \leavevmode\vadjust pre{\hypertarget{ref-alvarez2011}{}}%
 Alvarez, G. A. (2011). Representing multiple objects as an ensemble enhances visual cognition. \emph{Trends in Cognitive Sciences}, \emph{15}(3), 122--131.
 
 \leavevmode\vadjust pre{\hypertarget{ref-alvarez2004}{}}%
 Alvarez, G. A., \& Cavanagh, P. (2004). The capacity of visual short-term memory is set both by visual information load and by number of objects. \emph{Psychological Science}, \emph{15}(2), 106--111.
-
-\leavevmode\vadjust pre{\hypertarget{ref-anderson1982}{}}%
-Anderson, J. R. (1982). Acquisition of cognitive skill. \emph{Psychological Review}, \emph{89}(4), 369.
-
-\leavevmode\vadjust pre{\hypertarget{ref-anderson1992}{}}%
-Anderson, J. R. (1992). Automaticity and the ACT theory. \emph{The American Journal of Psychology}, 165--180.
 
 \leavevmode\vadjust pre{\hypertarget{ref-aspillaga1996}{}}%
 Aspillaga, M. (1996). Perceptual foundations in the design of visual displays. \emph{Computers in Human Behavior}, \emph{12}(4), 587--600.
@@ -2268,9 +1528,6 @@ Baddeley, Alan D. (1976). \emph{The psychology of memory / alan d. baddeley} (pp
 \leavevmode\vadjust pre{\hypertarget{ref-bar2004}{}}%
 Bar, M. (2004). Visual objects in context. \emph{Nature Reviews Neuroscience}, \emph{5}(8), 617--629.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bartlett1932}{}}%
-Bartlett, F. A., \& Remembering, A. (1932). A study in experimental and social psychology. New York: Cambridge University Press.
-
 \leavevmode\vadjust pre{\hypertarget{ref-bauer2009}{}}%
 Bauer, B. (2009). Does stevens's power law for brightness extend to perceptual brightness averaging? \emph{The Psychological Record}, \emph{59}, 171--185.
 
@@ -2280,29 +1537,11 @@ Bendix, F., Kosara, R., \& Hauser, H. (2005). {Parallel Sets: Visual Analysis of
 \leavevmode\vadjust pre{\hypertarget{ref-bland1986}{}}%
 Bland, J. M., \& Altman, D. (1986). Statistical methods for assessing agreement between two methods of clinical measurement. \emph{The Lancet}, \emph{327}(8476), 307--310.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bostock2011}{}}%
-Bostock, M., Ogievetsky, V., \& Heer, J. (2011). D\(^3\) data-driven documents. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2301--2309.
-
 \leavevmode\vadjust pre{\hypertarget{ref-bui2014}{}}%
 Bui, D. C., \& Myerson, J. (2014). The role of working memory abilities in lecture note-taking. \emph{Learning and Individual Differences}, \emph{33}, 12--22.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cairo2016}{}}%
 Cairo, A. (2016). \emph{The truthful art: Data, charts, and maps for communication}. New Riders.
-
-\leavevmode\vadjust pre{\hypertarget{ref-card1999}{}}%
-Card, S. K., Mackinlay, J., \& Shneiderman, B. (1999). \emph{Readings in information visualization: Using vision to think}. Morgan Kaufmann.
-
-\leavevmode\vadjust pre{\hypertarget{ref-card1983}{}}%
-Card, S., Moran, T., \& Newell, A. (1983). \emph{The psychology of human-computer interaction}. Hillsdale {[}etc.{]}: Lawrence Erlbaum.
-
-\leavevmode\vadjust pre{\hypertarget{ref-cardoso2016}{}}%
-Cardoso, R. L., Leite, R. O., \& Aquino, A. C. B. de. (2016). A graph is worth a thousand words: How overconfidence and graphical disclosure of numerical information influence financial analysts accuracy on decision making. \emph{PloS One}, \emph{11}(8), e0160443.
-
-\leavevmode\vadjust pre{\hypertarget{ref-carley1992}{}}%
-Carley, K., \& Palmquist, M. (1992). Extracting, representing, and analyzing mental models. \emph{Social Forces}, \emph{70}(3), 601--636.
-
-\leavevmode\vadjust pre{\hypertarget{ref-carpendale2001}{}}%
-Carpendale, M. S. T., \& Montagnese, C. (2001). A framework for unifying presentation space. In \emph{Proceedings of the 14th annual ACM symposium on user interface software and technology} (pp. 61--70).
 
 \leavevmode\vadjust pre{\hypertarget{ref-carrillo2019}{}}%
 Carrillo-Reid, L., Han, S., Yang, W., Akrouh, A., \& Yuste, R. (2019). Controlling visually guided behavior by holographic recalling of cortical ensembles. \emph{Cell}, \emph{178}(2), 447--457.
@@ -2310,29 +1549,11 @@ Carrillo-Reid, L., Han, S., Yang, W., Akrouh, A., \& Yuste, R. (2019). Controlli
 \leavevmode\vadjust pre{\hypertarget{ref-chakrabarty2020}{}}%
 Chakrabarty, M., \& Wada, M. (2020). Perceptual effects of fast and automatic visual ensemble statistics from faces in individuals with typical development and autism spectrum conditions. \emph{Scientific Reports}, \emph{10}(1), 2169.
 
-\leavevmode\vadjust pre{\hypertarget{ref-chandler2012}{}}%
-Chandler, C., \& Unger, R. (2012). \emph{A project guide to UX design: For user experience designers in the field or in the making}. New Riders.
-
-\leavevmode\vadjust pre{\hypertarget{ref-chase1973}{}}%
-Chase, W. G., \& Simon, H. A. (1973). Perception in chess. \emph{Cognitive Psychology}, \emph{4}(1), 55--81.
-
-\leavevmode\vadjust pre{\hypertarget{ref-chevalier2006}{}}%
-Chevalier, A., \& Kicka, M. (2006). Web designers and web users: Influence of the ergonomic quality of the web site on the information search. \emph{International Journal of Human-Computer Studies}, \emph{64}(10), 1031--1048.
-
 \leavevmode\vadjust pre{\hypertarget{ref-chong2003}{}}%
 Chong, S. C., \& Treisman, A. (2003). Representation of statistical properties. \emph{Vision Research}, \emph{43}(4), 393--404.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cleveland1984}{}}%
 Cleveland, W. S., \& McGill, R. (1984). Graphical perception: Theory, experimentation, and application to the development of graphical methods. \emph{Journal of the American Statistical Association}, \emph{79}(387), 531--554.
-
-\leavevmode\vadjust pre{\hypertarget{ref-cleveland1986}{}}%
-Cleveland, W. S., \& McGill, R. (1986). An experiment in graphical perception. \emph{International Journal of Man-Machine Studies}, \emph{25}(5), 491--500.
-
-\leavevmode\vadjust pre{\hypertarget{ref-cooper1999}{}}%
-Cooper, A. (1999). \emph{The inmates are running the asylum}. Springer.
-
-\leavevmode\vadjust pre{\hypertarget{ref-cooper2014}{}}%
-Cooper, A., Reimann, R., Cronin, D., \& Noessel, C. (2014). \emph{About face: The essentials of interaction design}. John Wiley \& Sons.
 
 \leavevmode\vadjust pre{\hypertarget{ref-corbett2023}{}}%
 Corbett, J. E., Utochkin, I., \& Hochstein, S. (2023). \emph{The pervasiveness of ensemble perception: Not just your average review}. Cambridge University Press.
@@ -2355,47 +1576,17 @@ Day, R. H., \& Stecher, E. J. (1991). Sine of an illusion. \emph{Perception}, \e
 \leavevmode\vadjust pre{\hypertarget{ref-dedonno}{}}%
 DeDonno, M. A. (2016). The influence of IQ on pure discovery and guided discovery learning of a complex real-world task. \emph{Learning and Individual Differences}, \emph{49}, 11--16.
 
-\leavevmode\vadjust pre{\hypertarget{ref-eissele2009}{}}%
-Eissele, M., Weiskopf, D., \& Ertl, T. (2009). Interactive context-aware visualization for mobile devices. In \emph{International symposium on smart graphics}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-eppler2013}{}}%
-Eppler, M. J., \& Bresciani, S. (2013). Visualization in management: From communication to collaboration. A response to zhang. \emph{Journal of Visual Languages \& Computing}, \emph{24}(2), 146--149.
-
-\leavevmode\vadjust pre{\hypertarget{ref-ericsson1996}{}}%
-Ericsson, K. A., \& Lehmann, A. C. (1996). Expert and exceptional performance: Evidence of maximal adaptation to task constraints. \emph{Annual Review of Psychology}, \emph{47}(1), 273--305.
-
-\leavevmode\vadjust pre{\hypertarget{ref-gestaltimage}{}}%
-EVALUATION LLC, D. E. \&. (n.d.). Gestalt principle of visual perception. \url{https://dataspire.org/blog/leveraging-perception-science-to-our-advantage}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-few2006}{}}%
-Few, S. (2006a). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
-
-\leavevmode\vadjust pre{\hypertarget{ref-few}{}}%
 Few, S. (2006b). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
 
-\leavevmode\vadjust pre{\hypertarget{ref-few2009}{}}%
-Few, S. (2009). \emph{Now you see it: Simple visualization techniques for quantitative analysis}. Analytics Press.
-
-\leavevmode\vadjust pre{\hypertarget{ref-fitts1967}{}}%
-Fitts, P. M., \& Posner, M. I. (1967). Human performance.
+\leavevmode\vadjust pre{\hypertarget{ref-few}{}}%
+Few, S. (2006a). \emph{Information dashboard design: The effective visual communication of data}. Newton, MA: O'Reilly Media, Inc.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fofonov2018}{}}%
 Fofonov, A., \& Linsen, L. (2018). A top-down interactive visual analysis approach for physical simulation ensembles at different aggregation levels. \emph{Information}, \emph{9}(7), 163.
 
-\leavevmode\vadjust pre{\hypertarget{ref-friendly2014}{}}%
-Friendly, M. (2014). Comment on {``the generalized pairs plot.''} \emph{Journal of Computational and Graphical Statistics}, \emph{23}(1), 290--291.
-
-\leavevmode\vadjust pre{\hypertarget{ref-friendly2001}{}}%
-Friendly, M., \& Denis, D. J. (2001). Milestones in the history of thematic cartography, statistical graphics, and data visualization. \emph{URL Http://Www. Datavis. Ca/Milestones}, \emph{32}, 13.
-
-\leavevmode\vadjust pre{\hypertarget{ref-garrett2003}{}}%
-Garrett, J. J. (2003). The elements of user experience: User-centered design for the web.
-
 \leavevmode\vadjust pre{\hypertarget{ref-goldstein2021}{}}%
 Goldstein, E. B., \& Cacciamani, L. (2021). \emph{Sensation and perception, 11th edition}. Cengage Learning.
-
-\leavevmode\vadjust pre{\hypertarget{ref-gregory1968}{}}%
-Gregory, R. L. (1968). Perceptual illusions and brain models. \emph{Proceedings of the Royal Society of London. Series B. Biological Sciences}, \emph{171}(1024), 279--296.
 
 \leavevmode\vadjust pre{\hypertarget{ref-haberman2019}{}}%
 Haberman, J. M., \& Ulrich, L. (2019). Precise ensemble face representation given incomplete visual input. \emph{I-Perception}, \emph{10}(1), 2041669518819014.
@@ -2406,35 +1597,14 @@ Haberman, J., Brady, T. F., \& Alvarez, G. A. (2015). Individual differences in 
 \leavevmode\vadjust pre{\hypertarget{ref-haberman2012}{}}%
 Haberman, J., \& Whitney, D. (2012). Ensemble perception: Summarizing the scene and broadening the limits of visual processing. \emph{From Perception to Consciousness: Searching with Anne Treisman}, \emph{33}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hassenzahl2010}{}}%
-Hassenzahl, M. (2010). Experience design: Technology for all the right reasons. \emph{Synthesis Lectures on Human-Centered Informatics}, \emph{3}(1), 1--95.
-
-\leavevmode\vadjust pre{\hypertarget{ref-heer2006}{}}%
-Heer, J., \& Agrawala, M. (2006). Software design patterns for information visualization. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{12}(5), 853--860.
-
-\leavevmode\vadjust pre{\hypertarget{ref-heer2010}{}}%
-Heer, J., \& Bostock, M. (2010). Crowdsourcing graphical perception: Using mechanical turk to assess visualization design. In \emph{Proceedings of the SIGCHI conference on human factors in computing systems} (pp. 203--212).
-
-\leavevmode\vadjust pre{\hypertarget{ref-heer2012}{}}%
-Heer, J., \& Shneiderman, B. (2012). Interactive dynamics for visual analysis. \emph{Commun. ACM}, \emph{55}(4), 45--54. http://doi.org/\href{https://doi.org/10.1145/2133806.2133821}{10.1145/2133806.2133821}
-
 \leavevmode\vadjust pre{\hypertarget{ref-density-pcp}{}}%
 Heinrich, J., \& Weiskopf, D. (2009). {Continuous Parallel Coordinates}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{15}(6), 1531--1538. http://doi.org/\href{https://doi.org/10.1109/TVCG.2009.131}{10.1109/TVCG.2009.131}
 
 \leavevmode\vadjust pre{\hypertarget{ref-henderson1999}{}}%
 Henderson, J. M., \& Hollingworth, A. (1999). High-level scene perception. \emph{Annual Review of Psychology}, \emph{50}(1), 243--271.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hofmann2012}{}}%
-Hofmann, H., Follett, L., Majumder, M., \& Cook, D. (2012). Graphical tests for power comparison of competing designs. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{18}(12), 2441--2448.
-
 \leavevmode\vadjust pre{\hypertarget{ref-Hofmann:2013}{}}%
 Hofmann, H., \& Vendettuoli, M. (2013). {Common Angle Plots as Perception-True Visualizations of Categorical Associations}. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{19}(12), 2297--2305. http://doi.org/\href{https://doi.org/10.1109/TVCG.2013.140}{10.1109/TVCG.2013.140}
-
-\leavevmode\vadjust pre{\hypertarget{ref-hollender2010}{}}%
-Hollender, N., Hofmann, C., Deneke, M., \& Schmitz, B. (2010). Integrating cognitive load theory and concepts of human--computer interaction. \emph{Computers in Human Behavior}, \emph{26}(6), 1278--1288.
-
-\leavevmode\vadjust pre{\hypertarget{ref-huang2006}{}}%
-Huang, W., Hong, S.-H., \& Eades, P. (2006). Predicting graph reading performance: A cognitive approach. In \emph{ACM international conference proceeding series} (Vol. 164, pp. 207--216).
 
 \leavevmode\vadjust pre{\hypertarget{ref-hubel2004}{}}%
 Hubel, D. H., \& Wiesel, T. N. (2004). \emph{Brain and visual perception: The story of a 25-year collaboration}. Oxford University Press.
@@ -2442,14 +1612,14 @@ Hubel, D. H., \& Wiesel, T. N. (2004). \emph{Brain and visual perception: The st
 \leavevmode\vadjust pre{\hypertarget{ref-hullman2011}{}}%
 Hullman, J., Adar, E., \& Shah, P. (2011). Benefitting infovis with visual difficulties. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{17}(12), 2213--2222.
 
+\leavevmode\vadjust pre{\hypertarget{ref-hullman2021}{}}%
+Hullman, J., \& Gelman, A. (2021). Designing for {Interactive} {Exploratory} {Data} {Analysis} {Requires} {Theories} of {Graphical} {Inference}. \emph{Harvard Data Science Review}, \emph{3}(3).
+
 \leavevmode\vadjust pre{\hypertarget{ref-itti2000}{}}%
 Itti, L., \& Koch, C. (2000). A saliency-based search mechanism for overt and covert shifts of visual attention. \emph{Vision Research}, \emph{40}(10-12), 1489--1506.
 
-\leavevmode\vadjust pre{\hypertarget{ref-itti2001}{}}%
-Itti, L., \& Koch, C. (2001). Computational modelling of visual attention. \emph{Nature Reviews Neuroscience}, \emph{2}(3), 194--203.
-
-\leavevmode\vadjust pre{\hypertarget{ref-javed2012}{}}%
-Javed, W., \& Elmqvist, N. (2012). Exploring the design space of composite visualization. In \emph{2012 ieee pacific visualization symposium} (pp. 1--8). IEEE.
+\leavevmode\vadjust pre{\hypertarget{ref-JHUCovidDashboard}{}}%
+John hopkins university covid-19 dashboard. (n.d.). Retrieved from \url{https://coronavirus.jhu.edu/map.html}
 
 \leavevmode\vadjust pre{\hypertarget{ref-karjus2023}{}}%
 Karjus, A., Solà, M. C., Ohm, T., Ahnert, S. E., \& Schich, M. (2023). Compression ensembles quantify aesthetic complexity and the evolution of visual art. \emph{EPJ Data Science}, \emph{12}(1), 21.
@@ -2462,15 +1632,6 @@ Khayat, N., Fusi, S., \& Hochstein, S. (2021). Perceiving ensemble statistics of
 
 \leavevmode\vadjust pre{\hypertarget{ref-khayat2018}{}}%
 Khayat, N., \& Hochstein, S. (2018). Perceiving set mean and range: Automaticity and precision. \emph{Journal of Vision}, \emph{18}(9), 23--23.
-
-\leavevmode\vadjust pre{\hypertarget{ref-klein2007}{}}%
-Klein, G., Phillips, J. K., Rall, E. L., \& Peluso, D. A. (2007). A data--frame theory of sensemaking. In \emph{Expertise out of context} (pp. 118--160). Psychology Press.
-
-\leavevmode\vadjust pre{\hypertarget{ref-koffka1935}{}}%
-Koffka, K. (2013). \emph{Principles of gestalt psychology} (Vol. 44). routledge.
-
-\leavevmode\vadjust pre{\hypertarget{ref-kosara2007}{}}%
-Kosara, R. (2007). Visualization criticism-the missing link between information visualization and art. In \emph{2007 11th international conference information visualization (IV'07)} (pp. 631--636). IEEE.
 
 \leavevmode\vadjust pre{\hypertarget{ref-leavitt2017}{}}%
 Leavitt, M. L., Pieper, F., Sachs, A. J., \& Martinez-Trujillo, J. C. (2017). Correlated variability modifies working memory fidelity in primate prefrontal neuronal ensembles. \emph{Proceedings of the National Academy of Sciences}, \emph{114}(12), E2494--E2503.
@@ -2493,29 +1654,11 @@ McCallum, W. C. (n.d.). Attention. \url{https://www.britannica.com/science/atten
 \leavevmode\vadjust pre{\hypertarget{ref-bertin1983}{}}%
 Monmonier, M. (1985). \emph{Annals of the Association of American Geographers}, \emph{75}(4), 605--609. Retrieved from \url{http://www.jstor.org/stable/2563117}
 
-\leavevmode\vadjust pre{\hypertarget{ref-morville2015}{}}%
-Morville, P., Rosenfeld, L. B., \& Arango, J. (2015). Information architecture for the web and beyond. \emph{(No Title)}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-elsi}{}}%
 National Center for Education Statistics. (2020). National center for education statistics. \url{https://nces.ed.gov/}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-nielsen1994}{}}%
-Nielsen, J. (1994). \emph{Usability engineering}. Morgan Kaufmann.
-
-\leavevmode\vadjust pre{\hypertarget{ref-nielsen1997}{}}%
-Nielsen, J. (1997). How users read on the web. \emph{Http://Www.useit.com/Alertbox/9710a.html}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-nielsen2006}{}}%
-Nielsen, J. (2006). F-shaped pattern for reading web content, jakob nielsen's alertbox. \emph{Http://Www.useit.com/Alertbox/Reading\_pattern. Html}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-norman2013}{}}%
 Norman, D. (2013). \emph{The design of everyday things: Revised and expanded edition}. Basic books.
-
-\leavevmode\vadjust pre{\hypertarget{ref-north2000}{}}%
-North, C., \& Shneiderman, B. (2000). Snap-together visualization: A user interface for coordinating visualizations via relational schemata. In \emph{Proceedings of the working conference on advanced visual interfaces} (pp. 128--135).
-
-\leavevmode\vadjust pre{\hypertarget{ref-obrien2008}{}}%
-O'Brien, H. L., \& Toms, E. G. (2008). What is user engagement? A conceptual framework for defining user engagement with technology. \emph{Journal of the American Society for Information Science and Technology}, \emph{59}(6), 938--955.
 
 \leavevmode\vadjust pre{\hypertarget{ref-oberauer2009}{}}%
 Oberauer, K. (2009). Design for a working memory. \emph{Psychology of Learning and Motivation}, \emph{51}, 45--100.
@@ -2526,14 +1669,14 @@ Padilla, L. M., Ruginski, I. T., \& Creem-Regehr, S. H. (2017). Effects of ensem
 \leavevmode\vadjust pre{\hypertarget{ref-palmer2002}{}}%
 Palmer, S. E. (2002). Perceptual organization in vision. \emph{Stevens' Handbook of Experimental Psychology}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-parsons2014}{}}%
-Parsons, P., \& Sedig, K. (2014). Adjustable properties of visual representations: Improving the quality of human-information interaction. \emph{Journal of the Association for Information Science and Technology}, \emph{65}(3), 455--482.
-
 \leavevmode\vadjust pre{\hypertarget{ref-perez2021}{}}%
 Pérez-Ortega, J., Alejandre-Garcı́a, T., \& Yuste, R. (2021). Long-term stability of cortical ensembles. \emph{Elife}, \emph{10}, e64449.
 
 \leavevmode\vadjust pre{\hypertarget{ref-petersCommunityResiliencyDeclining2019}{}}%
 Peters, D. J. (2019). Community {Resiliency} in {Declining} {Small} {Towns}: {Impact} of {Population} {Loss} on {Quality} of {Life} over 20 {Years}. \emph{Rural Sociology}, \emph{84}(4), 635--668. http://doi.org/\href{https://doi.org/10.1111/ruso.12261}{10.1111/ruso.12261}
+
+\leavevmode\vadjust pre{\hypertarget{ref-playfair2005}{}}%
+Playfair, W. (2005). \emph{Playfair's commercial and political atlas and statistical breviary}. Cambridge University Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-potter2009}{}}%
 Potter, K., Wilson, A., Bremer, P.-T., Williams, D., Doutriaux, C., Pascucci, V., \& Johnson, C. R. (2009). Ensemble-vis: A framework for the statistical visualization of ensemble data. In \emph{2009 IEEE international conference on data mining workshops} (pp. 233--240). IEEE.
@@ -2544,23 +1687,11 @@ R Core Team. (2022). \emph{R: A language and environment for statistical computi
 \leavevmode\vadjust pre{\hypertarget{ref-rayner2009}{}}%
 Rayner, K. (2009). The 35th sir frederick bartlett lecture: Eye movements and attention in reading, scene perception, and visual search. \emph{Quarterly Journal of Experimental Psychology}, \emph{62}(8), 1457--1506.
 
-\leavevmode\vadjust pre{\hypertarget{ref-reuter1990}{}}%
-Reuter, L. H., Tukey, P., Maloney, L. T., Pani, J. R., \& Smith, S. (1990). Human perception and visualization. In \emph{Proceedings of the 1st conference on visualization'90} (pp. 401--406).
-
-\leavevmode\vadjust pre{\hypertarget{ref-roberts2007}{}}%
-Roberts, J. C. (2007). State of the art: Coordinated \& multiple views in exploratory visualization. In \emph{Fifth international conference on coordinated and multiple views in exploratory visualization (CMV 2007)} (pp. 61--71). IEEE.
-
 \leavevmode\vadjust pre{\hypertarget{ref-rubin2008}{}}%
 Rubin, J., \& Chisnell, D. (2008). \emph{Handbook of usability testing: How to plan, design, and conduct effective tests}. John Wiley \& Sons.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rumelhart1976}{}}%
-Rumelhart, D. E., \& Ortony, A. (1976). The representation of knowledge in memory. In \emph{Center for human information processing}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-scc}{}}%
 Rural Shrink Smart Team. (2022). Rural shrink smart. \url{https://ruralshrinksmart.org/}.
-
-\leavevmode\vadjust pre{\hypertarget{ref-saffer2007}{}}%
-Saffer, D. (2007). Designing for interaction: Creating smart applications and clever devices. New riders. AIGE design press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fisher}{}}%
 Sarikaya, A., Correll, M., Bartram, L., Tory, M., \& Fisher, D. (2019). What do we talk about when we talk about dashboards? \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{25}(1), 682--692. http://doi.org/\href{https://doi.org/10.1109/TVCG.2018.2864903}{10.1109/TVCG.2018.2864903}
@@ -2571,23 +1702,20 @@ Satyanarayan, A., Moritz, D., Wongsuphasawat, K., \& Heer, J. (2016). Vega-lite:
 \leavevmode\vadjust pre{\hypertarget{ref-schwendimann2016}{}}%
 Schwendimann, B. A., Rodriguez-Triana, M. J., Vozniuk, A., Prieto, L. P., Boroujeni, M. S., Holzer, A., \ldots{} Dillenbourg, P. (2016). Perceiving learning at a glance: A systematic literature review of learning dashboard research. \emph{IEEE Transactions on Learning Technologies}, \emph{10}(1), 30--41.
 
-\leavevmode\vadjust pre{\hypertarget{ref-gorillavideo1999}{}}%
-Scot Covey, Rafael Fernandez, \& Simons, D. (n.d.). The invisible gorilla. \url{http://www.theinvisiblegorilla.com/videos.html}.
+\leavevmode\vadjust pre{\hypertarget{ref-stallman2002}{}}%
+Stallman, R. (2002). \emph{Free software, free society: Selected essays of richard m. stallman}. Lulu. com.
 
 \leavevmode\vadjust pre{\hypertarget{ref-iowa_gov}{}}%
 State of Iowa. (2020). Iowa data portal. \url{https://data.iowa.gov}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-sweller1994}{}}%
-Sweller, J., \& Chandler, P. (1994). Why some material is difficult to learn. \emph{Cognition and Instruction}, \emph{12}(3), 185--233.
+\leavevmode\vadjust pre{\hypertarget{ref-sulston2002}{}}%
+Sulston, J., \& Ferry, G. (2002). \emph{The common thread: A story of science, politics, ethics, and the human genome}. Random House.
 
 \leavevmode\vadjust pre{\hypertarget{ref-szafir2017}{}}%
 Szafir, D. A. (2017). Modeling color difference for visualization design. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{24}(1), 392--401.
 
 \leavevmode\vadjust pre{\hypertarget{ref-szafir2016}{}}%
 Szafir, D. A., Haroz, S., Gleicher, M., \& Franconeri, S. (2016). Four types of ensemble coding in data visualizations. \emph{Journal of Vision}, \emph{16}(5), 11--11.
-
-\leavevmode\vadjust pre{\hypertarget{ref-toyama2015}{}}%
-Toyama, T., Sonntag, D., Orlosky, J., \& Kiyokawa, K. (2015). Attention engagement and cognitive state analysis for augmented reality text display functions. In \emph{Proceedings of the 20th international conference on intelligent user interfaces} (pp. 322--332).
 
 \leavevmode\vadjust pre{\hypertarget{ref-treisman1998}{}}%
 Treisman, A. (1998). Feature binding, attention and object perception. \emph{Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences}, \emph{353}(1373), 1295--1306.
@@ -2601,14 +1729,8 @@ Tufte, Edward R. (1985). The visual display of quantitative information. \emph{T
 \leavevmode\vadjust pre{\hypertarget{ref-tufte2001}{}}%
 Tufte, Edward R. (2001). \emph{The visual display of quantitative information (2nd edition)}. USA: Graphics Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-tufte2008}{}}%
-Tufte, Edward R. (2008). The cognitive style of PowerPoint: Pitching out corrupts within. \emph{Education Review}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-tukey1966}{}}%
 Tukey, J. W., \& Wilk, M. B. (1966). Data analysis and statistics: An expository overview. In \emph{Proceedings of the november 7-10, 1966, fall joint computer conference} (pp. 695--709).
-
-\leavevmode\vadjust pre{\hypertarget{ref-tuovinen2004}{}}%
-Tuovinen, J. E., \& Paas, F. (2004). Exploring multidimensional approaches to the efficiency of instructional conditions. \emph{Instructional Science}, 133--152.
 
 \leavevmode\vadjust pre{\hypertarget{ref-unwin2003}{}}%
 Unwin, A., Volinsky, C., \& Winkler, S. (2003). Parallel coordinates for exploratory modelling analysis. \emph{Computational Statistics \& Data Analysis}, \emph{43}, 553--564. http://doi.org/\href{https://doi.org/10.1016/S0167-9473(02)00292-X}{10.1016/S0167-9473(02)00292-X}
@@ -2622,17 +1744,11 @@ USDA - ERS. (2020b). Rural-urban commuting area codes. \url{https://www.ers.usda
 \leavevmode\vadjust pre{\hypertarget{ref-utochkin2023}{}}%
 Utochkin, I. S., Choi, J., \& Chong, S. C. (2023). A population response model of ensemble perception. \emph{Psychological Review}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-van2005}{}}%
-Van Wijk, J. J. (2005). The value of visualization. In \emph{VIS 05. IEEE visualization, 2005.} (pp. 79--86). IEEE.
-
 \leavevmode\vadjust pre{\hypertarget{ref-sineillusion}{}}%
 VanderPlas, S., \& Hofmann, H. (2015a). Signs of the sine illusion--why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190. http://doi.org/\href{https://doi.org/10.1080/10618600.2014.951547}{10.1080/10618600.2014.951547}
 
 \leavevmode\vadjust pre{\hypertarget{ref-vanderplas2015}{}}%
 VanderPlas, S., \& Hofmann, H. (2015b). Signs of the sine illusion---why we need to care. \emph{Journal of Computational and Graphical Statistics}, \emph{24}(4), 1170--1190.
-
-\leavevmode\vadjust pre{\hypertarget{ref-vessey1991}{}}%
-Vessey, I., \& Galletta, D. (1991). Cognitive fit: An empirical study of information acquisition. \emph{Information Systems Research}, \emph{2}(1), 63--84.
 
 \leavevmode\vadjust pre{\hypertarget{ref-wagemans2012}{}}%
 Wagemans, J., Feldman, J., Gepshtein, S., Kimchi, R., Pomerantz, J. R., Van der Helm, P. A., \& Van Leeuwen, C. (2012). A century of gestalt psychology in visual perception: II. Conceptual and theoretical foundations. \emph{Psychological Bulletin}, \emph{138}(6), 1218.
@@ -2640,11 +1756,14 @@ Wagemans, J., Feldman, J., Gepshtein, S., Kimchi, R., Pomerantz, J. R., Van der 
 \leavevmode\vadjust pre{\hypertarget{ref-ward2010}{}}%
 Ward, M., Grinstein, G., \& Keim, D. (2010). \emph{Interactive data visualization: Foundations, techniques, and applications} (p. 81). http://doi.org/\href{https://doi.org/10.1201/b10683}{10.1201/b10683}
 
-\leavevmode\vadjust pre{\hypertarget{ref-ware2010}{}}%
-Ware, C. (2010). \emph{Visual thinking for design}. Elsevier.
-
 \leavevmode\vadjust pre{\hypertarget{ref-ware2012}{}}%
 Ware, C. (2012). \emph{Information visualization: Perception for design}. Morgan Kaufmann.
+
+\leavevmode\vadjust pre{\hypertarget{ref-weber2004}{}}%
+Weber, S. (2004). \emph{The success of open source}. Harvard University Press.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wei2017}{}}%
+Wei, T., Simko, V., Levy, M., Xie, Y., Jin, Y., Zemla, J., et al. (2017). Package {``corrplot.''} \emph{Statistician}, \emph{56}(316), e24.
 
 \leavevmode\vadjust pre{\hypertarget{ref-wertheimer1912}{}}%
 Wertheimer, M. (1912). Experimentelle studien uber das sehen von bewegung (translated extract reprinted as {``experimental studies on the seeing of motion''}). \emph{Zeitschrift Fur Psychologie}, \emph{61}, 161--165.
@@ -2669,9 +1788,6 @@ Wickham, H., Cook, D., Hofmann, H., \& Buja, A. (2011). {tourr: An R Package for
 
 \leavevmode\vadjust pre{\hypertarget{ref-wilkinson2012}{}}%
 Wilkinson, L. (2012). \emph{The grammar of graphics}. Springer.
-
-\leavevmode\vadjust pre{\hypertarget{ref-yi2007}{}}%
-Yi, J. S., Kang, Y. ah, Stasko, J., \& Jacko, J. A. (2007). Toward a deeper understanding of the role of interaction in information visualization. \emph{IEEE Transactions on Visualization and Computer Graphics}, \emph{13}(6), 1224--1231.
 
 \leavevmode\vadjust pre{\hypertarget{ref-zarecor2021rural}{}}%
 Zarecor, K. E., Peters, D. J., \& Hamideh, S. (2021). Rural smart shrinkage and perceptions of quality of life in the american midwest. In \emph{Handbook of quality of life and sustainability} (pp. 395--415). Springer.
