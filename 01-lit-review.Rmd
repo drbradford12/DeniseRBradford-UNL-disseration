@@ -4,7 +4,7 @@ output:
   pdf_document: default
 ---
 
-```{r include_packages, include = FALSE}
+```{r include_packages, include = FALSE, echo=}
 library(knitr)
 library(palmerpenguins)
 library(tidyverse)
@@ -23,37 +23,120 @@ library(formatR)
 
 ```
 
-# General Introduction
+## Introduction
 
-Statisticians use graphs in almost every stage of their work. 
-They create charts to summarize and explore new data and identify potential problems and opportunities. 
-Models are fit based on relationships between variables which are often identified visually. 
-We identify problems with those models based on residual plots and other visual diagnostics. 
-When our modeling work has been completed, we present our results to interested parties using visual displays, because non-statisticians often find it easier to understand data and models through an intuitive visual medium rather than through the mathematical formulae which underlie the statistical work.
+Our data-driven modern civilization now depends heavily on the ability to precisely evaluate and exploit huge and complex datasets, especially in small rural towns where resources are often sparse. 
+This dissertation aims to make big datasets more understandable and useful by utilizing three related innovations: generalized parallel coordinate plots (GPCPs), reliable ways to look at missing data, and efficient methods to elaborate on the detection of unusual trends.
+Each priority area is key for improving the GPCP technique to enable thorough and accurate data analysis across various datasets.
 
-Given the wide range of uses for graphs and visual data displays in statistical modeling, it is unsurprising that some graphs are more useful for specific applications, such as exploratory analysis, and are unsuitable for other applications, such as presenting to an outside group. 
-In addition, not all visual displays have equal perceptual value [@unwin2003, @aspillaga1996]. 
-The best graphics are designed to account for both the dataset and the intended audience's features.
-Some design constraints stem from limitations of the human perceptual system and are common to most potential consumers of the visualization. 
-For example, the sine illusion affects anyone with binocular depth perception, and color recommendations are built around the specific characteristics of the human retina [@vanderplas2015].
-Other design constraints are due to the audience’s experience level and if they are used to working with data and understand specialized techniques (e.g., enough familiarity with principal component analysis such that a plot of factor loadings might be useful). 
-Do they understand specialized techniques such as principal component analysis to the point where a plot of factor loadings might be a useful visual display?
-When we create visualizations for public consumption, we have to consider both perceptual factors and the target audience’s domain knowledge.
-This introduction presents previous research on constructing interactive and static visual displays for different audiences and the implications of this research when designing interactive data displays such as dashboards.
+The accuracy of data interpretation is highest when dealing directly with numerical values or one-dimensional visual representations (Spence, 1990). 
+That is becoming more and more impractical. The size and dimensionality of datasets are increasing. 
+In order to make judgments based on data, it is necessary to find methods of simplifying and consolidating datasets without sacrificing significant information. 
+Often, a data visualization, such as a graph or table, serves as a go-between step between raw data and an observer's decision-making process. A data visualization is the visual depiction of information. 
+Essentially, it is an effort to effectively communicate synthesized data pieces in a way that is easy for an observer to understand and evaluate. 
 
-Most research in statistical graphics has been done on static graphics; usually, research also strips away all but the most essential contextual information, sacrificing external validity for statistical control. 
-As a result, it can be hard to generalize this research to practical applications, where the contextual information surrounding the data is critical and the chart does not just exist in a vacuum.
+For high-dimensional data, parallel coordinate plots (PCPs) are a common visualization tool whereby data points are shown as lines intersecting each axis, therefore indicating a dimension. 
+Conventional PCP hinders its interpretability by having clutter and overlapping lines while handling big datasets. By including methods such as axis reordering, bundling, and dimensionality reduction to solve these problems, generalized parallel coordinate plots (GPCPs) expand the conventional PCP. 
+These improvements in clarity and usability of PCPs by means of data pattern highlighting and visual clutter reduction help Heinrich and Weiskopf (2013), for example, present several approaches to bundle comparable trajectories in GPCPs, so minimizing overlap and improving pattern identification; Johannsen et al. (2012) address the advantages of dynamic axis reordering to highlight different data characteristics.
 
-In the real world, however, conventions and familiarity often win out over best practice validated by perceptual experiments.
-For example, in sports, many coaches desire printable diagrams containing all necessary and valuable information on a single page. 
-As data in sports becomes more prominent, extensive, and collected, this information must be refined. 
+Stimulus-responsive attention is typically triggered by a certain category, where an observer learns that one element of the stimulus contains valuable information about the most promising location to search for additional information in order to make an accurate judgment. 
+Greensmith's "Personal Equation of Interaction" investigates personal variations in cognitive and perceptual capacity when using sophisticated visual interfaces (Greensmith, 2016). 
+This theory emphasizes the need of human characteristics in understanding and classifying composite glyphs, graphical elements expressing multidimensional data. 
+Applied to generalized parallel coordinate plots (GPCPs), it underlines the requirement of considering individual cognitive and perceptual variances since these influence data interpretation accuracy and efficiency. Generalized parallel coordinate charts display many dimensions within a single glyph.
 
-Thus, in addition to the experimental evidence, we must consider the human element: how to introduce new graphical concepts to stakeholders, and the considerations involved in encouraging stakeholders to adopt these improved graphics.
-Let us first consider the audience characteristics that affect the selection of graphics. 
-Then, we will engage with considerations based on the data to be displayed. 
-Finally, we will consider the interactions between the audience and the data: how graphics are tested, amended, and hopefully eventually adopted into common use.
+Overall, this dissertation addresses theoretical and practical gaps within the existing literature and offers tangible improvements to GPCP's functionality. 
+By enhancing the treatment of missing data, refining outlier detection, and upgrading statistical methodologies, this research aims to extend GPCP's applicability across diverse research fields, ultimately facilitating more accurate and insightful data analysis. 
+Through a mix of theoretical expansion, algorithm development, and practical application, the enhancements proposed herein seek to advance the field of data visualization significantly.
 
-## Methodology - Exploratory Data Analysis (EDA)
+## Cognition Models and Data Visualization
+
+Data visualization professionals are impacted by advancements in cognitive science, as evidenced by multiple research studies (Healey & Enns, 2011; Hegarty, 2011; Crapo, Waisel, Wallace & Willemain, 2000). Additionally, cognitive scientists contribute to developing ideas about data visualization (e.g., Kosslyn, 2006; Green, Ribarsky & Fisher, 2009; Pinker, 1990; Lewandowsky & Spence, 1989). 
+
+However, data visualization models primarily clarify the connection between users and the display rather than describe the cognitive processes involved in response to data visualizations.
+ 
+The following will present a concise overview of data visualization methods that assert the influence of the cognitive system. 
+
+This is done partly to discover patterns and demonstrate the current level of abstraction in comprehending the connection between the observer and the data. Most models that establish a connection between the observer and data in data visualization do not. 
+
+These experiments manipulate low-level visual features not explicitly incorporated into current data visualization models. Several of the theories below show the absence of a clear relationship between perception and cognition.
+
+Data visualization models are generally abstract, process-oriented descriptions of how the user interacts with the image.
+Waisal, Wallace & Willemain (1999) put forth a data visualization theory that proposes mental models as how observers comprehend the world. 
+Mental models are cognitive constructs believed by some to serve as the foundation for relational reasoning, as proposed by Johnson-Laird in 1983 and further supported by Byrne and Johnson-Laird in 1989. Mental models have three essential elements: understanding, description, and validation. 
+The theory of data visualization proposed by Waisal and colleagues corresponds to the initial stage of a mental model, where information is encoded, and the cognitive system readies itself for further elaboration. 
+The model proposed by Waisal et al. describes a series of processes that an observer must follow to synchronize their mental representation of the information in the display with the actual display. 
+The system takes the observer's understanding of the data as input and generates a response that can be verified. 
+The initial step of the Waisal et al. model involves constructing a mental representation based on the observers' understanding of the data visualization. 
+Subsequently, an observer selects a certain perspective from this mental model and accurately reproduces it based on the observed graph. 
+To make progress, the observer needs to assess three things: 1) if the visualization accurately corresponds to the model view, 2) if the visualization is consistent with the mental model, and 3) if the view and visualization are feasible when taking external factors into account. 
+Once all three conditions are satisfied, the observer proceeds to the validation stage of the mental model. 
+If any criteria are not satisfied, the mental model is revised, and the view is derived based on the revised mental model.
+
+<!-- INSERT IMAGE HERE -->
+
+
+The practical implications of the research are evident in the data obtained from the think-aloud technique and mouse-tracking. 
+These findings, as reported by Waisel et al. (1999), indicate that viewers do utilize certain steps in the process of comprehending the data visualization. 
+While the sequence of stages was not easily identifiable from the observed data, the authors propose that suggesting separate steps was beneficial for isolating sub-processes and gaining a clearer grasp of the description aspect involved in constructing a mental model. 
+This insight can be valuable in designing more effective data visualizations that align with the cognitive processes of the viewers.
+
+Pinker's theory (1990) states that the mind is made of a collection of separate, natural mental modules that were developed to manage particular kinds of data and activities. 
+This thoery offers a unique perspective on the cognitive components involved in understanding graphs at a higher level. 
+It includes a matching process, which utilizes a graph schema of the suitable type, a message assembly that converts visual information into conceptual information, an interrogation stage where additional information is extracted from the graph if necessary, and finally an inferential process where decisions are made or insights are generated. 
+
+<!-- INSERT IMAGE HERE -->
+
+Each of these four procedures involves highly intricate matters. 
+The conversion of visual input into a conceptually meaningful form is a complex task, yet it is encapsulated in a single step in this model. 
+However, this is not necessarily a drawback. 
+If we consider this theory as a means to effectively break down the challenge of data visualization into smaller, more manageable components, then it is beneficial to divide an overwhelmingly large problem (how individuals comprehend graphs) into more meaningful sub-problems, such as understanding how people transform visual data into meaningful information. Pinker defines the matching process as a component of "cognitive fit", which Vessey and his colleagues have separately investigated as a distinct problem.
+
+For people to understand the data, how the information is presented is important. Traditionally, scatterplots are great for showing how two variables are related, bar graphs are great for showing a key property of multiple levels of a single variable, and histograms are great for showing univariate distributions. Cognitive fit is accomplished when the designer creates the appropriate tool (graph) for the task and the observer comprehends the correlation between their objective and the tool (Vessey & Galletta, 1991). Designing a visualization for cognitive fit involves creating compatible visual representations that accurately capture the mental representation of data. 
+
+Furthermore, if we want to show that a value is higher for one observation than another, we can visually display this difference on the graph's Y-axis (Bertin, 1983). 
+
+In his groundbreaking work "Semiology of Graphics" (1983), Jacques Bertin laid out a theory that changed the way we think about and use graphs to show information. Bertin said that images are not just pictures; they are important tools for communicating and analyzing data. Bertin came up with the idea of "retinal variables" – visual attributes such as position, size, color, orientation, shape, and texture – that can be changed to store and read data. Bertin states that good visualizations should use these visual attributes to create patterns that are hard to see from text or numbers alone.
+
+
+<!-- INSERT IMAGE HERE -->
+
+Bertin's theory is important in the areas of cartography and statistical graphics. Categorical, numeric, and quantitative data were the three main types of data he classified. It was important for him to emphasize how important it was to choose the right visual attributes based on the data and the message of the graphic.
+
+
+Attaining optimal cognitive fit minimizes the cognitive load on the observer when carrying out the current task. The cognitive fit concept is grounded in the theory of information processing (Newell & Simon, 1972) and the recognition that individuals balance error and effort when carrying out tasks (Beach & Mitchell, 1978; Payne, 1982; Vessey, 1994; Wickelgren, 1977). Cognitive fit is one of several models that are based on an information processing framework. Pinker identifies as the matching process is encompassed by “cognitive fit”, explored by Vessey and colleagues as its own discrete problem.
+
+Models of data visualization that make explicit the generation of the visualization (the data to the graphic stage) and the perception of the data (the graphic to the viewer) are helpful in thinking about a scientific framework for data visualization. There are two high-level cognitive viewpoints at play: the creator and the viewer. Wijk’s model (2005) is an example of how the connection between components can be nicely explained in an information-processing manner. The system (comprised of the data and the viewer) changes as a function of operations applied between data (input) and graphics (output). Knowledge is updated in response to information extracted from the image, where the amount of information depends on the cognitive and perceptual properties of the observer. van Wijk’s model captures initial parts of cognitive psychology as one of three stages for environmental information extraction.
+
+
+The simple model skips over a lot of interesting details, but it does so in a useful way. To see the big picture, you have to zoom out and look at the big picture links between data and people. Otherwise, you won't be able to make real progress toward its parts. Taking into account both the person and the data as a whole system pushes theory to accurately show how the two parts relate to each other. 
+
+<!-- INSERT IMAGE HERE -->
+
+Both the force-directed edge bundling (FDEB) technique and the Knowledge-Assisted Visualization and Guidance (KAVA) model enlarge the visualization capacity, as suggested by van Wijk. By combining explicit knowledge bases and automated analytical tools, the KAVA paradigm improves visual analytics and enables more accurate and informed representations across many applications. Conversely, FDEB bundles edges using a self-organizing technique that represents edges as flexible springs, reducing visual clutter in node-link diagrams and revealing high-level patterns without needing hierarchical structures. Van Wijk's simplified approach was less suited to efficiently handle complicated, high-dimensional data since it mostly concentrated on basic data display features without such advanced integrations.
+
+<!-- INSERT IMAGE HERE -->
+
+It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. Wijk's model is very high-level and talks about the whole system. On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. In their model, Simkin and Hastie (1987) say that basic processes (similar to cognitive fit) happen between what the viewer sees and how well they understand the job. While Pinker develops this into a more complex theory, considering extra cognitive processes and proposing a disciplined model for graph comprehension, Simkin and Hastie offer the first exploration of the cognitive phases involved. Pinker's work is thus an extension and elaboration of the fundamental ideas presented by Simkin and Hastie, so offering a better knowledge of how graphical information is handled and interpreted by users. These basic processes are recognition, scanning, projection, and superimposition. Another thing that is important for making sense of a graph is grounding.
+
+Researchers have found that visual anchoring changes how people see a stimulus when they are comparing (Johnson & Pashler, 1990) or mentally rotating things (Xu & Franconeri, 2015). Anchoring is a process that is only talked about in theories of data visualization, but it is also a key part of other kinds of cognitive tasks (Couclelis, Gollegdge, Gale & Tobler, 1987; Pylyshyn, 1999), which shows that it is at least a basic part of how people think. This kind of process is very interesting because it helps make sense of data visualizations and learning more about it can improve the way we think in general. 
+
+A more standard model of information processing with input, memory, and output (Neisser, 1967) is changed to fit the task of making a choice based on a data visualization (Patterson, Blaha, Georges, Grinstein, Liggett, Kaveney, Sheldon, Havig, & Moore, 2014). The authors were smart to include a process that captures attention and clarifies output. It is the first form of data visualization that lets bottom-up processes change how people understand graphs independently. In their model, the stimulus serves as the input, with encoding being the first step. Once encoded, the information can be modified in both long-term and working memory. Working memory and pattern recognition can alter long-term memory and influence the storage process. Together, working memory and pattern recognition collaborate to make decisions, guiding subsequent reactions.
+
+<!-- INSERT IMAGE HERE -->
+
+It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. Wijk's model is very high-level and talks about the whole system. On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. In their model, Simkin and Hastie (1987) say that basic processes (similar to cognitive fit) happen between what the viewer sees and how well they understand the job. Simkin and Hastie present the initial investigation of the cognitive phases involved while Pinker extends this into a more complicated theory considering extra cognitive processes and suggests a disciplined model for graph understanding. Pinker's work thus serves as an extension and elaboration of Simkin and Hastie's basic principles, so providing a greater grasp of how graphical information is processed and perceived by users. These fundamental procedures are recognition, scanning, projection, and superimposition. Grounding is still another crucial component for understanding a graph. This model shows the main groups of processes that need to be known to create a science of data visualization. Still, it doesn't go into detail about the different parts that are important in making the stimulus (in this case, the data visualization).
+
+In the models we've already talked about, visual information comes in the form of a graph or plot, which is then stored in memory to consolidate into long-term memory. In previous basic cognition research, changes to the visual world were studied independently to see how they affected simpler tasks. Key models and theories as discussed earlier in Pinker's cognitive model, which distinguishes top-down and bottom-up processes in visual comprehension and stresses the integration of mental representations with current knowledge, build the foundations of basic vision research in cognitive psychology (Pinker, 1990; Hegarty, 2011). Introduced by Wertheimer, gestalt ideas draw attention to systems of perceptual organization including figure-ground separation (Spillmann, 2012). Furthermore underlined by information theory post-WWII, research on attention mechanisms highlights the part of signal detection and cognitive control in visual perception (Swets, 1964; Posner, 2004). By merging theoretical models with actual research, these essential books together progress our knowledge of visual cognition. New research in how we understand data visualization builds on the strong base that basic vision research has laid. 
+
+Many things in the world need to be processed carefully, but this study shows that some visual details can be processed without paying full attention. "Pre-attentive" processing is the faster, more automatic processing of the visual environment. Research shows that it takes less than 200 milliseconds (< 200ms) of preattentive processing to allow quick, parallel detection of core visual characteristics including color, orientation, and size without deliberate attention. Introduced by Treisman and Gelade in 1980, Feature Integration Theory (FIT) provides that while individual features are handled preattentively, integrating them into an overall object requires focused attention, so explaining why conjunction searches—identifying goals based on multiple features—are slower and indicate for a serial search approach. This approach emphasizes the part attention plays in binding several preattentive elements into a single perceptual experience (Mokeichev, Segev, & Ben-Shahar, 2010; Treisman & Gelade, 1980; Wolfe, 2021). In contrast "attentive" processing is the slower, more conscious processing of a part of the visual environment. So, making visualizations that support pre-attentive processing should free up the viewer's brain resources so they can be used more effectively in figuring out what the data means (Healey, Booth & Enns, 1995), which will lead to a better way of sharing data.
+
+In a survey conducted of basic research in attention, Healey and Enns (2011) identified clusters of tasks that are supported by pre-attentive processing: target detection; finding a goal-relevant unique item in an array, boundary detection; identifying distinct spatially organized, texture-based groups based upon how they differ from each other, region tracking;  multiple object tracking and counting. These findings clearly provide an evidence-based manner for making design decisions when generating data visualizations. Suppose the goal of the creator is to show the difference between groups on two different variables, for example. In that case, the creator may use a set of features, like color hues or blending, that allows a viewer to pre-attentively discern boundaries between the two groups on a scatter plot (Callaghan, 1990).
+
+
+
+
+
+## Exploratory Data Analysis (EDA)
 
 John Tukey was the first to organize the collection and methods associated with philosophy into Exploratory Data Analysis (EDA). 
 Previous research by Tukey focused on graphics as a tool for exploratory analysis. 
@@ -121,102 +204,7 @@ Exploratory Data Analysis (EDA) analyzes and summarizes a dataset to discover pa
 It is a crucial step in the data analysis process and is often used to identify which variables are essential, what the data looks like, and what the underlying structure of the data is. 
 EDA is typically done using various techniques, such as visualizations, statistical summaries, and data transformations.
 
-
-## Open-Source Data: Suitability and Integration
-
-The concept of open source originated long before computers, where shared knowledge formed the basis of human progress.
-Originating from the frustrations of figures like Richard Stallman in the 1980s, who championed the free software movement and paved the way for the creation of transformative licenses such as the GNU General Public License, the concept has grown to encompass more than just software. [@stallman2002]
-With organizations like the Open Source Initiative standardizing open-source practices and monumental projects like Linux showcasing its potential, open-source principles expanded by the late 1990s to include data.
-This movement towards openness has been marked by a commitment to transparency, collaboration, and unrestricted access, revolutionizing how we perceive and interact with data in the modern era.
-Linux, an open-source operating system kernel initiated by Linus Torvalds in 1991, became one of the most popular examples of open-source success.
-The Apache HTTP Server, released in 1995, became another success story, powering a large fraction of the internet [@weber2004].
-Open-source principles began expanding from software to data in the late 1990s and early 2000s. The idea was to share data sets for public use without restrictions.
-Projects like the Human Genome Project advocated for open data to advance science and medicine [@sulston2002].
-
-The principles of open-source data revolve around the concepts of free access, transparency, collaboration, and redistribution, fostering a community-driven approach to data sharing and utilization.
-At its core, open source is about making the source content (usually software code) freely available. 
-This transparency allows anyone to review, inspect, and understand the source.
-The freedom to use, modify, distribute, and study the source content without restrictions is a cornerstone of open source.
-This is articulated in various open source licenses, like the GNU General Public License (GPL), which emphasizes the rights of end users.
-Open source projects thrive on collaborative efforts. 
-Diverse groups of people from around the world contribute, enhancing the project's robustness and creativity.
-Tools like Git and platforms like GitHub have made this collaborative approach more streamlined.
-Open source projects often foster strong communities. 
-These communities not only contribute code but also offer support, documentation, and strategies for the project's future.
-These communities' sense of belonging and shared purpose is a driving force behind many successful open-source projects.
-Contributions to open source projects are often evaluated based on merit. 
-The best ideas or implementations, regardless of their source, are adopted, promoting a culture of excellence.
-The principle of redistribution ensures that modified versions of open source content remain open. 
-This ensures a perpetual cycle of community-driven improvement and access.
-Open source principles prioritize the end user’s interests. 
-This user-centric approach often leads to software or content that's more aligned with what users genuinely need and want.
-
-
-### Open Access Data Repositories
-
-In the digital age, open access data repositories have become crucial platforms, transforming how data are shared, accessed, and stored among academic and research communities. 
-These repositories are online spaces created specifically to store datasets and make them available to everyone. In line with the principles of open science, which promote knowledge sharing, transparency, and reproducibility in research endeavors, their main objective is to democratize access to data.
-
-These repositories serve many different purposes at their core. 
-They support openness in the scientific method first and foremost. 
-It enables other researchers and the general public to examine, confirm, and replicate research findings by providing unrestricted access to datasets. Collaboration is also encouraged by this open model. 
-Datasets are accessible to researchers in a variety of fields and locations, providing opportunities to expand upon, combine, or compare various sets of data. 
-Eliminating research duplication is a significant additional benefit. 
-Access to data from earlier studies reduces the need to repeatedly collect similar data, which saves time, effort, and resources. 
-Additionally, these repositories are essential for the long-term preservation of data, guaranteeing that datasets are accessible for future scientific research and for posterity.
-
-A closer look at the features of these repositories reveals several standard components. 
-Metadata is paramount; this descriptive information elucidates the context, origin, methodology, and other pertinent details of the datasets, ensuring they are comprehensible to those accessing them. 
-Many repositories also emphasize the citability of datasets. 
-By assigning a Digital Object Identifier (DOI), datasets become easily referable in academic and research contexts. 
-Licensing is another cornerstone. To clarify usage rights and conditions, datasets are often accompanied by explicit licenses, with Creative Commons licenses being particularly prevalent. 
-These licenses can stipulate various conditions, with attribution being a common requirement. 
-Furthermore, the user experience is enhanced through tools that facilitate easy searching, accessing, and downloading of datasets.
-
-However, like all systems, open access data repositories face challenges. 
-Ensuring data privacy is a significant concern, especially in datasets derived from human subjects, such as in health or social research. 
-Standardization is another hurdle. 
-Given the diverse range of researchers and datasets being uploaded, achieving a standardized format for data and metadata is daunting. 
-And not to be overlooked is the challenge of sustainability. 
-Maintaining a sophisticated digital platform requires both financial resources and technical expertise. 
-Ensuring the longevity of such repositories, especially in a rapidly evolving digital landscape, remains a concern.
-
-Several prominent examples underscore the significance and diversity of open access data repositories. 
-Zenodo, developed under the European OpenAIRE program, serves as a multifaceted platform catering to researchers across disciplines. 
-Dryad specializes in datasets linked to scientific publications, predominantly in life sciences and biomedicine. 
-Figshare offers a broader spectrum, allowing researchers to deposit a range of research outputs, including datasets, making them available to the public.
-
-Historically, the rise of these repositories can be contextualized within the broader open science movement. 
-This movement, gathering momentum over recent decades, has been advocating for a more transparent, accessible, and shared research process. 
-As technological advancements surged, leading to an exponential growth in digital data, the emphasis on preserving and sharing this data treasure trove intensified.
-
-Today, the significance of open access data repositories is further underscored by policies and guidelines from influential bodies. 
-A growing number of funding agencies and academic journals are either mandating or recommending that data underpinning research findings be housed in open access repositories. 
-This trend not only ensures that research outputs, especially data, remain accessible but also reflects a broader societal push towards transparency, especially when research is funded by public coffers.
-
-
-<!--     - Single Data Source with multiple variables (n > 10 columns) 
-## Single Open-source Data
-
-A single data source refers to a specific origin or repository from which data is derived or collected, ensuring uniformity and consistency in the information presented. 
-It contrasts with multiple data sources where data is aggregated from various origins, potentially introducing discrepancies or inconsistencies. 
-For example, a company might maintain a single database that logs all customer transactions. 
-This database would be considered a single data source. 
-Another illustration could be a researcher conducting a study on climate change, who decides to rely solely on temperature readings from a specific meteorological station; in this case, the meteorological station's data would be the single data source.
-Utilizing a single data source simplifies data management and analysis but may also limit the available breadth and diversity of information. -->
-
-<!--     - Multiple Data Sources with multiple variables (n > 10 columns) 
-
-## Multiple Open-source Data
-
-Multiple data sources refer to the amalgamation of data from various origins or repositories, providing a comprehensive and diverse piece of information. 
-By drawing from different sources, analysts can gain a richer and more holistic view of the subject, although it may introduce data integration and consistency. 
-For instance, in business intelligence, a company might combine sales data from their online store, physical retail outlets, and third-party distributors to get a complete picture of their sales performance. 
-Similarly, a researcher studying urban air quality might merge satellite observations, ground-based air quality monitors, and citizen-reported data to achieve a multifaceted understanding. 
-Leveraging multiple data sources offers depth and breadth in insights but necessitates careful management to ensure data integrity and comparability. -->
-
-
-<!--     - R packages  -->
+## R package Development - Past, Present and Future 
 R has become a prominent and adaptable programming language within the domain of data analysis and exploratory data analysis (EDA). 
 A number of R packages have been created to streamline the processes of data manipulation, visualization, and statistical analysis. 
 One of the prominent programs in this category is `ggplot2`, which was developed by Hadley Wickham. 
@@ -252,26 +240,3 @@ User interaction and direct manipulation are required for dynamic graphics to re
 The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
 EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
 Additionally, the EDA process can identify the outliers, patterns, trends, and insights helpful to show in the dashboard to support decision-making.
-<!--     - The importance of the grammar of data manipulation (dplyr and tidyverse)  -->
-
-
-
-
-<!-- - What is Data Manipulation? -->
-<!--     - A formal definition and construction of data manipulation  -->
-<!--     - The application of data manipulation  -->
-<!-- - Summary -->
-
-
-
-Through a multi-phase investigation, this dissertation will:
-
-1. Review the current landscape of dashboard design principles and best practices.
-
-2. Analyze the characteristics and quality of open-source data and its suitability for dashboard integration.
-
-3. Conduct user-based experiments to determine the challenges and pitfalls naive users face when interacting with dashboards.
-
-4. Propose design recommendations for dashboards that effectively convey statistical information to naive users, ensuring correct visual inference and minimizing misinterpretations.
-
-The findings from this research aim to bridge the gap between data experts and naive users, democratizing data interpretation and empowering more individuals to make informed decisions based on open-source data.
