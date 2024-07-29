@@ -1,10 +1,10 @@
 ---
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 ---
 
-```{r include_packages, include = FALSE, echo=}
+```{r include_packages, include = FALSE}
 library(knitr)
 library(palmerpenguins)
 library(tidyverse)
