@@ -4,7 +4,7 @@ output:
   word_document: default
 ---
 
-```{r include_packages, include = FALSE}
+```{r include_packages1, include = FALSE}
 library(knitr)
 library(palmerpenguins)
 library(tidyverse)
@@ -23,7 +23,7 @@ library(formatR)
 
 ```
 
-## Introduction
+# Introduction
 
 Our data-driven modern civilization now depends heavily on the ability to precisely evaluate and exploit huge and complex datasets, especially in small rural towns where resources are often sparse. 
 This dissertation aims to make big datasets more understandable and useful by utilizing three related innovations: generalized parallel coordinate plots (GPCPs), reliable ways to look at missing data, and efficient methods to elaborate on the detection of unusual trends.
@@ -242,7 +242,7 @@ These features are designed to easily interact with data frames, manage data tra
 
 
 
-```{r violin_plot, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
+```{r violin_plot1, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
   geom_violin(aes(fill = Diet), trim = FALSE) +
   geom_boxplot(width = 0.1) +
