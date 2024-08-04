@@ -72,7 +72,9 @@ To make progress, the observer needs to assess three things: 1) if the visualiza
 Once all three conditions are satisfied, the observer proceeds to the validation stage of the mental model. 
 If any criteria are not satisfied, the mental model is revised, and the view is derived based on the revised mental model.
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Waisel Mental Model',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/Waisel.png")
+```
 
 
 The practical implications of the research are evident in the data obtained from the think-aloud technique and mouse-tracking. 
@@ -84,7 +86,10 @@ Pinker's theory (1990) states that the mind is made of a collection of separate,
 This thoery offers a unique perspective on the cognitive components involved in understanding graphs at a higher level. 
 It includes a matching process, which utilizes a graph schema of the suitable type, a message assembly that converts visual information into conceptual information, an interrogation stage where additional information is extracted from the graph if necessary, and finally an inferential process where decisions are made or insights are generated. 
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Decision Making Model',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/DecisionMaking.png")
+```
+
 
 Each of these four procedures involves highly intricate matters. 
 The conversion of visual input into a conceptually meaningful form is a complex task, yet it is encapsulated in a single step in this model. 
@@ -105,7 +110,9 @@ Bertin came up with the idea of "retinal variables" – visual attributes such a
 Bertin states that good visualizations should use these visual attributes to create patterns that are hard to see from text or numbers alone.
 
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Semiology of Graphics',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/Berlin.png")
+```
 
 Bertin's theory is important in the areas of cartography and statistical graphics.
 Categorical, numeric, and quantitative data were the three main types of data he classified. 
@@ -129,14 +136,18 @@ The simple model skips over a lot of interesting details, but it does so in a us
 To see the big picture, you have to zoom out and look at the big picture links between data and people. 
 Otherwise, you won't be able to make real progress toward its parts. Taking into account both the person and the data as a whole system pushes theory to accurately show how the two parts relate to each other. 
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Wijk simple model',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/Wijk.png")
+```
 
 Both the force-directed edge bundling (FDEB) technique and the Knowledge-Assisted Visualization and Guidance (KAVA) model enlarge the visualization capacity, as suggested by van Wijk. 
 By combining explicit knowledge bases and automated analytical tools, the KAVA paradigm improves visual analytics and enables more accurate and informed representations across many applications. 
 Conversely, FDEB bundles edges using a self-organizing technique that represents edges as flexible springs, reducing visual clutter in node-link diagrams and revealing high-level patterns without needing hierarchical structures. 
 van Wijk's simplified approach was less suited to efficiently handle complicated, high-dimensional data since it mostly concentrated on basic data display features without such advanced integrations.
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Pinker Theory',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/pinkertheory.png")
+```
 
 It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. 
 Wijk's model is very high-level and talks about the whole system. On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. 
@@ -154,7 +165,9 @@ In their model, the stimulus serves as the input, with encoding being the first 
 Once encoded, the information can be modified in both long-term and working memory. 
 Working memory and pattern recognition can alter long-term memory and influence the storage process. Together, working memory and pattern recognition collaborate to make decisions, guiding subsequent reactions.
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Cognitive Theory',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/cognitivetheory.png")
+```
 
 It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. Wijk's model is very high-level and talks about the whole system. 
 On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. 
@@ -192,7 +205,9 @@ The concept places significant emphasis on utilizing visual tools to identify pa
 The use of visual aids can be critical for comprehending data (Tukey, 1977). 
 Some methods that can be used to demonstrate the concept are box plots, histograms, and Q-Q graphs. 
 
-<!-- INSERT IMAGE HERE -->
+```{r, echo=FALSE, out.width = "55%", fig.cap='Exploratory Data Analysis Diagram',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/EDA.png")
+```
 
 Advancements in computer performance allowed the creation of models that were both more complex and dynamic. 
 Tukey's Principles of Exploratory Data Analysis (EDA) underline the need of knowing data by means of exploration prior to the application of formal statistical techniques. 
@@ -242,7 +257,7 @@ These features are designed to easily interact with data frames, manage data tra
 
 
 
-```{r violin_plot1, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center'}
+```{r violin_plot1, echo=FALSE,out.width='.49\\linewidth', fig.width=3, fig.height=3, fig.show='asis', fig.align='center', eval=FALSE}
 ggplot(ChickWeight, aes(x = Diet, y = weight)) + 
   geom_violin(aes(fill = Diet), trim = FALSE) +
   geom_boxplot(width = 0.1) +
@@ -253,7 +268,6 @@ p <- ggplot(ChickWeight, aes(x=Diet, y=weight, fill=Diet)) +
   geom_boxplot()
 p + scale_fill_brewer(palette="Dark2")
 ```
-
 
 
 ## Parallel Coordinate Plots 
@@ -282,13 +296,13 @@ The primary objective of this work is to make PCPs easier to understand and use 
 As part of Moustafa's methodology, the standard PCP is mutated into a density plot. 
 This creates plot areas with more observations that stand out and reduce visual clutter.
 
-<!-- INSERT IMAGE HERE -->
-
+```{r, echo=FALSE, out.width = "55%", fig.cap='Parallel Coordinate and Parallel Coordinate Density Plots',fig.show='asis', fig.align='center'}
+knitr::include_graphics("figure/Moustafa.png")
+```
 The new approach uses density estimation methods to transform the PCP image based on polylines into a continuous, smooth depiction of data density. 
 This change shows how to see groups and trends usually hidden in regular PCPs. 
 To make things even better, Moustafa has interactive parts that let users experience different data dimensions in real time. 
 This makes PCPs even better at analysis. With its interactive nature, people who aren't experts can use this method confidently and successfully.
-
 
 Moustafa's research indicates that to deal with even larger datasets more efficiently, future efforts should focus on enhancing density estimation methods. 
 These methods can be used in biology and finance to demonstrate their usefulness and adaptability for examining real-world data (Moustafa, 2011).
