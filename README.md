@@ -1,7 +1,7 @@
-# Data Science, Dashboards and Statistical Graphics
+# Data Science, Dashboards, and Statistical Graphics
 # Denise Renee Bradford
 
-## University of Nebraska - Lincoln, Expected Graduation December 2023
+## University of Nebraska - Lincoln, Expected Graduation TBD
 
 # Purpose
 
