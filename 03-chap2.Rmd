@@ -34,10 +34,10 @@ Some nonlinear methods are Multidimensional Scaling, Isomap, Maximum Variance Un
 It is possible to work with complex nonlinear data using nonlinear methods.
 
 Also, real-world data generally has different types, such as numeric, ordinal, and categorical attributes. 
-For example, The fuel economy are the result of vehicle testing done at the Environmental Protection Agency's National Vehicle and Fuel Emissions Laboratory in Ann Arbor, Michigan, and by vehicle manufacturers with oversight by EPA. 
+For example, The fuel economy data are the result of vehicle testing done at the Environmental Protection Agency's National Vehicle and Fuel Emissions Laboratory in Ann Arbor, Michigan, and by vehicle manufacturers with oversight by EPA. 
 The dataset has both categorical and numerical attributes. 
 The categorical attributes are Make, Model, Transmission, Drive, Class, and Fuel. 
-The numerical attributes are highway miles per gallon, city miles per gallon, number of cylinders, and engine displacement. 
+The numerical attributes are highway miles per gallon (hwy), city miles per gallon (cty), number of cylinders (cyl), Year, and engine displacement (displ).
 Keep in mind that the Year attribute can also be thought of as an ordinal trait. 
 
 Methods such as Support Vector Machines (SVMs), Artificial Neural Networks (ANNs), and K-means all only work with numerical data. 
