@@ -15,6 +15,8 @@ library(ggpcp)
 library(ggplot2)
 library(dplyr)
 data(nasa)
+library(GGally)
+library(stats)
 
 library(scales)
 library(datasets)
@@ -30,174 +32,116 @@ This dissertation aims to make big datasets more understandable and valuable by 
 Each priority area is key for improving the GPCP technique to enable thorough and accurate data analysis across various datasets.
 
 The accuracy of data interpretation is highest when dealing directly with numerical values or one-dimensional visual representations [@spence1990]. 
-That is becoming more and more impractical. 
-The size and dimensionality of datasets are increasing. 
-In order to make judgments based on data, it is necessary to find methods of simplifying and consolidating datasets without sacrificing significant information. 
-Often, a data visualization, such as a graph or table, serves as a go-between step between raw data and an observer's decision-making process. A data visualization is the visual depiction of information. 
-Essentially, it is an effort to effectively communicate synthesized data pieces in a way that is easy for an observer to understand and evaluate. 
+That is becoming more and more impractical as the size and dimension of datasets continue to increase.
+To make judgments based on data, it is necessary to find methods of simplifying and consolidating datasets without sacrificing significant information.
+Data visualization, such as graphs or tables, is often an essential and invaluable intermediate step between raw data and an observer's decision-making process.
+An effective data visualization communicates the gist of a data set in a way that is easy for an observer to understand and evaluate; ideally, data visualizations slightly sacrifice accuracy (relative to a table of values) in favor of a greater understanding of the relationship between observations or variables. 
 
-For high-dimensional data, parallel coordinate plots (PCPs) are a common visualization tool whereby data points are shown as lines intersecting each axis, therefore indicating a dimension. 
-Conventional PCP hinders its interpretability by having clutter and overlapping lines while handling big datasets. By including methods such as axis reordering, bundling, and dimensionality reduction to solve these problems, generalized parallel coordinate plots (GPCPs) expand the conventional PCP. 
-These improvements in clarity and usability of PCPs by means of data pattern highlighting and visual clutter reduction help Heinrich and Weiskopf [@heinrich2013], for example, present several approaches to bundle comparable trajectories in GPCPs, so minimizing overlap and improving pattern identification; Johannsen et al. (2012) address the advantages of dynamic axis reordering to highlight different data characteristics.
 
-Stimulus-responsive attention is typically triggered by a certain category, where an observer learns that one element of the stimulus contains valuable information about the most promising location to search for additional information in order to make an accurate judgment. 
-Greensmith's "Personal Equation of Interaction" investigates personal variations in cognitive and perceptual capacity when using sophisticated visual interfaces [@greensmith2016]. 
-This theory emphasizes the need of human characteristics in understanding and classifying composite glyphs, graphical elements expressing multidimensional data. 
-Applied to generalized parallel coordinate plots (GPCPs), it underlines the requirement of considering individual cognitive and perceptual variances since these influence data interpretation accuracy and efficiency. Generalized parallel coordinate charts display many dimensions within a single glyph.
+Most standard data visualizations work within the Cartesian coordinate system, with variables or functions of variables mapped to the x and y axis.
+Additional variables can be mapped to different properties of the plotted points, bars, or lines, and analysts can also create small multiples that show subsets of the data; even with these additions, viewers quickly become overwhelmed by the amount of information when more than p = 3 or 4 variables are shown (including the x and y coordinates). 
+When it is necessary to understand the relationship between more than four variables, visualizations on a Cartesian grid no longer work as well; extensions to additional dimensions are also ineffective [@reference]. 
+Other approaches are necessary when it is necessary to understand $p > 4$ dimensions of data. 
+Here, we examine parallel coordinate plots (PCPs) as a solution to $p > 4$ dimensional data visualization and assess the impact of different modifications of PCPs on their effectiveness for visualizing high N and/or high p dimensional data. 
+We specifically evaluate the ability of each PCP version to facilitate the identification of overall trends, outliers, and clusters within $N > 4$ dimensional data across different magnitudes of N (observations) and p (variables). 
 
-Overall, this dissertation addresses theoretical and practical gaps within the existing literature and offers tangible improvements to GPCP's functionality. 
-By enhancing the treatment of missing data, refining outlier detection, and upgrading statistical methodologies, this research aims to extend GPCP's applicability across diverse research fields, ultimately facilitating more accurate and insightful data analysis. 
-Through a mix of theoretical expansion, algorithm development, and practical application, the enhancements proposed herein seek to advance the field of data visualization significantly.
+Stimulus-responsive attention often arises when an observer recognizes that a particular graphical element in a stimulus signals valuable information, guiding further search to improve judgment accuracy.
+@spence1990 talked about the importance of visual psychophysics in figuring out how simple parts of graphs can be used to convey information.
+He stressed that how well we can understand graphs relies on our cognitive and visual abilities.
+Cleveland and McGill's study on graphical perception in 1985 found that people have different skill levels when decoding multidimensional data [@cleveland1984]. 
+This shows that designs like generalized parallel coordinate plots must consider cognitive and perceptual variability. 
+These plots show many dimensions within a single visual glyph, and the small changes between them make it much harder to understand complicated visual data. 
+Additional studies, like @heer2010 and @simkin1987, built on these ideas by showing that mistakes happen at different points in information processing and that different graphs are better for different jobs depending on the user's accuracy.
+It was emphasized by Carswell (1992) and Shah & Freedman (2011) that task difficulty and perceptual processes interact.
+These articles say differences in how people think and perceive things should be considered when making generalized parallel coordinate plots to show multidimensional data.
 
-## Cognition Models and Data Visualization
 
-Data visualization professionals are impacted by advancements in cognitive science, as evidenced by multiple research studies (@healey2011; @hegarty2011; @crapo2000). Additionally, cognitive scientists contribute to developing ideas about data visualization (e.g., @kosslyn2006; @green2009; @pinker1990; @spence1991). 
+## Parallel Coordinate Plots 
 
-However, data visualization models primarily clarify the connection between users and the display rather than describe the cognitive processes involved in response to data visualizations.
- 
-The following will present a concise overview of data visualization methods that assert the influence of the cognitive system. 
+### Why?
 
-This is done partly to discover patterns and demonstrate the current level of abstraction in comprehending the connection between the observer and the data. Most models that establish a connection between the observer and data in data visualization do not. 
+Parallel coordinate plots (PCPs) are an excellent way to show data with many dimensions since each is shown on its plane. 
+This means that complex relationships between different factors can be studied repeatedly. 
+PCPs are great for drawing attention to trends, clusters, and outliers and efficiently show many variables in a small area. 
+However, as with their Cartesian equivalents, PCPs are vulnerable to overplotting and can become difficult to read or interpret when N is large, but because they overplot, they can get messy with large datasets. 
+It can be more challenging to understand the data than with Cartesian coordinates, and you must go through a learning process to get the majority of them as well.
 
-These experiments manipulate low-level visual features not explicitly incorporated into current data visualization models. Several of the theories below show the absence of a clear relationship between perception and cognition.
 
-Data visualization models are generally abstract, process-oriented descriptions of how the user interacts with the image.
-@crapo2000 put forth a data visualization theory that proposes mental models as how observers comprehend the world. 
-Mental models are cognitive constructs believed by some to serve as the foundation for relational reasoning, as proposed by Johnson-Laird in 1983 [@johnson1983] and further supported by Byrne and Johnson-Laird in 1989 [@byrne1989]. Mental models have three essential elements: understanding, description, and validation. 
-The theory of data visualization proposed by Waisal and colleagues corresponds to the initial stage of a mental model, where information is encoded, and the cognitive system readies itself for further elaboration. 
-The model proposed by Crapo et al. describes a series of processes that an observer must follow to synchronize their mental representation of the information in the display with the actual display. 
-The system takes the observer's understanding of the data as input and generates a response that can be verified. 
-The initial step of the Crapo et al. model involves constructing a mental representation based on the observers' understanding of the data visualization. 
-Subsequently, an observer selects a certain perspective from this mental model and accurately reproduces it based on the observed graph. 
-To make progress, the observer needs to assess three things: 1) if the visualization accurately corresponds to the model view, 2) if the visualization is consistent with the mental model, and 3) if the view and visualization are feasible when taking external factors into account. 
-Once all three conditions are satisfied, the observer proceeds to the validation stage of the mental model. 
-If any criteria are not satisfied, the mental model is revised, and the view is derived based on the revised mental model.
+Cartesian coordinates, on the other hand, are straightforward to understand because they are simple and well-known. 
+They make it easier to tell the difference between different information points and their exact values by displaying data points in an easily understood manner. 
+Cartesian coordinates are an excellent method to present data clearly because they can handle up to three dimensions. 
+They also need help with growth because adding more dimensions requires a lot of subplots or complicated three-dimensional plots, which can get boring and challenging to follow. 
+Cartesian graphs additionally can take up a lot of room, and for data with more dimensions, they usually need more than one plot.
 
-```{r, echo=FALSE, out.width = "55%", fig.cap='Waisel Mental Model',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/Waisel.png")
+```{r, echo=FALSE, fig.cap='A generalized pairs plot that shows bivariate relationships between each of the five variables in the Palmer penguins dataset',fig.show='asis', fig.align='center'}
+
+ggpairs(penguins[,c(1, 3:6)], aes(colour = species))
 ```
 
 
-The practical implications of the research are evident in the data obtained from the think-aloud technique and mouse-tracking. 
-These findings, as reported by Crapo et al. (1999), indicate that viewers do utilize certain steps in the process of comprehending the data visualization. 
-While the sequence of stages was not easily identifiable from the observed data, the authors propose that suggesting separate steps was beneficial for isolating sub-processes and gaining a clearer grasp of the description aspect involved in constructing a mental model. 
-This insight can be valuable in designing more effective data visualizations that align with the cognitive processes of the viewers.
+```{r, echo=FALSE, fig.cap='A parallel coordinate plot. Note that this plot includes a single categorical variable (which is not allowable in the original PCP formulation), but this allows us to compare directly to the pairs plot shown in Fig above',fig.show='asis', fig.align='center'}
 
-Pinker's theory states that the mind is made of a collection of separate, natural mental modules that were developed to manage particular kinds of data and activities [@pinker1990]. 
-This theory offers a unique perspective on the cognitive components involved in understanding graphs at a higher level. 
-It includes a matching process, which utilizes a graph schema of the suitable type, a message assembly that converts visual information into conceptual information, an interrogation stage where additional information is extracted from the graph if necessary, and finally an inferential process where decisions are made or insights are generated. 
+penguins %>%
+  pcp_select(species, 3:6, species) %>%
+  pcp_scale(method="uniminmax") %>%
+  ggplot(aes_pcp()) +
+  geom_pcp_axes() +
+  geom_pcp(aes(colour = species))
 
-```{r, echo=FALSE, out.width = "55%", fig.cap='Decision Making Model',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/DecisionMaking.png")
 ```
 
 
-Each of these four procedures involves highly intricate matters. 
-The conversion of visual input into a conceptually meaningful form is a complex task, yet it is encapsulated in a single step in this model. 
-However, this is not necessarily a drawback. 
-If we consider this theory as a means to effectively break down the challenge of data visualization into smaller, more manageable components, then it is beneficial to divide an overwhelmingly large problem (how individuals comprehend graphs) into more meaningful sub-problems, such as understanding how people transform visual data into meaningful information. 
-Pinker defines the matching process as a component of "cognitive fit", which Vessey and his colleagues have separately investigated as a distinct problem.
+### What?
 
-For people to understand the data, how the information is presented is important. 
-Traditionally, scatterplots are great for showing how two variables are related, bar graphs are great for showing a key property of multiple levels of a single variable, and histograms are great for showing univariate distributions. 
-Cognitive fit is accomplished when the designer creates the appropriate tool (graph) for the task and the observer comprehends the correlation between their objective and the tool [@vessey1991]. 
-Designing a visualization for cognitive fit involves creating compatible visual representations that accurately capture the mental representation of data. 
+Parallel coordinate plots (PCPs) leverage the projective space rather than the Cartesian coordinate system: each line in cartesian space is a set of points in projective space, and each point in cartesian space can be represented as a line in projection space [@Inselberg:1985].  
+The result is that a single data point is For high-dimensional data, parallel coordinate plots (PCPs) are a standard visualization tool whereby data points are shown as a line intersecting a series of vertical axes representing the different variables in the dataset, therefore indicating a dimension.
+Conventional PCPs can be difficult to interpret because of overplotting - lines overlap and need to be distinguishable, and when there are large datasets, even non-identical segments can be hard to identify because of the number of line segments. 
+It needs to improve its interpretability by having clutter and overlapping lines while handling big datasets. 
+Generalized PCPs (GPCPs) introduced several different methods: By including axis reordering, bundling, and dimensionality reduction to solve these problems, generalized parallel coordinate plots (GPCPs) expand the conventional PCP.
+These improvements in clarity and usability of PCPs utilizing data pattern highlighting and visual clutter reduction help [@density-pcp], for example, present several approaches to bundle comparable trajectories in GPCPs, so minimizing overlap and improving pattern identification; Johannsen et al. (2012) address the advantages of dynamic axis reordering to highlight different data characteristics.
 
-Furthermore, if we want to show that a value is higher for one observation than another, we can visually display this difference on the graph's Y-axis [@bertin1983]. 
+XXX Show a PCP and a Scatterplot matrix representing the same data. Focus on numeric data and use a standard PCP for this. Ensure p>=4 and that all variables are numeric. XXX
 
-In his groundbreaking work "Semiology of Graphics", Jacques Bertin laid out a theory that changed the way we think about and use graphs to show information [@bertin1983]. 
-Bertin said that images are not just pictures; they are important tools for communicating and analyzing data. 
-Bertin came up with the idea of "retinal variables" – visual attributes such as position, size, color, orientation, shape, and texture – that can be changed to store and read data. 
-Bertin states that good visualizations should use these visual attributes to create patterns that are hard to see from text or numbers alone.
+## Modifications to Parallel Coordinate Plots
+
+Since Alfred Inselberg introduced parallel coordinate plots (PCPs) in 1985, considerable advances have been made to address the original method's framework and improve its capacity to depict high-dimensional data effectively.
+The enhancements include changes to visual representation, handling various kinds of interactive data elements, and incorporating advanced computational approaches to increase the clarity and interpretability of the visualizations.
+Here are some specific enhancements and modifications that have been made:
+
+### Interactive and Dynamic
+
+Initially, enhancements in parallel coordinate plots have dynamic features, which allow users to select, highlight, and filter data dimensions or specific data points in real-time. 
+This has facilitated more precise and focused analysis within large datasets. 
+Interaction allows users to engage with data intuitively, selectively focusing on areas of interest. 
+“Interactive filtering and brushing make it easier to identify patterns within large datasets, aiding discovery and hypothesis generation” [@Wegman:1990].
+
+In 1990, Wegman et al. introduced fundamental techniques for interaction with multidimensional data, laying the groundwork for modern interactive PCPs. 
+Siirtola and Räihä (2006) developed interactive features like brushing and linking to assist in dimensional analysis, making comparing attributes within large datasets easier. 
+Inselberg (2009) expanded these features by enabling dynamic filtering and axis rearrangement to tailor the display to user needs.
+
+Increased complexity can overwhelm novice users, requiring more computational power and potentially slowing down analysis in high-dimensional datasets. 
+Inselberg (2009) noted, "While interactivity provides insight, it can lead to user fatigue in complex datasets due to the cognitive load required for multi-step filtering.”
 
 
-```{r, echo=FALSE, out.width = "55%", fig.cap='Semiology of Graphics',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/Berlin.png")
+### Bundling and Curving
+Bundling and curving techniques have been introduced to handle visual clutter, especially with high-dimensional data. 
+These techniques group similar paths, making patterns more visible and reducing overplotting. 
+Bundling and curving significantly reduce clutter, making spotting overarching trends and common patterns easier. 
+Holten and van Wijk noted that “bundling offers a compelling solution to mitigate the chaos often found in high-dimensional visualizations” [@holten2009].
+
+Holten and van Wijk pioneered edge bundling for PCPs, which visually aggregates similar paths to reduce clutter. McDonnell and Mueller (2008) furthered this approach by introducing curvilinear PCPs, where curved lines help distinguish intersecting paths for clearer visual analysis. Johansson and Forsell (2016) evaluated the effectiveness of bundling and curving in PCPs, establishing criteria for when these modifications enhance interpretability.
+
+Curved lines can be altered to vary in curvature dependent on data attributes, which improves visual separation and pattern recognition, particularly in scenarios with strongly correlated dimensions. This strategy has improved PCPs' ability to visualize complicated datasets with overlapping points (Kachhway, 2013).
+
+Moustafa et al. combine parallel coordinate plots (PCPs) with parallel coordinate density plots (PCDPs) to reduce clutter when working with big datasets. 
+As part of Moustafa's methodology, the standard PCP is mutated into a density plot. 
+This creates plot areas with more observations that stand out and reduce visual clutter.
+
+```{r}
+
 ```
 
-Bertin's theory is important in the areas of cartography and statistical graphics.
-Categorical, numeric, and quantitative data were the three main types of data he classified. 
-It was important for him to emphasize how important it was to choose the right visual attributes based on the data and the message of the graphic.
 
-
-Attaining optimal cognitive fit minimizes the cognitive load on the observer when carrying out the current task. 
-The cognitive fit concept is grounded in the theory of information processing [@newell1972] and the recognition that individuals balance error and effort when carrying out tasks (@beach1978; @payne1982; @vessey1994; @wickelgren1977). 
-Cognitive fit is one of several models that are based on an information processing framework. 
-Pinker identifies as the matching process is encompassed by “cognitive fit”, explored by Vessey and colleagues as its own discrete problem.
-
-Models of data visualization that make explicit the generation of the visualization (the data to the graphic stage) and the perception of the data (the graphic to the viewer) are helpful in thinking about a scientific framework for data visualization. 
-There are two high-level cognitive viewpoints at play: the creator and the viewer. 
-van Wijk’s model is an example of how the connection between components can be nicely explained in an information-processing manner [@van2005]. 
-The system (comprised of the data and the viewer) changes as a function of operations applied between data (input) and graphics (output). 
-Knowledge is updated in response to information extracted from the image, where the amount of information depends on the cognitive and perceptual properties of the observer. 
-van Wijk’s model captures initial parts of cognitive psychology as one of three stages for environmental information extraction.
-
-
-The simple model skips over a lot of interesting details, but it does so in a useful way. 
-To see the big picture, you have to zoom out and look at the big picture links between data and people. 
-Otherwise, you won't be able to make real progress toward its parts. Taking into account both the person and the data as a whole system pushes theory to accurately show how the two parts relate to each other. 
-
-```{r, echo=FALSE, out.width = "55%", fig.cap='Wijk simple model',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/Wijk.png")
-```
-
-Both the force-directed edge bundling (FDEB) technique and the Knowledge-Assisted Visualization and Guidance (KAVA) model enlarge the visualization capacity, as suggested by van Wijk (@miksch2020; @holten2009). 
-By combining explicit knowledge bases and automated analytical tools, the KAVA paradigm improves visual analytics and enables more accurate and informed representations across many applications. 
-Conversely, FDEB bundles edges using a self-organizing technique that represents edges as flexible springs, reducing visual clutter in node-link diagrams and revealing high-level patterns without needing hierarchical structures. 
-van Wijk's simplified approach was less suited to efficiently handle complicated, high-dimensional data since it mostly concentrated on basic data display features without such advanced integrations.
-
-```{r, echo=FALSE, out.width = "55%", fig.cap='Pinker Theory',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/pinkertheory.png")
-```
-
-It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. 
-Wijk's model is very high-level and talks about the whole system. On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. 
-In their model, Simkin and Hastie say that basic processes (similar to cognitive fit) happen between what the viewer sees and how well they understand the job [@simkin1987]. 
-While Pinker develops this into a more complex theory, considering extra cognitive processes and proposing a disciplined model for graph comprehension, Simkin and Hastie offer the first exploration of the cognitive phases involved. 
-Pinker's work is thus an extension and elaboration of the fundamental ideas presented by Simkin and Hastie, so offering a better knowledge of how graphical information is handled and interpreted by users. 
-These basic processes are recognition, scanning, projection, and superimposition. Another thing that is important for making sense of a graph is grounding.
-
-Researchers have found that visual anchoring changes how people see a stimulus when they are comparing [@johnston1990] or mentally rotating things [@xu2015]. 
-Anchoring is a process that is only talked about in theories of data visualization, but it is also a key part of other kinds of cognitive tasks (@couclelis1987; @pylyshyn1999), which shows that it is at least a basic part of how people think. 
-This kind of process is very interesting because it helps make sense of data visualizations and learning more about it can improve the way we think in general. 
-
-A more standard model of information processing with input, memory, and output (Neisser, 1967) is changed to fit the task of making a choice based on a data visualization (@patterson2014). 
-The authors were smart to include a process that captures attention and clarifies output. It is the first form of data visualization that lets bottom-up processes change how people understand graphs independently. 
-In their model, the stimulus serves as the input, with encoding being the first step. 
-Once encoded, the information can be modified in both long-term and working memory. 
-Working memory and pattern recognition can alter long-term memory and influence the storage process. Together, working memory and pattern recognition collaborate to make decisions, guiding subsequent reactions.
-
-```{r, echo=FALSE, out.width = "55%", fig.cap='Cognitive Theory',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/cognitivetheory.png")
-```
-
-It's helpful to think about information processors hierarchically to understand the links between data, visualization, people, and choices. van Wijk's model is very high-level and talks about the whole system. 
-On the other hand, a lower-level information processing model can describe the mental steps a user needs to take to understand a data visualization. 
-In their model, Simkin and Hastie say that basic processes (similar to cognitive fit) happen between what the viewer sees and how well they understand the job [@simkin]. 
-Simkin and Hastie present the initial investigation of the cognitive phases involved while Pinker extends this into a more complicated theory considering extra cognitive processes and suggests a disciplined model for graph understanding. 
-Pinker's work thus serves as an extension and elaboration of Simkin and Hastie's basic principles, so providing a greater grasp of how graphical information is processed and perceived by users. 
-These fundamental procedures are recognition, scanning, projection, and superimposition. 
-Grounding is still another crucial component for understanding a graph. 
-This model shows the main groups of processes that need to be known to create a science of data visualization. Still, it doesn't go into detail about the different parts that are important in making the stimulus (in this case, the data visualization).
-
-In the models we've already talked about, visual information comes in the form of a graph or plot, which is then stored in memory to consolidate into long-term memory. 
-In previous basic cognition research, changes to the visual world were studied independently to see how they affected simpler tasks. Key models and theories as discussed earlier in Pinker's cognitive model, which distinguishes top-down and bottom-up processes in visual comprehension and stresses the integration of mental representations with current knowledge, build the foundations of basic vision research in cognitive psychology (@pinker1990; @hegarty2011). 
-Introduced by Wertheimer, gestalt ideas draw attention to systems of perceptual organization including figure-ground separation [@spillmann2012]. 
-Furthermore underlined by information theory post-WWII, research on attention mechanisms highlights the part of signal detection and cognitive control in visual perception (Swets, 1964; @rueda2004). 
-By merging theoretical models with actual research, these essential books together progress our knowledge of visual cognition. 
-New research in how we understand data visualization builds on the strong base that basic vision research has laid. 
-
-Many things in the world need to be processed carefully, but this study shows that some visual details can be processed without paying full attention. "Pre-attentive" processing is the faster, more automatic processing of the visual environment. 
-Research shows that it takes less than 200 milliseconds (< 200ms) of preattentive processing to allow quick, parallel detection of core visual characteristics including color, orientation, and size without deliberate attention. 
-Introduced by Treisman and Gelade in 1980, Feature Integration Theory (FIT) provides that while individual features are handled preattentively, integrating them into an overall object requires focused attention, so explaining why conjunction searches—identifying goals based on multiple features—are slower and indicate for a serial search approach. 
-This approach emphasizes the part attention plays in binding several preattentive elements into a single perceptual experience (@mokeichev2010; @treisman1980; @wolfe2021). 
-In contrast "attentive" processing is the slower, more conscious processing of a part of the visual environment. 
-So, making visualizations that support pre-attentive processing should free up the viewer's brain resources so they can be used more effectively in figuring out what the data means [@healey1995], which will lead to a better way of sharing data.
-
-In a survey conducted of basic research in attention, Healey and Enns identified clusters of tasks that are supported by pre-attentive processing: target detection; finding a goal-relevant unique item in an array, boundary detection; identifying distinct spatially organized, texture-based groups based upon how they differ from each other, region tracking;  multiple object tracking and counting [@healey2011]. 
-These findings clearly provide an evidence-based manner for making design decisions when generating data visualizations. 
-Suppose the goal of the creator is to show the difference between groups on two different variables, for example. 
-In that case, the creator may use a set of features, like color hues or blending, that allows a viewer to pre-attentively discern boundaries between the two groups on a scatter plot (Callaghan, 1990).
 
 
 ## Exploratory Data Analysis (EDA)
@@ -272,295 +216,5 @@ p + scale_fill_brewer(palette="Dark2")
 ```
 
 
-## Parallel Coordinate Plots 
-
-Parallel coordinate plots (PCPs) are a good way to show data with a lot of dimensions, since each dimension is shown on its own plane.
-This means that complex relationships between different factors can be studied over and over again. 
-PCPs are great for drawing attention to trends, clusters, and outliers, and they know how to use space well to show many aspects in a small area. 
-But because they overplot, they can get messy with large datasets. 
-It can be tougher to understand the data than with Cartesian coordinates, and you must go through a learning process to get the the majority of them as well.
-
-Cartesian coordinates, on the other hand, are straightforward to understand because they are simple and well-known. 
-They make it easier to tell the difference between different information points and their exact values by displaying data points in an easily understood manner. 
-Cartesian coordinates are an excellent method to present data in a clear way because they can handle up to three dimensions. 
-They also have trouble with growth because adding more dimensions requires a lot of subplots or complicated three-dimensional plots, which can get boring and challenging to follow. 
-Cartesian graphs additionally have the ability to take up a lot of room, and for data with more dimensions, they usually need more than one plot.
-
-If you compare PCPs to Cartesian coordinates, PCPs are a powerful way to see and analyze high-dimensional data. 
-However, they can cause visual clutter and require more practice to understand. 
-On the other hand, Cartesian coordinates are easy to understand and use for low-dimensional data but can't be scaled up or down for higher dimensions. 
-The data points are shown as polylines that cross the axes where their coordinate values in each part are equal [@Inselberg:1985]. 
-Traditional parallel coordinate plots (PCPs) have helped show multidimensional data, but when the information gets more significant, they become cluttered and hard to understand. 
-Other versions of PCPs have been implemented in the theory to enhance the visualization and interpretation of multi-dimensional data, addressing issues such as overlap, scaling, and interaction.
-
-In the article "Parallel Coordinate and Parallel Coordinate Density Plots," Rida E. Moustafa explains a new way to see high-dimensional data using parallel coordinate plots (PCPs) and parallel coordinate density plots (PCDPs). 
-The primary objective of this work is to make PCPs easier to understand and use since they usually need help with too much mapping and clutter when working with big datasets. 
-As part of Moustafa's methodology, the standard PCP is mutated into a density plot. 
-This creates plot areas with more observations that stand out and reduce visual clutter.
-
-```{r, echo=FALSE, out.width = "55%", fig.cap='Parallel Coordinate and Parallel Coordinate Density Plots',fig.show='asis', fig.align='center'}
-knitr::include_graphics("figure/Moustafa.png")
-```
-
-The new approach uses density estimation methods to transform the PCP image based on polylines into a continuous, smooth depiction of data density. 
-This change shows how to see groups and trends usually hidden in regular PCPs. 
-To make things even better, Moustafa has interactive parts that let users experience different data dimensions in real time. 
-This makes PCPs even better at analysis. With its interactive nature, people who aren't experts can use this method confidently and successfully.
-
-Moustafa's research indicates that to deal with even larger datasets more efficiently, future efforts should focus on enhancing density estimation methods. 
-These methods can be used in biology and finance to demonstrate their usefulness and adaptability for examining real-world data [@moustafa2011].
-
-The article "Orientation-Enhanced Parallel Coordinate Plots" by Raidou et al. describes a new way to make parallel coordinate plots (PCPs) more accessible to read and understand. 
-The authors suggest a method that uses input about direction to solve the clutter and overlap problems with regular PCPs. 
-This method changes the direction of the plot axes on the fly by applying both automatic orientation and user-interactive adjustments.
-This method reduces visual noise and makes data patterns and correlations more visible. 
-This will make it easier for users to study and analyze large datasets.
-
-The suggested orientation-enhanced PCPs are designed with the user's needs at the forefront, offering a more informative visual representation. 
-Several preprocessing steps, including principal component analysis (PCA) and multi-dimensional scaling (MDS), were employed to determine the optimal axis orientation. 
-This ensures that data clusters are maximally separated and data lines are minimally overlapped. 
-The interactive features allow users to adjust the orientation according to their preferences and requirements, enhancing the usability and adaptability of the plots for research needs [@raidou2015]. 
-
-The Generalized Parallel Coordinate Plot (GPCP) is an enhancement of the original PCP that adds nonlinear axis changes. 
-These can show more complicated relationships in the data that might not be visible in a regular PCP. 
-Nonlinear scales such as logarithmic and exponential transformations are possible. 
-The 1997 publication "Visualizing High-Dimensional Structures by Generalized Parallel Coordinate Plots" by Edward Wegman and Qiang Luo provided a comprehensive discussion of the GPCP idea. 
-This adjustment allows the visualization to display various data connections and handle skewed data distributions. 
-It is important to make decisions when resources are limited, and these advanced visual tools make it easier to see how different data sets are related. 
-As VanderPlas et al. show, the basic ideas put forward by Inselberg are used to build on the rules of today's graphic grammar [@vanderplas2023].
-
-## Missing Data Analysis
-
-There have been efforts to understand and deal with missing data. 
-Cheng et al. made a graphical user interface for exploring missing values in multivariable data [@cheng2015], and Josse and Husson created the `missMDA` package to handle missing values in multivariate analysis [@josse2016]. 
-Since dataset incompleteness directly affects the truth of any later studies, these tools make it clear how important it is to use advanced methods to analyze and deal with it. 
-These methods are tailored to preserve the multidimensional relationships inherent in GPCP.
-
-There are still issues with handling and displaying missing data in large, difficult datasets, even with the current tools and techniques. 
-Research has shown several approaches to handling and displaying missing data. 
-However, there is still a big hole in combining these methods into one system that works for all kinds of data and is easy for people to use. 
-Unwin et al. showed MANET, a system that made datasets with missing values accessible through images. 
-Statistically speaking, lost data needs to be dealt with more complexly with even more advanced tools. 
-Nevertheless, the tidy data structure must be discussed in more detail.
-
-Stef van Buuren's additional research on missing data created the `mice` package in R, which is widely used for multiple imputation [@van2011]. 
-It shows how missing data imputation methods can be used in real life, but at first, they didn't directly connect with the tidy data principles. 
-This gap highlights the need for a systematic strategy that combines tidy data principles with techniques for managing missing data
-As a result, Tierney and Cook developed these principles to address this requirement directly.
-
-Tierney and Cook's 2018 research expands on the principles of tidy data to create an innovative way to deal with missing data. 
-This method, which describes the role of missing values in data analysis and visualization, represents a major advancement in the discipline. 
-The paper presents valuable tools for evaluating different interpolation approaches. 
-These tools are critical for understanding the influence of missing data on research and the many types of imputations that may be used. 
-Additionally, the study offers tools that can be utilized to compare various estimation methodologies. 
-Because these tools are intrinsic to the R environment, you can utilize R's statistical capabilities to investigate many types of data loss. 
-Tools are available to help with missing data visualization, comparing imputation and non-imputed data distributions, and learning how various imputation processes impact statistical results. 
-Researchers will find this compilation helpful since it explains how to select the most appropriate interpolation algorithms for their data and study [@tierney2018].
-
-Newcomers to statistics or researchers with little to no R knowledge may need help with the approaches and code. 
-The dependence on R as the primary program makes the proposed approaches less accessible to those who use other statistical tools, perhaps restricting their use.
-
-There are several opportunities for expanding their findings. 
-The key method for making the methodologies more accessible is to include support for other widely used data science tools in the toolkit, such as Python. 
-A more practical use for these tools would be an automated tool that scores and assesses various estimating algorithms using user-defined criteria. 
-Finally, clear instructions and examples would be useful for individuals unfamiliar with complicated data imputation techniques and tidy data architecture. 
-
-As datasets become larger and more complex, especially in fields that require visualizing high-dimensional data like genomics or big data analytics, current methods often struggle to handle the increased scale or lack the necessary flexibility to effectively address different ways in which data can be missing (@swayne1998; @schafer2002). 
-In academic study, the current state of big data analytics is centered around effectively managing large volumes, wide diversity, and fast data pace. 
-This poses distinct difficulties in different sectors, such as healthcare and industrial processing. 
-Significantly, these industries increasingly depend on advanced machine-learning methods to enhance results and prediction capacities.
-Integrating big data with artificial intelligence in healthcare improves the capacity to forecast disease trends and treatment results by utilizing extensive data from various sources. 
-Big data analytics is vital in predictive maintenance and optimizing production processes in industrial environments. 
-Recent academic reviews emphasize that the future of big data analytics relies on advancing data processing technologies and ensuring their accessibility and effectiveness across various domains. 
-This underscores the importance of ongoing interdisciplinary research and collaboration to overcome existing barriers and unlock new opportunities (Sabharawal & Micah, 2021; Rhaul et al., 2023).
-
-Another common approach to present various data types is in parallel coordinates, discussed in the article "Where Did My Lines Go? "Visualizing Missing Data in Parallel Coordinates" by Alex Bäuerle et al. 
-It is hard to see trends when data is missing because it breaks up the flow of lines. Getting rid of imputations, common ways to deal with missing data, can mess up visual presentations. Based imputation is one of many visualization methods suggested by the authors. 
-It keeps the general structure and doesn't lead to wrong conclusions. 
-Some others are dashing, imputation representation with visual cues, and transparency. 
-Real-life studies with users showed that the best ways to find trends were to be open and dash. 
-The authors also made a tool that lets you use these ways to explore data more interactively. 
-Thanks to their work, we can see incomplete information in a way that is easy to understand. 
-This is helpful because it avoids adding bias through estimation. 
-The future work includes making these methods work better with bigger datasets, mixing them with more advanced imputation techniques, and looking into how they can be used in specific fields to make them more reliable and effective [@bauerle2022].
-
-Addressing missing data is an analytical challenge in statistical analysis, as incomplete data can lead to biased or misleading results. These methodologies enhance data analysis and decision-making processes. 
-This dissertation examines advanced techniques for handling missing data, drawing from robust methodologies discussed in recent literature such as Cheng, Cook, and Hofmann (@cheng2015) and Tierney and Cook (@tierney2018). 
-
-These foundational ideas laid the groundwork for contemporary methods of handling missing data in statistical graphics, which are fundamental for providing accurate and meaningful visual interpretations of datasets.
 
 
-## Anomaly Detection (Outlier Detection)
-
-In EDA, treating missing data is not merely a preliminary step but a critical anomaly detection component. 
-Recognizing patterns of missingness can be a powerful anomaly detection technique, as certain types of missing data may indicate underlying problems or anomalies within the dataset [@rubin1976]. 
-Transitioning into anomaly detection, it becomes evident that these missing data patterns can reveal deviations from expected behavior, helping to flag data quality issues or potential outliers that warrant closer examination [@hawkins1980]. 
-Thus, the systematic handling and analysis of missing data directly enrich detecting anomalies, underscoring its dual role in EDA.
-
-Wilkinson’s “The Grammar of Graphics” is a foundational framework for designing insightful data visualizations integral to EDA.
-In this framework, treating missing data is not merely a preliminary step but a key aspect of the analytical process. 
-Techniques for handling missing data, such as predictive mean matching or multiple imputation, are useful for maintaining the integrity and representativeness of visualizations, allowing for more accurate interpretations and conclusions (van Buuren, 2012).
-
-Furthermore, missing data itself can be indicative of underlying anomalies. 
-Analyzing patterns of missingness can reveal data integrity issues, systematic errors, or anomalies in data collection processes, which are often critical for domains like clinical trials or quality control in manufacturing (Little & Rubin, 2002). 
-Once a dataset has been adjusted for missing values, visual techniques—such as enhanced scatterplots or layered density plots—can effectively detect outliers and unusual patterns. 
-These visualizations are pivotal in fraud detection or environmental monitoring, where quick identification of deviations from expected patterns can lead to prompt and necessary actions [@unwin2006].
-
-Thus, handling missing data effectively enriches the dataset, enabling more robust anomaly detection through sophisticated visual tools. 
-This ensures that the visualizations represent the observed data and highlight the absence of data as potential markers of critical anomalies, thereby supporting deeper and more comprehensive analytical insights.
-
-Both reducing the value of anomalies and eliminating them are primary goals of anomaly detection along with identifying their underlying cause. 
-Walter A. Shewhart's research on statistical control mechanisms in the 1920s is the ancestor of anomaly identification in statistical graphics. 
-Statistical process control (SPC) was made possible by Shewhart's creation of the control chart, an important tool for finding problems in the manufacturing process (@shewhart1930). Examine the picture below. 
-In addition, MSPC charts are an expansion of univariate statistical process control approaches that are used to track the efficiency of processes with numerous interconnected variables. 
-It was Hotelling's 1947 introduction of the multivariate control chart that laid the groundwork for MSPC. 
-According to Hotelling, this was a huge improvement over the previous generation of charts, known as univariate Shewhart charts, which were limited to handling variables individually [@hotelling1947]. 
-Many thanks to Jackson for using PCA to track multiple variables and Nomikos and MacGregor for their work on multivariate SPC charts using PCA and PLS, which made the foundations of MSPC even stronger (@jackson1980; @nomikos1995).
-
-When software and computers came out in the middle of the 20th century, they transformed how things worked in the field. 
-John Tukey's exploratory data analysis work introduced basic graphing methods for finding outliers and other strange things in data. 
-His methods, such as box and scatter plots, were particularly efficient at finding variations between sets of data [@tukey1977]. 
-Shewhart's SPC charts were essential to improving and keeping quality under control. 
-They show the difference between general and special cause deviations in industrial processes. 
-Tukey also uses statistical techniques to find trends, outliers, and inconsistencies in the data when completing statistical analysis. 
-This demonstrates his appreciation for understanding the dynamic nature of data. 
-Both Shewhart and Tukey supported the use of visual tools to discover insights in data. 
-One way to visually observe the stability and control of a process is with Shewhart's control charts. 
-Tukey also developed a number of plotting methods to aid analysts in making sense of data, such as the box plot and the stem-and-leaf plot. 
-The fact that they are connected shows how strongly they believe in the capacity of visual data analysis to help find patterns and make better decisions.
-
-Anomalies in multivariate data sets can be effectively illustrated using generalized parallel coordinate plots (GPCPs), which expand the traditional capabilities of parallel coordinate plots to include both continuous and categorical variables. 
-A strategy for handling complications caused by neighboring category variables is described by Vanderplas et al. (2023) as "factor blocks." 
-A categorical variable's combined distribution with other categorical variables determines its ordering inside each level in these charts. 
-In more conventional arrangements, this serves to lessen the visual noise that could mask important patterns. 
-By graphically organizing the data, this method not only helps to spot outliers but also draws attention to key relationships within the data.
-
-By manipulating the order of line plots, a "layered approach" to high-dimensional data management optimizes overplotting control. 
-This approach makes it easier for the user to follow specific observations across the graph, even when there is a lot of data. 
-An effective tool for anomaly identification is thus created by combining those methods within GPCPs. This tool successfully manages and represents the complexity that is built into multivariate datasets.
-
-
-It is vital to discern anomalies indicating significant insights or errors in GPCP. 
-
-In "Novelty Detection: A Review—Part 1: Statistical Approaches," Markou and Singh provide an in-depth review of the various real-world applications that utilize novelty detection techniques. 
-The authors conduct extensive research in these areas to understand better the pros and cons of parametric, non-parametric, and semi-parametric statistical analytic methodologies. 
-To improve recognition and make the system more adaptable, they suggest that researchers should combine statistical methodologies with machine learning strategies in the future. 
-Modern applications are becoming more dependent on data with complex structures and many properties. 
-This emphasizes the significance of establishing better and more reliable methods for handling this information. 
-This new direction has significance for the advancement of the field and for scientists to tackle the ever-evolving challenges of detecting new patterns in diverse datasets [@markou2003].
-
-In their 2009 article "Fast Detection and Visualization of Network Attacks on Parallel Coordinates," Choi, Lee, and Kim propose a technique for seeing and recognizing network attacks in a moment using parallel coordinates. 
-The complex multivariate data interactions can be better understood with the assistance of this tool. 
-This study demonstrates how to use parallel coordinates to show various network data dimensions simultaneously, which helps spot unusual trends that can indicate security breaches immediately. 
-For future work, the authors suggest investigating how to add real-time data processing techniques to their system to improve it and make it more effective in finding things. 
-Their recommendation to enhance the system's usability and efficiency in a real-world security operation center scenario involves strengthening its data visualization features to manage larger datasets better. 
-This future path is necessary to build increasingly sophisticated, real-time security monitoring systems that can handle the growing number and sophistication of network dangers [@choi2009].
-
-Pimentel et al. explore the subject matter of novelty detection in their comprehensive review titled "A Review of Novelty Detection." 
-Novelty detection is essential when discovering novel and unique data patterns deviating significantly from established standards. 
-The study uses machine learning models like neural networks and support vector machines and statistical methods such as nearest-neighbor and grouping techniques. 
-Pimentel et al. emphasize the need for future research to create hybrid models incorporating several detection approaches to enhance accuracy and robustness. 
-Future research should prioritize scalability and the capacity to adjust to new patterns and changing surroundings quickly. 
-They further recommend improved approaches to managing streaming data in systems that operate in real-time [@pimentel2014].
-
-Research by Ding et al., published in 2014 as "An Experimental Evaluation of Novelty Detection Methods," compares and contrasts different approaches for detecting novelty and evaluates how well they perform in diverse data scenarios. 
-Evaluations of statistical, machine learning and hybrid approaches are carried out with the support of several baseline datasets. 
-According to the outcomes, each strategy offers benefits and drawbacks. 
-The writers explain in detail how these algorithms handle various forms of data noise and how various realistic parameter changes affect how well they perform. 
-In addition, Ding et al. say that domain-specific data should be added to novelty recognition systems to make them easier to understand and work better. 
-As a result, this is of paramount importance in certain sectors, such as healthcare and finance, where specialized approaches are required, [@ding2014].
-
-<!--This dissertation introduces a detection method informed by contemporary studies in novelty detection (Markou & Singh, 2003; Pimentel et al., 2014) and specific applications in GPCP (Choi et al., 2009; Ding et al., 2014). This method aims to more accurately identify outliers, distinguishing between noise and significant anomalies, thereby enhancing the interpretive power of GPCP.-->
-
-Enhanced statistical summaries can be achieved by expanding the grammar of graphics, as discussed in Hadley Wickham's "A Layered Grammar of Graphics." 
-Wickham suggests adding layers to the grammar of graphics in order to separate statistical reports and visualizations can be stacked on top of one another. 
-This technique can be very helpful in discovering novel ideas because it helps you add normal data representations with accents or different styles for data points that are distinctive novel or different. 
-This layered technique makes it less difficult to see the difference between standard and unusual data. 
-It might be interesting to look into how to generate the layers based on statistical significance or anomaly scores. 
-Machine learning methods could be used to create the visualization layers and change as new data is processed. 
-A further area that could be focused on is making interactive visualization tools that let users change the elements that determine what is new and see immediately how these changes affect the output graphics [@wickham2010].
-
-"Anomaly Detection in Streaming Nonstationary Temporal Data" examines methods to identify problems in streams of temporal data. 
-It does this by using visualization techniques that are compatible with the grammar of graphics to demonstrate issues in real-time. 
-The authors suggest a framework that may adapt according to changes in the statistical properties of the data. 
-This makes sense for purposes like network security or monitoring sensor data in real-time. 
-Visualizations are very important here, given that they provide you immediate feedback on identifying any potential issues. 
-Introducing user feedback loops to the system might make the detection algorithms adaptable by giving them the ability to shift their rules based on what users think about false positives and missed detections [@talagala2019].
-
-
-Current research primarily addresses either data visualization or anomaly detection independently, with insufficient focus on their interaction (@alvarez2009; @choi2009).
-
-In their interesting 2011 research paper "Evaluation of Parallel Coordinates for Interactive Alarm Filtering," Azhar and Rissanen examine the possible benefits of using parallel coordinates to filter and evaluate alerts in complex systems. 
-The study examines the ease of use of the interface and how well this visual style improves the quick recognition of important patterns and alarms. 
-The authors come to the conclusion that parallel coordinates may improve the alarm filtering process more effectively but likewise point out ways in which it may be made better in the future. 
-They state that the interface should be changed to ensure it facilitates faster cognitive thinking and makes users less fatigued. 
-By testing the interface in more types of real-world settings, we could discover more about how helpful and efficient it is in a range of disciplines and systems. 
-This could help make the tool better fit the requirements of different groups of users [@azhar2011].
-
-
-In their article titled "Information-theoretic outlier detection for large-scale categorical data," Wu and Wang explain an approach to finding outliers in datasets with categorical variables using information theory. 
-The approach uses entropy measurements to figure out how strange the data are, which makes it simple to identify trends that don't match up with what one might expect. 
-This approach works particularly well with large data sets, where various other statistical techniques may not be successful. 
-The authors propose a variety of places for further study, such as making computations faster for larger datasets and combining this approach with different types of data, like mixed or numerical datasets. 
-Further research might also look into how this approach may be used in certain fields, like cybersecurity or healthcare, where identifying outliers is important but tricky given that much of the data is categorical [@wu2011].
-
-The importance of algorithms for identifying anomalies in categorical data is emphasized in fields like fraud detection and network security in “Anomaly detection methods for categorical data: A review” by Taha and Hadi. 
-They dissect methods into five groups: rule-based, logistic, probabilistic, and information theory-based. 
-Measurement metrics like recall, F-measures, accuracy, precision, and area under the curve (AUC) are discussed, stressing problems related to imbalanced datasets. 
-The report highlights practical issues by including examples like fraud and disease outbreak detection. 
-The writers say these problems are scalability, high-dimensional data, and interpretability. 
-Future research directions aim to expand the anomaly detection field for categorical data, including developing hybrid methods, new evaluation metrics, standard datasets, scalable algorithms, dimensionality reduction techniques, and interpretable models [@taha2019].
-
-In their review, Taha and Hadi classify many approaches to anomaly detection for categorical data, which includes methods based on probabilistic models, distance, information theory, clustering, and rules. 
-Probabilistic models like Bayesian networks and hidden Markov models make it easy to work with different kinds of data. 
-These models can also show how factors are related in complex ways. 
-In addition to being masters at managing uncertainty, they provide decision-makers with probabilistic estimates of anomaly scores.
-However, these models' computational intensity might increase significantly when dealing with significant or high-dimensional data. 
-A large quantity of data is frequently necessary to accurately estimate the parameters of probabilistic models.
-
-A simple way to find outliers is to use distance-based methods, like the Hamming distance and similar measures. 
-These tools are easy to understand and use because they measure how different two sets of data are from each other. 
-Because category values are ordered, finding an excellent way to measure distance for them can be tricky. 
-One problem with these methods is that it can take a lot of time and computing power to figure out the lengths between all pairs of data points.
-
-`Information theory-based methods` use changes in entropy and mutual information to find things that don't seem right. 
-Many of these methods are data-based and only need a little setting tuning. 
-It is important to remember, though, that information-theoretic measures can be hard to understand and use and that they don't always work well with noisy data, which can cause false positives.
-
-`Clustering methods`, like k-modes and conceptual clustering, make it easier to find misfits by naturally grouping similar data points. 
-They are great for many data sources because they are flexible and can learn from unlabeled data. 
-Still, it might be hard to find the correct number of clusters if you don't have subject knowledge or heuristics. 
-Also, grouping methods require a lot of computing power, so ways to use them may need to be more efficient when working with large datasets.
-
-Using `rules-based methods` is a straightforward way to explain why a data point is abnormal. 
-These include decision trees and link rules. They are also very flexible and can quickly pick up rule-based subject knowledge. 
-Still, rule sets can get very big and complex to use as data complexity increases. 
-Also, overfitting is a possibility. 
-This happens when the rules are too tightly matched to the training data and need help to handle new data. This is especially true for small datasets.
-
-The literature indicates a lack of robust, scalable methods that can simultaneously visualize and detect novel patterns in mixed-attribute data sets efficiently (@azhar2011; @wu2011; @taha2019; @bauerle2022). 
-This gap underscores the need for a holistic approach that addresses the visualization complexities of mixed attributes and incorporates effective, real-time novelty detection mechanisms to aid in faster and more accurate decision-making processes.
-
-By integrating these approaches into the grammar of graphics packages in R, this research simplifies the diagnostic and remediation processes for missing data, ensuring more accurate and reliable analysis for developing effective data dashboards.
-
-    
-## Dimension Reduction
-
-Exploratory Data Analysis (EDA) and Dimension Reduction Techniques are closely intertwined in the realm of data analysis. 
-EDA serves as the initial step in understanding and visualizing complex datasets, helping analysts uncover patterns, anomalies, and relationships within the data. 
-However, as datasets grow in dimensionality, the complexity of EDA can become overwhelming. This is where Dimension Reduction Techniques come into play. 
-By reducing the number of features or variables while preserving the most critical information, these methods simplify the data, making it more manageable for further analysis. 
-Dimension Reduction Techniques, such as Principal Component Analysis (PCA) or t-Distributed Stochastic Neighbor Embedding (t-SNE), complement EDA by providing a way to condense high-dimensional data into a lower-dimensional space without losing significant insights. 
-This synergy between EDA and Dimension Reduction Techniques empowers data scientists and analysts to gain deeper insights into their data while efficiently handling large and complex datasets.
-
-## Berkson's Paradox
-
-
-## Interactive Graphics
-
-Interactive graphics are essential to EDA [@unwin1999]. 
-Beyond the limitations of static statistical displays, interactive graphics enable visualizations to advance alongside the analysis. 
-User interaction and direct manipulation are required for dynamic graphics to reach their full potential (@cook1995; @unwin1999).
-The connection between EDA and dashboards is that EDA is the process of preparing and understanding the data, which is the first step for building a dashboard, as the data has to be cleaned, transformed, and analyzed to be used efficiently on the dashboard. 
-EDA results can be used to identify the most relevant data and metrics to include in the dashboard and to design the visualizations that will be used to display the data. 
-Additionally, the EDA process can identify the outliers, patterns, trends, and insights helpful to show in the dashboard to support decision-making.
